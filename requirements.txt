@@ -1,0 +1,9 @@
+openai
+numpy
+tenacity
+datasets
+sentence-transformers
+ewstools
+pandas
+pyarrow
+matplotlib
