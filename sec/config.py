@@ -32,6 +32,7 @@ class Config:
     retrieval_k: int = 0  # 0 = inject whole library (legacy); >0 = ExpeL-style top-k retrieval
     memory_mode: str = "shared"  # none | private | shared | frozen
     anchor_rho: float = -1.0  # prob a train batch is labeled by gold; -1 = derive from use_ground_truth
+    dataset: str = "hotpotqa"  # hotpotqa | gsm8k | math | musique | 2wikimultihop
 
     concurrency: int = 8
     rate_limit_per_min: float = 0.0
@@ -62,6 +63,8 @@ class Config:
             raise ValueError("anchor_rho must be in [0, 1].")
         if self.memory_mode not in {"none", "private", "shared", "frozen"}:
             raise ValueError(f"invalid memory_mode: {self.memory_mode!r}")
+        if self.dataset not in {"hotpotqa", "gsm8k", "math", "musique", "2wikimultihop"}:
+            raise ValueError(f"invalid dataset: {self.dataset!r}")
         if self.debate_rounds < 1:
             raise ValueError("debate_rounds must be >= 1.")
 

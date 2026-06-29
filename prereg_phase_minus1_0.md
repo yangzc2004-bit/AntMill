@@ -13,6 +13,8 @@ Maps to `sec/config.py` fields; new fields marked (NEW).
 | field | value | note |
 |---|---|---|
 | model / base_url / api_key_env | **<USER-SPECIFIED, left blank>** | filled per run by the user; >=2 model families required by Phase 1+ |
+| dataset (primary) | **gsm8k** (use **math** if the model exceeds the band) | numeric answers -> clean verification, no EM noise; reasoning/experience-sensitive; the self-consistency-as-signal practice (Huang 2022) was validated here, so collapse here is maximally meaningful |
+| dataset (generalization) | musique / 2wikimultihop (closed-book) | shows collapse is not math-specific |
 | use_context | true | |
 | max_context_chars | 12000 | |
 | max_tokens_solver | 1024 | mimo needs this to reach calibrated A0~0.46 |
@@ -61,8 +63,9 @@ run. Do not proceed.
 
 Eval at t=0 and t=4 (final). **PASS criterion:** mean(A1-mem final) - mean(A1-nomem final) >=
 **+0.02**, paired bootstrap 95% CI excludes 0. *If fail:* memory is not a faithful "helpful"
-component on this dataset -> fix retrieval/extraction or switch to a dataset where ExpeL-style
-memory is documented to help (HotpotQA is one). Do not proceed to claim "we broke a good thing".
+component on this dataset -> fix retrieval/extraction or switch to a more experience-sensitive
+benchmark (MATH, or the agentic ExpeL settings ALFWorld/WebShop). Do NOT lower the threshold; a
+weak gain here means there is no validated "good thing" to break.
 
 ---
 

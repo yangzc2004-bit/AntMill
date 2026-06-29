@@ -7,6 +7,7 @@ from typing import Any
 from .config import Config
 from .llm import LLMClient
 from .metrics import (
+    answer_match,
     cluster_by_normalized_answer,
     exact_match,
     majority_cluster,
@@ -336,7 +337,7 @@ async def reviewer_synthesize_v2(
                 if use_gold:
                     if gold is None or question not in gold:
                         raise ValueError("gold labels are required when the batch is gold-anchored")
-                    success = exact_match(final, gold[question])
+                    success = answer_match(final, gold[question], cfg.dataset)
                 else:
                     success = await self_reflect_success(question, answer, cfg=cfg, llm=llm)
                 single = [{"norm": norm, "answer": final, "indices": [0], "trajectories": [answer]}]
@@ -351,7 +352,7 @@ async def reviewer_synthesize_v2(
             if gold is None or question not in gold:
                 raise ValueError("gold labels are required when the batch is gold-anchored")
             for cluster in clusters:
-                cluster_success[cluster["norm"]] = exact_match(cluster["answer"], gold[question])
+                cluster_success[cluster["norm"]] = answer_match(cluster["answer"], gold[question], cfg.dataset)
         else:
             for cluster in clusters:
                 cluster_success[cluster["norm"]] = (len(cluster["indices"]) / max(cfg.n_solvers, 1)) >= cfg.mu

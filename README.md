@@ -41,7 +41,7 @@ and external **anchoring** `anchor_rho` ∈ [0, 1] (the "severed trail" knob).
 | module | role |
 |---|---|
 | `config.py` | run configuration (debate rounds, retrieval-k, memory mode, anchor_rho, ...) |
-| `data.py` | HotpotQA loading, disjoint train/held-out splits |
+| `data.py` | benchmark loaders (GSM8K, MATH, HotpotQA, MuSiQue, 2WikiMultiHop), disjoint train/held-out splits |
 | `llm.py` | async OpenAI-compatible client with disk cache, retries, throttle |
 | `debate.py` | R-round multi-agent debate |
 | `memory.py` | shared / private / frozen insight pools, top-k retrieval |
@@ -73,13 +73,17 @@ python -m sec.selftest_v2
 
 Model / endpoint are supplied at run time (left blank by default):
 
+The primary benchmark is `--dataset gsm8k` (default; numeric answers give clean verification);
+switch to `--dataset math` if the model is too strong for the [0.25, 0.60] calibration band, or to
+`musique` / `2wikimultihop` for the generalization domain.
+
 ```bash
 # Phase -1: reproduce the validated gains (gate)
-python -m sec.run_phases --phase A0 --model <id> --base-url <url> --api-key-env <ENV> --seeds 0,1,2
-python -m sec.run_phases --phase A1 --model <id> --base-url <url> --api-key-env <ENV> --seeds 0,1,2
+python -m sec.run_phases --phase A0 --dataset gsm8k --model <id> --base-url <url> --api-key-env <ENV> --seeds 0,1,2
+python -m sec.run_phases --phase A1 --dataset gsm8k --model <id> --base-url <url> --api-key-env <ENV> --seeds 0,1,2
 
 # Phase 0: collapse existence proof
-python -m sec.run_phases --phase P0 --model <id> --base-url <url> --api-key-env <ENV> --seeds 0,1,2
+python -m sec.run_phases --phase P0 --dataset gsm8k --model <id> --base-url <url> --api-key-env <ENV> --seeds 0,1,2
 
 # Cross-arm judgments (offline, reads runs_v2/*/result.json)
 python -m sec.analysis_stats --phase A0 --out-dir runs_v2

@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import Config, condition_name
-from .data import load_hotpotqa
+from .data import load_benchmark
 from .loop_v2 import run_one_v2
 from .phases import build_phase
 
@@ -21,6 +21,9 @@ def _parser() -> argparse.ArgumentParser:
     p.add_argument("--out-dir", default="./runs_v2")
     p.add_argument("--cache-dir", default="./cache_v2")
     p.add_argument("--seeds", default="0,1,2")
+    p.add_argument("--dataset", default="gsm8k",
+                   choices=["hotpotqa", "gsm8k", "math", "musique", "2wikimultihop"],
+                   help="Primary benchmark (default gsm8k; use math if the model is too strong for the band).")
     p.add_argument("--concurrency", type=int, default=4)
     p.add_argument("--rpm", type=float, default=0.0)
     p.add_argument("--heldout-size", type=int, default=None, help="Override held-out size (smoke/budget).")
@@ -34,6 +37,7 @@ def _common(args: argparse.Namespace) -> dict[str, Any]:
         "cache_dir": args.cache_dir,
         "concurrency": args.concurrency,
         "rate_limit_per_min": args.rpm,
+        "dataset": args.dataset,
     }
     if args.model:
         common["model"] = args.model
@@ -48,14 +52,15 @@ async def _run(configs: list[Config]) -> list[dict[str, Any]]:
     max_train = max(int(c.n_train or 0) for c in configs)
     max_heldout = max(c.heldout_size for c in configs)
     seed = configs[0].seed
-    print(f"Loading HotpotQA: train={max_train}, heldout={max_heldout}, seed={seed}", flush=True)
-    train_pool, heldout = load_hotpotqa(max_train, max_heldout, seed)
+    dataset = configs[0].dataset
+    print(f"Loading {dataset}: train={max_train}, heldout={max_heldout}, seed={seed}", flush=True)
+    train_pool, heldout = load_benchmark(dataset, max_train, max_heldout, seed)
     results: list[dict[str, Any]] = []
     for cfg in configs:
         # reload per-seed split when the seed changes
         if cfg.seed != seed:
             seed = cfg.seed
-            train_pool, heldout = load_hotpotqa(max_train, max_heldout, seed)
+            train_pool, heldout = load_benchmark(dataset, max_train, max_heldout, seed)
         print(f"Running {condition_name(cfg)}", flush=True)
         result = await run_one_v2(cfg, train_pool[: int(cfg.n_train or 0)], heldout[: cfg.heldout_size])
         results.append(result)

@@ -9,7 +9,7 @@ os.environ.setdefault("SEC_MOCK_KEY", "x")
 from .config import Config
 from .llm import LLMClient
 from .memory import InsightMemory
-from .metrics import answer_entropy, joint_collapse
+from .metrics import answer_entropy, answer_match, joint_collapse, numeric_match
 from .loop_v2 import run_one_v2
 
 
@@ -59,6 +59,15 @@ def _pure_logic_checks() -> None:
     assert answer_entropy(["Final answer: a"] * 3) == 0.0
     assert abs(answer_entropy(["Final answer: a", "Final answer: b"]) - 1.0) < 1e-9
     assert 0.0 < answer_entropy(["Final answer: a", "Final answer: a", "Final answer: b"]) < 1.0
+
+    # numeric / dataset-aware answer matching (GSM8K/MATH)
+    assert numeric_match("Final answer: 42", "42")
+    assert numeric_match("the total is $1,000", "1000")
+    assert numeric_match("72.0", "72")
+    assert not numeric_match("41", "42")
+    assert answer_match("42", "42", "gsm8k")
+    assert not answer_match("41", "42", "gsm8k")
+    assert answer_match("Paris", "paris", "hotpotqa")  # exact-match path unchanged
 
     # anchor_rho derivation from use_ground_truth
     assert _base_cfg(use_ground_truth=True, memory_mode="shared", anchor_rho=-1.0).anchor_rho == 1.0

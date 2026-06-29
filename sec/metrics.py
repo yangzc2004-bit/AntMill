@@ -57,6 +57,40 @@ def exact_match(prediction: str, gold: str) -> bool:
     return normalize_answer(prediction) == normalize_answer(gold)
 
 
+_NUM_RE = re.compile(r"-?\$?\d[\d,]*\.?\d*%?")
+
+
+def extract_number(text: str) -> float | None:
+    """Last number-like token in `text`, tolerant of $, commas, and trailing %."""
+    cands = _NUM_RE.findall(str(text))
+    if not cands:
+        return None
+    token = cands[-1].replace("$", "").replace(",", "").rstrip("%")
+    try:
+        return float(token)
+    except ValueError:
+        return None
+
+
+def numeric_match(prediction: str, gold: str) -> bool:
+    """Numeric equality (GSM8K/MATH); falls back to normalized string match."""
+    gp = extract_number(gold)
+    pp = extract_number(prediction)
+    if gp is None or pp is None:
+        return normalize_answer(prediction) == normalize_answer(gold)
+    return abs(gp - pp) < 1e-6
+
+
+_NUMERIC_DATASETS = {"gsm8k", "math"}
+
+
+def answer_match(prediction: str, gold: str, dataset: str = "hotpotqa") -> bool:
+    """Dataset-aware answer matching: numeric for math, exact-match otherwise."""
+    if dataset in _NUMERIC_DATASETS:
+        return numeric_match(prediction, gold)
+    return exact_match(prediction, gold)
+
+
 def answer_entropy(answers: list[str]) -> float:
     """Normalized Shannon entropy over normalized-final-answer clusters; in [0, 1]."""
     n = len(answers)
@@ -71,9 +105,9 @@ def answer_entropy(answers: list[str]) -> float:
     return float(entropy / math.log(n))
 
 
-def eval_metrics(items: list[dict[str, Any]]) -> dict[str, float]:
+def eval_metrics(items: list[dict[str, Any]], dataset: str = "hotpotqa") -> dict[str, float]:
     """Accuracy / consensus / gap plus the headline diversity D_t."""
-    base = accuracy_consensus(items)
+    base = accuracy_consensus(items, dataset)
     if not items:
         base["D_t"] = 0.0
         return base
@@ -126,7 +160,7 @@ def joint_collapse(
     return result
 
 
-def accuracy_consensus(items: list[dict[str, Any]]) -> dict[str, float]:
+def accuracy_consensus(items: list[dict[str, Any]], dataset: str = "hotpotqa") -> dict[str, float]:
     if not items:
         return {"A_t": 0.0, "C_t": 0.0, "G_t": 0.0}
     correct = []
@@ -134,7 +168,7 @@ def accuracy_consensus(items: list[dict[str, Any]]) -> dict[str, float]:
     for item in items:
         answers = item["answers"]
         majority = majority_cluster(answers)
-        correct.append(1.0 if exact_match(majority["answer"], item["gold"]) else 0.0)
+        correct.append(1.0 if answer_match(majority["answer"], item["gold"], dataset) else 0.0)
         consensus.append(len(majority["indices"]) / max(len(answers), 1))
     a_t = float(np.mean(correct))
     c_t = float(np.mean(consensus))

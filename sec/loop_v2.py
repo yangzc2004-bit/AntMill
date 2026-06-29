@@ -15,10 +15,10 @@ from .llm import LLMClient
 from .memory import InsightMemory
 from .metrics import (
     answer_entropy,
+    answer_match,
     detect_collapse,
     eff_rank,
     eval_metrics,
-    exact_match,
     ews,
     joint_collapse,
     majority_cluster,
@@ -26,7 +26,7 @@ from .metrics import (
 from .solver import render_library  # noqa: F401  (kept for parity / debugging)
 
 
-def _per_question(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _per_question(items: list[dict[str, Any]], dataset: str = "hotpotqa") -> list[dict[str, Any]]:
     """Per-held-out-question records, needed for paired bootstrap across arms."""
     rows: list[dict[str, Any]] = []
     for item in items:
@@ -34,7 +34,7 @@ def _per_question(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
         rows.append(
             {
                 "question": item["question"],
-                "correct": 1 if exact_match(majority["answer"], item["gold"]) else 0,
+                "correct": 1 if answer_match(majority["answer"], item["gold"], dataset) else 0,
                 "consensus": len(majority["indices"]) / max(len(item["answers"]), 1),
                 "entropy": answer_entropy(item["answers"]),
             }
@@ -78,9 +78,9 @@ async def run_one_v2(cfg: Config, train_pool: list[dict[str, str]], heldout: lis
     last_details: list[dict[str, Any]] = []
     for t in range(cfg.T):
         heldout_results = await _answer_dataset_debate(heldout, memory, cfg, llm)
-        metrics = eval_metrics(heldout_results)
+        metrics = eval_metrics(heldout_results, cfg.dataset)
         metrics["eff_rank"] = eff_rank(memory.all_items())
-        last_details = _per_question(heldout_results)
+        last_details = _per_question(heldout_results, cfg.dataset)
 
         anchored = False
         if cfg.batch_M and cfg.memory_mode != "none":
