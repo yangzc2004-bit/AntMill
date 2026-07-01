@@ -71,12 +71,34 @@ Maze is a mechanism microscope, not the whole paper. After the mechanism is esta
 analogous signals on tool/web tasks where shortest paths are unavailable but step count, tool calls,
 tokens, repeated states, stagnation, and time-to-success can be measured.
 
-Candidate directions:
+Bridge benchmark priority:
 
-- browser mini-tasks;
-- MiniWoB-style tasks;
-- tau-bench-like tool workflows;
-- lightweight file/API tasks.
+1. **Browser mini-tasks / MiniWoB-style tasks.**
+   - Why: they preserve stepwise action, visible state, repeated UI behavior, success/failure, and
+     time-to-success.
+   - What to measure: task success, DOM/action steps, repeated clicks/inputs, invalid UI actions,
+     stagnation, token cost, and route/action diversity across agents.
+   - Role: first external-validity bridge after the maze mechanism is stable.
+2. **Tau-bench-like tool/API workflows.**
+   - Why: they look like real tool-using agents, and the reviewer naturally sees only logs,
+     tool-call outcomes, costs, and final success.
+   - What to measure: task success, number of tool calls, repeated calls with the same arguments,
+     failed calls, token cost, latency, and repeated state transitions.
+   - Role: strongest non-browser bridge for MAS memory feedback.
+3. **Lightweight file/API tasks.**
+   - Why: they can be implemented in-repo with deterministic state, no browser dependency, and full
+     replay/audit logs.
+   - What to measure: command/tool count, repeated inspections, redundant edits, invalid actions,
+     final task success, and time-to-success.
+   - Role: low-cost bridge if browser/tool benchmarks are too expensive early on.
+4. **ALFWorld / WebShop-style tasks.**
+   - Why: they are closer to prior ExpeL-style embodied/shopping settings.
+   - Risk: heavier integration and more moving parts, so they should come after the first bridge
+     rather than block Phase Alpha.
+5. **MiniGrid / BabyAI.**
+   - Why: useful controlled validation with state/action logs.
+   - Risk: reviewers may see them as another toy/navigation environment, so they should be a
+     secondary validation rather than the headline bridge.
 
 Avoid making QA/math the first bridge because they can collapse into answer memorization and do not
 expose state/action loops as cleanly.
@@ -379,6 +401,16 @@ drives degradation.
 Use a lightweight tool/web task where success, steps, repeated state/action, tool calls, and token
 cost are observable.
 
+Recommended order:
+
+1. MiniWoB-style browser mini-task pilot.
+2. Tau-bench-like tool/API workflow pilot.
+3. In-repo lightweight file/API stateful task if external benchmark integration is too slow.
+4. ALFWorld/WebShop-style validation once the memory-audit and replay pipeline is stable.
+
+Do not use QA/math as the first bridge. It is useful as a legacy comparison, but it does not expose
+state/action loops cleanly and can make experience learning look like answer memorization.
+
 ---
 
 ## 11. Artifacts
@@ -412,4 +444,5 @@ Each condition should emit:
      after reducing per-step LLM cost.
 
 5. What is the first bridge task?
-   - Current recommendation: browser/tool mini-task rather than QA/math.
+   - Current recommendation: MiniWoB-style browser mini-task first; tau-bench-like tool/API workflow
+     second; lightweight file/API task as the lowest-cost fallback. QA/math should stay legacy.

@@ -67,6 +67,38 @@ Splits:
 - `train`: sampled mazes used for experience writing;
 - `heldout`: fixed unseen mazes used for comparable evaluation curves.
 
+## Real-Task Bridge Roadmap
+
+Maze is the mechanism microscope, not the final external-validity claim. After the maze mechanism
+is stable, the next benchmarks should preserve the same feedback-loop structure while replacing
+shortest-path cost with observable tool-use cost.
+
+Priority order:
+
+1. **Browser mini-tasks / MiniWoB-style tasks**. First bridge candidate because they expose state,
+   actions, repeated UI interactions, success, step count, and time-to-success. They are close
+   enough to real web agents while still being small enough for controlled memory ablations.
+2. **Tau-bench-like tool/API workflows**. Strong second bridge because tool calls, repeated calls,
+   failed calls, cost, and task success are naturally logged. This is a good match for MAS systems
+   where a reviewer only sees agent traces and tool outcomes.
+3. **Lightweight file/API tasks**. Useful for an in-repo bridge benchmark when browser automation is
+   too heavy. Examples include searching files, editing structured records, calling mock APIs, and
+   resolving multi-step stateful tasks with explicit action logs.
+4. **ALFWorld / WebShop-style tasks**. Plausible later validation because they are closer to prior
+   ExpeL-style embodied or shopping tasks, but they are heavier to integrate and should not block
+   the first bridge.
+5. **MiniGrid / BabyAI**. Useful as an additional controlled environment, but not the preferred
+   bridge because it may be perceived as another toy navigation benchmark.
+
+Not first-line bridges:
+
+- **QA/math benchmarks** such as GSM8K, MATH, MuSiQue, or 2WikiMultiHop. They remain useful legacy
+  baselines, but they are not ideal for the current claim because experience can become answer
+  caching and state/action loops are hard to observe.
+- **Static maze path-output benchmarks** such as full-map MazeBench/AlphaMaze-style settings. They
+  are less suitable because the core phenomenon requires stepwise action, retrieval, and iterative
+  memory feedback.
+
 ## Experience Extraction
 
 The memory writer follows the common ExpeL / Reflexion pattern: after an episode, trajectories,
