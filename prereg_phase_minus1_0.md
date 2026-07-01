@@ -1,5 +1,10 @@
 # Pre-registration: Phase -1 (sanity) & Phase 0 (existence)
 
+> **Status note (legacy track):** this pre-registration belongs to the earlier QA/math SEC route.
+> The active research plan has moved to the Phase Alpha MazeEval-style strategy-degradation
+> benchmark in `README.md` and `maze_strategy_degradation_blueprint.md`. Do not treat the
+> GSM8K/MATH settings below as the current primary benchmark.
+
 Frozen 2026-06-29. Thresholds and pass/fail criteria below are fixed BEFORE running; results are
 reported against them without post-hoc adjustment. Any deviation is logged as a documented
 amendment with reason.

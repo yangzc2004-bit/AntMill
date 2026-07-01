@@ -5,6 +5,7 @@ import re
 from typing import Any
 
 from .config import Config
+from .expel import ExpeLAdapter, distill_expel_insights, parse_expel_insights
 from .llm import LLMClient
 from .metrics import (
     answer_match,
@@ -17,14 +18,21 @@ from .metrics import (
 )
 
 
-REVIEWER_SYS = (
-    "You distill reusable INSIGHTS by CONTRASTING multiple agents' trajectories on the SAME question. "
-    "Use the provided success labels only; never assume an external answer key. "
-    "Write abstract QA tactics that can transfer to future questions. "
-    "Do NOT copy or mention this item's concrete final answers, entity names, titles, years, locations, or proper nouns. "
-    "Do NOT write rules like 'Prefer ... before answering <answer>'. "
-    "Turn item-specific observations into general strategies, such as verifying both candidates in comparison questions. "
-    "Return strict JSON only."
+QA_EXPEL_ADAPTER = ExpeLAdapter(
+    task_family="evidence-grounded question answering",
+    trajectory_label="QA trajectory cluster",
+    forbidden_details=(
+        "Do not mention this item's final answer text, question-specific entity names, titles, years, "
+        "places, or other proper nouns. Do not write answer templates that cache a result."
+    ),
+    strategy_focus=(
+        "evidence grounding, multi-hop decomposition, comparison checks, chronology checks, "
+        "self-consistency failure modes, and answer-format discipline."
+    ),
+    fallback={
+        "kind": "do",
+        "text": "Ground the final answer in explicit evidence from the provided context before responding.",
+    },
 )
 
 SELF_EVAL_SYS = (
@@ -34,26 +42,7 @@ SELF_EVAL_SYS = (
 
 
 def _json_array_from_text(text: str) -> list[dict[str, Any]]:
-    try:
-        data = json.loads(text)
-    except json.JSONDecodeError:
-        match = re.search(r"\[[\s\S]*\]", text)
-        if not match:
-            return []
-        try:
-            data = json.loads(match.group(0))
-        except json.JSONDecodeError:
-            return []
-    if not isinstance(data, list):
-        return []
-    result = []
-    for item in data:
-        if isinstance(item, dict) and isinstance(item.get("text"), str):
-            kind = item.get("kind")
-            if kind not in {"do", "avoid"}:
-                kind = "do"
-            result.append({"text": item["text"].strip(), "kind": kind})
-    return [item for item in result if item["text"]]
+    return parse_expel_insights(text)
 
 
 def _json_object_from_text(text: str) -> dict[str, Any]:
@@ -195,33 +184,35 @@ async def contrast_distill(
     cfg: Config,
     llm: LLMClient,
 ) -> list[dict[str, Any]]:
-    cluster_blocks = []
+    episodes: list[dict[str, Any]] = []
     for idx, cluster in enumerate(clusters):
         success = cluster_success.get(cluster["norm"], False)
         trajectories = "\n---\n".join(cluster["trajectories"][:2])
-        cluster_blocks.append(
-            f"CLUSTER {idx} success={str(success).lower()} size={len(cluster['indices'])}\n"
-            f"Answer: {cluster['answer']}\nTrajectories:\n{trajectories}"
+        episodes.append(
+            {
+                "episode_id": f"cluster_{idx}",
+                "agent_id": ",".join(str(i) for i in cluster["indices"]),
+                "outcome": "success" if success else "failure",
+                "quality": {
+                    "success": success,
+                    "cluster_size": len(cluster["indices"]),
+                    "answer": cluster["answer"],
+                },
+                "trajectory": f"Question:\n{question}\n\nAnswer cluster: {cluster['answer']}\nTrajectories:\n{trajectories}",
+            }
         )
-    prompt = (
-        f"Question:\n{question}\n\n"
-        "Clusters with success labels:\n"
-        + "\n\n".join(cluster_blocks)
-        + "\n\nDistill only reusable strategy-level rules. Do not include this question's answer text, "
-        "named entities, titles, years, places, or other proper nouns in the insight text. "
-        "Bad: {\"kind\":\"do\", \"text\":\"Prefer evidence-linked reasoning before answering Gettysburg Address.\"}\n"
-        "Good: {\"kind\":\"do\", \"text\":\"For chronology questions, extract and compare the relevant dates for all candidates before answering.\"}\n"
-        "Return strict JSON array only, with this schema: "
-        "[{\"kind\":\"do\"|\"avoid\", \"text\":\"abstract rule without item-specific nouns\"}]. "
-        "Produce at most 2 do-rules and 2 avoid-rules."
+
+    def forbidden(text: str) -> bool:
+        return _is_item_specific_insight(text, question, clusters)
+
+    insights = await distill_expel_insights(
+        episodes,
+        QA_EXPEL_ADAPTER,
+        cfg,
+        llm,
+        forbidden_check=forbidden,
     )
-    out = await llm.chat(
-        [{"role": "system", "content": REVIEWER_SYS}, {"role": "user", "content": prompt}],
-        temp=0.2,
-        max_tokens=cfg.max_tokens_reviewer,
-        tag="reviewer",
-    )
-    insights = _filter_reusable_insights(_json_array_from_text(out), question, clusters)
+    insights = _filter_reusable_insights(insights, question, clusters)
     if insights:
         return insights[:4]
     return [_fallback_reviewer_insight()]
@@ -251,7 +242,12 @@ def _apply_insight(
     idx, same_kind = _find_match(insight, library, cfg.similarity_threshold)
     upvote = support_count >= cfg.mu * max(cfg.n_solvers, 1)
     if idx is None:
-        library.append(
+        record = {
+            key: value
+            for key, value in insight.items()
+            if key not in {"text", "kind", "votes"}
+        }
+        record.update(
             {
                 "text": insight["text"],
                 "kind": insight.get("kind", "do"),
@@ -259,7 +255,14 @@ def _apply_insight(
                 "evidence": insight.get("evidence", ""),
             }
         )
+        library.append(
+            record
+        )
     elif same_kind:
+        if "sources" in insight:
+            library[idx].setdefault("sources", []).extend(insight.get("sources") or [])
+        if "id" in insight and not library[idx].get("id"):
+            library[idx]["id"] = insight["id"]
         if upvote:
             library[idx]["votes"] = int(library[idx].get("votes", 0)) + 1
         elif len(insight["text"]) > len(str(library[idx].get("text", ""))):

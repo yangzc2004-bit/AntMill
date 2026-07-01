@@ -1,5 +1,10 @@
 # SEC Experiment Architecture (strawman-proof, attributable)
 
+> **Status note (superseded by Phase Alpha):** this document records the earlier QA/math SEC
+> architecture. The active project direction now uses the MazeEval-style strategy-degradation
+> benchmark described in `README.md` and `maze_strategy_degradation_blueprint.md`. Keep this file
+> as historical design context, not as the current benchmark plan.
+
 Consolidated, defensible architecture for demonstrating Shared-Experience Collapse (SEC) in a
 mainstream multi-agent LLM setup. Design backbone: **reproduce the validated gain first, then
 induce collapse with a single realistic perturbation** — so the failure is attributable to the
