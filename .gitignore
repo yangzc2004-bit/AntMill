@@ -5,6 +5,11 @@ runs/
 runs_*/
 .sec_mock_cache/
 .sec_mock_runs/
+tmp/
+
+# LaTeX / rendered draft artifacts
+paper_draft/build*/
+paper_draft/rendered*/
 
 # Python
 __pycache__/

@@ -15,7 +15,7 @@ from .loop_v2 import run_one_v2
 
 async def _mock_chat(self, messages, *, temp=0.0, model=None, max_tokens=None, tag=""):
     user = messages[-1]["content"]
-    if tag == "reviewer":
+    if tag in {"reviewer", "expel_reviewer"}:
         return (
             '[{"kind":"do","text":"Compare all candidate dates before committing to an answer."},'
             '{"kind":"avoid","text":"Do not commit before checking the provided evidence carefully."}]'

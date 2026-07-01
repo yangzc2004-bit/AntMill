@@ -36,6 +36,15 @@ class Config:
     # --- agentic (multi-step) knobs; only used by the agentic episode runner ---
     max_steps: int = 10  # per-episode step cap; hitting it without done = non-termination
     loop_window: int = 3  # window for silent action-repetition (death-loop) detection
+    maze_width: int = 9
+    maze_height: int = 9
+    maze_family: str = "trap"
+    maze_agent_mode: str = "prompt_only"  # prompt_only | state_guided | stateful_dfs | oracle_dfs
+    maze_min_shortest: int = 0
+    maze_max_shortest: int = 0
+    maze_write_mode: str = "reviewer"  # reviewer | direct | oracle | self_eval | none
+    maze_eval_feedback: bool = False  # expose success/cost summaries to the reviewer, never to solvers
+    skip_final_train: bool = False  # skip train/write after the final evaluation round
 
     concurrency: int = 8
     rate_limit_per_min: float = 0.0
@@ -72,6 +81,18 @@ class Config:
             raise ValueError(f"invalid dataset: {self.dataset!r}")
         if self.debate_rounds < 1:
             raise ValueError("debate_rounds must be >= 1.")
+        if self.maze_width < 5 or self.maze_height < 5:
+            raise ValueError("maze_width and maze_height must be >= 5.")
+        if self.maze_width % 2 == 0 or self.maze_height % 2 == 0:
+            raise ValueError("maze_width and maze_height must be odd for the built-in maze generator.")
+        if self.maze_agent_mode not in {"prompt_only", "state_guided", "stateful_dfs", "oracle_dfs"}:
+            raise ValueError(f"invalid maze_agent_mode: {self.maze_agent_mode!r}")
+        if self.maze_min_shortest < 0 or self.maze_max_shortest < 0:
+            raise ValueError("maze_min_shortest and maze_max_shortest must be non-negative.")
+        if self.maze_max_shortest and self.maze_max_shortest < self.maze_min_shortest:
+            raise ValueError("maze_max_shortest must be >= maze_min_shortest when set.")
+        if self.maze_write_mode not in {"reviewer", "direct", "oracle", "self_eval", "none"}:
+            raise ValueError(f"invalid maze_write_mode: {self.maze_write_mode!r}")
 
     def cache_path(self) -> Path:
         return Path(self.cache_dir)

@@ -15,7 +15,7 @@ from .config import Config
 
 
 Message = dict[str, str]
-STRUCTURED_REASONING_FALLBACK_TAGS = {"reviewer", "self_eval"}
+STRUCTURED_REASONING_FALLBACK_TAGS = {"reviewer", "expel_reviewer", "self_eval"}
 
 
 def _effective_response_text(content: str, reasoning: Any, tag: str) -> str:
