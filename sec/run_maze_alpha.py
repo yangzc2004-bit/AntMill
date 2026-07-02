@@ -7,7 +7,12 @@ from .maze_alpha import run_cli
 
 def _parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Run Phase Alpha MazeEval-style strategy-degradation experiments.")
-    p.add_argument("--phase", choices=["debug", "smoke", "single", "single_expel_pilot", "mad", "core"], default="smoke")
+    p.add_argument(
+        "--phase",
+        choices=["debug", "smoke", "single", "single_expel_pilot", "mas_nomem", "mad", "core"],
+        default="smoke",
+        help="'mad' is a deprecated alias of 'mas_nomem' (no debate happens at debate_rounds=1).",
+    )
     p.add_argument("--model", default="", help="OpenAI-compatible model id.")
     p.add_argument("--base-url", default="", help="OpenAI-compatible base URL.")
     p.add_argument("--api-key-env", default="", help="Environment variable holding the API key.")

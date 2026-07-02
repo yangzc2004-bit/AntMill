@@ -948,23 +948,27 @@ async def write_maze_experience(
 ) -> None:
     if memory.mode == "none" or write_mode == "none":
         return
-    if write_mode == "direct":
+    write_mode = _canonical_write_mode(write_mode)
+    # "scripted" / "scripted_gated" inject fixed researcher-written templates. They are
+    # upper-bound injection controls for what one globally shared strategy text can do;
+    # they are NOT learned experience and must not be read as an experience-writing arm.
+    if write_mode == "scripted":
         for agent in episode.agents:
-            insight = _direct_insight(agent.route)
+            insight = _scripted_insight(agent.route)
             support = cfg.n_solvers if agent.success else max(0, cfg.n_solvers // 2)
             _apply_maze_insight(memory, audit, insight, episode, agent.agent_id, cfg, t, write_mode, support)
         return
 
-    if write_mode in {"oracle", "self_eval"}:
+    if write_mode in {"scripted_gated", "self_eval"}:
         for agent in episode.agents:
-            if write_mode == "oracle" and not agent.success:
+            if write_mode == "scripted_gated" and not agent.success:
                 insight = _route_avoid_insight(agent.route)
                 support = 0
             elif write_mode == "self_eval" and not _self_eval_route(agent.route):
                 insight = _route_avoid_insight(agent.route)
                 support = 0
             else:
-                insight = _direct_insight(agent.route)
+                insight = _scripted_insight(agent.route)
                 support = cfg.n_solvers
             _apply_maze_insight(memory, audit, insight, episode, agent.agent_id, cfg, t, write_mode, support)
         return
@@ -1055,7 +1059,12 @@ def _episode_quality(episode: MazeEpisodeResult, agent_id: int) -> dict[str, Any
     }
 
 
-def _direct_insight(route: dict[str, Any]) -> dict[str, str]:
+def _canonical_write_mode(write_mode: str) -> str:
+    return {"direct": "scripted", "oracle": "scripted_gated"}.get(write_mode, write_mode)
+
+
+def _scripted_insight(route: dict[str, Any]) -> dict[str, str]:
+    """Fixed researcher-written template (scripted-injection control), not learned experience."""
     if route.get("success") and not route.get("looped") and float(route.get("invalid_move_rate") or 0.0) <= 0.25:
         return {
             "kind": "do",
@@ -1312,7 +1321,7 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
         return [
             {"run_id": "maze_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
             {"run_id": "maze_single_reviewer", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "reviewer"},
-            {"run_id": "maze_single_oracle", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "oracle"},
+            {"run_id": "maze_single_scripted_gated", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "scripted_gated"},
             {"run_id": "maze_single_self_eval", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "self_eval"},
             {
                 "run_id": "maze_single_frozen_reviewer",
@@ -1321,10 +1330,10 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
                 "maze_write_mode": "reviewer",
             },
             {
-                "run_id": "maze_single_frozen_oracle",
+                "run_id": "maze_single_frozen_scripted_gated",
                 "n_solvers": 1,
                 "memory_mode": "frozen",
-                "maze_write_mode": "oracle",
+                "maze_write_mode": "scripted_gated",
             },
         ]
     if phase == "single_expel_pilot":
@@ -1332,23 +1341,23 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
             {"run_id": "single_nomem_state_guided", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
             {"run_id": "single_expel_reviewer", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "reviewer"},
         ]
-    if phase == "mad":
+    if phase in {"mas_nomem", "mad"}:  # "mad" is a deprecated alias; no debate happens at debate_rounds=1
         return [
             {"run_id": "maze_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
-            {"run_id": "maze_mad_nomem", "n_solvers": 4, "memory_mode": "none", "maze_write_mode": "none"},
+            {"run_id": "maze_mas_nomem", "n_solvers": 4, "memory_mode": "none", "maze_write_mode": "none"},
         ]
     if phase == "core":
         return [
-            {"run_id": "maze_mad_private_reviewer", "n_solvers": 4, "memory_mode": "private", "maze_write_mode": "reviewer"},
-            {"run_id": "maze_mad_shared_reviewer", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "reviewer"},
-            {"run_id": "maze_mad_shared_oracle", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "oracle"},
-            {"run_id": "maze_mad_frozen_reviewer", "n_solvers": 4, "memory_mode": "frozen", "maze_write_mode": "reviewer"},
-            {"run_id": "maze_mad_shared_direct", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "direct"},
+            {"run_id": "maze_mas_private_reviewer", "n_solvers": 4, "memory_mode": "private", "maze_write_mode": "reviewer"},
+            {"run_id": "maze_mas_shared_reviewer", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "reviewer"},
+            {"run_id": "maze_mas_shared_scripted_gated", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "scripted_gated"},
+            {"run_id": "maze_mas_frozen_reviewer", "n_solvers": 4, "memory_mode": "frozen", "maze_write_mode": "reviewer"},
+            {"run_id": "maze_mas_shared_scripted", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "scripted"},
         ]
     if phase == "smoke":
         return [
             {"run_id": "maze_smoke_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
-            {"run_id": "maze_smoke_shared_direct", "n_solvers": 3, "memory_mode": "shared", "maze_write_mode": "direct"},
+            {"run_id": "maze_smoke_shared_scripted", "n_solvers": 3, "memory_mode": "shared", "maze_write_mode": "scripted"},
         ]
     raise ValueError(f"unknown maze phase {phase!r}")
 

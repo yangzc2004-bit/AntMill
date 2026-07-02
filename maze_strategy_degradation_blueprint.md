@@ -35,7 +35,7 @@ Primary comparison:
 
 - `single no-memory`
 - `single ExpeL reviewer-write`
-- `single ExpeL oracle/success-write`
+- `single ExpeL scripted_gated` (injection control, formerly oracle/success-write)
 - `single ExpeL self-eval-write`
 
 ### RQ2. Is multi-agent execution itself pathological?
@@ -46,16 +46,17 @@ unstable before shared memory is introduced.
 Primary comparison:
 
 - `single no-memory`
-- `MAD no-memory`
+- `MAS no-memory` (independent solvers; historically labeled "MAD", but with
+  `debate_rounds=1` no debate occurs and agents never see peer proposals)
 
 ### RQ3. Does shared experience create a positive-feedback channel for strategy degradation?
 
 Core comparison:
 
 - `private memory` vs `shared memory`
-- `oracle-write` vs `consensus/reviewer-write`
+- `scripted_gated` (injection control, formerly oracle-write) vs `consensus/reviewer-write`
 - `frozen memory` vs active retrieval
-- `reviewer-write` vs direct-vote-write
+- `reviewer-write` vs `scripted` (injection control, formerly direct-write)
 
 Evidence for the mechanism should appear as:
 
@@ -235,10 +236,12 @@ The reviewer must not write:
 Conditions:
 
 - `reviewer-write`: ExpeL-like reviewer summarizes trajectory logs.
-- `oracle/success-write`: reviewer receives success/quality labels from the runner, not hidden
-  routes.
 - `self-eval-write`: agent/reviewer estimates whether a trajectory was good from visible logs.
-- `direct-vote-write`: agents vote or directly contribute strategy rules.
+- `scripted` (formerly `direct-write`) and `scripted_gated` (formerly `oracle/success-write`):
+  fixed researcher-written strategy templates injected per route outcome. These are
+  **scripted-injection upper-bound controls** — they bound what one globally shared strategy
+  text can do to behavior, and must never be presented as learned or agent-contributed
+  experience. No LLM writes them and no voting occurs in them.
 
 Reviewer visibility should mimic realistic MAS systems: logs, success, steps, invalid moves,
 revisits, token/tool cost, and loop indicators. The reviewer should not see the hidden shortest
@@ -358,7 +361,7 @@ Conditions:
 
 - `single no-memory`
 - `single ExpeL reviewer-write`
-- `single ExpeL oracle/success-write`
+- `single ExpeL scripted_gated` (injection control, formerly oracle/success-write)
 - `single ExpeL self-eval-write`
 
 Recommended pilot:
@@ -381,17 +384,18 @@ Goal: show multi-agent execution is not itself pathological.
 Conditions:
 
 - `single no-memory`
-- `MAD no-memory`
+- `MAS no-memory`
 
 ### Stage 3. Core MAS Memory Matrix
 
-Conditions:
+Conditions (MAS = independent solvers with shared experiential memory; "MAD" is the historical
+label, but no debate occurs at `debate_rounds=1`):
 
-- `MAD + private memory + reviewer-write`
-- `MAD + shared memory + reviewer-write`
-- `MAD + shared memory + oracle/success-write`
-- `MAD + frozen shared memory`
-- `MAD + shared memory + direct-vote-write`
+- `MAS + private memory + reviewer-write`
+- `MAS + shared memory + reviewer-write`
+- `MAS + shared memory + scripted_gated (formerly oracle/success-write; scripted-injection control)`
+- `MAS + frozen shared memory`
+- `MAS + shared memory + scripted (formerly direct-write; scripted-injection control)`
 
 Goal: identify whether shared memory, active retrieval, reviewer/consensus writing, or direct vote
 drives degradation.

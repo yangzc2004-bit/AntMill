@@ -27,8 +27,10 @@ class Config:
     solver_temp: float = 0.8
     library_cap: int = 60
 
-    # --- v2 (SEC / MAD) knobs; defaults preserve the original single-pass behavior ---
-    debate_rounds: int = 1  # R; 1 = no debate (faithful single-pass), MAD arms set 3
+    # --- v2 (SEC) knobs; defaults preserve the original single-pass behavior ---
+    # NOTE: with debate_rounds=1 agents never see peer proposals; multi-agent arms
+    # are then "independent solvers with shared experiential memory", not debate.
+    debate_rounds: int = 1  # R; 1 = no debate (single-pass); >=2 enables peer-visible revision
     retrieval_k: int = 0  # 0 = inject whole library (legacy); >0 = ExpeL-style top-k retrieval
     memory_mode: str = "shared"  # none | private | shared | frozen
     anchor_rho: float = -1.0  # prob a train batch is labeled by gold; -1 = derive from use_ground_truth
@@ -42,7 +44,11 @@ class Config:
     maze_agent_mode: str = "prompt_only"  # prompt_only | state_guided | stateful_dfs | oracle_dfs
     maze_min_shortest: int = 0
     maze_max_shortest: int = 0
-    maze_write_mode: str = "reviewer"  # reviewer | direct | oracle | self_eval | none
+    # reviewer | scripted | scripted_gated | self_eval | none.
+    # "scripted" / "scripted_gated" inject fixed researcher-written strategy templates
+    # (upper-bound injection controls, NOT learned experience). Legacy names
+    # "direct" / "oracle" are accepted and canonicalized in __post_init__.
+    maze_write_mode: str = "reviewer"
     maze_eval_feedback: bool = False  # expose success/cost summaries to the reviewer, never to solvers
     skip_final_train: bool = False  # skip train/write after the final evaluation round
 
@@ -91,7 +97,12 @@ class Config:
             raise ValueError("maze_min_shortest and maze_max_shortest must be non-negative.")
         if self.maze_max_shortest and self.maze_max_shortest < self.maze_min_shortest:
             raise ValueError("maze_max_shortest must be >= maze_min_shortest when set.")
-        if self.maze_write_mode not in {"reviewer", "direct", "oracle", "self_eval", "none"}:
+        legacy_write_modes = {"direct": "scripted", "oracle": "scripted_gated"}
+        if self.maze_write_mode in legacy_write_modes:
+            canonical = legacy_write_modes[self.maze_write_mode]
+            self.notes.append(f"maze_write_mode {self.maze_write_mode!r} is deprecated; canonicalized to {canonical!r}")
+            self.maze_write_mode = canonical
+        if self.maze_write_mode not in {"reviewer", "scripted", "scripted_gated", "self_eval", "none"}:
             raise ValueError(f"invalid maze_write_mode: {self.maze_write_mode!r}")
 
     def cache_path(self) -> Path:

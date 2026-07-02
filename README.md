@@ -22,7 +22,9 @@ Research work in progress. The active track is **Phase Alpha**, a visual maze pi
 - local observations rather than full-map planning;
 - generic ExpeL-style experience extraction, not maze-specific answer caching;
 - single-agent ExpeL calibration;
-- MAS controls for private, shared, frozen, reviewer-written, direct, and oracle-written memory;
+- MAS controls for private, shared, frozen, and reviewer-written memory, plus scripted-injection
+  upper-bound controls (formerly "direct"/"oracle": fixed researcher-written templates, not
+  learned experience);
 - replayable HTML trajectories, route atlas images, memory audits, and summary curves.
 
 The earlier QA/math preregistration files are retained as a legacy exploration track. They are

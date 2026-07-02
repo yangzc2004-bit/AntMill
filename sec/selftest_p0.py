@@ -462,6 +462,79 @@ def _maze_stats_cli_checks() -> None:
     print("p0 maze_stats CLI checks OK")
 
 
+# --- T0.5 honest naming -------------------------------------------------------
+
+
+def _naming_config_checks() -> None:
+    legacy = _cfg(maze_write_mode="direct")
+    assert legacy.maze_write_mode == "scripted", legacy.maze_write_mode
+    assert any("deprecated" in note for note in legacy.notes)
+    legacy_oracle = _cfg(maze_write_mode="oracle")
+    assert legacy_oracle.maze_write_mode == "scripted_gated"
+    canonical = _cfg(maze_write_mode="scripted_gated")
+    assert canonical.maze_write_mode == "scripted_gated" and not canonical.notes
+    raised = False
+    try:
+        _cfg(maze_write_mode="bogus")
+    except ValueError:
+        raised = True
+    assert raised, "invalid maze_write_mode must still raise"
+    print("p0 naming config checks OK")
+
+
+def _naming_arm_checks() -> None:
+    from .maze_alpha import _arms_for_phase
+
+    canonical_modes = {"reviewer", "scripted", "scripted_gated", "self_eval", "none"}
+    for phase in ("debug", "smoke", "single", "single_expel_pilot", "mas_nomem", "core"):
+        for arm in _arms_for_phase(phase):
+            assert "mad" not in str(arm.get("run_id", "")), f"run_id still says mad: {arm}"
+            assert arm.get("maze_write_mode") in canonical_modes, arm
+    assert _arms_for_phase("mad") == _arms_for_phase("mas_nomem"), "'mad' must alias 'mas_nomem'"
+    print("p0 naming arm checks OK")
+
+
+async def _scripted_e2e_checks() -> None:
+    async def _mock(self, messages, *, temp=0.0, model=None, max_tokens=None, tag="", cache_salt=""):
+        user = messages[-1]["content"]
+        if "Manhattan distance: 0" in user:
+            return "At the goal. Action: submit"
+        return "Explore. Action: move:right"
+
+    original = LLMClient.chat
+    LLMClient.chat = _mock  # type: ignore[assignment]
+    try:
+        cfg = _cfg(memory_mode="shared", maze_write_mode="scripted", n_solvers=2, max_steps=3)
+        llm = LLMClient(cfg)
+        memory = InsightMemory(cfg)
+        audit = MazeMemoryAudit()
+        task = make_maze_tasks(split="train", n=1, seed=8, width=9, height=9, family="benign")[0]
+        episode = await run_maze_episode(task, memory, cfg, llm, audit=audit, t=0)
+        await write_maze_experience(episode, memory, cfg, llm, audit=audit, t=0, write_mode=cfg.maze_write_mode)
+        assert memory.size() > 0, "scripted write mode must still populate the pool"
+        assert all(w["write_mode"] == "scripted" for w in audit.writes)
+        # legacy name routed through the same canonical branch
+        await write_maze_experience(episode, memory, cfg, llm, audit=audit, t=1, write_mode="direct")
+        assert all(w["write_mode"] in {"scripted"} for w in audit.writes)
+    finally:
+        LLMClient.chat = original  # type: ignore[assignment]
+    print("p0 scripted e2e checks OK")
+
+
+def _doc_naming_checks() -> None:
+    allowed_markers = ("historical", "historically", "旧称", "deprecated", "labeled")
+    for name in ("README.md", "maze_strategy_degradation_blueprint.md"):
+        path = Path(name)
+        if not path.exists():
+            continue
+        for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+            if "MAD" in line:
+                assert any(marker in line for marker in allowed_markers), (
+                    f"{name}:{i} mentions MAD outside a historical-note context: {line!r}"
+                )
+    print("p0 doc naming checks OK")
+
+
 def main() -> None:
     _cache_key_checks()
     asyncio.run(_cache_salt_roundtrip_checks())
@@ -475,6 +548,10 @@ def main() -> None:
     _summarize_compat_checks()
     _paired_stats_checks()
     _maze_stats_cli_checks()
+    _naming_config_checks()
+    _naming_arm_checks()
+    asyncio.run(_scripted_e2e_checks())
+    _doc_naming_checks()
     print("selftest_p0 OK")
 
 

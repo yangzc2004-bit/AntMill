@@ -1,5 +1,30 @@
 # 变更日志
 
+## 未发布 - P0 地基修复（可信度改造）
+
+### 变更
+
+- LLM cache key 新增执行上下文盐（run_id/seed/轮次/任务/agent/步），修复相同 prompt 跨轮、跨条件
+  命中同一缓存导致"轮次动力学是重放"的问题；reviewer 蒸馏调用保留缓存。
+- 经验 sanitizer 收紧：拦截 ≥2 个有序方向词的路线片段与具体任务标识符；被拦截的经验直接丢弃并计入
+  `sanitizer_reject_rate`，不再替换为研究者手写 fallback 文本（经验池中不再可能出现研究者书写的内容）。
+- 机制指标重定义：新增 `retrieval_entropy_norm`、`memory_effective_size`、逐条经验的
+  `retrieval_share_series`、`route_diversity_efficient`（效率条件化多样性）、`success_excess_steps`
+  与 `failure_rate` 分离；旧 `retrieval_concentration`（max/total，是池大小的确定性函数）降级为
+  deprecated 的 `retrieval_top1_share`。`mas_antmill_rate` 进入标准汇总输出。
+- 新增配对统计管线 `sec/maze_stats.py`：按 (seed, task, agent) 在相同 heldout 迷宫上做配对 bootstrap
+  95% CI，强制随均值输出 per-seed 表；对旧 result.json 可回溯使用。
+- 命名诚实化：`maze_write_mode` 的 `direct`/`oracle` 更名为 `scripted`/`scripted_gated`
+  （固定研究者模板的 scripted-injection 上界对照，不是学习到的经验；旧名保留为废弃别名）；
+  run_id 前缀 `maze_mad_*` 更名为 `maze_mas_*`（`debate_rounds=1` 时不存在 debate，多智能体条件
+  实为 independent solvers with shared experiential memory）；phase `mad` 保留为 `mas_nomem` 的别名。
+- 早期条目中的 "shared direct-vote memory"、"shared oracle memory"、"MAD" 等旧称谓按上述映射理解。
+
+### 验证
+
+- 新增 `python -m sec.selftest_p0`，覆盖 cache 盐、sanitizer 拒绝、熵/份额/条件多样性指标、
+  配对统计与旧数据兼容性；全部 selftest 与旧 run 汇总脚本回归通过。
+
 ## 未发布 - Phase Alpha 迷宫策略退化实验
 
 ### 新增

@@ -3,6 +3,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
@@ -16,6 +17,17 @@
 
 \begin{document}
 \maketitle
+
+\begin{center}
+\fcolorbox{red!70!black}{red!4}{\parbox{0.92\linewidth}{%
+\textbf{草稿状态（P0 冻结）。}本稿全部数字来自 pilot 运行（heldout 仅 3 张迷宫、seed $\le 3$、
+无置信区间，且 LLM 缓存未加轮次盐，重复轮次部分为缓存重放）。实验矩阵正在按预注册方案重跑；
+\textbf{在新数据落地前，请勿引用本稿中的任何数字}。术语更名：原 ``direct''/``oracle'' 写入条件注入的
+是固定的研究者手写策略模板，现更名为 \emph{scripted}/\emph{scripted\_gated}
+（scripted-injection 上界对照，不是学习到的经验）；多智能体条件为
+independent solvers with shared experiential memory（旧称 MAD，\texttt{debate\_rounds}$=1$ 时
+不存在 debate）。}}
+\end{center}
 
 \begin{abstract}
 本文档整理当前 MazeEval-style 迷宫实验的阶段性结果。我们的核心问题不是“错误经验污染记忆”，而是更细的一类机制：一些局部上可行、文本上正确的策略，经过多智能体系统中的经验写入、共享检索和迭代复用后，被正反馈不断放大，最终导致全局低效、路线同质化，以及没有明显报错的循环行为。当前 pilot 结果显示，共享经验本身并不一定有害；reviewer 写入的共享经验在短迭代下可以提升表现。但当少量 direct/oracle 风格经验被高度集中地检索时，系统会出现更高的路径成本、更高的循环率，以及在更长反馈链条下的成功率崩溃。

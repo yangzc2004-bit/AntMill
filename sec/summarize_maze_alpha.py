@@ -17,13 +17,23 @@ DEFAULT_RUNS = {
     "shared_oracle": "runs_maze_alpha_mas_shared_oracle_h3_t3_v1_v3_c4/n4_gt_false_seed0_maze_mad_shared_oracle/result.json",
 }
 
-CONDITION_ORDER = ["frozen", "private_fixed", "shared_reviewer", "shared_direct", "shared_oracle"]
+CONDITION_ORDER = [
+    "frozen",
+    "private_fixed",
+    "shared_reviewer",
+    "shared_direct",
+    "shared_oracle",
+    "shared_scripted",
+    "shared_scripted_gated",
+]
 CONDITION_COLORS = {
     "frozen": "#8a8f98",
     "private_fixed": "#4c78a8",
     "shared_reviewer": "#54a24b",
     "shared_direct": "#e45756",
     "shared_oracle": "#b279a2",
+    "shared_scripted": "#e45756",
+    "shared_scripted_gated": "#b279a2",
 }
 CONDITION_STYLES = {
     "frozen": "-",
@@ -31,7 +41,21 @@ CONDITION_STYLES = {
     "shared_reviewer": "-",
     "shared_direct": "--",
     "shared_oracle": ":",
+    "shared_scripted": "--",
+    "shared_scripted_gated": ":",
 }
+# Honest display names: "direct"/"oracle" write modes inject fixed researcher-written
+# templates (scripted-injection upper-bound controls), not learned experience.
+CONDITION_LABELS = {
+    "shared_direct": "shared_scripted (injection)",
+    "shared_oracle": "shared_scripted_gated (injection)",
+    "shared_scripted": "shared_scripted (injection)",
+    "shared_scripted_gated": "shared_scripted_gated (injection)",
+}
+
+
+def _display(label: str) -> str:
+    return CONDITION_LABELS.get(label, label)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -181,7 +205,7 @@ def _plot_curves(rows: list[dict[str, Any]], path: Path, *, show_error: bool = F
                 [row["t"] for row in series],
                 [row[key] for row in series],
                 marker="o",
-                label=label,
+                label=_display(label),
                 color=CONDITION_COLORS.get(label),
                 linestyle=CONDITION_STYLES.get(label, "-"),
             )
@@ -235,7 +259,7 @@ def _plot_final_bars(rows: list[dict[str, Any]], path: Path) -> None:
         ax.bar(x, [float(row.get(key) or 0.0) for row in final_rows], color=[CONDITION_COLORS.get(row["condition"]) for row in final_rows])
         ax.set_title(f"Final {title}")
         ax.set_xticks(list(x))
-        ax.set_xticklabels([row["condition"] for row in final_rows], rotation=35, ha="right")
+        ax.set_xticklabels([_display(str(row["condition"])) for row in final_rows], rotation=35, ha="right")
         ax.grid(True, axis="y", alpha=0.25)
     fig.tight_layout()
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -307,7 +331,7 @@ def _write_report(rows: list[dict[str, Any]], mean_rows: list[dict[str, Any]], m
     ]
     for condition, row in final.items():
         lines.append(
-            f"| {condition} | {counts.get(condition, int(row.get('n_seeds', 0)))} | "
+            f"| {_display(str(condition))} | {counts.get(condition, int(row.get('n_seeds', 0)))} | "
             f"{fmt(row.get('success_rate'))} | {fmt(row.get('cost_ratio'))} | "
             f"{fmt(row.get('success_excess_steps'))} | {fmt(row.get('loop_rate'))} | "
             f"{fmt(row.get('mas_antmill_rate'))} | {fmt(row.get('route_diversity'))} | "
@@ -319,10 +343,11 @@ def _write_report(rows: list[dict[str, Any]], mean_rows: list[dict[str, Any]], m
             "",
             "## Reading",
             "",
-            "- Frozen memory is the storage-only control: writes occur but retrieval concentration stays zero and behavior is unchanged.",
-            "- Shared reviewer improves success and cost while monotonically compressing route diversity.",
-            "- Private fixed memory is weaker and less stable, but preserves more diversity than shared reviewer.",
-            "- Shared direct/oracle collapse onto one highly retrieved correct strategy and show worse success, cost, loop, stagnation, and revisit metrics.",
+            "- Frozen is the storage-only control (writes occur, retrieval is disabled).",
+            "- scripted / scripted_gated arms inject fixed researcher-written templates; they are",
+            "  upper-bound injection controls, not learned experience.",
+            "- Interpret differences only together with the paired CIs and per-seed table from",
+            "  `python -m sec.maze_stats`; this report shows means without uncertainty.",
             "",
             "## Top Retrieved Memories",
             "",

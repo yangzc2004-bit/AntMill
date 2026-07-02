@@ -27,14 +27,36 @@ DEFAULT_RUNS = {
     "shared_oracle:2": "runs_maze_alpha_mas_shared_oracle_h3_t3_seed2_v1_v3_c4/n4_gt_false_seed2_maze_mad_shared_oracle/result.json",
 }
 
-CONDITION_ORDER = ["frozen", "private_fixed", "shared_reviewer", "shared_direct", "shared_oracle"]
+CONDITION_ORDER = [
+    "frozen",
+    "private_fixed",
+    "shared_reviewer",
+    "shared_direct",
+    "shared_oracle",
+    "shared_scripted",
+    "shared_scripted_gated",
+]
 CONDITION_COLORS = {
     "frozen": "#8a8f98",
     "private_fixed": "#4c78a8",
     "shared_reviewer": "#54a24b",
     "shared_direct": "#e45756",
     "shared_oracle": "#b279a2",
+    "shared_scripted": "#e45756",
+    "shared_scripted_gated": "#b279a2",
 }
+# "direct"/"oracle" arms inject fixed researcher-written templates (scripted-injection
+# controls); legends must say so.
+CONDITION_LABELS = {
+    "shared_direct": "shared_scripted (injection)",
+    "shared_oracle": "shared_scripted_gated (injection)",
+    "shared_scripted": "shared_scripted (injection)",
+    "shared_scripted_gated": "shared_scripted_gated (injection)",
+}
+
+
+def _display(label: str) -> str:
+    return CONDITION_LABELS.get(label, label)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -202,7 +224,7 @@ def _plot_scatter(rows: list[dict[str, Any]], path: Path) -> None:
                 [row[key] for row in series],
                 s=44,
                 alpha=0.78,
-                label=label,
+                label=_display(label),
                 color=CONDITION_COLORS.get(label),
                 edgecolor="white",
                 linewidth=0.5,
@@ -237,7 +259,7 @@ def _plot_provenance(memory_rows: list[dict[str, Any]], path: Path) -> None:
                 [row[y_key] for row in series],
                 s=42,
                 alpha=0.78,
-                label=label,
+                label=_display(label),
                 color=CONDITION_COLORS.get(label),
                 edgecolor="white",
                 linewidth=0.5,
