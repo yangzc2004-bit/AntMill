@@ -1,5 +1,24 @@
 # 变更日志
 
+## 未发布 - P1 经验机制忠实化（ExpeL / Generative Agents 对齐）
+
+### 新增
+
+- ExpeL 忠实的经验池演化（`sec/expel_ops.py`，`memory_write_protocol=expel_ops`）：reviewer LLM
+  看到带编号与票数的现有经验池和新一批轨迹，自主发出 ADD/EDIT/UPVOTE/DOWNVOTE 操作；新增经验
+  初始 2 票、票数降到 0 即移除（ExpeL 语义）；代码只执行不决策，sanitizer 是唯一否决（拒绝即
+  丢弃并审计），重复 ADD 自动转 UPVOTE。"共识强化"从叙事变为被试机制。
+- 任务条件化检索 query：`_agent_query` 由 agent 可见的起点信息（目标方位、Manhattan 距离、
+  起点开口、family、尺寸）构造，逐任务变化；刻意不含裸坐标，避免 query 成为按迷宫缓存答案的键。
+- GA-style 检索打分（`retrieval_scoring=ga`）：min-max 归一的 relevance（稳定 md5 hashing
+  embedding 余弦；原 `hashing_embedding` 依赖进程随机化 `hash()`，跨进程不可复现，不能用于检索）
+  + `ga_lambda`·importance（共识票数）+ `ga_recency`·recency（`last_access_t`，检索即刷新，
+  即 Generative Agents 的使用反馈通道）。`ga_lambda` 是 E3 剂量-反应实验的正反馈强度旋钮。
+- CLI 接线：`--write-protocol`、`--retrieval-scoring`、`--ga-lambda`、`--ga-recency`。
+- README 新增 Design-Point Fidelity 表，逐组件声明与 ExpeL/GA 的对齐点和偏离
+  （含 Reflexion 重试未实现的显式声明，计划作为消融）。
+- 新增 `python -m sec.selftest_p1` 覆盖上述全部机制。
+
 ## 未发布 - P0 地基修复（可信度改造）
 
 ### 变更

@@ -110,8 +110,23 @@ private pools or a shared global pool. The maze implementation is only a task ad
 trajectory logs and quality fields for the generic extractor in `sec/expel.py`.
 
 The writer is explicitly forbidden from storing route answers. Memories must not include maze IDs,
-coordinates, full paths, or fixed action scripts. The sanitizer rejects over-specific insights so
-that the experiment tests strategy reuse, not memorized maze solutions.
+coordinates, full paths, or fixed action scripts. The sanitizer rejects over-specific insights
+(dropping them, never rewriting them) so that the experiment tests strategy reuse, not memorized
+maze solutions, and so that no researcher-authored text can enter the memory pool.
+
+## Design-Point Fidelity
+
+The memory mechanisms are instantiations of published design points, not homemade inventions.
+Deviations are declared here rather than discovered by reviewers.
+
+| Component | Published source | Our instantiation | Deviation and reason |
+|---|---|---|---|
+| Insight extraction | ExpeL (Zhao et al., 2024) contrastive success/failure distillation | `sec/expel.py` `distill_expel_insights`: do/avoid lessons distilled from episode logs + quality signals | Reviewer sees the last 8 steps of each trace, not full trajectories (token budget) |
+| Pool evolution | ExpeL insight operations ADD / EDIT / UPVOTE / DOWNVOTE, LLM-decided | `sec/expel_ops.py` + `memory_write_protocol=expel_ops`: reviewer LLM sees the numbered pool and issues ops; ADD starts at 2 votes, items removed at 0; code executes, never decides | Sanitizer may veto ADD/EDIT text (dropped + audited); duplicate ADD converts to UPVOTE. Legacy `distill` protocol (code-side similarity merge) kept as an ablation |
+| Retrieval | ExpeL task-similarity top-k (Faiss embedding) | Task-conditioned query from agent-visible start features; top-k by deterministic hashing-embedding cosine | Hashing embedding instead of a learned encoder (upgrade to sentence-transformer planned; conclusions must be re-checked then) |
+| Retrieval scoring | Generative Agents (Park et al., 2023): relevance + importance + recency, min-max normalized | `retrieval_scoring=ga` in `sec/memory.py`; retrieval refreshes `last_access_t` (usage feedback) | Importance = consensus votes instead of model-assigned poignancy; `ga_lambda` deliberately exposed as the positive-feedback strength dial (experimental knob, not a published default) |
+| Experience gathering | ExpeL uses Reflexion-style retry to produce success/failure pairs on the same task | Single-pass episodes | **Not implemented.** Declared deviation; planned as an ablation showing degradation direction is unchanged with/without retry |
+| Success signal | ExpeL uses environment success | Runner-computed success/quality flags only; reviewer never sees hidden shortest paths | Faithful |
 
 ## Code Layout
 
@@ -119,8 +134,10 @@ that the experiment tests strategy reuse, not memorized maze solutions.
 |---|---|
 | `sec/config.py` | shared run configuration, including maze and memory knobs |
 | `sec/llm.py` | async OpenAI-compatible client with disk cache, retries, throttle |
-| `sec/memory.py` | shared / private / frozen insight pools and top-k retrieval |
-| `sec/expel.py` | generic ExpeL-style experience distillation |
+| `sec/memory.py` | shared / private / frozen insight pools; lexical or GA-style scored retrieval |
+| `sec/expel.py` | generic ExpeL-style experience distillation and sanitizer |
+| `sec/expel_ops.py` | ExpeL-faithful LLM-issued pool operations (ADD/EDIT/UPVOTE/DOWNVOTE) |
+| `sec/maze_stats.py` | paired route-level bootstrap statistics and per-seed tables |
 | `sec/maze_env.py` | generated maze environment, solver-visible observations, shortest-path evaluator |
 | `sec/maze_alpha.py` | Phase Alpha experiment loop, metrics, replays, route atlas, memory audit |
 | `sec/run_maze_alpha.py` | CLI entrypoint for maze experiments |
@@ -129,6 +146,7 @@ that the experiment tests strategy reuse, not memorized maze solutions.
 | `sec/maze_mechanism_audit.py` | memory provenance and case-study helper |
 | `sec/summarize_maze_alpha.py` | aggregate summaries and figures |
 | `sec/selftest_maze.py` | offline maze pipeline self-test |
+| `sec/selftest_p0.py` / `sec/selftest_p1.py` | credibility-fix (P0) and memory-fidelity (P1) self-tests |
 | `sec/fusion.py` / `sec/run_phases.py` | legacy QA/math SEC track retained for comparison |
 
 ## Setup

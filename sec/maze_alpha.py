@@ -1373,6 +1373,10 @@ def build_maze_alpha_configs(args: argparse.Namespace) -> list[Config]:
                 "maze_agent_mode": args.maze_agent_mode,
                 "maze_min_shortest": args.maze_min_shortest,
                 "maze_max_shortest": args.maze_max_shortest,
+                "memory_write_protocol": getattr(args, "write_protocol", "distill"),
+                "retrieval_scoring": getattr(args, "retrieval_scoring", "similarity"),
+                "ga_lambda": getattr(args, "ga_lambda", 1.0),
+                "ga_recency": getattr(args, "ga_recency", 0.0),
             }
             params.update(arm)
             configs.append(Config(**params))

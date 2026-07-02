@@ -34,6 +34,20 @@ def _parser() -> argparse.ArgumentParser:
     p.add_argument("--maze-agent-mode", default="prompt_only", choices=["prompt_only", "state_guided", "stateful_dfs", "oracle_dfs"])
     p.add_argument("--maze-min-shortest", type=int, default=0)
     p.add_argument("--maze-max-shortest", type=int, default=0)
+    p.add_argument(
+        "--write-protocol",
+        choices=["distill", "expel_ops"],
+        default="distill",
+        help="Reviewer write path: legacy contrastive distill vs ExpeL LLM-issued ADD/EDIT/UPVOTE/DOWNVOTE.",
+    )
+    p.add_argument(
+        "--retrieval-scoring",
+        choices=["similarity", "ga"],
+        default="similarity",
+        help="Retrieval ranking: legacy lexical top-k vs GA-style relevance+importance+recency.",
+    )
+    p.add_argument("--ga-lambda", type=float, default=1.0, help="Importance weight (positive-feedback dial) in GA scoring.")
+    p.add_argument("--ga-recency", type=float, default=0.0, help="Recency weight in GA scoring (GA-faithful = 1.0).")
     p.add_argument("--solver-temp", type=float, default=0.7)
     p.add_argument("--max-tokens-solver", type=int, default=256)
     p.add_argument("--max-tokens-reviewer", type=int, default=512)

@@ -256,6 +256,31 @@ def _render_pool_checks() -> None:
     print("p1 render pool checks OK")
 
 
+def _cli_wiring_checks() -> None:
+    from .maze_alpha import build_maze_alpha_configs
+    from .run_maze_alpha import _parser
+
+    args = _parser().parse_args(
+        [
+            "--phase", "core",
+            "--write-protocol", "expel_ops",
+            "--retrieval-scoring", "ga",
+            "--ga-lambda", "0.5",
+            "--ga-recency", "1.0",
+            "--api-key-env", "SEC_MOCK_KEY",
+        ]
+    )
+    configs = build_maze_alpha_configs(args)
+    assert configs, "core phase must produce arms"
+    for cfg in configs:
+        assert cfg.memory_write_protocol == "expel_ops"
+        assert cfg.retrieval_scoring == "ga"
+        assert cfg.ga_lambda == 0.5 and cfg.ga_recency == 1.0
+    defaults = build_maze_alpha_configs(_parser().parse_args(["--phase", "core", "--api-key-env", "SEC_MOCK_KEY"]))
+    assert all(c.memory_write_protocol == "distill" and c.retrieval_scoring == "similarity" for c in defaults)
+    print("p1 CLI wiring checks OK")
+
+
 def main() -> None:
     _query_checks()
     _embedding_checks()
@@ -266,6 +291,7 @@ def main() -> None:
     _ops_apply_checks()
     _render_pool_checks()
     asyncio.run(_ops_e2e_checks())
+    _cli_wiring_checks()
     print("selftest_p1 OK")
 
 
