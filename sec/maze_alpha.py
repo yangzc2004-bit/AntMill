@@ -15,7 +15,7 @@ from typing import Any
 
 from .agentic import parse_action
 from .config import Config, condition_name
-from .expel import ExpeLAdapter, distill_expel_insights, looks_over_specific, parse_expel_insights, sanitize_expel_insight
+from .expel import ExpeLAdapter, distill_expel_insights, sanitize_expel_insight
 from .llm import LLMClient
 from .maze_env import DIRS, MazeEnv, MazeTask, make_maze_tasks
 from .memory import InsightMemory
@@ -82,6 +82,7 @@ class MazeMemoryAudit:
     def __init__(self) -> None:
         self.writes: list[dict[str, Any]] = []
         self.retrievals: list[dict[str, Any]] = []
+        self.rejections: list[dict[str, Any]] = []
 
     def record_retrieval(self, *, t: int, task_id: str, agent_id: int, items: list[dict[str, Any]]) -> None:
         for item in items:
@@ -121,11 +122,19 @@ class MazeMemoryAudit:
         insight.setdefault("retrieval_count", 0)
         self.writes.append({"insight": dict(insight), **provenance})
 
+    def record_rejection(self, *, t: int, task_id: str, write_mode: str, text: str, reason: str) -> None:
+        self.rejections.append(
+            {"t": t, "task_id": task_id, "write_mode": write_mode, "text": text, "reason": reason}
+        )
+
     def public(self, memory: InsightMemory) -> dict[str, Any]:
         items = memory.all_items()
+        attempts = len(self.rejections) + len(self.writes)
         return {
             "writes": self.writes,
             "retrievals": self.retrievals,
+            "sanitizer_rejects": self.rejections,
+            "sanitizer_reject_rate": len(self.rejections) / attempts if attempts else 0.0,
             "memory_items": items,
             "retrieval_concentration": retrieval_concentration(items),
         }
@@ -866,16 +875,42 @@ async def write_maze_experience(
     if memory.mode == "private":
         for agent in episode.agents:
             agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
-            insights = await distill_expel_insights(_maze_expel_episodes(agent_episode), MAZE_EXPEL_ADAPTER, cfg, llm)
+            rejects: list[dict[str, str]] = []
+            insights = await distill_expel_insights(
+                _maze_expel_episodes(agent_episode), MAZE_EXPEL_ADAPTER, cfg, llm, reject_log=rejects
+            )
+            _record_rejects(audit, rejects, episode=episode, t=t, write_mode=write_mode)
             agent_support = cfg.n_solvers if agent.success else 0
             for insight in insights[:4]:
                 _apply_maze_insight(memory, audit, insight, episode, agent.agent_id, cfg, t, write_mode, agent_support)
         return
 
-    insights = await distill_expel_insights(_maze_expel_episodes(episode), MAZE_EXPEL_ADAPTER, cfg, llm)
+    rejects = []
+    insights = await distill_expel_insights(
+        _maze_expel_episodes(episode), MAZE_EXPEL_ADAPTER, cfg, llm, reject_log=rejects
+    )
+    _record_rejects(audit, rejects, episode=episode, t=t, write_mode=write_mode)
     support = sum(1 for agent in episode.agents if agent.success)
     for insight in insights[:4]:
         _apply_maze_insight(memory, audit, insight, episode, 0, cfg, t, write_mode, support)
+
+
+def _record_rejects(
+    audit: MazeMemoryAudit,
+    rejects: list[dict[str, str]],
+    *,
+    episode: MazeEpisodeResult,
+    t: int,
+    write_mode: str,
+) -> None:
+    for item in rejects:
+        audit.record_rejection(
+            t=t,
+            task_id=episode.task_id,
+            write_mode=write_mode,
+            text=item.get("text", ""),
+            reason=item.get("reason", "over_specific"),
+        )
 
 
 def _apply_maze_insight(
@@ -890,8 +925,12 @@ def _apply_maze_insight(
     support_count: int,
 ) -> None:
     quality = _episode_quality(episode, agent_id)
+    original_text = str(insight.get("text", ""))
     insight = _sanitize_insight(insight)
     if not insight.get("text"):
+        audit.record_rejection(
+            t=t, task_id=episode.task_id, write_mode=write_mode, text=original_text, reason="over_specific"
+        )
         return
     audit.record_write(
         t=t,
@@ -985,32 +1024,9 @@ def _maze_expel_episodes(episode: MazeEpisodeResult) -> list[dict[str, Any]]:
     return records
 
 
-def _parse_reviewer_insights(text: str) -> list[dict[str, str]]:
-    return [_sanitize_insight(item) for item in parse_expel_insights(text)]
-
-
 def _sanitize_insight(item: dict[str, Any]) -> dict[str, str]:
-    text = str(item.get("text", "")).strip()
-    kind = item.get("kind") if item.get("kind") in {"do", "avoid"} else "do"
-    if _looks_answer_like(text):
-        return {"kind": "avoid", "text": "Avoid memorizing exact maze routes; use local progress, revisits, and open directions to adapt."}
-    return sanitize_expel_insight({"kind": kind, "text": text}, fallback=MAZE_EXPEL_ADAPTER.fallback)
-
-
-def _looks_answer_like(text: str) -> bool:
-    return looks_over_specific(text)
-
-
-def _best_fallback_insight(episode: MazeEpisodeResult) -> dict[str, str]:
-    if any(a.route.get("looped") for a in episode.agents):
-        return {
-            "kind": "avoid",
-            "text": "Avoid repeating the same recovery pattern after revisiting cells; change exploration when recent movement forms a cycle.",
-        }
-    return {
-        "kind": "do",
-        "text": "Prefer open directions that reduce distance or visit new cells, and submit promptly after reaching the goal.",
-    }
+    """Clean one insight; {} means rejected (dropped, never replaced with canned text)."""
+    return sanitize_expel_insight(item)
 
 
 def _trace_summary(trace: list[dict[str, Any]]) -> str:
@@ -1043,6 +1059,7 @@ async def run_one_maze_alpha(cfg: Config, train_tasks: list[MazeTask], heldout_t
             baseline_cost = metrics["cost_ratio"]
         metrics["memory_size"] = memory.size()
         metrics["retrieval_concentration"] = retrieval_concentration(memory.all_items())
+        metrics["sanitizer_reject_count"] = len(audit.rejections)
         row = {
             "t": t,
             **metrics,
