@@ -96,6 +96,20 @@ def looks_over_specific(text: str) -> bool:
     return False
 
 
+def render_episode_blocks(episodes: list[dict[str, Any]], adapter: ExpeLAdapter) -> str:
+    blocks = []
+    for idx, ep in enumerate(episodes):
+        quality = ep.get("quality", {})
+        quality_text = json.dumps(quality, ensure_ascii=False, sort_keys=True)
+        blocks.append(
+            f"EPISODE {idx}\n"
+            f"id={ep.get('episode_id', '')} agent_id={ep.get('agent_id', '')} outcome={ep.get('outcome', '')}\n"
+            f"quality={quality_text}\n"
+            f"{adapter.trajectory_label}:\n{str(ep.get('trajectory', ''))[:4000]}"
+        )
+    return "\n\n---\n\n".join(blocks)
+
+
 async def distill_expel_insights(
     episodes: list[dict[str, Any]],
     adapter: ExpeLAdapter,
@@ -115,23 +129,12 @@ async def distill_expel_insights(
     Environment-specific code should only adapt logs into this schema.
     """
 
-    blocks = []
-    for idx, ep in enumerate(episodes):
-        quality = ep.get("quality", {})
-        quality_text = json.dumps(quality, ensure_ascii=False, sort_keys=True)
-        blocks.append(
-            f"EPISODE {idx}\n"
-            f"id={ep.get('episode_id', '')} agent_id={ep.get('agent_id', '')} outcome={ep.get('outcome', '')}\n"
-            f"quality={quality_text}\n"
-            f"{adapter.trajectory_label}:\n{str(ep.get('trajectory', ''))[:4000]}"
-        )
-
     prompt = (
         f"Task family:\n{adapter.task_family}\n\n"
         f"Strategy focus:\n{adapter.strategy_focus}\n\n"
         f"Forbidden details:\n{adapter.forbidden_details}\n\n"
         "Episodes:\n"
-        + "\n\n---\n\n".join(blocks)
+        + render_episode_blocks(episodes, adapter)
         + "\n\nDistill reusable experience for future tasks in this family. "
         "Use success/failure and quality signals to contrast better and worse strategies. "
         "Do not merely restate whether an episode succeeded. "

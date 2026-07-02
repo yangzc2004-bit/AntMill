@@ -263,6 +263,10 @@ def _apply_insight(
             library[idx].setdefault("sources", []).extend(insight.get("sources") or [])
         if "id" in insight and not library[idx].get("id"):
             library[idx]["id"] = insight["id"]
+        if "last_access_t" in insight:
+            library[idx]["last_access_t"] = max(
+                int(library[idx].get("last_access_t", -1)), int(insight["last_access_t"])
+            )
         if upvote:
             library[idx]["votes"] = int(library[idx].get("votes", 0)) + 1
         elif len(insight["text"]) > len(str(library[idx].get("text", ""))):

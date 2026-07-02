@@ -16,8 +16,9 @@ from typing import Any
 from .agentic import parse_action
 from .config import Config, condition_name
 from .expel import ExpeLAdapter, distill_expel_insights, sanitize_expel_insight
+from .expel_ops import apply_memory_ops, propose_memory_ops
 from .llm import LLMClient
-from .maze_env import DIRS, MazeEnv, MazeTask, make_maze_tasks
+from .maze_env import DIRS, MazeEnv, MazeTask, _is_open as _maze_is_open, make_maze_tasks
 from .memory import InsightMemory
 from .metrics import normalize_answer, similarity
 from .solver import render_library
@@ -172,14 +173,29 @@ def _solver_cache_salt(cfg: Config, *, t: int, task_id: str, agent_id: int, step
     return f"{cfg.run_id}|seed{cfg.seed}|t{t}|{task_id}|a{agent_id}|s{step}"
 
 
-def _agent_query(task: MazeTask, route: dict[str, Any] | None = None) -> str:
-    route_bits = ""
-    if route:
-        route_bits = (
-            f" success={route.get('success')} steps={route.get('steps')} "
-            f"invalid={route.get('invalid_moves')} looped={route.get('looped')}"
-        )
-    return f"maze family={task.family} width={task.width} height={task.height} goal-navigation{route_bits}"
+def _agent_query(task: MazeTask) -> str:
+    """Task-conditioned retrieval query built only from agent-visible start information.
+
+    A constant query makes retrieval a static ranking (every episode retrieves the same
+    top-k), so retrieval dynamics cannot exist. Bearing/distance/opening features vary
+    per task without exposing hidden structure; raw coordinates are deliberately
+    excluded so the query cannot act as a per-maze answer-cache key.
+    """
+    sx, sy = task.start
+    gx, gy = task.goal
+    dx, dy = gx - sx, gy - sy
+    ew = "east" if dx > 0 else "west" if dx < 0 else "aligned"
+    ns = "south" if dy > 0 else "north" if dy < 0 else "aligned"
+    open_dirs = sorted(
+        name for name, (ddx, ddy) in DIRS.items() if _maze_is_open(task.grid, sx + ddx, sy + ddy)
+    )
+    manhattan = abs(dx) + abs(dy)
+    # Space-separated tokens: normalize_answer strips punctuation without inserting
+    # spaces, so key=value forms would collapse into unmatchable single tokens.
+    return (
+        f"maze goal navigation family {task.family} size {task.width}x{task.height} "
+        f"goal bearing {ew} {ns} start manhattan {manhattan} start open {' '.join(open_dirs)}"
+    )
 
 
 def _parse_open_dirs(obs: str) -> list[str]:
@@ -619,7 +635,7 @@ async def run_maze_episode(
     t: int,
     peer_summaries: list[str] | None = None,
 ) -> MazeEpisodeResult:
-    retrieved_by_agent = [memory.retrieve(agent_id, _agent_query(task)) for agent_id in range(cfg.n_solvers)]
+    retrieved_by_agent = [memory.retrieve(agent_id, _agent_query(task), t=t) for agent_id in range(cfg.n_solvers)]
     for agent_id, items in enumerate(retrieved_by_agent):
         audit.record_retrieval(t=t, task_id=task.task_id, agent_id=agent_id, items=items)
     if cfg.maze_agent_mode == "oracle_dfs":
@@ -973,6 +989,17 @@ async def write_maze_experience(
             _apply_maze_insight(memory, audit, insight, episode, agent.agent_id, cfg, t, write_mode, support)
         return
 
+    if write_mode == "reviewer" and cfg.memory_write_protocol == "expel_ops":
+        # ExpeL-faithful pool evolution: the reviewer LLM sees the numbered pool and
+        # issues ADD/EDIT/UPVOTE/DOWNVOTE; code executes (sanitizer as the only veto).
+        if memory.mode == "private":
+            for agent in episode.agents:
+                agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
+                await _write_experience_ops(agent_episode, memory, cfg, llm, audit=audit, t=t, agent_id=agent.agent_id)
+        else:
+            await _write_experience_ops(episode, memory, cfg, llm, audit=audit, t=t, agent_id=0)
+        return
+
     if memory.mode == "private":
         for agent in episode.agents:
             agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
@@ -994,6 +1021,45 @@ async def write_maze_experience(
     support = sum(1 for agent in episode.agents if agent.success)
     for insight in insights[:4]:
         _apply_maze_insight(memory, audit, insight, episode, 0, cfg, t, write_mode, support)
+
+
+async def _write_experience_ops(
+    episode: MazeEpisodeResult,
+    memory: InsightMemory,
+    cfg: Config,
+    llm: LLMClient,
+    *,
+    audit: MazeMemoryAudit,
+    t: int,
+    agent_id: int,
+) -> None:
+    pool = memory.pool_view(agent_id)
+    ops = await propose_memory_ops(pool, _maze_expel_episodes(episode), MAZE_EXPEL_ADAPTER, cfg, llm)
+    rejects: list[dict[str, str]] = []
+    new_pool, applied = apply_memory_ops(pool, ops, cfg=cfg, reject_log=rejects)
+    memory.set_pool(agent_id, new_pool)
+    for item in rejects:
+        audit.record_rejection(
+            t=t,
+            task_id=episode.task_id,
+            write_mode=f"reviewer_ops:{item.get('op', '?')}",
+            text=item.get("text", ""),
+            reason=item.get("reason", "over_specific"),
+        )
+    quality = _episode_quality(episode, agent_id)
+    for op in applied:
+        item = op["item"]
+        if op["op"] in {"ADD", "EDIT"}:
+            item["last_access_t"] = t
+        audit.record_write(
+            t=t,
+            task_id=episode.task_id,
+            agent_id=agent_id,
+            insight=item,
+            support_count=int(item.get("votes", 0)),
+            write_mode=f"reviewer_ops:{op['op']}",
+            quality=quality,
+        )
 
 
 def _record_rejects(
@@ -1042,6 +1108,7 @@ def _apply_maze_insight(
         write_mode=write_mode,
         quality=quality,
     )
+    insight.setdefault("last_access_t", t)
     memory.apply_insight(agent_id, insight, support_count=support_count)
 
 
