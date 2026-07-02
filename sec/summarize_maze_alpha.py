@@ -342,6 +342,11 @@ def _write_report(rows: list[dict[str, Any]], mean_rows: list[dict[str, Any]], m
             "",
             "![Final mean bars](bar_final_mean.png)",
             "",
+            "## Statistics",
+            "",
+            "Means in this report carry no uncertainty. For paired bootstrap CIs and the",
+            "mandatory per-seed table, run `python -m sec.maze_stats` on the same result files.",
+            "",
         ]
     )
     (out_dir / "report.md").write_text("\n".join(lines), encoding="utf-8")

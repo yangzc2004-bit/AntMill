@@ -359,6 +359,109 @@ def _summarize_compat_checks() -> None:
     print("p0 summarize compat checks OK")
 
 
+# --- T0.2 paired statistics --------------------------------------------------
+
+
+def _mk_stats_result(*, extra_excess: float, fail_last: bool = False) -> dict:
+    records = []
+    for t in (0, 1):
+        episodes = []
+        for m in range(3):
+            agents = []
+            for a in range(2):
+                excess = 4.0 + m + a + extra_excess
+                steps = 10 + excess
+                is_last = m == 2 and a == 1
+                success = not (fail_last and is_last)
+                agents.append(
+                    {
+                        "agent_id": a,
+                        "route": {
+                            "success": success,
+                            "steps": steps,
+                            "shortest_path_length": 10,
+                            "cost_ratio": steps / 10.0,
+                            "excess_steps": excess,
+                            "looped": False,
+                            "stagnation_rate": 0.1,
+                            "revisit_max": 2,
+                        },
+                    }
+                )
+            episodes.append({"task_id": f"heldout_test_{m}", "agents": agents})
+        records.append({"t": t, "episodes": episodes})
+    return {"heldout_records": records}
+
+
+def _paired_stats_checks() -> None:
+    import random
+
+    from .maze_stats import paired_diff, per_seed_table, route_rows
+
+    rows_a: list[dict] = []
+    rows_b: list[dict] = []
+    for seed in ("0", "1"):
+        rows_a.extend(route_rows(_mk_stats_result(extra_excess=0.0), condition="A", seed=seed))
+        rows_b.extend(route_rows(_mk_stats_result(extra_excess=10.0), condition="B", seed=seed))
+
+    stat = paired_diff(rows_b, rows_a, "excess_steps", t=1)
+    assert stat["n_pairs"] == 12, stat
+    assert abs(stat["mean_diff"] - 10.0) < 1e-9, stat
+    assert stat["ci_lo"] > 0.0 and stat["ci_excludes_zero"], "constant +10 effect must exclude zero"
+
+    shuffled = list(rows_b)
+    random.Random(1).shuffle(shuffled)
+    stat_shuffled = paired_diff(shuffled, rows_a, "excess_steps", t=1)
+    assert stat_shuffled == stat, "pairing must be order-invariant"
+
+    b_key = ("1", 1, "heldout_test_2", 1)
+    dropped_one = [
+        row for row in rows_b
+        if (row["seed"], row["t"], row["task_id"], row["agent_id"]) != b_key
+    ]
+    stat_dropped = paired_diff(dropped_one, rows_a, "excess_steps", t=1)
+    assert stat_dropped["n_pairs"] == 11 and stat_dropped["n_dropped"] == 1, stat_dropped
+
+    null_stat = paired_diff(rows_a, rows_a, "excess_steps", t=1)
+    assert abs(null_stat["mean_diff"]) < 1e-12
+    assert null_stat["ci_lo"] <= 0.0 <= null_stat["ci_hi"] and not null_stat["ci_excludes_zero"]
+
+    # success_excess_steps: failed routes yield None and are dropped from the pairing.
+    rows_b_fail = []
+    for seed in ("0", "1"):
+        rows_b_fail.extend(route_rows(_mk_stats_result(extra_excess=10.0, fail_last=True), condition="B", seed=seed))
+    stat_fail = paired_diff(rows_b_fail, rows_a, "success_excess_steps", t=1)
+    assert stat_fail["n_pairs"] == 10 and stat_fail["n_dropped"] == 2, stat_fail
+
+    varied_b = []
+    for seed in ("0", "1"):
+        varied_b.extend(route_rows(_mk_stats_result(extra_excess=10.0 + int(seed) * 3), condition="B", seed=seed))
+    first = paired_diff(varied_b, rows_a, "excess_steps", t=1, rng_seed=7)
+    second = paired_diff(varied_b, rows_a, "excess_steps", t=1, rng_seed=7)
+    assert first == second, "same rng_seed must reproduce identical CIs"
+
+    seed_table = per_seed_table(rows_a + rows_b)
+    assert {(row["condition"], row["seed"]) for row in seed_table} == {("A", "0"), ("A", "1"), ("B", "0"), ("B", "1")}
+    assert all(row["n_routes"] == 6 for row in seed_table)
+    print("p0 paired stats checks OK")
+
+
+def _maze_stats_cli_checks() -> None:
+    from .maze_stats import DEFAULT_RUNS, main as stats_main
+
+    if not all(Path(path).exists() for path in DEFAULT_RUNS.values()):
+        print("p0 maze_stats CLI checks SKIPPED (default runs not present)")
+        return
+    out = Path("./.sec_mock_runs/p0_stats")
+    shutil.rmtree(out, ignore_errors=True)
+    stats_main(["--out-dir", str(out), "--baseline", "frozen", "--n-boot", "500"])
+    for name in ("paired_stats.csv", "per_seed.csv", "stats_report.md"):
+        assert (out / name).exists(), f"missing {name}"
+    report = (out / "stats_report.md").read_text(encoding="utf-8")
+    assert "shared_reviewer" in report and "Per-Seed Means" in report
+    print("p0 maze_stats CLI checks OK")
+
+
 def main() -> None:
     _cache_key_checks()
     asyncio.run(_cache_salt_roundtrip_checks())
@@ -370,6 +473,8 @@ def main() -> None:
     _retrieval_share_series_checks()
     _diversity_and_batch_metric_checks()
     _summarize_compat_checks()
+    _paired_stats_checks()
+    _maze_stats_cli_checks()
     print("selftest_p0 OK")
 
 
