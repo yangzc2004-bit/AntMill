@@ -256,6 +256,73 @@ def _render_pool_checks() -> None:
     print("p1 render pool checks OK")
 
 
+# --- P2 append protocol and preregistered phases ------------------------------
+
+
+async def _append_protocol_checks() -> None:
+    async def _mock(self, messages, *, temp=0.0, model=None, max_tokens=None, tag="", cache_salt=""):
+        user = messages[-1]["content"]
+        if tag == "expel_reviewer":
+            return '[{"kind":"do","text":"prefer untried open directions after a revisit"}]'
+        if "Manhattan distance: 0" in user:
+            return "At the goal. Action: submit"
+        return "Explore. Action: move:right"
+
+    original = LLMClient.chat
+    LLMClient.chat = _mock  # type: ignore[assignment]
+    try:
+        cfg = _cfg(memory_write_protocol="append", n_solvers=2, max_steps=3)
+        llm = LLMClient(cfg)
+        memory = InsightMemory(cfg)
+        audit = MazeMemoryAudit()
+        task = make_maze_tasks(split="train", n=1, seed=13, width=9, height=9, family="benign")[0]
+        episode = await run_maze_episode(task, memory, cfg, llm, audit=audit, t=0)
+        await write_maze_experience(episode, memory, cfg, llm, audit=audit, t=0, write_mode="reviewer")
+        # Two agents independently derive the same lesson: one entry, agreement upvote.
+        assert memory.size() == 1, memory.snapshot()
+        assert memory.shared[0]["votes"] == 2, memory.shared
+        modes = [w["write_mode"] for w in audit.writes]
+        assert "reviewer_append:append" in modes and "reviewer_append:agree" in modes, modes
+        await write_maze_experience(episode, memory, cfg, llm, audit=audit, t=1, write_mode="reviewer")
+        assert memory.size() == 1 and memory.shared[0]["votes"] == 4, "agreement must keep accumulating"
+    finally:
+        LLMClient.chat = original  # type: ignore[assignment]
+    print("p1 append protocol checks OK")
+
+
+def _prereg_phase_checks() -> None:
+    from .maze_alpha import _arms_for_phase
+
+    e1 = _arms_for_phase("e1_gate")
+    assert [arm["run_id"] for arm in e1] == ["e1_single_nomem", "e1_single_reviewer_ops", "e1_single_reviewer_append"]
+    assert all(arm["n_solvers"] == 1 for arm in e1)
+    assert e1[1]["memory_write_protocol"] == "expel_ops" and e1[2]["memory_write_protocol"] == "append"
+    assert all(arm.get("ga_lambda") == 0.0 for arm in e1[1:])
+
+    e2 = _arms_for_phase("core_v2")
+    assert len(e2) == 5 and all(arm["n_solvers"] == 4 for arm in e2)
+    by_id = {arm["run_id"]: arm for arm in e2}
+    assert by_id["e2_shared_append_ga"]["memory_write_protocol"] == "append"
+    assert by_id["e2_shared_consolidated_expel"]["memory_write_protocol"] == "expel_ops"
+    assert by_id["e2_frozen_reviewer"]["memory_mode"] == "frozen"
+    assert by_id["e2_private_reviewer"]["memory_mode"] == "private"
+    assert by_id["e2_mas_nomem"]["memory_mode"] == "none"
+
+    e3 = _arms_for_phase("e3_lambda")
+    assert [arm["ga_lambda"] for arm in e3] == [0.0, 0.5, 1.0]
+    assert all(arm["memory_write_protocol"] == "append" and arm["memory_mode"] == "shared" for arm in e3)
+
+    # per-arm overrides must survive config construction
+    from .maze_alpha import build_maze_alpha_configs
+    from .run_maze_alpha import _parser
+
+    args = _parser().parse_args(["--phase", "e3_lambda", "--api-key-env", "SEC_MOCK_KEY"])
+    configs = build_maze_alpha_configs(args)
+    assert sorted(c.ga_lambda for c in configs) == [0.0, 0.5, 1.0]
+    assert all(c.memory_write_protocol == "append" and c.retrieval_scoring == "ga" for c in configs)
+    print("p1 prereg phase checks OK")
+
+
 def _cli_wiring_checks() -> None:
     from .maze_alpha import build_maze_alpha_configs
     from .run_maze_alpha import _parser
@@ -292,6 +359,8 @@ def main() -> None:
     _render_pool_checks()
     asyncio.run(_ops_e2e_checks())
     _cli_wiring_checks()
+    asyncio.run(_append_protocol_checks())
+    _prereg_phase_checks()
     print("selftest_p1 OK")
 
 

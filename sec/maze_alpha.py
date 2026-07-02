@@ -16,7 +16,7 @@ from typing import Any
 from .agentic import parse_action
 from .config import Config, condition_name
 from .expel import ExpeLAdapter, distill_expel_insights, sanitize_expel_insight
-from .expel_ops import apply_memory_ops, propose_memory_ops
+from .expel_ops import apply_memory_ops, find_pool_duplicate, propose_memory_ops
 from .llm import LLMClient
 from .maze_env import DIRS, MazeEnv, MazeTask, _is_open as _maze_is_open, make_maze_tasks
 from .memory import InsightMemory
@@ -989,6 +989,14 @@ async def write_maze_experience(
             _apply_maze_insight(memory, audit, insight, episode, agent.agent_id, cfg, t, write_mode, support)
         return
 
+    if write_mode == "reviewer" and cfg.memory_write_protocol == "append":
+        # Mode A (append + retrieve, Generative-Agents style): each agent's own
+        # reflection enters the pool without consolidation; retrieval arbitrates.
+        # Independently re-derived similar lessons count as agreement (vote +1),
+        # which is what feeds the ga_lambda importance channel in this mode.
+        await _write_experience_append(episode, memory, cfg, llm, audit=audit, t=t)
+        return
+
     if write_mode == "reviewer" and cfg.memory_write_protocol == "expel_ops":
         # ExpeL-faithful pool evolution: the reviewer LLM sees the numbered pool and
         # issues ADD/EDIT/UPVOTE/DOWNVOTE; code executes (sanitizer as the only veto).
@@ -1021,6 +1029,59 @@ async def write_maze_experience(
     support = sum(1 for agent in episode.agents if agent.success)
     for insight in insights[:4]:
         _apply_maze_insight(memory, audit, insight, episode, 0, cfg, t, write_mode, support)
+
+
+async def _write_experience_append(
+    episode: MazeEpisodeResult,
+    memory: InsightMemory,
+    cfg: Config,
+    llm: LLMClient,
+    *,
+    audit: MazeMemoryAudit,
+    t: int,
+) -> None:
+    for agent in episode.agents:
+        agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
+        rejects: list[dict[str, str]] = []
+        insights = await distill_expel_insights(
+            _maze_expel_episodes(agent_episode), MAZE_EXPEL_ADAPTER, cfg, llm, reject_log=rejects
+        )
+        _record_rejects(audit, rejects, episode=episode, t=t, write_mode="reviewer_append")
+        pool = memory.pool_view(agent.agent_id)
+        quality = _episode_quality(episode, agent.agent_id)
+        for raw in insights[:2]:
+            insight = _sanitize_insight(raw)
+            if not insight.get("text"):
+                audit.record_rejection(
+                    t=t,
+                    task_id=episode.task_id,
+                    write_mode="reviewer_append",
+                    text=str(raw.get("text", "")),
+                    reason="over_specific",
+                )
+                continue
+            dup = find_pool_duplicate(pool, insight, cfg)
+            if dup is not None:
+                pool[dup]["votes"] = int(pool[dup].get("votes", 0)) + 1
+                item = pool[dup]
+                mode = "reviewer_append:agree"
+            else:
+                item = {"kind": insight["kind"], "text": insight["text"], "votes": 1, "last_access_t": t}
+                pool.append(item)
+                mode = "reviewer_append:append"
+            audit.record_write(
+                t=t,
+                task_id=episode.task_id,
+                agent_id=agent.agent_id,
+                insight=item,
+                support_count=int(item.get("votes", 0)),
+                write_mode=mode,
+                quality=quality,
+            )
+        if len(pool) > cfg.library_cap:
+            pool.sort(key=lambda it: (int(it.get("votes", 0)), normalize_answer(str(it.get("text", "")))), reverse=True)
+            del pool[cfg.library_cap:]
+        memory.set_pool(agent.agent_id, pool)
 
 
 async def _write_experience_ops(
@@ -1429,6 +1490,52 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
         return [
             {"run_id": "maze_smoke_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
             {"run_id": "maze_smoke_shared_scripted", "n_solvers": 3, "memory_mode": "shared", "maze_write_mode": "scripted"},
+        ]
+    if phase == "e1_gate":
+        # E1 single-agent calibration gate (prereg_phase_beta.md): before any sharing,
+        # is faithful experience learning measurable at all? Both write protocols are
+        # calibrated so E2 arms inherit a validated single-agent mechanism.
+        faithful = {
+            "n_solvers": 1,
+            "memory_mode": "shared",  # single agent: one pool; "shared" vs "private" is moot
+            "maze_write_mode": "reviewer",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+        }
+        return [
+            {"run_id": "e1_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
+            {**faithful, "run_id": "e1_single_reviewer_ops", "memory_write_protocol": "expel_ops"},
+            {**faithful, "run_id": "e1_single_reviewer_append", "memory_write_protocol": "append"},
+        ]
+    if phase == "core_v2":
+        # E2 five-arm matrix (prereg_phase_beta.md). lambda=0: no importance feedback;
+        # the E3 sweep isolates feedback strength separately.
+        base = {
+            "n_solvers": 4,
+            "maze_write_mode": "reviewer",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+        }
+        return [
+            {"run_id": "e2_mas_nomem", "n_solvers": 4, "memory_mode": "none", "maze_write_mode": "none"},
+            {**base, "run_id": "e2_frozen_reviewer", "memory_mode": "frozen", "memory_write_protocol": "expel_ops"},
+            {**base, "run_id": "e2_private_reviewer", "memory_mode": "private", "memory_write_protocol": "expel_ops"},
+            {**base, "run_id": "e2_shared_append_ga", "memory_mode": "shared", "memory_write_protocol": "append"},
+            {**base, "run_id": "e2_shared_consolidated_expel", "memory_mode": "shared", "memory_write_protocol": "expel_ops"},
+        ]
+    if phase == "e3_lambda":
+        # E3 dose-response: positive-feedback strength sweep on the append arm.
+        base = {
+            "n_solvers": 4,
+            "memory_mode": "shared",
+            "maze_write_mode": "reviewer",
+            "memory_write_protocol": "append",
+            "retrieval_scoring": "ga",
+        }
+        return [
+            {**base, "run_id": "e3_append_lam0", "ga_lambda": 0.0},
+            {**base, "run_id": "e3_append_lam05", "ga_lambda": 0.5},
+            {**base, "run_id": "e3_append_lam1", "ga_lambda": 1.0},
         ]
     raise ValueError(f"unknown maze phase {phase!r}")
 

@@ -52,9 +52,13 @@ class Config:
     maze_eval_feedback: bool = False  # expose success/cost summaries to the reviewer, never to solvers
     skip_final_train: bool = False  # skip train/write after the final evaluation round
 
-    # --- P1 experiential-memory design points (ExpeL / Generative-Agents faithful) ---
-    # distill  = contrastive distill + code-side similarity merge (legacy P0 behavior)
-    # expel_ops = LLM-issued ADD/EDIT/UPVOTE/DOWNVOTE over the visible pool (ExpeL-faithful)
+    # --- P1/P2 experiential-memory design points (ExpeL / Generative-Agents faithful) ---
+    # distill   = contrastive distill + code-side similarity merge (legacy P0 behavior)
+    # expel_ops = LLM-issued ADD/EDIT/UPVOTE/DOWNVOTE over the visible pool (ExpeL-faithful,
+    #             mode B: LLM consolidation)
+    # append    = per-agent reflections appended without consolidation (mode A: append+retrieve,
+    #             Generative-Agents style); independent re-derivation of a similar lesson counts
+    #             as agreement and upvotes the existing item
     memory_write_protocol: str = "distill"
     # similarity = lexical top-k against the query (legacy)
     # ga         = min-max normalized relevance + ga_lambda*importance + ga_recency*recency
@@ -108,7 +112,7 @@ class Config:
             raise ValueError("maze_min_shortest and maze_max_shortest must be non-negative.")
         if self.maze_max_shortest and self.maze_max_shortest < self.maze_min_shortest:
             raise ValueError("maze_max_shortest must be >= maze_min_shortest when set.")
-        if self.memory_write_protocol not in {"distill", "expel_ops"}:
+        if self.memory_write_protocol not in {"distill", "expel_ops", "append"}:
             raise ValueError(f"invalid memory_write_protocol: {self.memory_write_protocol!r}")
         if self.retrieval_scoring not in {"similarity", "ga"}:
             raise ValueError(f"invalid retrieval_scoring: {self.retrieval_scoring!r}")

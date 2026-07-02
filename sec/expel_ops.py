@@ -137,7 +137,7 @@ def apply_memory_ops(
             if not clean:
                 _log_reject(reject_log, name, text, "over_specific")
                 continue
-            dup = _find_duplicate(pool, clean, cfg)
+            dup = find_pool_duplicate(pool, clean, cfg)
             if dup is not None:
                 # A re-added existing lesson is agreement, not a new entry.
                 pool[dup]["votes"] = int(pool[dup].get("votes", 0)) + 1
@@ -165,7 +165,7 @@ def apply_memory_ops(
     return survivors[: cfg.library_cap], applied
 
 
-def _find_duplicate(pool: list[dict[str, Any]], insight: dict[str, str], cfg: Config) -> int | None:
+def find_pool_duplicate(pool: list[dict[str, Any]], insight: dict[str, str], cfg: Config) -> int | None:
     best_idx: int | None = None
     best_score = 0.0
     for idx, item in enumerate(pool):
