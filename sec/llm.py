@@ -91,7 +91,15 @@ class LLMClient:
         self._rate_lock = asyncio.Lock()
         self._last_network_ts = 0.0
 
-    def _key(self, *, model: str, messages: list[Message], temp: float, max_tokens: int | None) -> str:
+    def _key(
+        self,
+        *,
+        model: str,
+        messages: list[Message],
+        temp: float,
+        max_tokens: int | None,
+        cache_salt: str = "",
+    ) -> str:
         payload = {
             "base_url": self.cfg.base_url,
             "model": model,
@@ -99,6 +107,10 @@ class LLMClient:
             "temperature": temp,
             "max_tokens": max_tokens,
         }
+        if cache_salt:
+            # Execution-context salt (round/task/agent/step). Without it, identical prompts
+            # across rounds or conditions replay one cached sample and fake the dynamics.
+            payload["salt"] = cache_salt
         raw = json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
         return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
@@ -110,9 +122,10 @@ class LLMClient:
         model: str | None = None,
         max_tokens: int | None = None,
         tag: str = "",
+        cache_salt: str = "",
     ) -> str:
         model_name = model or self.cfg.model
-        key = self._key(model=model_name, messages=messages, temp=temp, max_tokens=max_tokens)
+        key = self._key(model=model_name, messages=messages, temp=temp, max_tokens=max_tokens, cache_salt=cache_salt)
         lock = self._locks.setdefault(key, asyncio.Lock())
         async with lock:
             cache_file = self.cache_dir / f"{key}.json"

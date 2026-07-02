@@ -135,6 +135,12 @@ def _insight_key(insight: dict[str, Any]) -> str:
     return normalize_answer(f"{insight.get('kind', 'do')} {insight.get('text', '')}")[:96]
 
 
+def _solver_cache_salt(cfg: Config, *, t: int, task_id: str, agent_id: int, step: int) -> str:
+    # run_id keeps conditions with identical prompts (e.g. frozen vs no-memory) statistically
+    # independent; t/step keep rounds and revisited in-episode states from replaying one sample.
+    return f"{cfg.run_id}|seed{cfg.seed}|t{t}|{task_id}|a{agent_id}|s{step}"
+
+
 def _agent_query(task: MazeTask, route: dict[str, Any] | None = None) -> str:
     route_bits = ""
     if route:
@@ -487,6 +493,7 @@ async def run_maze_agent(
     cfg: Config,
     llm: LLMClient,
     peer_summaries: list[str] | None = None,
+    t: int = 0,
 ) -> AgentRouteResult:
     if cfg.maze_agent_mode == "oracle_dfs":
         return _run_oracle_maze_agent(task, agent_id=agent_id, insights=insights)
@@ -530,6 +537,7 @@ async def run_maze_agent(
             temp=cfg.solver_temp,
             max_tokens=cfg.max_tokens_solver,
             tag=f"maze_agent:{agent_id}",
+            cache_salt=_solver_cache_salt(cfg, t=t, task_id=task.task_id, agent_id=agent_id, step=step),
         )
         model_action = parse_action(out)
         action = model_action
@@ -599,7 +607,7 @@ async def run_maze_episode(
     searches = [MazeSearchState() for _ in range(cfg.n_solvers)] if _uses_search_state(cfg.maze_agent_mode) else []
     peer_summaries = peer_summaries or []
 
-    async def propose(agent_id: int, peer_actions: list[str]) -> dict[str, Any]:
+    async def propose(agent_id: int, peer_actions: list[str], step: int) -> dict[str, Any]:
         env = envs[agent_id]
         search = searches[agent_id] if searches else None
         search_state: dict[str, Any] = {}
@@ -624,6 +632,7 @@ async def run_maze_episode(
             temp=cfg.solver_temp,
             max_tokens=cfg.max_tokens_solver,
             tag=f"maze_agent:{agent_id}",
+            cache_salt=_solver_cache_salt(cfg, t=t, task_id=task.task_id, agent_id=agent_id, step=step),
         )
         model_action = parse_action(out)
         action = model_action
@@ -651,12 +660,12 @@ async def run_maze_episode(
             break
         proposals = ["" for _ in range(cfg.n_solvers)]
         proposal_meta: list[dict[str, Any]] = [{} for _ in range(cfg.n_solvers)]
-        first = await asyncio.gather(*[propose(agent_id, []) for agent_id in active])
+        first = await asyncio.gather(*[propose(agent_id, [], step) for agent_id in active])
         for agent_id, item in zip(active, first, strict=True):
             proposals[agent_id] = str(item["action"])
             proposal_meta[agent_id] = item
         for _round in range(2, cfg.debate_rounds + 1):
-            revised = await asyncio.gather(*[propose(agent_id, proposals) for agent_id in active])
+            revised = await asyncio.gather(*[propose(agent_id, proposals, step) for agent_id in active])
             for agent_id, item in zip(active, revised, strict=True):
                 proposals[agent_id] = str(item["action"])
                 proposal_meta[agent_id] = item

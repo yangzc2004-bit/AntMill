@@ -13,7 +13,7 @@ from .memory import InsightMemory
 from .mock_env import MockToolEnv, make_tasks
 
 
-async def _mock_chat(self, messages, *, temp=0.0, model=None, max_tokens=None, tag=""):
+async def _mock_chat(self, messages, *, temp=0.0, model=None, max_tokens=None, tag="", cache_salt=""):
     user = messages[-1]["content"]
     if "MODE:loop" in user:
         return "I should look again. Action: read"
