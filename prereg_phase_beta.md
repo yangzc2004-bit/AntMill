@@ -142,4 +142,25 @@ artifact；per-seed 永远展示。
 
 ## 6. 偏离记录（数据产生后只许追加）
 
-（暂无）
+**2026-07-03 — E1 结果与 gate 规则缺口**
+
+E1 按第 1 节命令原样跑完（9/9 arm-seed；中途因运行环境退出中断一次，
+经带盐 cache 断点续跑完成，不影响样本）。判决：
+
+- **三个主指标全部 CI 含 0**（两臂 vs no-mem，t=3，n_pairs=36；
+  `runs_maze_beta_e1_stats/paired_stats.csv`）→ 按冻结条文为 **FAIL**。
+- 警戒线未触发（reviewer_append success 均值差 −0.139 > −0.15）。
+- 规定的依从性分析显示经验**没有被忽略**：reviewer_ops 臂在记忆激活后
+  （t≥1 vs t=0）对 controller 建议动作的偏离率 +0.041 且三个 seed 全部同向
+  （no-mem 基线漂移 −0.002）；配对终点上 reviewer_append 的 revisit_max
+  显著下降（CI [−2.00, −0.14]），reviewer_ops 的 stagnation_rate 显著上升
+  （CI [0.0003, 0.086]）。
+- 机制健康：ops 臂 LLM 实际使用全部操作（每 seed 约 ADD 7–9 / UPVOTE 30–37 /
+  DOWNVOTE 1–4 / EDIT 1–2），池收敛在 7–8 条；append 臂池 18–19 条、
+  熵 0.87–0.98（λ=0 下无过早集中）；sanitizer 拒绝率 0.00。
+
+**规则缺口**：条文只定义了"完全忽略 →（改注入格式）重跑一次"与"可测 → PASS"
+两条路径，未预设"行为可测采纳、但三个主终点无显著变化"的情形。
+本记录如实登记：E1 在冻结条文下 FAIL；经验采纳性（gate 的设计意图）
+有跨 seed 一致的行为证据。是否进入 E2 由研究者决定并在此追加记录；
+若进入，E2 判决规则不变。
