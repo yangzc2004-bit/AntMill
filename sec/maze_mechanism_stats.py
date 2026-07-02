@@ -112,13 +112,19 @@ def _round_rows(runs: dict[tuple[str, str], dict[str, Any]]) -> list[dict[str, A
                     "seed": seed,
                     "t": int(row.get("t", 0)),
                     "success_rate": _float(row.get("success_rate")),
+                    "failure_rate": _float(row.get("failure_rate")),
                     "cost_ratio": _float(row.get("cost_ratio")),
+                    "success_excess_steps": _float(row.get("success_excess_steps")),
                     "loop_rate": _float(row.get("loop_rate")),
                     "route_diversity": _float(row.get("route_diversity")),
+                    "route_diversity_efficient": _float(row.get("route_diversity_efficient")),
+                    "mas_antmill_rate": _float(row.get("mas_antmill_rate")),
                     "stagnation_rate": _float(row.get("stagnation_rate")),
                     "revisit_max": _float(row.get("revisit_max")),
                     "memory_size": _float(row.get("memory_size")),
                     "retrieval_concentration": _float(row.get("retrieval_concentration")),
+                    "retrieval_entropy_norm": _float(row.get("retrieval_entropy_norm")),
+                    "memory_effective_size": _float(row.get("memory_effective_size")),
                 }
             )
     return rows

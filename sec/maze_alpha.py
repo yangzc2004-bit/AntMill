@@ -127,6 +127,24 @@ class MazeMemoryAudit:
             {"t": t, "task_id": task_id, "write_mode": write_mode, "text": text, "reason": reason}
         )
 
+    def retrieval_share_series(self) -> dict[str, dict[str, float]]:
+        """Per-item share of retrievals in each round: {item_id: {t: share}}.
+
+        Raw data for rich-get-richer curves: a positive-feedback channel shows up
+        as one item's share growing across rounds.
+        """
+        by_t: dict[int, Counter[str]] = defaultdict(Counter)
+        for rec in self.retrievals:
+            t = int(rec.get("t", 0))
+            for item_id in rec.get("items", []):
+                by_t[t][str(item_id)] += 1
+        series: dict[str, dict[str, float]] = {}
+        for t, counter in sorted(by_t.items()):
+            total = sum(counter.values())
+            for item_id, count in counter.items():
+                series.setdefault(item_id, {})[str(t)] = count / total if total else 0.0
+        return series
+
     def public(self, memory: InsightMemory) -> dict[str, Any]:
         items = memory.all_items()
         attempts = len(self.rejections) + len(self.writes)
@@ -136,7 +154,11 @@ class MazeMemoryAudit:
             "sanitizer_rejects": self.rejections,
             "sanitizer_reject_rate": len(self.rejections) / attempts if attempts else 0.0,
             "memory_items": items,
+            "retrieval_top1_share": retrieval_top1_share(items),
             "retrieval_concentration": retrieval_concentration(items),
+            "retrieval_entropy_norm": retrieval_entropy_norm(items),
+            "memory_effective_size": memory_effective_size(items),
+            "retrieval_share_series": self.retrieval_share_series(),
         }
 
 
@@ -777,8 +799,11 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
     if not routes:
         return {
             "success_rate": 0.0,
+            "failure_rate": 0.0,
             "cost_ratio": 0.0,
             "excess_steps": 0.0,
+            "success_excess_steps": 0.0,
+            "n_success": 0.0,
             "invalid_move_rate": 0.0,
             "loop_rate": 0.0,
             "stagnation_rate": 0.0,
@@ -786,6 +811,8 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
             "state_guided_override_count": 0.0,
             "state_guided_override_rate": 0.0,
             "route_diversity": 0.0,
+            "route_diversity_efficient": 0.0,
+            "route_diversity_efficient_n": 0.0,
             "mas_antmill_rate": 0.0,
             "efficiency_collapse_signal": 0.0,
         }
@@ -800,12 +827,19 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
     cost = mean([float(r.get("cost_ratio") or 0.0) for r in routes])
     loop = mean([1.0 if r.get("looped") else 0.0 for r in routes])
     diversity = mean(per_episode_overlap)
+    success_routes = [r for r in routes if r.get("success")]
+    efficient_divs = [d for d in (_episode_route_diversity_efficient(ep) for ep in episodes) if d is not None]
     baseline = baseline_cost_ratio if baseline_cost_ratio is not None else cost
     collapse_signal = 1.0 if cost > baseline * 1.15 and loop >= 0.25 and diversity <= 0.5 else 0.0
     return {
         "success_rate": success,
+        "failure_rate": 1.0 - success,
         "cost_ratio": cost,
         "excess_steps": mean([float(r.get("excess_steps") or 0.0) for r in routes]),
+        # Success-conditional efficiency: failures carry a capped-step penalty in
+        # cost_ratio/excess_steps, which entangles "slower" with "failed".
+        "success_excess_steps": mean([float(r.get("excess_steps") or 0.0) for r in success_routes]),
+        "n_success": float(len(success_routes)),
         "invalid_move_rate": mean([float(r.get("invalid_move_rate") or 0.0) for r in routes]),
         "loop_rate": loop,
         "stagnation_rate": mean([float(r.get("stagnation_rate") or 0.0) for r in routes]),
@@ -813,6 +847,8 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
         "state_guided_override_count": mean([float(r.get("state_guided_override_count") or 0.0) for r in routes]),
         "state_guided_override_rate": mean([float(r.get("state_guided_override_rate") or 0.0) for r in routes]),
         "route_diversity": diversity,
+        "route_diversity_efficient": mean(efficient_divs),
+        "route_diversity_efficient_n": float(len(efficient_divs)),
         "mas_antmill_rate": mean(loop_by_ep),
         "efficiency_collapse_signal": collapse_signal,
     }
@@ -831,12 +867,73 @@ def _episode_route_diversity(ep: MazeEpisodeResult) -> float:
     return 1.0 - float(sum(sims) / len(sims))
 
 
-def retrieval_concentration(items: list[dict[str, Any]]) -> float:
-    counts = [int(item.get("retrieval_count", 0)) for item in items if int(item.get("retrieval_count", 0)) > 0]
+def _episode_route_diversity_efficient(ep: MazeEpisodeResult, *, max_cost: float = 2.5) -> float | None:
+    """Route diversity among efficient successful routes only.
+
+    Plain visited-cell diversity is confounded with efficiency: inefficient
+    wandering inflates it. Conditioning on success and cost <= max_cost isolates
+    genuine homogenization. None when fewer than 2 routes qualify.
+    """
+    cells = [
+        set(tuple(cell) for cell in a.route.get("path", []))
+        for a in ep.agents
+        if a.route.get("success") and float(a.route.get("cost_ratio") or 0.0) <= max_cost
+    ]
+    if len(cells) < 2:
+        return None
+    sims = []
+    for i in range(len(cells)):
+        for j in range(i + 1, len(cells)):
+            sims.append(len(cells[i] & cells[j]) / max(len(cells[i] | cells[j]), 1))
+    return 1.0 - float(sum(sims) / len(sims))
+
+
+def _retrieval_counts(items: list[dict[str, Any]]) -> list[int]:
+    return [int(item.get("retrieval_count", 0)) for item in items if int(item.get("retrieval_count", 0)) > 0]
+
+
+def retrieval_top1_share(items: list[dict[str, Any]]) -> float:
+    """Share of retrievals going to the single most-retrieved item.
+
+    Deprecated as a mechanism variable: max/total is a deterministic function of
+    pool size (a 1-item pool scores 1.0 by construction). Kept for continuity
+    with earlier runs; use retrieval_entropy_norm for mechanism claims.
+    """
+    counts = _retrieval_counts(items)
     total = sum(counts)
     if total <= 0:
         return 0.0
     return max(counts) / total
+
+
+def retrieval_concentration(items: list[dict[str, Any]]) -> float:
+    """Deprecated alias of retrieval_top1_share."""
+    return retrieval_top1_share(items)
+
+
+def retrieval_entropy_norm(items: list[dict[str, Any]]) -> float:
+    """Normalized Shannon entropy of the retrieval-count distribution, in [0, 1].
+
+    0 = all retrievals concentrate on one item; 1 = uniform spread across the
+    retrieved items. Unlike max/total, this is comparable across pool sizes.
+    """
+    counts = _retrieval_counts(items)
+    total = sum(counts)
+    if total <= 0 or len(counts) <= 1:
+        return 0.0
+    probs = [count / total for count in counts]
+    entropy = -sum(p * math.log(p) for p in probs)
+    return entropy / math.log(len(counts))
+
+
+def memory_effective_size(items: list[dict[str, Any]]) -> float:
+    """exp(entropy) of the retrieval distribution: effective number of used memories."""
+    counts = _retrieval_counts(items)
+    total = sum(counts)
+    if total <= 0:
+        return 0.0
+    probs = [count / total for count in counts]
+    return math.exp(-sum(p * math.log(p) for p in probs))
 
 
 async def write_maze_experience(
@@ -1057,8 +1154,12 @@ async def run_one_maze_alpha(cfg: Config, train_tasks: list[MazeTask], heldout_t
         metrics = maze_batch_metrics(heldout, baseline_cost_ratio=baseline_cost)
         if t == 0:
             baseline_cost = metrics["cost_ratio"]
+        pool_items = memory.all_items()
         metrics["memory_size"] = memory.size()
-        metrics["retrieval_concentration"] = retrieval_concentration(memory.all_items())
+        metrics["retrieval_concentration"] = retrieval_concentration(pool_items)
+        metrics["retrieval_top1_share"] = retrieval_top1_share(pool_items)
+        metrics["retrieval_entropy_norm"] = retrieval_entropy_norm(pool_items)
+        metrics["memory_effective_size"] = memory_effective_size(pool_items)
         metrics["sanitizer_reject_count"] = len(audit.rejections)
         row = {
             "t": t,

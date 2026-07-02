@@ -4,15 +4,35 @@ import asyncio
 import json
 import os
 import shutil
+from pathlib import Path
 
 os.environ.setdefault("SEC_MOCK_KEY", "x")
 
 from .config import Config
 from .expel import distill_expel_insights, looks_over_specific, sanitize_expel_insight
 from .llm import LLMClient
-from .maze_alpha import MAZE_EXPEL_ADAPTER, MazeMemoryAudit, run_maze_episode, write_maze_experience
+from .maze_alpha import (
+    MAZE_EXPEL_ADAPTER,
+    AgentRouteResult,
+    MazeEpisodeResult,
+    MazeMemoryAudit,
+    _episode_route_diversity,
+    _episode_route_diversity_efficient,
+    maze_batch_metrics,
+    memory_effective_size,
+    retrieval_entropy_norm,
+    retrieval_top1_share,
+    run_maze_episode,
+    write_maze_experience,
+)
 from .maze_env import make_maze_tasks
 from .memory import InsightMemory
+from .summarize_maze_alpha import (
+    _mean_rows as _sum_mean_rows,
+    _memory_rows as _sum_memory_rows,
+    _rows as _sum_rows,
+    _write_report as _sum_write_report,
+)
 
 
 def _cfg(**overrides):
@@ -213,6 +233,132 @@ async def _write_experience_reject_checks() -> None:
     print("p0 write-experience reject checks OK")
 
 
+# --- T0.3 mechanism metrics --------------------------------------------------
+
+
+def _entropy_metric_checks() -> None:
+    def items(counts):
+        return [{"retrieval_count": c} for c in counts]
+
+    assert retrieval_entropy_norm(items([10, 0, 0])) == 0.0, "single used item must have zero entropy"
+    assert abs(retrieval_entropy_norm(items([5, 5, 5])) - 1.0) < 1e-9, "uniform spread must be 1.0"
+    assert retrieval_entropy_norm(items([])) == 0.0
+    assert retrieval_entropy_norm(items([7])) == 0.0, "one-item pool: the old max/total metric scored 1.0 here"
+    assert retrieval_top1_share(items([7])) == 1.0  # documents exactly that pathology
+    assert memory_effective_size(items([])) == 0.0
+    assert abs(memory_effective_size(items([10])) - 1.0) < 1e-9
+    assert abs(memory_effective_size(items([5, 5, 5])) - 3.0) < 1e-9
+    mid = retrieval_entropy_norm(items([8, 2]))
+    assert 0.0 < mid < 1.0
+    print("p0 entropy metric checks OK")
+
+
+def _retrieval_share_series_checks() -> None:
+    audit = MazeMemoryAudit()
+    item_a = {"id": "A", "kind": "do", "text": "a"}
+    item_b = {"id": "B", "kind": "do", "text": "b"}
+    for agent_id in range(4):
+        audit.record_retrieval(t=0, task_id="x", agent_id=agent_id, items=[item_a])
+    audit.record_retrieval(t=1, task_id="x", agent_id=0, items=[item_a])
+    audit.record_retrieval(t=1, task_id="x", agent_id=1, items=[item_b])
+    series = audit.retrieval_share_series()
+    assert series["A"] == {"0": 1.0, "1": 0.5}, series
+    assert series["B"] == {"1": 0.5}, series
+    print("p0 retrieval share series checks OK")
+
+
+def _mk_route(*, success: bool, path: list[tuple[int, int]], shortest: int = 10, looped: bool = False, cost: float | None = None):
+    steps = max(len(path) - 1, 0)
+    return {
+        "success": success,
+        "steps": steps,
+        "shortest_path_length": shortest,
+        "cost_ratio": cost if cost is not None else steps / shortest,
+        "excess_steps": steps - shortest,
+        "invalid_move_rate": 0.0,
+        "revisit_max": 1,
+        "looped": looped,
+        "stagnation_rate": 0.0,
+        "path": [list(p) for p in path],
+    }
+
+
+def _mk_episode(task, routes) -> MazeEpisodeResult:
+    agents = [AgentRouteResult(agent_id=i, route=route, trace=[]) for i, route in enumerate(routes)]
+    return MazeEpisodeResult(task_id=task.task_id, task=task, agents=agents)
+
+
+def _diversity_and_batch_metric_checks() -> None:
+    task = make_maze_tasks(split="heldout", n=1, seed=7, width=9, height=9, family="benign")[0]
+    fast = [(1, 1), (2, 1), (3, 1), (4, 1)]
+    wander = [(1, 1), (1, 2), (1, 3), (1, 2), (1, 3), (1, 2), (5, 5), (6, 5)]
+
+    ep = _mk_episode(
+        task,
+        [
+            _mk_route(success=True, path=fast, cost=1.2),
+            _mk_route(success=True, path=fast, cost=1.2),
+            _mk_route(success=True, path=wander, cost=5.0, looped=True),
+        ],
+    )
+    efficient = _episode_route_diversity_efficient(ep)
+    assert efficient == 0.0, f"identical efficient routes must be homogeneous, got {efficient}"
+    assert _episode_route_diversity(ep) > 0.0, "the wandering route must inflate unconditional diversity"
+    only_one = _mk_episode(task, [_mk_route(success=True, path=fast, cost=1.2), _mk_route(success=False, path=wander, cost=6.0)])
+    assert _episode_route_diversity_efficient(only_one) is None, "fewer than 2 qualifying routes must yield None"
+
+    # success-conditional efficiency separation: excess 5 and 15 succeed, excess 100 fails.
+    shortest = 10
+    ep2 = _mk_episode(
+        task,
+        [
+            _mk_route(success=True, path=[(0, 0)] * (shortest + 5 + 1), shortest=shortest),
+            _mk_route(success=True, path=[(0, 0)] * (shortest + 15 + 1), shortest=shortest),
+            _mk_route(success=False, path=[(0, 0)] * (shortest + 100 + 1), shortest=shortest),
+        ],
+    )
+    metrics = maze_batch_metrics([ep2])
+    assert abs(metrics["success_excess_steps"] - 10.0) < 1e-9, metrics["success_excess_steps"]
+    assert abs(metrics["failure_rate"] - 1.0 / 3.0) < 1e-9
+    assert metrics["n_success"] == 2.0
+    all_fail = _mk_episode(task, [_mk_route(success=False, path=wander, cost=6.0)])
+    metrics_fail = maze_batch_metrics([all_fail])
+    assert metrics_fail["success_excess_steps"] == 0.0 and metrics_fail["n_success"] == 0.0
+
+    # ant-mill joint signature: majority looped AND overlapping routes.
+    both_loop_same = _mk_episode(
+        task,
+        [_mk_route(success=False, path=wander, looped=True), _mk_route(success=False, path=wander, looped=True)],
+    )
+    disjoint = [(7, 7), (7, 8), (8, 8), (7, 8), (8, 8), (7, 8)]
+    both_loop_disjoint = _mk_episode(
+        task,
+        [_mk_route(success=False, path=wander, looped=True), _mk_route(success=False, path=disjoint, looped=True)],
+    )
+    assert maze_batch_metrics([both_loop_same])["mas_antmill_rate"] == 1.0
+    assert maze_batch_metrics([both_loop_disjoint])["mas_antmill_rate"] == 0.0
+    print("p0 diversity and batch metric checks OK")
+
+
+def _summarize_compat_checks() -> None:
+    sample = Path("runs_maze_alpha_mas_shared_h3_t3_v1_v3_c4/n4_gt_false_seed0_maze_mad_shared_reviewer/result.json")
+    if not sample.exists():
+        print("p0 summarize compat checks SKIPPED (sample run not present)")
+        return
+    result = json.loads(sample.read_text(encoding="utf-8"))
+    runs = {("shared_reviewer", "0"): result}
+    rows = _sum_rows(runs)
+    assert rows and all(row.get("success_rate") is not None for row in rows)
+    assert all(row.get("retrieval_entropy_norm") is None for row in rows), "pre-P0 runs must degrade to None"
+    mean_rows = _sum_mean_rows(rows)
+    out = Path("./.sec_mock_runs/p0_summary")
+    out.mkdir(parents=True, exist_ok=True)
+    _sum_write_report(rows, mean_rows, _sum_memory_rows(runs), out)
+    assert (out / "report.md").exists()
+    assert "n/a" in (out / "report.md").read_text(encoding="utf-8"), "missing metrics must render as n/a"
+    print("p0 summarize compat checks OK")
+
+
 def main() -> None:
     _cache_key_checks()
     asyncio.run(_cache_salt_roundtrip_checks())
@@ -220,6 +366,10 @@ def main() -> None:
     _sanitizer_rule_checks()
     asyncio.run(_distill_reject_checks())
     asyncio.run(_write_experience_reject_checks())
+    _entropy_metric_checks()
+    _retrieval_share_series_checks()
+    _diversity_and_batch_metric_checks()
+    _summarize_compat_checks()
     print("selftest_p0 OK")
 
 
