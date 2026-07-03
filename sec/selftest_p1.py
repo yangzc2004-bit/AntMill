@@ -348,6 +348,109 @@ def _cli_wiring_checks() -> None:
     print("p1 CLI wiring checks OK")
 
 
+# --- infra resilience: content filter and degraded calls ----------------------
+
+
+class _FilteredThenOkCompletions:
+    def __init__(self) -> None:
+        self.calls: list[list[dict]] = []
+
+    async def create(self, *, model, messages, temperature, max_tokens):
+        self.calls.append([dict(m) for m in messages])
+        if len(self.calls) == 1:
+            raise RuntimeError("Error code: 403 - ModelArts.81011 Output text May contain sensitive information")
+
+        class _Msg:
+            content = "Recovered. Action: inspect"
+            reasoning_content = None
+
+        class _Choice:
+            message = _Msg()
+
+        class _Resp:
+            choices = [_Choice()]
+            usage = None
+
+        return _Resp()
+
+
+async def _content_filter_retry_checks() -> None:
+    import shutil
+
+    from .llm import _is_content_filter_error, _perturb_messages
+
+    assert _is_content_filter_error(RuntimeError("ModelArts.81011 blah"))
+    assert _is_content_filter_error(RuntimeError("Output text May contain SENSITIVE information"))
+    assert not _is_content_filter_error(RuntimeError("rate limit exceeded"))
+    perturbed = _perturb_messages([{"role": "system", "content": "s"}, {"role": "user", "content": "u"}], 2)
+    assert "[retry 2" in perturbed[1]["content"] and perturbed[0]["content"] == "s"
+
+    cfg = _cfg(cache_dir="./.sec_mock_cache/p1_filter", max_retries=3)
+    shutil.rmtree(cfg.cache_dir, ignore_errors=True)
+    llm = LLMClient(cfg)
+    fake = _FilteredThenOkCompletions()
+
+    class _Chat:
+        completions = fake
+
+    class _Client:
+        chat = _Chat()
+
+    llm.client = _Client()  # type: ignore[assignment]
+    messages = [{"role": "user", "content": "original prompt"}]
+    out = await llm.chat(messages, tag="maze_agent:0", cache_salt="X")
+    assert out == "Recovered. Action: inspect"
+    assert len(fake.calls) == 2, "one filtered attempt plus one perturbed retry"
+    assert fake.calls[0][-1]["content"] == "original prompt", "first attempt must be unperturbed"
+    assert "[retry 2" in fake.calls[1][-1]["content"], "content-filter retry must perturb the request"
+    assert llm.stats.content_filter_hits == 1
+    out2 = await llm.chat(messages, tag="maze_agent:0", cache_salt="X")
+    assert out2 == out and len(fake.calls) == 2, "result must be cached under the ORIGINAL key"
+    print("p1 content filter retry checks OK")
+
+
+async def _llm_error_resilience_checks() -> None:
+    async def _always_fail(self, messages, *, temp=0.0, model=None, max_tokens=None, tag="", cache_salt=""):
+        raise RuntimeError("LLM call failed after 6 attempts: 403 sensitive")
+
+    async def _solver_ok(self, messages, *, temp=0.0, model=None, max_tokens=None, tag="", cache_salt=""):
+        if tag.startswith("maze_agent"):
+            return "Explore. Action: move:right"
+        raise RuntimeError("LLM call failed after 6 attempts: 403 sensitive")
+
+    original = LLMClient.chat
+    try:
+        # solver degradation: every step falls back to inspect, run survives
+        LLMClient.chat = _always_fail  # type: ignore[assignment]
+        cfg = _cfg(memory_mode="none", maze_write_mode="none", n_solvers=2, max_steps=3)
+        llm = LLMClient(cfg)
+        memory = InsightMemory(cfg)
+        audit = MazeMemoryAudit()
+        task = make_maze_tasks(split="heldout", n=1, seed=14, width=9, height=9, family="benign")[0]
+        episode = await run_maze_episode(task, memory, cfg, llm, audit=audit, t=0)
+        route = episode.agents[0].route
+        assert route["llm_error_count"] == 3, route.get("llm_error_count")
+        assert audit.llm_errors, "solver llm errors must be audited"
+        from .maze_alpha import maze_batch_metrics as _mbm
+
+        assert _mbm([episode])["llm_error_count"] == 6.0  # 2 agents x 3 steps
+
+        # reviewer degradation: writes skipped, no crash, audit records the error
+        LLMClient.chat = _solver_ok  # type: ignore[assignment]
+        for protocol in ("distill", "expel_ops", "append"):
+            cfg = _cfg(memory_write_protocol=protocol, n_solvers=2, max_steps=3)
+            llm = LLMClient(cfg)
+            memory = InsightMemory(cfg)
+            audit = MazeMemoryAudit()
+            episode = await run_maze_episode(task, memory, cfg, llm, audit=audit, t=0)
+            await write_maze_experience(episode, memory, cfg, llm, audit=audit, t=0, write_mode="reviewer")
+            assert memory.size() == 0, f"{protocol}: failed reviewer must not write"
+            assert audit.llm_errors, f"{protocol}: reviewer llm error must be audited"
+    finally:
+        LLMClient.chat = original  # type: ignore[assignment]
+    print("p1 llm error resilience checks OK")
+
+
 def main() -> None:
     _query_checks()
     _embedding_checks()
@@ -361,6 +464,8 @@ def main() -> None:
     _cli_wiring_checks()
     asyncio.run(_append_protocol_checks())
     _prereg_phase_checks()
+    asyncio.run(_content_filter_retry_checks())
+    asyncio.run(_llm_error_resilience_checks())
     print("selftest_p1 OK")
 
 

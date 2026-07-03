@@ -84,6 +84,7 @@ class MazeMemoryAudit:
         self.writes: list[dict[str, Any]] = []
         self.retrievals: list[dict[str, Any]] = []
         self.rejections: list[dict[str, Any]] = []
+        self.llm_errors: list[dict[str, Any]] = []
 
     def record_retrieval(self, *, t: int, task_id: str, agent_id: int, items: list[dict[str, Any]]) -> None:
         for item in items:
@@ -128,6 +129,11 @@ class MazeMemoryAudit:
             {"t": t, "task_id": task_id, "write_mode": write_mode, "text": text, "reason": reason}
         )
 
+    def record_llm_error(self, *, t: int, task_id: str, tag: str, message: str) -> None:
+        # Infra failures (endpoint content filter, exhausted retries) degrade one
+        # call, never the run; they are counted here so data quality is auditable.
+        self.llm_errors.append({"t": t, "task_id": task_id, "tag": tag, "message": message[:200]})
+
     def retrieval_share_series(self) -> dict[str, dict[str, float]]:
         """Per-item share of retrievals in each round: {item_id: {t: share}}.
 
@@ -154,6 +160,8 @@ class MazeMemoryAudit:
             "retrievals": self.retrievals,
             "sanitizer_rejects": self.rejections,
             "sanitizer_reject_rate": len(self.rejections) / attempts if attempts else 0.0,
+            "llm_errors": self.llm_errors,
+            "llm_error_count": len(self.llm_errors),
             "memory_items": items,
             "retrieval_top1_share": retrieval_top1_share(items),
             "retrieval_concentration": retrieval_concentration(items),
@@ -338,6 +346,7 @@ def _add_route_eval_fields(
     route["stagnation_rate"] = _route_stagnation_rate(route.get("path", []), task.goal)
     route["state_guided_override_count"] = override_count
     route["state_guided_override_rate"] = override_count / max(len(trace), 1)
+    route["llm_error_count"] = sum(1 for row in trace if row.get("llm_error"))
 
 
 def _run_oracle_maze_agent(task: MazeTask, *, agent_id: int, insights: list[dict[str, Any]]) -> AgentRouteResult:
@@ -579,13 +588,19 @@ async def run_maze_agent(
             "Choose the next action. Do not output a coordinate-specific memorized route. "
             "Finish with exactly one line: Action: <tool call>."
         )
-        out = await llm.chat(
-            [{"role": "system", "content": MAZE_AGENT_SYS}, {"role": "user", "content": prompt}],
-            temp=cfg.solver_temp,
-            max_tokens=cfg.max_tokens_solver,
-            tag=f"maze_agent:{agent_id}",
-            cache_salt=_solver_cache_salt(cfg, t=t, task_id=task.task_id, agent_id=agent_id, step=step),
-        )
+        llm_error = False
+        try:
+            out = await llm.chat(
+                [{"role": "system", "content": MAZE_AGENT_SYS}, {"role": "user", "content": prompt}],
+                temp=cfg.solver_temp,
+                max_tokens=cfg.max_tokens_solver,
+                tag=f"maze_agent:{agent_id}",
+                cache_salt=_solver_cache_salt(cfg, t=t, task_id=task.task_id, agent_id=agent_id, step=step),
+            )
+        except RuntimeError as exc:
+            # One filtered/failed call degrades one step to a no-op, never the run.
+            out = f"LLM unavailable ({str(exc)[:80]}). Action: inspect"
+            llm_error = True
         model_action = parse_action(out)
         action = model_action
         override = False
@@ -615,6 +630,7 @@ async def run_maze_agent(
                 "observation": obs2,
                 "position": list(env.pos),
                 "invalid": bool(info.get("invalid")),
+                "llm_error": llm_error,
             }
         )
         obs = obs2
@@ -674,13 +690,20 @@ async def run_maze_episode(
             search_state=search_state,
             agent_mode=cfg.maze_agent_mode,
         )
-        out = await llm.chat(
-            [{"role": "system", "content": MAZE_AGENT_SYS}, {"role": "user", "content": prompt}],
-            temp=cfg.solver_temp,
-            max_tokens=cfg.max_tokens_solver,
-            tag=f"maze_agent:{agent_id}",
-            cache_salt=_solver_cache_salt(cfg, t=t, task_id=task.task_id, agent_id=agent_id, step=step),
-        )
+        llm_error = False
+        try:
+            out = await llm.chat(
+                [{"role": "system", "content": MAZE_AGENT_SYS}, {"role": "user", "content": prompt}],
+                temp=cfg.solver_temp,
+                max_tokens=cfg.max_tokens_solver,
+                tag=f"maze_agent:{agent_id}",
+                cache_salt=_solver_cache_salt(cfg, t=t, task_id=task.task_id, agent_id=agent_id, step=step),
+            )
+        except RuntimeError as exc:
+            # One filtered/failed call degrades one step to a no-op, never the run.
+            out = f"LLM unavailable ({str(exc)[:80]}). Action: inspect"
+            llm_error = True
+            audit.record_llm_error(t=t, task_id=task.task_id, tag=f"maze_agent:{agent_id}", message=str(exc))
         model_action = parse_action(out)
         action = model_action
         override = False
@@ -699,6 +722,7 @@ async def run_maze_episode(
             "search_state": search_state,
             "state_guided_override": bool(override and cfg.maze_agent_mode == "state_guided"),
             "state_guided_override_reason": override_reason if cfg.maze_agent_mode == "state_guided" else "",
+            "llm_error": llm_error,
         }
 
     for step in range(cfg.max_steps):
@@ -740,6 +764,7 @@ async def run_maze_episode(
                     "observation": obs_after,
                     "position": list(env.pos),
                     "invalid": bool(info.get("invalid")),
+                    "llm_error": bool(meta.get("llm_error")),
                     "peer_actions": [
                         {"agent_id": pid, "action": act}
                         for pid, act in enumerate(proposals)
@@ -831,6 +856,7 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
             "route_diversity_efficient_n": 0.0,
             "mas_antmill_rate": 0.0,
             "efficiency_collapse_signal": 0.0,
+            "llm_error_count": 0.0,
         }
     mean = lambda xs: float(sum(xs) / len(xs)) if xs else 0.0
     per_episode_overlap = [_episode_route_diversity(ep) for ep in episodes]
@@ -867,6 +893,7 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
         "route_diversity_efficient_n": float(len(efficient_divs)),
         "mas_antmill_rate": mean(loop_by_ep),
         "efficiency_collapse_signal": collapse_signal,
+        "llm_error_count": float(sum(int(r.get("llm_error_count") or 0) for r in routes)),
     }
 
 
@@ -1012,8 +1039,8 @@ async def write_maze_experience(
         for agent in episode.agents:
             agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
             rejects: list[dict[str, str]] = []
-            insights = await distill_expel_insights(
-                _maze_expel_episodes(agent_episode), MAZE_EXPEL_ADAPTER, cfg, llm, reject_log=rejects
+            insights = await _distill_or_empty(
+                _maze_expel_episodes(agent_episode), cfg, llm, audit=audit, t=t, task_id=episode.task_id, rejects=rejects
             )
             _record_rejects(audit, rejects, episode=episode, t=t, write_mode=write_mode)
             agent_support = cfg.n_solvers if agent.success else 0
@@ -1022,8 +1049,8 @@ async def write_maze_experience(
         return
 
     rejects = []
-    insights = await distill_expel_insights(
-        _maze_expel_episodes(episode), MAZE_EXPEL_ADAPTER, cfg, llm, reject_log=rejects
+    insights = await _distill_or_empty(
+        _maze_expel_episodes(episode), cfg, llm, audit=audit, t=t, task_id=episode.task_id, rejects=rejects
     )
     _record_rejects(audit, rejects, episode=episode, t=t, write_mode=write_mode)
     support = sum(1 for agent in episode.agents if agent.success)
@@ -1043,8 +1070,8 @@ async def _write_experience_append(
     for agent in episode.agents:
         agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
         rejects: list[dict[str, str]] = []
-        insights = await distill_expel_insights(
-            _maze_expel_episodes(agent_episode), MAZE_EXPEL_ADAPTER, cfg, llm, reject_log=rejects
+        insights = await _distill_or_empty(
+            _maze_expel_episodes(agent_episode), cfg, llm, audit=audit, t=t, task_id=episode.task_id, rejects=rejects
         )
         _record_rejects(audit, rejects, episode=episode, t=t, write_mode="reviewer_append")
         pool = memory.pool_view(agent.agent_id)
@@ -1095,7 +1122,11 @@ async def _write_experience_ops(
     agent_id: int,
 ) -> None:
     pool = memory.pool_view(agent_id)
-    ops = await propose_memory_ops(pool, _maze_expel_episodes(episode), MAZE_EXPEL_ADAPTER, cfg, llm)
+    try:
+        ops = await propose_memory_ops(pool, _maze_expel_episodes(episode), MAZE_EXPEL_ADAPTER, cfg, llm)
+    except RuntimeError as exc:
+        audit.record_llm_error(t=t, task_id=episode.task_id, tag="expel_ops_reviewer", message=str(exc))
+        return
     rejects: list[dict[str, str]] = []
     new_pool, applied = apply_memory_ops(pool, ops, cfg=cfg, reject_log=rejects)
     memory.set_pool(agent_id, new_pool)
@@ -1121,6 +1152,23 @@ async def _write_experience_ops(
             write_mode=f"reviewer_ops:{op['op']}",
             quality=quality,
         )
+
+
+async def _distill_or_empty(
+    episodes: list[dict[str, Any]],
+    cfg: Config,
+    llm: LLMClient,
+    *,
+    audit: MazeMemoryAudit,
+    t: int,
+    task_id: str,
+    rejects: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    try:
+        return await distill_expel_insights(episodes, MAZE_EXPEL_ADAPTER, cfg, llm, reject_log=rejects)
+    except RuntimeError as exc:
+        audit.record_llm_error(t=t, task_id=task_id, tag="expel_reviewer", message=str(exc))
+        return []
 
 
 def _record_rejects(
