@@ -190,6 +190,20 @@ ant-mill 事件存在但稀少（consolidated 0.056 vs frozen 0.028，n 不足�
 
 按第 2 节条文：方向成立 → 后续补 seeds {3,4}；按第 3 节：进入 E3 λ 剂量-反应 gate。
 
+**2026-07-05 — 对上一条判决记录的两处表述修正（复核后追加，不改判决本身）**
+
+1. **claim 范围限定**：直接对比 shared_consolidated vs private（配对，t=5，
+   `runs_maze_beta_e2_stats_vs_private/`）所有主指标 CI 均含 0
+   （sxs −4.93，CI [−11.18, +1.35]；looped +0.049，CI [−0.007, +0.111]）。
+   因此 E2 已确立的是 **"consolidated active memory 相对 frozen 退化"**（冻结规则
+   本身就是 vs frozen），**尚未确立 "shared 显著坏于 private"**；shared 特异性目前
+   只有跨 seed 稳定性差异（consolidated 3/3 同号 vs private/append 的 +−+）这一
+   较弱形态的证据。shared-vs-private 分离押注于 E3 的 λ 杠杆与 seeds {3,4}。
+   论文叙事在此之前不得声称"共享已被证明比私有更危险"。
+2. **更正"mas_nomem 各主指标≈无差异"**：mas_nomem vs frozen 的 looped 实为
+   +0.056（CI [0.014, 0.097]，显著）。准确表述：效率（sxs）与 success 无显著差异、
+   loop 略高；总体不支持"多智能体执行本身导致效率退化"，但"完全无差异"不成立。
+
 **2026-07-03 — 基础设施韧性补丁（工程性偏离，不改判决规则）**：E2 首次启动在
 seed0 frozen 臂训练批被 ModelArts 内容过滤器（81011，输出侧）连续 403 六次击穿，
 整个 run 崩溃。补丁：(a) `llm.py` 对内容过滤错误在重试时附加良性格式提示 nonce
