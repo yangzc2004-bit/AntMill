@@ -168,6 +168,28 @@ E1 按第 1 节命令原样跑完（9/9 arm-seed；中途因运行环境退出�
 **2026-07-03 — 研究者裁决**：基于采纳性证据进入 E2 gate（seeds 0-2），
 E2 判决规则按第 2 节冻结条文执行，不变。
 
+**2026-07-05 — E2 gate 判决（seeds 0-2，冻结规则原文执行）**
+
+数据质量：15/15 arm-seed 完成，全部 `llm_error_count = 0`（韧性兜底未触发），
+sanitizer 拒绝共 9 条，λ=0 下池熵 0.87–1.0。统计见
+`runs_maze_beta_e2_stats/`（配对 bootstrap，t=5，n_pairs=144）。
+
+**内生退化成立，由 `shared_consolidated_expel` 臂驱动**，冻结规则三条件全中：
+(a) success_excess_steps 配对 CI [+3.19, +13.66] > 0；
+(b) per-seed 同号 3/3（+7.71 / +7.83 / +9.58，跨 seed 高度一致）；
+(c) looped 配对 CI [+0.035, +0.139] > 0。
+另 success 配对差 −0.19（CI 不含 0，3/3 同号）。
+
+其余臂：`shared_append_ga` 不满足规则（sxs 不显著，per-seed +−+）；
+`private` 合并 sxs 显著但 per-seed +−+（seed1 反向），不构成一致退化；
+`mas_nomem` vs frozen 各主指标≈无差异（RQ2：多智能体执行本身不病态；
+frozen≈no-mem 亦确认存储无害，**注入是危害通道**）。
+所有主动记忆臂 success 均显著下降（−0.16~−0.19，3/3 同号）——
+"共识合并型共享记忆产生跨 seed 最稳定的退化"是本轮核心结论。
+ant-mill 事件存在但稀少（consolidated 0.056 vs frozen 0.028，n 不足以判定）。
+
+按第 2 节条文：方向成立 → 后续补 seeds {3,4}；按第 3 节：进入 E3 λ 剂量-反应 gate。
+
 **2026-07-03 — 基础设施韧性补丁（工程性偏离，不改判决规则）**：E2 首次启动在
 seed0 frozen 臂训练批被 ModelArts 内容过滤器（81011，输出侧）连续 403 六次击穿，
 整个 run 崩溃。补丁：(a) `llm.py` 对内容过滤错误在重试时附加良性格式提示 nonce
