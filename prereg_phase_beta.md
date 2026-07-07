@@ -190,6 +190,36 @@ ant-mill 事件存在但稀少（consolidated 0.056 vs frozen 0.028，n 不足�
 
 按第 2 节条文：方向成立 → 后续补 seeds {3,4}；按第 3 节：进入 E3 λ 剂量-反应 gate。
 
+**2026-07-07 — E2 完整判决（5 seeds，冻结规则原文执行）：内生退化确立**
+
+数据质量：25/25 arm 完成，全部 llm_error 占比 < 1%（0 个超阈）。统计见
+`runs_maze_beta_e2_5seed_vs_frozen/`（n_pairs=240，success_excess_steps n=115–150）。
+
+**shared_consolidated_expel 满足全部冻结判据**：
+- success_excess_steps 配对 CI [+7.66, +16.02] > 0，per-seed **5/5 同号**
+  （+7.7/+7.8/+9.6/+17.8/+18.5，且 seed3-4 效应更大）；
+- looped CI [+0.092, +0.188] > 0，4/5 同号（1 个为 0）；
+- success −0.171，CI 不含 0，5/5 同号。
+→ **达成 §2 "内生退化成立"（≥4/5 同号）**。
+
+对照臂：
+- `mas_nomem` vs frozen：效率/success 无差异，looped +0.042（CI [0.008,0.075] 显著）
+  → 多智能体执行本身不致效率退化，仅轻微 loop 上升（沿用 07-05 更正表述）。
+- `shared_append` vs frozen：success 显著降（−0.121）但 sxs 不显著、looped 不显著、
+  per-seed +−+++ → **未达退化判据**。
+- `private` vs frozen：sxs 显著（+7.32）且 4/5 同号，success 显著降 5/5 →
+  private 注入也退化，但效应弱于 consolidated。
+
+**shared vs private（新增，seed3-4 后浮现的关键分离）**：shared_consolidated vs private
+直接配对（n=240）——looped **+0.058，CI [+0.008, +0.113]，显著**；sxs/success 含 0。
+即：**共识合并型共享记忆的循环退化显著强于私有记忆**（3 seed 时此对比全 null，
+5 seed 后 loop 维度分离出来）。上一条 07-05 的 claim 限定据此**部分解除**：
+shared 特异性在 loop 维度已获配对显著证据，但效率（sxs）维度仍不能声称 shared>private。
+
+**综合结论（论文主线可写）**：单智能体无害（E1）→ 多智能体经验注入致退化，其中
+LLM 共识合并写入产生跨 seed 最稳健、且循环维度上显著强于私有的退化（E2）→
+退化不来自读端使用量加权（E3 负结果）而来自写端共识压缩（策略供给收窄 2–2.5×）。
+
 **2026-07-06 — E3 gate 判决（seeds 0-2，冻结规则原文执行）：无剂量效应**
 
 数据质量：9/9 arm-seed 完成，llm_error 合计 1（占比≈0，远低于 1% 阈值）。
@@ -235,3 +265,33 @@ seed0 frozen 臂训练批被 ModelArts 内容过滤器（81011，输出侧）连
 reviewer 调用失败跳过该批写入——两者均计入 `llm_error_count` 与 audit `llm_errors`，
 随结果一并报告。若任一 arm 的 llm_error 步数占比 > 1%，该 arm 数据作废重跑。
 E2 经带盐 cache 断点续跑，已完成部分不受影响。
+
+**2026-07-07 — E2 完整 5-seed 判决（seeds 0-4，冻结规则原文执行）：consolidated vs frozen 成立，shared-vs-private 仍需限界**
+
+数据质量：25/25 arm-seed 完成，统计见 `runs_maze_beta_e2_stats_5seed/` 与
+`runs_maze_beta_e2_stats_5seed_vs_private/`；证据包见 `runs_maze_beta_e2_evidence/`。
+
+按 §2 冻结判据，`shared_consolidated_expel` 相对 `frozen` 的内生退化成立：
+(a) `success_excess_steps` 配对差 +11.84，95% CI [+7.66, +16.02]，CI 全部 > 0；
+(b) per-seed 方向为 4/5 同号变差：seed0 −0.81，seed1 +6.27，seed2 +8.23，
+seed3 +9.30，seed4 +8.17；
+(c) `looped` 配对差 +0.138，95% CI [+0.092, +0.188]，CI 全部 > 0。
+辅助指标同向支持：`stagnation_rate` +0.093，CI [+0.076, +0.110]；
+`revisit_max` +1.675，CI [+1.233, +2.125]；success −0.171，CI [−0.242, −0.100]。
+
+claim 边界同步冻结：5-seed 后 `private` 相对 `frozen` 也在主效率终点上显著变差
+（sxs +7.33，CI [+2.83, +11.90]；looped +0.079，CI [+0.037, +0.125]）。
+因此宽口径风险是 active memory injection；`shared_consolidated_expel` 的特异性证据更窄。
+`shared_consolidated_expel` 相对 `private` 尚未在主效率终点上显著更差
+（sxs +0.87，CI [−4.29, +6.15]；cost_ratio +0.016，CI [−0.078, +0.113]；
+success +0.004，CI [−0.071, +0.079]），但 `looped` 更高（+0.058，
+CI [+0.008, +0.113]）。因此论文不得写成"shared memory 已被证明全面坏于 private"；
+准确主张是：**consolidated active memory 相对 write-only/no-injection control 稳健退化，
+shared-specific 风险目前主要体现为 loop 放大与写端策略供给压缩，而非主效率指标上的
+shared-vs-private 全面分离。**
+
+机制审计同步入档：`shared_consolidated` 平均实际注入的不同经验为 11.0 条，
+`shared_append` 为 25.4 条，append/consolidated 比值为 2.31x；最终池大小范围分别为
+consolidated 11–17 条、append 80 条。泄漏扫描未发现 maze id、具体坐标或长固定动作序列式
+经验文本。E3 的 λ 读端剂量效应仍作为负结果保留；机制焦点维持在写端共识合并造成的
+strategy-supply compression。
