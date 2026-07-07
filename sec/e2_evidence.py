@@ -321,6 +321,59 @@ def _plot_figure2(stats_rows: list[dict[str, str]], out_base: Path) -> None:
     plt.close(fig)
 
 
+def _plot_figure2b(stats_vs_private_rows: list[dict[str, str]], out_base: Path) -> None:
+    """Shared-vs-PRIVATE contrast: the shared-specific evidence is loop amplification,
+    not a broad efficiency separation. Answers the 'private is also bad' objection."""
+    import matplotlib as mpl
+    import matplotlib.pyplot as plt
+
+    mpl.rcParams.update(
+        {
+            "font.family": "sans-serif",
+            "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
+            "svg.fonttype": "none",
+            "pdf.fonttype": 42,
+            "font.size": 7,
+            "axes.spines.right": False,
+            "axes.spines.top": False,
+            "axes.linewidth": 0.8,
+        }
+    )
+    lookup = _stats_lookup(stats_vs_private_rows)
+    conditions = ["shared_append", "shared_consolidated"]
+    metrics = [
+        ("success_excess_steps", "Success-only excess steps", "steps"),
+        ("looped", "Looped routes", "rate"),
+    ]
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 1.9), squeeze=False)
+    for ax, (metric, title, unit) in zip(axes.ravel(), metrics):
+        y_positions = np.arange(len(conditions))
+        for y, condition in zip(y_positions, conditions):
+            row = lookup[(condition, metric)]
+            mean, lo, hi = float(row["mean_diff"]), float(row["ci_lo"]), float(row["ci_hi"])
+            sig = row.get("ci_excludes_zero", "").lower() in {"true", "1"}
+            ax.errorbar(
+                mean, y, xerr=[[mean - lo], [hi - mean]], fmt="o",
+                color=COLORS[condition], ecolor=COLORS[condition],
+                capsize=2.5, markersize=4, markerfacecolor=COLORS[condition] if sig else "white",
+            )
+        ax.axvline(0, color="#6F7378", linewidth=0.8, linestyle="--")
+        ax.set_yticks(y_positions)
+        ax.set_yticklabels([DISPLAY[c] for c in conditions])
+        ax.invert_yaxis()
+        ax.set_title(title, loc="left", fontweight="bold")
+        ax.set_xlabel(f"Mean difference vs private ({unit})")
+        ax.grid(axis="x", color="#E7E9EC", linewidth=0.7)
+    fig.suptitle(
+        "E2 boundary: vs private memory, only looping separates (filled = 95% CI excludes 0)",
+        x=0.01, ha="left", fontweight="bold",
+    )
+    fig.tight_layout(rect=(0, 0, 1, 0.90))
+    for ext in ("png", "pdf", "svg"):
+        fig.savefig(out_base.with_suffix(f".{ext}"), dpi=600 if ext == "png" else None, bbox_inches="tight")
+    plt.close(fig)
+
+
 def _plot_figure3(summary_rows: list[dict[str, Any]], out_base: Path) -> None:
     import matplotlib as mpl
     import matplotlib.pyplot as plt
@@ -568,6 +621,7 @@ def main() -> None:
     _write_audit_findings(summary_rows, leak_rows, out_dir / "memory_audit_findings.md")
     _write_verdict(stats_rows, stats_vs_private_rows, per_seed_diffs, summary_rows, out_dir)
     _plot_figure2(stats_rows, out_dir / "figure2_e2_main")
+    _plot_figure2b(stats_vs_private_rows, out_dir / "figure2b_shared_vs_private")
     _plot_figure3(summary_rows, out_dir / "figure3_write_side_compression")
     print(f"wrote {out_dir.resolve()}")
 
