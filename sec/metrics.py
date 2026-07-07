@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import math
 import re
 import string
@@ -196,6 +197,26 @@ def hashing_embedding(text: str, dim: int = 128) -> np.ndarray:
         vec[idx] += 1.0
     norm = np.linalg.norm(vec)
     return vec / norm if norm else vec
+
+
+def stable_hashing_embedding(text: str, dim: int = 128) -> np.ndarray:
+    """Deterministic token-hashing embedding.
+
+    hashing_embedding relies on Python's per-process randomized hash(), so any
+    ranking built on it changes between runs. Retrieval scoring must use this
+    md5-based variant to stay reproducible.
+    """
+    vec = np.zeros(dim, dtype=float)
+    for tok in normalize_answer(text).split():
+        idx = int(hashlib.md5(tok.encode("utf-8")).hexdigest(), 16) % dim
+        vec[idx] += 1.0
+    norm = np.linalg.norm(vec)
+    return vec / norm if norm else vec
+
+
+def embedding_similarity(a: str, b: str) -> float:
+    """Cosine similarity of stable hashing embeddings, in [0, 1] for token-count vectors."""
+    return float(np.dot(stable_hashing_embedding(a), stable_hashing_embedding(b)))
 
 
 def eff_rank(library: list[dict[str, Any]]) -> float:

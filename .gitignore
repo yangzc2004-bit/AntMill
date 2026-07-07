@@ -7,6 +7,10 @@ runs_*/
 .sec_mock_runs/
 tmp/
 
+# Stray run logs (stdout/stderr redirected from experiment launches)
+*_stdout.log
+*_stderr.log
+
 # LaTeX / rendered draft artifacts
 paper_draft/build*/
 paper_draft/rendered*/

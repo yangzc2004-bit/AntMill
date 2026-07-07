@@ -18,6 +18,26 @@ Message = dict[str, str]
 STRUCTURED_REASONING_FALLBACK_TAGS = {"reviewer", "expel_reviewer", "self_eval"}
 
 
+def _is_content_filter_error(exc: Exception) -> bool:
+    s = str(exc).lower()
+    return "81011" in s or "sensitive information" in s or "content_filter" in s
+
+
+def _perturb_messages(messages: list[Message], attempt: int) -> list[Message]:
+    """Benign nonce for content-filter retries: same task, different sampled surface.
+
+    Endpoint moderation (e.g. ModelArts.81011) can flag a borderline output
+    repeatedly for the same request; a formatting reminder changes the sample
+    without changing the task. The cache key stays bound to the ORIGINAL messages.
+    """
+    perturbed = [dict(m) for m in messages]
+    for m in reversed(perturbed):
+        if m.get("role") == "user":
+            m["content"] = f"{m['content']}\n\n[retry {attempt}: answer strictly in the requested format]"
+            break
+    return perturbed
+
+
 def _effective_response_text(content: str, reasoning: Any, tag: str) -> str:
     if content.strip():
         return content
@@ -31,6 +51,7 @@ class LLMStats:
     network_calls: int = 0
     cache_hits: int = 0
     errors: int = 0
+    content_filter_hits: int = 0
     prompt_tokens: int = 0
     completion_tokens: int = 0
     total_tokens: int = 0
@@ -73,6 +94,7 @@ class LLMStats:
             "cached_total_tokens": self.cached_total_tokens,
             "trace_total_tokens": self.total_tokens + self.cached_total_tokens,
             "errors": self.errors,
+            "content_filter_hits": self.content_filter_hits,
         }
 
 
@@ -91,7 +113,15 @@ class LLMClient:
         self._rate_lock = asyncio.Lock()
         self._last_network_ts = 0.0
 
-    def _key(self, *, model: str, messages: list[Message], temp: float, max_tokens: int | None) -> str:
+    def _key(
+        self,
+        *,
+        model: str,
+        messages: list[Message],
+        temp: float,
+        max_tokens: int | None,
+        cache_salt: str = "",
+    ) -> str:
         payload = {
             "base_url": self.cfg.base_url,
             "model": model,
@@ -99,6 +129,10 @@ class LLMClient:
             "temperature": temp,
             "max_tokens": max_tokens,
         }
+        if cache_salt:
+            # Execution-context salt (round/task/agent/step). Without it, identical prompts
+            # across rounds or conditions replay one cached sample and fake the dynamics.
+            payload["salt"] = cache_salt
         raw = json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
         return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
@@ -110,9 +144,10 @@ class LLMClient:
         model: str | None = None,
         max_tokens: int | None = None,
         tag: str = "",
+        cache_salt: str = "",
     ) -> str:
         model_name = model or self.cfg.model
-        key = self._key(model=model_name, messages=messages, temp=temp, max_tokens=max_tokens)
+        key = self._key(model=model_name, messages=messages, temp=temp, max_tokens=max_tokens, cache_salt=cache_salt)
         lock = self._locks.setdefault(key, asyncio.Lock())
         async with lock:
             cache_file = self.cache_dir / f"{key}.json"
@@ -131,12 +166,14 @@ class LLMClient:
             async with self.sem:
                 delay = 1.0
                 last_error: Exception | None = None
+                content_filtered = False
                 for attempt in range(1, self.cfg.max_retries + 1):
+                    request_messages = _perturb_messages(messages, attempt) if content_filtered else messages
                     try:
                         await self._throttle()
                         response = await self.client.chat.completions.create(
                             model=model_name,
-                            messages=messages,
+                            messages=request_messages,
                             temperature=temp,
                             max_tokens=max_tokens,
                         )
@@ -170,6 +207,9 @@ class LLMClient:
                     except Exception as exc:  # noqa: BLE001
                         last_error = exc
                         self.stats.errors += 1
+                        if _is_content_filter_error(exc):
+                            self.stats.content_filter_hits += 1
+                            content_filtered = True
                         if attempt >= self.cfg.max_retries:
                             raise RuntimeError(f"LLM call failed after {attempt} attempts: {exc}") from exc
                         wait = max(delay, 65.0) if "rate limit" in str(exc).lower() or "too many requests" in str(exc).lower() else delay

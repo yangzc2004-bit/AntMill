@@ -19,6 +19,20 @@
 \begin{document}
 \maketitle
 
+\begin{center}
+\fcolorbox{red!70!black}{red!4}{\parbox{0.92\linewidth}{%
+\textbf{Draft status (P0 freeze).} All numbers in this draft come from pilot runs
+(heldout $=3$ mazes, $\le 3$ seeds, no confidence intervals, and an LLM cache without
+per-round salting, so repeated rounds partially replay cached samples). The matrix is
+being rerun under the preregistered protocol; \textbf{do not cite any number in this
+draft}. Terminology update: the ``direct''/``oracle'' write conditions inject fixed
+researcher-written strategy templates and are henceforth named
+\emph{scripted}/\emph{scripted\_gated} (scripted-injection upper-bound controls, not
+learned experience); the multi-agent arms are \emph{independent solvers with shared
+experiential memory} (historically labeled MAD, but no debate occurs at
+\texttt{debate\_rounds}$=1$).}}
+\end{center}
+
 \begin{abstract}
 This draft section reports the current MazeEval-style pilot for studying strategy degradation in multi-agent systems (MAS) with shared experience. The central hypothesis is not that erroneous memories contaminate later reasoning, but that locally valid strategies can be amplified by consensus-driven writing, retrieval, and reuse until the system exhibits global inefficiency, route homogenization, and no-error loops. The current pilot shows that shared experience is not inherently harmful: reviewer-written shared memory can improve short-horizon performance. However, direct or oracle-style shared memories with high retrieval concentration produce higher path cost, higher loop rate, and later-stage collapse under a longer feedback horizon.
 \end{abstract}

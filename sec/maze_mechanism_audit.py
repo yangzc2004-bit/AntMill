@@ -15,14 +15,36 @@ DEFAULT_RUNS = {
     "shared_oracle": "runs_maze_alpha_mas_shared_oracle_h3_t3_seed2_v1_v3_c4/n4_gt_false_seed2_maze_mad_shared_oracle/result.json",
 }
 
-CONDITION_ORDER = ["frozen", "private_fixed", "shared_reviewer", "shared_direct", "shared_oracle"]
+CONDITION_ORDER = [
+    "frozen",
+    "private_fixed",
+    "shared_reviewer",
+    "shared_direct",
+    "shared_oracle",
+    "shared_scripted",
+    "shared_scripted_gated",
+]
 CONDITION_COLORS = {
     "frozen": "#8a8f98",
     "private_fixed": "#4c78a8",
     "shared_reviewer": "#54a24b",
     "shared_direct": "#e45756",
     "shared_oracle": "#b279a2",
+    "shared_scripted": "#e45756",
+    "shared_scripted_gated": "#b279a2",
 }
+# "direct"/"oracle" arms inject fixed researcher-written templates (scripted-injection
+# controls); figure titles must say so.
+CONDITION_LABELS = {
+    "shared_direct": "shared_scripted (injection)",
+    "shared_oracle": "shared_scripted_gated (injection)",
+    "shared_scripted": "shared_scripted (injection)",
+    "shared_scripted_gated": "shared_scripted_gated (injection)",
+}
+
+
+def _display(label: str) -> str:
+    return CONDITION_LABELS.get(label, label)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -212,7 +234,7 @@ def _plot_case(runs: dict[str, dict[str, Any]], t: int, task_id: str, agent_id: 
             ax.scatter([xs[0]], [ys[0]], c="#0ea5e9", s=16)
             ax.scatter([xs[-1]], [ys[-1]], c="#22c55e", s=22)
         title = (
-            f"{condition}\n"
+            f"{_display(condition)}\n"
             f"steps={route.get('steps')} cost={float(route.get('cost_ratio', 0.0)):.2f} "
             f"loop={route.get('looped')}"
         )

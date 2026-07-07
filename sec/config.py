@@ -27,8 +27,10 @@ class Config:
     solver_temp: float = 0.8
     library_cap: int = 60
 
-    # --- v2 (SEC / MAD) knobs; defaults preserve the original single-pass behavior ---
-    debate_rounds: int = 1  # R; 1 = no debate (faithful single-pass), MAD arms set 3
+    # --- v2 (SEC) knobs; defaults preserve the original single-pass behavior ---
+    # NOTE: with debate_rounds=1 agents never see peer proposals; multi-agent arms
+    # are then "independent solvers with shared experiential memory", not debate.
+    debate_rounds: int = 1  # R; 1 = no debate (single-pass); >=2 enables peer-visible revision
     retrieval_k: int = 0  # 0 = inject whole library (legacy); >0 = ExpeL-style top-k retrieval
     memory_mode: str = "shared"  # none | private | shared | frozen
     anchor_rho: float = -1.0  # prob a train batch is labeled by gold; -1 = derive from use_ground_truth
@@ -42,9 +44,28 @@ class Config:
     maze_agent_mode: str = "prompt_only"  # prompt_only | state_guided | stateful_dfs | oracle_dfs
     maze_min_shortest: int = 0
     maze_max_shortest: int = 0
-    maze_write_mode: str = "reviewer"  # reviewer | direct | oracle | self_eval | none
+    # reviewer | scripted | scripted_gated | self_eval | none.
+    # "scripted" / "scripted_gated" inject fixed researcher-written strategy templates
+    # (upper-bound injection controls, NOT learned experience). Legacy names
+    # "direct" / "oracle" are accepted and canonicalized in __post_init__.
+    maze_write_mode: str = "reviewer"
     maze_eval_feedback: bool = False  # expose success/cost summaries to the reviewer, never to solvers
     skip_final_train: bool = False  # skip train/write after the final evaluation round
+
+    # --- P1/P2 experiential-memory design points (ExpeL / Generative-Agents faithful) ---
+    # distill   = contrastive distill + code-side similarity merge (legacy P0 behavior)
+    # expel_ops = LLM-issued ADD/EDIT/UPVOTE/DOWNVOTE over the visible pool (ExpeL-faithful,
+    #             mode B: LLM consolidation)
+    # append    = per-agent reflections appended without consolidation (mode A: append+retrieve,
+    #             Generative-Agents style); independent re-derivation of a similar lesson counts
+    #             as agreement and upvotes the existing item
+    memory_write_protocol: str = "distill"
+    # similarity = lexical top-k against the query (legacy)
+    # ga         = min-max normalized relevance + ga_lambda*importance + ga_recency*recency
+    #              (Generative-Agents-style scoring; importance = consensus votes)
+    retrieval_scoring: str = "similarity"
+    ga_lambda: float = 1.0  # importance weight; the positive-feedback strength dial
+    ga_recency: float = 0.0  # recency weight (Generative-Agents faithful = 1.0)
 
     concurrency: int = 8
     rate_limit_per_min: float = 0.0
@@ -91,7 +112,18 @@ class Config:
             raise ValueError("maze_min_shortest and maze_max_shortest must be non-negative.")
         if self.maze_max_shortest and self.maze_max_shortest < self.maze_min_shortest:
             raise ValueError("maze_max_shortest must be >= maze_min_shortest when set.")
-        if self.maze_write_mode not in {"reviewer", "direct", "oracle", "self_eval", "none"}:
+        if self.memory_write_protocol not in {"distill", "expel_ops", "append"}:
+            raise ValueError(f"invalid memory_write_protocol: {self.memory_write_protocol!r}")
+        if self.retrieval_scoring not in {"similarity", "ga"}:
+            raise ValueError(f"invalid retrieval_scoring: {self.retrieval_scoring!r}")
+        if self.ga_lambda < 0.0 or self.ga_recency < 0.0:
+            raise ValueError("ga_lambda and ga_recency must be non-negative.")
+        legacy_write_modes = {"direct": "scripted", "oracle": "scripted_gated"}
+        if self.maze_write_mode in legacy_write_modes:
+            canonical = legacy_write_modes[self.maze_write_mode]
+            self.notes.append(f"maze_write_mode {self.maze_write_mode!r} is deprecated; canonicalized to {canonical!r}")
+            self.maze_write_mode = canonical
+        if self.maze_write_mode not in {"reviewer", "scripted", "scripted_gated", "self_eval", "none"}:
             raise ValueError(f"invalid maze_write_mode: {self.maze_write_mode!r}")
 
     def cache_path(self) -> Path:

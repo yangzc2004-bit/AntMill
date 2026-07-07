@@ -17,13 +17,23 @@ DEFAULT_RUNS = {
     "shared_oracle": "runs_maze_alpha_mas_shared_oracle_h3_t3_v1_v3_c4/n4_gt_false_seed0_maze_mad_shared_oracle/result.json",
 }
 
-CONDITION_ORDER = ["frozen", "private_fixed", "shared_reviewer", "shared_direct", "shared_oracle"]
+CONDITION_ORDER = [
+    "frozen",
+    "private_fixed",
+    "shared_reviewer",
+    "shared_direct",
+    "shared_oracle",
+    "shared_scripted",
+    "shared_scripted_gated",
+]
 CONDITION_COLORS = {
     "frozen": "#8a8f98",
     "private_fixed": "#4c78a8",
     "shared_reviewer": "#54a24b",
     "shared_direct": "#e45756",
     "shared_oracle": "#b279a2",
+    "shared_scripted": "#e45756",
+    "shared_scripted_gated": "#b279a2",
 }
 CONDITION_STYLES = {
     "frozen": "-",
@@ -31,7 +41,21 @@ CONDITION_STYLES = {
     "shared_reviewer": "-",
     "shared_direct": "--",
     "shared_oracle": ":",
+    "shared_scripted": "--",
+    "shared_scripted_gated": ":",
 }
+# Honest display names: "direct"/"oracle" write modes inject fixed researcher-written
+# templates (scripted-injection upper-bound controls), not learned experience.
+CONDITION_LABELS = {
+    "shared_direct": "shared_scripted (injection)",
+    "shared_oracle": "shared_scripted_gated (injection)",
+    "shared_scripted": "shared_scripted (injection)",
+    "shared_scripted_gated": "shared_scripted_gated (injection)",
+}
+
+
+def _display(label: str) -> str:
+    return CONDITION_LABELS.get(label, label)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -75,43 +99,40 @@ def _load_runs(args: argparse.Namespace) -> dict[tuple[str, str], dict[str, Any]
     return runs
 
 
+ROW_METRICS = [
+    "success_rate",
+    "failure_rate",
+    "cost_ratio",
+    "success_excess_steps",
+    "loop_rate",
+    "route_diversity",
+    "route_diversity_efficient",
+    "mas_antmill_rate",
+    "stagnation_rate",
+    "revisit_max",
+    "memory_size",
+    "retrieval_concentration",
+    "retrieval_entropy_norm",
+    "memory_effective_size",
+    "sanitizer_reject_count",
+]
+
+
 def _rows(runs: dict[tuple[str, str], dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for (label, seed), result in runs.items():
         for row in result.get("log", []):
-            rows.append(
-                {
-                    "condition": label,
-                    "seed": seed,
-                    "t": row.get("t"),
-                    "success_rate": row.get("success_rate"),
-                    "cost_ratio": row.get("cost_ratio"),
-                    "loop_rate": row.get("loop_rate"),
-                    "route_diversity": row.get("route_diversity"),
-                    "stagnation_rate": row.get("stagnation_rate"),
-                    "revisit_max": row.get("revisit_max"),
-                    "memory_size": row.get("memory_size"),
-                    "retrieval_concentration": row.get("retrieval_concentration"),
-                }
-            )
+            # Older runs lack the newer metric keys; keep None so means skip them.
+            item: dict[str, Any] = {"condition": label, "seed": seed, "t": row.get("t")}
+            for metric in ROW_METRICS:
+                item[metric] = row.get(metric)
+            rows.append(item)
     return rows
 
 
 def _write_csv(rows: list[dict[str, Any]], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    fields = [
-        "condition",
-        "seed",
-        "t",
-        "success_rate",
-        "cost_ratio",
-        "loop_rate",
-        "route_diversity",
-        "stagnation_rate",
-        "revisit_max",
-        "memory_size",
-        "retrieval_concentration",
-    ]
+    fields = ["condition", "seed", "t", *ROW_METRICS]
     with path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
@@ -132,16 +153,7 @@ def _write_any_csv(rows: list[dict[str, Any]], path: Path) -> None:
 
 
 def _mean_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    metrics = [
-        "success_rate",
-        "cost_ratio",
-        "loop_rate",
-        "route_diversity",
-        "stagnation_rate",
-        "revisit_max",
-        "memory_size",
-        "retrieval_concentration",
-    ]
+    metrics = ROW_METRICS
     grouped: dict[tuple[str, int], list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
         grouped[(str(row["condition"]), int(row["t"]))].append(row)
@@ -150,7 +162,8 @@ def _mean_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         item: dict[str, Any] = {"condition": condition, "seed": "mean", "t": t, "n_seeds": len(group)}
         for metric in metrics:
             vals = [float(row[metric]) for row in group if row.get(metric) is not None]
-            item[metric] = statistics.mean(vals) if vals else 0.0
+            # None (not 0.0) when a metric is absent, e.g. summarizing pre-P0 runs.
+            item[metric] = statistics.mean(vals) if vals else None
             item[f"{metric}_stdev"] = statistics.stdev(vals) if len(vals) > 1 else 0.0
         means.append(item)
     return means
@@ -161,36 +174,50 @@ def _plot_curves(rows: list[dict[str, Any]], path: Path, *, show_error: bool = F
 
     metrics = [
         ("success_rate", "Success rate"),
+        ("success_excess_steps", "Success-only excess steps"),
         ("cost_ratio", "Cost ratio"),
         ("loop_rate", "Loop rate"),
+        ("mas_antmill_rate", "Ant-mill rate"),
         ("route_diversity", "Route diversity"),
+        ("route_diversity_efficient", "Efficient-route diversity"),
         ("memory_size", "Memory size"),
-        ("retrieval_concentration", "Retrieval concentration"),
+        ("retrieval_entropy_norm", "Retrieval entropy (norm)"),
     ]
+    rate_metrics = {
+        "success_rate",
+        "loop_rate",
+        "route_diversity",
+        "route_diversity_efficient",
+        "mas_antmill_rate",
+        "retrieval_entropy_norm",
+        "retrieval_concentration",
+    }
     present = set(str(row["condition"]) for row in rows)
     labels = [label for label in CONDITION_ORDER if label in present] + sorted(present - set(CONDITION_ORDER))
-    fig, axes = plt.subplots(2, 3, figsize=(14, 7), squeeze=False)
+    fig, axes = plt.subplots(3, 3, figsize=(14, 10.5), squeeze=False)
     for ax, (key, title) in zip(axes.ravel(), metrics):
         for label in labels:
-            series = [row for row in rows if row["condition"] == label]
+            series = [row for row in rows if row["condition"] == label and row.get(key) is not None]
             series.sort(key=lambda row: int(row["t"]))
+            if not series:
+                continue
             ax.plot(
                 [row["t"] for row in series],
                 [row[key] for row in series],
                 marker="o",
-                label=label,
+                label=_display(label),
                 color=CONDITION_COLORS.get(label),
                 linestyle=CONDITION_STYLES.get(label, "-"),
             )
             if show_error:
                 stdev_key = f"{key}_stdev"
-                if any(float(row.get(stdev_key, 0.0)) for row in series):
+                if any(float(row.get(stdev_key) or 0.0) for row in series):
                     xs = [row["t"] for row in series]
                     ys = [float(row[key]) for row in series]
-                    es = [float(row.get(stdev_key, 0.0)) for row in series]
+                    es = [float(row.get(stdev_key) or 0.0) for row in series]
                     lower = [y - e for y, e in zip(ys, es)]
                     upper = [y + e for y, e in zip(ys, es)]
-                    if key in {"success_rate", "loop_rate", "route_diversity", "retrieval_concentration"}:
+                    if key in rate_metrics:
                         lower = [max(0.0, val) for val in lower]
                         upper = [min(1.0, val) for val in upper]
                     ax.fill_between(
@@ -229,10 +256,10 @@ def _plot_final_bars(rows: list[dict[str, Any]], path: Path) -> None:
     fig, axes = plt.subplots(1, 4, figsize=(15, 3.8), squeeze=False)
     x = range(len(final_rows))
     for ax, (key, title) in zip(axes.ravel(), metrics):
-        ax.bar(x, [row[key] for row in final_rows], color=[CONDITION_COLORS.get(row["condition"]) for row in final_rows])
+        ax.bar(x, [float(row.get(key) or 0.0) for row in final_rows], color=[CONDITION_COLORS.get(row["condition"]) for row in final_rows])
         ax.set_title(f"Final {title}")
         ax.set_xticks(list(x))
-        ax.set_xticklabels([row["condition"] for row in final_rows], rotation=35, ha="right")
+        ax.set_xticklabels([_display(str(row["condition"])) for row in final_rows], rotation=35, ha="right")
         ax.grid(True, axis="y", alpha=0.25)
     fig.tight_layout()
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -287,30 +314,40 @@ def _write_report(rows: list[dict[str, Any]], mean_rows: list[dict[str, Any]], m
         final[condition] = max(series, key=lambda row: int(row["t"]))
     counts = _seed_counts(rows)
 
+    def fmt(value: Any) -> str:
+        if value is None:
+            return "n/a"
+        if isinstance(value, float):
+            return f"{value:.3f}"
+        return str(value)
+
     lines = [
         "# Maze Alpha Summary",
         "",
         "## Final Mean Metrics",
         "",
-        "| condition | seeds | success | cost | loop | diversity | memory | retrieval concentration |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|",
+        "| condition | seeds | success | cost | success-only excess | loop | ant-mill | diversity | efficient diversity | memory | retrieval entropy |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for condition, row in final.items():
         lines.append(
-            f"| {condition} | {counts.get(condition, int(row.get('n_seeds', 0)))} | "
-            f"{row['success_rate']:.3f} | {row['cost_ratio']:.3f} | "
-            f"{row['loop_rate']:.3f} | {row['route_diversity']:.3f} | "
-            f"{row['memory_size']} | {row['retrieval_concentration']:.3f} |"
+            f"| {_display(str(condition))} | {counts.get(condition, int(row.get('n_seeds', 0)))} | "
+            f"{fmt(row.get('success_rate'))} | {fmt(row.get('cost_ratio'))} | "
+            f"{fmt(row.get('success_excess_steps'))} | {fmt(row.get('loop_rate'))} | "
+            f"{fmt(row.get('mas_antmill_rate'))} | {fmt(row.get('route_diversity'))} | "
+            f"{fmt(row.get('route_diversity_efficient'))} | {fmt(row.get('memory_size'))} | "
+            f"{fmt(row.get('retrieval_entropy_norm'))} |"
         )
     lines.extend(
         [
             "",
             "## Reading",
             "",
-            "- Frozen memory is the storage-only control: writes occur but retrieval concentration stays zero and behavior is unchanged.",
-            "- Shared reviewer improves success and cost while monotonically compressing route diversity.",
-            "- Private fixed memory is weaker and less stable, but preserves more diversity than shared reviewer.",
-            "- Shared direct/oracle collapse onto one highly retrieved correct strategy and show worse success, cost, loop, stagnation, and revisit metrics.",
+            "- Frozen is the storage-only control (writes occur, retrieval is disabled).",
+            "- scripted / scripted_gated arms inject fixed researcher-written templates; they are",
+            "  upper-bound injection controls, not learned experience.",
+            "- Interpret differences only together with the paired CIs and per-seed table from",
+            "  `python -m sec.maze_stats`; this report shows means without uncertainty.",
             "",
             "## Top Retrieved Memories",
             "",
@@ -329,6 +366,11 @@ def _write_report(rows: list[dict[str, Any]], mean_rows: list[dict[str, Any]], m
             "![Mean curves](curves_mean.png)",
             "",
             "![Final mean bars](bar_final_mean.png)",
+            "",
+            "## Statistics",
+            "",
+            "Means in this report carry no uncertainty. For paired bootstrap CIs and the",
+            "mandatory per-seed table, run `python -m sec.maze_stats` on the same result files.",
             "",
         ]
     )

@@ -15,9 +15,10 @@ from typing import Any
 
 from .agentic import parse_action
 from .config import Config, condition_name
-from .expel import ExpeLAdapter, distill_expel_insights, looks_over_specific, parse_expel_insights, sanitize_expel_insight
+from .expel import ExpeLAdapter, distill_expel_insights, sanitize_expel_insight
+from .expel_ops import apply_memory_ops, find_pool_duplicate, propose_memory_ops
 from .llm import LLMClient
-from .maze_env import DIRS, MazeEnv, MazeTask, make_maze_tasks
+from .maze_env import DIRS, MazeEnv, MazeTask, _is_open as _maze_is_open, make_maze_tasks
 from .memory import InsightMemory
 from .metrics import normalize_answer, similarity
 from .solver import render_library
@@ -82,6 +83,8 @@ class MazeMemoryAudit:
     def __init__(self) -> None:
         self.writes: list[dict[str, Any]] = []
         self.retrievals: list[dict[str, Any]] = []
+        self.rejections: list[dict[str, Any]] = []
+        self.llm_errors: list[dict[str, Any]] = []
 
     def record_retrieval(self, *, t: int, task_id: str, agent_id: int, items: list[dict[str, Any]]) -> None:
         for item in items:
@@ -121,13 +124,50 @@ class MazeMemoryAudit:
         insight.setdefault("retrieval_count", 0)
         self.writes.append({"insight": dict(insight), **provenance})
 
+    def record_rejection(self, *, t: int, task_id: str, write_mode: str, text: str, reason: str) -> None:
+        self.rejections.append(
+            {"t": t, "task_id": task_id, "write_mode": write_mode, "text": text, "reason": reason}
+        )
+
+    def record_llm_error(self, *, t: int, task_id: str, tag: str, message: str) -> None:
+        # Infra failures (endpoint content filter, exhausted retries) degrade one
+        # call, never the run; they are counted here so data quality is auditable.
+        self.llm_errors.append({"t": t, "task_id": task_id, "tag": tag, "message": message[:200]})
+
+    def retrieval_share_series(self) -> dict[str, dict[str, float]]:
+        """Per-item share of retrievals in each round: {item_id: {t: share}}.
+
+        Raw data for rich-get-richer curves: a positive-feedback channel shows up
+        as one item's share growing across rounds.
+        """
+        by_t: dict[int, Counter[str]] = defaultdict(Counter)
+        for rec in self.retrievals:
+            t = int(rec.get("t", 0))
+            for item_id in rec.get("items", []):
+                by_t[t][str(item_id)] += 1
+        series: dict[str, dict[str, float]] = {}
+        for t, counter in sorted(by_t.items()):
+            total = sum(counter.values())
+            for item_id, count in counter.items():
+                series.setdefault(item_id, {})[str(t)] = count / total if total else 0.0
+        return series
+
     def public(self, memory: InsightMemory) -> dict[str, Any]:
         items = memory.all_items()
+        attempts = len(self.rejections) + len(self.writes)
         return {
             "writes": self.writes,
             "retrievals": self.retrievals,
+            "sanitizer_rejects": self.rejections,
+            "sanitizer_reject_rate": len(self.rejections) / attempts if attempts else 0.0,
+            "llm_errors": self.llm_errors,
+            "llm_error_count": len(self.llm_errors),
             "memory_items": items,
+            "retrieval_top1_share": retrieval_top1_share(items),
             "retrieval_concentration": retrieval_concentration(items),
+            "retrieval_entropy_norm": retrieval_entropy_norm(items),
+            "memory_effective_size": memory_effective_size(items),
+            "retrieval_share_series": self.retrieval_share_series(),
         }
 
 
@@ -135,14 +175,35 @@ def _insight_key(insight: dict[str, Any]) -> str:
     return normalize_answer(f"{insight.get('kind', 'do')} {insight.get('text', '')}")[:96]
 
 
-def _agent_query(task: MazeTask, route: dict[str, Any] | None = None) -> str:
-    route_bits = ""
-    if route:
-        route_bits = (
-            f" success={route.get('success')} steps={route.get('steps')} "
-            f"invalid={route.get('invalid_moves')} looped={route.get('looped')}"
-        )
-    return f"maze family={task.family} width={task.width} height={task.height} goal-navigation{route_bits}"
+def _solver_cache_salt(cfg: Config, *, t: int, task_id: str, agent_id: int, step: int) -> str:
+    # run_id keeps conditions with identical prompts (e.g. frozen vs no-memory) statistically
+    # independent; t/step keep rounds and revisited in-episode states from replaying one sample.
+    return f"{cfg.run_id}|seed{cfg.seed}|t{t}|{task_id}|a{agent_id}|s{step}"
+
+
+def _agent_query(task: MazeTask) -> str:
+    """Task-conditioned retrieval query built only from agent-visible start information.
+
+    A constant query makes retrieval a static ranking (every episode retrieves the same
+    top-k), so retrieval dynamics cannot exist. Bearing/distance/opening features vary
+    per task without exposing hidden structure; raw coordinates are deliberately
+    excluded so the query cannot act as a per-maze answer-cache key.
+    """
+    sx, sy = task.start
+    gx, gy = task.goal
+    dx, dy = gx - sx, gy - sy
+    ew = "east" if dx > 0 else "west" if dx < 0 else "aligned"
+    ns = "south" if dy > 0 else "north" if dy < 0 else "aligned"
+    open_dirs = sorted(
+        name for name, (ddx, ddy) in DIRS.items() if _maze_is_open(task.grid, sx + ddx, sy + ddy)
+    )
+    manhattan = abs(dx) + abs(dy)
+    # Space-separated tokens: normalize_answer strips punctuation without inserting
+    # spaces, so key=value forms would collapse into unmatchable single tokens.
+    return (
+        f"maze goal navigation family {task.family} size {task.width}x{task.height} "
+        f"goal bearing {ew} {ns} start manhattan {manhattan} start open {' '.join(open_dirs)}"
+    )
 
 
 def _parse_open_dirs(obs: str) -> list[str]:
@@ -285,6 +346,7 @@ def _add_route_eval_fields(
     route["stagnation_rate"] = _route_stagnation_rate(route.get("path", []), task.goal)
     route["state_guided_override_count"] = override_count
     route["state_guided_override_rate"] = override_count / max(len(trace), 1)
+    route["llm_error_count"] = sum(1 for row in trace if row.get("llm_error"))
 
 
 def _run_oracle_maze_agent(task: MazeTask, *, agent_id: int, insights: list[dict[str, Any]]) -> AgentRouteResult:
@@ -487,6 +549,7 @@ async def run_maze_agent(
     cfg: Config,
     llm: LLMClient,
     peer_summaries: list[str] | None = None,
+    t: int = 0,
 ) -> AgentRouteResult:
     if cfg.maze_agent_mode == "oracle_dfs":
         return _run_oracle_maze_agent(task, agent_id=agent_id, insights=insights)
@@ -525,12 +588,19 @@ async def run_maze_agent(
             "Choose the next action. Do not output a coordinate-specific memorized route. "
             "Finish with exactly one line: Action: <tool call>."
         )
-        out = await llm.chat(
-            [{"role": "system", "content": MAZE_AGENT_SYS}, {"role": "user", "content": prompt}],
-            temp=cfg.solver_temp,
-            max_tokens=cfg.max_tokens_solver,
-            tag=f"maze_agent:{agent_id}",
-        )
+        llm_error = False
+        try:
+            out = await llm.chat(
+                [{"role": "system", "content": MAZE_AGENT_SYS}, {"role": "user", "content": prompt}],
+                temp=cfg.solver_temp,
+                max_tokens=cfg.max_tokens_solver,
+                tag=f"maze_agent:{agent_id}",
+                cache_salt=_solver_cache_salt(cfg, t=t, task_id=task.task_id, agent_id=agent_id, step=step),
+            )
+        except RuntimeError as exc:
+            # One filtered/failed call degrades one step to a no-op, never the run.
+            out = f"LLM unavailable ({str(exc)[:80]}). Action: inspect"
+            llm_error = True
         model_action = parse_action(out)
         action = model_action
         override = False
@@ -560,6 +630,7 @@ async def run_maze_agent(
                 "observation": obs2,
                 "position": list(env.pos),
                 "invalid": bool(info.get("invalid")),
+                "llm_error": llm_error,
             }
         )
         obs = obs2
@@ -580,7 +651,7 @@ async def run_maze_episode(
     t: int,
     peer_summaries: list[str] | None = None,
 ) -> MazeEpisodeResult:
-    retrieved_by_agent = [memory.retrieve(agent_id, _agent_query(task)) for agent_id in range(cfg.n_solvers)]
+    retrieved_by_agent = [memory.retrieve(agent_id, _agent_query(task), t=t) for agent_id in range(cfg.n_solvers)]
     for agent_id, items in enumerate(retrieved_by_agent):
         audit.record_retrieval(t=t, task_id=task.task_id, agent_id=agent_id, items=items)
     if cfg.maze_agent_mode == "oracle_dfs":
@@ -599,7 +670,7 @@ async def run_maze_episode(
     searches = [MazeSearchState() for _ in range(cfg.n_solvers)] if _uses_search_state(cfg.maze_agent_mode) else []
     peer_summaries = peer_summaries or []
 
-    async def propose(agent_id: int, peer_actions: list[str]) -> dict[str, Any]:
+    async def propose(agent_id: int, peer_actions: list[str], step: int) -> dict[str, Any]:
         env = envs[agent_id]
         search = searches[agent_id] if searches else None
         search_state: dict[str, Any] = {}
@@ -619,12 +690,20 @@ async def run_maze_episode(
             search_state=search_state,
             agent_mode=cfg.maze_agent_mode,
         )
-        out = await llm.chat(
-            [{"role": "system", "content": MAZE_AGENT_SYS}, {"role": "user", "content": prompt}],
-            temp=cfg.solver_temp,
-            max_tokens=cfg.max_tokens_solver,
-            tag=f"maze_agent:{agent_id}",
-        )
+        llm_error = False
+        try:
+            out = await llm.chat(
+                [{"role": "system", "content": MAZE_AGENT_SYS}, {"role": "user", "content": prompt}],
+                temp=cfg.solver_temp,
+                max_tokens=cfg.max_tokens_solver,
+                tag=f"maze_agent:{agent_id}",
+                cache_salt=_solver_cache_salt(cfg, t=t, task_id=task.task_id, agent_id=agent_id, step=step),
+            )
+        except RuntimeError as exc:
+            # One filtered/failed call degrades one step to a no-op, never the run.
+            out = f"LLM unavailable ({str(exc)[:80]}). Action: inspect"
+            llm_error = True
+            audit.record_llm_error(t=t, task_id=task.task_id, tag=f"maze_agent:{agent_id}", message=str(exc))
         model_action = parse_action(out)
         action = model_action
         override = False
@@ -643,6 +722,7 @@ async def run_maze_episode(
             "search_state": search_state,
             "state_guided_override": bool(override and cfg.maze_agent_mode == "state_guided"),
             "state_guided_override_reason": override_reason if cfg.maze_agent_mode == "state_guided" else "",
+            "llm_error": llm_error,
         }
 
     for step in range(cfg.max_steps):
@@ -651,12 +731,12 @@ async def run_maze_episode(
             break
         proposals = ["" for _ in range(cfg.n_solvers)]
         proposal_meta: list[dict[str, Any]] = [{} for _ in range(cfg.n_solvers)]
-        first = await asyncio.gather(*[propose(agent_id, []) for agent_id in active])
+        first = await asyncio.gather(*[propose(agent_id, [], step) for agent_id in active])
         for agent_id, item in zip(active, first, strict=True):
             proposals[agent_id] = str(item["action"])
             proposal_meta[agent_id] = item
         for _round in range(2, cfg.debate_rounds + 1):
-            revised = await asyncio.gather(*[propose(agent_id, proposals) for agent_id in active])
+            revised = await asyncio.gather(*[propose(agent_id, proposals, step) for agent_id in active])
             for agent_id, item in zip(active, revised, strict=True):
                 proposals[agent_id] = str(item["action"])
                 proposal_meta[agent_id] = item
@@ -684,6 +764,7 @@ async def run_maze_episode(
                     "observation": obs_after,
                     "position": list(env.pos),
                     "invalid": bool(info.get("invalid")),
+                    "llm_error": bool(meta.get("llm_error")),
                     "peer_actions": [
                         {"agent_id": pid, "action": act}
                         for pid, act in enumerate(proposals)
@@ -759,8 +840,11 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
     if not routes:
         return {
             "success_rate": 0.0,
+            "failure_rate": 0.0,
             "cost_ratio": 0.0,
             "excess_steps": 0.0,
+            "success_excess_steps": 0.0,
+            "n_success": 0.0,
             "invalid_move_rate": 0.0,
             "loop_rate": 0.0,
             "stagnation_rate": 0.0,
@@ -768,8 +852,11 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
             "state_guided_override_count": 0.0,
             "state_guided_override_rate": 0.0,
             "route_diversity": 0.0,
+            "route_diversity_efficient": 0.0,
+            "route_diversity_efficient_n": 0.0,
             "mas_antmill_rate": 0.0,
             "efficiency_collapse_signal": 0.0,
+            "llm_error_count": 0.0,
         }
     mean = lambda xs: float(sum(xs) / len(xs)) if xs else 0.0
     per_episode_overlap = [_episode_route_diversity(ep) for ep in episodes]
@@ -782,12 +869,19 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
     cost = mean([float(r.get("cost_ratio") or 0.0) for r in routes])
     loop = mean([1.0 if r.get("looped") else 0.0 for r in routes])
     diversity = mean(per_episode_overlap)
+    success_routes = [r for r in routes if r.get("success")]
+    efficient_divs = [d for d in (_episode_route_diversity_efficient(ep) for ep in episodes) if d is not None]
     baseline = baseline_cost_ratio if baseline_cost_ratio is not None else cost
     collapse_signal = 1.0 if cost > baseline * 1.15 and loop >= 0.25 and diversity <= 0.5 else 0.0
     return {
         "success_rate": success,
+        "failure_rate": 1.0 - success,
         "cost_ratio": cost,
         "excess_steps": mean([float(r.get("excess_steps") or 0.0) for r in routes]),
+        # Success-conditional efficiency: failures carry a capped-step penalty in
+        # cost_ratio/excess_steps, which entangles "slower" with "failed".
+        "success_excess_steps": mean([float(r.get("excess_steps") or 0.0) for r in success_routes]),
+        "n_success": float(len(success_routes)),
         "invalid_move_rate": mean([float(r.get("invalid_move_rate") or 0.0) for r in routes]),
         "loop_rate": loop,
         "stagnation_rate": mean([float(r.get("stagnation_rate") or 0.0) for r in routes]),
@@ -795,8 +889,11 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
         "state_guided_override_count": mean([float(r.get("state_guided_override_count") or 0.0) for r in routes]),
         "state_guided_override_rate": mean([float(r.get("state_guided_override_rate") or 0.0) for r in routes]),
         "route_diversity": diversity,
+        "route_diversity_efficient": mean(efficient_divs),
+        "route_diversity_efficient_n": float(len(efficient_divs)),
         "mas_antmill_rate": mean(loop_by_ep),
         "efficiency_collapse_signal": collapse_signal,
+        "llm_error_count": float(sum(int(r.get("llm_error_count") or 0) for r in routes)),
     }
 
 
@@ -813,12 +910,73 @@ def _episode_route_diversity(ep: MazeEpisodeResult) -> float:
     return 1.0 - float(sum(sims) / len(sims))
 
 
-def retrieval_concentration(items: list[dict[str, Any]]) -> float:
-    counts = [int(item.get("retrieval_count", 0)) for item in items if int(item.get("retrieval_count", 0)) > 0]
+def _episode_route_diversity_efficient(ep: MazeEpisodeResult, *, max_cost: float = 2.5) -> float | None:
+    """Route diversity among efficient successful routes only.
+
+    Plain visited-cell diversity is confounded with efficiency: inefficient
+    wandering inflates it. Conditioning on success and cost <= max_cost isolates
+    genuine homogenization. None when fewer than 2 routes qualify.
+    """
+    cells = [
+        set(tuple(cell) for cell in a.route.get("path", []))
+        for a in ep.agents
+        if a.route.get("success") and float(a.route.get("cost_ratio") or 0.0) <= max_cost
+    ]
+    if len(cells) < 2:
+        return None
+    sims = []
+    for i in range(len(cells)):
+        for j in range(i + 1, len(cells)):
+            sims.append(len(cells[i] & cells[j]) / max(len(cells[i] | cells[j]), 1))
+    return 1.0 - float(sum(sims) / len(sims))
+
+
+def _retrieval_counts(items: list[dict[str, Any]]) -> list[int]:
+    return [int(item.get("retrieval_count", 0)) for item in items if int(item.get("retrieval_count", 0)) > 0]
+
+
+def retrieval_top1_share(items: list[dict[str, Any]]) -> float:
+    """Share of retrievals going to the single most-retrieved item.
+
+    Deprecated as a mechanism variable: max/total is a deterministic function of
+    pool size (a 1-item pool scores 1.0 by construction). Kept for continuity
+    with earlier runs; use retrieval_entropy_norm for mechanism claims.
+    """
+    counts = _retrieval_counts(items)
     total = sum(counts)
     if total <= 0:
         return 0.0
     return max(counts) / total
+
+
+def retrieval_concentration(items: list[dict[str, Any]]) -> float:
+    """Deprecated alias of retrieval_top1_share."""
+    return retrieval_top1_share(items)
+
+
+def retrieval_entropy_norm(items: list[dict[str, Any]]) -> float:
+    """Normalized Shannon entropy of the retrieval-count distribution, in [0, 1].
+
+    0 = all retrievals concentrate on one item; 1 = uniform spread across the
+    retrieved items. Unlike max/total, this is comparable across pool sizes.
+    """
+    counts = _retrieval_counts(items)
+    total = sum(counts)
+    if total <= 0 or len(counts) <= 1:
+        return 0.0
+    probs = [count / total for count in counts]
+    entropy = -sum(p * math.log(p) for p in probs)
+    return entropy / math.log(len(counts))
+
+
+def memory_effective_size(items: list[dict[str, Any]]) -> float:
+    """exp(entropy) of the retrieval distribution: effective number of used memories."""
+    counts = _retrieval_counts(items)
+    total = sum(counts)
+    if total <= 0:
+        return 0.0
+    probs = [count / total for count in counts]
+    return math.exp(-sum(p * math.log(p) for p in probs))
 
 
 async def write_maze_experience(
@@ -833,40 +991,202 @@ async def write_maze_experience(
 ) -> None:
     if memory.mode == "none" or write_mode == "none":
         return
-    if write_mode == "direct":
+    write_mode = _canonical_write_mode(write_mode)
+    # "scripted" / "scripted_gated" inject fixed researcher-written templates. They are
+    # upper-bound injection controls for what one globally shared strategy text can do;
+    # they are NOT learned experience and must not be read as an experience-writing arm.
+    if write_mode == "scripted":
         for agent in episode.agents:
-            insight = _direct_insight(agent.route)
+            insight = _scripted_insight(agent.route)
             support = cfg.n_solvers if agent.success else max(0, cfg.n_solvers // 2)
             _apply_maze_insight(memory, audit, insight, episode, agent.agent_id, cfg, t, write_mode, support)
         return
 
-    if write_mode in {"oracle", "self_eval"}:
+    if write_mode in {"scripted_gated", "self_eval"}:
         for agent in episode.agents:
-            if write_mode == "oracle" and not agent.success:
+            if write_mode == "scripted_gated" and not agent.success:
                 insight = _route_avoid_insight(agent.route)
                 support = 0
             elif write_mode == "self_eval" and not _self_eval_route(agent.route):
                 insight = _route_avoid_insight(agent.route)
                 support = 0
             else:
-                insight = _direct_insight(agent.route)
+                insight = _scripted_insight(agent.route)
                 support = cfg.n_solvers
             _apply_maze_insight(memory, audit, insight, episode, agent.agent_id, cfg, t, write_mode, support)
+        return
+
+    if write_mode == "reviewer" and cfg.memory_write_protocol == "append":
+        # Mode A (append + retrieve, Generative-Agents style): each agent's own
+        # reflection enters the pool without consolidation; retrieval arbitrates.
+        # Independently re-derived similar lessons count as agreement (vote +1),
+        # which is what feeds the ga_lambda importance channel in this mode.
+        await _write_experience_append(episode, memory, cfg, llm, audit=audit, t=t)
+        return
+
+    if write_mode == "reviewer" and cfg.memory_write_protocol == "expel_ops":
+        # ExpeL-faithful pool evolution: the reviewer LLM sees the numbered pool and
+        # issues ADD/EDIT/UPVOTE/DOWNVOTE; code executes (sanitizer as the only veto).
+        if memory.mode == "private":
+            for agent in episode.agents:
+                agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
+                await _write_experience_ops(agent_episode, memory, cfg, llm, audit=audit, t=t, agent_id=agent.agent_id)
+        else:
+            await _write_experience_ops(episode, memory, cfg, llm, audit=audit, t=t, agent_id=0)
         return
 
     if memory.mode == "private":
         for agent in episode.agents:
             agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
-            insights = await distill_expel_insights(_maze_expel_episodes(agent_episode), MAZE_EXPEL_ADAPTER, cfg, llm)
+            rejects: list[dict[str, str]] = []
+            insights = await _distill_or_empty(
+                _maze_expel_episodes(agent_episode), cfg, llm, audit=audit, t=t, task_id=episode.task_id, rejects=rejects
+            )
+            _record_rejects(audit, rejects, episode=episode, t=t, write_mode=write_mode)
             agent_support = cfg.n_solvers if agent.success else 0
             for insight in insights[:4]:
                 _apply_maze_insight(memory, audit, insight, episode, agent.agent_id, cfg, t, write_mode, agent_support)
         return
 
-    insights = await distill_expel_insights(_maze_expel_episodes(episode), MAZE_EXPEL_ADAPTER, cfg, llm)
+    rejects = []
+    insights = await _distill_or_empty(
+        _maze_expel_episodes(episode), cfg, llm, audit=audit, t=t, task_id=episode.task_id, rejects=rejects
+    )
+    _record_rejects(audit, rejects, episode=episode, t=t, write_mode=write_mode)
     support = sum(1 for agent in episode.agents if agent.success)
     for insight in insights[:4]:
         _apply_maze_insight(memory, audit, insight, episode, 0, cfg, t, write_mode, support)
+
+
+async def _write_experience_append(
+    episode: MazeEpisodeResult,
+    memory: InsightMemory,
+    cfg: Config,
+    llm: LLMClient,
+    *,
+    audit: MazeMemoryAudit,
+    t: int,
+) -> None:
+    for agent in episode.agents:
+        agent_episode = MazeEpisodeResult(task_id=episode.task_id, task=episode.task, agents=[agent])
+        rejects: list[dict[str, str]] = []
+        insights = await _distill_or_empty(
+            _maze_expel_episodes(agent_episode), cfg, llm, audit=audit, t=t, task_id=episode.task_id, rejects=rejects
+        )
+        _record_rejects(audit, rejects, episode=episode, t=t, write_mode="reviewer_append")
+        pool = memory.pool_view(agent.agent_id)
+        quality = _episode_quality(episode, agent.agent_id)
+        for raw in insights[:2]:
+            insight = _sanitize_insight(raw)
+            if not insight.get("text"):
+                audit.record_rejection(
+                    t=t,
+                    task_id=episode.task_id,
+                    write_mode="reviewer_append",
+                    text=str(raw.get("text", "")),
+                    reason="over_specific",
+                )
+                continue
+            dup = find_pool_duplicate(pool, insight, cfg)
+            if dup is not None:
+                pool[dup]["votes"] = int(pool[dup].get("votes", 0)) + 1
+                item = pool[dup]
+                mode = "reviewer_append:agree"
+            else:
+                item = {"kind": insight["kind"], "text": insight["text"], "votes": 1, "last_access_t": t}
+                pool.append(item)
+                mode = "reviewer_append:append"
+            audit.record_write(
+                t=t,
+                task_id=episode.task_id,
+                agent_id=agent.agent_id,
+                insight=item,
+                support_count=int(item.get("votes", 0)),
+                write_mode=mode,
+                quality=quality,
+            )
+        if len(pool) > cfg.library_cap:
+            pool.sort(key=lambda it: (int(it.get("votes", 0)), normalize_answer(str(it.get("text", "")))), reverse=True)
+            del pool[cfg.library_cap:]
+        memory.set_pool(agent.agent_id, pool)
+
+
+async def _write_experience_ops(
+    episode: MazeEpisodeResult,
+    memory: InsightMemory,
+    cfg: Config,
+    llm: LLMClient,
+    *,
+    audit: MazeMemoryAudit,
+    t: int,
+    agent_id: int,
+) -> None:
+    pool = memory.pool_view(agent_id)
+    try:
+        ops = await propose_memory_ops(pool, _maze_expel_episodes(episode), MAZE_EXPEL_ADAPTER, cfg, llm)
+    except RuntimeError as exc:
+        audit.record_llm_error(t=t, task_id=episode.task_id, tag="expel_ops_reviewer", message=str(exc))
+        return
+    rejects: list[dict[str, str]] = []
+    new_pool, applied = apply_memory_ops(pool, ops, cfg=cfg, reject_log=rejects)
+    memory.set_pool(agent_id, new_pool)
+    for item in rejects:
+        audit.record_rejection(
+            t=t,
+            task_id=episode.task_id,
+            write_mode=f"reviewer_ops:{item.get('op', '?')}",
+            text=item.get("text", ""),
+            reason=item.get("reason", "over_specific"),
+        )
+    quality = _episode_quality(episode, agent_id)
+    for op in applied:
+        item = op["item"]
+        if op["op"] in {"ADD", "EDIT"}:
+            item["last_access_t"] = t
+        audit.record_write(
+            t=t,
+            task_id=episode.task_id,
+            agent_id=agent_id,
+            insight=item,
+            support_count=int(item.get("votes", 0)),
+            write_mode=f"reviewer_ops:{op['op']}",
+            quality=quality,
+        )
+
+
+async def _distill_or_empty(
+    episodes: list[dict[str, Any]],
+    cfg: Config,
+    llm: LLMClient,
+    *,
+    audit: MazeMemoryAudit,
+    t: int,
+    task_id: str,
+    rejects: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    try:
+        return await distill_expel_insights(episodes, MAZE_EXPEL_ADAPTER, cfg, llm, reject_log=rejects)
+    except RuntimeError as exc:
+        audit.record_llm_error(t=t, task_id=task_id, tag="expel_reviewer", message=str(exc))
+        return []
+
+
+def _record_rejects(
+    audit: MazeMemoryAudit,
+    rejects: list[dict[str, str]],
+    *,
+    episode: MazeEpisodeResult,
+    t: int,
+    write_mode: str,
+) -> None:
+    for item in rejects:
+        audit.record_rejection(
+            t=t,
+            task_id=episode.task_id,
+            write_mode=write_mode,
+            text=item.get("text", ""),
+            reason=item.get("reason", "over_specific"),
+        )
 
 
 def _apply_maze_insight(
@@ -881,8 +1201,12 @@ def _apply_maze_insight(
     support_count: int,
 ) -> None:
     quality = _episode_quality(episode, agent_id)
+    original_text = str(insight.get("text", ""))
     insight = _sanitize_insight(insight)
     if not insight.get("text"):
+        audit.record_rejection(
+            t=t, task_id=episode.task_id, write_mode=write_mode, text=original_text, reason="over_specific"
+        )
         return
     audit.record_write(
         t=t,
@@ -893,6 +1217,7 @@ def _apply_maze_insight(
         write_mode=write_mode,
         quality=quality,
     )
+    insight.setdefault("last_access_t", t)
     memory.apply_insight(agent_id, insight, support_count=support_count)
 
 
@@ -910,7 +1235,12 @@ def _episode_quality(episode: MazeEpisodeResult, agent_id: int) -> dict[str, Any
     }
 
 
-def _direct_insight(route: dict[str, Any]) -> dict[str, str]:
+def _canonical_write_mode(write_mode: str) -> str:
+    return {"direct": "scripted", "oracle": "scripted_gated"}.get(write_mode, write_mode)
+
+
+def _scripted_insight(route: dict[str, Any]) -> dict[str, str]:
+    """Fixed researcher-written template (scripted-injection control), not learned experience."""
     if route.get("success") and not route.get("looped") and float(route.get("invalid_move_rate") or 0.0) <= 0.25:
         return {
             "kind": "do",
@@ -976,32 +1306,9 @@ def _maze_expel_episodes(episode: MazeEpisodeResult) -> list[dict[str, Any]]:
     return records
 
 
-def _parse_reviewer_insights(text: str) -> list[dict[str, str]]:
-    return [_sanitize_insight(item) for item in parse_expel_insights(text)]
-
-
 def _sanitize_insight(item: dict[str, Any]) -> dict[str, str]:
-    text = str(item.get("text", "")).strip()
-    kind = item.get("kind") if item.get("kind") in {"do", "avoid"} else "do"
-    if _looks_answer_like(text):
-        return {"kind": "avoid", "text": "Avoid memorizing exact maze routes; use local progress, revisits, and open directions to adapt."}
-    return sanitize_expel_insight({"kind": kind, "text": text}, fallback=MAZE_EXPEL_ADAPTER.fallback)
-
-
-def _looks_answer_like(text: str) -> bool:
-    return looks_over_specific(text)
-
-
-def _best_fallback_insight(episode: MazeEpisodeResult) -> dict[str, str]:
-    if any(a.route.get("looped") for a in episode.agents):
-        return {
-            "kind": "avoid",
-            "text": "Avoid repeating the same recovery pattern after revisiting cells; change exploration when recent movement forms a cycle.",
-        }
-    return {
-        "kind": "do",
-        "text": "Prefer open directions that reduce distance or visit new cells, and submit promptly after reaching the goal.",
-    }
+    """Clean one insight; {} means rejected (dropped, never replaced with canned text)."""
+    return sanitize_expel_insight(item)
 
 
 def _trace_summary(trace: list[dict[str, Any]]) -> str:
@@ -1032,8 +1339,13 @@ async def run_one_maze_alpha(cfg: Config, train_tasks: list[MazeTask], heldout_t
         metrics = maze_batch_metrics(heldout, baseline_cost_ratio=baseline_cost)
         if t == 0:
             baseline_cost = metrics["cost_ratio"]
+        pool_items = memory.all_items()
         metrics["memory_size"] = memory.size()
-        metrics["retrieval_concentration"] = retrieval_concentration(memory.all_items())
+        metrics["retrieval_concentration"] = retrieval_concentration(pool_items)
+        metrics["retrieval_top1_share"] = retrieval_top1_share(pool_items)
+        metrics["retrieval_entropy_norm"] = retrieval_entropy_norm(pool_items)
+        metrics["memory_effective_size"] = memory_effective_size(pool_items)
+        metrics["sanitizer_reject_count"] = len(audit.rejections)
         row = {
             "t": t,
             **metrics,
@@ -1170,6 +1482,10 @@ def build_maze_alpha_configs(args: argparse.Namespace) -> list[Config]:
                 "maze_agent_mode": args.maze_agent_mode,
                 "maze_min_shortest": args.maze_min_shortest,
                 "maze_max_shortest": args.maze_max_shortest,
+                "memory_write_protocol": getattr(args, "write_protocol", "distill"),
+                "retrieval_scoring": getattr(args, "retrieval_scoring", "similarity"),
+                "ga_lambda": getattr(args, "ga_lambda", 1.0),
+                "ga_recency": getattr(args, "ga_recency", 0.0),
             }
             params.update(arm)
             configs.append(Config(**params))
@@ -1185,7 +1501,7 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
         return [
             {"run_id": "maze_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
             {"run_id": "maze_single_reviewer", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "reviewer"},
-            {"run_id": "maze_single_oracle", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "oracle"},
+            {"run_id": "maze_single_scripted_gated", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "scripted_gated"},
             {"run_id": "maze_single_self_eval", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "self_eval"},
             {
                 "run_id": "maze_single_frozen_reviewer",
@@ -1194,10 +1510,10 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
                 "maze_write_mode": "reviewer",
             },
             {
-                "run_id": "maze_single_frozen_oracle",
+                "run_id": "maze_single_frozen_scripted_gated",
                 "n_solvers": 1,
                 "memory_mode": "frozen",
-                "maze_write_mode": "oracle",
+                "maze_write_mode": "scripted_gated",
             },
         ]
     if phase == "single_expel_pilot":
@@ -1205,23 +1521,91 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
             {"run_id": "single_nomem_state_guided", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
             {"run_id": "single_expel_reviewer", "n_solvers": 1, "memory_mode": "shared", "maze_write_mode": "reviewer"},
         ]
-    if phase == "mad":
+    if phase in {"mas_nomem", "mad"}:  # "mad" is a deprecated alias; no debate happens at debate_rounds=1
         return [
             {"run_id": "maze_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
-            {"run_id": "maze_mad_nomem", "n_solvers": 4, "memory_mode": "none", "maze_write_mode": "none"},
+            {"run_id": "maze_mas_nomem", "n_solvers": 4, "memory_mode": "none", "maze_write_mode": "none"},
         ]
     if phase == "core":
         return [
-            {"run_id": "maze_mad_private_reviewer", "n_solvers": 4, "memory_mode": "private", "maze_write_mode": "reviewer"},
-            {"run_id": "maze_mad_shared_reviewer", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "reviewer"},
-            {"run_id": "maze_mad_shared_oracle", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "oracle"},
-            {"run_id": "maze_mad_frozen_reviewer", "n_solvers": 4, "memory_mode": "frozen", "maze_write_mode": "reviewer"},
-            {"run_id": "maze_mad_shared_direct", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "direct"},
+            {"run_id": "maze_mas_private_reviewer", "n_solvers": 4, "memory_mode": "private", "maze_write_mode": "reviewer"},
+            {"run_id": "maze_mas_shared_reviewer", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "reviewer"},
+            {"run_id": "maze_mas_shared_scripted_gated", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "scripted_gated"},
+            {"run_id": "maze_mas_frozen_reviewer", "n_solvers": 4, "memory_mode": "frozen", "maze_write_mode": "reviewer"},
+            {"run_id": "maze_mas_shared_scripted", "n_solvers": 4, "memory_mode": "shared", "maze_write_mode": "scripted"},
         ]
     if phase == "smoke":
         return [
             {"run_id": "maze_smoke_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
-            {"run_id": "maze_smoke_shared_direct", "n_solvers": 3, "memory_mode": "shared", "maze_write_mode": "direct"},
+            {"run_id": "maze_smoke_shared_scripted", "n_solvers": 3, "memory_mode": "shared", "maze_write_mode": "scripted"},
+        ]
+    if phase == "e1_gate":
+        # E1 single-agent calibration gate (prereg_phase_beta.md): before any sharing,
+        # is faithful experience learning measurable at all? Both write protocols are
+        # calibrated so E2 arms inherit a validated single-agent mechanism.
+        faithful = {
+            "n_solvers": 1,
+            "memory_mode": "shared",  # single agent: one pool; "shared" vs "private" is moot
+            "maze_write_mode": "reviewer",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+        }
+        return [
+            {"run_id": "e1_single_nomem", "n_solvers": 1, "memory_mode": "none", "maze_write_mode": "none"},
+            {**faithful, "run_id": "e1_single_reviewer_ops", "memory_write_protocol": "expel_ops"},
+            {**faithful, "run_id": "e1_single_reviewer_append", "memory_write_protocol": "append"},
+        ]
+    if phase == "core_v2":
+        # E2 five-arm matrix (prereg_phase_beta.md). lambda=0: no importance feedback;
+        # the E3 sweep isolates feedback strength separately.
+        base = {
+            "n_solvers": 4,
+            "maze_write_mode": "reviewer",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+        }
+        return [
+            {"run_id": "e2_mas_nomem", "n_solvers": 4, "memory_mode": "none", "maze_write_mode": "none"},
+            {**base, "run_id": "e2_frozen_reviewer", "memory_mode": "frozen", "memory_write_protocol": "expel_ops"},
+            {**base, "run_id": "e2_private_reviewer", "memory_mode": "private", "memory_write_protocol": "expel_ops"},
+            {**base, "run_id": "e2_shared_append_ga", "memory_mode": "shared", "memory_write_protocol": "append"},
+            {**base, "run_id": "e2_shared_consolidated_expel", "memory_mode": "shared", "memory_write_protocol": "expel_ops"},
+        ]
+    if phase == "e3_lambda":
+        # E3 dose-response: positive-feedback strength sweep on the append arm.
+        base = {
+            "n_solvers": 4,
+            "memory_mode": "shared",
+            "maze_write_mode": "reviewer",
+            "memory_write_protocol": "append",
+            "retrieval_scoring": "ga",
+        }
+        return [
+            {**base, "run_id": "e3_append_lam0", "ga_lambda": 0.0},
+            {**base, "run_id": "e3_append_lam05", "ga_lambda": 0.5},
+            {**base, "run_id": "e3_append_lam1", "ga_lambda": 1.0},
+        ]
+    if phase == "e4_stress":
+        # E4 long-horizon stress (prereg S4, exploratory): does consolidation harm
+        # deepen, saturate, or self-heal as the feedback loop recurses further?
+        # Run at T=10. Compares the storage-only floor (frozen), the confirmed
+        # degrading arm (consolidated), and the append-lambda1 arm.
+        return [
+            {
+                "run_id": "e4_frozen_reviewer", "n_solvers": 4, "memory_mode": "frozen",
+                "maze_write_mode": "reviewer", "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga", "ga_lambda": 0.0,
+            },
+            {
+                "run_id": "e4_shared_consolidated_expel", "n_solvers": 4, "memory_mode": "shared",
+                "maze_write_mode": "reviewer", "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga", "ga_lambda": 0.0,
+            },
+            {
+                "run_id": "e4_shared_append_lam1", "n_solvers": 4, "memory_mode": "shared",
+                "maze_write_mode": "reviewer", "memory_write_protocol": "append",
+                "retrieval_scoring": "ga", "ga_lambda": 1.0,
+            },
         ]
     raise ValueError(f"unknown maze phase {phase!r}")
 

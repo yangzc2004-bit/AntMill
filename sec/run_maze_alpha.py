@@ -7,7 +7,12 @@ from .maze_alpha import run_cli
 
 def _parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Run Phase Alpha MazeEval-style strategy-degradation experiments.")
-    p.add_argument("--phase", choices=["debug", "smoke", "single", "single_expel_pilot", "mad", "core"], default="smoke")
+    p.add_argument(
+        "--phase",
+        choices=["debug", "smoke", "single", "single_expel_pilot", "mas_nomem", "mad", "core", "e1_gate", "core_v2", "e3_lambda", "e4_stress"],
+        default="smoke",
+        help="'mad' is a deprecated alias of 'mas_nomem' (no debate happens at debate_rounds=1).",
+    )
     p.add_argument("--model", default="", help="OpenAI-compatible model id.")
     p.add_argument("--base-url", default="", help="OpenAI-compatible base URL.")
     p.add_argument("--api-key-env", default="", help="Environment variable holding the API key.")
@@ -29,6 +34,20 @@ def _parser() -> argparse.ArgumentParser:
     p.add_argument("--maze-agent-mode", default="prompt_only", choices=["prompt_only", "state_guided", "stateful_dfs", "oracle_dfs"])
     p.add_argument("--maze-min-shortest", type=int, default=0)
     p.add_argument("--maze-max-shortest", type=int, default=0)
+    p.add_argument(
+        "--write-protocol",
+        choices=["distill", "expel_ops"],
+        default="distill",
+        help="Reviewer write path: legacy contrastive distill vs ExpeL LLM-issued ADD/EDIT/UPVOTE/DOWNVOTE.",
+    )
+    p.add_argument(
+        "--retrieval-scoring",
+        choices=["similarity", "ga"],
+        default="similarity",
+        help="Retrieval ranking: legacy lexical top-k vs GA-style relevance+importance+recency.",
+    )
+    p.add_argument("--ga-lambda", type=float, default=1.0, help="Importance weight (positive-feedback dial) in GA scoring.")
+    p.add_argument("--ga-recency", type=float, default=0.0, help="Recency weight in GA scoring (GA-faithful = 1.0).")
     p.add_argument("--solver-temp", type=float, default=0.7)
     p.add_argument("--max-tokens-solver", type=int, default=256)
     p.add_argument("--max-tokens-reviewer", type=int, default=512)

@@ -56,13 +56,16 @@ def parse_expel_insights(text: str) -> list[dict[str, str]]:
     return insights
 
 
-def sanitize_expel_insight(insight: dict[str, Any], *, fallback: dict[str, str]) -> dict[str, str]:
+def sanitize_expel_insight(insight: dict[str, Any]) -> dict[str, str]:
+    """Return a cleaned insight, or {} when it must be rejected.
+
+    Rejected insights are dropped, never replaced with researcher-authored fallback
+    text: the memory pool must contain only system-generated experience.
+    """
     text = str(insight.get("text", "")).strip()
     kind = insight.get("kind") if insight.get("kind") in {"do", "avoid"} else "do"
-    if not text:
-        return {"kind": fallback.get("kind", "do"), "text": fallback.get("text", "")}
-    if looks_over_specific(text):
-        return {"kind": fallback.get("kind", "do"), "text": fallback.get("text", "")}
+    if not text or looks_over_specific(text):
+        return {}
     return {"kind": str(kind), "text": text}
 
 
@@ -75,12 +78,36 @@ def looks_over_specific(text: str) -> bool:
     actions = re.findall(r"\b(up|down|left|right|move:up|move:down|move:left|move:right)\b", low)
     if len(actions) >= 4:
         return True
+    # Ordered direction sequences ("down then left", "up, right") are route fragments
+    # even below the raw-count threshold; comparative phrasing ("left or right") passes.
+    if re.search(
+        r"\b(?:move:)?(?:up|down|left|right)\b\s*(?:,|then|->|→)\s*(?:then\s+)?(?:move:)?(?:up|down|left|right)\b",
+        low,
+    ):
+        return True
     # A long quoted/final-answer-like literal usually means the extractor memorized a task result.
     if re.search(r"\b(final answer|exact answer|copy the answer)\b", low):
         return True
     if re.search(r"\b(maze|task|episode|case|item|question)\s*id\b", low):
         return True
+    # Concrete task identifiers (e.g. "heldout_trap_200008") are answer-cache keys.
+    if re.search(r"\b(train|heldout|demo|fixed_demo)_[a-z_]+_\d+\b", low):
+        return True
     return False
+
+
+def render_episode_blocks(episodes: list[dict[str, Any]], adapter: ExpeLAdapter) -> str:
+    blocks = []
+    for idx, ep in enumerate(episodes):
+        quality = ep.get("quality", {})
+        quality_text = json.dumps(quality, ensure_ascii=False, sort_keys=True)
+        blocks.append(
+            f"EPISODE {idx}\n"
+            f"id={ep.get('episode_id', '')} agent_id={ep.get('agent_id', '')} outcome={ep.get('outcome', '')}\n"
+            f"quality={quality_text}\n"
+            f"{adapter.trajectory_label}:\n{str(ep.get('trajectory', ''))[:4000]}"
+        )
+    return "\n\n---\n\n".join(blocks)
 
 
 async def distill_expel_insights(
@@ -90,6 +117,7 @@ async def distill_expel_insights(
     llm: LLMClient,
     *,
     forbidden_check: Callable[[str], bool] | None = None,
+    reject_log: list[dict[str, str]] | None = None,
 ) -> list[dict[str, str]]:
     """Generic ExpeL-style contrastive experience extraction.
 
@@ -101,23 +129,12 @@ async def distill_expel_insights(
     Environment-specific code should only adapt logs into this schema.
     """
 
-    blocks = []
-    for idx, ep in enumerate(episodes):
-        quality = ep.get("quality", {})
-        quality_text = json.dumps(quality, ensure_ascii=False, sort_keys=True)
-        blocks.append(
-            f"EPISODE {idx}\n"
-            f"id={ep.get('episode_id', '')} agent_id={ep.get('agent_id', '')} outcome={ep.get('outcome', '')}\n"
-            f"quality={quality_text}\n"
-            f"{adapter.trajectory_label}:\n{str(ep.get('trajectory', ''))[:4000]}"
-        )
-
     prompt = (
         f"Task family:\n{adapter.task_family}\n\n"
         f"Strategy focus:\n{adapter.strategy_focus}\n\n"
         f"Forbidden details:\n{adapter.forbidden_details}\n\n"
         "Episodes:\n"
-        + "\n\n---\n\n".join(blocks)
+        + render_episode_blocks(episodes, adapter)
         + "\n\nDistill reusable experience for future tasks in this family. "
         "Use success/failure and quality signals to contrast better and worse strategies. "
         "Do not merely restate whether an episode succeeded. "
@@ -133,8 +150,14 @@ async def distill_expel_insights(
     )
     insights: list[dict[str, str]] = []
     for item in parse_expel_insights(out):
-        insight = sanitize_expel_insight(item, fallback=adapter.fallback)
+        insight = sanitize_expel_insight(item)
+        if not insight:
+            if reject_log is not None:
+                reject_log.append({"text": str(item.get("text", "")), "reason": "over_specific"})
+            continue
         if forbidden_check and forbidden_check(insight["text"]):
+            if reject_log is not None:
+                reject_log.append({"text": insight["text"], "reason": "forbidden_check"})
             continue
         insights.append(insight)
     seen: set[str] = set()
@@ -145,4 +168,6 @@ async def distill_expel_insights(
             continue
         seen.add(key)
         unique.append(insight)
-    return unique[:4] if unique else [adapter.fallback]
+    # No fallback injection: an empty list is the honest outcome when every
+    # extracted insight was rejected.
+    return unique[:4]

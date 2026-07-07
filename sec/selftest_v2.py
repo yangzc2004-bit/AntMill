@@ -13,7 +13,7 @@ from .metrics import answer_entropy, answer_match, joint_collapse, numeric_match
 from .loop_v2 import run_one_v2
 
 
-async def _mock_chat(self, messages, *, temp=0.0, model=None, max_tokens=None, tag=""):
+async def _mock_chat(self, messages, *, temp=0.0, model=None, max_tokens=None, tag="", cache_salt=""):
     user = messages[-1]["content"]
     if tag in {"reviewer", "expel_reviewer"}:
         return (

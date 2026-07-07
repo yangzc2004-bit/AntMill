@@ -21,7 +21,7 @@ from .maze_env import MazeEnv, detect_position_loop, make_maze_tasks, shortest_p
 from .memory import InsightMemory
 
 
-async def _mock_chat(self, messages, *, temp=0.0, model=None, max_tokens=None, tag=""):
+async def _mock_chat(self, messages, *, temp=0.0, model=None, max_tokens=None, tag="", cache_salt=""):
     user = messages[-1]["content"]
     if tag in {"maze_reviewer", "expel_reviewer"}:
         return '[{"kind":"do","text":"Prefer open directions that reduce distance while avoiding revisits."}]'
