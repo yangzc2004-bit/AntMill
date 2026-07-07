@@ -9,7 +9,7 @@ def _parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Run Phase Alpha MazeEval-style strategy-degradation experiments.")
     p.add_argument(
         "--phase",
-        choices=["debug", "smoke", "single", "single_expel_pilot", "mas_nomem", "mad", "core", "e1_gate", "core_v2", "e3_lambda"],
+        choices=["debug", "smoke", "single", "single_expel_pilot", "mas_nomem", "mad", "core", "e1_gate", "core_v2", "e3_lambda", "e4_stress"],
         default="smoke",
         help="'mad' is a deprecated alias of 'mas_nomem' (no debate happens at debate_rounds=1).",
     )

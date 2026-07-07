@@ -312,6 +312,15 @@ def _prereg_phase_checks() -> None:
     assert [arm["ga_lambda"] for arm in e3] == [0.0, 0.5, 1.0]
     assert all(arm["memory_write_protocol"] == "append" and arm["memory_mode"] == "shared" for arm in e3)
 
+    e4 = _arms_for_phase("e4_stress")
+    e4_by_id = {arm["run_id"]: arm for arm in e4}
+    assert set(e4_by_id) == {"e4_frozen_reviewer", "e4_shared_consolidated_expel", "e4_shared_append_lam1"}
+    assert e4_by_id["e4_frozen_reviewer"]["memory_mode"] == "frozen"
+    assert e4_by_id["e4_shared_consolidated_expel"]["memory_write_protocol"] == "expel_ops"
+    assert e4_by_id["e4_shared_append_lam1"]["memory_write_protocol"] == "append"
+    assert e4_by_id["e4_shared_append_lam1"]["ga_lambda"] == 1.0
+    assert all(arm["n_solvers"] == 4 for arm in e4)
+
     # per-arm overrides must survive config construction
     from .maze_alpha import build_maze_alpha_configs
     from .run_maze_alpha import _parser

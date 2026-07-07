@@ -1585,6 +1585,28 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
             {**base, "run_id": "e3_append_lam05", "ga_lambda": 0.5},
             {**base, "run_id": "e3_append_lam1", "ga_lambda": 1.0},
         ]
+    if phase == "e4_stress":
+        # E4 long-horizon stress (prereg S4, exploratory): does consolidation harm
+        # deepen, saturate, or self-heal as the feedback loop recurses further?
+        # Run at T=10. Compares the storage-only floor (frozen), the confirmed
+        # degrading arm (consolidated), and the append-lambda1 arm.
+        return [
+            {
+                "run_id": "e4_frozen_reviewer", "n_solvers": 4, "memory_mode": "frozen",
+                "maze_write_mode": "reviewer", "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga", "ga_lambda": 0.0,
+            },
+            {
+                "run_id": "e4_shared_consolidated_expel", "n_solvers": 4, "memory_mode": "shared",
+                "maze_write_mode": "reviewer", "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga", "ga_lambda": 0.0,
+            },
+            {
+                "run_id": "e4_shared_append_lam1", "n_solvers": 4, "memory_mode": "shared",
+                "maze_write_mode": "reviewer", "memory_write_protocol": "append",
+                "retrieval_scoring": "ga", "ga_lambda": 1.0,
+            },
+        ]
     raise ValueError(f"unknown maze phase {phase!r}")
 
 
