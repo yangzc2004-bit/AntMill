@@ -1,0 +1,73 @@
+{
+  "phase": "epsilon_amendment1",
+  "created": "2026-07-16T20:52:00+08:00",
+  "git_head": "1770e5e21ea18e8985d01ac79deb8c59a73e0094",
+  "status": "frozen_after_amendment1_implementation_before_smoke_execution",
+  "scope": "Maze runtime, Epsilon evidence exporter, and Epsilon launch/finalization scripts authorized by Amendment 01.",
+  "preregistration": {
+    "document": "prereg_phase_epsilon.md",
+    "sha256": "69f0c999ce9570a9fa3ea1f40492321a7e9489892390c7b50001a566ef54bebb"
+  },
+  "amendment": {
+    "document": "prereg_phase_epsilon_amendment1.md",
+    "sha256": "79de03d3bbf7b65f187e1f309b1dffbd533f51c015c8dc056580fce209a514ab"
+  },
+  "files": [
+    {
+      "path": "sec/run_maze_alpha.py",
+      "sha256": "6036630d8a5dc271e0edb5624acb548a12c1faf9fd063c46b2435e0d5eadc9cb"
+    },
+    {
+      "path": "sec/maze_alpha.py",
+      "sha256": "ff9631ade050fe79d6288f53caf47c5bcd3f04ae99db7e0c7cb660b562d5854d"
+    },
+    {
+      "path": "sec/agentic.py",
+      "sha256": "514ec8ee835334af3f1d216954ab340be694d8a9f9b7943db0bf9945827ff4ea"
+    },
+    {
+      "path": "sec/config.py",
+      "sha256": "f8b6db2fab82d0c628410fa22e54f756a9faeade64f13d18cd9c426f88551013"
+    },
+    {
+      "path": "sec/expel.py",
+      "sha256": "de185266277b93abf9f105d74d21a12af8ed4d111a9e1475c8863c1f9a309ec1"
+    },
+    {
+      "path": "sec/expel_ops.py",
+      "sha256": "257c0cc9b5d3184f3f7d6660a00fbb5cb926ced7ffb08acfd9ddf5a2a809783b"
+    },
+    {
+      "path": "sec/llm.py",
+      "sha256": "ebd7ca56d3cdbeb2a93ccf8387c0122aba21a0f6d424bf74a1c799cb46ba8f04"
+    },
+    {
+      "path": "sec/maze_env.py",
+      "sha256": "7e419d4a629ccc2f243babd6b41dd74815f66e1f3cfbf3ffea84183796074b26"
+    },
+    {
+      "path": "sec/memory.py",
+      "sha256": "6d8a3b565f39645cdf462c40938cd740726292e1fab591b9ae4f655cede813e5"
+    },
+    {
+      "path": "sec/metrics.py",
+      "sha256": "6db33fc986d776b4d2fc488c3d7a07e8ecee768ede8900bf0ffc43041d9e10a1"
+    },
+    {
+      "path": "sec/solver.py",
+      "sha256": "961ccdffd8be8dae0f6305b2ddee7795120573fd42361db9612acca5358cbac8"
+    },
+    {
+      "path": "sec/epsilon_evidence.py",
+      "sha256": "6ec330dffad6970fa095476c9f80ed5450c5da213c0e874ad97135dfd85e7481"
+    },
+    {
+      "path": "scripts/start_epsilon_controls.ps1",
+      "sha256": "da13fe94bb4913012c6242d1f0d1ae07e0df6772984f53b5dc25b9b409f16a9a"
+    },
+    {
+      "path": "scripts/finalize_epsilon_controls.ps1",
+      "sha256": "2a9bb42061d7c99233f162273bdfa411f43cdf6c4bbd4739dc1ac193d1a80b02"
+    }
+  ]
+}
