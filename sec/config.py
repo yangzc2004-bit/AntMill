@@ -25,6 +25,7 @@ class Config:
     T: int = 25
     seed: int = 0
     solver_temp: float = 0.8
+    reviewer_temp: float = 0.2
     library_cap: int = 60
 
     # --- v2 (SEC) knobs; defaults preserve the original single-pass behavior ---
@@ -60,6 +61,8 @@ class Config:
     #             Generative-Agents style); independent re-derivation of a similar lesson counts
     #             as agreement and upvotes the existing item
     memory_write_protocol: str = "distill"
+    append_dedup: bool = True
+    tie_rule: str = "reverse_lexical"
     # similarity = lexical top-k against the query (legacy)
     # ga         = min-max normalized relevance + ga_lambda*importance + ga_recency*recency
     #              (Generative-Agents-style scoring; importance = consensus votes)
@@ -129,6 +132,8 @@ class Config:
             raise ValueError("maze_max_shortest must be >= maze_min_shortest when set.")
         if self.memory_write_protocol not in {"distill", "expel_ops", "append"}:
             raise ValueError(f"invalid memory_write_protocol: {self.memory_write_protocol!r}")
+        if self.tie_rule not in {"reverse_lexical", "oldest_evicted_recency_retaining"}:
+            raise ValueError(f"invalid tie_rule: {self.tie_rule!r}")
         if self.retrieval_scoring not in {"similarity", "ga", "ga_mmr"}:
             raise ValueError(f"invalid retrieval_scoring: {self.retrieval_scoring!r}")
         if self.ga_lambda < 0.0 or self.ga_recency < 0.0:

@@ -144,7 +144,7 @@ async def distill_expel_insights(
     )
     out = await llm.chat(
         [{"role": "system", "content": EXPEL_SYS}, {"role": "user", "content": prompt}],
-        temp=0.2,
+        temp=cfg.reviewer_temp,
         max_tokens=cfg.max_tokens_reviewer,
         tag="expel_reviewer",
     )

@@ -200,6 +200,16 @@ def _ops_apply_checks() -> None:
     ]
     pool, _ = apply_memory_ops(base, [], cfg=cap_cfg)
     assert [item["votes"] for item in pool] == [3, 2]
+
+    # Amendment 01 tie rule evicts the oldest equal-vote item.
+    recency_cfg = _cfg(library_cap=2, tie_rule="oldest_evicted_recency_retaining")
+    tied = [
+        {"kind": "do", "text": "oldest", "votes": 1, "insertion_order": 0},
+        {"kind": "do", "text": "middle", "votes": 1, "insertion_order": 1},
+        {"kind": "do", "text": "newest", "votes": 1, "insertion_order": 2},
+    ]
+    pool, _ = apply_memory_ops(tied, [], cfg=recency_cfg)
+    assert [item["text"] for item in pool] == ["newest", "middle"], pool
     print("p1 ops apply checks OK")
 
 
@@ -210,6 +220,7 @@ async def _ops_e2e_checks() -> None:
         user = messages[-1]["content"]
         if tag == "expel_ops_reviewer":
             reviewer_calls["n"] += 1
+            assert temp == 0.2
             assert "EXISTING INSIGHT POOL" in user, "reviewer must see the pool"
             if reviewer_calls["n"] == 1:
                 return (
@@ -260,9 +271,12 @@ def _render_pool_checks() -> None:
 
 
 async def _append_protocol_checks() -> None:
+    reviewer_temps: list[float] = []
+
     async def _mock(self, messages, *, temp=0.0, model=None, max_tokens=None, tag="", cache_salt=""):
         user = messages[-1]["content"]
         if tag == "expel_reviewer":
+            reviewer_temps.append(float(temp))
             return '[{"kind":"do","text":"prefer untried open directions after a revisit"}]'
         if "Manhattan distance: 0" in user:
             return "At the goal. Action: submit"
@@ -285,6 +299,32 @@ async def _append_protocol_checks() -> None:
         assert "reviewer_append:append" in modes and "reviewer_append:agree" in modes, modes
         await write_maze_experience(episode, memory, cfg, llm, audit=audit, t=1, write_mode="reviewer")
         assert memory.size() == 1 and memory.shared[0]["votes"] == 4, "agreement must keep accumulating"
+
+        raw_cfg = _cfg(
+            memory_write_protocol="append",
+            append_dedup=False,
+            tie_rule="oldest_evicted_recency_retaining",
+            n_solvers=2,
+            max_steps=3,
+        )
+        raw_llm = LLMClient(raw_cfg)
+        raw_memory = InsightMemory(raw_cfg)
+        raw_audit = MazeMemoryAudit()
+        await write_maze_experience(
+            episode,
+            raw_memory,
+            raw_cfg,
+            raw_llm,
+            audit=raw_audit,
+            t=0,
+            write_mode="reviewer",
+        )
+        assert raw_memory.size() == 2, raw_memory.snapshot()
+        assert all(item["votes"] == 1 for item in raw_memory.shared)
+        raw_modes = [write["write_mode"] for write in raw_audit.writes]
+        assert "reviewer_append:agree" not in raw_modes, raw_modes
+        assert raw_modes == ["reviewer_append_raw:append", "reviewer_append_raw:append"], raw_modes
+        assert reviewer_temps and all(temp == 0.2 for temp in reviewer_temps), reviewer_temps
     finally:
         LLMClient.chat = original  # type: ignore[assignment]
     print("p1 append protocol checks OK")
@@ -352,6 +392,7 @@ def _cli_wiring_checks() -> None:
         assert cfg.memory_write_protocol == "expel_ops"
         assert cfg.retrieval_scoring == "ga"
         assert cfg.ga_lambda == 0.5 and cfg.ga_recency == 1.0
+        assert cfg.reviewer_temp == 0.2
     defaults = build_maze_alpha_configs(_parser().parse_args(["--phase", "core", "--api-key-env", "SEC_MOCK_KEY"]))
     assert all(c.memory_write_protocol == "distill" and c.retrieval_scoring == "similarity" for c in defaults)
     print("p1 CLI wiring checks OK")

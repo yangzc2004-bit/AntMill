@@ -16,6 +16,13 @@ from .memory import InsightMemory
 
 
 def _result(*, arm: str, seed: int, offset: float) -> dict:
+    distinct_injected = (
+        5 + seed
+        if arm == "epsilon_shared_append_cap14"
+        else 20 + seed
+        if arm == "epsilon_shared_append_raw"
+        else 3
+    )
     records = []
     for t in range(6):
         episodes = []
@@ -51,7 +58,11 @@ def _result(*, arm: str, seed: int, offset: float) -> dict:
         "log": [
             {
                 "t": t,
-                "memory_size": int((t + 1) * (2 + offset)),
+                "memory_size": (
+                    14
+                    if arm == "epsilon_shared_append_cap14"
+                    else int((t + 1) * (2 + offset))
+                ),
                 "n_routes": 48,
                 "parse_failure_rate": 0.0,
                 "retrieval_entropy_norm": 0.8,
@@ -62,6 +73,12 @@ def _result(*, arm: str, seed: int, offset: float) -> dict:
         ],
         "summary": {"elapsed_sec": 1.0, "llm": {"network_calls": 5, "cache_hits": 0, "errors": 0}},
         "memory_audit": {
+            "retrievals": [
+                {
+                    "t": 5,
+                    "items": [f"{arm}-strategy-{index}" for index in range(distinct_injected)],
+                }
+            ],
             "pool_trajectory": [
                 {
                     "distinct_total_injected": 3,
@@ -117,6 +134,14 @@ def main() -> None:
         and config["cache_dir"] == "cache_maze_epsilon_sensitivity"
         for config in sensitivity_configs.values()
     )
+    raw_config = _expected_epsilon_config(
+        suite="controls",
+        arm="epsilon_shared_append_raw",
+        seed=0,
+    )
+    assert raw_config["append_dedup"] is False
+    assert raw_config["reviewer_temp"] == 0.2
+    assert raw_config["tie_rule"] == "oldest_evicted_recency_retaining"
 
     offsets = {
         "epsilon_frozen_reviewer": 0.0,
@@ -124,6 +149,7 @@ def main() -> None:
         "epsilon_shared_consolidated": 3.0,
         "epsilon_shared_append_cap14": 2.0,
         "epsilon_shared_consolidated_mmr": 1.5,
+        "epsilon_shared_append_raw": 0.5,
     }
     with tempfile.TemporaryDirectory(prefix="antmill-epsilon-selftest-") as raw:
         root = Path(raw)
@@ -140,6 +166,9 @@ def main() -> None:
                             "condition": f"n4_gt_false_seed{seed}_{arm}",
                             "run_id": arm,
                             "seed": seed,
+                            "reviewer_temp": result["config"]["reviewer_temp"],
+                            "tie_rule": result["config"]["tie_rule"],
+                            "append_dedup": result["config"]["append_dedup"],
                             "config": result["config"],
                             "preregistration": EPSILON_PREREGISTRATION,
                         }
@@ -155,8 +184,8 @@ def main() -> None:
             rng_seed=7,
         )
         assert report["final_t"] == 5
-        assert len(report["stats"]) == 3 * 8
-        assert len(report["per_seed_effects"]) == 3 * 8 * 5
+        assert len(report["stats"]) == 6 * 8
+        assert len(report["per_seed_effects"]) == 6 * 8 * 5
         assert all(row["route_count_pass"] for row in report["data_quality"])
         assert all(row["terminal_round_pass"] for row in report["data_quality"])
         assert all(row["configuration_pass"] for row in report["data_quality"])
@@ -171,6 +200,8 @@ def main() -> None:
         )
         assert len(report["source_results"]) == len(CONTROL_ARMS) * 5
         assert len(report["source_manifests"]) == len(CONTROL_ARMS) * 5
+        assert report["manipulation_check"]["passed"]
+        assert report["manipulation_check"]["ci_hi"] < 0.0
         assert report["provenance"]["preregistration"]["match"]
         assert report["provenance"]["runtime_source"]["all_match"]
         loop = next(
@@ -184,6 +215,7 @@ def main() -> None:
             "per_seed_paired_effects.csv",
             "data_quality.csv",
             "memory_summary.csv",
+            "manipulation_check_seed_differences.csv",
             "evidence_manifest.json",
             "evidence_report.md",
         ):

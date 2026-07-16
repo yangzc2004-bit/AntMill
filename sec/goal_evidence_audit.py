@@ -211,6 +211,7 @@ def build_goal_evidence_audit(
     controls_total = _result_count(controls_dir)
     private_count = _arm_result_count(controls_dir, "epsilon_private_consolidated")
     cap14_count = _arm_result_count(controls_dir, "epsilon_shared_append_cap14")
+    raw_count = _arm_result_count(controls_dir, "epsilon_shared_append_raw")
     mmr_count = _arm_result_count(controls_dir, "epsilon_shared_consolidated_mmr")
     sensitivity_count = _result_count(sensitivity_dir)
     zeta_count = _result_count(zeta_dir)
@@ -301,7 +302,7 @@ def build_goal_evidence_audit(
     requirements.append(
         _requirement(
             name="private_consolidation_separates_sharing",
-            complete=controls_total == 25 and private_count == 5 and controls_complete,
+            complete=controls_total == 30 and private_count == 5 and controls_complete,
             progress=private_count > 0 or controls_total > 0,
             evidence={
                 "controls_results": controls_total,
@@ -316,8 +317,9 @@ def build_goal_evidence_audit(
         _requirement(
             name="fixed_and_exact_pool_size_controls",
             complete=(
-                controls_total == 25
+                controls_total == 30
                 and cap14_count == 5
+                and raw_count == 5
                 and zeta_count == 5
                 and controls_complete
                 and zeta_complete
@@ -326,6 +328,7 @@ def build_goal_evidence_audit(
             progress=cap14_count > 0 or zeta_count > 0 or controls_total > 0,
             evidence={
                 "cap14_results": cap14_count,
+                "raw_results": raw_count,
                 "zeta_results": zeta_count,
                 "zeta_evidence_status": sections.get(
                     "zeta_exact_supply_yoke", {}
@@ -341,7 +344,7 @@ def build_goal_evidence_audit(
         _requirement(
             name="diversity_aware_retrieval",
             complete=(
-                controls_total == 25
+                controls_total == 30
                 and mmr_count == 5
                 and controls_complete
                 and claims.get("status") == "claim_decisions_ready"

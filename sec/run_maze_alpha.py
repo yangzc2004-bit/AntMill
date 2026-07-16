@@ -69,11 +69,28 @@ def _parser() -> argparse.ArgumentParser:
     p.add_argument("--disable-thinking", action="store_true")
     p.add_argument("--llm-extra-body-json", default="", help="JSON object passed as OpenAI extra_body.")
     p.add_argument("--solver-temp", type=float, default=0.7)
+    p.add_argument("--reviewer-temp", type=float, default=0.2)
+    p.add_argument(
+        "--append-dedup",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Enable lexical near-duplicate agreement in the append writer.",
+    )
+    p.add_argument(
+        "--tie-rule",
+        choices=["reverse_lexical", "oldest_evicted_recency_retaining"],
+        default="reverse_lexical",
+    )
     p.add_argument("--max-tokens-solver", type=int, default=256)
     p.add_argument("--max-tokens-reviewer", type=int, default=512)
     p.add_argument("--concurrency", type=int, default=4)
     p.add_argument("--rpm", type=float, default=0.0)
     p.add_argument("--skip-final-train", action="store_true", help="Skip train/write after the final eval round.")
+    p.add_argument(
+        "--skip-completed",
+        action="store_true",
+        help="Skip conditions whose output directory already contains result.json.",
+    )
     return p
 
 

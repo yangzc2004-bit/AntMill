@@ -189,3 +189,22 @@ Beta/Gamma runtime and completed Epsilon artifacts. The two completed private
 seeds remain eligible. Before further execution, reviewer temperature will be
 made an explicit configuration, CLI, manifest, and validation field; no code
 change is authorized until the amendment is reviewed and frozen.
+
+## 2026-07-16 - Amendment 01 frozen after two external-review rounds
+
+Phase Epsilon Amendment 01 was frozen after two rounds of external review and
+before any amendment-arm execution. The review changed three load-bearing
+details without access to amendment-arm outcomes:
+
+- capacity ties now evict the oldest item and retain recent admissions,
+  preventing founder-effect pool freezing in the raw arm;
+- the deterministic-compression manipulation reference is now the same-stage
+  `epsilon_shared_append_raw` arm rather than a cross-phase Beta arm;
+- manipulation check 2 now pairs the five per-seed scalar distinct-injection
+  differences and bootstraps seeds, rather than applying route-level pairing
+  to a run-level quantity.
+
+The final document is anchored by
+`prereg_phase_epsilon_amendment1.freeze.json` and Git tag
+`amendment1-freeze-20260716`. The review-and-revision sequence is retained as
+part of the project's decision-discipline record.

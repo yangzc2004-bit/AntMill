@@ -16,7 +16,13 @@ from typing import Any
 from .agentic import parse_action
 from .config import Config, condition_name
 from .expel import ExpeLAdapter, distill_expel_insights, sanitize_expel_insight
-from .expel_ops import apply_memory_ops, find_pool_duplicate, propose_memory_ops
+from .expel_ops import (
+    apply_memory_ops,
+    assign_insertion_order,
+    find_pool_duplicate,
+    propose_memory_ops,
+    truncate_memory_pool,
+)
 from .llm import LLMClient
 from .maze_env import DIRS, MazeEnv, MazeTask, _is_open as _maze_is_open, make_maze_tasks
 from .memory import InsightMemory
@@ -1216,7 +1222,7 @@ async def _write_experience_append(
                     reason="over_specific",
                 )
                 continue
-            dup = find_pool_duplicate(pool, insight, cfg)
+            dup = find_pool_duplicate(pool, insight, cfg) if cfg.append_dedup else None
             if dup is not None:
                 memory.add_archive_item(
                     insight,
@@ -1231,8 +1237,9 @@ async def _write_experience_append(
                 mode = "reviewer_append:agree"
             else:
                 item = {"kind": insight["kind"], "text": insight["text"], "votes": 1, "last_access_t": t}
+                assign_insertion_order(pool, item)
                 pool.append(item)
-                mode = "reviewer_append:append"
+                mode = "reviewer_append:append" if cfg.append_dedup else "reviewer_append_raw:append"
             audit.record_write(
                 t=t,
                 task_id=episode.task_id,
@@ -1242,9 +1249,9 @@ async def _write_experience_append(
                 write_mode=mode,
                 quality=quality,
             )
-        if len(pool) > cfg.library_cap:
-            pool.sort(key=lambda it: (int(it.get("votes", 0)), normalize_answer(str(it.get("text", "")))), reverse=True)
-            del pool[cfg.library_cap:]
+            if len(pool) > cfg.library_cap:
+                pool = truncate_memory_pool(pool, cfg)
+                memory.set_pool(agent.agent_id, pool)
         memory.set_pool(agent.agent_id, pool)
 
 
@@ -1481,6 +1488,9 @@ async def run_one_maze_alpha(cfg: Config, train_tasks: list[MazeTask], heldout_t
         "run_id": cfg.run_id,
         "seed": cfg.seed,
         "created_unix": time.time(),
+        "reviewer_temp": cfg.reviewer_temp,
+        "tie_rule": cfg.tie_rule,
+        "append_dedup": cfg.append_dedup,
         "config": cfg.to_public_dict(),
         "preregistration": (
             "prereg_phase_delta.md + prereg_phase_delta_amendment_01.md"
@@ -1492,7 +1502,7 @@ async def run_one_maze_alpha(cfg: Config, train_tasks: list[MazeTask], heldout_t
             if cfg.run_id.startswith("gamma_p2_")
             else "prereg_phase_gamma.md"
             if cfg.run_id.startswith("gamma_")
-            else "prereg_phase_epsilon.md"
+            else "prereg_phase_epsilon.md + prereg_phase_epsilon_amendment1.md"
             if cfg.run_id.startswith("epsilon_")
             else "prereg_phase_beta.md"
         ),
@@ -1654,6 +1664,7 @@ def build_maze_alpha_configs(args: argparse.Namespace) -> list[Config]:
                 "retrieval_k": args.retrieval_k,
                 "library_cap": args.library_cap,
                 "solver_temp": args.solver_temp,
+                "reviewer_temp": getattr(args, "reviewer_temp", 0.2),
                 "max_tokens_solver": args.max_tokens_solver,
                 "max_tokens_reviewer": args.max_tokens_reviewer,
                 "skip_final_train": args.skip_final_train,
@@ -1664,6 +1675,8 @@ def build_maze_alpha_configs(args: argparse.Namespace) -> list[Config]:
                 "maze_min_shortest": args.maze_min_shortest,
                 "maze_max_shortest": args.maze_max_shortest,
                 "memory_write_protocol": getattr(args, "write_protocol", "distill"),
+                "append_dedup": bool(getattr(args, "append_dedup", True)),
+                "tie_rule": getattr(args, "tie_rule", "reverse_lexical"),
                 "retrieval_scoring": getattr(args, "retrieval_scoring", "similarity"),
                 "ga_lambda": getattr(args, "ga_lambda", 1.0),
                 "ga_recency": getattr(args, "ga_recency", 0.0),
@@ -1917,6 +1930,8 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
             "ga_recency": 0.0,
             "max_reviewer_ops": 6,
             "similarity_threshold": 0.80,
+            "reviewer_temp": 0.2,
+            "tie_rule": "oldest_evicted_recency_retaining",
         }
         return [
             {**base, "run_id": "epsilon_frozen_reviewer", "memory_mode": "frozen", "memory_write_protocol": "expel_ops"},
@@ -1936,6 +1951,14 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
                 "memory_write_protocol": "expel_ops",
                 "retrieval_scoring": "ga_mmr",
                 "mmr_relevance_weight": 0.70,
+            },
+            {
+                **base,
+                "run_id": "epsilon_shared_append_raw",
+                "memory_mode": "shared",
+                "memory_write_protocol": "append",
+                "append_dedup": False,
+                "library_cap": 80,
             },
         ]
     if phase == "epsilon_sensitivity":
@@ -2145,6 +2168,18 @@ def _write_json(path: Path, data: Any) -> None:
 
 def run_cli(args: argparse.Namespace) -> list[dict[str, Any]]:
     configs = build_maze_alpha_configs(args)
+    if bool(getattr(args, "skip_completed", False)):
+        pending: list[Config] = []
+        for cfg in configs:
+            result_path = cfg.output_path() / condition_name(cfg) / "result.json"
+            if result_path.exists():
+                print(f"Skipping completed {condition_name(cfg)}", flush=True)
+            else:
+                pending.append(cfg)
+        configs = pending
+    if not configs:
+        print("No pending maze conditions.", flush=True)
+        return []
     max_train = max(int(c.n_train or 0) for c in configs)
     max_heldout = max(c.heldout_size for c in configs)
     results: list[dict[str, Any]] = []

@@ -38,6 +38,9 @@ $pythonCommand = @(
     "--library-cap 80",
     "--concurrency 8",
     "--skip-final-train",
+    "--reviewer-temp 0.2",
+    "--tie-rule oldest_evicted_recency_retaining",
+    "--skip-completed",
     "--out-dir runs_maze_epsilon_controls",
     "--cache-dir cache_maze_epsilon_controls"
 ) -join " "

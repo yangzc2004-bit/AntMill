@@ -404,9 +404,13 @@ def _phase_wiring_checks() -> None:
         "epsilon_shared_consolidated",
         "epsilon_shared_append_cap14",
         "epsilon_shared_consolidated_mmr",
+        "epsilon_shared_append_raw",
     }
     append_cap = next(arm for arm in epsilon if arm["run_id"] == "epsilon_shared_append_cap14")
     assert append_cap["library_cap"] == 14
+    assert append_cap["tie_rule"] == "oldest_evicted_recency_retaining"
+    raw = next(arm for arm in epsilon if arm["run_id"] == "epsilon_shared_append_raw")
+    assert raw["library_cap"] == 80 and raw["append_dedup"] is False
     mmr = next(arm for arm in epsilon if arm["run_id"] == "epsilon_shared_consolidated_mmr")
     assert mmr["retrieval_scoring"] == "ga_mmr"
     sensitivity = _arms_for_phase("epsilon_sensitivity")

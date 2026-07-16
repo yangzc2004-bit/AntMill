@@ -100,7 +100,7 @@ async def propose_memory_ops(
     )
     out = await llm.chat(
         [{"role": "system", "content": MEMORY_OPS_SYS}, {"role": "user", "content": prompt}],
-        temp=0.2,
+        temp=cfg.reviewer_temp,
         max_tokens=cfg.max_tokens_reviewer,
         tag="expel_ops_reviewer",
     )
@@ -152,6 +152,7 @@ def apply_memory_ops(
                 applied.append({"op": "UPVOTE", "item": pool[dup], "converted_from": "ADD"})
                 continue
             record: dict[str, Any] = {"kind": clean["kind"], "text": clean["text"], "votes": ADD_INITIAL_VOTES}
+            assign_insertion_order(pool, record)
             pool.append(record)
             applied.append({"op": "ADD", "item": record})
         elif name == "UPVOTE":
@@ -170,9 +171,41 @@ def apply_memory_ops(
             item["text"] = clean["text"]
             item["kind"] = clean["kind"]
             applied.append({"op": "EDIT", "item": item})
+    return truncate_memory_pool(pool, cfg), applied
+
+
+def assign_insertion_order(pool: list[dict[str, Any]], item: dict[str, Any]) -> int:
+    if "insertion_order" in item:
+        return int(item["insertion_order"])
+    next_order = max(
+        (int(existing.get("insertion_order", -1)) for existing in pool),
+        default=-1,
+    ) + 1
+    item["insertion_order"] = next_order
+    return next_order
+
+
+def truncate_memory_pool(pool: list[dict[str, Any]], cfg: Config) -> list[dict[str, Any]]:
     survivors = [item for item in pool if int(item.get("votes", 0)) > 0]
-    survivors.sort(key=lambda item: (int(item.get("votes", 0)), normalize_answer(str(item.get("text", "")))), reverse=True)
-    return survivors[: cfg.library_cap], applied
+    if cfg.tie_rule == "oldest_evicted_recency_retaining":
+        for item in survivors:
+            assign_insertion_order(survivors, item)
+        survivors.sort(
+            key=lambda item: (
+                int(item.get("votes", 0)),
+                int(item.get("insertion_order", -1)),
+            ),
+            reverse=True,
+        )
+    else:
+        survivors.sort(
+            key=lambda item: (
+                int(item.get("votes", 0)),
+                normalize_answer(str(item.get("text", ""))),
+            ),
+            reverse=True,
+        )
+    return survivors[: cfg.library_cap]
 
 
 def find_pool_duplicate(pool: list[dict[str, Any]], insight: dict[str, str], cfg: Config) -> int | None:
