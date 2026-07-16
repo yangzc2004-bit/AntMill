@@ -1,0 +1,84 @@
+{
+  "status": "three_arm_confirmation_protocol_frozen_before_new_outcomes",
+  "date_frozen": "2026-07-15",
+  "provider": "ModelArts MaaS plan endpoint",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "model": "kimi-k2.6-maas",
+  "api_model": "kimi-k2.6",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "worker_count": 3,
+  "num_layers": 12,
+  "step_limit_per_worker": 12,
+  "pass_policy": "any",
+  "temperature": 0.6,
+  "experience_char_limit_per_source": 12000,
+  "expected_core_total": 4,
+  "expected_all_total": 37,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "arms": {
+    "fresh_self_report_replication": {
+      "config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_self_report_r2_config.json",
+      "run_root": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_depth12_self_report_r2_20260715",
+      "role": "Independent replication of delayed recurrent catastrophic failures under weak self-report admission."
+    },
+    "same_provider_no_transfer": {
+      "config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_no_transfer_r1_config.json",
+      "run_root": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_depth12_no_transfer_r1_20260715",
+      "role": "Same-provider baseline for spontaneous MiniSWE catastrophic failure without imported experience."
+    },
+    "same_provider_local_acceptance": {
+      "config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_local_acceptance_r1_config.json",
+      "run_root": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_depth12_local_acceptance_r1_20260715",
+      "role": "Admission-strength control that accumulates only self-reported outputs with at least three successful environment commands."
+    }
+  },
+  "held_fixed": [
+    "provider endpoint",
+    "API model",
+    "SCBench native MiniSWE agent",
+    "cfgpipe checkpoint 1",
+    "three parallel workers per layer",
+    "twelve layers",
+    "twelve-action limit",
+    "temperature",
+    "source truncation limit",
+    "external evaluator",
+    "test collection hash"
+  ],
+  "changed_variable": "Experience transfer and admission rule only.",
+  "bootstrap_rule": {
+    "self_report_and_local_acceptance": "Receive the same three frozen diverse layer-5 sources, each independently re-evaluated at 4/4 Core and 34/37 overall.",
+    "no_transfer": "Receives no bootstrap or generated experience."
+  },
+  "primary_hypotheses": {
+    "complexity_tail_risk": "The fresh self-report arm produces at least two post-layer-6 worker outcomes at 0/37, with at least one event at layer 10 or later.",
+    "no_transfer_contrast": "The no-transfer arm produces at most one 0/37 worker outcome across layers 7-12 and fewer such outcomes than the fresh self-report arm.",
+    "local_gate_mechanism": "Every 0/37 output with fewer than three successful commands is rejected by local acceptance and absent from all later prompts."
+  },
+  "secondary_hypotheses": {
+    "terminal_recurrence": "The self-report layer-12 mean all-test score is below 0.75 or contains at least one 0/37 worker.",
+    "complexity_activation": "The self-report and local-acceptance arms reach at least 30 received references and at least 5x the no-transfer mean input-token load at layer 10 or later.",
+    "admission_effect": "After the first rejected local-acceptance collapse, the next layer returns to all workers above 0/37. This is descriptive and does not require the local arm to eliminate future complexity-induced failures."
+  },
+  "validity_gates": {
+    "target_consistency": "Every interpreted worker uses Core total 4, all-test total 37, and the frozen collection hash.",
+    "model_query_integrity": "Zero-step API, quota, rate-limit, or gateway failures abort and are never scored as benchmark failures.",
+    "recipient_blinding": "Transferred self-report and local-acceptance references expose only their proxy admission label, never external Core or all-test scores.",
+    "bootstrap_activation": "All six treatment/control bootstrap restores pass their arm-specific admission requirement before layer 1.",
+    "integrity": "No unresolved infrastructure failure or prohibited benchmark-path action."
+  },
+  "decision_rule": {
+    "confirm_recurrent_complexity_tail_risk": "All validity gates pass, the self-report complexity-tail criterion passes, and the no-transfer arm has fewer post-layer-6 0/37 worker outcomes.",
+    "support_admission_filter": "Every catastrophic zero-command output in the local arm is rejected and never appears in downstream prompts.",
+    "inconclusive": "The direction is retained as inconclusive if any arm is invalidated by provider or infrastructure failure.",
+    "falsify_replication": "The fresh self-report arm has fewer than two post-layer-6 0/37 worker outcomes through layer 12.",
+    "claim_boundary": "Even a positive result supports recurrent intermittent catastrophic control failure under accumulated experience. It does not by itself establish a monotonic death spiral."
+  },
+  "provenance": {
+    "exploratory_depth12_audit": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_self_report_acceptance_depth12_audit_20260715.json",
+    "new_arm_outcomes_seen_before_freeze": false,
+    "thresholds_changed_after_freeze": false,
+    "parallel_launch_planned_before_outcomes": true
+  }
+}

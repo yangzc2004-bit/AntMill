@@ -1,0 +1,16 @@
+{
+  "phase": "gamma_p3c_smoke",
+  "document": "prereg_phase_gamma_p3_execution_amendment_02.md",
+  "sha256": "e7dd8672f4b1a69aa6a11ba5aeae24b015aea64193f3338174af03f6d898b524",
+  "status": "frozen_before_p3c_smoke_outcomes",
+  "tasks": [
+    "click-button",
+    "choose-list",
+    "enter-text",
+    "click-checkboxes",
+    "login-user",
+    "use-autocomplete-nodelay"
+  ],
+  "arms": ["frozen", "append", "consolidated"],
+  "seed": 0
+}

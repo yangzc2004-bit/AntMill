@@ -1,0 +1,3 @@
+{
+  "port": { "type": "integer", "default": "3000", "env": "APP_PORT", "arg": "port", "primary-store": "app/port" }
+}

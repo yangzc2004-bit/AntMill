@@ -1,0 +1,244 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./antmill_full_en.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-03-20>
+(d:/texlive/2026/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(d:/texlive/2026/texmf-dist/tex/latex/base/size11.clo))
+(d:/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
+(d:/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty)))
+(d:/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+(d:/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(d:/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(d:/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(d:/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+(d:/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(d:/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(d:/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(d:/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)
+(d:/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+(d:/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(d:/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+(d:/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(d:/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(d:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(d:/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty
+(d:/texlive/2026/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(d:/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg))
+(d:/texlive/2026/texmf-dist/tex/latex/siunitx/siunitx.sty
+(d:/texlive/2026/texmf-dist/tex/latex/translations/translations.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/tools/array.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/natbib/natbib.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./antmill_full_en.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(d:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (d:/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(d:/texlive/2026/texmf-dist/tex/latex/grfext/grfext.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./antmill_full_en.out) (./antmill_full_en.out)
+(d:/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(d:/texlive/2026/texmf-dist/tex/latex/translations/translations-basic-dictionar
+y-english.trsl)
+Underfull \hbox (badness 5403) in paragraph at lines 38--38
+[]\OT1/cmr/bx/n/10.95 (+20) Draft sta-tus. \OT1/cmr/m/n/10.95 (+20) All con-fir
+-ma-tory num-bers come from pre-reg-is-tered pro-to-cols
+
+Package natbib Warning: Citation `zhao2024expel' on page 1 undefined on input l
+ine 77.
+
+
+Package natbib Warning: Citation `shinn2023reflexion' on page 1 undefined on in
+put line 77.
+
+
+Package natbib Warning: Citation `qian2024colearning' on page 1 undefined on in
+put line 78.
+
+
+Package natbib Warning: Citation `liu2025mael' on page 1 undefined on input lin
+e 79.
+
+[1{d:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package natbib Warning: Citation `zhao2024expel' on page 2 undefined on input l
+ine 134.
+
+
+Package natbib Warning: Citation `shinn2023reflexion' on page 2 undefined on in
+put line 136.
+
+
+Package natbib Warning: Citation `yao2023react' on page 2 undefined on input li
+ne 137.
+
+
+Package natbib Warning: Citation `park2023generative' on page 2 undefined on in
+put line 138.
+
+
+Package natbib Warning: Citation `zhong2024memorybank' on page 2 undefined on i
+nput line 139.
+
+[2]
+
+Package natbib Warning: Citation `qian2024colearning' on page 3 undefined on in
+put line 145.
+
+
+Package natbib Warning: Citation `qian2024chatdev' on page 3 undefined on input
+ line 146.
+
+
+Package natbib Warning: Citation `liu2025mael' on page 3 undefined on input lin
+e 146.
+
+
+Package natbib Warning: Citation `du2024debate' on page 3 undefined on input li
+ne 148.
+
+
+Package natbib Warning: Citation `wang2023selfconsistency' on page 3 undefined 
+on input line 148.
+
+
+Package natbib Warning: Citation `hong2024metagpt' on page 3 undefined on input
+ line 149.
+
+
+Package natbib Warning: Citation `governed2026sharedmem' on page 3 undefined on
+ input line 155.
+
+
+Package natbib Warning: Citation `memfail2026' on page 3 undefined on input lin
+e 156.
+
+
+Package natbib Warning: Citation `ssgm2026' on page 3 undefined on input line 1
+57.
+
+
+Package natbib Warning: Citation `remembering2026' on page 3 undefined on input
+ line 158.
+
+
+Package natbib Warning: Citation `zhao2024expel' on page 3 undefined on input l
+ine 193.
+
+
+Package natbib Warning: Citation `park2023generative' on page 3 undefined on in
+put line 194.
+
+
+Package natbib Warning: Citation `zhao2024expel' on page 3 undefined on input l
+ine 195.
+
+
+Package natbib Warning: Citation `yao2023react' on page 3 undefined on input li
+ne 196.
+
+
+Package natbib Warning: Citation `qian2024colearning' on page 3 undefined on in
+put line 197.
+
+
+Package natbib Warning: Citation `liu2025mael' on page 3 undefined on input lin
+e 197.
+
+
+Overfull \hbox (32.76254pt too wide) in paragraph at lines 189--201
+ [][] 
+[3]
+
+Package natbib Warning: Citation `deepseek2024v3' on page 4 undefined on input 
+line 218.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5] [6]
+
+Package natbib Warning: Citation `yang2025qwen3' on page 7 undefined on input l
+ine 390.
+
+[7{d:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+Package natbib Warning: Citation `zhao2024expel' on page 8 undefined on input l
+ine 450.
+
+
+Package natbib Warning: Citation `shi2017wob' on page 8 undefined on input line
+ 453.
+
+
+Package natbib Warning: Citation `liu2018miniwob' on page 8 undefined on input 
+line 453.
+
+
+Package natbib Warning: Citation `chezelles2024browsergym' on page 8 undefined 
+on input line 454.
+
+
+Package natbib Warning: Citation `tau2bench2025' on page 8 undefined on input l
+ine 456.
+
+(./antmill_full_en.bbl [8] [9])
+
+Package natbib Warning: There were undefined citations.
+
+[10] [11 <./figures/beta/figure1_mechanism.pdf>] [12 <./figures/beta/figure2_e2
+_main.pdf> <./figures/beta/figure2b_shared_vs_private.pdf>] [13 <./figures/beta
+/figure3_write_side_compression.pdf>] (./antmill_full_en.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)<d:/texlive/2026/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2026/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2026/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
+.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/t
+exlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2026
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2026/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy8.pfb><d:/texlive/2026/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/cm-sup
+er/sfrm1095.pfb>
+Output written on antmill_full_en.pdf (13 pages, 387776 bytes).
+Transcript written on antmill_full_en.log.

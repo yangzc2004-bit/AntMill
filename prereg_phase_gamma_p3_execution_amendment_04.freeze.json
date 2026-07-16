@@ -1,0 +1,36 @@
+{
+  "phase": "gamma_p3e_smoke_then_formal",
+  "document": "prereg_phase_gamma_p3_execution_amendment_04.md",
+  "sha256": "de13308f8cb78144122ba70995bf413e9c46a5a5a54e6bd540c05b5a9305debc",
+  "frozen_at": "2026-07-15T09:31:16.9923235+08:00",
+  "status": "frozen_before_p3e_smoke_outcomes",
+  "miniwob_url": "file:///D:/antmill/tmp/miniwob-plusplus/miniwob/html/miniwob/",
+  "browser_executable": "D:/antmill/tmp/pinned_chrome_150.0.7871.124/Application/chrome.exe",
+  "browser_version": "150.0.7871.124",
+  "browser_executable_sha256": "40ad3d87ea81270f36137e6f84fb36e9a2236aedd835696dd663ac1a27dd1b13",
+  "browser_tree_sha256": "aa89fed38bda67c473a1db216cb54d99ed55ee613317de248634e2cabffc9680",
+  "browser_tree_file_count": 273,
+  "browser_tree_total_bytes": 501388593,
+  "smoke_runs_dir": "runs_miniwob_gamma_p3e_smoke",
+  "smoke_cache_dir": "cache_miniwob_gamma_p3e_smoke",
+  "formal_runs_dir": "runs_miniwob_gamma_p3e",
+  "formal_cache_dir": "cache_miniwob_gamma_p3e",
+  "tasks": [
+    "click-button",
+    "choose-list",
+    "enter-text",
+    "click-checkboxes",
+    "login-user",
+    "use-autocomplete-nodelay"
+  ],
+  "arms": [
+    "frozen",
+    "append",
+    "consolidated"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

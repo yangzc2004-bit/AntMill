@@ -1,0 +1,190 @@
+{
+  "status": "valid_stress_probe_behavioral_lock_in_without_target_curve",
+  "date": "2026-07-14",
+  "config": "benchmarks/scbench/deepseek_cfgpipe_cp1_recursive_self_report_probe_depth5_config.json",
+  "run_root": "runs_scbench_moa_deepseek_cfgpipe_cp1_recursive_self_report_probe_depth5_r1_20260714",
+  "arm_id": "recursive_self_report_synthesis-f5882653218c4534b123aff90af6ce76",
+  "model": "deepseek-v4-flash",
+  "problem": "cfgpipe",
+  "assimilation_mode": "recursive_self_report_synthesis",
+  "curve": {
+    "mean_core": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mean_all_tests": [
+      0.8558558558558559,
+      0.8828828828828829,
+      0.8828828828828829,
+      0.8738738738738739,
+      0.8648648648648649
+    ],
+    "all_tests_per_worker": [
+      [
+        "32/37",
+        "31/37",
+        "32/37"
+      ],
+      [
+        "33/37",
+        "32/37",
+        "33/37"
+      ],
+      [
+        "32/37",
+        "33/37",
+        "33/37"
+      ],
+      [
+        "32/37",
+        "33/37",
+        "32/37"
+      ],
+      [
+        "32/37",
+        "32/37",
+        "32/37"
+      ]
+    ],
+    "post_peak_transitions": [
+      0.0,
+      -0.009009009009009028,
+      -0.009009009009009028
+    ]
+  },
+  "bootstrap": {
+    "selection": "The complete three-worker layer-2 cohort from the frozen DeepSeek raw-append run; no source was selected or excluded using external score.",
+    "external_outcomes_for_audit_only": [
+      "0/37",
+      "33/37",
+      "34/37"
+    ],
+    "accepted_source_count": 3,
+    "scores_withheld_from_manager": true,
+    "initial_playbook_chars": 6709,
+    "initial_playbook_sha256_prefix": "2f835a1fa11a"
+  },
+  "manager_recursion": [
+    {
+      "source_layer": 0,
+      "accepted_sources": 3,
+      "playbook_chars": 6709,
+      "sha256_prefix": "2f835a1fa11a",
+      "similarity_to_previous": null,
+      "prompt_tokens": 9500
+    },
+    {
+      "source_layer": 1,
+      "accepted_sources": 3,
+      "playbook_chars": 7233,
+      "sha256_prefix": "8911dc921b57",
+      "similarity_to_previous": 0.9575383732606513,
+      "prompt_tokens": 11361
+    },
+    {
+      "source_layer": 2,
+      "accepted_sources": 3,
+      "playbook_chars": 7677,
+      "sha256_prefix": "ba7daf8ac566",
+      "similarity_to_previous": 0.9561368209255533,
+      "prompt_tokens": 11009
+    },
+    {
+      "source_layer": 3,
+      "accepted_sources": 3,
+      "playbook_chars": 7677,
+      "sha256_prefix": "ba7daf8ac566",
+      "similarity_to_previous": 1.0,
+      "prompt_tokens": 13452
+    },
+    {
+      "source_layer": 4,
+      "accepted_sources": 3,
+      "playbook_chars": 7677,
+      "sha256_prefix": "66139072293a",
+      "similarity_to_previous": 0.9998697407841605,
+      "prompt_tokens": 10481
+    }
+  ],
+  "validity_gates": {
+    "bootstrap_activation": {
+      "passed": true,
+      "detail": "The initial manager consumed all three self-report proxies."
+    },
+    "recursive_continuity": {
+      "passed": true,
+      "detail": "Every manager update included the immediately previous shared artifact and three current-layer accepted outputs."
+    },
+    "self_report_activation": {
+      "passed": true,
+      "detail": "All 15 worker outputs self-reported successful completion."
+    },
+    "target_consistency": {
+      "passed": true,
+      "detail": "All interpreted worker outcomes used Core total 4, 37 tests, and the frozen collection hash."
+    },
+    "score_blinding": {
+      "passed": true,
+      "detail": "No manager request contained 0/37, Core=0/4, Verified Core, or an unblinded Local verifier Core score. Worker prompts labeled the manager artifact as a self-report proxy."
+    },
+    "integrity": {
+      "passed": true,
+      "model_query_failures": 0,
+      "nonempty_runner_stderr": 0,
+      "prohibited_assistant_action_hits": 0,
+      "native_evaluation_rejections": 1,
+      "recovery": "One native evaluation infrastructure failure was cleanly re-evaluated on the same snapshot; the final manifest contains zero infrastructure failures."
+    }
+  },
+  "probe_direction_criteria": {
+    "terminal": {
+      "passed": false,
+      "observed": 0.8648648648648649,
+      "required": "below 0.75 or at least one terminal 0/37 worker"
+    },
+    "within_arm": {
+      "passed": false,
+      "observed_decline_from_best": 0.018018018018018056,
+      "required_decline": 0.15
+    },
+    "curve_shape": {
+      "passed": true,
+      "detail": "Layer 3 to 4 and layer 4 to 5 were both strictly decreasing."
+    },
+    "feedback_trace": {
+      "passed": true,
+      "detail": "The externally failed but self-report-accepted bootstrap source contained arg > file > env > default. The manager retained that rule in every playbook, and terminal workers universally failed the priority-related evaluator cases."
+    },
+    "overall_go": false
+  },
+  "behavioral_lock_in": {
+    "manager_fixed_point": "Manager layer 3 was byte-identical to layer 2; layer 4 similarity to layer 3 was 0.99987.",
+    "terminal_snapshot_hashes": [
+      "c58497098531",
+      "bdfc3436b517",
+      "c4c9605a3782"
+    ],
+    "terminal_snapshots_distinct": true,
+    "shared_terminal_failures": [
+      "test_env_parse_error_priority",
+      "test_invalid_boolean[whitespace]",
+      "test_default_parse_error_stops",
+      "test_file_parse_error_stops",
+      "test_empty_env_string_is_present"
+    ],
+    "interpretation": "The manager produced behavioral homogenization across three distinct implementations. Every terminal worker passed all Core tests but repeated the same five broader failures."
+  },
+  "scientific_interpretation": {
+    "supported": "Blinded self-report admission followed by recursive MOA manager synthesis can compress a mixed-success cohort into a stable shared playbook that makes independent agents converge on the same globally inferior behavior.",
+    "not_supported": "The probe does not meet the preregistered terminal or within-arm thresholds for a strong sustained degradation curve. It also does not test amplification of experience that is globally correct, because the stress-probe bootstrap cohort contained an externally failed source.",
+    "curve_characterization": "An immediate manager-induced quality drop followed by a small two-transition late decline into a stable degraded plateau."
+  },
+  "decision": {
+    "extend_cfgpipe_probe": false,
+    "reason": "The manager reached a textual fixed point before the terminal layer, and additional cfgpipe layers would reproduce the same degraded plateau.",
+    "next_experiment": "Move the same self-report-blinded recursive manager to a sequential benchmark whose public requirements evolve across checkpoints and whose normalized score has headroom. Use matched no-transfer and raw-append controls prospectively."
+  }
+}

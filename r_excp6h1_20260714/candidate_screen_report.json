@@ -1,0 +1,67 @@
+{
+  "screen_config": {
+    "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+    "date_frozen": "2026-07-14",
+    "experiment_role": "prospective_longer_feedback_depth_no_transfer_calibration",
+    "rationale": "The prior CP1-to-CP3 design contains only two manager-feedback transitions. execution_server exposes six ordered checkpoints, so this no-transfer-only run tests whether a longer, treatment-feasible sequence retains score and action headroom before any recursive manager output is observed.",
+    "endpoint": "https://api.kimi.com/coding/v1",
+    "model": "kimi-k2.6",
+    "worker_count": 1,
+    "num_layers": 1,
+    "checkpoint_limit": 6,
+    "step_limit_per_worker": 32,
+    "pass_policy": "any",
+    "experience_char_limit_per_source": 10000,
+    "candidates": [
+      {
+        "problem": "execution_server",
+        "reason": "Six-checkpoint workflow with observed explicit no-transfer completion at checkpoints 1, 2, and 3 and no prior treatment outcomes."
+      }
+    ],
+    "benchmark_isolation": {
+      "remove_reference_solutions": true,
+      "remove_analysis_files": true,
+      "remove_later_checkpoint_specs_and_tests": true,
+      "prohibit_catalog_access_in_prompt": true,
+      "automatic_clean_revaluation": true,
+      "offline_wheelhouse": true
+    },
+    "prefix_selection_rule": {
+      "candidates": [
+        6,
+        5,
+        4
+      ],
+      "select": "Choose the longest prefix k for which every checkpoint 1 through k has no infrastructure failure, checkpoints 1 through k-1 explicitly complete before action 32, checkpoint k explicitly completes before action 32, and checkpoint k normalized Core and all-test scores are each at least 0.50.",
+      "headroom": "The terminal checkpoint must fail at least one collected test or one Core test; a perfect terminal checkpoint is retained only as an engineering result and is not used for the primary degradation contrast.",
+      "fallback": "If no prefix in 4, 5, or 6 qualifies, retain the already calibrated CP1-to-CP3 sequence rather than changing its action budget.",
+      "no_budget_retuning": true
+    },
+    "formal_if_valid": {
+      "arms": [
+        "no_transfer",
+        "recursive_self_report_synthesis"
+      ],
+      "worker_count_per_arm_initial_pilot": 1,
+      "replication_policy": "If the longer pilot has negative treatment-control gaps at both of its final two checkpoints, add two identical independent replicates. Otherwise do not increase depth again on this task.",
+      "parallel_arms": true,
+      "scores_withheld_from_manager": true,
+      "source_admission": "workflow self-reported successful completion",
+      "manager_state": "one recursively revised shared playbook"
+    },
+    "calibration_provenance": {
+      "candidate_audit": "benchmarks/scbench/kimi_fresh_cp3_sequential_candidate_selection_audit_20260714.json",
+      "prior_execution_server_arm": "r_fcp3s2_20260714/no_transfer-7a118f0c4c1c49609a2a37165aecea5c",
+      "no_execution_server_treatment_outcomes_seen_before_freeze": true
+    }
+  },
+  "config_path": "D:\\antmill\\benchmarks\\scbench\\kimi_execution_server_cp6_longest_prefix_headroom_config.json",
+  "results": [
+    {
+      "problem": "execution_server",
+      "reason": "Six-checkpoint workflow with observed explicit no-transfer completion at checkpoints 1, 2, and 3 and no prior treatment outcomes.",
+      "status": "failed",
+      "error": "RuntimeError: MiniSWE worker worker_1 layer 1 did not obtain a model response: Error querying model. See D:\\antmill\\r_excp6h1_20260714\\no_transfer-a09cf21dfd294047a059b15ca9f5ec8e\\workers\\worker_1\\layer_1\\model_query_failure.json."
+    }
+  ]
+}

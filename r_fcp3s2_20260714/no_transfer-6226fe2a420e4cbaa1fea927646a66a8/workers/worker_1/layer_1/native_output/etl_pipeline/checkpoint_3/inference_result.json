@@ -1,0 +1,28 @@
+{
+  "artifacts_dir": "agent",
+  "checkpoint_path": "/outputs/etl_pipeline/checkpoint_3",
+  "completed": "2026-07-14T12:03:18.425205",
+  "elapsed": 270.396916,
+  "error_message": null,
+  "had_error": false,
+  "snapshot_dir": "snapshot",
+  "started": "2026-07-14T11:58:48.028289",
+  "usage": {
+    "cost": 0.0,
+    "current_tokens": {
+      "cache_read": 21540,
+      "cache_write": 0,
+      "input": 21815,
+      "output": 135,
+      "reasoning": 0
+    },
+    "net_tokens": {
+      "cache_read": 347680,
+      "cache_write": 0,
+      "input": 367986,
+      "output": 7701,
+      "reasoning": 0
+    },
+    "steps": 28
+  }
+}

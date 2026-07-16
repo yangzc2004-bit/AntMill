@@ -1,0 +1,28 @@
+{
+  "artifacts_dir": "agent",
+  "checkpoint_path": "/outputs/execution_server/checkpoint_1",
+  "completed": "2026-07-14T13:31:22.868347",
+  "elapsed": 157.156433,
+  "error_message": null,
+  "had_error": false,
+  "snapshot_dir": "snapshot",
+  "started": "2026-07-14T13:28:45.711914",
+  "usage": {
+    "cost": 0.0,
+    "current_tokens": {
+      "cache_read": 0,
+      "cache_write": 0,
+      "input": 7363,
+      "output": 322,
+      "reasoning": 0
+    },
+    "net_tokens": {
+      "cache_read": 0,
+      "cache_write": 0,
+      "input": 54711,
+      "output": 3051,
+      "reasoning": 0
+    },
+    "steps": 11
+  }
+}

@@ -1,0 +1,66 @@
+Running n4_gt_false_seed0_epsilon_frozen_reviewer with train=24 heldout=12
+[n4_gt_false_seed0_epsilon_frozen_reviewer] t=00 success=0.708 cost=2.195 loop=0.042 div=0.274 mem=0 tokens=0
+[n4_gt_false_seed0_epsilon_frozen_reviewer] t=01 success=0.792 cost=2.113 loop=0.021 div=0.292 mem=7 tokens=0
+[n4_gt_false_seed0_epsilon_frozen_reviewer] t=02 success=0.646 cost=2.277 loop=0.042 div=0.255 mem=8 tokens=0
+[n4_gt_false_seed0_epsilon_frozen_reviewer] t=03 success=0.729 cost=2.150 loop=0.021 div=0.244 mem=11 tokens=0
+[n4_gt_false_seed0_epsilon_frozen_reviewer] t=04 success=0.771 cost=2.133 loop=0.062 div=0.230 mem=14 tokens=1346308
+[n4_gt_false_seed0_epsilon_frozen_reviewer] t=05 success=0.729 cost=2.220 loop=0.042 div=0.247 mem=15 tokens=7066792
+Running n4_gt_false_seed0_epsilon_private_consolidated with train=24 heldout=12
+[n4_gt_false_seed0_epsilon_private_consolidated] t=00 success=0.792 cost=2.249 loop=0.000 div=0.273 mem=0 tokens=4194145
+[n4_gt_false_seed0_epsilon_private_consolidated] t=01 success=0.604 cost=2.402 loop=0.062 div=0.349 mem=21 tokens=10839239
+[n4_gt_false_seed0_epsilon_private_consolidated] t=02 success=0.667 cost=2.381 loop=0.021 div=0.330 mem=29 tokens=17715057
+[n4_gt_false_seed0_epsilon_private_consolidated] t=03 success=0.562 cost=2.464 loop=0.042 div=0.323 mem=38 tokens=24946873
+[n4_gt_false_seed0_epsilon_private_consolidated] t=04 success=0.521 cost=2.567 loop=0.062 div=0.309 mem=42 tokens=32478960
+[n4_gt_false_seed0_epsilon_private_consolidated] t=05 success=0.583 cost=2.412 loop=0.125 div=0.320 mem=45 tokens=39479103
+Running n4_gt_false_seed0_epsilon_shared_consolidated with train=24 heldout=12
+[n4_gt_false_seed0_epsilon_shared_consolidated] t=00 success=0.729 cost=2.311 loop=0.000 div=0.265 mem=0 tokens=4348377
+[n4_gt_false_seed0_epsilon_shared_consolidated] t=01 success=0.521 cost=2.545 loop=0.167 div=0.269 mem=6 tokens=11579004
+[n4_gt_false_seed0_epsilon_shared_consolidated] t=02 success=0.417 cost=2.612 loop=0.188 div=0.227 mem=8 tokens=19736454
+[n4_gt_false_seed0_epsilon_shared_consolidated] t=03 success=0.375 cost=2.671 loop=0.292 div=0.298 mem=9 tokens=28235598
+[n4_gt_false_seed0_epsilon_shared_consolidated] t=04 success=0.375 cost=2.811 loop=0.292 div=0.318 mem=11 tokens=37045912
+[n4_gt_false_seed0_epsilon_shared_consolidated] t=05 success=0.333 cost=2.815 loop=0.396 div=0.327 mem=12 tokens=45667142
+Running n4_gt_false_seed0_epsilon_shared_append_cap14 with train=24 heldout=12
+[n4_gt_false_seed0_epsilon_shared_append_cap14] t=00 success=0.750 cost=2.133 loop=0.062 div=0.200 mem=0 tokens=4101570
+[n4_gt_false_seed0_epsilon_shared_append_cap14] t=01 success=0.542 cost=2.466 loop=0.188 div=0.318 mem=14 tokens=10785585
+[n4_gt_false_seed0_epsilon_shared_append_cap14] t=02 success=0.479 cost=2.583 loop=0.104 div=0.261 mem=14 tokens=18103275
+[n4_gt_false_seed0_epsilon_shared_append_cap14] t=03 success=0.479 cost=2.616 loop=0.188 div=0.317 mem=14 tokens=25666249
+[n4_gt_false_seed0_epsilon_shared_append_cap14] t=04 success=0.479 cost=2.662 loop=0.167 div=0.304 mem=14 tokens=33432677
+[n4_gt_false_seed0_epsilon_shared_append_cap14] t=05 success=0.396 cost=2.758 loop=0.188 div=0.314 mem=14 tokens=41086787
+Running n4_gt_false_seed0_epsilon_shared_consolidated_mmr with train=24 heldout=12
+[n4_gt_false_seed0_epsilon_shared_consolidated_mmr] t=00 success=0.729 cost=2.229 loop=0.062 div=0.256 mem=0 tokens=4262773
+[n4_gt_false_seed0_epsilon_shared_consolidated_mmr] t=01 success=0.500 cost=2.582 loop=0.125 div=0.324 mem=8 tokens=11247250
+[n4_gt_false_seed0_epsilon_shared_consolidated_mmr] t=02 success=0.479 cost=2.563 loop=0.146 div=0.348 mem=9 tokens=19033904
+[n4_gt_false_seed0_epsilon_shared_consolidated_mmr] t=03 success=0.500 cost=2.652 loop=0.188 div=0.341 mem=10 tokens=27212001
+[n4_gt_false_seed0_epsilon_shared_consolidated_mmr] t=04 success=0.562 cost=2.449 loop=0.021 div=0.343 mem=11 tokens=35160393
+[n4_gt_false_seed0_epsilon_shared_consolidated_mmr] t=05 success=0.604 cost=2.519 loop=0.104 div=0.293 mem=12 tokens=43392002
+Running n4_gt_false_seed1_epsilon_frozen_reviewer with train=24 heldout=12
+[n4_gt_false_seed1_epsilon_frozen_reviewer] t=00 success=0.792 cost=2.443 loop=0.042 div=0.206 mem=0 tokens=4562314
+[n4_gt_false_seed1_epsilon_frozen_reviewer] t=01 success=0.729 cost=2.393 loop=0.021 div=0.239 mem=7 tokens=10882576
+[n4_gt_false_seed1_epsilon_frozen_reviewer] t=02 success=0.750 cost=2.357 loop=0.042 div=0.159 mem=8 tokens=16937366
+[n4_gt_false_seed1_epsilon_frozen_reviewer] t=03 success=0.771 cost=2.425 loop=0.021 div=0.197 mem=9 tokens=23007778
+[n4_gt_false_seed1_epsilon_frozen_reviewer] t=04 success=0.771 cost=2.376 loop=0.062 div=0.134 mem=9 tokens=28659728
+[n4_gt_false_seed1_epsilon_frozen_reviewer] t=05 success=0.729 cost=2.439 loop=0.021 div=0.175 mem=10 tokens=34667029
+Running n4_gt_false_seed1_epsilon_private_consolidated with train=24 heldout=12
+[n4_gt_false_seed1_epsilon_private_consolidated] t=00 success=0.688 cost=2.421 loop=0.042 div=0.202 mem=0 tokens=4505991
+[n4_gt_false_seed1_epsilon_private_consolidated] t=01 success=0.562 cost=2.610 loop=0.062 div=0.265 mem=15 tokens=11671087
+[n4_gt_false_seed1_epsilon_private_consolidated] t=02 success=0.646 cost=2.489 loop=0.062 div=0.263 mem=25 tokens=18867486
+[n4_gt_false_seed1_epsilon_private_consolidated] t=03 success=0.396 cost=2.698 loop=0.208 div=0.284 mem=27 tokens=26348715
+[n4_gt_false_seed1_epsilon_private_consolidated] t=04 success=0.438 cost=2.666 loop=0.083 div=0.323 mem=33 tokens=33874562
+[n4_gt_false_seed1_epsilon_private_consolidated] t=05 success=0.438 cost=2.668 loop=0.146 div=0.328 mem=35 tokens=41492299
+Running n4_gt_false_seed1_epsilon_shared_consolidated with train=24 heldout=12
+[n4_gt_false_seed1_epsilon_shared_consolidated] t=00 success=0.833 cost=2.407 loop=0.042 div=0.187 mem=0 tokens=4470545
+[n4_gt_false_seed1_epsilon_shared_consolidated] t=01 success=0.500 cost=2.631 loop=0.042 div=0.238 mem=7 tokens=12107740
+[n4_gt_false_seed1_epsilon_shared_consolidated] t=02 success=0.562 cost=2.662 loop=0.042 div=0.277 mem=9 tokens=20179047
+[n4_gt_false_seed1_epsilon_shared_consolidated] t=03 success=0.542 cost=2.699 loop=0.042 div=0.250 mem=13 tokens=28343095
+[n4_gt_false_seed1_epsilon_shared_consolidated] t=04 success=0.604 cost=2.579 loop=0.083 div=0.255 mem=13 tokens=36078299
+[n4_gt_false_seed1_epsilon_shared_consolidated] t=05 success=0.500 cost=2.569 loop=0.062 div=0.279 mem=13 tokens=44060096
+Running n4_gt_false_seed1_epsilon_shared_append_cap14 with train=24 heldout=12
+[n4_gt_false_seed1_epsilon_shared_append_cap14] t=00 success=0.688 cost=2.446 loop=0.042 div=0.230 mem=0 tokens=4580017
+[n4_gt_false_seed1_epsilon_shared_append_cap14] t=01 success=0.812 cost=2.082 loop=0.021 div=0.162 mem=14 tokens=10697774
+[n4_gt_false_seed1_epsilon_shared_append_cap14] t=02 success=0.854 cost=2.129 loop=0.000 div=0.185 mem=14 tokens=16992753
+[n4_gt_false_seed1_epsilon_shared_append_cap14] t=03 success=0.729 cost=2.362 loop=0.083 div=0.241 mem=14 tokens=23433660
+[n4_gt_false_seed1_epsilon_shared_append_cap14] t=04 success=0.542 cost=2.564 loop=0.125 div=0.258 mem=14 tokens=30507499
+[n4_gt_false_seed1_epsilon_shared_append_cap14] t=05 success=0.542 cost=2.547 loop=0.021 div=0.281 mem=14 tokens=37577298
+Running n4_gt_false_seed1_epsilon_shared_consolidated_mmr with train=24 heldout=12
+[n4_gt_false_seed1_epsilon_shared_consolidated_mmr] t=00 success=0.625 cost=2.499 loop=0.021 div=0.229 mem=0 tokens=4637340
+[n4_gt_false_seed1_epsilon_shared_consolidated_mmr] t=01 success=0.500 cost=2.542 loop=0.104 div=0.273 mem=6 tokens=11888139

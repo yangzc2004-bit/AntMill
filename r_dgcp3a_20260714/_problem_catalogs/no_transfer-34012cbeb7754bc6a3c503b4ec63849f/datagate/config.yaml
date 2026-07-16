@@ -1,0 +1,44 @@
+version: 2
+name: datagate
+description: 'HTTP service for ingesting tabular files from URLs/uploads into queryable
+
+  datasets with pagination, sorting, filtering, export, caching, config-based
+
+  runtime controls, access control, and optional enrichment metadata.
+
+  '
+category: web
+difficulty: Easy
+author: Gabriel Orlanski
+entry_file: datagate
+timeout: 20
+tags:
+- rest-api
+- csv
+- spreadsheet
+- ingestion
+- query-engine
+- filtering
+- export
+- caching
+- configuration
+- access-control
+checkpoints:
+  checkpoint_1:
+    version: 2
+    order: 1
+    state: Core Tests
+  checkpoint_2:
+    version: 2
+    order: 2
+    state: Core Tests
+  checkpoint_3:
+    version: 2
+    order: 3
+    state: Core Tests
+test_dependencies:
+- httpx
+static_assets:
+  antmill_requirements:
+    path: requirements.txt
+    save_path: requirements.txt

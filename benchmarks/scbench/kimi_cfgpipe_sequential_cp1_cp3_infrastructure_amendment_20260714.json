@@ -1,0 +1,46 @@
+{
+  "status": "infrastructure_only_amendment_before_treatment_activation",
+  "date": "2026-07-14",
+  "invalid_run_root": "runs_scbench_moa_kimi_cfgpipe_sequential_cp1_cp3_recursive_self_report_pilot_r1_20260714",
+  "failure_evidence": [
+    {
+      "arm": "no_transfer",
+      "worker": "worker_1",
+      "layer": 1,
+      "native_evaluation": "0/0",
+      "failure": "Failed to download rpds-py==2026.6.3 after TLS retries."
+    },
+    {
+      "arm": "recursive_self_report_synthesis",
+      "worker": "worker_2",
+      "layer": 1,
+      "native_evaluation": "0/0",
+      "failure": "Failed to download deepdiff==9.1.0 metadata after TLS retries."
+    }
+  ],
+  "clean_revaluation": {
+    "attempts_per_snapshot": 3,
+    "outcome": "The frozen-target clean evaluator remained infrastructure-invalid for at least one worker, so the arm terminated before manager synthesis."
+  },
+  "repair": {
+    "code": "sec/scbench_moa.py",
+    "change": "Allow cfgpipe to use cache_scbench_wheelhouse when all 20 exact pinned wheel files are present.",
+    "wheel_count": 20,
+    "missing_required_wheels": 0,
+    "offline_environment": [
+      "UV_OFFLINE=1",
+      "UV_FIND_LINKS=/antmill/wheelhouse"
+    ]
+  },
+  "scientific_invariance": {
+    "model": "unchanged",
+    "agent": "unchanged",
+    "task_and_checkpoints": "unchanged",
+    "worker_count": "unchanged",
+    "action_budget": "unchanged",
+    "manager_and_admission": "unchanged",
+    "targets_and_thresholds": "unchanged",
+    "invalid_model_outputs_reused": false
+  },
+  "restart_rule": "Run both arms from scratch under a new run root."
+}

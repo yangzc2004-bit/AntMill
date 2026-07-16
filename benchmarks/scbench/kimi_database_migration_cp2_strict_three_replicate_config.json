@@ -1,0 +1,67 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "database_migration",
+  "checkpoint_limit": 2,
+  "worker_count": 2,
+  "num_layers": 2,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 4000,
+  "scbench_seed": 42,
+  "assimilation_semantics": {
+    "source_success": "Broadcast only prior-layer workers with all Core tests passed and no infrastructure failure.",
+    "no_success_behavior": "Broadcast no experience; never fall back to partial or failed trajectories."
+  },
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": ["source_success", "no_transfer"]
+        },
+        {
+          "replicate": 2,
+          "mode_order": ["no_transfer", "source_success"]
+        },
+        {
+          "replicate": 3,
+          "mode_order": ["source_success", "no_transfer"]
+        }
+      ]
+    }
+  ],
+  "replication_policy": {
+    "existing_pilot": "Reuse the completed official pilot as replicate 1.",
+    "additional_runs": "Run replicates 2 and 3 without changing the task, agent, layer count, worker count, step budget, verification rule, or experience limit.",
+    "order_control": "Alternate mode order across replicates; an odd number of replicates cannot be perfectly balanced.",
+    "primary_performance_outcome": "Replicate-level source_success minus no_transfer layer-2 mean Core score.",
+    "secondary_performance_outcome": "Layer-2 full-Core workers per arm.",
+    "complexity_outcomes": [
+      "layer-2 total input tokens",
+      "layer-2 total output tokens",
+      "layer-2 mean duration",
+      "received experience characters"
+    ],
+    "activation_rule": "Analyze performance effects only for source_success replicates whose layer 1 creates at least one full-Core source and whose layer 2 receives it.",
+    "interpretation_rule": "Three engineering replicates can establish trend stability but are not sufficient for a manuscript-level causal claim."
+  },
+  "screening_evidence": {
+    "selected_task_full_core_rate": 0.5,
+    "replicate_1_treatment_activated": true,
+    "replicate_1_layer_2_core_difference": 0.0,
+    "replicate_1_layer_2_input_token_percent": 26.87
+  },
+  "interpretation": "Three-replicate strict verified-success MoA contrast reusing the completed two-layer pilot as replicate 1."
+}

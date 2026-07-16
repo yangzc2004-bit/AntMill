@@ -1,0 +1,28 @@
+{
+  "artifacts_dir": "agent",
+  "checkpoint_path": "/outputs/file_merger/checkpoint_1",
+  "completed": "2026-07-13T15:06:00.439818",
+  "elapsed": 251.518696,
+  "error_message": null,
+  "had_error": false,
+  "snapshot_dir": "snapshot",
+  "started": "2026-07-13T15:01:48.921122",
+  "usage": {
+    "cost": 0.0,
+    "current_tokens": {
+      "cache_read": 11202,
+      "cache_write": 0,
+      "input": 11436,
+      "output": 3765,
+      "reasoning": 0
+    },
+    "net_tokens": {
+      "cache_read": 88435,
+      "cache_write": 0,
+      "input": 98028,
+      "output": 12533,
+      "reasoning": 0
+    },
+    "steps": 12
+  }
+}

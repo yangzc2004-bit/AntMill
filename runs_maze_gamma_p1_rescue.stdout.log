@@ -1,0 +1,21 @@
+Running n4_gt_false_seed0_gamma_p1_shared_consolidated_archive_rescue with train=24 heldout=12
+[n4_gt_false_seed0_gamma_p1_shared_consolidated_archive_rescue] t=00 success=0.688 cost=2.234 loop=0.042 div=0.306 mem=0 tokens=4201021
+[n4_gt_false_seed0_gamma_p1_shared_consolidated_archive_rescue] t=01 success=0.271 cost=2.888 loop=0.438 div=0.296 mem=6 tokens=12891872
+[n4_gt_false_seed0_gamma_p1_shared_consolidated_archive_rescue] t=02 success=0.333 cost=2.705 loop=0.312 div=0.341 mem=8 tokens=22028720
+[n4_gt_false_seed0_gamma_p1_shared_consolidated_archive_rescue] t=03 success=0.521 cost=2.624 loop=0.104 div=0.315 mem=9 tokens=31017507
+[n4_gt_false_seed0_gamma_p1_shared_consolidated_archive_rescue] t=04 success=0.354 cost=2.824 loop=0.229 div=0.324 mem=11 tokens=40411539
+[n4_gt_false_seed0_gamma_p1_shared_consolidated_archive_rescue] t=05 success=0.375 cost=2.657 loop=0.167 div=0.281 mem=14 tokens=49372965
+Running n4_gt_false_seed1_gamma_p1_shared_consolidated_archive_rescue with train=24 heldout=12
+[n4_gt_false_seed1_gamma_p1_shared_consolidated_archive_rescue] t=00 success=0.771 cost=2.383 loop=0.062 div=0.187 mem=0 tokens=4411610
+[n4_gt_false_seed1_gamma_p1_shared_consolidated_archive_rescue] t=01 success=0.542 cost=2.602 loop=0.167 div=0.215 mem=9 tokens=12259608
+[n4_gt_false_seed1_gamma_p1_shared_consolidated_archive_rescue] t=02 success=0.458 cost=2.693 loop=0.146 div=0.298 mem=10 tokens=20926474
+[n4_gt_false_seed1_gamma_p1_shared_consolidated_archive_rescue] t=03 success=0.583 cost=2.602 loop=0.146 div=0.264 mem=12 tokens=29340991
+[n4_gt_false_seed1_gamma_p1_shared_consolidated_archive_rescue] t=04 success=0.479 cost=2.684 loop=0.146 div=0.230 mem=13 tokens=37883295
+[n4_gt_false_seed1_gamma_p1_shared_consolidated_archive_rescue] t=05 success=0.583 cost=2.579 loop=0.104 div=0.258 mem=15 tokens=46535644
+Running n4_gt_false_seed2_gamma_p1_shared_consolidated_archive_rescue with train=24 heldout=12
+[n4_gt_false_seed2_gamma_p1_shared_consolidated_archive_rescue] t=00 success=0.667 cost=2.288 loop=0.083 div=0.234 mem=0 tokens=4634096
+[n4_gt_false_seed2_gamma_p1_shared_consolidated_archive_rescue] t=01 success=0.792 cost=2.128 loop=0.125 div=0.275 mem=7 tokens=12080046
+[n4_gt_false_seed2_gamma_p1_shared_consolidated_archive_rescue] t=02 success=0.625 cost=2.373 loop=0.104 div=0.215 mem=10 tokens=20584147
+[n4_gt_false_seed2_gamma_p1_shared_consolidated_archive_rescue] t=03 success=0.542 cost=2.413 loop=0.188 div=0.270 mem=12 tokens=29337977
+[n4_gt_false_seed2_gamma_p1_shared_consolidated_archive_rescue] t=04 success=0.708 cost=2.223 loop=0.083 div=0.247 mem=12 tokens=37710677
+[n4_gt_false_seed2_gamma_p1_shared_consolidated_archive_rescue] t=05 success=0.583 cost=2.374 loop=0.125 div=0.249 mem=14 tokens=46901792

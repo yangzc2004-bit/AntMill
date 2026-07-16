@@ -1,0 +1,2357 @@
+{
+  "created": 1784041866.0083385,
+  "duration": 3.6699862480163574,
+  "exitcode": 1,
+  "root": "/tmp/tmp86mrhicv",
+  "environment": {},
+  "summary": {
+    "passed": 28,
+    "failed": 4,
+    "total": 32,
+    "collected": 32
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files/A/B/C",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files/A/B",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets/files/A/B/C",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files/A/F",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files/A",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets/files/A/B",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/assets/files/A/F",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets/files/A",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets/files",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_due_simple",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_due_within_duration_no_select",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_not_due",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/disabled_job",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/multiple_jobs_sorting",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/rel_mount",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_due_simple",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_due_within_duration_no_select",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_not_due",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/disabled_job",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/multiple_jobs_sorting",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/rel_mount",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_daily_missing_at",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_once_missing_when",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_timezone",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_yaml_parse",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_daily_missing_at",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_once_missing_when",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_timezone",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_yaml_parse",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/complex_globs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/daily_multi_trigger",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/default_enabled",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/default_timezone",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/duration_zero_exact",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/exact_duration_boundary",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/exact_now_time",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/first_pattern_wins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_case_sensitive",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_character_class",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_doublestar_crosses_dirs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_question_mark",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/mixed_enabled_disabled",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/no_exclusions",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/once_due",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/once_future",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/timestamp_floored",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/timezone_non_utc",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_multi_trigger",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_multiple_days",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_single_day",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_wrong_day",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/complex_globs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/daily_multi_trigger",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/default_enabled",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/default_timezone",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/duration_zero_exact",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/exact_duration_boundary",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/exact_now_time",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/first_pattern_wins",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_case_sensitive",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_character_class",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_doublestar_crosses_dirs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_question_mark",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/mixed_enabled_disabled",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/no_exclusions",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/once_due",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/once_future",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/timestamp_floored",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/timezone_non_utc",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_multi_trigger",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_multiple_days",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_single_day",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_wrong_day",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core/full",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core/pack/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core/pack",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core/pack/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core/verify",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core/full",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core/pack",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core/verify",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_no_exclusions",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_rel_mount",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_with_exclusions",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/multi_strategy_jobs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/no_strategy",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_default_max/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_default_max",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_default_max/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_exact_fit/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_exact_fit",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_exact_fit/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_files",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental/backup",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental/backup",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_single_large_file",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_tiny_max/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_tiny_max",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_tiny_max/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/strategy_sorting",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/verify_complex_globs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/verify_no_files",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_no_exclusions",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_rel_mount",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_with_exclusions",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/multi_strategy_jobs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/no_strategy",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_default_max",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_exact_fit",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_files",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_single_large_file",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_tiny_max",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/strategy_sorting",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/verify_complex_globs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/verify_no_files",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/empy_destination",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault/verify-all/C",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault/verify-all",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault/verify-all/C",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault/verify-all",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup/daily-docs/A",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup/daily-docs",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup/daily-docs/A",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup/daily-docs",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/empy_destination",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/all_excluded_with_dest",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/all_new_files",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/changed_subset",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/dest_extra_files",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/full_single_changed",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/full_subdirectory",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/multi_jobs_different_dest",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/nested_dest_path",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/no_backup_flag",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/partial_unchanged",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/verify_all_new",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/verify_partial_unchanged",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/all_excluded_with_dest",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/all_new_files",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/changed_subset",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/dest_extra_files",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/full_single_changed",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/full_subdirectory",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/multi_jobs_different_dest",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/nested_dest_path",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/no_backup_flag",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/partial_unchanged",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/verify_all_new",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/verify_partial_unchanged",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/empty_desto/backup",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/empty_desto",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/empty_desto/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-1",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-2",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-3",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-1",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-2",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-3",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-1",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-2",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-3",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-1",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-2",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-3",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup/dummy-archive/pack-1",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup/dummy-archive",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup/dummy-archive/pack-1",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup/dummy-archive",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/source",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/empty_desto",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/source",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/all_files_removed",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/empty_source",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/exclusions_with_packs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/large_to_small_packs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/merge_opportunity",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/mixed_changes",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/multiple_packs_unchanged",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/new_files_added",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_size_decreased",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_size_increased",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_with_new_max",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/repack_after_exclusion",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/single_file_changed",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/single_pack_split",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/source",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/all_files_removed",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/empty_source",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/exclusions_with_packs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/large_to_small_packs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/merge_opportunity",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/mixed_changes",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/multiple_packs_unchanged",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/new_files_added",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_size_decreased",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_size_increased",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_with_new_max",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/repack_after_exclusion",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/single_file_changed",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/single_pack_split",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/source",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_core_cases[daily_due_simple]",
+          "type": "Function",
+          "lineno": 72
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[daily_due_within_duration_no_select]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[daily_not_due]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[disabled_job]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[multiple_jobs_sorting]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[rel_mount]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[complex_globs]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[daily_multi_trigger]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[default_enabled]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[default_timezone]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[duration_zero_exact]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[exact_duration_boundary]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[exact_now_time]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[first_pattern_wins]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_case_sensitive]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_character_class]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_doublestar_crosses_dirs]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_question_mark]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[mixed_enabled_disabled]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[no_exclusions]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[once_due]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[once_future]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[timestamp_floored]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[timezone_non_utc]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_multi_trigger]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_multiple_days]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_single_day]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_wrong_day]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_daily_missing_at]",
+          "type": "Function",
+          "lineno": 135
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_once_missing_when]",
+          "type": "Function",
+          "lineno": 135
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_timezone]",
+          "type": "Function",
+          "lineno": 135
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_yaml_parse]",
+          "type": "Function",
+          "lineno": 135
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_core_cases[daily_due_simple]",
+      "lineno": 72,
+      "outcome": "passed",
+      "keywords": [
+        "test_core_cases[daily_due_simple]",
+        "parametrize",
+        "pytestmark",
+        "daily_due_simple",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00437408899597358,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1812355599977309,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00017641199519857764,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[daily_due_within_duration_no_select]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[daily_due_within_duration_no_select]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "daily_due_within_duration_no_select",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018583229975774884,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08423895901069045,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00020811300782952458,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[daily_not_due]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[daily_not_due]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "daily_not_due",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00152690100367181,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07190834599896334,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0001847120001912117,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[disabled_job]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[disabled_job]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "disabled_job",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0013919920020271093,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07046405000437517,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00017521099653095007,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[multiple_jobs_sorting]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[multiple_jobs_sorting]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "multiple_jobs_sorting",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0015245009999489412,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10016621100658085,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023821499780751765,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[rel_mount]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[rel_mount]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "rel_mount",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0024747639981796965,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09271221900417004,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002101130085065961,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[complex_globs]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[complex_globs]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "complex_globs",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002033033990301192,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07339274299738463,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00021071400260552764,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[daily_multi_trigger]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[daily_multi_trigger]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "daily_multi_trigger",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002742080992902629,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13492410400067456,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00029251900559756905,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[default_enabled]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[default_enabled]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "default_enabled",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0029524949932238087,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11880484101129696,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003871259978041053,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[default_timezone]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[default_timezone]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "default_timezone",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004164974990999326,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08774059099960141,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00027131800015922636,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[duration_zero_exact]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[duration_zero_exact]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "duration_zero_exact",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002969895998830907,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10363703899201937,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00027821899857372046,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[exact_duration_boundary]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[exact_duration_boundary]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "exact_duration_boundary",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00411377199634444,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09365428000455722,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00020201299048494548,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[exact_now_time]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[exact_now_time]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "exact_now_time",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0024983640032587573,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09606493900355417,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002600169973447919,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[first_pattern_wins]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[first_pattern_wins]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "first_pattern_wins",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002405259001534432,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0922756899963133,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004558299988275394,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_case_sensitive]",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[glob_case_sensitive]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "glob_case_sensitive",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0035737360012717545,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11762326299503911,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp86mrhicv/.evaluation_tests/conftest.py",
+          "lineno": 230,
+          "message": "AssertionError: Event count mismatch: 4 != 6\nassert 4 == 6\n +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'case-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 0, 'excluded': 0}])\n +  and   6 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'case-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'case-test', 'path': 'file.TXT', 'pattern': '*.TXT'}, {'event': 'FILE_SELECTED', 'job_id': 'case-test', 'path': 'file.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 1, 'excluded': 1}])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 133,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 230,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmp86mrhicv/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_1'\ncase = {'id': 'glob_case_sensitive', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 ...d': 'case-test', 'path': 'file.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 1, 'excluded': 1}]}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_hidden_cases_glob_case_se0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_1.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'k...id': 'case-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 0, 'excluded': 0}]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'k...id': 'case-test', 'path': 'file.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 1, 'excluded': 1}]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n>       assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\nE       AssertionError: Event count mismatch: 4 != 6\nE       assert 4 == 6\nE        +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'case-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 0, 'excluded': 0}])\nE        +  and   6 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'case-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'case-test', 'path': 'file.TXT', 'pattern': '*.TXT'}, {'event': 'FILE_SELECTED', 'job_id': 'case-test', 'path': 'file.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 1, 'excluded': 1}])\n\n.evaluation_tests/conftest.py:230: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0005362360097933561,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_character_class]",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[glob_character_class]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "glob_character_class",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.005687274999218062,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10274918099457864,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp86mrhicv/.evaluation_tests/conftest.py",
+          "lineno": 230,
+          "message": "AssertionError: Event count mismatch: 4 != 8\nassert 4 == 8\n +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'charclass-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 0, 'excluded': 0}])\n +  and   8 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'charclass-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file1.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file2.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file3.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_SELECTED', 'job_id': 'charclass-test', 'path': 'file4.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 1, 'excluded': 3}])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 133,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 230,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmp86mrhicv/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_1'\ncase = {'id': 'glob_character_class', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1...].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file3.txt', 'pattern': 'file[123].txt'}, ...]}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_hidden_cases_glob_charact0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_1.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test...class-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 0, 'excluded': 0}]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test...3].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file3.txt', 'pattern': 'file[123].txt'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n>       assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\nE       AssertionError: Event count mismatch: 4 != 8\nE       assert 4 == 8\nE        +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'charclass-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 0, 'excluded': 0}])\nE        +  and   8 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'charclass-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file1.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file2.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file3.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_SELECTED', 'job_id': 'charclass-test', 'path': 'file4.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 1, 'excluded': 3}])\n\n.evaluation_tests/conftest.py:230: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0003458230057731271,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_doublestar_crosses_dirs]",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[glob_doublestar_crosses_dirs]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "glob_doublestar_crosses_dirs",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.005561266996664926,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11673690400493797,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp86mrhicv/.evaluation_tests/conftest.py",
+          "lineno": 230,
+          "message": "AssertionError: Event count mismatch: 4 != 8\nassert 4 == 8\n +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'glob-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 0, 'excluded': 0}])\n +  and   8 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'glob-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'a.log', 'pattern': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/b.log', 'pattern': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/sub/c.log', 'pattern': '**/*.log'}, {'event': 'FILE_SELECTED', 'job_id': 'glob-test', 'path': 'keep.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 1, 'excluded': 3}])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 133,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 230,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmp86mrhicv/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_1'\ncase = {'id': 'glob_doublestar_crosses_dirs', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --du...: '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/sub/c.log', 'pattern': '**/*.log'}, ...]}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_hidden_cases_glob_doubles0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_1.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'k...id': 'glob-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 0, 'excluded': 0}]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'k...': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/sub/c.log', 'pattern': '**/*.log'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n>       assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\nE       AssertionError: Event count mismatch: 4 != 8\nE       assert 4 == 8\nE        +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'glob-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 0, 'excluded': 0}])\nE        +  and   8 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'glob-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'a.log', 'pattern': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/b.log', 'pattern': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/sub/c.log', 'pattern': '**/*.log'}, {'event': 'FILE_SELECTED', 'job_id': 'glob-test', 'path': 'keep.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 1, 'excluded': 3}])\n\n.evaluation_tests/conftest.py:230: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00029552000341936946,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_question_mark]",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[glob_question_mark]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "glob_question_mark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004301084001781419,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15049243200337514,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp86mrhicv/.evaluation_tests/conftest.py",
+          "lineno": 230,
+          "message": "AssertionError: Event count mismatch: 4 != 7\nassert 4 == 7\n +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'question-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 0, 'excluded': 0}])\n +  and   7 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'question-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'question-test', 'path': 'a.txt', 'pattern': '?.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'ab.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'abc.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 2, 'excluded': 1}])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 133,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 230,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmp86mrhicv/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_1'\ncase = {'id': 'glob_question_mark', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 -...d': 'question-test', 'path': 'ab.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'abc.txt'}, ...]}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_hidden_cases_glob_questio0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_1.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test'...estion-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 0, 'excluded': 0}]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test'...id': 'question-test', 'path': 'ab.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'abc.txt'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n>       assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\nE       AssertionError: Event count mismatch: 4 != 7\nE       assert 4 == 7\nE        +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'question-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 0, 'excluded': 0}])\nE        +  and   7 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'question-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'question-test', 'path': 'a.txt', 'pattern': '?.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'ab.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'abc.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 2, 'excluded': 1}])\n\n.evaluation_tests/conftest.py:230: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00036592400283552706,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[mixed_enabled_disabled]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[mixed_enabled_disabled]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "mixed_enabled_disabled",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004597402992658317,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12076727001112886,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00016581099771428853,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[no_exclusions]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[no_exclusions]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "no_exclusions",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0025124660023720935,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13755697800661437,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003887249913532287,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[once_due]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[once_due]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "once_due",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0037934500142000616,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1482803859980777,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004967330023646355,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[once_future]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[once_future]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "once_future",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004033365999930538,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13399584298895206,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003748239978449419,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[timestamp_floored]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[timestamp_floored]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "timestamp_floored",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00473131200124044,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10630181500164326,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023141500423662364,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[timezone_non_utc]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[timezone_non_utc]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "timezone_non_utc",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0038647549954475835,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0798245680052787,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018621199706103653,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_multi_trigger]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[weekly_multi_trigger]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "weekly_multi_trigger",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0021286410046741366,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08003978199849371,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023291600518859923,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_multiple_days]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[weekly_multiple_days]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "weekly_multiple_days",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002360956001211889,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07360845799848903,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015331000031437725,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_single_day]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[weekly_single_day]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "weekly_single_day",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001769316993886605,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07474633300444111,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015220999193843454,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_wrong_day]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[weekly_wrong_day]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "weekly_wrong_day",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018941250018542632,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07107009099854622,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002100140118272975,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_daily_missing_at]",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_error_cases[error_schema_daily_missing_at]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "error_schema_daily_missing_at",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0019598289945861325,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08955151001282502,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00020061300892848521,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_once_missing_when]",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_error_cases[error_schema_once_missing_when]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "error_schema_once_missing_when",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0016738109989091754,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.083955241003423,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002995200047735125,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_timezone]",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_error_cases[error_schema_timezone]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "error_schema_timezone",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0020769370021298528,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10397086200828198,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015700999938417226,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_yaml_parse]",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_error_cases[error_yaml_parse]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "error_yaml_parse",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0023656560078961775,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08288606999849435,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0008216540009016171,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

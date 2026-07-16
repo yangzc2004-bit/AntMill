@@ -1,0 +1,74 @@
+{
+  "status": "engineering_pilot_frozen_before_outcomes",
+  "date_frozen": "2026-07-15",
+  "experiment_role": "prospective_diversity_preserving_routing_mitigation",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "agent": "SCBench native MiniSWE",
+  "model": "kimi-k2.6-maas",
+  "api_model": "kimi-k2.6",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 6,
+  "step_limit_per_worker": 12,
+  "pass_policy": "any",
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "modes": [
+    "bounded_diverse_self_report_acceptance"
+  ],
+  "bootstrap_modes": [
+    "bounded_diverse_self_report_acceptance"
+  ],
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_1",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_2",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_3",
+      "layer": 5
+    }
+  ],
+  "assimilation_semantics": {
+    "source_admission": "Every output that self-reports successful completion is eligible; external scores remain hidden.",
+    "diversity_signal": "SHA-256 identity of local implementation files only. The router ignores evaluator outputs, test results, scratch data, test_*.py files, and hidden benchmark state.",
+    "bounded_routing": "Every recipient receives at most the three most recent eligible outputs with distinct implementation identities, selected across frozen bootstrap sources and all completed layers.",
+    "history_retention": "When the current layer collapses to one implementation, distinct older implementations remain eligible to fill the fixed three-reference bundle.",
+    "held_fixed": "Provider, model, task, worker count, bootstrap sources, action budget, temperature, prompt blinding, self-report gate, evaluator, per-source cap, and reference cap match the bounded-recent control."
+  },
+  "matching_evidence": {
+    "no_transfer": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_depth12_no_transfer_r1_20260715",
+    "bounded_recent": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_bounded_context_depth6_r1_20260715"
+  },
+  "validity_gates": {
+    "target_consistency": "All 18 evaluations use Core total 4, all-test total 37, and the frozen collection hash.",
+    "model_query_integrity": "Every interpreted output has at least one model step and no terminal API error.",
+    "recipient_blinding": "No prompt contains external Core/all-test scores, failed-test names, or the hidden test hash.",
+    "reference_count": "Every worker at every layer receives exactly three references.",
+    "local_only_routing": "Every delivered identity is derivable from local implementation files without reading evaluation.json or inference scores.",
+    "prohibited_access": "No assistant action accesses benchmark catalogs, hidden tests, or external evaluation paths."
+  },
+  "outcome_rule": {
+    "primary_diversity_endpoint": "Sum of unique primary implementation hashes over layers 2-6, with bounded-recent control value fixed at 5.",
+    "support": "The mitigation preserves diversity if the endpoint exceeds 5 and at least one post-layer-1 layer contains two or more primary implementations.",
+    "strong_support": "At least two post-layer-1 layers contain two or more primary implementations while every worker remains Core-complete.",
+    "null": "All layers 2-6 contain one primary implementation, matching bounded-recent lock-in.",
+    "performance_guard": "Report all-test score, Core score, input tokens, and latency jointly with diversity; do not call a diversity gain a net improvement if task quality materially decreases.",
+    "forbidden_claim": "One cfgpipe run cannot establish a universal mitigation or eliminate the need for cross-task validation."
+  },
+  "new_outcomes_seen_before_freeze": false
+}

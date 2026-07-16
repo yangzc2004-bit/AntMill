@@ -1,0 +1,60 @@
+{
+  "status": "completed_candidate_selected",
+  "date": "2026-07-13",
+  "model": "kimi-k2.6",
+  "agent": "SCBench native MiniSWE",
+  "checkpoint": 1,
+  "step_limit_per_sample": 12,
+  "samples_per_completed_candidate": 2,
+  "selection_rule": {
+    "candidate_gate": "At least one strict full-Core sample and at least one non-full sample, with no infrastructure failure.",
+    "ranking": "Prefer higher strict-source rate; break ties using smaller checkpoint-1 specification size."
+  },
+  "candidates": [
+    {
+      "problem": "textdrop",
+      "scores": ["4/4", "0/4"],
+      "strict_source_rate": 0.5,
+      "spec_bytes": 4410,
+      "test_collection_hash": "39e2b272d2e5b3124eb952c14e7efa6cfe23ac5245b06d4f14595a430abef91d",
+      "infrastructure_failures": 0,
+      "candidate_gate": true,
+      "selected": true
+    },
+    {
+      "problem": "cfgpipe",
+      "scores": ["0/4", "4/4"],
+      "strict_source_rate": 0.5,
+      "spec_bytes": 4818,
+      "test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+      "infrastructure_failures": 0,
+      "candidate_gate": true,
+      "selected": false
+    },
+    {
+      "problem": "file_merger",
+      "scores": ["14/18", "17/18"],
+      "strict_source_rate": 0.0,
+      "spec_bytes": 4694,
+      "test_collection_hash": "f1d341e088bf2cd407c9233e3659b5a88ac9ba94e45e4e94292b667ebbe19c89",
+      "infrastructure_failures": 0,
+      "candidate_gate": false,
+      "selected": false
+    },
+    {
+      "problem": "layered_config_synthesizer",
+      "scores": [],
+      "strict_source_rate": null,
+      "spec_bytes": 8280,
+      "infrastructure_failures": 1,
+      "candidate_gate": null,
+      "selected": false,
+      "reason": "Screening did not enter model inference because Windows path-length limits blocked checkpoint subset materialization."
+    }
+  ],
+  "selection": {
+    "problem": "textdrop",
+    "reason": "textdrop and cfgpipe both passed with one strict source in two samples; textdrop won the frozen specification-size tie-break.",
+    "failure_mode_audit": "The textdrop 0/4 sample completed inference and local endpoint checks but omitted the required extensionless entrypoint, so it is a genuine task-completion failure rather than an API or evaluator failure."
+  }
+}

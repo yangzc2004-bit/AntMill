@@ -1,0 +1,105 @@
+{
+  "status": "completed_screen_no_four_checkpoint_candidate",
+  "date": "2026-07-14",
+  "original_config": "benchmarks/scbench/deepseek_maas_cp4_long_sequence_candidate_screen_config.json",
+  "original_run_root": "r_dscp4screen1_20260714",
+  "provider": "ModelArts MaaS plan/v2",
+  "model": "deepseek-v4-flash",
+  "step_limit": 32,
+  "candidates": {
+    "textdrop": {
+      "arm_id": "no_transfer-5cf9aad2b716410fbc2e4960d0b38a8a",
+      "checkpoint_1": {
+        "assistant_steps": 6,
+        "explicit_completion": true,
+        "core": "4/4",
+        "all_tests": "28/28",
+        "test_collection_hash": "39e2b272d2e5b3124eb952c14e7efa6cfe23ac5245b06d4f14595a430abef91d",
+        "infrastructure_failure": false,
+        "net_input_tokens": 18216
+      },
+      "checkpoint_2": {
+        "assistant_steps": 32,
+        "explicit_completion": false,
+        "core": "0/3",
+        "all_tests": "0/66",
+        "test_collection_hash": "28704c077d634a960efbc81b32e9147ce38894ce5a6f0d4b0dd6ca7c4681dec6",
+        "infrastructure_failure": false,
+        "net_input_tokens": 205393
+      },
+      "decision": "reject",
+      "reason": "Checkpoint 2 exhausted the exact action boundary without a completion marker and produced no passing collected tests. Checkpoints 3 and 4 were stopped because they could not repair the consecutive-prefix gate."
+    },
+    "file_backup": {
+      "arm_id": "no_transfer-5b2c705d79fc42eeb9b48704af0da8ff",
+      "checkpoint_1": {
+        "assistant_steps": 27,
+        "explicit_completion": true,
+        "core": "1/1",
+        "all_tests": "28/32",
+        "test_collection_hash": "c6234f0ad2f6292edf2ba45c11fba4ab7144e374e12beb991ee5240ecce790ba",
+        "infrastructure_failure": false,
+        "net_input_tokens": 405248
+      },
+      "checkpoint_2": {
+        "assistant_steps": 32,
+        "explicit_completion": false,
+        "core": "0/1",
+        "all_tests": "31/50",
+        "test_collection_hash": "c8751e8dab6b6c9ab151c4e1cad7e7bb00ae31f187830543438a4422dc659729",
+        "infrastructure_failure": false,
+        "net_input_tokens": 576944
+      },
+      "decision": "reject",
+      "reason": "Checkpoint 2 exhausted the exact action boundary without a completion marker. Checkpoints 3 and 4 were stopped because they could not repair the consecutive-prefix gate."
+    },
+    "file_merger": {
+      "invalid_setup_attempt": {
+        "arm_id": "no_transfer-cd2141632d7347ed850a4f8db391fa11",
+        "failure": "Pre-model dependency installation timed out before any checkpoint inference.",
+        "scientific_outcomes_observed": false
+      },
+      "infrastructure_amendment": "benchmarks/scbench/deepseek_file_merger_local_wheelhouse_infrastructure_amendment_20260714.json",
+      "repaired_config": "benchmarks/scbench/deepseek_maas_file_merger_cp4_infra_repaired_screen_config.json",
+      "repaired_run_root": "r_dsfmcp4repair1_20260714",
+      "arm_id": "no_transfer-683ba43251804b4098b875b8624d4b3f",
+      "checkpoint_1": {
+        "assistant_steps": 32,
+        "explicit_completion": false,
+        "core": "17/18",
+        "all_tests": "43/46",
+        "test_collection_hash": "f1d341e088bf2cd407c9233e3659b5a88ac9ba94e45e4e94292b667ebbe19c89",
+        "infrastructure_failure": false,
+        "net_input_tokens": 578004
+      },
+      "decision": "reject",
+      "reason": "After the infrastructure-only repair, checkpoint 1 itself exhausted the exact action boundary without a completion marker. Checkpoints 2 through 4 were stopped."
+    }
+  },
+  "selection": {
+    "selected_candidate": null,
+    "formal_four_checkpoint_contrast_allowed": false,
+    "reason": "No candidate naturally completed every checkpoint 1 through 4 before action 32. The frozen screen therefore cannot supply three identified recursive feedback updates.",
+    "no_budget_retuning": true,
+    "no_checkpoint_skipping": true,
+    "no_treatment_outcomes_generated": true
+  },
+  "iteration_hypothesis": {
+    "possible_in_principle": true,
+    "supported_as_primary_explanation": false,
+    "evidence": [
+      "GLM-5 remained flat through ten same-task layers despite 30 accumulated references and 11.46x matching-control input load.",
+      "DeepSeek cumulative self-report reached ten same-task layers with isolated catastrophic workers at layers 2 and 7, but recovered completely on the next layer and ended at its best score.",
+      "DeepSeek recursive manager synthesis reached a near-textual fixed point by layer 3 and showed only a 0.018 mean decline from its earlier best by layer 5.",
+      "The new four-checkpoint screen failed because baseline agents became action-boundary censored before three feedback updates were available, not because a long valid feedback chain stayed untested on those tasks."
+    ],
+    "scientific_conclusion": "Too few iterations remains a narrow delayed-threshold possibility, but current evidence makes it an unlikely general explanation for the missing sustained degradation curve. Increasing evolving-task checkpoints under the same fixed budget confounds iteration depth with baseline task infeasibility.",
+    "clean_remaining_test": "If pursued, hold one real task and its evaluator fixed while extending only recursive manager updates to a prospectively frozen 10-to-12-layer run. Do not increase checkpoint difficulty, relax the action budget, or select a failed bootstrap source after outcomes."
+  },
+  "termination": {
+    "textdrop_later_partial_checkpoint_excluded": true,
+    "file_backup_later_partial_checkpoint_excluded": true,
+    "file_merger_later_partial_checkpoint_excluded": true,
+    "active_experiment_containers_after_audit": 0
+  }
+}

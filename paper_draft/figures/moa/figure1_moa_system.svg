@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="407.710773pt" height="190.6962pt" viewBox="0 0 407.710773 190.6962" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-16T01:40:48.012765</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 190.6962 
+L 407.710773 190.6962 
+L 407.710773 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 7.85291 109.744872 
+L 144.482746 109.744872 
+L 144.482746 34.534968 
+L 7.85291 34.534968 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #fafbfc"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 7.85291 177.791928 
+L 144.482746 177.791928 
+L 144.482746 120.489144 
+L 7.85291 120.489144 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #fbf7fa"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 57.381226 59.604936 
+L 94.954431 59.604936 
+Q 97.51624 59.604936 97.51624 56.381654 
+L 97.51624 43.130386 
+Q 97.51624 39.907104 94.954431 39.907104 
+L 57.381226 39.907104 
+Q 54.819416 39.907104 54.819416 43.130386 
+L 54.819416 56.381654 
+Q 54.819416 59.604936 57.381226 59.604936 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #f7f7f7; stroke: #777777; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 76.167828 59.815659 
+Q 76.167828 63.186006 76.167828 66.556352 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 29.912936 70.556434 
+Q 29.912936 73.034035 29.912936 74.505405 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 31.512936 71.305405 
+L 29.912936 74.505405 
+L 28.312936 71.305405 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #666666; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 11.695624 104.193665 
+L 48.130247 104.193665 
+Q 50.407411 104.193665 50.407411 101.328526 
+L 50.407411 78.765554 
+Q 50.407411 75.900415 48.130247 75.900415 
+L 11.695624 75.900415 
+Q 9.41846 75.900415 9.41846 78.765554 
+L 9.41846 101.328526 
+Q 9.41846 104.193665 11.695624 104.193665 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #f0f5fa; stroke: #0f4d92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 29.912936 104.579962 
+Q 29.912936 107.057563 29.912936 109.535163 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 76.167828 70.556434 
+Q 76.167828 73.034035 76.167828 74.505405 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 77.767828 71.305405 
+L 76.167828 74.505405 
+L 74.567828 71.305405 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #666666; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 57.950517 104.193665 
+L 94.38514 104.193665 
+Q 96.662304 104.193665 96.662304 101.328526 
+L 96.662304 78.765554 
+Q 96.662304 75.900415 94.38514 75.900415 
+L 57.950517 75.900415 
+Q 55.673353 75.900415 55.673353 78.765554 
+L 55.673353 101.328526 
+Q 55.673353 104.193665 57.950517 104.193665 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #f0f5fa; stroke: #0f4d92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 76.167828 104.579962 
+Q 76.167828 107.057563 76.167828 109.535163 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 122.422721 70.556434 
+Q 122.422721 73.034035 122.422721 74.505405 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 124.022721 71.305405 
+L 122.422721 74.505405 
+L 120.822721 71.305405 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #666666; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 104.205409 104.193665 
+L 140.640032 104.193665 
+Q 142.917196 104.193665 142.917196 101.328526 
+L 142.917196 78.765554 
+Q 142.917196 75.900415 140.640032 75.900415 
+L 104.205409 75.900415 
+Q 101.928245 75.900415 101.928245 78.765554 
+L 101.928245 101.328526 
+Q 101.928245 104.193665 104.205409 104.193665 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #f0f5fa; stroke: #0f4d92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 122.422721 104.579962 
+Q 122.422721 107.057563 122.422721 109.535163 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #666666; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 76.167828 113.531336 
+Q 76.167828 121.38188 76.167828 128.226193 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #9a4d8e; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 77.767828 125.026193 
+L 76.167828 128.226193 
+L 74.567828 125.026193 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #9a4d8e; stroke: #9a4d8e; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 47.418633 155.408028 
+L 104.917023 155.408028 
+Q 107.478832 155.408028 107.478832 152.184746 
+L 107.478832 131.77063 
+Q 107.478832 128.547348 104.917023 128.547348 
+L 47.418633 128.547348 
+Q 44.856824 128.547348 44.856824 131.77063 
+L 44.856824 152.184746 
+Q 44.856824 155.408028 47.418633 155.408028 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #f5edf4; stroke: #9a4d8e; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 76.167828 155.615254 
+Q 76.167828 158.092855 76.167828 159.564225 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #9a4d8e; stroke-width: 0.9; stroke-linecap: round"/>
+    <path d="M 77.767828 156.364225 
+L 76.167828 159.564225 
+L 74.567828 156.364225 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #9a4d8e; stroke: #9a4d8e; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 62.647167 177.612857 
+L 89.688489 177.612857 
+Q 93.104235 177.612857 93.104235 173.315148 
+L 93.104235 166.1523 
+Q 93.104235 161.854591 89.688489 161.854591 
+L 62.647167 161.854591 
+Q 59.231421 161.854591 59.231421 166.1523 
+L 59.231421 173.315148 
+Q 59.231421 177.612857 62.647167 177.612857 
+z
+" clip-path="url(#pdf9a40aaee)" style="fill: #ffffff; stroke: #9a4d8e; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 29.912936 68.558496 
+L 122.422721 68.558496 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #777777; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 29.912936 111.535584 
+L 122.422721 111.535584 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke: #777777; stroke-width: 0.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 12.122592 120.489144 
+L 140.213064 120.489144 
+" clip-path="url(#pdf9a40aaee)" style="fill: none; stroke-dasharray: 2.7,1.8; stroke-dashoffset: 0; stroke: #a9a9a9; stroke-width: 0.9"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="2.16" y="7.88625" transform="rotate(-0 2.16 7.88625)">a</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="7.85291" y="22.354098" transform="rotate(-0 7.85291 22.354098)">Layered parallel agent testbed</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 4.9px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #777777" x="76.167828" y="37.237709" transform="rotate(-0 76.167828 37.237709)">COMMON INPUT</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 6px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="76.167828" y="49.52062" transform="rotate(-0 76.167828 49.52062)">Shared task</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 4.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #666666" x="76.167828" y="55.473675" transform="rotate(-0 76.167828 55.473675)">same prompt</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 5.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="29.912936" y="88.327227" transform="rotate(-0 29.912936 88.327227)">Worker 1</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 4.9px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #555555" x="29.912936" y="97.044045" transform="rotate(-0 29.912936 97.044045)">private workspace</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 5.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="76.167828" y="88.327227" transform="rotate(-0 76.167828 88.327227)">Worker 2</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 4.9px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #555555" x="76.167828" y="97.044045" transform="rotate(-0 76.167828 97.044045)">private workspace</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 5.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle" x="122.422721" y="88.327227" transform="rotate(-0 122.422721 88.327227)">Worker 3</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 4.9px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #555555" x="122.422721" y="97.044045" transform="rotate(-0 122.422721 97.044045)">private workspace</text>
+   </g>
+   <g id="text_12">
+    <g id="patch_19">
+     <path d="M 93.425675 119.872574 
+L 141.457175 119.872574 
+L 141.457175 113.857574 
+L 93.425675 113.857574 
+z
+" style="fill: #fbf7fa"/>
+    </g>
+    <text style="font-weight: 700; font-size: 4.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #777777" x="117.441425" y="118.109324" transform="rotate(-0 117.441425 118.109324)">BLINDING BARRIER</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 5.4px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif" transform="translate(51.410938 137.785381)">Blinded experience</text>
+    <text style="font-weight: 700; font-size: 5.4px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif" transform="translate(69.865438 142.522995)">state</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 4.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #666666" x="76.167828" y="150.023269" transform="rotate(-0 76.167828 150.023269)">hidden outcomes withheld</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 4.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #9a4d8e" x="81.149124" y="159.306846" transform="rotate(-0 81.149124 159.306846)">one-way broadcast</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 5.2px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: middle; fill: #9a4d8e" x="76.167828" y="171.047537" transform="rotate(-0 76.167828 171.047537)">Next layer</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_20">
+    <path d="M 182.736805 64.561844 
+L 212.793992 64.561844 
+Q 216.037573 64.561844 216.037573 63.254166 
+L 216.037573 37.623672 
+Q 216.037573 36.315993 212.793992 36.315993 
+L 182.736805 36.315993 
+Q 179.493224 36.315993 179.493224 37.623672 
+L 179.493224 63.254166 
+Q 179.493224 64.561844 182.736805 64.561844 
+z
+" clip-path="url(#pc6f6d34e7b)" style="fill: #ececec; stroke: #4d4d4d; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 218.4162 64.561844 
+L 248.473386 64.561844 
+Q 251.716968 64.561844 251.716968 63.254166 
+L 251.716968 37.623672 
+Q 251.716968 36.315993 248.473386 36.315993 
+L 218.4162 36.315993 
+Q 215.172618 36.315993 215.172618 37.623672 
+L 215.172618 63.254166 
+Q 215.172618 64.561844 218.4162 64.561844 
+z
+" clip-path="url(#pc6f6d34e7b)" style="fill: #e8eff7; stroke: #0f4d92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 254.095594 64.561844 
+L 284.152781 64.561844 
+Q 287.396362 64.561844 287.396362 63.254166 
+L 287.396362 37.623672 
+Q 287.396362 36.315993 284.152781 36.315993 
+L 254.095594 36.315993 
+Q 250.852013 36.315993 250.852013 37.623672 
+L 250.852013 63.254166 
+Q 250.852013 64.561844 254.095594 64.561844 
+z
+" clip-path="url(#pc6f6d34e7b)" style="fill: #e4f1f2; stroke: #42949e; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 289.774988 64.561844 
+L 319.832175 64.561844 
+Q 323.075756 64.561844 323.075756 63.254166 
+L 323.075756 37.623672 
+Q 323.075756 36.315993 319.832175 36.315993 
+L 289.774988 36.315993 
+Q 286.531407 36.315993 286.531407 37.623672 
+L 286.531407 63.254166 
+Q 286.531407 64.561844 289.774988 64.561844 
+z
+" clip-path="url(#pc6f6d34e7b)" style="fill: #f7efe3; stroke: #b7792b; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 325.454383 64.561844 
+L 355.511569 64.561844 
+Q 358.755151 64.561844 358.755151 63.254166 
+L 358.755151 37.623672 
+Q 358.755151 36.315993 355.511569 36.315993 
+L 325.454383 36.315993 
+Q 322.210801 36.315993 322.210801 37.623672 
+L 322.210801 63.254166 
+Q 322.210801 64.561844 325.454383 64.561844 
+z
+" clip-path="url(#pc6f6d34e7b)" style="fill: #eaf4ea; stroke: #2e9e44; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 361.133777 64.561844 
+L 391.190964 64.561844 
+Q 394.434545 64.561844 394.434545 63.254166 
+L 394.434545 37.623672 
+Q 394.434545 36.315993 391.190964 36.315993 
+L 361.133777 36.315993 
+Q 357.890196 36.315993 357.890196 37.623672 
+L 357.890196 63.254166 
+Q 357.890196 64.561844 361.133777 64.561844 
+z
+" clip-path="url(#pc6f6d34e7b)" style="fill: #f1e8f0; stroke: #9a4d8e; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="175.600926" y="7.88625" transform="rotate(-0 175.600926 7.88625)">b</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="184.250476" y="18.678392" transform="rotate(-0 184.250476 18.678392)">What enters the shared state?</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(187.007985 49.262991)">No transfer</text>
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(187.730152 53.863932)">no context</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(222.566055 49.231182)">Cumulative</text>
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(223.654914 53.895741)">self-report</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(253.767668 49.262991)">Bounded recent</text>
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(262.112191 53.863932)">latest 3</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(290.180445 49.237503)">Diversity router</text>
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(289.328796 53.88942)">3 local identities</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(330.44671 49.237503)">Local gate</text>
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(327.002734 53.88942)">success + &gt;=t</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(366.493136 49.237503)">Recursive</text>
+    <text style="font-size: 4.35px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(358.268917 53.838444)">manager playbook</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 6.3px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #555555" x="184.250476" y="82.694982" transform="rotate(-0 184.250476 82.694982)">External pass counts and hidden-test outcomes are withheld from all recipients.</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_26">
+    <path d="M 187.06158 158.314303 
+L 235.499061 158.314303 
+Q 238.742642 158.314303 238.742642 157.345652 
+L 238.742642 141.588936 
+Q 238.742642 140.620286 235.499061 140.620286 
+L 187.06158 140.620286 
+Q 183.817999 140.620286 183.817999 141.588936 
+L 183.817999 157.345652 
+Q 183.817999 158.314303 187.06158 158.314303 
+z
+" clip-path="url(#pdb2e2c7656)" style="fill: #f7e6e4; stroke: #b64342; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 246.959715 176.912393 
+L 246.959715 135.583303 
+" clip-path="url(#pdb2e2c7656)" style="fill: none; stroke-dasharray: 2.7,1.8; stroke-dashoffset: 0; stroke: #a0a0a0; stroke-width: 0.9"/>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="175.600926" y="122.380746" transform="rotate(-0 175.600926 122.380746)">c</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="184.250476" y="132.268814" transform="rotate(-0 184.250476 132.268814)">Independent external audit</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(184.915711 147.719302)">Hidden evaluator</text>
+    <text style="font-weight: 700; font-size: 6.5px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #222222" transform="translate(188.069735 154.58513)">Core + all tests</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #777777" transform="translate(245.267227 167.254098) rotate(-90)">isolation</text>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="me40341d8f9" d="M 0 2.345208 
+C 0.621956 2.345208 1.218523 2.098102 1.658312 1.658312 
+C 2.098102 1.218523 2.345208 0.621956 2.345208 0 
+C 2.345208 -0.621956 2.098102 -1.218523 1.658312 -1.658312 
+C 1.218523 -2.098102 0.621956 -2.345208 0 -2.345208 
+C -0.621956 -2.345208 -1.218523 -2.098102 -1.658312 -1.658312 
+C -2.098102 -1.218523 -2.345208 -0.621956 -2.345208 0 
+C -2.345208 0.621956 -2.098102 1.218523 -1.658312 1.658312 
+C -1.218523 2.098102 -0.621956 2.345208 0 2.345208 
+z
+" style="stroke: #b64342"/>
+    </defs>
+    <g clip-path="url(#pdb2e2c7656)">
+     <use xlink:href="#me40341d8f9" x="264.258815" y="144.624041" style="fill: #b64342; stroke: #b64342"/>
+    </g>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 6.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="275.070753" y="142.363857" transform="rotate(-0 275.070753 142.363857)">Score collapse</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 6.1px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #555555" x="275.070753" y="147.529993" transform="rotate(-0 275.070753 147.529993)">external score falls</text>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="mca18553baf" d="M 0 2.345208 
+C 0.621956 2.345208 1.218523 2.098102 1.658312 1.658312 
+C 2.098102 1.218523 2.345208 0.621956 2.345208 0 
+C 2.345208 -0.621956 2.098102 -1.218523 1.658312 -1.658312 
+C 1.218523 -2.098102 0.621956 -2.345208 0 -2.345208 
+C -0.621956 -2.345208 -1.218523 -2.098102 -1.658312 -1.658312 
+C -2.098102 -1.218523 -2.345208 -0.621956 -2.345208 0 
+C -2.345208 0.621956 -2.098102 1.218523 -1.658312 1.658312 
+C -1.218523 2.098102 -0.621956 2.345208 0 2.345208 
+z
+" style="stroke: #0f4d92"/>
+    </defs>
+    <g clip-path="url(#pdb2e2c7656)">
+     <use xlink:href="#mca18553baf" x="264.258815" y="160.768217" style="fill: #0f4d92; stroke: #0f4d92"/>
+    </g>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 6.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="275.070753" y="158.508033" transform="rotate(-0 275.070753 158.508033)">Implementation lock-in</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 6.1px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #555555" x="275.070753" y="163.674169" transform="rotate(-0 275.070753 163.674169)">same snapshot hash</text>
+   </g>
+   <g id="PathCollection_3">
+    <defs>
+     <path id="mebb4b9f648" d="M 0 2.345208 
+C 0.621956 2.345208 1.218523 2.098102 1.658312 1.658312 
+C 2.098102 1.218523 2.345208 0.621956 2.345208 0 
+C 2.345208 -0.621956 2.098102 -1.218523 1.658312 -1.658312 
+C 1.218523 -2.098102 0.621956 -2.345208 0 -2.345208 
+C -0.621956 -2.345208 -1.218523 -2.098102 -1.658312 -1.658312 
+C -2.098102 -1.218523 -2.345208 -0.621956 -2.345208 0 
+C -2.345208 0.621956 -2.098102 1.218523 -1.658312 1.658312 
+C -1.218523 2.098102 -0.621956 2.345208 0 2.345208 
+z
+" style="stroke: #9a4d8e"/>
+    </defs>
+    <g clip-path="url(#pdb2e2c7656)">
+     <use xlink:href="#mebb4b9f648" x="264.258815" y="176.912393" style="fill: #9a4d8e; stroke: #9a4d8e"/>
+    </g>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 6.8px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start" x="275.070753" y="174.652209" transform="rotate(-0 275.070753 174.652209)">Behavioral lock-in</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 6.1px; font-family: 'Arial', 'DejaVu Sans', 'Liberation Sans', sans-serif; text-anchor: start; fill: #555555" x="275.070753" y="179.818345" transform="rotate(-0 275.070753 179.818345)">same failed-test set</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pdf9a40aaee">
+   <rect x="5.006455" y="9.465" width="142.322746" height="179.0712"/>
+  </clipPath>
+  <clipPath id="pc6f6d34e7b">
+   <rect x="179.925701" y="9.465" width="216.238754" height="87.17855"/>
+  </clipPath>
+  <clipPath id="pdb2e2c7656">
+   <rect x="179.925701" y="123.959496" width="216.238754" height="64.576704"/>
+  </clipPath>
+ </defs>
+</svg>

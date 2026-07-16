@@ -1,0 +1,129 @@
+{
+  "status": "valid_negative_stop_mechanism_task_pair",
+  "date": "2026-07-14",
+  "model": "kimi-k2.6",
+  "problem": "xjq",
+  "checkpoint": 2,
+  "run_root": "runs_scbench_moa_kimi_xjq_cp2_recursive_self_report_manager_depth5_step28_r1_20260714",
+  "control_arm": "no_transfer-ba06a25f8bfb4bf0b4338dbc311646eb",
+  "treatment_arm": "recursive_self_report_synthesis-592880a246b64d448fe56008d22d1c77",
+  "action_budget": 28,
+  "curves": {
+    "no_transfer_mean_core": [
+      0.8974358974,
+      0.7948717949,
+      0.9230769231,
+      0.9230769231,
+      0.7435897436
+    ],
+    "recursive_self_report_mean_core": [
+      0.8974358974,
+      0.7435897436,
+      0.6153846154,
+      0.9230769231,
+      0.9230769231
+    ],
+    "no_transfer_mean_all_tests": [
+      0.8954248366,
+      0.8235294118,
+      0.9281045752,
+      0.9019607843,
+      0.8235294118
+    ],
+    "recursive_self_report_mean_all_tests": [
+      0.9346405229,
+      0.7973856209,
+      0.7450980392,
+      0.9019607843,
+      0.8954248366
+    ]
+  },
+  "validity_gates": {
+    "manager_activation": {
+      "pass": true,
+      "evidence": "All three layer-1 workers self-reported success and were accepted into manager layer 1."
+    },
+    "recursive_continuity": {
+      "pass": true,
+      "evidence": "Every treatment worker in layers 2-5 received exactly one manager artifact; manager layers 2-4 each reference the immediately previous manager artifact."
+    },
+    "control_headroom": {
+      "pass": true,
+      "layer_5_mean_core": 0.7435897436,
+      "layers_at_or_above_0_65": 5
+    },
+    "target_consistency": {
+      "pass": true,
+      "formal_outputs": 30,
+      "core_total": 13,
+      "pytest_collected": 51,
+      "test_collection_hash": "e967de874ab427679658999ab4063710bf46abaffceccda517aa2febc5275a09",
+      "infrastructure_failures_in_formal_outputs": 0
+    },
+    "score_blinding": {
+      "pass": true,
+      "manager_requests_scanned": 4,
+      "recursive_worker_prompts_scanned": 12,
+      "external_score_pattern_hits": 0
+    },
+    "model_query_integrity": {
+      "pass": true,
+      "treatment_outputs": 15,
+      "treatment_outputs_with_zero_model_calls": 0,
+      "quota_rate_limit_or_api_failures": 0
+    },
+    "infrastructure_amendment": {
+      "pass": true,
+      "record": "benchmarks/scbench/kimi_xjq_cp2_local_wheelhouse_infrastructure_amendment_20260714.json",
+      "archived_zero_cost_setup_failures": 6,
+      "interpretation": "All archived failures occurred before model calls and were exact-rerun with unchanged model, prompt, manager state, action budget, and benchmark target."
+    }
+  },
+  "degradation_criteria": {
+    "primary_terminal_effect": {
+      "pass": false,
+      "required_control_minus_treatment": 0.2,
+      "observed_control_minus_treatment": -0.1794871795,
+      "interpretation": "Treatment improved terminal Core by 0.1795 instead of degrading it."
+    },
+    "within_arm_decline": {
+      "pass": false,
+      "post_activation_peak": 0.9230769231,
+      "layer_5": 0.9230769231,
+      "decline": 0.0
+    },
+    "curve_shape": {
+      "pass": true,
+      "post_activation_transitions": [
+        -0.1282051282,
+        0.3076923077,
+        0.0
+      ],
+      "non_increasing_transitions": 2,
+      "drops_at_least_0_10": 1,
+      "interpretation": "The local layer-2 to layer-3 drop was followed by complete recovery, so this criterion alone is not evidence of sustained degradation."
+    },
+    "tail_support": {
+      "pass": false,
+      "no_transfer_layer_5_median": 0.8461538462,
+      "treatment_layer_5_minimum": 0.9230769231,
+      "required_treatment_tail_below_control_median": 0.3
+    },
+    "coordination_complexity": {
+      "pass": true,
+      "treatment_layer_5_received_experience_chars_per_worker": 8495,
+      "layer_5_input_token_ratio_treatment_over_control": 1.2088710276,
+      "manager_prompt_token_ratio_layer_4_over_layer_1": 1.4793278208
+    },
+    "all_required": false
+  },
+  "decision": {
+    "rule": "falsify",
+    "replicate": false,
+    "raw_append_ablation": false,
+    "stop_this_mechanism_task_pair": true,
+    "reason": "All validity gates pass, but the primary terminal effect, within-arm decline, and tail-support requirements fail; the treatment terminal score is higher than control.",
+    "paper_claim_allowed": "The recursive self-report manager increased coordination context but did not produce sustained degradation on xjq. A transient layer-3 collapse recovered fully by layers 4 and 5.",
+    "paper_claim_forbidden": "Do not present this run as evidence of an ant-mill-style degradation curve."
+  }
+}

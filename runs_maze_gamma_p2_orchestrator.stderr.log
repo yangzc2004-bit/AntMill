@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\antmill\sec\run_maze_alpha.py", line 81, in <module>
+    main()
+  File "D:\antmill\sec\run_maze_alpha.py", line 77, in main
+    run_cli(_parser().parse_args())
+  File "D:\antmill\sec\maze_alpha.py", line 2070, in run_cli
+    configs = build_maze_alpha_configs(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\antmill\sec\maze_alpha.py", line 1628, in build_maze_alpha_configs
+    extra_body = json.loads(raw_extra)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\decoder.py", line 354, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+Gamma P2 Smoke failed with exit code 1
+所在位置 D:\antmill\scripts\run_gamma_p2.ps1:93 字符: 5
++     throw "Gamma P2 $Mode failed with exit code ${LASTEXITCODE}"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Gamma P2 Smoke failed with exit code 1:String) [], RuntimeException
+    + FullyQualifiedErrorId : Gamma P2 Smoke failed with exit code 1
+ 
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\antmill\sec\run_maze_alpha.py", line 81, in <module>
+    main()
+  File "D:\antmill\sec\run_maze_alpha.py", line 77, in main
+    run_cli(_parser().parse_args())
+  File "D:\antmill\sec\maze_alpha.py", line 2070, in run_cli
+    configs = build_maze_alpha_configs(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\antmill\sec\maze_alpha.py", line 1628, in build_maze_alpha_configs
+    extra_body = json.loads(raw_extra)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\decoder.py", line 354, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+Gamma P2 Smoke failed with exit code 1
+所在位置 D:\antmill\scripts\run_gamma_p2.ps1:93 字符: 5
++     throw "Gamma P2 $Mode failed with exit code ${LASTEXITCODE}"
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Gamma P2 Smoke failed with exit code 1:String) [], RuntimeException
+    + FullyQualifiedErrorId : Gamma P2 Smoke failed with exit code 1
+ 

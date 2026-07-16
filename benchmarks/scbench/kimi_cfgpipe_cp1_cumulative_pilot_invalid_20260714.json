@@ -1,0 +1,40 @@
+{
+  "status": "invalid_aborted_before_complete_contrast",
+  "date": "2026-07-14",
+  "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_cumulative_pilot_20260713",
+  "task_id": "cumulative_success-c8450dafe2b34d7fbb58aed74e8fb4a2",
+  "reason": "Two layer-1 native evaluations reported infrastructure failure and reclassified all 37 collected tests as Core, producing a non-canonical test hash. The run was stopped during layer 2 and no control arm was completed.",
+  "native_layer_1": [
+    {
+      "worker": "worker_1",
+      "core": "4/4",
+      "infrastructure_failure": false,
+      "test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615"
+    },
+    {
+      "worker": "worker_2",
+      "core": "34/37",
+      "infrastructure_failure": true,
+      "test_collection_hash": "e398ac80382e18687d431b15001fdc4058e115a369200c490299ced0d4b300e7"
+    },
+    {
+      "worker": "worker_3",
+      "core": "2/37",
+      "infrastructure_failure": true,
+      "test_collection_hash": "e398ac80382e18687d431b15001fdc4058e115a369200c490299ced0d4b300e7"
+    }
+  ],
+  "clean_zero_model_revaluation": [
+    {
+      "worker": "worker_2",
+      "core": "4/4",
+      "infrastructure_failure": false
+    },
+    {
+      "worker": "worker_3",
+      "core": "0/4",
+      "infrastructure_failure": false
+    }
+  ],
+  "remediation": "The MiniSWE backend now treats infrastructure failure, Core-total drift, and frozen test-hash drift as rejection conditions and automatically evaluates the same snapshot in an isolated clean evaluator before deciding source eligibility."
+}

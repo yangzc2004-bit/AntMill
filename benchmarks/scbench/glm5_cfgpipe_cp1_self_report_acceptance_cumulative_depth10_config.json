@@ -1,0 +1,102 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 10,
+  "step_limit_per_worker": 12,
+  "temperature": 0.2,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "hypothesis_boundary": {
+    "motivation": "Kimi-K2.6 self-report-only was stable through layer 7 and produced a valid terminal 0/37 tail failure at layer 8, but Kimi quota invalidated post-trigger layers.",
+    "changed_variable": "Use GLM-5 on the MaAS endpoint to obtain a fresh valid depth-10 run.",
+    "held_fixed": "Task, worker count, topology, bootstrap sources, step limit, self-report-only admission, recipient blinding, and external evaluator are unchanged.",
+    "claim_scope": "This is a cross-model mechanism follow-up, not a Kimi replication. A positive result supports the general mechanism but still needs model-specific repeats."
+  },
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_1",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_2",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_3",
+      "layer": 5
+    }
+  ],
+  "self_report_acceptance_proxy": {
+    "process_completion": "The MiniSWE inference returns a trajectory without an infrastructure error.",
+    "model_query_guard": "Zero-step API/quota/rate-limit failures are invalid and abort instead of being counted as 0/37.",
+    "self_report": "At least one assistant step contains the frozen success marker used in prior audits.",
+    "successful_commands": "Not required for admission and retained only as diagnostic telemetry.",
+    "admission": "Every self-reported-success output is appended permanently regardless of blinded external benchmark score.",
+    "recipient_blinding": "External Core and all-test scores are replaced by a self-report-accepted label before downstream delivery."
+  },
+  "assimilation_semantics": {
+    "mode": "cumulative_self_report_acceptance",
+    "bootstrap": "Every layer-1 worker receives the same three frozen diverse 4/4 Core sources.",
+    "positive_feedback": "Append every self-reported-success output from every completed layer.",
+    "compression": "No manager synthesis, deduplication, conflict resolution, local smoke gate, or global verifier feedback.",
+    "expected_reference_counts_if_all_workers_self_report_success": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      27,
+      30
+    ]
+  },
+  "validity_gates": {
+    "bootstrap_activation": "All three frozen sources re-evaluate at 4/4 Core, 34/37 overall, with the frozen hash.",
+    "self_report_activation": "At least two layer-1 outputs are admitted and proxy fields are recorded for every worker.",
+    "recipient_blinding": "No generated treatment reference delivered downstream contains its external score.",
+    "target_consistency": "Every external result uses Core total 4, total tests 37, and the frozen hash.",
+    "model_query_integrity": "No worker has a zero-step API/quota/rate-limit failure.",
+    "integrity": "No infrastructure failures remain and no assistant action accesses prohibited benchmark paths."
+  },
+  "degradation_criteria": {
+    "tail_trigger": "By layer 8, at least one worker scores 0/37 externally, self-reports success, and is admitted despite fewer than three successful commands.",
+    "post_trigger": "At least one layer after the first admitted trigger has mean all-test score below 0.75 or contains at least one 0/37 worker.",
+    "terminal": "Layer-10 mean all-test score is below 0.75 or at least 0.15 below the best earlier treatment layer.",
+    "core_support": "Layer-10 mean Core is below 0.80 or at least one layer-10 worker is 0/4.",
+    "complexity_support": "Layer-10 receives at least 18 references and worker input tokens are at least 5.0x the matching Kimi no-transfer control input-token load of 121647.",
+    "all_required_for_sustained_degradation": "All validity gates plus tail-trigger, post-trigger, terminal, core-support, and complexity support are required."
+  },
+  "decision_rule": {
+    "confirm_mechanism_followup": "If all requirements pass, run one same-model repeat and one second-model repeat before manuscript claims.",
+    "late_tail_only": "If tail-trigger and terminal pass but post-trigger cannot be evaluated, report only late tail collapse.",
+    "stable": "If references and input grow but no trigger occurs through layer 10, reject this mechanism-task-model combination.",
+    "invalid": "Do not interpret direction if model query integrity, target consistency, or infrastructure integrity fails."
+  },
+  "models": [
+    {
+      "model": "glm-5",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "cumulative_self_report_acceptance"
+          ]
+        }
+      ]
+    }
+  ]
+}

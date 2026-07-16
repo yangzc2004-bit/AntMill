@@ -1,0 +1,98 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 6,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "candidate_evidence": {
+    "matching_control_layer_5": "All three no-transfer workers scored 4/4 Core and 34/37 overall.",
+    "bootstrap_diversity": "The three frozen layer-5 cfgpipe.py snapshots have distinct SHA-256 hashes and materially different workspace file sets.",
+    "known_conflict_surface": "Prior manager audit identified source-priority interpretation, integer normalization, and error-message specificity as interacting implementation rules.",
+    "log_query_boundary": "The same local-acceptance mechanism on log_query accumulated 18 sources and 7.6x control input but remained exactly flat, motivating a task with diverse locally successful strategies."
+  },
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_1",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_2",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_3",
+      "layer": 5
+    }
+  ],
+  "local_acceptance_proxy": {
+    "process_completion": "The MiniSWE inference returns a snapshot without an infrastructure error.",
+    "successful_commands": "The trajectory contains at least three environment actions with return code 0.",
+    "self_report": "At least one assistant step contains a frozen success marker.",
+    "admission": "Every output satisfying all conditions is appended permanently regardless of blinded external benchmark score.",
+    "recipient_blinding": "External Core and all-test scores are removed from locally accepted treatment references."
+  },
+  "assimilation_semantics": {
+    "mode": "cumulative_local_acceptance",
+    "bootstrap": "Every layer-1 worker receives the three frozen diverse 4/4 Core sources.",
+    "positive_feedback": "Append every locally accepted output from every completed layer.",
+    "compression": "No manager synthesis, deduplication, conflict resolution, or global verifier feedback.",
+    "expected_reference_counts_if_proxy_remains_active": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18
+    ]
+  },
+  "validity_gates": {
+    "bootstrap_activation": "All three frozen sources re-evaluate at 4/4 Core, 34/37 overall, with the frozen hash.",
+    "local_proxy_activation": "Every layer-1 output records proxy evidence and at least one is locally accepted.",
+    "recipient_blinding": "No locally accepted treatment reference delivered downstream contains its external score.",
+    "control_headroom": "Matching no-transfer layer-5 mean is 1.0 Core and 0.9189 overall.",
+    "target_consistency": "Every external result uses Core total 4, total tests 37, and the frozen hash.",
+    "integrity": "No infrastructure failures remain and no assistant action accesses prohibited benchmark paths."
+  },
+  "degradation_criteria": {
+    "primary_terminal_all_test": "Treatment layer-6 mean all-test score is at least 0.15 below matching no-transfer layer-5 mean 0.9189.",
+    "within_arm_all_test": "Treatment all-test score falls by at least 0.15 from its layer-1-to-layer-5 peak to layer 6.",
+    "core_support": "Treatment layer-6 mean Core is below 0.80 or at least one worker is 0/4.",
+    "curve_shape": "At least two all-test transitions strictly decrease, or one transition decreases by at least 0.25 and does not fully recover.",
+    "complexity_support": "Layer-6 reference count reaches at least 12 and worker input tokens are at least 3.0x matching no transfer.",
+    "all_required": "All validity gates plus primary, within-arm, core-support, curve-shape, and complexity criteria are required."
+  },
+  "decision_rule": {
+    "expand": "If all requirements pass, run a fresh depth-6 replication and then a second model.",
+    "directional_followup": "If validity passes and terminal, within-arm, and complexity effects point toward degradation but exactly one numerical threshold misses, run one same-setting replication.",
+    "falsify": "If the local proxy stays active and complexity grows but terminal or within-arm effects are non-negative, reject this mechanism-task pair.",
+    "invalid": "Do not interpret direction if local proxy activation, recipient blinding, target consistency, or integrity fails."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "cumulative_local_acceptance"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1712 @@
+{
+  "created": 1784027111.1625805,
+  "duration": 21.51297616958618,
+  "exitcode": 1,
+  "root": "/tmp/tmp3wl2bueh",
+  "environment": {},
+  "summary": {
+    "passed": 47,
+    "failed": 3,
+    "total": 50,
+    "collected": 50
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_convert_bad_params[missing-source]",
+          "type": "Function",
+          "lineno": 57
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_convert_bad_params[invalid-url]",
+          "type": "Function",
+          "lineno": 57
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_unreachable_source",
+          "type": "Function",
+          "lineno": 72
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_non_tabular_payload",
+          "type": "Function",
+          "lineno": 78
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_success_returns_id",
+          "type": "Function",
+          "lineno": 94
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_single_column_csv",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_query_envelope",
+          "type": "Function",
+          "lineno": 129
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_order_preserved",
+          "type": "Function",
+          "lineno": 152
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_default_limit_100",
+          "type": "Function",
+          "lineno": 173
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_charset_latin1",
+          "type": "Function",
+          "lineno": 192
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_autodetect_latin1",
+          "type": "Function",
+          "lineno": 211
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_upstream_500_to_404",
+          "type": "Function",
+          "lineno": 228
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_decimals_as_numbers",
+          "type": "Function",
+          "lineno": 244
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_semicolon_delimiter",
+          "type": "Function",
+          "lineno": 261
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_time_values_as_text",
+          "type": "Function",
+          "lineno": 279
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_unknown_route_404",
+          "type": "Function",
+          "lineno": 301
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_relative_endpoint",
+          "type": "Function",
+          "lineno": 309
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[,]",
+          "type": "Function",
+          "lineno": 323
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[;]",
+          "type": "Function",
+          "lineno": 323
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[\\t]",
+          "type": "Function",
+          "lineno": 323
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[name,emoji-alice,smile\\nbob,wave\\n]",
+          "type": "Function",
+          "lineno": 345
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[name,note-alice,naive\\nbob,cafe\\n]",
+          "type": "Function",
+          "lineno": 345
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[k,v-left,  space\\nright,space  \\n]",
+          "type": "Function",
+          "lineno": 345
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[id,text-1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n]",
+          "type": "Function",
+          "lineno": 345
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_query_stable",
+          "type": "Function",
+          "lineno": 386
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_limit_exactly_100",
+          "type": "Function",
+          "lineno": 404
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_preserves_whitespace",
+          "type": "Function",
+          "lineno": 424
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_negative_values_as_numbers",
+          "type": "Function",
+          "lineno": 441
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_routes[/convert]",
+          "type": "Function",
+          "lineno": 458
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_routes[/not-found]",
+          "type": "Function",
+          "lineno": 458
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_dataset_query",
+          "type": "Function",
+          "lineno": 469
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_options_preflight_cors[/convert]",
+          "type": "Function",
+          "lineno": 486
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_options_preflight_cors[/datasets/does-not-exist]",
+          "type": "Function",
+          "lineno": 486
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_same_url_same_id",
+          "type": "Function",
+          "lineno": 506
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_different_urls_different_ids",
+          "type": "Function",
+          "lineno": 523
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_empty_file_rejected",
+          "type": "Function",
+          "lineno": 540
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_time_boundary_values_are_text",
+          "type": "Function",
+          "lineno": 553
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_large_dataset_limit_order",
+          "type": "Function",
+          "lineno": 574
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_id_from_url_not_charset",
+          "type": "Function",
+          "lineno": 594
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_preserves_header_and_time_whitespace",
+          "type": "Function",
+          "lineno": 611
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_trailing_empty_line_excluded",
+          "type": "Function",
+          "lineno": 628
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_extra_columns_trimmed",
+          "type": "Function",
+          "lineno": 645
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_multiple_datasets_independent",
+          "type": "Function",
+          "lineno": 662
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_unknown_dataset_404",
+          "type": "Function",
+          "lineno": 694
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_malformed_charset",
+          "type": "Function",
+          "lineno": 703
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_convert_bad_url[bad-scheme]",
+          "type": "Function",
+          "lineno": 718
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_convert_bad_url[missing-scheme]",
+          "type": "Function",
+          "lineno": 718
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_header_only_rejected",
+          "type": "Function",
+          "lineno": 733
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_empty_source_parameter",
+          "type": "Function",
+          "lineno": 746
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_upstream_403_to_404",
+          "type": "Function",
+          "lineno": 755
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError",
+          "type": "Class"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_convert_bad_params[missing-source]",
+      "lineno": 57,
+      "outcome": "passed",
+      "keywords": [
+        "test_convert_bad_params[missing-source]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "missing-source",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.8364932849945035,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003315772002679296,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018451499636285007,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_convert_bad_params[invalid-url]",
+      "lineno": 57,
+      "outcome": "passed",
+      "keywords": [
+        "test_convert_bad_params[invalid-url]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "invalid-url",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00045863799459766597,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002506905992049724,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002820230001816526,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_unreachable_source",
+      "lineno": 72,
+      "outcome": "passed",
+      "keywords": [
+        "test_unreachable_source",
+        "error",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003885320038534701,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.23976061599387322,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018241500947624445,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_non_tabular_payload",
+      "lineno": 78,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_tabular_payload",
+        "error",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012739049998344854,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03612637000333052,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49802055199688766,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_success_returns_id",
+      "lineno": 94,
+      "outcome": "passed",
+      "keywords": [
+        "test_success_returns_id",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009923820034600794,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.030904141007340513,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4985030919924611,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_single_column_csv",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_single_column_csv",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0020030649902764708,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.04208365999511443,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4929072319937404,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_query_envelope",
+      "lineno": 129,
+      "outcome": "passed",
+      "keywords": [
+        "test_query_envelope",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0013479100016411394,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03237566299503669,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4963192119903397,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_order_preserved",
+      "lineno": 152,
+      "outcome": "passed",
+      "keywords": [
+        "test_order_preserved",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010233840002911165,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03615927400824148,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49434414999268483,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_default_limit_100",
+      "lineno": 173,
+      "outcome": "passed",
+      "keywords": [
+        "test_default_limit_100",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010178840020671487,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03360376298951451,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4966074359981576,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_charset_latin1",
+      "lineno": 192,
+      "outcome": "passed",
+      "keywords": [
+        "test_charset_latin1",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011511939956108108,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03812273500079755,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4958709750062553,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_autodetect_latin1",
+      "lineno": 211,
+      "outcome": "failed",
+      "keywords": [
+        "test_autodetect_latin1",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001367411998216994,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.18231919199752156,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp3wl2bueh/.evaluation_tests/_helpers.py",
+          "lineno": 27,
+          "message": "AssertionError: {\"error\":\"Non-tabular content\",\"ok\":false}"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 220,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 53,
+            "message": "in _ingest_source"
+          },
+          {
+            "path": ".evaluation_tests/_helpers.py",
+            "lineno": 27,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x73fa0d307440>\nclient = <httpx.Client object at 0x73fa0c9f79e0>\nlocal_source_server = <conftest.SourceServer object at 0x73fa0ccd3d40>\n\n    @pytest.mark.functionality\n    def test_autodetect_latin1(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Auto-detect source encoding when no charset parameter is supplied.\"\"\"\n        body = \"name\\ncaf\u00e9\\n\".encode(\"iso-8859-1\")\n>       dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/latin1_auto.csv\",\n            body=body,\n        )\n\n.evaluation_tests/test_checkpoint_1.py:220: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n.evaluation_tests/test_checkpoint_1.py:53: in _ingest_source\n    payload = assert_ok_envelope(response)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [400 BAD REQUEST]>, status_code = 200\n\n    def assert_ok_envelope(\n        response: httpx.Response,\n        *,\n        status_code: int = 200,\n    ) -> dict:\n>       assert response.status_code == status_code, response.text\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       AssertionError: {\"error\":\"Non-tabular content\",\"ok\":false}\n\n.evaluation_tests/_helpers.py:27: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.30264278600225225,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_upstream_500_to_404",
+      "lineno": 228,
+      "outcome": "passed",
+      "keywords": [
+        "test_upstream_500_to_404",
+        "error",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010503859957680106,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.029425518994685262,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4986077000066871,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_decimals_as_numbers",
+      "lineno": 244,
+      "outcome": "passed",
+      "keywords": [
+        "test_decimals_as_numbers",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009164750081254169,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.035583225995651446,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4970961760118371,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_semicolon_delimiter",
+      "lineno": 261,
+      "outcome": "passed",
+      "keywords": [
+        "test_semicolon_delimiter",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000922475999686867,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.030475505991489626,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49983941100072116,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_time_values_as_text",
+      "lineno": 279,
+      "outcome": "passed",
+      "keywords": [
+        "test_time_values_as_text",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010702889994718134,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03367371000058483,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4962024179985747,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_unknown_route_404",
+      "lineno": 301,
+      "outcome": "passed",
+      "keywords": [
+        "test_unknown_route_404",
+        "error",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005762479995610192,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002673423005035147,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003354279906488955,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_relative_endpoint",
+      "lineno": 309,
+      "outcome": "passed",
+      "keywords": [
+        "test_relative_endpoint",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018273530004080385,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03260582200891804,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.495180731988512,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[,]",
+      "lineno": 323,
+      "outcome": "passed",
+      "keywords": [
+        "test_common_delimiters[,]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        ",",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0017686479986878112,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.037800054997205734,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49720580100256484,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[;]",
+      "lineno": 323,
+      "outcome": "passed",
+      "keywords": [
+        "test_common_delimiters[;]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        ";",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011648969957605004,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.028794904006645083,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49706828998751007,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[\\t]",
+      "lineno": 323,
+      "outcome": "passed",
+      "keywords": [
+        "test_common_delimiters[\\t]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "\\t",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001073288993211463,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.030981285992311314,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49689497500366997,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[name,emoji-alice,smile\\nbob,wave\\n]",
+      "lineno": 345,
+      "outcome": "passed",
+      "keywords": [
+        "test_ingest_varied_text_payloads[name,emoji-alice,smile\\nbob,wave\\n]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "name,emoji-alice,smile\\nbob,wave\\n",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001629935999517329,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.02760120399761945,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4976237360097002,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[name,note-alice,naive\\nbob,cafe\\n]",
+      "lineno": 345,
+      "outcome": "passed",
+      "keywords": [
+        "test_ingest_varied_text_payloads[name,note-alice,naive\\nbob,cafe\\n]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "name,note-alice,naive\\nbob,cafe\\n",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018343530100537464,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03562257300654892,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49495471399859525,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[k,v-left,  space\\nright,space  \\n]",
+      "lineno": 345,
+      "outcome": "passed",
+      "keywords": [
+        "test_ingest_varied_text_payloads[k,v-left,  space\\nright,space  \\n]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "k,v-left,  space\\nright,space  \\n",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0014405200054170564,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03177475200209301,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.497279607996461,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[id,text-1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n]",
+      "lineno": 345,
+      "outcome": "passed",
+      "keywords": [
+        "test_ingest_varied_text_payloads[id,text-1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "id,text-1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001444220994017087,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.034568085000501014,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4965309449908091,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_query_stable",
+      "lineno": 386,
+      "outcome": "passed",
+      "keywords": [
+        "test_query_stable",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0016406369977630675,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.04933381799492054,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.48761150099744555,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_limit_exactly_100",
+      "lineno": 404,
+      "outcome": "passed",
+      "keywords": [
+        "test_limit_exactly_100",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0016347369964933023,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03171364701120183,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49699628399685025,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_preserves_whitespace",
+      "lineno": 424,
+      "outcome": "failed",
+      "keywords": [
+        "test_preserves_whitespace",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0014611219958169386,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03851771599147469,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp3wl2bueh/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 439,
+          "message": "AssertionError: assert [['left', 'space'], ['right', 'space']] == [['left', '  space'], ['right', 'space  ']]\n  \n  At index 0 diff: ['left', 'space'] != ['left', '  space']\n  \n  Full diff:\n    [\n        [\n            'left',\n  -         '  space',\n  ?          --\n  +         'space',\n        ],\n        [\n            'right',\n  -         'space  ',\n  ?               --\n  +         'space',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 439,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x73fa0ca04a40>\nclient = <httpx.Client object at 0x73fa0c9f79e0>\nlocal_source_server = <conftest.SourceServer object at 0x73fa0ccc7950>\n\n    @pytest.mark.functionality\n    def test_preserves_whitespace(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Leading and trailing spaces in CSV field values are preserved.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/space_text.csv\",\n            body=b\"side,value\\nleft,  space\\nright,space  \\n\",\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert payload[\"rows\"] == [[\"left\", \"  space\"], [\"right\", \"space  \"]]\nE       AssertionError: assert [['left', 'space'], ['right', 'space']] == [['left', '  space'], ['right', 'space  ']]\nE         \nE         At index 0 diff: ['left', 'space'] != ['left', '  space']\nE         \nE         Full diff:\nE           [\nE               [\nE                   'left',\nE         -         '  space',\nE         ?          --\nE         +         'space',\nE               ],\nE               [\nE                   'right',\nE         -         'space  ',\nE         ?               --\nE         +         'space',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:439: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.47822601700318046,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_negative_values_as_numbers",
+      "lineno": 441,
+      "outcome": "passed",
+      "keywords": [
+        "test_negative_values_as_numbers",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012124009954277426,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.02855388399621006,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49789605899422895,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_routes[/convert]",
+      "lineno": 458,
+      "outcome": "passed",
+      "keywords": [
+        "test_cors_on_routes[/convert]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "/convert",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005798479978693649,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0020232690003467724,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00013981199299450964,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_routes[/not-found]",
+      "lineno": 458,
+      "outcome": "passed",
+      "keywords": [
+        "test_cors_on_routes[/not-found]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "/not-found",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000428935993113555,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0023218940041260794,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00014441199891734868,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_dataset_query",
+      "lineno": 469,
+      "outcome": "passed",
+      "keywords": [
+        "test_cors_on_dataset_query",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000849371004733257,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.029183635997469537,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49716059799538925,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_options_preflight_cors[/convert]",
+      "lineno": 486,
+      "outcome": "passed",
+      "keywords": [
+        "test_options_preflight_cors[/convert]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "/convert",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004057339974679053,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0022166850103531033,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00027392301126383245,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_options_preflight_cors[/datasets/does-not-exist]",
+      "lineno": 486,
+      "outcome": "passed",
+      "keywords": [
+        "test_options_preflight_cors[/datasets/does-not-exist]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "/datasets/does-not-exist",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00042573499376885593,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002127777988789603,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0001246110041392967,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_same_url_same_id",
+      "lineno": 506,
+      "outcome": "passed",
+      "keywords": [
+        "test_same_url_same_id",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011265939974691719,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.05976278799062129,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4991439869918395,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_different_urls_different_ids",
+      "lineno": 523,
+      "outcome": "passed",
+      "keywords": [
+        "test_different_urls_different_ids",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011147939949296415,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.06326668399560731,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49900597998930607,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_empty_file_rejected",
+      "lineno": 540,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_file_rejected",
+        "error",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009004750027088448,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03064715999062173,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49927970199496485,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_time_boundary_values_are_text",
+      "lineno": 553,
+      "outcome": "passed",
+      "keywords": [
+        "test_time_boundary_values_are_text",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000874872988788411,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.02962067400221713,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49745934999373276,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_large_dataset_limit_order",
+      "lineno": 574,
+      "outcome": "passed",
+      "keywords": [
+        "test_large_dataset_limit_order",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000946478990954347,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.05966588300361764,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4700029569939943,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_id_from_url_not_charset",
+      "lineno": 594,
+      "outcome": "passed",
+      "keywords": [
+        "test_id_from_url_not_charset",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010064840025734156,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.061373126998660155,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4985399410070386,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_preserves_header_and_time_whitespace",
+      "lineno": 611,
+      "outcome": "failed",
+      "keywords": [
+        "test_preserves_header_and_time_whitespace",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011919000098714605,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03208598001219798,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp3wl2bueh/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 627,
+          "message": "AssertionError: assert [['Alice', '08:30'], ['Bob', '09:15']] == [['Alice', ' 08:30 '], ['Bob', '09:15']]\n  \n  At index 0 diff: ['Alice', '08:30'] != ['Alice', ' 08:30 ']\n  \n  Full diff:\n    [\n        [\n            'Alice',\n  -         ' 08:30 ',\n  ?          -     -\n  +         '08:30',\n        ],\n        [\n            'Bob',\n            '09:15',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 627,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x73fa0c9f63f0>\nclient = <httpx.Client object at 0x73fa0c9f79e0>\nlocal_source_server = <conftest.SourceServer object at 0x73fa0ccc65a0>\n\n    @pytest.mark.functionality\n    def test_preserves_header_and_time_whitespace(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Headers and time-like text preserve significant surrounding whitespace.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/header_time_whitespace.csv\",\n            body=(b\" name ,time\\nAlice, 08:30 \\nBob,09:15\\n\"),\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n        assert payload[\"columns\"] == [\" name \", \"time\"]\n>       assert payload[\"rows\"] == [[\"Alice\", \" 08:30 \"], [\"Bob\", \"09:15\"]]\nE       AssertionError: assert [['Alice', '08:30'], ['Bob', '09:15']] == [['Alice', ' 08:30 '], ['Bob', '09:15']]\nE         \nE         At index 0 diff: ['Alice', '08:30'] != ['Alice', ' 08:30 ']\nE         \nE         Full diff:\nE           [\nE               [\nE                   'Alice',\nE         -         ' 08:30 ',\nE         ?          -     -\nE         +         '08:30',\nE               ],\nE               [\nE                   'Bob',\nE                   '09:15',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:627: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4857173700002022,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_trailing_empty_line_excluded",
+      "lineno": 628,
+      "outcome": "passed",
+      "keywords": [
+        "test_trailing_empty_line_excluded",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0008386700064875185,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.031645543000195175,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49743854798725806,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_extra_columns_trimmed",
+      "lineno": 645,
+      "outcome": "passed",
+      "keywords": [
+        "test_extra_columns_trimmed",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012363029964035377,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.027520399002241902,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4981141050084261,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_multiple_datasets_independent",
+      "lineno": 662,
+      "outcome": "passed",
+      "keywords": [
+        "test_multiple_datasets_independent",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0020855740003753453,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.06116810900857672,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49441029599984176,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_unknown_dataset_404",
+      "lineno": 694,
+      "outcome": "passed",
+      "keywords": [
+        "test_unknown_dataset_404",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00041013400186784565,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.001998867010115646,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00013401100295595825,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_malformed_charset",
+      "lineno": 703,
+      "outcome": "passed",
+      "keywords": [
+        "test_malformed_charset",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009008750057546422,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0027543299947865307,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4978481830039527,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_convert_bad_url[bad-scheme]",
+      "lineno": 718,
+      "outcome": "passed",
+      "keywords": [
+        "test_convert_bad_url[bad-scheme]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "bad-scheme",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004272359947208315,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0027756320050684735,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00016271400090772659,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_convert_bad_url[missing-scheme]",
+      "lineno": 718,
+      "outcome": "passed",
+      "keywords": [
+        "test_convert_bad_url[missing-scheme]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "missing-scheme",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004472370055736974,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002313794000656344,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015681299555581063,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_header_only_rejected",
+      "lineno": 733,
+      "outcome": "passed",
+      "keywords": [
+        "test_header_only_rejected",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010905909875873476,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03513493399077561,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49382714700186625,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_empty_source_parameter",
+      "lineno": 746,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_source_parameter",
+        "functionality",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00040703400736674666,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002339794998988509,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00016911400598473847,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_upstream_403_to_404",
+      "lineno": 755,
+      "outcome": "passed",
+      "keywords": [
+        "test_upstream_403_to_404",
+        "functionality",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011875990021508187,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.029220341006293893,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.5066386169928592,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

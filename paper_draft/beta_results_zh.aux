@@ -1,0 +1,24 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}实验阶梯与判决}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}E1：单智能体归因对照}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}E2：多智能体记忆矩阵}{2}{subsection.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces E2 末轮相对 frozen 的配对差异（五 seed，$n_{\text  {pairs}}=240$； 成功路线超额步数会丢弃无法配对的失败路线）。$^\ast $ 表示 95\% 置信区间不含 0。}}{2}{table.1}\protected@file@percent }
+\newlabel{tab:e2}{{1}{2}{E2 末轮相对 frozen 的配对差异（五 seed，$n_{\text {pairs}}=240$； 成功路线超额步数会丢弃无法配对的失败路线）。$^\ast $ 表示 95\% 置信区间不含 0。}{table.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{共享 vs 私有的边界。}{2}{paragraph*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}E3：读端剂量-反应为零结果}{2}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}机制：写端策略供给压缩}{3}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.5}E4：长反馈链压力测试（探索性）}{3}{subsection.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}这种失败是静默的}{3}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}结论一览}{4}{section.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {机制显微镜与一个静默退化案例。} (a) 共享经验反馈环：solver 轨迹被反思进共享池，由 LLM 发出的操作合并，检索 top-$k$， 再作为指导注入回来——一个正反馈循环。(b) 同一 heldout 迷宫与 agent，末轮，最短路径 38。 重访热度（阴影圆点）随写入协议合并而增长，在共享 consolidated 记忆下形成静默循环， 而每条路线始终合法且成功。}}{5}{figure.1}\protected@file@percent }
+\newlabel{fig:fig1}{{1}{5}{\textbf {机制显微镜与一个静默退化案例。} (a) 共享经验反馈环：solver 轨迹被反思进共享池，由 LLM 发出的操作合并，检索 top-$k$， 再作为指导注入回来——一个正反馈循环。(b) 同一 heldout 迷宫与 agent，末轮，最短路径 38。 重访热度（阴影圆点）随写入协议合并而增长，在共享 consolidated 记忆下形成静默循环， 而每条路线始终合法且成功。}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {E2 主结果：相对 frozen 只写记忆的配对差异}（五 seed，末轮）。 点为均值差，误差棒为 95\% bootstrap 置信区间，虚线为 0。共享 consolidated（红）在四个终点上 全部退化且效应最大；MAS 无记忆（灰）除轻微循环上升外都压在 0 线。}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:fig2}{{2}{6}{\textbf {E2 主结果：相对 frozen 只写记忆的配对差异}（五 seed，末轮）。 点为均值差，误差棒为 95\% bootstrap 置信区间，虚线为 0。共享 consolidated（红）在四个终点上 全部退化且效应最大；MAS 无记忆（灰）除轻微循环上升外都压在 0 线。}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {E2 边界：共享臂相对私有基线。} 实心点表示置信区间不含 0。只有循环把共享 consolidated 与私有分开（$+0.058$，CI $[0.008, 0.113]$）； 效率对比不显著，且共享 append 实际上比私有更少循环。}}{6}{figure.3}\protected@file@percent }
+\newlabel{fig:fig2b}{{3}{6}{\textbf {E2 边界：共享臂相对私有基线。} 实心点表示置信区间不含 0。只有循环把共享 consolidated 与私有分开（$+0.058$，CI $[0.008, 0.113]$）； 效率对比不显著，且共享 append 实际上比私有更少循环。}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {机制审计：合并压缩了策略供给。} 五 seed 下的最终池大小、实际注入的不同经验数、top-1 检索份额（散点）。 共识合并保持小池、注入最少的不同策略、并集中检索；左中两格的直接计数承担因果主张。}}{7}{figure.4}\protected@file@percent }
+\newlabel{fig:fig3}{{4}{7}{\textbf {机制审计：合并压缩了策略供给。} 五 seed 下的最终池大小、实际注入的不同经验数、top-1 检索份额（散点）。 共识合并保持小池、注入最少的不同策略、并集中检索；左中两格的直接计数承担因果主张。}{figure.4}{}}
+\gdef \@abspage@last{7}

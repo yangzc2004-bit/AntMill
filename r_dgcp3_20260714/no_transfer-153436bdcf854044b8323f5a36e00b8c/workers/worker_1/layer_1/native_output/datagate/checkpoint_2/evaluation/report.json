@@ -1,0 +1,4554 @@
+{
+  "created": 1784026274.9927192,
+  "duration": 60.45976138114929,
+  "exitcode": 1,
+  "root": "/tmp/tmpp2_dpttw",
+  "environment": {},
+  "summary": {
+    "passed": 81,
+    "failed": 41,
+    "total": 122,
+    "collected": 122
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_convert_bad_params[missing-source]",
+          "type": "Function",
+          "lineno": 57
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_convert_bad_params[invalid-url]",
+          "type": "Function",
+          "lineno": 57
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_unreachable_source",
+          "type": "Function",
+          "lineno": 72
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_non_tabular_payload",
+          "type": "Function",
+          "lineno": 78
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_success_returns_id",
+          "type": "Function",
+          "lineno": 94
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_single_column_csv",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_query_envelope",
+          "type": "Function",
+          "lineno": 129
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_order_preserved",
+          "type": "Function",
+          "lineno": 152
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_default_limit_100",
+          "type": "Function",
+          "lineno": 173
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_charset_latin1",
+          "type": "Function",
+          "lineno": 192
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_autodetect_latin1",
+          "type": "Function",
+          "lineno": 211
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_upstream_500_to_404",
+          "type": "Function",
+          "lineno": 228
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_decimals_as_numbers",
+          "type": "Function",
+          "lineno": 244
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_semicolon_delimiter",
+          "type": "Function",
+          "lineno": 261
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_time_values_as_text",
+          "type": "Function",
+          "lineno": 279
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_unknown_route_404",
+          "type": "Function",
+          "lineno": 301
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_relative_endpoint",
+          "type": "Function",
+          "lineno": 309
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[,]",
+          "type": "Function",
+          "lineno": 323
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[;]",
+          "type": "Function",
+          "lineno": 323
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[\\t]",
+          "type": "Function",
+          "lineno": 323
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[name,emoji-alice,smile\\nbob,wave\\n]",
+          "type": "Function",
+          "lineno": 345
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[name,note-alice,naive\\nbob,cafe\\n]",
+          "type": "Function",
+          "lineno": 345
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[k,v-left,  space\\nright,space  \\n]",
+          "type": "Function",
+          "lineno": 345
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[id,text-1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n]",
+          "type": "Function",
+          "lineno": 345
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_query_stable",
+          "type": "Function",
+          "lineno": 386
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_limit_exactly_100",
+          "type": "Function",
+          "lineno": 404
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_preserves_whitespace",
+          "type": "Function",
+          "lineno": 424
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_negative_values_as_numbers",
+          "type": "Function",
+          "lineno": 441
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_routes[/convert]",
+          "type": "Function",
+          "lineno": 458
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_routes[/not-found]",
+          "type": "Function",
+          "lineno": 458
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_dataset_query",
+          "type": "Function",
+          "lineno": 469
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_options_preflight_cors[/convert]",
+          "type": "Function",
+          "lineno": 486
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_options_preflight_cors[/datasets/does-not-exist]",
+          "type": "Function",
+          "lineno": 486
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_same_url_same_id",
+          "type": "Function",
+          "lineno": 506
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_different_urls_different_ids",
+          "type": "Function",
+          "lineno": 523
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_empty_file_rejected",
+          "type": "Function",
+          "lineno": 540
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_time_boundary_values_are_text",
+          "type": "Function",
+          "lineno": 553
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_large_dataset_limit_order",
+          "type": "Function",
+          "lineno": 574
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_id_from_url_not_charset",
+          "type": "Function",
+          "lineno": 594
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_preserves_header_and_time_whitespace",
+          "type": "Function",
+          "lineno": 611
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_trailing_empty_line_excluded",
+          "type": "Function",
+          "lineno": 628
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_extra_columns_trimmed",
+          "type": "Function",
+          "lineno": 645
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_multiple_datasets_independent",
+          "type": "Function",
+          "lineno": 662
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_unknown_dataset_404",
+          "type": "Function",
+          "lineno": 694
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_malformed_charset",
+          "type": "Function",
+          "lineno": 703
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_convert_bad_url[bad-scheme]",
+          "type": "Function",
+          "lineno": 718
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_convert_bad_url[missing-scheme]",
+          "type": "Function",
+          "lineno": 718
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_header_only_rejected",
+          "type": "Function",
+          "lineno": 733
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_empty_source_parameter",
+          "type": "Function",
+          "lineno": 746
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_upstream_403_to_404",
+          "type": "Function",
+          "lineno": 755
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError",
+          "type": "Class"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_total_before_pagination",
+          "type": "Function",
+          "lineno": 49
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_size_and_offset_apply",
+          "type": "Function",
+          "lineno": 61
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_sort_ascending_is_stable",
+          "type": "Function",
+          "lineno": 72
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_sort_desc_paginate",
+          "type": "Function",
+          "lineno": 85
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_sort_desc_precedence",
+          "type": "Function",
+          "lineno": 100
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_shape_objects_includes_rowid",
+          "type": "Function",
+          "lineno": 115
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_rowid_ignores_sort",
+          "type": "Function",
+          "lineno": 128
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_rowid_hide_removes_rowid",
+          "type": "Function",
+          "lineno": 146
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_total_hide_removes_total",
+          "type": "Function",
+          "lineno": 161
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_invalid_param_400[invalid_size]",
+          "type": "Function",
+          "lineno": 172
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_invalid_param_400[invalid_shape]",
+          "type": "Function",
+          "lineno": 172
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_size_variants[1-1]",
+          "type": "Function",
+          "lineno": 191
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_size_variants[2-2]",
+          "type": "Function",
+          "lineno": 191
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_size_variants[5-5]",
+          "type": "Function",
+          "lineno": 191
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_size_variants[20-5]",
+          "type": "Function",
+          "lineno": 191
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_variants[0-Alice]",
+          "type": "Function",
+          "lineno": 209
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_variants[1-Bob]",
+          "type": "Function",
+          "lineno": 209
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_variants[4-Eve]",
+          "type": "Function",
+          "lineno": 209
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_variants[10-None]",
+          "type": "Function",
+          "lineno": 209
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_keys[name]",
+          "type": "Function",
+          "lineno": 230
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_keys[age]",
+          "type": "Function",
+          "lineno": 230
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_keys[city]",
+          "type": "Function",
+          "lineno": 230
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_keys[name]",
+          "type": "Function",
+          "lineno": 239
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_keys[age]",
+          "type": "Function",
+          "lineno": 239
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_keys[city]",
+          "type": "Function",
+          "lineno": 239
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_name_and_city_order_values",
+          "type": "Function",
+          "lineno": 253
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_shape_and_visibility_combinations[params0]",
+          "type": "Function",
+          "lineno": 289
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_shape_and_visibility_combinations[params1]",
+          "type": "Function",
+          "lineno": 289
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_shape_and_visibility_combinations[params2]",
+          "type": "Function",
+          "lineno": 289
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_columns_exclude_rowid",
+          "type": "Function",
+          "lineno": 308
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sorted_requests_stable",
+          "type": "Function",
+          "lineno": 320
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_rowid_hide_noop_lists",
+          "type": "Function",
+          "lineno": 335
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_rowid_hide_noop_default",
+          "type": "Function",
+          "lineno": 355
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_total_ignores_offset_size",
+          "type": "Function",
+          "lineno": 370
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_composed_controls",
+          "type": "Function",
+          "lineno": 387
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_shapes_consistent_values",
+          "type": "Function",
+          "lineno": 414
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_tie_stability",
+          "type": "Function",
+          "lineno": 438
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_precedence_different_columns",
+          "type": "Function",
+          "lineno": 457
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_rowid_sequential_all_rows",
+          "type": "Function",
+          "lineno": 475
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_total_default_bare_request",
+          "type": "Function",
+          "lineno": 487
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_at_dataset_length",
+          "type": "Function",
+          "lineno": 498
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_empty_toggle_value_400[_rowid]",
+          "type": "Function",
+          "lineno": 511
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_empty_toggle_value_400[_total]",
+          "type": "Function",
+          "lineno": 511
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_large_size_returns_all_rows",
+          "type": "Function",
+          "lineno": 523
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_unknown_sort_column_400",
+          "type": "Function",
+          "lineno": 538
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_sort_value_400[_sort]",
+          "type": "Function",
+          "lineno": 555
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_sort_value_400[_sort_desc]",
+          "type": "Function",
+          "lineno": 555
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_visibility_invalid_value_400[_rowid-show]",
+          "type": "Function",
+          "lineno": 567
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_visibility_invalid_value_400[_rowid-false]",
+          "type": "Function",
+          "lineno": 567
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_visibility_invalid_value_400[_total-show]",
+          "type": "Function",
+          "lineno": 567
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_visibility_invalid_value_400[_total-0]",
+          "type": "Function",
+          "lineno": 567
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_invalid_total_default_shape",
+          "type": "Function",
+          "lineno": 592
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_size=1&_size=2]",
+          "type": "Function",
+          "lineno": 602
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_sort=age&_sort=name]",
+          "type": "Function",
+          "lineno": 602
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_rowid=hide&_rowid=hide]",
+          "type": "Function",
+          "lineno": 602
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_offset=1&_offset=2]",
+          "type": "Function",
+          "lineno": 602
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_shape=lists&_shape=objects]",
+          "type": "Function",
+          "lineno": 602
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_sort_desc=age&_sort_desc=name]",
+          "type": "Function",
+          "lineno": 602
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_total=hide&_total=hide]",
+          "type": "Function",
+          "lineno": 602
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_invalid_rowid_list_or_default[params0]",
+          "type": "Function",
+          "lineno": 625
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_invalid_rowid_list_or_default[params1]",
+          "type": "Function",
+          "lineno": 625
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_sort_both_params_400[_sort=age&_sort_desc=]",
+          "type": "Function",
+          "lineno": 643
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_param_value_400[shape]",
+          "type": "Function",
+          "lineno": 660
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_param_value_400[size]",
+          "type": "Function",
+          "lineno": 660
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_param_value_400[offset]",
+          "type": "Function",
+          "lineno": 660
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_size_values[0]",
+          "type": "Function",
+          "lineno": 676
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_size_values[-1]",
+          "type": "Function",
+          "lineno": 676
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_size_values[3.1]",
+          "type": "Function",
+          "lineno": 676
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_size_values[abc]",
+          "type": "Function",
+          "lineno": 676
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_offset_values[-1]",
+          "type": "Function",
+          "lineno": 688
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_offset_values[oops]",
+          "type": "Function",
+          "lineno": 688
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_offset_values[2.5]",
+          "type": "Function",
+          "lineno": 688
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError",
+          "type": "Class"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_convert_bad_params[missing-source]",
+      "lineno": 57,
+      "outcome": "passed",
+      "keywords": [
+        "test_convert_bad_params[missing-source]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "missing-source",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.8682793300104095,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0031982890068320557,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00020721300097648054,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_convert_bad_params[invalid-url]",
+      "lineno": 57,
+      "outcome": "passed",
+      "keywords": [
+        "test_convert_bad_params[invalid-url]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "invalid-url",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009619569900678471,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002635355995153077,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015790900215506554,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_unreachable_source",
+      "lineno": 72,
+      "outcome": "passed",
+      "keywords": [
+        "test_unreachable_source",
+        "error",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00039972399827092886,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.2662451840005815,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00014610899961553514,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_non_tabular_payload",
+      "lineno": 78,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_tabular_payload",
+        "error",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011139650014229119,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03104992999578826,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.498461363997194,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_success_returns_id",
+      "lineno": 94,
+      "outcome": "passed",
+      "keywords": [
+        "test_success_returns_id",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001018459995975718,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.028729992001899518,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49826055200537667,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_single_column_csv",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_single_column_csv",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010671630006982014,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.044306809999397956,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 127,
+          "message": "AssertionError: assert ['rowid', 'name'] == ['name']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'name'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 127,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x7da09a5697f0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f3080>\n\n    def test_single_column_csv(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Single-column CSV ingestion and query.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/single_column.csv\",\n            body=b\"name\\na\\n\",\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert payload[\"columns\"] == [\"name\"]\nE       AssertionError: assert ['rowid', 'name'] == ['name']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'name'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:127: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.45573684699775185,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_query_envelope",
+      "lineno": 129,
+      "outcome": "failed",
+      "keywords": [
+        "test_query_envelope",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0008421490056207404,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0305208979989402,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 148,
+          "message": "AssertionError: assert ['rowid', 'name', 'country', 'population'] == ['name', 'country', 'population']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'population'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n        'country',\n        'population',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 148,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x7da09a5693a0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f2f00>\n\n    def test_query_envelope(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Query payload includes columns, rows, and non-negative query_ms.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/query_fields.csv\",\n            body=(\n                b\"name,country,population\\n\"\n                b\"Tokyo,Japan,13960000\\n\"\n                b\"Paris,France,2161000\\n\"\n            ),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"columns\"] == [\"name\", \"country\", \"population\"]\nE       AssertionError: assert ['rowid', 'name', 'country', 'population'] == ['name', 'country', 'population']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'population'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE               'country',\nE               'population',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:148: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4802973930054577,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_order_preserved",
+      "lineno": 152,
+      "outcome": "failed",
+      "keywords": [
+        "test_order_preserved",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011048650048905984,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.037542910999036394,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 169,
+          "message": "AssertionError: assert ['rowid', 'name', 'rank', 'city'] == ['name', 'rank', 'city']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'city'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n        'rank',\n        'city',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 169,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x7da09a5692b0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f2a80>\n\n    def test_order_preserved(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Source column and row order are preserved in query output.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/ordered.csv\",\n            body=(\n                b\"name,rank,city\\nalpha,1,Paris\\nbeta,2,Rome\\ngamma,3,Berlin\\n\"\n            ),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"columns\"] == [\"name\", \"rank\", \"city\"]\nE       AssertionError: assert ['rowid', 'name', 'rank', 'city'] == ['name', 'rank', 'city']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'city'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE               'rank',\nE               'city',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:169: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.47778024499712046,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_default_limit_100",
+      "lineno": 173,
+      "outcome": "passed",
+      "keywords": [
+        "test_default_limit_100",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0019901179912267253,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.034558435989310965,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49462703699828126,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_charset_latin1",
+      "lineno": 192,
+      "outcome": "failed",
+      "keywords": [
+        "test_charset_latin1",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012377730017760769,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.032627221997245215,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 210,
+          "message": "AssertionError: assert [[1, 'caf\u00e9']] == [['caf\u00e9']]\n  \n  At index 0 diff: [1, 'caf\u00e9'] != ['caf\u00e9']\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'caf\u00e9',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 210,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x7da09a56a0c0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a64dd60>\n\n    @pytest.mark.functionality\n    def test_charset_latin1(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Explicit charset parameter is honored when decoding source bytes.\"\"\"\n        latin1_bytes = \"name\\ncaf\u00e9\\n\".encode(\"iso-8859-1\")\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/latin1.csv\",\n            body=latin1_bytes,\n            params={\"charset\": \"iso-8859-1\"},\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"rows\"] == [[\"caf\u00e9\"]]\nE       AssertionError: assert [[1, 'caf\u00e9']] == [['caf\u00e9']]\nE         \nE         At index 0 diff: [1, 'caf\u00e9'] != ['caf\u00e9']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'caf\u00e9',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:210: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4829832510004053,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_autodetect_latin1",
+      "lineno": 211,
+      "outcome": "failed",
+      "keywords": [
+        "test_autodetect_latin1",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012799749965779483,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07578066398855299,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/_helpers.py",
+          "lineno": 27,
+          "message": "AssertionError: {\"error\":\"Non-tabular content\",\"ok\":false}"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 220,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 53,
+            "message": "in _ingest_source"
+          },
+          {
+            "path": ".evaluation_tests/_helpers.py",
+            "lineno": 27,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x7da09a56a900>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a64da00>\n\n    @pytest.mark.functionality\n    def test_autodetect_latin1(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Auto-detect source encoding when no charset parameter is supplied.\"\"\"\n        body = \"name\\ncaf\u00e9\\n\".encode(\"iso-8859-1\")\n>       dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/latin1_auto.csv\",\n            body=body,\n        )\n\n.evaluation_tests/test_checkpoint_1.py:220: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n.evaluation_tests/test_checkpoint_1.py:53: in _ingest_source\n    payload = assert_ok_envelope(response)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [400 BAD REQUEST]>, status_code = 200\n\n    def assert_ok_envelope(\n        response: httpx.Response,\n        *,\n        status_code: int = 200,\n    ) -> dict:\n>       assert response.status_code == status_code, response.text\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       AssertionError: {\"error\":\"Non-tabular content\",\"ok\":false}\n\n.evaluation_tests/_helpers.py:27: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4295966070058057,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_upstream_500_to_404",
+      "lineno": 228,
+      "outcome": "passed",
+      "keywords": [
+        "test_upstream_500_to_404",
+        "error",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010982649982906878,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03638624299492221,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4987764820107259,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_decimals_as_numbers",
+      "lineno": 244,
+      "outcome": "failed",
+      "keywords": [
+        "test_decimals_as_numbers",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00092565399245359,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.02942343299218919,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 259,
+          "message": "AssertionError: assert [[1, 'A', 9.99], [2, 'B', 10.5]] == [['A', 9.99], ['B', 10.5]]\n  \n  At index 0 diff: [1, 'A', 9.99] != ['A', 9.99]\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'A',\n            9.99,\n        ],\n        [\n  +         2,\n            'B',\n            10.5,\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 259,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x7da09a5907d0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f24b0>\n\n    @pytest.mark.functionality\n    def test_decimals_as_numbers(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Decimal numeric values are parsed as JSON numbers.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/decimals.csv\",\n            body=b\"item,price\\nA,9.99\\nB,10.50\\n\",\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert payload[\"rows\"] == [[\"A\", 9.99], [\"B\", 10.5]]\nE       AssertionError: assert [[1, 'A', 9.99], [2, 'B', 10.5]] == [['A', 9.99], ['B', 10.5]]\nE         \nE         At index 0 diff: [1, 'A', 9.99] != ['A', 9.99]\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'A',\nE                   9.99,\nE               ],\nE               [\nE         +         2,\nE                   'B',\nE                   10.5,\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:259: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48504987299384084,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_semicolon_delimiter",
+      "lineno": 261,
+      "outcome": "failed",
+      "keywords": [
+        "test_semicolon_delimiter",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011875700001837686,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03199118499469478,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 277,
+          "message": "AssertionError: assert ['rowid', 'route', 'departure', 'arrival'] == ['route', 'departure', 'arrival']\n  \n  At index 0 diff: 'rowid' != 'route'\n  Left contains one more item: 'arrival'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'route',\n        'departure',\n        'arrival',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 277,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x7da09a5935f0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f2600>\n\n    @pytest.mark.functionality\n    def test_semicolon_delimiter(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Parse semicolon-delimited CSV as tabular source input.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/semicolon.csv\",\n            body=(b\"route;departure;arrival\\nA;08:30;09:15\\nB;12:00;13:45\\n\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"columns\"] == [\"route\", \"departure\", \"arrival\"]\nE       AssertionError: assert ['rowid', 'route', 'departure', 'arrival'] == ['route', 'departure', 'arrival']\nE         \nE         At index 0 diff: 'rowid' != 'route'\nE         Left contains one more item: 'arrival'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'route',\nE               'departure',\nE               'arrival',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:277: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4826383320032619,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_time_values_as_text",
+      "lineno": 279,
+      "outcome": "failed",
+      "keywords": [
+        "test_time_values_as_text",
+        "functionality",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001563192010507919,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03099212600500323,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 295,
+          "message": "AssertionError: assert [[1, 'a', '12:30'], [2, 'b', '9:15'], [3, 'c', '09:45']] == [['a', '12:30'], ['b', '9:15'], ['c', '09:45']]\n  \n  At index 0 diff: [1, 'a', '12:30'] != ['a', '12:30']\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'a',\n            '12:30',\n        ],\n        [\n  +         2,\n            'b',\n            '9:15',\n        ],\n        [\n  +         3,\n            'c',\n            '09:45',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 295,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestCore object at 0x7da09a593ad0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f12b0>\n\n    @pytest.mark.functionality\n    def test_time_values_as_text(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Time-of-day-like values remain as strings, not coerced to numbers.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/times.csv\",\n            body=(b\"id,hour\\na,12:30\\nb,9:15\\nc,09:45\\n\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"rows\"] == [\n            [\"a\", \"12:30\"],\n            [\"b\", \"9:15\"],\n            [\"c\", \"09:45\"],\n        ]\nE       AssertionError: assert [[1, 'a', '12:30'], [2, 'b', '9:15'], [3, 'c', '09:45']] == [['a', '12:30'], ['b', '9:15'], ['c', '09:45']]\nE         \nE         At index 0 diff: [1, 'a', '12:30'] != ['a', '12:30']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'a',\nE                   '12:30',\nE               ],\nE               [\nE         +         2,\nE                   'b',\nE                   '9:15',\nE               ],\nE               [\nE         +         3,\nE                   'c',\nE                   '09:45',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:295: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48412981900037266,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_unknown_route_404",
+      "lineno": 301,
+      "outcome": "passed",
+      "keywords": [
+        "test_unknown_route_404",
+        "error",
+        "pytestmark",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003591209970181808,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.001777105004293844,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00014140900748316199,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_relative_endpoint",
+      "lineno": 309,
+      "outcome": "passed",
+      "keywords": [
+        "test_relative_endpoint",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009381550044054165,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.034412327004247345,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4975981129973661,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[,]",
+      "lineno": 323,
+      "outcome": "failed",
+      "keywords": [
+        "test_common_delimiters[,]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        ",",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0022363320022122934,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.048163637999095954,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 344,
+          "message": "AssertionError: assert [[1, 'Alice', 'Paris'], [2, 'Bob', 'Rome']] == [['Alice', 'Paris'], ['Bob', 'Rome']]\n  \n  At index 0 diff: [1, 'Alice', 'Paris'] != ['Alice', 'Paris']\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'Alice',\n            'Paris',\n        ],\n        [\n  +         2,\n            'Bob',\n            'Rome',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 344,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a4320>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3dc980>\ndelimiter = ','\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\"delimiter\", [\",\", \";\", \"\\t\"])\n    def test_common_delimiters(\n        self,\n        client: httpx.Client,\n        local_source_server,\n        delimiter: str,\n    ) -> None:\n        \"\"\"Comma, semicolon, and tab delimiters are supported during ingestion.\"\"\"\n        csv_text = (\n            f\"name{delimiter}city\\nAlice{delimiter}Paris\\nBob{delimiter}Rome\\n\"\n        )\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=f\"/delim_{ord(delimiter)}.csv\",\n            body=csv_text.encode(\"utf-8\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"rows\"] == [[\"Alice\", \"Paris\"], [\"Bob\", \"Rome\"]]\nE       AssertionError: assert [[1, 'Alice', 'Paris'], [2, 'Bob', 'Rome']] == [['Alice', 'Paris'], ['Bob', 'Rome']]\nE         \nE         At index 0 diff: [1, 'Alice', 'Paris'] != ['Alice', 'Paris']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'Alice',\nE                   'Paris',\nE               ],\nE               [\nE         +         2,\nE                   'Bob',\nE                   'Rome',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:344: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48196416499558836,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[;]",
+      "lineno": 323,
+      "outcome": "failed",
+      "keywords": [
+        "test_common_delimiters[;]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        ";",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011255819990765303,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.035680001994478516,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 344,
+          "message": "AssertionError: assert [[1, 'Alice', 'Paris'], [2, 'Bob', 'Rome']] == [['Alice', 'Paris'], ['Bob', 'Rome']]\n  \n  At index 0 diff: [1, 'Alice', 'Paris'] != ['Alice', 'Paris']\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'Alice',\n            'Paris',\n        ],\n        [\n  +         2,\n            'Bob',\n            'Rome',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 344,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a4500>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3dc800>\ndelimiter = ';'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\"delimiter\", [\",\", \";\", \"\\t\"])\n    def test_common_delimiters(\n        self,\n        client: httpx.Client,\n        local_source_server,\n        delimiter: str,\n    ) -> None:\n        \"\"\"Comma, semicolon, and tab delimiters are supported during ingestion.\"\"\"\n        csv_text = (\n            f\"name{delimiter}city\\nAlice{delimiter}Paris\\nBob{delimiter}Rome\\n\"\n        )\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=f\"/delim_{ord(delimiter)}.csv\",\n            body=csv_text.encode(\"utf-8\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"rows\"] == [[\"Alice\", \"Paris\"], [\"Bob\", \"Rome\"]]\nE       AssertionError: assert [[1, 'Alice', 'Paris'], [2, 'Bob', 'Rome']] == [['Alice', 'Paris'], ['Bob', 'Rome']]\nE         \nE         At index 0 diff: [1, 'Alice', 'Paris'] != ['Alice', 'Paris']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'Alice',\nE                   'Paris',\nE               ],\nE               [\nE         +         2,\nE                   'Bob',\nE                   'Rome',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:344: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4747215130046243,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_common_delimiters[\\t]",
+      "lineno": 323,
+      "outcome": "failed",
+      "keywords": [
+        "test_common_delimiters[\\t]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "\\t",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0013233969948487356,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.033159618003992364,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 344,
+          "message": "AssertionError: assert [[1, 'Alice', 'Paris'], [2, 'Bob', 'Rome']] == [['Alice', 'Paris'], ['Bob', 'Rome']]\n  \n  At index 0 diff: [1, 'Alice', 'Paris'] != ['Alice', 'Paris']\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'Alice',\n            'Paris',\n        ],\n        [\n  +         2,\n            'Bob',\n            'Rome',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 344,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a45c0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3dc8f0>\ndelimiter = '\\t'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\"delimiter\", [\",\", \";\", \"\\t\"])\n    def test_common_delimiters(\n        self,\n        client: httpx.Client,\n        local_source_server,\n        delimiter: str,\n    ) -> None:\n        \"\"\"Comma, semicolon, and tab delimiters are supported during ingestion.\"\"\"\n        csv_text = (\n            f\"name{delimiter}city\\nAlice{delimiter}Paris\\nBob{delimiter}Rome\\n\"\n        )\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=f\"/delim_{ord(delimiter)}.csv\",\n            body=csv_text.encode(\"utf-8\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"rows\"] == [[\"Alice\", \"Paris\"], [\"Bob\", \"Rome\"]]\nE       AssertionError: assert [[1, 'Alice', 'Paris'], [2, 'Bob', 'Rome']] == [['Alice', 'Paris'], ['Bob', 'Rome']]\nE         \nE         At index 0 diff: [1, 'Alice', 'Paris'] != ['Alice', 'Paris']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'Alice',\nE                   'Paris',\nE               ],\nE               [\nE         +         2,\nE                   'Bob',\nE                   'Rome',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:344: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.47297578598954715,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[name,emoji-alice,smile\\nbob,wave\\n]",
+      "lineno": 345,
+      "outcome": "failed",
+      "keywords": [
+        "test_ingest_varied_text_payloads[name,emoji-alice,smile\\nbob,wave\\n]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "name,emoji-alice,smile\\nbob,wave\\n",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001951341997482814,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.031774617003975436,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 384,
+          "message": "AssertionError: assert ['rowid', 'name', 'emoji'] == ['name', 'emoji']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'emoji'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n        'emoji',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 384,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a4ad0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3dca70>\nheader = 'name,emoji', rows = 'alice,smile\\nbob,wave\\n'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        (\"header\", \"rows\"),\n        [\n            (\n                \"name,emoji\",\n                \"alice,smile\\nbob,wave\\n\",\n            ),\n            (\n                \"name,note\",\n                \"alice,naive\\nbob,cafe\\n\",\n            ),\n            (\n                \"k,v\",\n                \"left,  space\\nright,space  \\n\",\n            ),\n            (\n                \"id,text\",\n                \"1,\" + \"x\" * 200 + \"\\n\",\n            ),\n        ],\n    )\n    def test_ingest_varied_text_payloads(\n        self,\n        client: httpx.Client,\n        local_source_server,\n        header: str,\n        rows: str,\n    ) -> None:\n        \"\"\"Ingest varied textual CSV payloads and return stored data rows.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/varied.csv\",\n            body=(header + \"\\n\" + rows).encode(\"utf-8\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"columns\"] == header.split(\",\")\nE       AssertionError: assert ['rowid', 'name', 'emoji'] == ['name', 'emoji']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'emoji'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE               'emoji',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:384: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.478703102999134,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[name,note-alice,naive\\nbob,cafe\\n]",
+      "lineno": 345,
+      "outcome": "failed",
+      "keywords": [
+        "test_ingest_varied_text_payloads[name,note-alice,naive\\nbob,cafe\\n]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "name,note-alice,naive\\nbob,cafe\\n",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012649919954128563,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03751963499234989,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 384,
+          "message": "AssertionError: assert ['rowid', 'name', 'note'] == ['name', 'note']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'note'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n        'note',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 384,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a4ce0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3de210>\nheader = 'name,note', rows = 'alice,naive\\nbob,cafe\\n'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        (\"header\", \"rows\"),\n        [\n            (\n                \"name,emoji\",\n                \"alice,smile\\nbob,wave\\n\",\n            ),\n            (\n                \"name,note\",\n                \"alice,naive\\nbob,cafe\\n\",\n            ),\n            (\n                \"k,v\",\n                \"left,  space\\nright,space  \\n\",\n            ),\n            (\n                \"id,text\",\n                \"1,\" + \"x\" * 200 + \"\\n\",\n            ),\n        ],\n    )\n    def test_ingest_varied_text_payloads(\n        self,\n        client: httpx.Client,\n        local_source_server,\n        header: str,\n        rows: str,\n    ) -> None:\n        \"\"\"Ingest varied textual CSV payloads and return stored data rows.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/varied.csv\",\n            body=(header + \"\\n\" + rows).encode(\"utf-8\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"columns\"] == header.split(\",\")\nE       AssertionError: assert ['rowid', 'name', 'note'] == ['name', 'note']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'note'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE               'note',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:384: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.480517135001719,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[k,v-left,  space\\nright,space  \\n]",
+      "lineno": 345,
+      "outcome": "failed",
+      "keywords": [
+        "test_ingest_varied_text_payloads[k,v-left,  space\\nright,space  \\n]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "k,v-left,  space\\nright,space  \\n",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010234749934170395,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.030388215003767982,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 384,
+          "message": "AssertionError: assert ['rowid', 'k', 'v'] == ['k', 'v']\n  \n  At index 0 diff: 'rowid' != 'k'\n  Left contains one more item: 'v'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'k',\n        'v',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 384,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a4da0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3f1b50>\nheader = 'k,v', rows = 'left,  space\\nright,space  \\n'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        (\"header\", \"rows\"),\n        [\n            (\n                \"name,emoji\",\n                \"alice,smile\\nbob,wave\\n\",\n            ),\n            (\n                \"name,note\",\n                \"alice,naive\\nbob,cafe\\n\",\n            ),\n            (\n                \"k,v\",\n                \"left,  space\\nright,space  \\n\",\n            ),\n            (\n                \"id,text\",\n                \"1,\" + \"x\" * 200 + \"\\n\",\n            ),\n        ],\n    )\n    def test_ingest_varied_text_payloads(\n        self,\n        client: httpx.Client,\n        local_source_server,\n        header: str,\n        rows: str,\n    ) -> None:\n        \"\"\"Ingest varied textual CSV payloads and return stored data rows.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/varied.csv\",\n            body=(header + \"\\n\" + rows).encode(\"utf-8\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"columns\"] == header.split(\",\")\nE       AssertionError: assert ['rowid', 'k', 'v'] == ['k', 'v']\nE         \nE         At index 0 diff: 'rowid' != 'k'\nE         Left contains one more item: 'v'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'k',\nE               'v',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:384: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48591412798850797,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_ingest_varied_text_payloads[id,text-1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n]",
+      "lineno": 345,
+      "outcome": "failed",
+      "keywords": [
+        "test_ingest_varied_text_payloads[id,text-1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "id,text-1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0013281970022944734,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.032378460993641056,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 384,
+          "message": "AssertionError: assert ['rowid', 'id', 'text'] == ['id', 'text']\n  \n  At index 0 diff: 'rowid' != 'id'\n  Left contains one more item: 'text'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'id',\n        'text',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 384,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a4e90>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3f23f0>\nheader = 'id,text'\nrows = '1,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\\n'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        (\"header\", \"rows\"),\n        [\n            (\n                \"name,emoji\",\n                \"alice,smile\\nbob,wave\\n\",\n            ),\n            (\n                \"name,note\",\n                \"alice,naive\\nbob,cafe\\n\",\n            ),\n            (\n                \"k,v\",\n                \"left,  space\\nright,space  \\n\",\n            ),\n            (\n                \"id,text\",\n                \"1,\" + \"x\" * 200 + \"\\n\",\n            ),\n        ],\n    )\n    def test_ingest_varied_text_payloads(\n        self,\n        client: httpx.Client,\n        local_source_server,\n        header: str,\n        rows: str,\n    ) -> None:\n        \"\"\"Ingest varied textual CSV payloads and return stored data rows.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/varied.csv\",\n            body=(header + \"\\n\" + rows).encode(\"utf-8\"),\n        )\n        response = dataset_request(client, dataset_id)\n        payload = assert_ok_envelope(response)\n>       assert payload[\"columns\"] == header.split(\",\")\nE       AssertionError: assert ['rowid', 'id', 'text'] == ['id', 'text']\nE         \nE         At index 0 diff: 'rowid' != 'id'\nE         Left contains one more item: 'text'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'id',\nE               'text',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:384: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4847725459985668,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_query_stable",
+      "lineno": 386,
+      "outcome": "passed",
+      "keywords": [
+        "test_query_stable",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001395300991134718,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03804697400482837,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4885591220081551,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_limit_exactly_100",
+      "lineno": 404,
+      "outcome": "failed",
+      "keywords": [
+        "test_limit_exactly_100",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001018374998238869,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.05669263401068747,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 422,
+          "message": "AssertionError: assert [1, 'item0', 0] == ['item0', 0]\n  \n  At index 0 diff: 1 != 'item0'\n  Left contains one more item: 0\n  \n  Full diff:\n    [\n  +     1,\n        'item0',\n        0,\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 422,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a593560>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3f1f70>\n\n    @pytest.mark.functionality\n    def test_limit_exactly_100(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Dataset with exactly 100 rows returns all rows.\"\"\"\n        rows = [f\"item{i},{i}\" for i in range(100)]\n        body = (\"name,value\\n\" + \"\\n\".join(rows) + \"\\n\").encode(\"utf-8\")\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/exactly_100.csv\",\n            body=body,\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n        assert len(payload[\"rows\"]) == 100\n>       assert payload[\"rows\"][0] == [\"item0\", 0]\nE       AssertionError: assert [1, 'item0', 0] == ['item0', 0]\nE         \nE         At index 0 diff: 1 != 'item0'\nE         Left contains one more item: 0\nE         \nE         Full diff:\nE           [\nE         +     1,\nE               'item0',\nE               0,\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:422: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.47922474100778345,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_preserves_whitespace",
+      "lineno": 424,
+      "outcome": "failed",
+      "keywords": [
+        "test_preserves_whitespace",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009567700035404414,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03093155598617159,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 439,
+          "message": "AssertionError: assert [[1, 'left', 'space'], [2, 'right', 'space']] == [['left', '  space'], ['right', 'space  ']]\n  \n  At index 0 diff: [1, 'left', 'space'] != ['left', '  space']\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'left',\n  -         '  space',\n  ?          --\n  +         'space',\n        ],\n        [\n  +         2,\n            'right',\n  -         'space  ',\n  ?               --\n  +         'space',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 439,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a568ef0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3deae0>\n\n    @pytest.mark.functionality\n    def test_preserves_whitespace(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Leading and trailing spaces in CSV field values are preserved.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/space_text.csv\",\n            body=b\"side,value\\nleft,  space\\nright,space  \\n\",\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert payload[\"rows\"] == [[\"left\", \"  space\"], [\"right\", \"space  \"]]\nE       AssertionError: assert [[1, 'left', 'space'], [2, 'right', 'space']] == [['left', '  space'], ['right', 'space  ']]\nE         \nE         At index 0 diff: [1, 'left', 'space'] != ['left', '  space']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'left',\nE         -         '  space',\nE         ?          --\nE         +         'space',\nE               ],\nE               [\nE         +         2,\nE                   'right',\nE         -         'space  ',\nE         ?               --\nE         +         'space',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:439: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4851611739868531,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_negative_values_as_numbers",
+      "lineno": 441,
+      "outcome": "failed",
+      "keywords": [
+        "test_negative_values_as_numbers",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0008431609894614667,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.02901951600506436,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 456,
+          "message": "assert [[1, -3], [2, -4.5]] == [[-3], [-4.5]]\n  \n  At index 0 diff: [1, -3] != [-3]\n  \n  Full diff:\n    [\n        [\n  +         1,\n            -3,\n        ],\n        [\n  +         2,\n            -4.5,\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 456,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5698e0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3dc0b0>\n\n    @pytest.mark.functionality\n    def test_negative_values_as_numbers(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Negative numeric values are preserved as number types.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/negative_numeric.csv\",\n            body=b\"value\\n-3\\n-4.5\\n\",\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert payload[\"rows\"] == [[-3], [-4.5]]\nE       assert [[1, -3], [2, -4.5]] == [[-3], [-4.5]]\nE         \nE         At index 0 diff: [1, -3] != [-3]\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   -3,\nE               ],\nE               [\nE         +         2,\nE                   -4.5,\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:456: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.484228005996556,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_routes[/convert]",
+      "lineno": 458,
+      "outcome": "passed",
+      "keywords": [
+        "test_cors_on_routes[/convert]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "/convert",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004791350074810907,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0023873739992268384,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002695199946174398,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_routes[/not-found]",
+      "lineno": 458,
+      "outcome": "passed",
+      "keywords": [
+        "test_cors_on_routes[/not-found]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "/not-found",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005556410033022985,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002454378001857549,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00038842800131533295,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_cors_on_dataset_query",
+      "lineno": 469,
+      "outcome": "passed",
+      "keywords": [
+        "test_cors_on_dataset_query",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010704779997467995,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.029013815001235344,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49727095699927304,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_options_preflight_cors[/convert]",
+      "lineno": 486,
+      "outcome": "passed",
+      "keywords": [
+        "test_options_preflight_cors[/convert]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "/convert",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00047463399823755026,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0021673580049537122,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00014511001063510776,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_options_preflight_cors[/datasets/does-not-exist]",
+      "lineno": 486,
+      "outcome": "passed",
+      "keywords": [
+        "test_options_preflight_cors[/datasets/does-not-exist]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "/datasets/does-not-exist",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004042290092911571,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0021742579992860556,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00019231399346608669,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_same_url_same_id",
+      "lineno": 506,
+      "outcome": "passed",
+      "keywords": [
+        "test_same_url_same_id",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000851262011565268,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07831610999710392,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4983055320044514,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_different_urls_different_ids",
+      "lineno": 523,
+      "outcome": "passed",
+      "keywords": [
+        "test_different_urls_different_ids",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009964719938579947,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.06333231799362693,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49952562199905515,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_empty_file_rejected",
+      "lineno": 540,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_file_rejected",
+        "error",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0017688289954094216,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.030092493994743563,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4990317860065261,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_time_boundary_values_are_text",
+      "lineno": 553,
+      "outcome": "failed",
+      "keywords": [
+        "test_time_boundary_values_are_text",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0013193969934945926,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03423639599350281,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 568,
+          "message": "AssertionError: assert [[1, 'a', '0:00'], [2, 'b', '08:30'], [3, 'c', '23:59']] == [['a', '0:00'], ['b', '08:30'], ['c', '23:59']]\n  \n  At index 0 diff: [1, 'a', '0:00'] != ['a', '0:00']\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'a',\n            '0:00',\n        ],\n        [\n  +         2,\n            'b',\n            '08:30',\n        ],\n        [\n  +         3,\n            'c',\n            '23:59',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 568,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a6d50>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f1460>\n\n    @pytest.mark.functionality\n    def test_time_boundary_values_are_text(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Boundary time strings remain as text values in dataset rows.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/time_boundary.csv\",\n            body=(b\"id,time\\na,0:00\\nb,08:30\\nc,23:59\\n\"),\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert payload[\"rows\"] == [\n            [\"a\", \"0:00\"],\n            [\"b\", \"08:30\"],\n            [\"c\", \"23:59\"],\n        ]\nE       AssertionError: assert [[1, 'a', '0:00'], [2, 'b', '08:30'], [3, 'c', '23:59']] == [['a', '0:00'], ['b', '08:30'], ['c', '23:59']]\nE         \nE         At index 0 diff: [1, 'a', '0:00'] != ['a', '0:00']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'a',\nE                   '0:00',\nE               ],\nE               [\nE         +         2,\nE                   'b',\nE                   '08:30',\nE               ],\nE               [\nE         +         3,\nE                   'c',\nE                   '23:59',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:568: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48252218100242317,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_large_dataset_limit_order",
+      "lineno": 574,
+      "outcome": "failed",
+      "keywords": [
+        "test_large_dataset_limit_order",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0023999770055525005,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.06767268999828957,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 592,
+          "message": "AssertionError: assert [1, 'user0', 0] == ['user0', 0]\n  \n  At index 0 diff: 1 != 'user0'\n  Left contains one more item: 0\n  \n  Full diff:\n    [\n  +     1,\n        'user0',\n        0,\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 592,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a7140>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a506570>\n\n    @pytest.mark.functionality\n    def test_large_dataset_limit_order(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Large dataset queries are limited to 100 rows while preserving ordering.\"\"\"\n        rows = [f\"user{i},{i}\" for i in range(5000)]\n        body = (\"name,score\\n\" + \"\\n\".join(rows) + \"\\n\").encode(\"utf-8\")\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/large_limit.csv\",\n            body=body,\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n        assert len(payload[\"rows\"]) == 100\n>       assert payload[\"rows\"][0] == [\"user0\", 0]\nE       AssertionError: assert [1, 'user0', 0] == ['user0', 0]\nE         \nE         At index 0 diff: 1 != 'user0'\nE         Left contains one more item: 0\nE         \nE         Full diff:\nE           [\nE         +     1,\nE               'user0',\nE               0,\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:592: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.44994557301106397,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_id_from_url_not_charset",
+      "lineno": 594,
+      "outcome": "passed",
+      "keywords": [
+        "test_id_from_url_not_charset",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0014982110005803406,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.06283023300056811,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4989536860084627,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_preserves_header_and_time_whitespace",
+      "lineno": 611,
+      "outcome": "failed",
+      "keywords": [
+        "test_preserves_header_and_time_whitespace",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012808949977625161,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.04073660299764015,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 626,
+          "message": "AssertionError: assert ['rowid', ' name ', 'time'] == [' name ', 'time']\n  \n  At index 0 diff: 'rowid' != ' name '\n  Left contains one more item: 'time'\n  \n  Full diff:\n    [\n  +     'rowid',\n        ' name ',\n        'time',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 626,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a79e0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f1f70>\n\n    @pytest.mark.functionality\n    def test_preserves_header_and_time_whitespace(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Headers and time-like text preserve significant surrounding whitespace.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/header_time_whitespace.csv\",\n            body=(b\" name ,time\\nAlice, 08:30 \\nBob,09:15\\n\"),\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert payload[\"columns\"] == [\" name \", \"time\"]\nE       AssertionError: assert ['rowid', ' name ', 'time'] == [' name ', 'time']\nE         \nE         At index 0 diff: 'rowid' != ' name '\nE         Left contains one more item: 'time'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               ' name ',\nE               'time',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:626: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.47366622199479025,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_trailing_empty_line_excluded",
+      "lineno": 628,
+      "outcome": "failed",
+      "keywords": [
+        "test_trailing_empty_line_excluded",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012168899993412197,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03607396000006702,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 643,
+          "message": "AssertionError: assert 3 == 2\n +  where 3 = len([[1, 'a', 1], [2, 'b', 2], [3, '', '']])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 643,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a7ec0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a3dfce0>\n\n    @pytest.mark.functionality\n    def test_trailing_empty_line_excluded(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Trailing empty lines in CSV do not produce extra data rows.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/trailing_empty.csv\",\n            body=b\"name,val\\na,1\\nb,2\\n\\n\",\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert len(payload[\"rows\"]) == 2\nE       AssertionError: assert 3 == 2\nE        +  where 3 = len([[1, 'a', 1], [2, 'b', 2], [3, '', '']])\n\n.evaluation_tests/test_checkpoint_1.py:643: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48184052399301436,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_extra_columns_trimmed",
+      "lineno": 645,
+      "outcome": "failed",
+      "keywords": [
+        "test_extra_columns_trimmed",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0015394140064017847,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.041916091009625234,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 660,
+          "message": "AssertionError: assert ['rowid', 'name', 'val'] == ['name', 'val']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'val'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n        'val',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 660,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a7590>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5067e0>\n\n    @pytest.mark.functionality\n    def test_extra_columns_trimmed(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Rows whose field count matches the header parse successfully.\"\"\"\n        dataset_id = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/balanced_cols.csv\",\n            body=b\"name,val\\na,1\\n\",\n        )\n        payload = assert_ok_envelope(dataset_request(client, dataset_id))\n>       assert payload[\"columns\"] == [\"name\", \"val\"]\nE       AssertionError: assert ['rowid', 'name', 'val'] == ['name', 'val']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'val'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE               'val',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:660: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4808110489975661,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestFunctionality::test_multiple_datasets_independent",
+      "lineno": 662,
+      "outcome": "failed",
+      "keywords": [
+        "test_multiple_datasets_independent",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0016930249985307455,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.06795311000314541,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 687,
+          "message": "AssertionError: assert ['rowid', 'name', 'score'] == ['name', 'score']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'score'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n        'score',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 687,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_1.TestFunctionality object at 0x7da09a5a70b0>\nclient = <httpx.Client object at 0x7da09a5d3a10>\nlocal_source_server = <conftest.SourceServer object at 0x7da09a5f2600>\n\n    @pytest.mark.functionality\n    def test_multiple_datasets_independent(\n        self,\n        client: httpx.Client,\n        local_source_server,\n    ) -> None:\n        \"\"\"Two different source URLs produce independent, coexisting datasets.\"\"\"\n        id1 = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/ds_alpha.csv\",\n            body=b\"name,score\\nalice,10\\nbob,20\\n\",\n        )\n        id2 = _ingest_source(\n            client,\n            local_source_server,\n            path=\"/ds_beta.csv\",\n            body=b\"city,population\\nTokyo,13960000\\nParis,2161000\\n\",\n        )\n        assert id1 != id2\n    \n        p1 = assert_ok_envelope(dataset_request(client, id1))\n        p2 = assert_ok_envelope(dataset_request(client, id2))\n    \n>       assert p1[\"columns\"] == [\"name\", \"score\"]\nE       AssertionError: assert ['rowid', 'name', 'score'] == ['name', 'score']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'score'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE               'score',\nE           ]\n\n.evaluation_tests/test_checkpoint_1.py:687: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4811029700067593,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_unknown_dataset_404",
+      "lineno": 694,
+      "outcome": "passed",
+      "keywords": [
+        "test_unknown_dataset_404",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007215529913082719,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0024206779926316813,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00014001000090502203,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_malformed_charset",
+      "lineno": 703,
+      "outcome": "passed",
+      "keywords": [
+        "test_malformed_charset",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011189830111106858,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.027523130003828555,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49933501399937086,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_convert_bad_url[bad-scheme]",
+      "lineno": 718,
+      "outcome": "passed",
+      "keywords": [
+        "test_convert_bad_url[bad-scheme]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "bad-scheme",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000548340001842007,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0023064700071699917,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00013590999878942966,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_convert_bad_url[missing-scheme]",
+      "lineno": 718,
+      "outcome": "passed",
+      "keywords": [
+        "test_convert_bad_url[missing-scheme]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "missing-scheme",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003663269890239462,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002426678009214811,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015291100135073066,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_header_only_rejected",
+      "lineno": 733,
+      "outcome": "passed",
+      "keywords": [
+        "test_header_only_rejected",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010826799989445135,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.034843368994188495,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4969297369971173,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_empty_source_parameter",
+      "lineno": 746,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_source_parameter",
+        "functionality",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005194380064494908,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0032480399968335405,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00024281800142489374,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_upstream_403_to_404",
+      "lineno": 755,
+      "outcome": "passed",
+      "keywords": [
+        "test_upstream_403_to_404",
+        "functionality",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011580850114114583,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.03680261399131268,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.5131069299968658,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_total_before_pagination",
+      "lineno": 49,
+      "outcome": "passed",
+      "keywords": [
+        "test_total_before_pagination",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.5436577829968883,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006350568000925705,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.491458333999617,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_size_and_offset_apply",
+      "lineno": 61,
+      "outcome": "failed",
+      "keywords": [
+        "test_size_and_offset_apply",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03578873800870497,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0036040659906575456,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 71,
+          "message": "AssertionError: assert [[2, 'Bob', 25, 'Seattle'], [3, 'Charlie', 35, 'Portland']] == [['Bob', 25, 'Seattle'], ['Charlie', 35, 'Portland']]\n  \n  At index 0 diff: [2, 'Bob', 25, 'Seattle'] != ['Bob', 25, 'Seattle']\n  \n  Full diff:\n    [\n        [\n  +         2,\n            'Bob',\n            25,\n            'Seattle',\n        ],\n        [\n  +         3,\n            'Charlie',\n            35,\n            'Portland',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 71,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestCore object at 0x7da09a5ccb60>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '22307f20946cf516437b2b25ef4ed4977f5440fdbc3726ec82015986df6bddec'\n\n    def test_size_and_offset_apply(self, client: httpx.Client, cp2_dataset_id: str) -> None:\n        \"\"\"_size and _offset combine to return the expected paged subset.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(\n                client,\n                cp2_dataset_id,\n                params={\"_size\": \"2\", \"_offset\": \"1\"},\n            )\n        )\n>       assert payload[\"rows\"] == [[\"Bob\", 25, \"Seattle\"], [\"Charlie\", 35, \"Portland\"]]\nE       AssertionError: assert [[2, 'Bob', 25, 'Seattle'], [3, 'Charlie', 35, 'Portland']] == [['Bob', 25, 'Seattle'], ['Charlie', 35, 'Portland']]\nE         \nE         At index 0 diff: [2, 'Bob', 25, 'Seattle'] != ['Bob', 25, 'Seattle']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         2,\nE                   'Bob',\nE                   25,\nE                   'Seattle',\nE               ],\nE               [\nE         +         3,\nE                   'Charlie',\nE                   35,\nE                   'Portland',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:71: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4824125669983914,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_sort_ascending_is_stable",
+      "lineno": 72,
+      "outcome": "failed",
+      "keywords": [
+        "test_sort_ascending_is_stable",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.030952882007113658,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003337745991302654,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 82,
+          "message": "AssertionError: assert [2, 'Bob', 25, 'Seattle'] == ['Bob', 25, 'Seattle']\n  \n  At index 0 diff: 2 != 'Bob'\n  Left contains one more item: 'Seattle'\n  \n  Full diff:\n    [\n  +     2,\n        'Bob',\n        25,\n        'Seattle',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 82,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestCore object at 0x7da09a5cc6b0>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = 'b59a6014b15696c514a7ba5a023e9bc8cbe0deb34249add06a0879309ade5d5a'\n\n    def test_sort_ascending_is_stable(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"_sort orders rows ascending and preserves tie order from source.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_sort\": \"age\"})\n        )\n>       assert payload[\"rows\"][0] == [\"Bob\", 25, \"Seattle\"]\nE       AssertionError: assert [2, 'Bob', 25, 'Seattle'] == ['Bob', 25, 'Seattle']\nE         \nE         At index 0 diff: 2 != 'Bob'\nE         Left contains one more item: 'Seattle'\nE         \nE         Full diff:\nE           [\nE         +     2,\nE               'Bob',\nE               25,\nE               'Seattle',\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:82: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48393667899654247,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_sort_desc_paginate",
+      "lineno": 85,
+      "outcome": "failed",
+      "keywords": [
+        "test_sort_desc_paginate",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.030207727002562024,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003755576995899901,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 99,
+          "message": "AssertionError: assert [[1, 'Alice', 30, 'Portland'], [5, 'Eve', 30, 'Seattle']] == [['Alice', 30, 'Portland'], ['Eve', 30, 'Seattle']]\n  \n  At index 0 diff: [1, 'Alice', 30, 'Portland'] != ['Alice', 30, 'Portland']\n  \n  Full diff:\n    [\n        [\n  +         1,\n            'Alice',\n            30,\n            'Portland',\n        ],\n        [\n  +         5,\n            'Eve',\n            30,\n            'Seattle',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 99,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestCore object at 0x7da09a5cf080>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = 'ae88538685508be79610fd8a147e6026bc3a7858d92516bd6a8de61a6ff0935d'\n\n    def test_sort_desc_paginate(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"_sort_desc is applied to full data before _offset and _size paging.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(\n                client,\n                cp2_dataset_id,\n                params={\"_sort_desc\": \"age\", \"_offset\": \"1\", \"_size\": \"2\"},\n            )\n        )\n>       assert payload[\"rows\"] == [[\"Alice\", 30, \"Portland\"], [\"Eve\", 30, \"Seattle\"]]\nE       AssertionError: assert [[1, 'Alice', 30, 'Portland'], [5, 'Eve', 30, 'Seattle']] == [['Alice', 30, 'Portland'], ['Eve', 30, 'Seattle']]\nE         \nE         At index 0 diff: [1, 'Alice', 30, 'Portland'] != ['Alice', 30, 'Portland']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         1,\nE                   'Alice',\nE                   30,\nE                   'Portland',\nE               ],\nE               [\nE         +         5,\nE                   'Eve',\nE                   30,\nE                   'Seattle',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:99: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4824587699986296,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_sort_desc_precedence",
+      "lineno": 100,
+      "outcome": "failed",
+      "keywords": [
+        "test_sort_desc_precedence",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.031978757004253566,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0031621329981135204,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 114,
+          "message": "AssertionError: assert [[3, 'Charlie', 35, 'Portland'], [1, 'Alice', 30, 'Portland']] == [['Charlie', 35, 'Portland'], ['Alice', 30, 'Portland']]\n  \n  At index 0 diff: [3, 'Charlie', 35, 'Portland'] != ['Charlie', 35, 'Portland']\n  \n  Full diff:\n    [\n        [\n  +         3,\n            'Charlie',\n            35,\n            'Portland',\n        ],\n        [\n  +         1,\n            'Alice',\n            30,\n            'Portland',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 114,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestCore object at 0x7da09a5cc3b0>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = 'd9aceb6f11d78ff06fbb791788157efc5b677b5ffd3d7aa47cfe2318f076e58d'\n\n    def test_sort_desc_precedence(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"When _sort and _sort_desc are both set, _sort_desc takes precedence.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(\n                client,\n                cp2_dataset_id,\n                params={\"_sort\": \"age\", \"_sort_desc\": \"age\", \"_size\": \"2\"},\n            )\n        )\n>       assert payload[\"rows\"] == [[\"Charlie\", 35, \"Portland\"], [\"Alice\", 30, \"Portland\"]]\nE       AssertionError: assert [[3, 'Charlie', 35, 'Portland'], [1, 'Alice', 30, 'Portland']] == [['Charlie', 35, 'Portland'], ['Alice', 30, 'Portland']]\nE         \nE         At index 0 diff: [3, 'Charlie', 35, 'Portland'] != ['Charlie', 35, 'Portland']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         3,\nE                   'Charlie',\nE                   35,\nE                   'Portland',\nE               ],\nE               [\nE         +         1,\nE                   'Alice',\nE                   30,\nE                   'Portland',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:114: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48724039299122524,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_shape_objects_includes_rowid",
+      "lineno": 115,
+      "outcome": "failed",
+      "keywords": [
+        "test_shape_objects_includes_rowid",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03770337700552773,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003086926997639239,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 126,
+          "message": "assert 1 == 2"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 126,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestCore object at 0x7da09a5cc170>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = 'd8e55d41bb59749e692bc709b44329bf09865d94d7ba63c984677de9dfc19b6e'\n\n    def test_shape_objects_includes_rowid(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"_shape=objects includes each row's source-file rowid.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_shape\": \"objects\"})\n        )\n        first = payload[\"rows\"][0]\n>       assert first[\"rowid\"] == 2\nE       assert 1 == 2\n\n.evaluation_tests/test_checkpoint_2.py:126: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4868118579906877,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_rowid_ignores_sort",
+      "lineno": 128,
+      "outcome": "failed",
+      "keywords": [
+        "test_rowid_ignores_sort",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.032933424998191185,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003229238005587831,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 143,
+          "message": "assert 2 == 3"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 143,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestCore object at 0x7da09a5cdeb0>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '4d1b8f913b4cabee05063ddf39a35a32d10b7e46d9d570d40166401efeefbe81'\n\n    def test_rowid_ignores_sort(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"Object rows report original source rowid values under sorted pagination.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(\n                client,\n                cp2_dataset_id,\n                params={\"_shape\": \"objects\", \"_sort\": \"age\", \"_size\": \"2\"},\n            )\n        )\n        assert payload[\"rows\"][0][\"name\"] == \"Bob\"\n>       assert payload[\"rows\"][0][\"rowid\"] == 3\nE       assert 2 == 3\n\n.evaluation_tests/test_checkpoint_2.py:143: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4814234609948471,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_rowid_hide_removes_rowid",
+      "lineno": 146,
+      "outcome": "passed",
+      "keywords": [
+        "test_rowid_hide_removes_rowid",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.028688412989140488,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002339372003916651,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49687670001003426,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_total_hide_removes_total",
+      "lineno": 161,
+      "outcome": "passed",
+      "keywords": [
+        "test_total_hide_removes_total",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02755452999554109,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003332044987473637,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49571221400401555,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_invalid_param_400[invalid_size]",
+      "lineno": 172,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_param_400[invalid_size]",
+        "error",
+        "parametrize",
+        "pytestmark",
+        "invalid_size",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02970948800793849,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002571289995103143,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49582412200106774,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestCore::test_invalid_param_400[invalid_shape]",
+      "lineno": 172,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_param_400[invalid_shape]",
+        "error",
+        "parametrize",
+        "pytestmark",
+        "invalid_shape",
+        "TestCore",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.028615507995709777,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0024166780058294535,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4957714180054609,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_size_variants[1-1]",
+      "lineno": 191,
+      "outcome": "passed",
+      "keywords": [
+        "test_size_variants[1-1]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "1-1",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.034501842004829086,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002320471001439728,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4906316389970016,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_size_variants[2-2]",
+      "lineno": 191,
+      "outcome": "passed",
+      "keywords": [
+        "test_size_variants[2-2]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "2-2",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02972498899907805,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002634693999425508,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4963103579939343,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_size_variants[5-5]",
+      "lineno": 191,
+      "outcome": "passed",
+      "keywords": [
+        "test_size_variants[5-5]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "5-5",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02762893500039354,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0029959200037410483,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49590822799655143,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_size_variants[20-5]",
+      "lineno": 191,
+      "outcome": "passed",
+      "keywords": [
+        "test_size_variants[20-5]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "20-5",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.029015236999839544,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002954718002001755,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4947771450097207,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_variants[0-Alice]",
+      "lineno": 209,
+      "outcome": "failed",
+      "keywords": [
+        "test_offset_variants[0-Alice]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "0-Alice",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02977489300246816,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0025942909996956587,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 229,
+          "message": "AssertionError: assert 1 == 'Alice'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 229,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5cf200>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = 'a74b708f5b8e75e1dbfe193402fd32f03366ce94300be5996f8b84ec693fcc8e'\noffset = '0', expected_first = 'Alice'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"offset,expected_first\",\n        [(\"0\", \"Alice\"), (\"1\", \"Bob\"), (\"4\", \"Eve\"), (\"10\", None)],\n    )\n    def test_offset_variants(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n        offset: str,\n        expected_first: str | None,\n    ) -> None:\n        \"\"\"_offset skips the specified number of rows before returning data.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_offset\": offset})\n        )\n        if expected_first is None:\n            assert payload[\"rows\"] == []\n        else:\n>           assert payload[\"rows\"][0][0] == expected_first\nE           AssertionError: assert 1 == 'Alice'\n\n.evaluation_tests/test_checkpoint_2.py:229: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48377343399624806,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_variants[1-Bob]",
+      "lineno": 209,
+      "outcome": "failed",
+      "keywords": [
+        "test_offset_variants[1-Bob]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "1-Bob",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.029200951001257636,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0027365019923308864,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 229,
+          "message": "AssertionError: assert 2 == 'Bob'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 229,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5cca40>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '7ffbf2a6043ea1a00d2953d4cb8a2f3ddebaa901c2113cae00d3277fbd42ec95'\noffset = '1', expected_first = 'Bob'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"offset,expected_first\",\n        [(\"0\", \"Alice\"), (\"1\", \"Bob\"), (\"4\", \"Eve\"), (\"10\", None)],\n    )\n    def test_offset_variants(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n        offset: str,\n        expected_first: str | None,\n    ) -> None:\n        \"\"\"_offset skips the specified number of rows before returning data.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_offset\": offset})\n        )\n        if expected_first is None:\n            assert payload[\"rows\"] == []\n        else:\n>           assert payload[\"rows\"][0][0] == expected_first\nE           AssertionError: assert 2 == 'Bob'\n\n.evaluation_tests/test_checkpoint_2.py:229: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48393104600836523,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_variants[4-Eve]",
+      "lineno": 209,
+      "outcome": "failed",
+      "keywords": [
+        "test_offset_variants[4-Eve]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "4-Eve",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.030313933006254956,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0022221639956114814,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 229,
+          "message": "AssertionError: assert 5 == 'Eve'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 229,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5ce4e0>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = 'ea612ec1cea292e2225a70d12cf43288cceac1e4c6fc3e460f0555094b964bc6'\noffset = '4', expected_first = 'Eve'\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"offset,expected_first\",\n        [(\"0\", \"Alice\"), (\"1\", \"Bob\"), (\"4\", \"Eve\"), (\"10\", None)],\n    )\n    def test_offset_variants(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n        offset: str,\n        expected_first: str | None,\n    ) -> None:\n        \"\"\"_offset skips the specified number of rows before returning data.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_offset\": offset})\n        )\n        if expected_first is None:\n            assert payload[\"rows\"] == []\n        else:\n>           assert payload[\"rows\"][0][0] == expected_first\nE           AssertionError: assert 5 == 'Eve'\n\n.evaluation_tests/test_checkpoint_2.py:229: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48581618499883916,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_variants[10-None]",
+      "lineno": 209,
+      "outcome": "passed",
+      "keywords": [
+        "test_offset_variants[10-None]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "10-None",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03144731599604711,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0020911540050292388,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4955177990050288,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_keys[name]",
+      "lineno": 230,
+      "outcome": "passed",
+      "keywords": [
+        "test_sort_keys[name]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "name",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.04360881200409494,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003301442993688397,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.48487541600479744,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_keys[age]",
+      "lineno": 230,
+      "outcome": "passed",
+      "keywords": [
+        "test_sort_keys[age]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "age",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02833944199664984,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0022138600033940747,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4965020630043,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_keys[city]",
+      "lineno": 230,
+      "outcome": "passed",
+      "keywords": [
+        "test_sort_keys[city]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "city",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.034543287998531014,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002417174997390248,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4961732390074758,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_keys[name]",
+      "lineno": 239,
+      "outcome": "passed",
+      "keywords": [
+        "test_sort_desc_keys[name]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "name",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.030023962011910044,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0027689990092767403,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4961589379963698,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_keys[age]",
+      "lineno": 239,
+      "outcome": "passed",
+      "keywords": [
+        "test_sort_desc_keys[age]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "age",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.04748252000717912,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.004378415993414819,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49343484100245405,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_keys[city]",
+      "lineno": 239,
+      "outcome": "passed",
+      "keywords": [
+        "test_sort_desc_keys[city]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "city",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02932971200789325,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002565185001003556,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49654166599793825,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_name_and_city_order_values",
+      "lineno": 253,
+      "outcome": "failed",
+      "keywords": [
+        "test_sort_name_and_city_order_values",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03550475699012168,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0040159900090657175,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 264,
+          "message": "AssertionError: assert [1, 2, 3, 4, 5] == ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve']\n  \n  At index 0 diff: 1 != 'Alice'\n  \n  Full diff:\n    [\n  -     'Alice',\n  -     'Bob',\n  -     'Charlie',\n  -     'Diana',\n  -     'Eve',\n  +     1,\n  +     2,\n  +     3,\n  +     4,\n  +     5,\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 264,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5d1670>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '3f74a62596f0015a8f89f3798635ace203b5267475dcd15c89081fe593d1b315'\n\n    @pytest.mark.functionality\n    def test_sort_name_and_city_order_values(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"_sort and _sort_desc order rows by specified columns.\"\"\"\n        by_name = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_sort\": \"name\"})\n        )\n>       assert [row[0] for row in by_name[\"rows\"]] == [\n            \"Alice\",\n            \"Bob\",\n            \"Charlie\",\n            \"Diana\",\n            \"Eve\",\n        ]\nE       AssertionError: assert [1, 2, 3, 4, 5] == ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve']\nE         \nE         At index 0 diff: 1 != 'Alice'\nE         \nE         Full diff:\nE           [\nE         -     'Alice',\nE         -     'Bob',\nE         -     'Charlie',\nE         -     'Diana',\nE         -     'Eve',\nE         +     1,\nE         +     2,\nE         +     3,\nE         +     4,\nE         +     5,\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:264: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4790602060093079,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_shape_and_visibility_combinations[params0]",
+      "lineno": 289,
+      "outcome": "passed",
+      "keywords": [
+        "test_shape_and_visibility_combinations[params0]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "params0",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03092752800148446,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003578357005608268,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49308731699420605,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_shape_and_visibility_combinations[params1]",
+      "lineno": 289,
+      "outcome": "passed",
+      "keywords": [
+        "test_shape_and_visibility_combinations[params1]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "params1",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.037367191005614586,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003582158009521663,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.486240723010269,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_shape_and_visibility_combinations[params2]",
+      "lineno": 289,
+      "outcome": "passed",
+      "keywords": [
+        "test_shape_and_visibility_combinations[params2]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "params2",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0405676219961606,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003374243009602651,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49405438599933404,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_columns_exclude_rowid",
+      "lineno": 308,
+      "outcome": "passed",
+      "keywords": [
+        "test_columns_exclude_rowid",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.035625965989311226,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0032424329983768985,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49493215000256896,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sorted_requests_stable",
+      "lineno": 320,
+      "outcome": "passed",
+      "keywords": [
+        "test_sorted_requests_stable",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03141426300862804,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.005851321999216452,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49239866698917467,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_rowid_hide_noop_lists",
+      "lineno": 335,
+      "outcome": "failed",
+      "keywords": [
+        "test_rowid_hide_noop_lists",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02960423199692741,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.005487894988618791,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 353,
+          "message": "AssertionError: assert ['rowid', 'name', 'age', 'city'] == ['name', 'age', 'city']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'city'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n        'age',\n        'city',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 353,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5d17c0>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '6b847ac73e5201cb14241ea4b79f501eecb09c3cb6690db4b14a96f3219bc05b'\n\n    @pytest.mark.functionality\n    def test_rowid_hide_noop_lists(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"_rowid=hide has no effect when _shape=lists.\"\"\"\n        baseline = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_shape\": \"lists\"})\n        )\n        hidden = assert_ok_envelope(\n            dataset_request(\n                client,\n                cp2_dataset_id,\n                params={\"_shape\": \"lists\", \"_rowid\": \"hide\"},\n            )\n        )\n>       assert baseline[\"columns\"] == hidden[\"columns\"]\nE       AssertionError: assert ['rowid', 'name', 'age', 'city'] == ['name', 'age', 'city']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'city'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE               'age',\nE               'city',\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:353: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.47990876699623186,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_rowid_hide_noop_default",
+      "lineno": 355,
+      "outcome": "failed",
+      "keywords": [
+        "test_rowid_hide_noop_default",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03488791300333105,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006280253001023084,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 367,
+          "message": "AssertionError: assert ['rowid', 'name', 'age', 'city'] == ['name', 'age', 'city']\n  \n  At index 0 diff: 'rowid' != 'name'\n  Left contains one more item: 'city'\n  \n  Full diff:\n    [\n  +     'rowid',\n        'name',\n        'age',\n        'city',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 367,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5cf890>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '5db06e614e3ff5c3a67732554c73609ce368b6ea9d140134aac91e9efadfb3dd'\n\n    @pytest.mark.functionality\n    def test_rowid_hide_noop_default(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"_rowid=hide has no effect when response shape is default lists.\"\"\"\n        baseline = assert_ok_envelope(dataset_request(client, cp2_dataset_id))\n        hidden = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_rowid\": \"hide\"})\n        )\n>       assert baseline[\"columns\"] == hidden[\"columns\"]\nE       AssertionError: assert ['rowid', 'name', 'age', 'city'] == ['name', 'age', 'city']\nE         \nE         At index 0 diff: 'rowid' != 'name'\nE         Left contains one more item: 'city'\nE         \nE         Full diff:\nE           [\nE         +     'rowid',\nE               'name',\nE               'age',\nE               'city',\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:367: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.47888349399727304,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_total_ignores_offset_size",
+      "lineno": 370,
+      "outcome": "failed",
+      "keywords": [
+        "test_total_ignores_offset_size",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.030064466001931578,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0027592989936238155,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 386,
+          "message": "AssertionError: assert [[4, 'Diana', 25, 'Austin']] == [['Diana', 25, 'Austin']]\n  \n  At index 0 diff: [4, 'Diana', 25, 'Austin'] != ['Diana', 25, 'Austin']\n  \n  Full diff:\n    [\n        [\n  +         4,\n            'Diana',\n            25,\n            'Austin',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 386,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5ce420>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '4afa03815341cfd97faa83db5d5476546de268aefca810896b51bb78eb923c0a'\n\n    @pytest.mark.functionality\n    def test_total_ignores_offset_size(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"_total remains constant regardless of _offset and _size.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(\n                client,\n                cp2_dataset_id,\n                params={\"_offset\": \"3\", \"_size\": \"1\"},\n            )\n        )\n        assert payload[\"total\"] == 5\n>       assert payload[\"rows\"] == [[\"Diana\", 25, \"Austin\"]]\nE       AssertionError: assert [[4, 'Diana', 25, 'Austin']] == [['Diana', 25, 'Austin']]\nE         \nE         At index 0 diff: [4, 'Diana', 25, 'Austin'] != ['Diana', 25, 'Austin']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         4,\nE                   'Diana',\nE                   25,\nE                   'Austin',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:386: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.48567508200358134,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_composed_controls",
+      "lineno": 387,
+      "outcome": "passed",
+      "keywords": [
+        "test_composed_controls",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.030731713995919563,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0031020230089779943,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4946510370064061,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_shapes_consistent_values",
+      "lineno": 414,
+      "outcome": "failed",
+      "keywords": [
+        "test_shapes_consistent_values",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03215414499572944,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.005216279998421669,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 437,
+          "message": "AssertionError: assert [[4, 'Diana', 25, 'Austin'], [1, 'Alice', 30, 'Portland'], [5, 'Eve', 30, 'Seattle']] == [['Diana', 25, 'Austin'], ['Alice', 30, 'Portland'], ['Eve', 30, 'Seattle']]\n  \n  At index 0 diff: [4, 'Diana', 25, 'Austin'] != ['Diana', 25, 'Austin']\n  \n  Full diff:\n    [\n        [\n  +         4,\n            'Diana',\n            25,\n            'Austin',\n        ],\n        [\n  +         1,\n            'Alice',\n            30,\n            'Portland',\n        ],\n        [\n  +         5,\n            'Eve',\n            30,\n            'Seattle',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 437,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5d0b00>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '350316b4466f4577940fe0eb41667abb2e9e337279edd11e3e601b8ca0e1f8a5'\n\n    @pytest.mark.functionality\n    def test_shapes_consistent_values(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"Lists and objects shapes expose the same rows for equivalent controls.\"\"\"\n        params = {\"_sort\": \"age\", \"_offset\": \"1\", \"_size\": \"3\"}\n        list_payload = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params=params)\n        )\n        object_payload = assert_ok_envelope(\n            dataset_request(\n                client,\n                cp2_dataset_id,\n                params=params | {\"_shape\": \"objects\", \"_rowid\": \"hide\"},\n            )\n        )\n        object_rows_as_lists = [\n            [row[column] for column in object_payload[\"columns\"]]\n            for row in object_payload[\"rows\"]\n        ]\n>       assert list_payload[\"rows\"] == object_rows_as_lists\nE       AssertionError: assert [[4, 'Diana', 25, 'Austin'], [1, 'Alice', 30, 'Portland'], [5, 'Eve', 30, 'Seattle']] == [['Diana', 25, 'Austin'], ['Alice', 30, 'Portland'], ['Eve', 30, 'Seattle']]\nE         \nE         At index 0 diff: [4, 'Diana', 25, 'Austin'] != ['Diana', 25, 'Austin']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         4,\nE                   'Diana',\nE                   25,\nE                   'Austin',\nE               ],\nE               [\nE         +         1,\nE                   'Alice',\nE                   30,\nE                   'Portland',\nE               ],\nE               [\nE         +         5,\nE                   'Eve',\nE                   30,\nE                   'Seattle',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:437: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4798136949975742,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_tie_stability",
+      "lineno": 438,
+      "outcome": "failed",
+      "keywords": [
+        "test_sort_desc_tie_stability",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03266118200554047,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0028701100090984255,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 450,
+          "message": "AssertionError: assert [[3, 'Charlie', 35, 'Portland'], [1, 'Alice', 30, 'Portland'], [5, 'Eve', 30, 'Seattle'], [2, 'Bob', 25, 'Seattle'], [4, 'Diana', 25, 'Austin']] == [['Charlie', 35, 'Portland'], ['Alice', 30, 'Portland'], ['Eve', 30, 'Seattle'], ['Bob', 25, 'Seattle'], ['Diana', 25, 'Austin']]\n  \n  At index 0 diff: [3, 'Charlie', 35, 'Portland'] != ['Charlie', 35, 'Portland']\n  \n  Full diff:\n    [\n        [\n  +         3,\n            'Charlie',\n            35,\n            'Portland',\n        ],\n        [\n  +         1,\n            'Alice',\n            30,\n            'Portland',\n        ],\n        [\n  +         5,\n            'Eve',\n            30,\n            'Seattle',\n        ],\n        [\n  +         2,\n            'Bob',\n            25,\n            'Seattle',\n        ],\n        [\n  +         4,\n            'Diana',\n            25,\n            'Austin',\n        ],\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 450,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5d21b0>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = '5227077044b74785ce2d72659284530d5d15ae287e671204a4d4de904b3bae35'\n\n    @pytest.mark.functionality\n    def test_sort_desc_tie_stability(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"_sort_desc preserves source file order within tied sort-key values.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_sort_desc\": \"age\"})\n        )\n        # age=35: Charlie; age=30: Alice before Eve (source order); age=25: Bob before Diana\n>       assert payload[\"rows\"] == [\n            [\"Charlie\", 35, \"Portland\"],\n            [\"Alice\", 30, \"Portland\"],\n            [\"Eve\", 30, \"Seattle\"],\n            [\"Bob\", 25, \"Seattle\"],\n            [\"Diana\", 25, \"Austin\"],\n        ]\nE       AssertionError: assert [[3, 'Charlie', 35, 'Portland'], [1, 'Alice', 30, 'Portland'], [5, 'Eve', 30, 'Seattle'], [2, 'Bob', 25, 'Seattle'], [4, 'Diana', 25, 'Austin']] == [['Charlie', 35, 'Portland'], ['Alice', 30, 'Portland'], ['Eve', 30, 'Seattle'], ['Bob', 25, 'Seattle'], ['Diana', 25, 'Austin']]\nE         \nE         At index 0 diff: [3, 'Charlie', 35, 'Portland'] != ['Charlie', 35, 'Portland']\nE         \nE         Full diff:\nE           [\nE               [\nE         +         3,\nE                   'Charlie',\nE                   35,\nE                   'Portland',\nE               ],\nE               [\nE         +         1,\nE                   'Alice',\nE                   30,\nE                   'Portland',\nE               ],\nE               [\nE         +         5,\nE                   'Eve',\nE                   30,\nE                   'Seattle',\nE               ],\nE               [\nE         +         2,\nE                   'Bob',\nE                   25,\nE                   'Seattle',\nE               ],\nE               [\nE         +         4,\nE                   'Diana',\nE                   25,\nE                   'Austin',\nE               ],\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:450: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4830073270131834,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_sort_desc_precedence_different_columns",
+      "lineno": 457,
+      "outcome": "failed",
+      "keywords": [
+        "test_sort_desc_precedence_different_columns",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.038853933991049416,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0025943889922928065,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 473,
+          "message": "AssertionError: assert [3, 'Charlie', 35, 'Portland'] == ['Charlie', 35, 'Portland']\n  \n  At index 0 diff: 3 != 'Charlie'\n  Left contains one more item: 'Portland'\n  \n  Full diff:\n    [\n  +     3,\n        'Charlie',\n        35,\n        'Portland',\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 473,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5d1c70>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = 'a60e73f89961b9ae71e963bf0ee36ceb5cf7e9c61778231881523391f8ebe649'\n\n    @pytest.mark.functionality\n    def test_sort_desc_precedence_different_columns(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"When _sort and _sort_desc reference different columns, _sort_desc wins.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(\n                client,\n                cp2_dataset_id,\n                params={\"_sort\": \"name\", \"_sort_desc\": \"age\"},\n            )\n        )\n        # Result is sorted desc by age, not asc by name\n>       assert payload[\"rows\"][0] == [\"Charlie\", 35, \"Portland\"]\nE       AssertionError: assert [3, 'Charlie', 35, 'Portland'] == ['Charlie', 35, 'Portland']\nE         \nE         At index 0 diff: 3 != 'Charlie'\nE         Left contains one more item: 'Portland'\nE         \nE         Full diff:\nE           [\nE         +     3,\nE               'Charlie',\nE               35,\nE               'Portland',\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:473: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4876447660062695,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_rowid_sequential_all_rows",
+      "lineno": 475,
+      "outcome": "failed",
+      "keywords": [
+        "test_rowid_sequential_all_rows",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02803834500082303,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0020385490061016753,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpp2_dpttw/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 486,
+          "message": "assert [1, 2, 3, 4, 5] == [2, 3, 4, 5, 6]\n  \n  At index 0 diff: 1 != 2\n  \n  Full diff:\n    [\n  +     1,\n        2,\n        3,\n        4,\n        5,\n  -     6,\n    ]"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 486,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_2.TestFunctionality object at 0x7da09a5d2150>\nclient = <httpx.Client object at 0x7da09a3722d0>\ncp2_dataset_id = 'ec8263f74e895519d7587ad61d56f9c74ccec9248db919a4675cb63a79c7d1a0'\n\n    @pytest.mark.functionality\n    def test_rowid_sequential_all_rows(\n        self,\n        client: httpx.Client,\n        cp2_dataset_id: str,\n    ) -> None:\n        \"\"\"Object-shaped rows have sequential 1-based rowid values for all rows.\"\"\"\n        payload = assert_ok_envelope(\n            dataset_request(client, cp2_dataset_id, params={\"_shape\": \"objects\"})\n        )\n>       assert [row[\"rowid\"] for row in payload[\"rows\"]] == [2, 3, 4, 5, 6]\nE       assert [1, 2, 3, 4, 5] == [2, 3, 4, 5, 6]\nE         \nE         At index 0 diff: 1 != 2\nE         \nE         Full diff:\nE           [\nE         +     1,\nE               2,\nE               3,\nE               4,\nE               5,\nE         -     6,\nE           ]\n\n.evaluation_tests/test_checkpoint_2.py:486: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4865778889943613,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_total_default_bare_request",
+      "lineno": 487,
+      "outcome": "passed",
+      "keywords": [
+        "test_total_default_bare_request",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.029596158987260424,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002204161006375216,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49652341300679836,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_offset_at_dataset_length",
+      "lineno": 498,
+      "outcome": "passed",
+      "keywords": [
+        "test_offset_at_dataset_length",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.027266888006124645,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0018430339987389743,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4971485590067459,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_empty_toggle_value_400[_rowid]",
+      "lineno": 511,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_toggle_value_400[_rowid]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "_rowid",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.032828793991939165,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00290141100413166,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.495500039003673,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_empty_toggle_value_400[_total]",
+      "lineno": 511,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_toggle_value_400[_total]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "_total",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03284209499543067,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002424777005217038,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49654731500777416,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestFunctionality::test_large_size_returns_all_rows",
+      "lineno": 523,
+      "outcome": "passed",
+      "keywords": [
+        "test_large_size_returns_all_rows",
+        "functionality",
+        "pytestmark",
+        "TestFunctionality",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03476673600380309,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00225646399485413,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4895577049901476,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_unknown_sort_column_400",
+      "lineno": 538,
+      "outcome": "passed",
+      "keywords": [
+        "test_unknown_sort_column_400",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0281984570028726,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.004804750991752371,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4939334240043536,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_sort_value_400[_sort]",
+      "lineno": 555,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_sort_value_400[_sort]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_sort",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.030432419007411227,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0019313410011818632,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49712495699350256,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_sort_value_400[_sort_desc]",
+      "lineno": 555,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_sort_value_400[_sort_desc]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_sort_desc",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02974736999021843,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0028908109961776063,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4958396639995044,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_visibility_invalid_value_400[_rowid-show]",
+      "lineno": 567,
+      "outcome": "passed",
+      "keywords": [
+        "test_visibility_invalid_value_400[_rowid-show]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_rowid-show",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0282993639993947,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0033608450030442327,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49533622700255364,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_visibility_invalid_value_400[_rowid-false]",
+      "lineno": 567,
+      "outcome": "passed",
+      "keywords": [
+        "test_visibility_invalid_value_400[_rowid-false]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_rowid-false",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02807114800089039,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0024326769926119596,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4966289219883038,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_visibility_invalid_value_400[_total-show]",
+      "lineno": 567,
+      "outcome": "passed",
+      "keywords": [
+        "test_visibility_invalid_value_400[_total-show]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_total-show",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.028423473006114364,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002603790009743534,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4960029860085342,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_visibility_invalid_value_400[_total-0]",
+      "lineno": 567,
+      "outcome": "passed",
+      "keywords": [
+        "test_visibility_invalid_value_400[_total-0]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_total-0",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03185943599964958,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002573488003690727,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49524311799905263,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_invalid_total_default_shape",
+      "lineno": 592,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_total_default_shape",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.026689957012422383,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0018967389914905652,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49771219900867436,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_size=1&_size=2]",
+      "lineno": 602,
+      "outcome": "passed",
+      "keywords": [
+        "test_duplicate_control_params_400[_size=1&_size=2]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_size=1&_size=2",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.04342838500451762,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0021625579975079745,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4948432889941614,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_sort=age&_sort=name]",
+      "lineno": 602,
+      "outcome": "passed",
+      "keywords": [
+        "test_duplicate_control_params_400[_sort=age&_sort=name]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_sort=age&_sort=name",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03838581500167493,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0034785550087690353,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4954083310003625,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_rowid=hide&_rowid=hide]",
+      "lineno": 602,
+      "outcome": "passed",
+      "keywords": [
+        "test_duplicate_control_params_400[_rowid=hide&_rowid=hide]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_rowid=hide&_rowid=hide",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.039995832994463854,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002979518991196528,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4949772989930352,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_offset=1&_offset=2]",
+      "lineno": 602,
+      "outcome": "passed",
+      "keywords": [
+        "test_duplicate_control_params_400[_offset=1&_offset=2]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_offset=1&_offset=2",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.027031082005123608,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002715398994041607,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4961902880022535,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_shape=lists&_shape=objects]",
+      "lineno": 602,
+      "outcome": "passed",
+      "keywords": [
+        "test_duplicate_control_params_400[_shape=lists&_shape=objects]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_shape=lists&_shape=objects",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.028978725007618777,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0025356859987368807,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49605907799559645,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_sort_desc=age&_sort_desc=name]",
+      "lineno": 602,
+      "outcome": "passed",
+      "keywords": [
+        "test_duplicate_control_params_400[_sort_desc=age&_sort_desc=name]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_sort_desc=age&_sort_desc=name",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03518308000639081,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.007759168991469778,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4899199279898312,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_duplicate_control_params_400[_total=hide&_total=hide]",
+      "lineno": 602,
+      "outcome": "passed",
+      "keywords": [
+        "test_duplicate_control_params_400[_total=hide&_total=hide]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_total=hide&_total=hide",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.027796737995231524,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002033848999417387,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4970520509959897,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_invalid_rowid_list_or_default[params0]",
+      "lineno": 625,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_rowid_list_or_default[params0]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "params0",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02721119500347413,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0021641589992213994,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4966790240141563,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_invalid_rowid_list_or_default[params1]",
+      "lineno": 625,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_rowid_list_or_default[params1]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "params1",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02918444000533782,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00223126400669571,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4966349199967226,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_sort_both_params_400[_sort=age&_sort_desc=]",
+      "lineno": 643,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_sort_both_params_400[_sort=age&_sort_desc=]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "_sort=age&_sort_desc=",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03575292199093383,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.001872737004305236,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49424414499662817,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_param_value_400[shape]",
+      "lineno": 660,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_param_value_400[shape]",
+        "error",
+        "parametrize",
+        "pytestmark",
+        "shape",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02850509098789189,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0021954609983367845,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49703214901091997,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_param_value_400[size]",
+      "lineno": 660,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_param_value_400[size]",
+        "error",
+        "parametrize",
+        "pytestmark",
+        "size",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.03055944100196939,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0025388860085513443,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4961552849999862,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_empty_param_value_400[offset]",
+      "lineno": 660,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_param_value_400[offset]",
+        "error",
+        "parametrize",
+        "pytestmark",
+        "offset",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.026326430001063272,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0020503499981714413,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49727729000733234,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_size_values[0]",
+      "lineno": 676,
+      "outcome": "passed",
+      "keywords": [
+        "test_bad_size_values[0]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "0",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02730319400143344,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0023068680020514876,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4965172459924361,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_size_values[-1]",
+      "lineno": 676,
+      "outcome": "passed",
+      "keywords": [
+        "test_bad_size_values[-1]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "-1",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.029309739999007434,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002577887993538752,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4958617980009876,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_size_values[3.1]",
+      "lineno": 676,
+      "outcome": "passed",
+      "keywords": [
+        "test_bad_size_values[3.1]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "3.1",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0278478330001235,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002173457993194461,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49677456500648987,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_size_values[abc]",
+      "lineno": 676,
+      "outcome": "passed",
+      "keywords": [
+        "test_bad_size_values[abc]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "abc",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.02734279600554146,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0024009750050026923,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49602951100678183,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_offset_values[-1]",
+      "lineno": 688,
+      "outcome": "passed",
+      "keywords": [
+        "test_bad_offset_values[-1]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "-1",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.027906736999284476,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002258764987345785,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.49666875699767843,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_offset_values[oops]",
+      "lineno": 688,
+      "outcome": "passed",
+      "keywords": [
+        "test_bad_offset_values[oops]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "oops",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.036181140996632166,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0023462709941668436,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4936627370043425,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::TestError::test_bad_offset_values[2.5]",
+      "lineno": 688,
+      "outcome": "passed",
+      "keywords": [
+        "test_bad_offset_values[2.5]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "2.5",
+        "TestError",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.026628343999618664,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0018396340019535273,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.5049742639967008,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "status": "valid_depth8_terminal_tail_collapse_extension_invalid_quota",
+  "date": "2026-07-14",
+  "problem": "cfgpipe",
+  "model": "kimi-k2.6",
+  "assimilation_mode": "cumulative_self_report_acceptance",
+  "depth8_run": {
+    "config": "benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_cumulative_depth8_config.json",
+    "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_self_report_cumulative_depth8_r1_20260714",
+    "arm_id": "cumulative_self_report_acceptance-f2b7a1da5b7d46ddaf4c32f82b443573",
+    "mean_core_curve": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.6666666667
+    ],
+    "mean_all_test_curve": [
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.6126126126
+    ],
+    "reference_count_curve": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24
+    ],
+    "received_experience_chars_curve": [
+      25760,
+      54509,
+      86241,
+      118095,
+      149949,
+      181803,
+      213657,
+      245511
+    ],
+    "layer_8_input_token_ratio_to_matching_control": 5.5297,
+    "terminal_effect_vs_control_all_test": -0.3063063063,
+    "within_arm_terminal_drop_all_test": -0.3063063063
+  },
+  "layer_8_trigger": {
+    "worker_id": "worker_2",
+    "core": "0/4",
+    "all_tests": "0/37",
+    "infrastructure_failure": false,
+    "model_calls": 2,
+    "input_tokens": 148495,
+    "output_tokens": 1580,
+    "successful_commands": 0,
+    "local_completion_smoke_accepted": false,
+    "self_reported_success": true,
+    "snapshot_files": 0,
+    "self_report_only_admitted_if_continued": true,
+    "interpretation": "This is a valid agent trajectory failure, not a Kimi quota or Docker failure. It would be propagated by self-report-only acceptance and rejected by the stronger completion-and-smoke local proxy."
+  },
+  "depth10_extension": {
+    "config": "benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_cumulative_depth10_extension_config.json",
+    "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_self_report_cumulative_depth8_r1_20260714",
+    "report": "runs_scbench_moa_kimi_cfgpipe_cp1_self_report_cumulative_depth8_r1_20260714/depth10_extension_report.json",
+    "status": "invalid_for_scientific_interpretation",
+    "invalid_reason": "Kimi coding quota was exhausted at layer 9. The runner logged a 403 usage-limit / quota error, produced zero model steps and zero tokens, and evaluated an empty snapshot as 0/37.",
+    "observed_invalid_layers": [
+      9,
+      10
+    ],
+    "engineering_fix": "sec/scbench_miniswe.py now detects zero-step model-query failures with API/quota/rate-limit logs and raises instead of silently reporting 0/37."
+  },
+  "decision": {
+    "validity_gates_pass_through_layer8": true,
+    "trigger_by_layer6": false,
+    "terminal_all_test_pass": true,
+    "within_arm_terminal_drop_pass": true,
+    "core_support_pass": true,
+    "complexity_support_pass": true,
+    "sustained_propagation_confirmed": false,
+    "verdict": "The valid Kimi run shows a late terminal tail collapse at depth 8 under self-report-only admission, but it does not confirm sustained propagation because the first admitted failed source appears at the terminal layer and the exact-arm extension was invalidated by quota exhaustion."
+  },
+  "iteration_hypothesis": {
+    "too_few_iterations_for_strong_local_proxy": false,
+    "too_few_iterations_for_self_report_only_tail_risk": true,
+    "evidence": "Layers 1-7 were flat at 34/37 for all workers; the first valid self-report-only catastrophic failure appeared only at layer 8 after 24 references and 245k received experience characters.",
+    "next_required_test": "Run a fresh preregistered depth-10 self-report-only replication on an available endpoint/model, or restore Kimi quota, so post-trigger propagation can be evaluated without quota contamination."
+  }
+}

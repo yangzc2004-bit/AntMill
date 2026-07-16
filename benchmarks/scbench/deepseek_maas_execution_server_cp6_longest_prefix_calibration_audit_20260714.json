@@ -1,0 +1,98 @@
+{
+  "status": "completed_provider_specific_calibration_no_qualifying_prefix",
+  "date": "2026-07-14",
+  "config": "benchmarks/scbench/deepseek_maas_execution_server_cp6_longest_prefix_headroom_config.json",
+  "run_root": "r_dsexcp6h1_20260714",
+  "arm_id": "no_transfer-ad2c6641efe7484db30fbe7826076430",
+  "provider": "ModelArts MaaS plan/v2",
+  "model": "deepseek-v4-flash",
+  "problem": "execution_server",
+  "step_limit": 32,
+  "checkpoints": {
+    "1": {
+      "assistant_steps": 9,
+      "explicit_completion": true,
+      "core_passed": 7,
+      "core_total": 7,
+      "all_passed": 45,
+      "pytest_collected": 45,
+      "test_collection_hash": "bb67bbdad7f21326a3bc77043b24bee8952bcaf7f6537cbdafc66cb47d90f4b2",
+      "infrastructure_failure": false,
+      "net_input_tokens": 45075
+    },
+    "2": {
+      "assistant_steps": 15,
+      "explicit_completion": true,
+      "core_passed": 6,
+      "core_total": 6,
+      "all_passed": 58,
+      "pytest_collected": 58,
+      "test_collection_hash": "80530fed3579984965ee18c474ebb6441d67324e00ad2dd92ca27af45f6dc33e",
+      "infrastructure_failure": false,
+      "net_input_tokens": 99258
+    },
+    "3": {
+      "assistant_steps": 32,
+      "explicit_completion": false,
+      "core_passed": 14,
+      "core_total": 16,
+      "all_passed": 96,
+      "pytest_collected": 101,
+      "test_collection_hash": "6d9f64151c3d08c37b943765effa2eb11fa3c3bac4f34a8a2a6bfd07bb1a1a58",
+      "infrastructure_failure": false,
+      "net_input_tokens": 333709,
+      "interpretation": "The agent was still inspecting and modifying the implementation at the exact 32-action boundary and never issued COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT."
+    },
+    "4": {
+      "assistant_steps": 26,
+      "explicit_completion": true,
+      "core_passed": 16,
+      "core_total": 16,
+      "all_passed": 142,
+      "pytest_collected": 149,
+      "test_collection_hash": "c713974a00d5cd60a59679eec37121c82fa42168f1855560a3e98d18f5947257",
+      "infrastructure_failure": false,
+      "net_input_tokens": 524008,
+      "interpretation": "Checkpoint 4 completed naturally and retained headroom, but checkpoints are independently reset. It cannot repair the failed checkpoint-3 member of a consecutive prefix."
+    },
+    "5": {
+      "assistant_steps": 32,
+      "explicit_completion": false,
+      "core_passed": 0,
+      "core_total": 9,
+      "all_passed": 0,
+      "pytest_collected": 185,
+      "test_collection_hash": "a94a96a50fc91f351680371bcec11cf2662544c1c61f5b1b97b29a32bc22bdd1",
+      "infrastructure_failure": false,
+      "net_input_tokens": 503002,
+      "interpretation": "The model exhausted the action budget and produced a snapshot on which all collected tests errored or failed. This is a model-resource outcome, not infrastructure."
+    },
+    "6": {
+      "evaluated": false,
+      "reason": "Manually stopped after checkpoint 5 made every longer consecutive prefix ineligible. Partial checkpoint-6 inference is excluded."
+    }
+  },
+  "selection": {
+    "qualifying_prefix": null,
+    "longest_consecutive_explicit_prefix_without_headroom_gate": [
+      1,
+      2
+    ],
+    "minimum_required_k": 4,
+    "reason": "Checkpoint 3 failed the frozen explicit-completion-before-action-32 gate. Because all checkpoints 1 through k had to qualify, neither checkpoint 4 nor any later checkpoint can produce a valid k of at least 4.",
+    "formal_contrast_allowed": false,
+    "no_threshold_or_budget_retuning": true,
+    "no_checkpoint_skipping": true
+  },
+  "iteration_hypothesis": {
+    "not_identified_by_this_pair": true,
+    "reason": "The task does not supply three valid consecutive feedback opportunities under the matched fixed budget. More nominal checkpoints would confound recursive feedback depth with baseline action-boundary censoring.",
+    "next_test": "Prospectively screen unused four-stage workflows and select only a task for which all four no-transfer checkpoints naturally complete before the fixed boundary."
+  },
+  "termination": {
+    "manual_stop_during_checkpoint_6": true,
+    "checkpoints_1_through_5_artifacts_complete": true,
+    "checkpoint_6_partial_inference_excluded": true,
+    "scientific_reason": "Continuing checkpoint 6 could not change the failed all-checkpoints-consecutive prefix rule."
+  }
+}

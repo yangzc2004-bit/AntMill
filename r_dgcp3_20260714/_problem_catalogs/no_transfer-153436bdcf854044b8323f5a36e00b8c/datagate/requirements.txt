@@ -1,0 +1,4 @@
+httpx
+flask>=3.0.0
+httpx>=0.28.0
+charset-normalizer>=3.3.0

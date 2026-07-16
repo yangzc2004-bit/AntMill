@@ -1,0 +1,44 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "textdrop",
+  "checkpoint_limit": 2,
+  "worker_count": 2,
+  "num_layers": 1,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "screening_reason": "textdrop has six incremental checkpoints and a previously observed checkpoint-1 strict-source rate of 1/2. Checkpoint 2 is the first gate for a cross-checkpoint recursive-MoA curve.",
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": "Reject infrastructure failure or target drift and re-evaluate the same snapshot against checkpoint 2."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "no_transfer"
+          ]
+        }
+      ]
+    }
+  ],
+  "selection_rule": {
+    "advance": "At least one of two workers passes every checkpoint-2 Core test, while at least one worker or non-Core metric retains headroom.",
+    "too_hard": "Neither worker passes all checkpoint-2 Core tests and both normalized Core scores are below 0.50.",
+    "too_easy": "Both workers pass all checkpoint-2 Core tests and both pass at least 95 percent of all collected tests.",
+    "integrity": "Both interpreted evaluations use the same checkpoint-2 test inventory with no infrastructure failure or prohibited benchmark access."
+  }
+}

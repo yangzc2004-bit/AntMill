@@ -1,0 +1,43 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "code_search",
+  "checkpoint_limit": 3,
+  "worker_count": 2,
+  "num_layers": 1,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "screening_reason": "Checkpoint 2 was ceiling-saturated under no-transfer, standard one-hop MoA, and cumulative verified-history stress. Checkpoint 3 adds structure-aware pattern matching and metavariable consistency while retaining the same realistic code-search workflow.",
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "no_transfer"
+          ]
+        }
+      ]
+    }
+  ],
+  "selection_rule": {
+    "preferred": "Exactly one of two workers passes all checkpoint-3 Core tests, with no infrastructure or benchmark-access violation.",
+    "acceptable": "Neither worker is full-Core, but both retain at least 0.50 normalized Core and differ meaningfully, in which case calibrate only the action budget.",
+    "too_easy": "Both workers are full-Core.",
+    "too_hard": "Neither worker reaches 0.50 normalized Core.",
+    "next_step": "Run the full three-arm layered contrast only after documenting the screen outcome and freezing the curve config."
+  }
+}

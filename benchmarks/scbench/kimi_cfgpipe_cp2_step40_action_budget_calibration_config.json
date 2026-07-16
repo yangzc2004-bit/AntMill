@@ -1,0 +1,33 @@
+{
+  "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "model": "kimi-k2.6",
+  "worker_count": 1,
+  "num_layers": 1,
+  "checkpoint_limit": 2,
+  "step_limit_per_worker": 40,
+  "experience_char_limit_per_source": 10000,
+  "expected_core_total": 3,
+  "expected_test_collection_hash": "35475c9c36a83fe0b7dca307f248d4a246015c44eace85d15ec1190742147e30",
+  "candidates": [
+    {
+      "problem": "cfgpipe",
+      "reason": "Prospective action-budget calibration authorized by the frozen checkpoint-2 screen after the 28-action worker passed every Core test but hit both checkpoint boundaries without submitting."
+    }
+  ],
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": true
+  },
+  "calibration_rule": {
+    "valid_advance": "The worker passes every checkpoint-2 Core test, matches the frozen target, and issues COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT before action 40 at checkpoint 2.",
+    "budget_invalid_stop": "If checkpoint 2 again ends at the action boundary without explicit completion, reject Kimi plus cfgpipe for the sequential main contrast instead of increasing the budget again.",
+    "capability_stop": "If normalized checkpoint-2 Core falls below 0.50 without infrastructure failure, reject the candidate.",
+    "next_if_valid": "Run one no-transfer checkpoint-3 calibration at the same 40-action per-checkpoint budget before freezing the MOA contrast."
+  },
+  "only_change_from_screen": "Increase the per-checkpoint action limit from 28 to 40."
+}

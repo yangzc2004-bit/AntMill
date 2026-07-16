@@ -1,0 +1,16 @@
+internal_name: deepseek-v4-flash
+provider: openai
+pricing:
+  input: 0
+  output: 0
+  cache_read: 0
+  cache_write: 0
+aliases: []
+agent_specific:
+  mini_swe:
+    model_name: openai/deepseek-v4-flash
+    model_class: litellm
+    api_base: https://api.modelarts-maas.com/plan/v2
+    model_kwargs:
+      temperature: 0.2
+      max_tokens: 4096

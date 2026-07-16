@@ -1,0 +1,256 @@
+{
+  "status": "visual_audit_complete",
+  "pdf": "paper_draft\\antmill_aaai27_zh.pdf",
+  "pdf_sha256": "635a4ae1497dd85b0667726a33aed816ce8bf441dc8784d5d5a9f8d2ff864fc4",
+  "dpi": 120,
+  "page_count": 7,
+  "rendered_page_count": 7,
+  "renderer": "C:\\Users\\17493\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe",
+  "automated_checks": {
+    "page_count_positive": true,
+    "rendered_page_count_matches": true,
+    "all_rendered_pages_nonblank": true,
+    "all_content_inside_raster": true,
+    "consistent_page_dimensions": true,
+    "text_page_count_matches": true,
+    "all_pages_have_text": true,
+    "all_pdf_characters_in_page_bounds": true
+  },
+  "pages": [
+    {
+      "path": "tmp\\pdfs\\zh_audit_final\\page-1.png",
+      "sha256": "f9f74fd1bafea18761d3a081e8d8abd0e8929ab0a5eef4df93e49f5ebaff7c98",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 232.17403223410577,
+      "stddev_gray": 61.420686942823856,
+      "nonwhite_fraction": 0.16067513368983957,
+      "content_bbox": [
+        90,
+        145,
+        930,
+        1279
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 145,
+        "right": 90,
+        "bottom": 41
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    },
+    {
+      "path": "tmp\\pdfs\\zh_audit_final\\page-2.png",
+      "sha256": "a01d7fbe65c753de4ccde87378123350db862ea967385e5638368b973b5a10e3",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 232.23153297682708,
+      "stddev_gray": 61.71289902802982,
+      "nonwhite_fraction": 0.1588205585264409,
+      "content_bbox": [
+        90,
+        92,
+        930,
+        1233
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 92,
+        "right": 90,
+        "bottom": 87
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    },
+    {
+      "path": "tmp\\pdfs\\zh_audit_final\\page-3.png",
+      "sha256": "b1e70470594327c1d2ed5d5d431ab0590870264a2a56e5b09c0a7d022701806c",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 237.18198752228164,
+      "stddev_gray": 53.17146950491204,
+      "nonwhite_fraction": 0.17444964349376113,
+      "content_bbox": [
+        90,
+        94,
+        930,
+        1233
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 94,
+        "right": 90,
+        "bottom": 87
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    },
+    {
+      "path": "tmp\\pdfs\\zh_audit_final\\page-4.png",
+      "sha256": "9a3fa0d4abd6f8f092c450525be30c6b954aacbe87e531b50095871209beb31a",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 237.24592988710637,
+      "stddev_gray": 53.268494745522815,
+      "nonwhite_fraction": 0.19887254901960785,
+      "content_bbox": [
+        90,
+        96,
+        930,
+        1230
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 96,
+        "right": 90,
+        "bottom": 90
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    },
+    {
+      "path": "tmp\\pdfs\\zh_audit_final\\page-5.png",
+      "sha256": "8666298491de69930cbdd2b657313b59d6a2238bf7a540b559de61fb670edbdf",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 228.39631610219845,
+      "stddev_gray": 65.53669858902565,
+      "nonwhite_fraction": 0.18693627450980393,
+      "content_bbox": [
+        89,
+        92,
+        930,
+        1234
+      ],
+      "content_margins_px": {
+        "left": 89,
+        "top": 92,
+        "right": 90,
+        "bottom": 86
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    },
+    {
+      "path": "tmp\\pdfs\\zh_audit_final\\page-6.png",
+      "sha256": "28771d0d7c9d614dcabd7ac9d72fa3712a860ef602da21844265a993aefdea2a",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 239.85851752822342,
+      "stddev_gray": 49.82753689872186,
+      "nonwhite_fraction": 0.16467245989304813,
+      "content_bbox": [
+        90,
+        96,
+        930,
+        1233
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 96,
+        "right": 90,
+        "bottom": 87
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    },
+    {
+      "path": "tmp\\pdfs\\zh_audit_final\\page-7.png",
+      "sha256": "6ea10d592c761ba391e424b0b2bd9d7047ba535678abe8458888aabae62965e2",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 244.54392156862744,
+      "stddev_gray": 42.19772149696167,
+      "nonwhite_fraction": 0.08126708259061201,
+      "content_bbox": [
+        90,
+        94,
+        930,
+        1233
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 94,
+        "right": 90,
+        "bottom": 87
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    }
+  ],
+  "text_pages": [
+    {
+      "page": 1,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 1618,
+      "text_length": 1698,
+      "text_present": true,
+      "character_bounds_pass": true
+    },
+    {
+      "page": 2,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 1809,
+      "text_length": 1947,
+      "text_present": true,
+      "character_bounds_pass": true
+    },
+    {
+      "page": 3,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 1772,
+      "text_length": 1893,
+      "text_present": true,
+      "character_bounds_pass": true
+    },
+    {
+      "page": 4,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 1634,
+      "text_length": 1770,
+      "text_present": true,
+      "character_bounds_pass": true
+    },
+    {
+      "page": 5,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 1918,
+      "text_length": 2015,
+      "text_present": true,
+      "character_bounds_pass": true
+    },
+    {
+      "page": 6,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 1773,
+      "text_length": 1902,
+      "text_present": true,
+      "character_bounds_pass": true
+    },
+    {
+      "page": 7,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 2672,
+      "text_length": 2887,
+      "text_present": true,
+      "character_bounds_pass": true
+    }
+  ],
+  "visual_checks": {
+    "all_pages_rendered": true,
+    "no_text_or_table_clipping": true,
+    "no_overlapping_elements": true,
+    "figures_and_tables_legible": true,
+    "captions_match_content": true
+  },
+  "finalized_at_utc": "2026-07-15T13:06:17.390102+00:00",
+  "source_draft": "tmp\\pdfs\\zh_audit_final\\render_audit_draft.json"
+}

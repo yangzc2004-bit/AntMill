@@ -1,0 +1,113 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 10,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "hypothesis_boundary": {
+    "motivation": "The first valid Kimi arm stayed flat through layer 7 and produced one externally catastrophic but self-reported-success 0/37 output at layer 8. Its selected layer-9/10 extension was invalidated by quota exhaustion, so persistence was never observed.",
+    "test": "Run a fresh, outcome-independent ten-layer Kimi arm from layer 1 rather than extending or reusing the original trajectory.",
+    "held_fixed": "Model endpoint, task, worker count, topology, bootstrap sources, action budget, self-report-only admission, recipient score blinding, and clean evaluator are unchanged.",
+    "claim_scope": "This tests whether longer feedback depth reproducibly exposes and propagates self-certified failures. It does not test strict globally verified experience."
+  },
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_1",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_2",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_3",
+      "layer": 5
+    }
+  ],
+  "self_report_acceptance_proxy": {
+    "process_completion": "The MiniSWE inference returns a trajectory without an infrastructure error.",
+    "model_query_guard": "Zero-step API, quota, or rate-limit failures abort and are never scored as benchmark failures.",
+    "self_report": "At least one assistant step contains the frozen success marker used in the prior Kimi audit.",
+    "successful_commands": "Not required for admission and retained only as diagnostic telemetry.",
+    "admission": "Every self-reported-success output is appended permanently regardless of its blinded external benchmark score.",
+    "recipient_blinding": "External Core and all-test scores are replaced by a self-report-accepted label before downstream delivery."
+  },
+  "assimilation_semantics": {
+    "mode": "cumulative_self_report_acceptance",
+    "bootstrap": "Every layer-1 worker receives the same three frozen diverse 4/4 Core sources.",
+    "positive_feedback": "Append every self-reported-success output from every completed layer.",
+    "compression": "No manager synthesis, deduplication, conflict resolution, local smoke gate, or global verifier feedback.",
+    "expected_reference_counts_if_all_workers_self_report_success": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      27,
+      30
+    ]
+  },
+  "matching_control": {
+    "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714",
+    "arm_id": "no_transfer-e92d8453f0d84861aa032e075e0257c8",
+    "layers": 5,
+    "worker_outcomes": 15,
+    "layer_5_mean_core": 1.0,
+    "layer_5_mean_all_test": 0.9189189189,
+    "layer_5_total_input_tokens": 121647
+  },
+  "validity_gates": {
+    "bootstrap_activation": "All three frozen sources re-evaluate at 4/4 Core, 34/37 overall, with the frozen test hash.",
+    "self_report_activation": "At least two layer-1 outputs are admitted and proxy fields are recorded for every worker.",
+    "recipient_blinding": "No generated treatment reference delivered downstream contains its external score.",
+    "target_consistency": "Every external result uses Core total 4, total tests 37, and the frozen test hash.",
+    "model_query_integrity": "No worker has a zero-step API, quota, or rate-limit failure.",
+    "integrity": "No infrastructure failures remain and no assistant action accesses prohibited benchmark paths."
+  },
+  "degradation_criteria": {
+    "tail_trigger": "By layer 8, at least one worker scores 0/37 externally, self-reports success, and is admitted despite fewer than three successful commands.",
+    "post_trigger": "At least one later layer after the first admitted trigger has mean all-test score below 0.75 or contains at least one 0/37 worker.",
+    "terminal": "Layer-10 mean all-test score is below 0.75 or at least 0.15 below the best earlier treatment layer.",
+    "within_arm": "Layer-10 mean all-test score is at least 0.15 below the best treatment layer before the first trigger.",
+    "core_support": "Layer-10 mean Core is below 0.80 or at least one layer-10 worker is 0/4.",
+    "complexity_support": "Layer-10 receives at least 27 references and uses at least 5.0x the matching control layer-5 input tokens.",
+    "all_required_for_sustained_degradation": "All validity gates plus tail-trigger, post-trigger, terminal, within-arm, core-support, and complexity support are required."
+  },
+  "decision_rule": {
+    "confirm": "If every criterion passes, treat this as a replicated sustained degradation curve and run one counterbalanced repeat plus a stronger-admission ablation.",
+    "late_tail_only": "If a valid trigger recurs but post-trigger or terminal criteria fail, retain only model-dependent intermittent tail-risk evidence.",
+    "stable": "If references and input grow but no valid trigger occurs through layer 10, conclude that more iterations alone are insufficient and reject this exact mechanism-task replicate.",
+    "invalid": "Do not interpret direction if model-query integrity, target consistency, recipient blinding, or infrastructure integrity fails."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 2,
+          "mode_order": [
+            "cumulative_self_report_acceptance"
+          ]
+        }
+      ]
+    }
+  ]
+}

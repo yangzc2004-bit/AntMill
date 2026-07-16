@@ -1,0 +1,153 @@
+{
+  "status": "valid_early_falsification_opposite_direction",
+  "date": "2026-07-14",
+  "config": "benchmarks/scbench/kimi_cfgpipe_sequential_cp1_cp3_recursive_self_report_pilot_config.json",
+  "run_root": "r_cfgseq1_20260714",
+  "arms": {
+    "no_transfer": "no_transfer-bd5e9dc93aea4a3e8a2a14667ce440c5",
+    "recursive_self_report_synthesis": "recursive_self_report_synthesis-5d632189ccf14c0788f52e5dbdb19282"
+  },
+  "early_stop": {
+    "checkpoint": 2,
+    "rule": "The frozen target curve requires negative treatment-control all-test gaps at both checkpoints 2 and 3. A non-negative checkpoint-2 gap falsifies this mechanism-task pair regardless of checkpoint 3.",
+    "checkpoint_3_started_outputs": "Discarded prospectively after the checkpoint-2 stopping condition became mathematically irreversible.",
+    "reason": "Even a zero score for an unobserved treatment worker could not have made the treatment checkpoint-2 mean lower than control; the final observed treatment scores were both high."
+  },
+  "scores": {
+    "checkpoint_1": {
+      "no_transfer_workers": [
+        "33/37",
+        "34/37"
+      ],
+      "treatment_workers": [
+        "32/37",
+        "33/37"
+      ],
+      "no_transfer_mean": 0.9054054054054054,
+      "treatment_mean": 0.8783783783783784,
+      "treatment_minus_control": -0.027027027027026973
+    },
+    "checkpoint_2": {
+      "no_transfer_workers": [
+        "41/68",
+        "1/68"
+      ],
+      "treatment_workers": [
+        "57/68",
+        "56/68"
+      ],
+      "no_transfer_mean": 0.3088235294117647,
+      "treatment_mean": 0.8308823529411765,
+      "treatment_minus_control": 0.5220588235294118,
+      "difference_in_differences_from_checkpoint_1": 0.5490858505564388,
+      "core_mean_no_transfer": 0.16666666666666666,
+      "core_mean_treatment": 1.0
+    }
+  },
+  "fixed_budget_trace": {
+    "no_transfer": [
+      {
+        "worker": "worker_1",
+        "checkpoint": 1,
+        "steps": 30,
+        "completion_step": 30,
+        "all": "33/37"
+      },
+      {
+        "worker": "worker_2",
+        "checkpoint": 1,
+        "steps": 8,
+        "completion_step": 8,
+        "all": "34/37"
+      },
+      {
+        "worker": "worker_1",
+        "checkpoint": 2,
+        "steps": 40,
+        "completion_step": null,
+        "all": "41/68"
+      },
+      {
+        "worker": "worker_2",
+        "checkpoint": 2,
+        "steps": 31,
+        "completion_step": 31,
+        "all": "1/68"
+      }
+    ],
+    "recursive_self_report_synthesis": [
+      {
+        "worker": "worker_1",
+        "checkpoint": 1,
+        "steps": 22,
+        "completion_step": 22,
+        "all": "32/37"
+      },
+      {
+        "worker": "worker_2",
+        "checkpoint": 1,
+        "steps": 25,
+        "completion_step": 25,
+        "all": "33/37"
+      },
+      {
+        "worker": "worker_1",
+        "checkpoint": 2,
+        "steps": 40,
+        "completion_step": null,
+        "all": "57/68"
+      },
+      {
+        "worker": "worker_2",
+        "checkpoint": 2,
+        "steps": 37,
+        "completion_step": 37,
+        "all": "56/68"
+      }
+    ]
+  },
+  "manager_and_complexity": {
+    "layer_1_accepted_sources": 2,
+    "external_scores_withheld": true,
+    "manager_output_chars": 7124,
+    "manager_prompt_tokens": 4857,
+    "manager_completion_tokens": 1807,
+    "recipient_activation": "Both treatment checkpoint-2 prompts contained the same manager playbook.",
+    "shared_risky_rule": "The manager resolved a source conflict by instructing recipients to treat an empty environment variable as absent.",
+    "checkpoint_2_mean_worker_input_tokens": {
+      "no_transfer": 309210.5,
+      "treatment": 468430.0,
+      "ratio_treatment_to_control": 1.5149226821210793
+    }
+  },
+  "validity_gates": {
+    "target_consistency": {
+      "passed": true,
+      "detail": "All eight analyzed final checkpoint evaluations matched the frozen Core totals and test hashes."
+    },
+    "infrastructure": {
+      "passed": true,
+      "detail": "The analyzed restart used the complete offline wheelhouse and contains no infrastructure failures."
+    },
+    "manager_activation": {
+      "passed": true
+    },
+    "score_blinding": {
+      "passed": true,
+      "detail": "The manager request contained no external Core, all-test, pass-count, or test-hash fields."
+    },
+    "prohibited_access": {
+      "passed": true,
+      "assistant_action_hits": 0
+    }
+  },
+  "scientific_interpretation": {
+    "supported": "The recursive score-blinded MOA manager substantially increased recipient context and propagated a concrete shared rule.",
+    "not_supported": "On cfgpipe checkpoint 2, that shared experience did not degrade performance. It strongly improved both global all-test and Core outcomes relative to a noisy no-transfer control.",
+    "decision": "Falsify Kimi plus cfgpipe sequential recursive-self-report synthesis for the preregistered degradation curve. Do not run checkpoint 3 or replicate this pair."
+  },
+  "next_candidate": {
+    "problem": "datagate",
+    "reason": "It naturally completed both checkpoint-1 and checkpoint-2 runs under the prior screen and retained a high 115/122 checkpoint-2 all-test baseline without action-boundary censoring."
+  }
+}

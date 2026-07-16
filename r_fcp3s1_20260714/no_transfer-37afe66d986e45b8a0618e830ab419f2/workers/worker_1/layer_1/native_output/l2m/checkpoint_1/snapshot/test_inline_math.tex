@@ -1,0 +1,2 @@
+This is $x = y$ inline math.
+And $a^2 + b^2 = c^2$ is Pythagorean.

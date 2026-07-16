@@ -1,0 +1,130 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Chen et~al.(2023)Chen, Su, Zuo, Yang, Yuan, Chan, Yu, Lu, Hung, Qian,
+  Qin, Cong, Xie, Liu, Sun, and Zhou}]{chen2023agentverse}
+Chen, W.; Su, Y.; Zuo, J.; Yang, C.; Yuan, C.; Chan, C.-M.; Yu, H.; Lu, Y.;
+  Hung, Y.-H.; Qian, C.; Qin, Y.; Cong, X.; Xie, R.; Liu, Z.; Sun, M.; and
+  Zhou, J. 2023.
+\newblock {AgentVerse}: Facilitating Multi-Agent Collaboration and Exploring
+  Emergent Behaviors.
+\newblock arXiv:2308.10848.
+
+\bibitem[{Du et~al.(2024)Du, Li, Torralba, Tenenbaum, and
+  Mordatch}]{du2024debate}
+Du, Y.; Li, S.; Torralba, A.; Tenenbaum, J.~B.; and Mordatch, I. 2024.
+\newblock Improving Factuality and Reasoning in Language Models through
+  Multiagent Debate.
+\newblock In \emph{International Conference on Machine Learning (ICML)}.
+
+\bibitem[{Guo et~al.(2026)Guo, Chen, Wu, Ma, and He}]{guo2026diversitycollapse}
+Guo, Y.; Chen, S.; Wu, C.; Ma, W.; and He, B. 2026.
+\newblock Diversity Collapse in Multi-Agent {LLM} Systems: How Semantic
+  Anchoring Amplifies Bias and Manufactured Consensus.
+\newblock arXiv:2604.21879.
+
+\bibitem[{Hong et~al.(2024)Hong, Zhuge, Chen, Zheng, Cheng, Zhang, Wang, Wang,
+  Yau, Lin, Zhou, Ran, Xiao, Wu, and Schmidhuber}]{hong2024metagpt}
+Hong, S.; Zhuge, M.; Chen, J.; Zheng, X.; Cheng, Y.; Zhang, C.; Wang, J.; Wang,
+  Z.; Yau, S. K.~S.; Lin, Z.; Zhou, L.; Ran, C.; Xiao, L.; Wu, C.; and
+  Schmidhuber, J. 2024.
+\newblock {MetaGPT}: Meta Programming for a Multi-Agent Collaborative
+  Framework.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}.
+
+\bibitem[{Jimenez et~al.(2024)Jimenez, Yang, Wettig, Yao, Pei, Press, and
+  Narasimhan}]{jimenez2024swebench}
+Jimenez, C.~E.; Yang, J.; Wettig, A.; Yao, S.; Pei, K.; Press, O.; and
+  Narasimhan, K.~R. 2024.
+\newblock {SWE}-bench: Can Language Models Resolve Real-World {GitHub} Issues?
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Li et~al.(2025)Li, Zhang, Jiang, Shao, Yu, Deng, Weng, Lin, Tang,
+  Huang, and Zhang}]{li2025mael_full}
+Li, Y.; Zhang, Q.; Jiang, S.; Shao, B.; Yu, Z.; Deng, X.; Weng, Y.; Lin, Z.;
+  Tang, Y.; Huang, C.; and Zhang, W. 2025.
+\newblock Cross-Task Experiential Learning on {LLM}-Based Multi-Agent
+  Collaboration.
+\newblock arXiv:2505.23187.
+
+\bibitem[{Orlanski et~al.(2026)Orlanski, Baranwal, Xiao, Yao, and
+  Baghdadi}]{orlanski2026slopcode}
+Orlanski, G.; Baranwal, A.; Xiao, Y.; Yao, G.; and Baghdadi, R. 2026.
+\newblock Learning to Write Useful Code from Iterative Specifications.
+\newblock arXiv:2603.24755.
+
+\bibitem[{Park et~al.(2023)Park, O'Brien, Cai, Morris, Liang, and
+  Bernstein}]{park2023generative}
+Park, J.~S.; O'Brien, J.~C.; Cai, C.~J.; Morris, M.~R.; Liang, P.; and
+  Bernstein, M.~S. 2023.
+\newblock Generative Agents: Interactive Simulacra of Human Behavior.
+\newblock In \emph{Proceedings of the 36th Annual ACM Symposium on User
+  Interface Software and Technology (UIST)}.
+
+\bibitem[{Qian et~al.(2024{\natexlab{a}})Qian, Dang, Li, Liu, Chen, Yang, Liu,
+  and Sun}]{qian2024colearning}
+Qian, C.; Dang, Y.; Li, J.; Liu, W.; Chen, W.; Yang, C.; Liu, Z.; and Sun, M.
+  2024{\natexlab{a}}.
+\newblock Experiential Co-Learning of Software-Developing Agents.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics (ACL)}.
+
+\bibitem[{Qian et~al.(2024{\natexlab{b}})Qian, Liu, Liu, Chen, Dang, Li, Yang,
+  Chen, Su, Cong, Xu, Li, Liu, and Sun}]{qian2024chatdev}
+Qian, C.; Liu, W.; Liu, H.; Chen, N.; Dang, Y.; Li, J.; Yang, C.; Chen, W.; Su,
+  Y.; Cong, X.; Xu, J.; Li, D.; Liu, Z.; and Sun, M. 2024{\natexlab{b}}.
+\newblock {ChatDev}: Communicative Agents for Software Development.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics (ACL)}.
+
+\bibitem[{Schneirla(1944)}]{schneirla1944circularmill}
+Schneirla, T.~C. 1944.
+\newblock A Unique Case of Circular Milling in Ants, Considered in Relation to
+  Trail Following and the General Problem of Orientation.
+\newblock \emph{American Museum Novitates}, 1253: 1--9.
+
+\bibitem[{Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
+  Yao}]{shinn2023reflexion}
+Shinn, N.; Cassano, F.; Gopinath, A.; Narasimhan, K.; and Yao, S. 2023.
+\newblock Reflexion: Language Agents with Verbal Reinforcement Learning.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}.
+
+\bibitem[{Wang et~al.(2024)Wang, Wang, Athiwaratkun, Zhang, and
+  Zou}]{wang2024moa}
+Wang, J.; Wang, J.; Athiwaratkun, B.; Zhang, C.; and Zou, J. 2024.
+\newblock Mixture-of-Agents Enhances Large Language Model Capabilities.
+\newblock arXiv:2406.04692.
+
+\bibitem[{Zhang et~al.(2026)Zhang, Zhang, Luo, and
+  Awad}]{zhang2026semanticcollapse}
+Zhang, Z.; Zhang, W.; Luo, H.; and Awad, E. 2026.
+\newblock Multi-{LLM} Systems Exhibit Robust Semantic Collapse: When Diversity
+  Guarantees Fail.
+\newblock arXiv:2606.01448.
+
+\bibitem[{Zhao et~al.(2024)Zhao, Huang, Xu, Lin, Liu, and
+  Huang}]{zhao2024expel}
+Zhao, A.; Huang, D.; Xu, Q.; Lin, M.; Liu, Y.-J.; and Huang, G. 2024.
+\newblock {ExpeL}: {LLM} Agents Are Experiential Learners.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~38, 19632--19642.
+
+\bibitem[{Zhong et~al.(2024)Zhong, Guo, Gao, Ye, and
+  Wang}]{zhong2024memorybank}
+Zhong, W.; Guo, L.; Gao, Q.; Ye, H.; and Wang, Y. 2024.
+\newblock {MemoryBank}: Enhancing Large Language Models with Long-Term Memory.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}.
+
+\bibitem[{Zhu et~al.(2025)Zhu, Du, Hong, Yang, Guo, Wang, Wang, Qian, Tang, Ji,
+  and You}]{zhu2025multiagentbench}
+Zhu, K.; Du, H.; Hong, Z.; Yang, X.; Guo, S.; Wang, Z.; Wang, Z.; Qian, C.;
+  Tang, X.; Ji, H.; and You, J. 2025.
+\newblock {MultiAgentBench}: Evaluating the Collaboration and Competition of
+  {LLM} Agents.
+\newblock In \emph{Proceedings of the 63rd Annual Meeting of the Association
+  for Computational Linguistics}.
+
+\end{thebibliography}

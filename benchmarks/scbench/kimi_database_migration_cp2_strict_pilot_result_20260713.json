@@ -1,0 +1,100 @@
+{
+  "status": "completed_stop_after_go_no_go",
+  "official_run_root": "runs_scbench_moa_kimi_database_migration_cp2_strict_pilot_20260713_rerun1",
+  "excluded_attempt": {
+    "run_root": "runs_scbench_moa_kimi_database_migration_cp2_strict_pilot_20260713",
+    "reason": "Docker Desktop Linux engine was not running. The attempt failed before model inference and is excluded from all analysis."
+  },
+  "model": "kimi-k2.6",
+  "problem": "database_migration",
+  "checkpoint_limit": 2,
+  "worker_count": 2,
+  "num_layers": 2,
+  "step_limit_per_checkpoint": 12,
+  "arms": {
+    "source_success": {
+      "arm_id": "source_success-f63538f5d1ca4467b76fceec2dbaeb82",
+      "layer_1": {
+        "mean_core_score": 0.5,
+        "full_core_workers": 1,
+        "worker_core_scores": ["0/3", "3/3"],
+        "total_input_tokens": 368507,
+        "total_output_tokens": 33021,
+        "mean_duration_sec": 420.31
+      },
+      "layer_2": {
+        "mean_core_score": 0.0,
+        "full_core_workers": 0,
+        "worker_core_scores": ["0/3", "0/3"],
+        "total_input_tokens": 444529,
+        "total_output_tokens": 38736,
+        "mean_duration_sec": 497.33,
+        "mean_received_results": 1,
+        "mean_received_experience_chars": 4000
+      }
+    },
+    "no_transfer": {
+      "arm_id": "no_transfer-5cbe173201aa4b85a378a5de9c46f6bf",
+      "layer_1": {
+        "mean_core_score": 0.8333333333333333,
+        "full_core_workers": 1,
+        "worker_core_scores": ["2/3", "3/3"],
+        "total_input_tokens": 372418,
+        "total_output_tokens": 37167,
+        "mean_duration_sec": 534.57
+      },
+      "layer_2": {
+        "mean_core_score": 0.0,
+        "full_core_workers": 0,
+        "worker_core_scores": ["0/3", "0/3"],
+        "total_input_tokens": 350388,
+        "total_output_tokens": 30457,
+        "mean_duration_sec": 417.57,
+        "mean_received_results": 0,
+        "mean_received_experience_chars": 0
+      }
+    }
+  },
+  "treatment_activation": {
+    "activated": true,
+    "source_worker": "worker_2",
+    "source_layer": 1,
+    "source_core": "3/3",
+    "recipient_workers": 2,
+    "received_results_per_worker": 1,
+    "received_experience_chars_per_worker": 4000
+  },
+  "source_qualification": {
+    "core_verified": true,
+    "core": "3/3",
+    "pytest_exit_code": 1,
+    "non_core_failures": [
+      "test_column_missing_for_drop",
+      "test_backfill_with_numeric_constant",
+      "test_migration_rolls_back_on_failure"
+    ],
+    "interpretation": "The source is locally Core-verified, not a globally full-pass solution."
+  },
+  "layer_2_effects_source_success_vs_no_transfer": {
+    "mean_core_score_difference": 0.0,
+    "full_core_worker_difference": 0,
+    "input_token_difference": 94141,
+    "input_token_percent": 26.87,
+    "output_token_difference": 8279,
+    "output_token_percent": 27.18,
+    "mean_duration_difference_sec": 79.77,
+    "mean_duration_percent": 19.1
+  },
+  "integrity_audit": {
+    "all_checkpoint_2_test_collection_hashes_identical": true,
+    "checkpoint_2_test_collection_hash": "068b8d049eaac830fd92be1fb6110a93d421ef46ae5101d1d538ca370f759c32",
+    "infrastructure_failures_in_official_run": 0,
+    "nonempty_runner_stderr_files": 0,
+    "assistant_actions_using_prohibited_benchmark_paths": 0
+  },
+  "gate_decision": {
+    "expand_to_layer_3_and_repeats": false,
+    "reason": "Treatment activated, but the frozen directional gate failed because the layer-2 Core difference was zero."
+  },
+  "interpretation": "This run is evidence of coordination-cost amplification without an observed accuracy difference. It is not yet evidence that verified-success transfer causes performance degradation."
+}

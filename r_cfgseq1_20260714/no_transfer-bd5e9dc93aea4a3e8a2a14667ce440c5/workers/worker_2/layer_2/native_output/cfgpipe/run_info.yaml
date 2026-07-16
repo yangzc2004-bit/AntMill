@@ -1,0 +1,65 @@
+agent_dir: agent
+agent_tar: agent.tar.gz
+agent_type: null
+agent_version: null
+checkpoint_file: checkpoint.yaml
+compress_artifacts: false
+concurrent_evaluation: false
+debug: false
+environment_file: environment.yaml
+image: null
+inference_result_file: inference_result.json
+model_name: null
+pass_policy: all-core-cases
+problem_file: problem.yaml
+prompt_file: prompt.txt
+run_info_file: run_info.yaml
+seed: 42
+skip_evaluation: false
+snapshot_dir: snapshot
+summary:
+  checkpoints:
+    checkpoint_1: ran
+    checkpoint_2: ran
+  duration_seconds: 423.803309
+  ended: '2026-07-14T10:26:17.631093'
+  error_message: null
+  error_traceback: null
+  error_type: null
+  passed_policy: false
+  started: '2026-07-14T10:19:13.827784'
+  state: failed
+  total_cost: 0.0
+  total_steps: 66
+  total_usage:
+    cost: 0.0
+    current_tokens:
+      cache_read: 21705
+      cache_write: 0
+      input: 23219
+      output: 251
+      reasoning: 0
+    net_tokens:
+      cache_read: 431359
+      cache_write: 0
+      input: 452921
+      output: 11686
+      reasoning: 0
+    steps: 66
+template: 'Implement a program that 100% solves the specification. Work in the current
+  directory; do not cd to /workspace and do not create a virtual environment. Do not
+  inspect /problems, /outputs, benchmark catalogs, evaluation tests, hidden tests,
+  reference solutions, or any path outside the current working directory. Do not search
+  the filesystem root. The runner is already isolated. A requirements.txt seeded from
+  the benchmark''s public dependency list is already present. Do not rely on transient
+  package installs; update requirements.txt if you add dependencies. You have a small
+  action budget, so inspect only essential files, implement early, run focused checks,
+  then submit.
+
+
+  Your task is:
+
+  {{ spec.strip() }}
+
+  '
+verbose: false

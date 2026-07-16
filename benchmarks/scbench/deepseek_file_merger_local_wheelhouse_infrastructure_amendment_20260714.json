@@ -1,0 +1,35 @@
+{
+  "status": "frozen_infrastructure_only_repair_before_model_inference",
+  "date": "2026-07-14",
+  "affected_config": "benchmarks/scbench/deepseek_maas_cp4_long_sequence_candidate_screen_config.json",
+  "invalid_run_root": "r_dscp4screen1_20260714",
+  "invalid_arm_id": "no_transfer-cd2141632d7347ed850a4f8db391fa11",
+  "problem": "file_merger",
+  "failure": {
+    "stage": "pre-model environment setup",
+    "detail": "The command uv pip install --python /opt/scbench/.venv/bin/python -r requirements.txt timed out after 30 seconds because the local wheelhouse lacked the declared pyarrow==16.1.0 and pytest==8.1.1 distributions.",
+    "model_calls": 0,
+    "checkpoint_outputs": 0,
+    "scientific_outcomes_observed": false
+  },
+  "repair": {
+    "method": "Add the exact Linux CPython 3.12 pyarrow 16.1.0 wheel and the exact pytest 8.1.1 wheel, then activate the existing read-only local wheelhouse for file_merger.",
+    "added_files": [
+      "pyarrow-16.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "pytest-8.1.1-py3-none-any.whl"
+    ],
+    "unchanged": [
+      "model",
+      "endpoint",
+      "public specifications",
+      "candidate set",
+      "checkpoint sequence",
+      "32-action budget",
+      "prompts",
+      "tests",
+      "selection thresholds",
+      "tie breaks"
+    ]
+  },
+  "rerun_rule": "Rerun only file_merger from checkpoint 1 through 4 under the original frozen candidate-screen settings. Do not reuse artifacts from the invalid setup attempt."
+}

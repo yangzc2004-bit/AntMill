@@ -1,0 +1,303 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-9.1.1, pluggy-1.6.0 -- /root/.cache/uv/archive-v0/xDHe3nYKjCG_xZGB5_y_F/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.12', 'Platform': 'Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.14.2', 'timeout': '2.4.0', 'metadata': '3.1.1', 'json-report': '1.5.0', 'json-ctrf': '0.5.2'}}
+rootdir: /tmp/tmp_d_2czks
+configfile: pytest.ini
+plugins: anyio-4.14.2, timeout-2.4.0, metadata-3.1.1, json-report-1.5.0, json-ctrf-0.5.2
+timeout: 300.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 101 items
+
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_initial_stats PASSED [  0%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[echo] PASSED [  1%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[time_out] PASSED [  2%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_files] PASSED [  3%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_stdin] PASSED [  4%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_env] PASSED [  5%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_final_stats PASSED [  6%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_initial_stats PASSED [  7%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_string_stream] PASSED [  8%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nonzero_exit_with_stderr] PASSED [  9%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nested_file_execution] PASSED [ 10%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_multiline_values] PASSED [ 11%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdout_without_newline] PASSED [ 12%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[default_timeout_and_empty_stdin] PASSED [ 13%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_files_together] PASSED [ 14%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_stdin_together] PASSED [ 15%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[files_and_stdin_together] PASSED [ 16%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[timeout_with_env_and_files] PASSED [ 17%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[all_features_combined] PASSED [ 18%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[multiple_env_vars_multiple_files] PASSED [ 19%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_array_with_files] PASSED [ 20%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_override_system] PASSED [ 21%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_small_timeout] PASSED [ 22%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[unicode_in_output] PASSED [ 23%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_long_stdout] PASSED [ 24%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[exit_code_variations] PASSED [ 25%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[command_with_shell_metacharacters] PASSED [ 26%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_final_stats PASSED [ 27%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[missing_command_field] PASSED [ 28%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_negative] PASSED [ 29%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_zero] PASSED [ 30%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_type] PASSED [ 31%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_env_type] PASSED [ 32%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_files_type] PASSED [ 33%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_stdin_type] PASSED [ 34%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[empty_command_string] PASSED [ 35%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[command_type_not_string] PASSED [ 36%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[env_values_not_strings] PASSED [ 37%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_duration_is_rounded PASSED [ 38%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_stats_duration_is_rounded PASSED [ 39%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_error_does_not_increment_stats PASSED [ 40%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_invalid_json_returns_json_error PASSED [ 41%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string] PASSED [ 42%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[env_is_null] PASSED [ 43%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[files_is_null] PASSED [ 44%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_initial_stats PASSED [ 45%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_glob] PASSED [ 46%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_glob_mismatch] PASSED [ 47%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_no_glob] PASSED [ 48%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[not_recursive] PASSED [ 49%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[recursive_glob] PASSED [ 50%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_final_stats PASSED [ 51%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_string] PASSED [ 52%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_object] PASSED [ 53%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_number] PASSED [ 54%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_number] PASSED [ 55%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_null] PASSED [ 56%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_object] PASSED [ 57%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_initial_stats PASSED [ 58%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[bz2_compression] FAILED [ 59%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[gz_compression] PASSED [ 60%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_columns] PASSED [ 61%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_list_objects] PASSED [ 62%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_cell_types] PASSED [ 63%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_quoting] PASSED [ 64%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_sorted_headers] PASSED [ 65%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[jsonl_list] PASSED [ 66%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[jsonl_columns] FAILED [ 67%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[tsv_basic] PASSED [ 68%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[json_object] PASSED [ 69%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[json_array] PASSED [ 70%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[yaml_data] PASSED [ 71%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[unknown_extension] PASSED [ 72%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_final_stats PASSED [ 73%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_column_many_columns] PASSED [ 74%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_decimals_preserved] PASSED [ 75%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_empty_array] PASSED [ 76%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_empty_strings] PASSED [ 77%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_gz_compression] PASSED [ 78%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_single_column] PASSED [ 79%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[fallback_no_extension] PASSED [ 80%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[fallback_unknown_with_string] PASSED [ 81%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_boolean] PASSED [ 82%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_empty_array] PASSED [ 83%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_empty_object] PASSED [ 84%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_null] PASSED [ 85%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_number] PASSED [ 86%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_string] PASSED [ 87%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[jsonl_gz_compression] PASSED [ 88%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[multiple_structured_files] PASSED [ 89%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[ndjson_columns] FAILED [ 90%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[ndjson_list] PASSED [ 91%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[track_with_structured_files] PASSED [ 92%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_bz2_compression] FAILED [ 93%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_columns] PASSED [ 94%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_mixed_types] PASSED [ 95%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_quoting_with_tabs] PASSED [ 96%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[yaml_array] PASSED [ 97%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[yaml_gz_compression] PASSED [ 98%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[yml_extension] PASSED [ 99%]
+.evaluation_tests/test_checkpoint_3.py::TestError::test_error_cases[multiple_compression_extensions] PASSED [100%]
+
+=================================== FAILURES ===================================
+_______________ TestCore.test_structured_files[bz2_compression] ________________
+
+self = <test_checkpoint_3.TestCore object at 0x72aefc6f24e0>
+client = <httpx.Client object at 0x72aefc48c890>
+case = StructuredFileCase(name='bz2_compression', body={'command': 'bzcat data.csv.bz2', 'env': {}, 'files': {'data.csv.bz2':...st\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.parametrize(
+        "case",
+        CORE_EXECUTE_CASES,
+        ids=[case.name for case in CORE_EXECUTE_CASES],
+    )
+    def test_structured_files(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test structured file serialization."""
+        response = client.post("/v1/execute", json=case.body)
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_execute_payload(payload, case)
+
+.evaluation_tests/test_checkpoint_3.py:746: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '864afe0f-36d6-455c-a1e2-f81809216854', 'stdout': '', 'stderr': '/bin/sh: 1: bzcat: not found\n', 'exit_code': 127, ...}
+case = StructuredFileCase(name='bz2_compression', body={'command': 'bzcat data.csv.bz2', 'env': {}, 'files': {'data.csv.bz2':...st\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    def _assert_execute_payload(
+        payload: dict[str, Any], case: StructuredFileCase
+    ) -> None:
+>       assert payload["exit_code"] == case.expected_exit_code
+E       AssertionError: assert 127 == 0
+E        +  where 0 = StructuredFileCase(name='bz2_compression', body={'command': 'bzcat data.csv.bz2', 'env': {}, 'files': {'data.csv.bz2': [{'id': 1, 'name': 'test'}]}, 'stdin': [], 'timeout': 10}, expected_stdout='id,name\n1,test\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None).expected_exit_code
+
+.evaluation_tests/test_checkpoint_3.py:131: AssertionError
+________________ TestCore.test_structured_files[jsonl_columns] _________________
+
+self = <test_checkpoint_3.TestCore object at 0x72aefc6f30e0>
+client = <httpx.Client object at 0x72aefc48c890>
+case = StructuredFileCase(name='jsonl_columns', body={'command': 'cat data.jsonl', 'env': {}, 'files': {'data.jsonl': {'id': ..."}\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.parametrize(
+        "case",
+        CORE_EXECUTE_CASES,
+        ids=[case.name for case in CORE_EXECUTE_CASES],
+    )
+    def test_structured_files(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test structured file serialization."""
+        response = client.post("/v1/execute", json=case.body)
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_execute_payload(payload, case)
+
+.evaluation_tests/test_checkpoint_3.py:746: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '69d2d327-9faf-45dd-b907-d0c6f3bfde00', 'stdout': '{"id": [1, 2, 3], "name": ["alice", "bob", "charlie"]}\n', 'stderr': '', 'exit_code': 0, ...}
+case = StructuredFileCase(name='jsonl_columns', body={'command': 'cat data.jsonl', 'env': {}, 'files': {'data.jsonl': {'id': ..."}\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    def _assert_execute_payload(
+        payload: dict[str, Any], case: StructuredFileCase
+    ) -> None:
+        assert payload["exit_code"] == case.expected_exit_code
+        assert payload["timed_out"] == case.expected_timed_out
+        assert payload["stderr"] == case.expected_stderr
+        # Normalize stdout for comparison
+        actual_stdout = _normalize_stdout(payload["stdout"])
+        expected_stdout = _normalize_stdout(case.expected_stdout)
+>       assert actual_stdout == expected_stdout, (
+            f"stdout mismatch:\nactual: {payload['stdout']!r}\n"
+            f"expected: {case.expected_stdout!r}"
+        )
+E       AssertionError: stdout mismatch:
+E         actual: '{"id": [1, 2, 3], "name": ["alice", "bob", "charlie"]}\n'
+E         expected: '{"id":1,"name":"alice"}\n{"id":2,"name":"bob"}\n{"id":3,"name":"charlie"}\n'
+E       assert '{"id":[1,2,3],"name":["alice","bob","charlie"]}' == '{"id":1,"name":"alice"}{"id":2,"name":"bob"}{"id":3,"name":"charlie"}'
+E         
+E         - {"id":1,"name":"alice"}{"id":2,"name":"bob"}{"id":3,"name":"charlie"}
+E         + {"id":[1,2,3],"name":["alice","bob","charlie"]}
+
+.evaluation_tests/test_checkpoint_3.py:137: AssertionError
+_______ TestFunctionality.test_structured_files_extended[ndjson_columns] _______
+
+self = <test_checkpoint_3.TestFunctionality object at 0x72aefc6fbad0>
+client = <httpx.Client object at 0x72aefc57f110>
+case = StructuredFileCase(name='ndjson_columns', body={'command': 'cat data.ndjson', 'env': {}, 'files': {'data.ndjson': {'x'...0}\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.functionality
+    @pytest.mark.parametrize(
+        "case",
+        FUNCTIONALITY_CASES,
+        ids=[case.name for case in FUNCTIONALITY_CASES],
+    )
+    def test_structured_files_extended(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test extended structured file features."""
+        response = client.post("/v1/execute", json=case.body)
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_execute_payload(payload, case)
+
+.evaluation_tests/test_checkpoint_3.py:779: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '8fa21c5b-6850-4724-b9e4-56b2dcbd360b', 'stdout': '{"x": [1, 2, 3], "y": [10, 20, 30]}\n', 'stderr': '', 'exit_code': 0, ...}
+case = StructuredFileCase(name='ndjson_columns', body={'command': 'cat data.ndjson', 'env': {}, 'files': {'data.ndjson': {'x'...0}\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    def _assert_execute_payload(
+        payload: dict[str, Any], case: StructuredFileCase
+    ) -> None:
+        assert payload["exit_code"] == case.expected_exit_code
+        assert payload["timed_out"] == case.expected_timed_out
+        assert payload["stderr"] == case.expected_stderr
+        # Normalize stdout for comparison
+        actual_stdout = _normalize_stdout(payload["stdout"])
+        expected_stdout = _normalize_stdout(case.expected_stdout)
+>       assert actual_stdout == expected_stdout, (
+            f"stdout mismatch:\nactual: {payload['stdout']!r}\n"
+            f"expected: {case.expected_stdout!r}"
+        )
+E       AssertionError: stdout mismatch:
+E         actual: '{"x": [1, 2, 3], "y": [10, 20, 30]}\n'
+E         expected: '{"x":1,"y":10}\n{"x":2,"y":20}\n{"x":3,"y":30}\n'
+E       assert '{"x":[1,2,3],"y":[10,20,30]}' == '{"x":1,"y":10}{"x":2,"y":20}{"x":3,"y":30}'
+E         
+E         - {"x":1,"y":10}{"x":2,"y":20}{"x":3,"y":30}
+E         + {"x":[1,2,3],"y":[10,20,30]}
+
+.evaluation_tests/test_checkpoint_3.py:137: AssertionError
+____ TestFunctionality.test_structured_files_extended[tsv_bz2_compression] _____
+
+self = <test_checkpoint_3.TestFunctionality object at 0x72aefc6f8320>
+client = <httpx.Client object at 0x72aefc57f110>
+case = StructuredFileCase(name='tsv_bz2_compression', body={'command': 'bzcat data.tsv.bz2', 'env': {}, 'files': {'data.tsv.b...l2\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.functionality
+    @pytest.mark.parametrize(
+        "case",
+        FUNCTIONALITY_CASES,
+        ids=[case.name for case in FUNCTIONALITY_CASES],
+    )
+    def test_structured_files_extended(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test extended structured file features."""
+        response = client.post("/v1/execute", json=case.body)
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_execute_payload(payload, case)
+
+.evaluation_tests/test_checkpoint_3.py:779: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '73b47d24-2082-4f8e-a183-270c701be1eb', 'stdout': '', 'stderr': '/bin/sh: 1: bzcat: not found\n', 'exit_code': 127, ...}
+case = StructuredFileCase(name='tsv_bz2_compression', body={'command': 'bzcat data.tsv.bz2', 'env': {}, 'files': {'data.tsv.b...l2\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    def _assert_execute_payload(
+        payload: dict[str, Any], case: StructuredFileCase
+    ) -> None:
+>       assert payload["exit_code"] == case.expected_exit_code
+E       AssertionError: assert 127 == 0
+E        +  where 0 = StructuredFileCase(name='tsv_bz2_compression', body={'command': 'bzcat data.tsv.bz2', 'env': {}, 'files': {'data.tsv.bz2': [{'col1': 'val1', 'col2': 'val2'}]}, 'stdin': [], 'timeout': 10}, expected_stdout='col1\tcol2\nval1\tval2\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None).expected_exit_code
+
+.evaluation_tests/test_checkpoint_3.py:131: AssertionError
+--------------------------------- JSON report ----------------------------------
+report saved to: .scbench/pytest-report.json
+=========================== short test summary info ============================
+FAILED .evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[bz2_compression] - AssertionError: assert 127 == 0
+ +  where 0 = StructuredFileCase(name='bz2_compression', body={'command': 'bzcat data.csv.bz2', 'env': {}, 'files': {'data.csv.bz2': [{'id': 1, 'name': 'test'}]}, 'stdin': [], 'timeout': 10}, expected_stdout='id,name\n1,test\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None).expected_exit_code
+FAILED .evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[jsonl_columns] - AssertionError: stdout mismatch:
+  actual: '{"id": [1, 2, 3], "name": ["alice", "bob", "charlie"]}\n'
+  expected: '{"id":1,"name":"alice"}\n{"id":2,"name":"bob"}\n{"id":3,"name":"charlie"}\n'
+assert '{"id":[1,2,3],"name":["alice","bob","charlie"]}' == '{"id":1,"name":"alice"}{"id":2,"name":"bob"}{"id":3,"name":"charlie"}'
+  
+  - {"id":1,"name":"alice"}{"id":2,"name":"bob"}{"id":3,"name":"charlie"}
+  + {"id":[1,2,3],"name":["alice","bob","charlie"]}
+FAILED .evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[ndjson_columns] - AssertionError: stdout mismatch:
+  actual: '{"x": [1, 2, 3], "y": [10, 20, 30]}\n'
+  expected: '{"x":1,"y":10}\n{"x":2,"y":20}\n{"x":3,"y":30}\n'
+assert '{"x":[1,2,3],"y":[10,20,30]}' == '{"x":1,"y":10}{"x":2,"y":20}{"x":3,"y":30}'
+  
+  - {"x":1,"y":10}{"x":2,"y":20}{"x":3,"y":30}
+  + {"x":[1,2,3],"y":[10,20,30]}
+FAILED .evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_bz2_compression] - AssertionError: assert 127 == 0
+ +  where 0 = StructuredFileCase(name='tsv_bz2_compression', body={'command': 'bzcat data.tsv.bz2', 'env': {}, 'files': {'data.tsv.bz2': [{'col1': 'val1', 'col2': 'val2'}]}, 'stdin': [], 'timeout': 10}, expected_stdout='col1\tcol2\nval1\tval2\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None).expected_exit_code
+======================== 4 failed, 97 passed in 11.12s =========================

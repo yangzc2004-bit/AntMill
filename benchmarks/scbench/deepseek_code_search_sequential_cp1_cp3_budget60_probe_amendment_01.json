@@ -1,0 +1,25 @@
+{
+  "status": "engineering_budget_probe_amendment_frozen_before_final_outcome",
+  "date_frozen": "2026-07-14",
+  "parent_config": "benchmarks/scbench/deepseek_code_search_sequential_cp1_cp3_budget60_probe_config.json",
+  "freeze_point": {
+    "checkpoint": 3,
+    "last_observed_step": 37,
+    "final_evaluation_available": false,
+    "completion_action_observed": false
+  },
+  "reason": "The original decision rule did not distinguish a completed zero-score trajectory from another trajectory censored by the 60-step cap. Upstream MiniSWE defaults to 300 steps, and the calibration trajectory remained active beyond step 37 when this amendment was frozen.",
+  "revised_decision_rule": {
+    "headroom_confirmed": "Checkpoint-3 no-transfer Core is at least 2/8, regardless of whether the agent used the full budget.",
+    "borderline_completed": "Checkpoint-3 no-transfer Core is 1/8 and the agent completed before the 60-step cap; run one additional 60-step no-transfer worker.",
+    "headroom_not_confirmed": "Checkpoint-3 no-transfer Core is 0/8 and the agent completed before the 60-step cap; abandon code_search for the main transfer contrast.",
+    "budget_censored_again": "The trajectory reaches 60 steps without issuing the MiniSWE completion command. Do not use its score to abandon code_search. Run at most one 120-step no-transfer calibration worker, then decide using completion status and Core score.",
+    "maximum_calibration": "Do not escalate beyond a single 120-step calibration worker for this model-task pair."
+  },
+  "unchanged": {
+    "current_run": "continues unchanged at a 60-step cap",
+    "target_collection": "unchanged",
+    "model": "deepseek-v4-flash",
+    "treatment_arms": "remain prohibited until checkpoint-3 headroom is confirmed"
+  }
+}

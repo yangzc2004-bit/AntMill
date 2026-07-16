@@ -1,0 +1,35 @@
+{
+  "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "model": "kimi-k2.6",
+  "worker_count": 1,
+  "num_layers": 1,
+  "checkpoint_limit": 3,
+  "step_limit_per_worker": 40,
+  "experience_char_limit_per_source": 10000,
+  "candidates": [
+    {
+      "problem": "cfgpipe",
+      "reason": "Selected after the frozen checkpoint-2 screen and prospective 40-action calibration; checkpoint 3 adds grouped schemas, composed paths, and custom types."
+    }
+  ],
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": true
+  },
+  "headroom_rule": {
+    "advance": "Checkpoint 3 has no infrastructure failure, normalized Core is at least 0.50, normalized all-test score is at least 0.50, and the worker issues COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT before action 40 at every attempted checkpoint.",
+    "strong_advance": "Checkpoint-3 Core is complete and normalized all-test score is below 0.95, providing both a reliable local-success source and broader-score headroom.",
+    "reject": "Stop the cfgpipe sequential contrast if checkpoint-3 Core or all-test score is below 0.50, or if checkpoint 3 is action-boundary censored.",
+    "formal_if_valid": "Freeze a three-layer no_transfer versus recursive_self_report_synthesis pilot with two workers per arm and the same 40-action per-checkpoint budget."
+  },
+  "outcome_plan": {
+    "primary": "Mean normalized all-test score at each checkpoint, because the mechanism concerns globally inferior behavior that can remain locally plausible.",
+    "secondary": "Mean normalized Core score and exact failure overlap.",
+    "scores_withheld_from_manager": true
+  }
+}

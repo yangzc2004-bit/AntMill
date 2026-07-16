@@ -1,0 +1,28 @@
+{
+  "artifacts_dir": "agent",
+  "checkpoint_path": "/outputs/datagate/checkpoint_2",
+  "completed": "2026-07-14T10:50:13.394731",
+  "elapsed": 344.738366,
+  "error_message": null,
+  "had_error": false,
+  "snapshot_dir": "snapshot",
+  "started": "2026-07-14T10:44:28.656365",
+  "usage": {
+    "cost": 0.0,
+    "current_tokens": {
+      "cache_read": 30330,
+      "cache_write": 0,
+      "input": 30425,
+      "output": 246,
+      "reasoning": 0
+    },
+    "net_tokens": {
+      "cache_read": 279553,
+      "cache_write": 0,
+      "input": 309741,
+      "output": 21664,
+      "reasoning": 0
+    },
+    "steps": 20
+  }
+}

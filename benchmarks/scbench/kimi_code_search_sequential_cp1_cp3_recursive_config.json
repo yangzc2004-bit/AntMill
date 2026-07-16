@@ -1,0 +1,90 @@
+{
+  "status": "engineering_sequential_checkpoint_curve_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "manager": "Kimi intermediate MoA aggregator",
+  "model": "kimi-k2.6",
+  "problem": "code_search",
+  "checkpoint_sequence": [
+    1,
+    2,
+    3
+  ],
+  "worker_count": 3,
+  "step_limit_per_checkpoint": 16,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 10000,
+  "manager_max_output_tokens": 5000,
+  "manager_experience_char_limit": 20000,
+  "scbench_seed": 42,
+  "mode_order": [
+    "recursive_synthesis",
+    "no_transfer"
+  ],
+  "expected_targets": {
+    "1": {
+      "core_total": 7,
+      "pytest_collected": 13,
+      "test_collection_hash": "60b2d6ff1ac610f185120cfa46bcb9a1b71a4a4f328ee83d113ae9d405e1a0cc"
+    },
+    "2": {
+      "core_total": 5,
+      "pytest_collected": 25,
+      "test_collection_hash": "6e4457d36d30cf9405ff2006c59ebc9a2c58b9e109af3f1d49ca3addb3c4d719"
+    },
+    "3": {
+      "core_total": 8,
+      "pytest_collected": 47,
+      "test_collection_hash": "39d11b6b8327d3049a7b4e00da441d91640b57e6fe866789c506e43a10634395"
+    }
+  },
+  "design_rationale": {
+    "sequential_tasks": "Every round contains independent agents solving the same current checkpoint. The project then advances from exact/regex search to multi-language search and finally to structure-aware metavariable patterns.",
+    "known_difficulty": "Checkpoint 2 was previously 5/5 Core for every sampled Kimi worker. At checkpoint 3, three fixed-16-step no-transfer calibration workers scored 6/8, 0/8, and 0/8, providing non-zero but below-ceiling headroom.",
+    "experience_relevance": "Checkpoint-1 and checkpoint-2 implementation experience is locally verified and directly relevant to the same evolving codebase, rather than being unrelated cross-task memory.",
+    "reason_for_three_rounds": "The third checkpoint is the first pre-observed capability boundary. Extending to checkpoints 4 and 5 is forbidden unless checkpoint 3 retains control headroom and the treatment direction supports extension."
+  },
+  "assimilation_semantics": {
+    "recursive_synthesis": "After checkpoint 1 and checkpoint 2, the MoA manager recursively revises one shared playbook using only current-round workers that pass every current Core test. The next checkpoint's workers all receive exactly that latest playbook.",
+    "no_transfer": "Use the same worker count, checkpoint sequence, model, and action budget while suppressing every prior output.",
+    "no_success_behavior": "If a round has no new strict source, retain the previous shared playbook unchanged. If checkpoint 1 creates no strict source, treatment activation fails and direction is not interpreted."
+  },
+  "manager_semantics": {
+    "public_context": "At each synthesis, provide the public specifications cumulatively through the current checkpoint.",
+    "recursive_state": "Include the immediately previous shared playbook in every update after the first.",
+    "evidence_filter": "Only workers passing all current-checkpoint Core tests may be imported as new evidence.",
+    "objective": "Retain concrete constraints, implementation decisions, edge cases, failure-prevention rules, and validation procedures while resolving conflicts.",
+    "bounded_output": "The shared playbook is capped at 20000 characters and manager token use is recorded."
+  },
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": "Reject infrastructure failure, Core-total drift, or test-hash drift and re-evaluate the same snapshot against the frozen layer target."
+  },
+  "validity_gates": {
+    "source_activation": "Checkpoint 1 must create at least one strict source and every recursive checkpoint-2 worker must receive the manager artifact.",
+    "recursive_continuity": "The checkpoint-2 manager update must include the checkpoint-1 manager artifact and at least one strict checkpoint-2 source.",
+    "control_headroom": "No-transfer checkpoint-3 mean normalized Core must exceed 0.10.",
+    "target_consistency": "Every result must match the frozen Core total and test collection hash for its checkpoint after clean re-evaluation when needed.",
+    "integrity": "No infrastructure failures remain and no assistant action accesses prohibited benchmark paths."
+  },
+  "degradation_criteria": {
+    "primary_terminal_effect": "Recursive-synthesis checkpoint-3 mean normalized Core is at least 0.20 below no-transfer checkpoint 3.",
+    "difference_in_differences": "The recursive checkpoint-2 to checkpoint-3 change minus the no-transfer checkpoint-2 to checkpoint-3 change is at most -0.20.",
+    "within_treatment_decline": "Recursive normalized Core falls by at least 0.30 from checkpoint 2 to checkpoint 3.",
+    "complexity_support": "Checkpoint-3 recursive workers receive non-zero shared experience and use at least 20 percent more total input tokens than no transfer.",
+    "interpretation": "All validity gates plus primary terminal effect, difference in differences, within-treatment decline, and complexity support are required before calling the result a degradation curve."
+  },
+  "decision_rule": {
+    "expand": "If the full degradation definition passes, run two more independent replicates and then a second model.",
+    "directional_followup": "If validity passes and both terminal and difference-in-differences effects are negative but one misses 0.20, run one frozen replication before rejecting.",
+    "falsify": "If recursive synthesis activates and no-transfer retains headroom but either effect is non-negative, reject this mechanism-task sequence.",
+    "invalid": "Do not interpret direction if checkpoint-1 activation fails, checkpoint-2 recursive continuity fails, control checkpoint 3 has no headroom, or target consistency cannot be restored."
+  }
+}

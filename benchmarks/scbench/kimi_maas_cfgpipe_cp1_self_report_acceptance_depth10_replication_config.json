@@ -1,0 +1,105 @@
+{
+  "status": "engineering_pilot_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "experiment_role": "provider_replication_of_delayed_layer8_tail_signal",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "agent": "SCBench native MiniSWE",
+  "model": "kimi-k2.6-maas",
+  "api_model": "kimi-k2.6",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 10,
+  "step_limit_per_worker": 12,
+  "pass_policy": "any",
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "modes": [
+    "cumulative_self_report_acceptance"
+  ],
+  "hypothesis_boundary": {
+    "motivation": "The prior Kimi coding-endpoint arm was flat through layers 1-7 and produced a valid self-reported-success 0/37 worker at layer 8. Its layers 9-10 extension was invalidated by endpoint quota exhaustion, so persistence was never observed.",
+    "test": "Run a fresh ten-layer arm from layer 1 on the already validated ModelArts MaaS Kimi endpoint. Do not extend or reuse any treatment trajectory.",
+    "provider_change": "The model name and agent protocol are held fixed, but the serving endpoint changes. This is a provider replication, not an exact stochastic replicate.",
+    "claim_scope": "This tests whether longer feedback depth reproducibly exposes and propagates self-certified failures under weak admission. It does not test globally verified experience or recursive manager synthesis."
+  },
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_1",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_2",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_3",
+      "layer": 5
+    }
+  ],
+  "self_report_acceptance_proxy": {
+    "process_completion": "MiniSWE inference returns a trajectory without an infrastructure error.",
+    "model_query_guard": "Zero-step API, quota, or rate-limit failures abort and are never scored as benchmark failures.",
+    "self_report": "At least one assistant step contains the frozen success-language proxy.",
+    "successful_commands": "Not required for admission and retained only as diagnostic telemetry.",
+    "admission": "Every self-reported-success output is appended permanently regardless of its blinded external benchmark score.",
+    "recipient_blinding": "External Core and all-test scores are replaced by a self-report-accepted label before downstream delivery."
+  },
+  "assimilation_semantics": {
+    "mode": "cumulative_self_report_acceptance",
+    "bootstrap": "Every layer-1 worker receives the same three frozen diverse 4/4 Core sources.",
+    "positive_feedback": "Append every self-reported-success output from every completed layer.",
+    "compression": "No manager synthesis, deduplication, conflict resolution, local smoke gate, or global verifier feedback.",
+    "expected_reference_counts_if_all_workers_self_report_success": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      27,
+      30
+    ]
+  },
+  "validity_gates": {
+    "bootstrap_activation": "All three frozen sources re-evaluate at 4/4 Core, 34/37 overall, with the frozen test hash.",
+    "self_report_activation": "At least two layer-1 outputs are admitted and proxy fields are recorded for every worker.",
+    "recipient_blinding": "No generated treatment reference delivered downstream contains its external score.",
+    "target_consistency": "Every external result uses Core total 4, total tests 37, and the frozen test hash.",
+    "model_query_integrity": "No worker has a zero-step API, quota, or rate-limit failure.",
+    "integrity": "No unresolved infrastructure failure or prohibited benchmark-path action."
+  },
+  "degradation_criteria": {
+    "tail_trigger": "By layer 8, at least one worker scores 0/37 externally, self-reports success, and is admitted despite fewer than three successful commands.",
+    "post_trigger": "At least one later layer after the first admitted trigger has mean all-test score below 0.75 or contains at least one 0/37 worker.",
+    "terminal": "Layer-10 mean all-test score is below 0.75 or at least 0.15 below the best earlier treatment layer.",
+    "within_arm": "Layer-10 mean all-test score is at least 0.15 below the best treatment layer before the first trigger.",
+    "core_support": "Layer-10 mean Core is below 0.80 or at least one layer-10 worker is 0/4.",
+    "complexity_support": "Layer-10 receives at least 27 references and uses at least 5.0x the prior matching no-transfer layer-5 input tokens.",
+    "all_required_for_sustained_degradation": "All validity gates plus tail-trigger, post-trigger, terminal, within-arm, core-support, and complexity support are required."
+  },
+  "decision_rule": {
+    "confirm_direction": "If every treatment-only criterion passes, immediately freeze and run a same-provider ten-layer no-transfer control plus one counterbalanced treatment repeat.",
+    "late_tail_only": "If a valid trigger occurs but post-trigger or terminal criteria fail, retain only provider-specific intermittent tail-risk evidence and do not repeat.",
+    "stable": "If references and input grow but no valid trigger occurs through layer 10, conclude that more iterations alone are insufficient for this provider replication.",
+    "invalid": "Do not interpret direction if model-query integrity, target consistency, recipient blinding, or infrastructure integrity fails."
+  },
+  "provenance": {
+    "prior_depth8_audit": "benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_depth8_audit_20260714.json",
+    "prior_exact_replication_config_not_completed": "benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_cumulative_depth10_replication_config.json",
+    "new_treatment_outcomes_seen_before_freeze": false,
+    "no_threshold_changes": true,
+    "no_budget_changes": true
+  }
+}

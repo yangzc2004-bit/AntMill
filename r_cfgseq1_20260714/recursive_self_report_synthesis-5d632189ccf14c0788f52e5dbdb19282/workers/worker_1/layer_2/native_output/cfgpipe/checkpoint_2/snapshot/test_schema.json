@@ -1,0 +1,5 @@
+{
+  "port": { "type": "integer", "default": "8080" },
+  "debug": { "type": "boolean", "default": "false" },
+  "name": { "type": "string", "default": "myapp" }
+}

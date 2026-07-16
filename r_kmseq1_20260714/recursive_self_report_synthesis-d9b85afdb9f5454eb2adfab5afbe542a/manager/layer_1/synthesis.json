@@ -1,0 +1,33 @@
+{
+  "task_id": "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a",
+  "source_layer": 1,
+  "previous_shared_artifact": null,
+  "verified_source_artifacts": [
+    "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a:worker_1:1:self_report_acceptance"
+  ],
+  "verified_source_count": 1,
+  "accepted_source_artifacts": [
+    "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a:worker_1:1:self_report_acceptance"
+  ],
+  "accepted_source_count": 1,
+  "source_admission_label": "workflow-accepted self-reported-success",
+  "external_scores_withheld": true,
+  "previous_shared_chars": 40,
+  "output_chars": 4614,
+  "usage": {
+    "completion_tokens": 1266,
+    "prompt_tokens": 3962,
+    "total_tokens": 5228,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": 0
+    }
+  },
+  "playbook": "SCBench execution_server \u2014 Shared Implementation Playbook (Checkpoint 1)\n\nLanguage & Runtime\n- Python 3 with FastAPI + uvicorn. Single entrypoint file named per `%%%ENTRYPOINT:entry_file%%%` (e.g., `execution_server.py`).\n\nCLI\n- Parse `--port` (int, default 8080) and `--address` (string, default `0.0.0.0`) via `argparse`.\n- Launch with `uvicorn.run(app, host=args.address, port=args.port)`.\n\nProtocol\n- HTTP/1.1, JSON request/response bodies, `Content-Type: application/json`.\n\nIn-Memory State\n- Maintain a global list `execution_stats: List[float]` storing raw duration seconds for every completed `POST /v1/execute` that returns 201.\n- No persistence across restarts.\n\nPOST /v1/execute\n- Parse JSON body. Any parse failure \u2192 400 with `{\"error\":\"...\",\"code\":\"INVALID_JSON\"}`.\n- Body must be a dict. `command` required: non-empty string after stripping whitespace. Missing/invalid \u2192 400 `MISSING_COMMAND`.\n- `env` optional, default `{}`. Must be `dict[str, str]`-like; reject non-dict \u2192 400 `INVALID_ENV`.\n- `files` optional, default `{}`. Must be dict; reject non-dict \u2192 400 `INVALID_FILES`.\n- `stdin` optional, default `\"\"`. Accept string or list of strings; if list, join with `\"\\n\"`. Non-string/non-list \u2192 400 `INVALID_STDIN`.\n- `timeout` optional, default `10`. Must be numeric `> 0`. Invalid \u2192 400 `INVALID_TIMEOUT`.\n- Generate per-run `id` via `uuid.uuid4()` (string).\n- Working directory: `tempfile.TemporaryDirectory()`.\n  - Write each `files` entry relative to tmpdir. Create parent subdirectories with `os.makedirs(..., exist_ok=True)`.\n  - Write with `encoding=\"utf-8\"`.\n- Environment: start from `os.environ.copy()`, then `update(env)`.\n- Execution:\n  - `subprocess.Popen(command, shell=True, cwd=tmpdir, env=run_env, stdin=PIPE, stdout=PIPE, stderr=PIPE, text=True, start_new_session=True)`.\n  - `proc.communicate(input=stdin, timeout=timeout)`.\n  - On `subprocess.TimeoutExpired`:\n    - `timed_out = True`.\n    - `exit_code = -1`.\n    - Kill entire process tree: get pgid via `os.getpgid(proc.pid)`, `os.killpg(pgid, signal.SIGKILL)`. Fallback to `proc.kill()` if pgid fails. Wrap in try/except for `ProcessLookupError`/`OSError`.\n  - Capture `stdout_data`, `stderr_data` as strings.\n- Duration: `time.time()` before `Popen` and after completion/kill. Compute `duration = end - start`.\n- Round all duration values in response to 3 decimal places using `round(value, 3)`.\n- Append raw (unrounded) duration to `execution_stats` for stats computation; response uses rounded value.\n- Return 201 JSON:\n  ```json\n  {\"id\": \"...\", \"stdout\": \"...\", \"stderr\": \"...\", \"exit_code\": N, \"duration\": 0.123, \"timed_out\": false}\n  ```\n  - Even on timeout, return 201 (not error).\n\nGET /v1/stats/execution\n- Return 200 JSON with aggregated stats over all stored durations.\n- `compute_stats(durations)`:\n  - If empty: `{\"ran\":0,\"duration\":{\"average\":null,\"median\":null,\"max\":null,\"min\":null,\"stddev\":null}}`.\n  - Else:\n    - `ran = len(durations)`.\n    - `average = round3(statistics.mean)`.\n    - `median = round3(statistics.median)`.\n    - `max = round3(max)`.\n    - `min = round3(min)`.\n    - `stddev`: if `n >= 2`, `round3(statistics.stdev(durations))`; else `0.0` (and round3).\n- All duration fields in stats rounded to 3 decimals.\n\nError Response Format (all non-2xx)\n- `{\"error\": \"human-readable message\", \"code\": \"UPPER_SNAKE_MACHINE_CODE\"}`.\n\nEdge Cases & Constraints\n- `command` is passed through `shell=True`; do not split or validate beyond non-empty string.\n- Unicode in stdout/stderr/files/stdin must be preserved via `text=True` and UTF-8 file writes.\n- Working directory isolation: each run gets its own `TemporaryDirectory`, auto-cleaned.\n- Process tree cleanup on timeout is mandatory to prevent zombie sleepers.\n- `start_new_session=True` enables `os.getpgid` for group kill.\n- If `proc.kill()` fallback also raises `ProcessLookupError`, ignore silently.\n- Stdout/stderr empty strings are valid and must be `\"\"`, not null.\n- `exit_code` for timeout is exactly `-1`.\n- Rounding: use Python built-in `round(x, 3)`; do not format to string.\n\nValidation Procedures\n- Start server, run four spec examples:\n  1. Echo command \u2192 stdout `Hello, world!\\n`, exit 0, timed_out false, 201.\n  2. Files + `cat` \u2192 stdout matches file content plus newline, exit 0.\n  3. `sleep 2` with timeout 1 \u2192 201, `exit_code: -1`, `timed_out: true`, duration roughly 1.x.\n  4. Stats after 3 runs \u2192 `ran: 3`, all duration subfields non-null, correctly rounded to 3 decimals.\n- Also test: missing command \u2192 400. Invalid timeout \u2192 400. Empty stats \u2192 all nulls.\n- Verify no residual processes after timeout (check `ps` for sleep)."
+}

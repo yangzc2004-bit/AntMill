@@ -1,0 +1,58 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "xjq",
+  "checkpoint_limit": 2,
+  "worker_count": 2,
+  "num_layers": 3,
+  "step_limit_per_worker": 10,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 4000,
+  "scbench_seed": 42,
+  "difficulty_change": {
+    "previous_checkpoint_limit": 1,
+    "new_checkpoint_limit": 2,
+    "new_capabilities": [
+      "CSS selectors and direct/descendant text extraction",
+      "custom direct and descendant ::text modes",
+      "flag precedence and mixed-mode validation"
+    ],
+    "action_budget_calibration": {
+      "previous_step_limit": 8,
+      "new_step_limit": 10,
+      "reason": "Two independent 8-step probes generated the checkpoint-2 implementation command at the final step but could not execute it."
+    },
+    "changed_experimental_factor": "task difficulty, with the minimum action-budget increase required to avoid a deterministic submission-boundary floor effect"
+  },
+  "environment_fix": {
+    "inference_setup": "uv pip install --python /opt/scbench/.venv/bin/python -r requirements.txt",
+    "evaluation_setup": [
+      "sh -lc \"test -f pyproject.toml || uv init --name scbench-submission\"",
+      "uv add -r requirements.txt"
+    ],
+    "checkpoint_dependency_materialization": "Merge public requirements from all retained checkpoints; checkpoint 2 adds cssselect.",
+    "kimi_tool_call_compatibility": "Translate native Bash tool calls with empty text content into the single bash code block expected by MiniSWE."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": ["source_success", "no_transfer"]
+        }
+      ]
+    }
+  ],
+  "decision_rule": {
+    "probe_gate": "Proceed only if a one-worker, one-layer native MiniSWE run reaches a non-zero checkpoint-2 Core score without infrastructure failure.",
+    "performance_signal": "Compare layer-wise normalized Core score and full-pass workers between source_success and no_transfer.",
+    "complexity_signal": "Compare received experience characters, total input tokens, model calls, and duration across layers.",
+    "causal_caution": "This is a difficulty-escalation engineering probe, not final manuscript evidence."
+  },
+  "interpretation": "Kimi non-thinking two-arm contrast on xjq checkpoint 2, using the minimum calibrated 10-step budget needed to execute a generated implementation before evaluation."
+}

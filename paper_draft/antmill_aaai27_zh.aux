@@ -1,0 +1,75 @@
+\relax 
+\citation{schneirla1944circularmill}
+\citation{wang2024moa}
+\citation{zhao2024expel,shinn2023reflexion}
+\citation{qian2024chatdev,qian2024colearning,li2025mael_full}
+\citation{guo2026diversitycollapse,zhang2026semanticcollapse}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{1}{}\protected@file@percent }
+\citation{zhao2024expel}
+\citation{shinn2023reflexion}
+\citation{park2023generative,zhong2024memorybank}
+\citation{qian2024colearning}
+\citation{li2025mael_full}
+\citation{wang2024moa}
+\citation{qian2024chatdev,hong2024metagpt}
+\citation{chen2023agentverse,zhu2025multiagentbench}
+\citation{du2024debate}
+\citation{guo2026diversitycollapse,zhang2026semanticcollapse}
+\citation{orlanski2026slopcode}
+\citation{jimenez2024swebench}
+\@writefile{toc}{\contentsline {section}{\numberline {2}相关工作}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{经验型智能体与共享记忆。}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{并行与角色型多智能体系统。}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{从同调到可执行编程评估。}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}可审计并行智能体测试平台}{2}{}\protected@file@percent }
+\newlabel{sec:method-zh}{{3}{2}{}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}拓扑与隔离}{2}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 迁移与接纳策略。“隐藏”表示外部评估结果不提供给接收者。}}{2}{}\protected@file@percent }
+\newlabel{tab:policies-zh}{{1}{2}{}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}迁移策略}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}经验制品与本地信号}{2}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {可审计的分层并行智能体测试平台。} \textbf  {a}，三个 MiniSWE 工作者在私有工作区中并发解决同一任务；层间屏障关闭后，盲化经验状态才会广播到下一层。\textbf  {b}，不同策略只改变进入共享状态的内容：不迁移、累积自报告、固定最近窗口、本地实现多样性路由、本地命令阈值接纳，或递归合成的管理器 playbook。\textbf  {c}，隐藏评估器分别测量外部分数、实现身份和失败测试行为；外部结果不会提供给自报告或本地接纳的接收者。}}{3}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:system-zh}{{1}{3}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}冻结主实验}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}前瞻对照与独立审计}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}机制探针与边界}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}指标与决策纪律}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}结果}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}RQ1：持续退化没有被复现}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}RQ2：共享经验消除了独立解}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {实现吸引子可复现、只能被轻微缓解，并具有任务边界。} \textbf  {a}，冻结主实验的外部全测试分数；范围表示三个工作者的最小值与最大值。\textbf  {b}，两条回顾性累积复现和冻结主实验中的唯一全工作区快照数；深色单元表示三个工作者精确收敛。\textbf  {c}，前瞻 \texttt  {cfgpipe} 主实现多样性。固定最近路由从第 2 层锁定；本地多样性路由在第 2 层保留两个实现，但从第 3 层锁定，且质量不变。\textbf  {d}，平均标准化分数与第 1 层后标准化主实现多样性。迁移在两个任务上都提高分数，但只在 \texttt  {cfgpipe} 上降低多样性；圆点表示 \texttt  {cfgpipe}，方块表示前瞻冻结、同提供商的 \texttt  {log\_query} 边界。所有面板都是耦合轨迹的描述结果，而非独立随机种子。}}{5}{}\protected@file@percent }
+\newlabel{fig:main-zh}{{2}{5}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}RQ3：本地多样性路由只能推迟锁定}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}RQ4：递归合成可以赋予固定点特权}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {接纳质量与结果方向具有条件性。} \textbf  {a}，对本地臂全部 36 个输出进行回顾性阈值回放：灾难拒绝率是两个 0/37 输出中被拒绝的比例，高质量保留率是 34 个至少 33/37 输出中被接纳的比例。回放曲线是回顾性的，但标出的三命令实验臂在结果产生前已经冻结；阴影阈值只对本样本成立，不是经验证的普适最优值。\textbf  {b}，五次累积自报告模型运行中的有效零分事件（共 150 个工作者输出）；由于层和提供商不可交换，事件率分开报告。\textbf  {c}，递归管理器设置下终端“处理减无迁移”分数差。顺序 \texttt  {cfgpipe} 控制有噪声并以星号标记；这些效应不进行合并。}}{6}{}\protected@file@percent }
+\newlabel{fig:boundaries-zh}{{3}{6}{}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}RQ5：接纳会拦截假完成，也会付出代价}{6}{}\protected@file@percent }
+\bibstyle{aaai2027}
+\bibdata{antmill}
+\bibcite{chen2023agentverse}{{1}{2023}{{Chen et~al.}}{{Chen, Su, Zuo, Yang, Yuan, Chan, Yu, Lu, Hung, Qian, Qin, Cong, Xie, Liu, Sun, and Zhou}}}
+\bibcite{du2024debate}{{2}{2024}{{Du et~al.}}{{Du, Li, Torralba, Tenenbaum, and Mordatch}}}
+\bibcite{guo2026diversitycollapse}{{3}{2026}{{Guo et~al.}}{{Guo, Chen, Wu, Ma, and He}}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}讨论}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{主要风险是可选性的丧失。}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{稳定性和多样性都不是单调的善。}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{去重本身不是充分的缓解。}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{接纳是治理问题。}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{更多层不一定是更好的机制检验。}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}局限性}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}结论}{7}{}\protected@file@percent }
+\bibcite{hong2024metagpt}{{4}{2024}{{Hong et~al.}}{{Hong, Zhuge, Chen, Zheng, Cheng, Zhang, Wang, Wang, Yau, Lin, Zhou, Ran, Xiao, Wu, and Schmidhuber}}}
+\bibcite{jimenez2024swebench}{{5}{2024}{{Jimenez et~al.}}{{Jimenez, Yang, Wettig, Yao, Pei, Press, and Narasimhan}}}
+\bibcite{li2025mael_full}{{6}{2025}{{Li et~al.}}{{Li, Zhang, Jiang, Shao, Yu, Deng, Weng, Lin, Tang, Huang, and Zhang}}}
+\bibcite{orlanski2026slopcode}{{7}{2026}{{Orlanski et~al.}}{{Orlanski, Baranwal, Xiao, Yao, and Baghdadi}}}
+\bibcite{park2023generative}{{8}{2023}{{Park et~al.}}{{Park, O'Brien, Cai, Morris, Liang, and Bernstein}}}
+\bibcite{qian2024colearning}{{9}{2024{a}}{{Qian et~al.}}{{Qian, Dang, Li, Liu, Chen, Yang, Liu, and Sun}}}
+\bibcite{qian2024chatdev}{{10}{2024{b}}{{Qian et~al.}}{{Qian, Liu, Liu, Chen, Dang, Li, Yang, Chen, Su, Cong, Xu, Li, Liu, and Sun}}}
+\bibcite{schneirla1944circularmill}{{11}{1944}{{Schneirla}}{{}}}
+\bibcite{shinn2023reflexion}{{12}{2023}{{Shinn et~al.}}{{Shinn, Cassano, Gopinath, Narasimhan, and Yao}}}
+\bibcite{wang2024moa}{{13}{2024}{{Wang et~al.}}{{Wang, Wang, Athiwaratkun, Zhang, and Zou}}}
+\bibcite{zhang2026semanticcollapse}{{14}{2026}{{Zhang et~al.}}{{Zhang, Zhang, Luo, and Awad}}}
+\bibcite{zhao2024expel}{{15}{2024}{{Zhao et~al.}}{{Zhao, Huang, Xu, Lin, Liu, and Huang}}}
+\bibcite{zhong2024memorybank}{{16}{2024}{{Zhong et~al.}}{{Zhong, Guo, Gao, Ye, and Wang}}}
+\bibcite{zhu2025multiagentbench}{{17}{2025}{{Zhu et~al.}}{{Zhu, Du, Hong, Yang, Guo, Wang, Wang, Qian, Tang, Ji, and You}}}
+\gdef \@abspage@last{8}

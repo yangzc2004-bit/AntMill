@@ -1,0 +1,87 @@
+{
+  "phase": "gamma_p3e_formal",
+  "created": "2026-07-15T18:54:59.9231360+08:00",
+  "git_head": "51e08dc115aba8339e85d0839ce05144130830f9",
+  "status": "frozen_during_formal_after_13_complete_results_before_any_cross_arm_behavioral_contrast",
+  "scope": "Launch script and Python runtime modules loaded by the P3e MiniWoB formal runner. Offline analysis, selftest, and paper files are excluded.",
+  "process": {
+    "pid": 98984,
+    "parent_pid": 96152,
+    "started": "2026-07-15T10:31:49.0446507+08:00",
+    "command_line": "\"C:\\Users\\17493\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe\" -m sec.miniwob_runner --tasks click-button,choose-list,enter-text,click-checkboxes,login-user,use-autocomplete-nodelay --model DeepSeek-V3 --base-url https://api.modelarts-maas.com/v2 --api-key-env MODELARTS_MAAS_KEY --max-steps 15 --episode-concurrency 1 --max-tokens-solver 256 --max-tokens-reviewer 512 --phase gamma_p3_formal --out-dir runs_miniwob_gamma_p3e --cache-dir cache_miniwob_gamma_p3e --cache-policy read_write --seeds 0,1,2 --T 4 --heldout-size 12 --train-size 16 --train-batch 4 --concurrency 4 --skip-final-train"
+  },
+  "files": [
+    {
+      "path": "scripts/run_gamma_p3e.ps1",
+      "sha256": "7c5570c06e0bceeeefaf200133a7758e9254592ffa4cb72f5069dfdbe6c18ac6",
+      "last_write_time": "2026-07-15T10:19:58.8124685+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/run_miniwob_gamma.py",
+      "sha256": "4e560ca6d8a705456e5d8a2629dfbbfaa48a46194e578a494e9c3e313c505b58",
+      "last_write_time": "2026-07-11T23:36:09.7567059+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/miniwob_runner.py",
+      "sha256": "6b9ac69593602a00224b48c1270141ac9c33d6da74d1888517f8388566ec9a87",
+      "last_write_time": "2026-07-15T09:28:35.7425312+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/miniwob_gamma.py",
+      "sha256": "de2338cee84be4a3cbf98767f1992389fec2c38f6360fedf34fd0128a89e80b6",
+      "last_write_time": "2026-07-15T09:49:03.0552678+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/agentic.py",
+      "sha256": "514ec8ee835334af3f1d216954ab340be694d8a9f9b7943db0bf9945827ff4ea",
+      "last_write_time": "2026-06-29T17:33:07.1491367+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/config.py",
+      "sha256": "568bc30726e88b0268003d261bc432e56981103ee49ae5bfc7a4782cdcb6228b",
+      "last_write_time": "2026-07-14T18:46:30.2402178+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/expel.py",
+      "sha256": "1080938ce0ebd56d23ab364d334d0ce00f8e8354371770baf1b1954902fd6a0e",
+      "last_write_time": "2026-07-07T23:36:46.2553551+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/expel_ops.py",
+      "sha256": "b74f1380fbf7d381fc027686fb450efac63f3db43cb1f794e0d5b349043c5db3",
+      "last_write_time": "2026-07-14T18:46:30.2486504+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/llm.py",
+      "sha256": "ebd7ca56d3cdbeb2a93ccf8387c0122aba21a0f6d424bf74a1c799cb46ba8f04",
+      "last_write_time": "2026-07-10T13:36:09.3930896+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/memory.py",
+      "sha256": "6d8a3b565f39645cdf462c40938cd740726292e1fab591b9ae4f655cede813e5",
+      "last_write_time": "2026-07-14T18:46:55.0180399+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/metrics.py",
+      "sha256": "6db33fc986d776b4d2fc488c3d7a07e8ecee768ede8900bf0ffc43041d9e10a1",
+      "last_write_time": "2026-07-07T23:36:46.2612460+08:00",
+      "before_process_start": true
+    },
+    {
+      "path": "sec/solver.py",
+      "sha256": "961ccdffd8be8dae0f6305b2ddee7795120573fd42361db9612acca5358cbac8",
+      "last_write_time": "2026-06-27T22:50:13.8051281+08:00",
+      "before_process_start": true
+    }
+  ]
+}

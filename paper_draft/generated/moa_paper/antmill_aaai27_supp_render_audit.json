@@ -1,0 +1,128 @@
+{
+  "status": "visual_audit_complete",
+  "pdf": "paper_draft\\antmill_aaai27_supp.pdf",
+  "pdf_sha256": "063502f9f6e2f2f9eccd0085b3ecea1c4bafcc0aa6ddf2f495d8c3aec9899887",
+  "dpi": 120,
+  "page_count": 3,
+  "rendered_page_count": 3,
+  "renderer": "C:\\Users\\17493\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe",
+  "automated_checks": {
+    "page_count_positive": true,
+    "rendered_page_count_matches": true,
+    "all_rendered_pages_nonblank": true,
+    "all_content_inside_raster": true,
+    "consistent_page_dimensions": true,
+    "text_page_count_matches": true,
+    "all_pages_have_text": true,
+    "all_pdf_characters_in_page_bounds": true
+  },
+  "pages": [
+    {
+      "path": "tmp\\pdfs\\supp_audit_final\\page-1.png",
+      "sha256": "517429b5bd9f261e66b2c3ba61c48b3cf74e593b1f4b0748273aa349c3dcde67",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 241.22292335115864,
+      "stddev_gray": 48.68251810449133,
+      "nonwhite_fraction": 0.10283942364824718,
+      "content_bbox": [
+        90,
+        164,
+        930,
+        1174
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 164,
+        "right": 90,
+        "bottom": 146
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    },
+    {
+      "path": "tmp\\pdfs\\supp_audit_final\\page-2.png",
+      "sha256": "729c845c2a44c736ca279edf515791f1f81ff5876cb4930d30f0992d58802b2e",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 237.85607174688056,
+      "stddev_gray": 53.25100617121502,
+      "nonwhite_fraction": 0.13150772430184196,
+      "content_bbox": [
+        90,
+        90,
+        930,
+        1174
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 90,
+        "right": 90,
+        "bottom": 146
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    },
+    {
+      "path": "tmp\\pdfs\\supp_audit_final\\page-3.png",
+      "sha256": "f18854400b9be8b44d0ab6298b438da621c33504138f8a865a3e11c117675d46",
+      "width": 1020,
+      "height": 1320,
+      "mean_gray": 243.9095343137255,
+      "stddev_gray": 43.08320550469432,
+      "nonwhite_fraction": 0.08684491978609625,
+      "content_bbox": [
+        90,
+        90,
+        931,
+        1174
+      ],
+      "content_margins_px": {
+        "left": 90,
+        "top": 90,
+        "right": 89,
+        "bottom": 146
+      },
+      "nonblank": true,
+      "content_inside_raster": true
+    }
+  ],
+  "text_pages": [
+    {
+      "page": 1,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 3250,
+      "text_length": 3566,
+      "text_present": true,
+      "character_bounds_pass": true
+    },
+    {
+      "page": 2,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 4294,
+      "text_length": 4744,
+      "text_present": true,
+      "character_bounds_pass": true
+    },
+    {
+      "page": 3,
+      "width_points": 612.0,
+      "height_points": 792.0,
+      "character_count": 2931,
+      "text_length": 3194,
+      "text_present": true,
+      "character_bounds_pass": true
+    }
+  ],
+  "visual_checks": {
+    "all_pages_rendered": true,
+    "no_text_or_table_clipping": true,
+    "no_overlapping_elements": true,
+    "figures_and_tables_legible": true,
+    "captions_match_content": true
+  },
+  "finalized_at_utc": "2026-07-15T13:06:18.391192+00:00",
+  "source_draft": "tmp\\pdfs\\supp_audit_final\\render_audit_draft.json"
+}

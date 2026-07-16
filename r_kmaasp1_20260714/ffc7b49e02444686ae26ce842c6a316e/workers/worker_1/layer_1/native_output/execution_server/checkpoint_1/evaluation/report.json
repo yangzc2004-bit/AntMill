@@ -1,0 +1,2175 @@
+{
+  "created": 1784033012.182842,
+  "duration": 1.7348425388336182,
+  "exitcode": 1,
+  "root": "/tmp/tmpyc3jy9u6",
+  "environment": {},
+  "summary": {
+    "error": 45,
+    "total": 45,
+    "collected": 45
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_initial_stats",
+          "type": "Function",
+          "lineno": 643
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[echo]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[time_out]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_files]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_stdin]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_env]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_final_stats",
+          "type": "Function",
+          "lineno": 668
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_initial_stats",
+          "type": "Function",
+          "lineno": 680
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_string_stream]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nonzero_exit_with_stderr]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nested_file_execution]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_multiline_values]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdout_without_newline]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[default_timeout_and_empty_stdin]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_files_together]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_stdin_together]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[files_and_stdin_together]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[timeout_with_env_and_files]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[all_features_combined]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[multiple_env_vars_multiple_files]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_array_with_files]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_override_system]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_small_timeout]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[unicode_in_output]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_long_stdout]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[exit_code_variations]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[command_with_shell_metacharacters]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_final_stats",
+          "type": "Function",
+          "lineno": 705
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[missing_command_field]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_negative]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_zero]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_type]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_env_type]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_files_type]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_stdin_type]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[empty_command_string]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[command_type_not_string]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[env_values_not_strings]",
+          "type": "Function",
+          "lineno": 717
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_duration_is_rounded",
+          "type": "Function",
+          "lineno": 733
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_stats_duration_is_rounded",
+          "type": "Function",
+          "lineno": 748
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_error_does_not_increment_stats",
+          "type": "Function",
+          "lineno": 781
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_invalid_json_returns_json_error",
+          "type": "Function",
+          "lineno": 797
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string]",
+          "type": "Function",
+          "lineno": 811
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[env_is_null]",
+          "type": "Function",
+          "lineno": 811
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[files_is_null]",
+          "type": "Function",
+          "lineno": 811
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases",
+          "type": "Class"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_initial_stats",
+      "lineno": 643,
+      "outcome": "error",
+      "keywords": [
+        "test_initial_stats",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2519222570117563,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:45027', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0003875410038745031,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[echo]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[echo]",
+        "parametrize",
+        "pytestmark",
+        "echo",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003569370019249618,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:45027', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00021902300068177283,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[time_out]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[time_out]",
+        "parametrize",
+        "pytestmark",
+        "time_out",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00028132900479249656,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:45027', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0001995210041059181,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_files]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[with_files]",
+        "parametrize",
+        "pytestmark",
+        "with_files",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00025632699544075876,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:45027', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.000207321994821541,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_stdin]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[with_stdin]",
+        "parametrize",
+        "pytestmark",
+        "with_stdin",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002899310056818649,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:45027', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00021112299873493612,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_env]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[with_env]",
+        "parametrize",
+        "pytestmark",
+        "with_env",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000235624989727512,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:45027', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002312239957973361,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_final_stats",
+      "lineno": 668,
+      "outcome": "error",
+      "keywords": [
+        "test_final_stats",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00038234100793488324,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:45027', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00024022501020226628,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_initial_stats",
+      "lineno": 680,
+      "outcome": "error",
+      "keywords": [
+        "test_initial_stats",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.127551596990088,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00022432400146499276,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_string_stream]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[stdin_string_stream]",
+        "parametrize",
+        "pytestmark",
+        "stdin_string_stream",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00024532600946258754,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002725289959926158,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nonzero_exit_with_stderr]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[nonzero_exit_with_stderr]",
+        "parametrize",
+        "pytestmark",
+        "nonzero_exit_with_stderr",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003238339995732531,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0001914200111059472,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nested_file_execution]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[nested_file_execution]",
+        "parametrize",
+        "pytestmark",
+        "nested_file_execution",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002400250086793676,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019902100029867142,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_multiline_values]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[env_multiline_values]",
+        "parametrize",
+        "pytestmark",
+        "env_multiline_values",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002622280007926747,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00021292200835887343,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdout_without_newline]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[stdout_without_newline]",
+        "parametrize",
+        "pytestmark",
+        "stdout_without_newline",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002423249970888719,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00017981900600716472,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[default_timeout_and_empty_stdin]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[default_timeout_and_empty_stdin]",
+        "parametrize",
+        "pytestmark",
+        "default_timeout_and_empty_stdin",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00026932801119983196,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00046054799167905003,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_files_together]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[env_and_files_together]",
+        "parametrize",
+        "pytestmark",
+        "env_and_files_together",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000271329001407139,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00023522500123362988,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_stdin_together]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[env_and_stdin_together]",
+        "parametrize",
+        "pytestmark",
+        "env_and_stdin_together",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002789290010696277,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.000303031993098557,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[files_and_stdin_together]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[files_and_stdin_together]",
+        "parametrize",
+        "pytestmark",
+        "files_and_stdin_together",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00028843099426012486,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002303240034962073,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[timeout_with_env_and_files]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[timeout_with_env_and_files]",
+        "parametrize",
+        "pytestmark",
+        "timeout_with_env_and_files",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002507270110072568,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00023272499674931169,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[all_features_combined]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[all_features_combined]",
+        "parametrize",
+        "pytestmark",
+        "all_features_combined",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00025202699180226773,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00021352298790588975,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[multiple_env_vars_multiple_files]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[multiple_env_vars_multiple_files]",
+        "parametrize",
+        "pytestmark",
+        "multiple_env_vars_multiple_files",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00024572599795646966,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00020402100926730782,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_array_with_files]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[stdin_array_with_files]",
+        "parametrize",
+        "pytestmark",
+        "stdin_array_with_files",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00025722800637595356,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00028703000862151384,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_override_system]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[env_override_system]",
+        "parametrize",
+        "pytestmark",
+        "env_override_system",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00026452800375409424,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.000284930007182993,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_small_timeout]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[very_small_timeout]",
+        "parametrize",
+        "pytestmark",
+        "very_small_timeout",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002767300029518083,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00025862800248432904,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[unicode_in_output]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[unicode_in_output]",
+        "parametrize",
+        "pytestmark",
+        "unicode_in_output",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00026242699823342264,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002898310049204156,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_long_stdout]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[very_long_stdout]",
+        "parametrize",
+        "pytestmark",
+        "very_long_stdout",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003196340112481266,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0005232550029177219,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[exit_code_variations]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[exit_code_variations]",
+        "parametrize",
+        "pytestmark",
+        "exit_code_variations",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005218550068093464,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00030483200680464506,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[command_with_shell_metacharacters]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[command_with_shell_metacharacters]",
+        "parametrize",
+        "pytestmark",
+        "command_with_shell_metacharacters",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00029093099874444306,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0003736389917321503,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_final_stats",
+      "lineno": 705,
+      "outcome": "error",
+      "keywords": [
+        "test_final_stats",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004844509967369959,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56669', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00022572399757336825,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[missing_command_field]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[missing_command_field]",
+        "parametrize",
+        "pytestmark",
+        "missing_command_field",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.1300212580099469,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019051998970098794,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_negative]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_timeout_negative]",
+        "parametrize",
+        "pytestmark",
+        "invalid_timeout_negative",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002367249981034547,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0001987209980143234,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_zero]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_timeout_zero]",
+        "parametrize",
+        "pytestmark",
+        "invalid_timeout_zero",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002364249958191067,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00034773700463119894,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_type]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_timeout_type]",
+        "parametrize",
+        "pytestmark",
+        "invalid_timeout_type",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00029253101092763245,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0005309559928718954,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_env_type]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_env_type]",
+        "parametrize",
+        "pytestmark",
+        "invalid_env_type",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00042944500455632806,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00030543199682142586,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_files_type]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_files_type]",
+        "parametrize",
+        "pytestmark",
+        "invalid_files_type",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002888309973059222,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002384249964961782,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_stdin_type]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_stdin_type]",
+        "parametrize",
+        "pytestmark",
+        "invalid_stdin_type",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00028492999263107777,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019642100960481912,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[empty_command_string]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[empty_command_string]",
+        "parametrize",
+        "pytestmark",
+        "empty_command_string",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00029483099933713675,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002502269926480949,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[command_type_not_string]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[command_type_not_string]",
+        "parametrize",
+        "pytestmark",
+        "command_type_not_string",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002706280065467581,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002191239909734577,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[env_values_not_strings]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[env_values_not_strings]",
+        "parametrize",
+        "pytestmark",
+        "env_values_not_strings",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002680280013009906,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:54235', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00027982900792267174,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_duration_is_rounded",
+      "lineno": 733,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_duration_is_rounded",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.12731297199206892,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56349', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00020922299881931394,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_stats_duration_is_rounded",
+      "lineno": 748,
+      "outcome": "error",
+      "keywords": [
+        "test_stats_duration_is_rounded",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00025542700313962996,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56349', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00018581999756861478,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_error_does_not_increment_stats",
+      "lineno": 781,
+      "outcome": "error",
+      "keywords": [
+        "test_error_does_not_increment_stats",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003493370022624731,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56349', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0001861199998529628,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_invalid_json_returns_json_error",
+      "lineno": 797,
+      "outcome": "error",
+      "keywords": [
+        "test_invalid_json_returns_json_error",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000235324987443164,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56349', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00032853501033969223,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string]",
+      "lineno": 811,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_edge_errors[stdin_array_with_non_string]",
+        "parametrize",
+        "pytestmark",
+        "stdin_array_with_non_string",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002544269955251366,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56349', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002848309959517792,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[env_is_null]",
+      "lineno": 811,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_edge_errors[env_is_null]",
+        "parametrize",
+        "pytestmark",
+        "env_is_null",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00036643800558522344,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56349', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00022102300135884434,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[files_is_null]",
+      "lineno": 811,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_edge_errors[files_is_null]",
+        "parametrize",
+        "pytestmark",
+        "files_is_null",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023512500047218055,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpyc3jy9u6/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 2.\nstdout:\n\nstderr:\nerror: Failed to spawn: `execution_server.py`\n  Caused by: No such file or directory (os error 2)"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 2 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:56349', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 2.\nE               stdout:\nE               \nE               stderr:\nE               error: Failed to spawn: `execution_server.py`\nE                 Caused by: No such file or directory (os error 2)\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00029383199580479413,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

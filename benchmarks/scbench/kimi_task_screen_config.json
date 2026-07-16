@@ -1,0 +1,43 @@
+{
+  "status": "engineering_task_screen_frozen_before_outcomes",
+  "model": "kimi-k2.6",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "agent": "SCBench native MiniSWE",
+  "workers_per_candidate": 2,
+  "layers": 1,
+  "step_limit_per_checkpoint": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "benchmark_isolation": "Remove reference solutions, analysis files, and later-checkpoint specifications/tests; prohibit benchmark-catalog access.",
+  "candidates": [
+    {
+      "problem": "code_search",
+      "checkpoint_limit": 2,
+      "role": "easy_anchor",
+      "reason": "Incremental language-extension task with small implementation growth."
+    },
+    {
+      "problem": "circuit_eval",
+      "checkpoint_limit": 2,
+      "role": "primary_mid_candidate",
+      "reason": "Checkpoint 1 previously reached full Core; checkpoint 2 adds scalar evaluation and input validation."
+    },
+    {
+      "problem": "database_migration",
+      "checkpoint_limit": 2,
+      "role": "hard_anchor",
+      "reason": "Checkpoint 1 previously reached full Core; checkpoint 2 adds transactional SQLite data transformations."
+    }
+  ],
+  "selection_rule": {
+    "target_observed_full_core_rate": "1/2 workers (50%)",
+    "acceptable_initial_band": "1/2 workers; 2/2 may be retained only if partial failures appear in later layers during a follow-up calibration.",
+    "reject_too_hard": "0/2 full-Core workers with both workers below 0.8 normalized Core.",
+    "reject_too_easy": "2/2 full-Core workers with low trajectory variance and no meaningful implementation pressure.",
+    "tie_breakers": [
+      "No infrastructure, gateway, or benchmark-access violations",
+      "Shorter runtime and lower token cost",
+      "Closer connection to realistic software-engineering work"
+    ]
+  }
+}

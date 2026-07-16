@@ -1,0 +1,99 @@
+{
+  "status": "valid_exploratory_extension_no_delayed_degradation",
+  "date": "2026-07-14",
+  "extension_config": "benchmarks/scbench/kimi_log_query_cp1_bootstrapped_cumulative_depth10_extension_config.json",
+  "run_root": "runs_scbench_moa_kimi_log_query_cp1_bootstrapped_cumulative_depth5_20260714",
+  "arm_id": "cumulative_success-c62abb3ab42d41bdb5c57fc159f292ba",
+  "mean_core_curve": [
+    0.9333333333,
+    0.9333333333,
+    0.9,
+    0.9666666667,
+    0.9666666667,
+    0.9,
+    0.9,
+    0.9,
+    0.9,
+    0.9
+  ],
+  "mean_all_test_curve": [
+    0.9303482587,
+    0.9726368159,
+    0.9776119403,
+    0.9676616915,
+    0.9626865672,
+    0.9452736318,
+    0.9527363184,
+    0.9527363184,
+    0.947761194,
+    0.9527363184
+  ],
+  "reference_count_curve": [
+    3,
+    4,
+    5,
+    5,
+    7,
+    9,
+    9,
+    9,
+    9,
+    9
+  ],
+  "received_experience_chars_curve": [
+    22113,
+    30082,
+    38024,
+    38024,
+    53773,
+    70585,
+    70585,
+    70585,
+    70585,
+    70585
+  ],
+  "prompt_bytes_curve": [
+    23915,
+    32169,
+    40396,
+    40396,
+    56715,
+    74136,
+    74136,
+    74136,
+    74136,
+    74136
+  ],
+  "complexity": {
+    "layer_6_to_layer_1_received_experience_ratio": 3.1920137476,
+    "layer_6_to_layer_1_prompt_byte_ratio": 3.0999790926,
+    "layer_10_worker_input_tokens": 819562,
+    "matching_control_layer_5_input_tokens": 206740,
+    "layer_10_input_token_ratio_to_control": 3.9642159234
+  },
+  "integrity": {
+    "nonempty_runner_stderr_files": 0,
+    "native_evaluations_rejected": 0,
+    "all_results_core_total": 10,
+    "all_results_test_collection_hash": "3deecb18f814ddda765ab2720264da076f8361d7646fe9c922af4c52d11fddac",
+    "pass": true
+  },
+  "exploratory_signals": {
+    "delayed_terminal_drop": false,
+    "within_extension_drop": false,
+    "monotone_tail": false,
+    "complexity_growth_through_layer_6": true,
+    "complexity_fixed_point_layers_6_to_10": true
+  },
+  "failure_lock_in": {
+    "persistent_core_failure_layers_6_to_10": "test_checkpoint_1_core[09_numbers_negatives_decimals]",
+    "all_workers_affected_each_layer": true,
+    "interpretation": "The accumulated context produced a reproducible one-case lock-in, not a progressively worsening curve."
+  },
+  "decision": {
+    "conclusion": "Increasing depth from five to ten did not reveal delayed degradation. Performance dropped by 0.067 at layer 6 and then remained exactly flat for five layers.",
+    "mechanistic_reason": "The strict 10/10 Core source gate stopped positive feedback as soon as every layer-6 worker scored 9/10. The shared bundle and prompt then became identical in size through layer 10.",
+    "iteration_hypothesis": "For this strict-gated cumulative mechanism, too few iterations is no longer a credible explanation. Additional identical layers cannot amplify complexity after the source bundle has frozen.",
+    "next_variable": "Replace omniscient external-Core source admission with a realistic local acceptance signal, such as successful agent completion plus local smoke checks, while retaining external Core only as the blinded outcome."
+  }
+}

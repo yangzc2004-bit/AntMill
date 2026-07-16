@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "problem_name": "textdrop",
+  "problem_version": 2,
+  "checkpoint_name": "checkpoint_2",
+  "checkpoint_version": 1,
+  "duration": 24.72061824798584,
+  "entrypoint": "uv run textdrop.py",
+  "tests": {
+    "checkpoint_1-Regression": {
+      "passed": [],
+      "failed": [
+        "test_submit_returns_302_with_valid_note_location",
+        "test_generated_note_id_is_alphanumeric_and_within_length_bounds",
+        "test_note_view_is_complete_html_and_escapes_content",
+        "test_raw_text_returns_exact_source_and_plain_content_type",
+        "test_whitespace_only_content_is_rejected",
+        "test_non_empty_mode_is_rejected",
+        "test_missing_mode_field_defaults_to_plain_text",
+        "test_missing_content_field_is_rejected",
+        "test_missing_note_view_returns_html_404",
+        "test_missing_note_raw_returns_html_404",
+        "test_editor_root_contains_submit_form",
+        "test_editor_root_form_posts_urlencoded",
+        "test_editor_submit_get_contains_form",
+        "test_health_returns_active_json",
+        "test_unregistered_route_returns_complete_html_404",
+        "test_note_ids_are_unique_across_submissions",
+        "test_note_view_content_type_is_text_html",
+        "test_entity_escaping_matrix[<-&lt;]",
+        "test_entity_escaping_matrix[>-&gt;]",
+        "test_entity_escaping_matrix[&-&amp;]",
+        "test_entity_escaping_matrix[\"-&quot;]",
+        "test_repeated_retrieval_is_deterministic",
+        "test_submit_accepts_absent_mode_as_plain_text",
+        "test_submit_rejects_missing_content_field",
+        "test_submit_rejects_whitespace_mode_value",
+        "test_host_port_precedence_cli_overrides_environment",
+        "test_host_port_precedence_environment_used_without_cli",
+        "test_view_and_raw_both_correct_for_entity_rich_content"
+      ],
+      "skipped": []
+    },
+    "checkpoint_2-Core": {
+      "passed": [],
+      "failed": [
+        "test_markdown_mode_renders_standard_constructs",
+        "test_markdown_emphasis_renders_semantic_tags",
+        "test_markdown_links_render_anchor_elements"
+      ],
+      "skipped": []
+    },
+    "checkpoint_2-Functionality": {
+      "passed": [],
+      "failed": [
+        "test_markdown_construct_matrix[> quoted line-<blockquote>]",
+        "test_markdown_construct_matrix[Use `cmd` please.-<code>cmd</code>]",
+        "test_markdown_construct_matrix[----<hr]",
+        "test_markdown_construct_matrix[* alpha\\n* beta-<ul>]",
+        "test_markdown_construct_matrix[###### Deep Heading-<h6 id=\"deep-heading\">]",
+        "test_markdown_tables_render_with_semantic_table_elements",
+        "test_ordered_list_allows_non_one_numeric_prefix",
+        "test_json_submission_uses_body_field_and_markdown_mode",
+        "test_list_items_preserve_source_order",
+        "test_markdown_rendering_is_deterministic",
+        "test_form_submission_without_mode_remains_plain_text",
+        "test_json_submission_rejects_missing_or_wrong_body_key[payload0]",
+        "test_json_submission_rejects_missing_or_wrong_body_key[payload1]",
+        "test_markdown_note_raw_returns_original_source",
+        "test_json_submission_defaults_to_plain_text_when_mode_missing_or_empty[payload0]",
+        "test_json_submission_defaults_to_plain_text_when_mode_missing_or_empty[payload1]",
+        "test_heading_id_derivation_matrix[# Hello World! (Draft)-<h1 id=\"hello-world-draft\">]",
+        "test_heading_id_derivation_matrix[#  --Hello   World--  -<h1 id=\"hello-world\">--Hello   World--</h1>]",
+        "test_duplicate_headings_reuse_the_same_derived_id",
+        "test_fenced_code_tokenization_depends_on_language_hint[```python\\nprint('x')\\n```-<span]",
+        "test_fenced_code_tokenization_depends_on_language_hint[```\\nprint('x')\\n```-None]",
+        "test_fenced_code_without_language_renders_content_in_pre_code",
+        "test_markdown_heading_levels_render_correct_elements[#-1-h1]",
+        "test_markdown_heading_levels_render_correct_elements[##-2-h2]",
+        "test_markdown_heading_levels_render_correct_elements[###-3-h3]",
+        "test_markdown_heading_levels_render_correct_elements[####-4-h4]",
+        "test_markdown_heading_levels_render_correct_elements[#####-5-h5]",
+        "test_markdown_heading_levels_render_correct_elements[######-6-h6]"
+      ],
+      "skipped": []
+    },
+    "checkpoint_2-Error": {
+      "passed": [],
+      "failed": [
+        "test_submit_rejects_invalid_payloads[request_kwargs0]",
+        "test_submit_rejects_invalid_payloads[request_kwargs1]",
+        "test_submit_rejects_invalid_payloads[request_kwargs2]",
+        "test_submit_rejects_invalid_payloads[request_kwargs3]",
+        "test_submit_rejects_invalid_payloads[request_kwargs4]",
+        "test_submit_rejects_invalid_payloads[request_kwargs5]",
+        "test_json_submit_rejects_unsupported_non_empty_mode"
+      ],
+      "skipped": []
+    }
+  },
+  "pass_counts": {
+    "Core": 0,
+    "Functionality": 0,
+    "Regression": 0,
+    "Error": 0
+  },
+  "total_counts": {
+    "Core": 3,
+    "Functionality": 28,
+    "Regression": 28,
+    "Error": 7
+  },
+  "pytest_exit_code": 1,
+  "pytest_collected": 66,
+  "test_collection_hash": "28704c077d634a960efbc81b32e9147ce38894ce5a6f0d4b0dd6ca7c4681dec6",
+  "infrastructure_failure": false
+}

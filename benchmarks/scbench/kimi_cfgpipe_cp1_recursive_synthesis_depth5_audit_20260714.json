@@ -1,0 +1,133 @@
+{
+  "status": "audited_negative_result_with_secondary_lock_in_evidence",
+  "date": "2026-07-14",
+  "config": "benchmarks/scbench/kimi_cfgpipe_cp1_recursive_synthesis_depth5_config.json",
+  "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714",
+  "arms": {
+    "recursive_synthesis": "recursive_synthesis-6f605bbdeaa340a7ad79319c848f8038",
+    "no_transfer": "no_transfer-e92d8453f0d84861aa032e075e0257c8"
+  },
+  "curve": {
+    "recursive_synthesis": {
+      "mean_core": [
+        0.8333333333333334,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mean_all_tests": [
+        0.8738738738738738,
+        0.8738738738738739,
+        0.8648648648648649,
+        0.8648648648648649,
+        0.8648648648648649
+      ],
+      "layer_5_all_tests_per_worker": [
+        "32/37",
+        "32/37",
+        "32/37"
+      ]
+    },
+    "no_transfer": {
+      "mean_core": [
+        0.5,
+        0.6666666666666666,
+        0.5,
+        1.0,
+        1.0
+      ],
+      "mean_all_tests": [
+        0.6486486486486487,
+        0.8648648648648649,
+        0.6216216216216216,
+        0.9099099099099099,
+        0.918918918918919
+      ],
+      "layer_5_all_tests_per_worker": [
+        "34/37",
+        "34/37",
+        "34/37"
+      ]
+    }
+  },
+  "pre_registered_decision": {
+    "source_activation": {
+      "passed": true,
+      "detail": "Layer 1 produced two strict 4/4 Core sources."
+    },
+    "control_headroom": {
+      "passed": true,
+      "detail": "No-transfer layer 5 mean Core was 1.0."
+    },
+    "target_consistency": {
+      "passed": true,
+      "detail": "Every interpreted result used Core total 4, 37 collected tests, and frozen hash 6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615 after clean re-evaluation when required."
+    },
+    "integrity": {
+      "passed": true,
+      "detail": "No prohibited benchmark-path actions were found in either arm's assistant trajectories."
+    },
+    "primary_core_terminal_effect": {
+      "passed": false,
+      "observed": 0.0,
+      "required": -0.2
+    },
+    "within_arm_core_decline": {
+      "passed": false,
+      "observed": 0.0,
+      "required": -0.2
+    },
+    "core_curve_shape": {
+      "passed": false,
+      "detail": "Recursive Core reached 1.0 at layer 2 and remained flat."
+    },
+    "coordination_complexity": {
+      "passed": true,
+      "layer_5_worker_input_token_ratio": 1.5788050687637189,
+      "manager_prompt_token_ratio_layer_4_to_layer_1": 1.7745713799864202
+    },
+    "decision": "Falsify this exact recursive-synthesis plus cfgpipe checkpoint-1 pair. Do not spend budget extending the same fixed point to more layers."
+  },
+  "secondary_lock_in_audit": {
+    "manager_convergence": {
+      "layer_3_playbook_sha256_prefix": "37820be0253d",
+      "layer_4_playbook_sha256_prefix": "37820be0253d",
+      "layer_3_to_layer_4_text_similarity": 1.0,
+      "interpretation": "The manager reached an exact textual fixed point before the final worker layer."
+    },
+    "worker_homogenization": {
+      "recursive_layer_5_snapshot_hashes": [
+        "d390d0571ce0",
+        "d390d0571ce0",
+        "d390d0571ce0"
+      ],
+      "no_transfer_layer_5_snapshot_hashes": [
+        "b8e23628431a",
+        "bd03497f012c",
+        "a14a73fa8388"
+      ],
+      "interpretation": "Recursive broadcast eliminated implementation diversity while the independent control retained three distinct solutions."
+    },
+    "shared_terminal_failures": [
+      "test_env_parse_error_priority",
+      "test_default_parse_error_stops",
+      "test_file_parse_error_stops"
+    ],
+    "recursive_only_terminal_failures": [
+      "test_invalid_schema_json",
+      "test_file_value_is_trimmed"
+    ],
+    "mechanism_trace": [
+      "The manager repeatedly stated a highest-to-lowest arg > file > env > default rule, while the public specification and examples/tests encode an order-sensitive lower-to-higher override process with early parse-error stopping.",
+      "The manager retained an integer parser that returned the original digit string, preserving 0042 instead of normalizing it to 42.",
+      "From layer 2 onward, the manager recommended a unified schema-loading exception message that did not reliably include the word JSON.",
+      "All three layer-5 recursive workers copied the resulting playbook into the same implementation and therefore shared exactly the same five failures."
+    ]
+  },
+  "scientific_interpretation": {
+    "supported": "Core-only local verification plus centralized recursive synthesis can homogenize independent workers around a stable, locally verified but globally inferior implementation.",
+    "not_supported": "This run does not show a progressively worsening degradation curve, and it does not isolate amplification of experience that remains globally correct. The manager imported specification errors and then converged.",
+    "iteration_hypothesis": "More layers are unlikely to change this pair because the manager was already byte-identical at layers 3 and 4 and all layer-5 worker snapshots were identical."
+  }
+}

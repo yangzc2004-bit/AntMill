@@ -1,0 +1,1 @@
+{ "retries": { "type": "integer", "default": "3", "primary-store": "app/retries" } }

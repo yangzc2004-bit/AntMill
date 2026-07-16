@@ -1,0 +1,2314 @@
+{
+  "created": 1784025026.5884778,
+  "duration": 27.021589040756226,
+  "exitcode": 1,
+  "root": "/tmp/tmp1fgtey37",
+  "environment": {},
+  "summary": {
+    "passed": 56,
+    "failed": 12,
+    "total": 68,
+    "collected": 68
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_priority_chain",
+          "type": "Function",
+          "lineno": 33
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_file_overrides_env",
+          "type": "Function",
+          "lineno": 74
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_parse_failure_halts",
+          "type": "Function",
+          "lineno": 104
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unresolved_params_error",
+          "type": "Function",
+          "lineno": 134
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_invalid_schema_json",
+          "type": "Function",
+          "lineno": 168
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_arg_parse_failure",
+          "type": "Function",
+          "lineno": 185
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_non_string_default",
+          "type": "Function",
+          "lineno": 211
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_env_parse_failure",
+          "type": "Function",
+          "lineno": 232
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_missing_file_absent",
+          "type": "Function",
+          "lineno": 258
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_whitespace_file_absent",
+          "type": "Function",
+          "lineno": 287
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_file_value_is_trimmed",
+          "type": "Function",
+          "lineno": 315
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_cli_arg_forms[arg_candidates0]",
+          "type": "Function",
+          "lineno": 342
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_cli_arg_forms[arg_candidates1]",
+          "type": "Function",
+          "lineno": 342
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unmatched_args",
+          "type": "Function",
+          "lineno": 376
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_bool_float_formats",
+          "type": "Function",
+          "lineno": 404
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unreadable_file_absent",
+          "type": "Function",
+          "lineno": 437
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_env_parse_error_priority",
+          "type": "Function",
+          "lineno": 469
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_undeclared_sources",
+          "type": "Function",
+          "lineno": 497
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_missing_schema_file",
+          "type": "Function",
+          "lineno": 525
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_invalid_boolean[whitespace]",
+          "type": "Function",
+          "lineno": 543
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_invalid_boolean[suffix]",
+          "type": "Function",
+          "lineno": 543
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_default_parse_error_stops",
+          "type": "Function",
+          "lineno": 578
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_file_parse_error_stops",
+          "type": "Function",
+          "lineno": 612
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_empty_env_string_is_present",
+          "type": "Function",
+          "lineno": 645
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_empty_schema",
+          "type": "Function",
+          "lineno": 673
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_non_string_env",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_non_string_file",
+          "type": "Function",
+          "lineno": 708
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_non_string_arg",
+          "type": "Function",
+          "lineno": 724
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_schema_array_root",
+          "type": "Function",
+          "lineno": 740
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_negative_integer",
+          "type": "Function",
+          "lineno": 753
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_integer_string_as_float",
+          "type": "Function",
+          "lineno": 775
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_arg_error_stops_resolution",
+          "type": "Function",
+          "lineno": 796
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_env_error_stops_resolution",
+          "type": "Function",
+          "lineno": 827
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unrecognized_type",
+          "type": "Function",
+          "lineno": 858
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_missing_type_field",
+          "type": "Function",
+          "lineno": 874
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_no_sources_unresolved",
+          "type": "Function",
+          "lineno": 893
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unresolved_mixed_sources",
+          "type": "Function",
+          "lineno": 910
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_priority_chain",
+          "type": "Function",
+          "lineno": 53
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_store_flag",
+          "type": "Function",
+          "lineno": 98
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_duplicate_store_keys",
+          "type": "Function",
+          "lineno": 120
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_key_fallback",
+          "type": "Function",
+          "lineno": 157
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_seed",
+          "type": "Function",
+          "lineno": 189
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_unparseable_store_value",
+          "type": "Function",
+          "lineno": 218
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_setup_error_no_output",
+          "type": "Function",
+          "lineno": 247
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_flag_optional",
+          "type": "Function",
+          "lineno": 269
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[default-fallback]",
+          "type": "Function",
+          "lineno": 294
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[key-mismatch]",
+          "type": "Function",
+          "lineno": 294
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[empty-string]",
+          "type": "Function",
+          "lineno": 294
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[version-zero]",
+          "type": "Function",
+          "lineno": 294
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[url-encoded]",
+          "type": "Function",
+          "lineno": 294
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_unannotated_params_ignored",
+          "type": "Function",
+          "lineno": 341
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_key_fallback_chain",
+          "type": "Function",
+          "lineno": 376
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_store_output",
+          "type": "Function",
+          "lineno": 416
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_duplicate_error_key",
+          "type": "Function",
+          "lineno": 440
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_non_200_fatal",
+          "type": "Function",
+          "lineno": 465
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_malformed_json",
+          "type": "Function",
+          "lineno": 493
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_version_field",
+          "type": "Function",
+          "lineno": 521
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_connection_failure",
+          "type": "Function",
+          "lineno": 552
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_duplicate_failure_output",
+          "type": "Function",
+          "lineno": 582
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_parse_failure_halts",
+          "type": "Function",
+          "lineno": 624
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_store_flag_ignored",
+          "type": "Function",
+          "lineno": 659
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_integer_parse_failure",
+          "type": "Function",
+          "lineno": 687
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_mixed_keys_independent",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_found_true_missing_value",
+          "type": "Function",
+          "lineno": 754
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_non_string_value",
+          "type": "Function",
+          "lineno": 786
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_non_200_no_fallback",
+          "type": "Function",
+          "lineno": 818
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_store_overrides_file",
+          "type": "Function",
+          "lineno": 849
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_duplicate_keys_fail_first",
+          "type": "Function",
+          "lineno": 880
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_priority_chain",
+      "lineno": 33,
+      "outcome": "passed",
+      "keywords": [
+        "test_priority_chain",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0357798930053832,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6846994980005547,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0005347910046111792,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_file_overrides_env",
+      "lineno": 74,
+      "outcome": "passed",
+      "keywords": [
+        "test_file_overrides_env",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0031877430010354146,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.49415485000645276,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00036376201023813337,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_parse_failure_halts",
+      "lineno": 104,
+      "outcome": "passed",
+      "keywords": [
+        "test_parse_failure_halts",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002784773998428136,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.32006260300113354,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023383900406770408,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unresolved_params_error",
+      "lineno": 134,
+      "outcome": "passed",
+      "keywords": [
+        "test_unresolved_params_error",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0021097589924465865,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13579242400010116,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002714460133574903,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_invalid_schema_json",
+      "lineno": 168,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_schema_json",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012591139966389164,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13159440900199115,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000178829999640584,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_arg_parse_failure",
+      "lineno": 185,
+      "outcome": "passed",
+      "keywords": [
+        "test_arg_parse_failure",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0013903369981562719,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1406935590057401,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003754640056286007,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_non_string_default",
+      "lineno": 211,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_string_default",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0014861530071357265,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1617730479920283,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00038076500641182065,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_env_parse_failure",
+      "lineno": 232,
+      "outcome": "passed",
+      "keywords": [
+        "test_env_parse_failure",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0022644849959760904,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13369576699915342,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023834100284148008,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_missing_file_absent",
+      "lineno": 258,
+      "outcome": "passed",
+      "keywords": [
+        "test_missing_file_absent",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011416940105846152,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1465526569954818,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023233900719787925,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_whitespace_file_absent",
+      "lineno": 287,
+      "outcome": "passed",
+      "keywords": [
+        "test_whitespace_file_absent",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0019412300025578588,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15129896500729956,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002731459971982986,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_file_value_is_trimmed",
+      "lineno": 315,
+      "outcome": "failed",
+      "keywords": [
+        "test_file_value_is_trimmed",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0016890880069695413,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13668047600367572,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 340,
+          "message": "AssertionError: assert '0042' == '42'\n  \n  - 42\n  + 0042"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 340,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_file_value_is_trimmed0')\n\n    @pytest.mark.functionality\n    def test_file_value_is_trimmed(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n    ) -> None:\n        \"\"\"File values are trimmed.\"\"\"\n        value_file = write_text(tmp_path / \"value.txt\", \"  0042\\n\")\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"count\": {\n                    \"type\": \"integer\",\n                    \"file\": str(value_file),\n                }\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            cwd=tmp_path,\n        )\n    \n        assert_success(result)\n>       assert _parse_output(result.stdout)[\"count\"] == \"42\"\nE       AssertionError: assert '0042' == '42'\nE         \nE         - 42\nE         + 0042\n\n.evaluation_tests/test_checkpoint_1.py:340: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0002635449927765876,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_cli_arg_forms[arg_candidates0]",
+      "lineno": 342,
+      "outcome": "passed",
+      "keywords": [
+        "test_cli_arg_forms[arg_candidates0]",
+        "parametrize",
+        "pytestmark",
+        "arg_candidates0",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001627377001568675,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1862684200023068,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0001812310074456036,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_cli_arg_forms[arg_candidates1]",
+      "lineno": 342,
+      "outcome": "passed",
+      "keywords": [
+        "test_cli_arg_forms[arg_candidates1]",
+        "parametrize",
+        "pytestmark",
+        "arg_candidates1",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0022254790092119947,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.14324279299762566,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00024744200345594436,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unmatched_args",
+      "lineno": 376,
+      "outcome": "passed",
+      "keywords": [
+        "test_unmatched_args",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0014064400020288303,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11809350999828894,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00025644400739111006,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_bool_float_formats",
+      "lineno": 404,
+      "outcome": "passed",
+      "keywords": [
+        "test_bool_float_formats",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0020642510062316433,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1370675409998512,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00024624200887046754,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unreadable_file_absent",
+      "lineno": 437,
+      "outcome": "passed",
+      "keywords": [
+        "test_unreadable_file_absent",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0021793710038764402,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.14585583801090252,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003103519993601367,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_env_parse_error_priority",
+      "lineno": 469,
+      "outcome": "failed",
+      "keywords": [
+        "test_env_parse_error_priority",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018448150076437742,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12720396100485232,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/utils.py",
+          "lineno": 73,
+          "message": "AssertionError"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 495,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/utils.py",
+            "lineno": 73,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_env_parse_error_priority0')\n\n    @pytest.mark.error\n    def test_env_parse_error_priority(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n    ) -> None:\n        \"\"\"Env parse failure outranks valid arg.\"\"\"\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"port\": {\n                    \"type\": \"integer\",\n                    \"env\": \"CFGPIPE_CP1_BAD_PORT_OVERRIDE\",\n                    \"arg\": \"port\",\n                }\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            env={\"CFGPIPE_CP1_BAD_PORT_OVERRIDE\": \"oops\"},\n            arg_candidates=[\"--port=9000\"],\n            cwd=tmp_path,\n        )\n    \n>       assert_error(result, \"port\", \"env\", \"integer\")\n\n.evaluation_tests/test_checkpoint_1.py:495: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '/tmp/pytest-of-ro...est-1/test_env_parse_error_priority0/schema.json', '--port=9000'], returncode=0, stdout='{\"port\":\"9000\"}\\n', stderr='')\ntokens = ('port', 'env', 'integer')\n\n    def assert_error(\n        result: subprocess.CompletedProcess[str],\n        *tokens: str,\n    ) -> None:\n>       assert result.returncode != 0\n               ^^^^^^^^^^^^^^^^^^^^^^\nE       AssertionError\n\n.evaluation_tests/utils.py:73: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00024774199118837714,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_undeclared_sources",
+      "lineno": 497,
+      "outcome": "passed",
+      "keywords": [
+        "test_undeclared_sources",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018373130005784333,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15250997101247776,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00027514700195752084,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_missing_schema_file",
+      "lineno": 525,
+      "outcome": "passed",
+      "keywords": [
+        "test_missing_schema_file",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0015142579941311851,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1435003369988408,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018303199613001198,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_invalid_boolean[whitespace]",
+      "lineno": 543,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_boolean[whitespace]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "whitespace",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001483252999605611,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12553147699509282,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00026754500868264586,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_invalid_boolean[suffix]",
+      "lineno": 543,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_boolean[suffix]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "suffix",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002102058002492413,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1501991779950913,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00023384000814985484,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_default_parse_error_stops",
+      "lineno": 578,
+      "outcome": "failed",
+      "keywords": [
+        "test_default_parse_error_stops",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0025725379964569584,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11843336799938697,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/utils.py",
+          "lineno": 73,
+          "message": "AssertionError"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 609,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/utils.py",
+            "lineno": 73,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_default_parse_error_stops0')\n\n    @pytest.mark.error\n    def test_default_parse_error_stops(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n    ) -> None:\n        \"\"\"Default parse error stops resolution.\"\"\"\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"port\": {\n                    \"type\": \"integer\",\n                    \"default\": \"oops\",\n                    \"env\": \"CFGPIPE_CP1_PORT\",\n                    \"arg\": \"port\",\n                },\n                \"timeout\": {\n                    \"type\": \"integer\",\n                    \"default\": \"30\",\n                },\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            env={\"CFGPIPE_CP1_PORT\": \"9000\"},\n            arg_candidates=[\"--port=7000\"],\n            cwd=tmp_path,\n        )\n    \n>       assert_error(result, \"port\", \"default\", \"integer\")\n\n.evaluation_tests/test_checkpoint_1.py:609: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '/tmp/pytest-of-ro...lt_parse_error_stops0/schema.json', '--port=7000'], returncode=0, stdout='{\"port\":\"7000\",\"timeout\":\"30\"}\\n', stderr='')\ntokens = ('port', 'default', 'integer')\n\n    def assert_error(\n        result: subprocess.CompletedProcess[str],\n        *tokens: str,\n    ) -> None:\n>       assert result.returncode != 0\n               ^^^^^^^^^^^^^^^^^^^^^^\nE       AssertionError\n\n.evaluation_tests/utils.py:73: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0002628450019983575,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_file_parse_error_stops",
+      "lineno": 612,
+      "outcome": "failed",
+      "keywords": [
+        "test_file_parse_error_stops",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0010656819940777496,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1315815069974633,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/utils.py",
+          "lineno": 73,
+          "message": "AssertionError"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 642,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/utils.py",
+            "lineno": 73,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_file_parse_error_stops0')\n\n    @pytest.mark.error\n    def test_file_parse_error_stops(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n    ) -> None:\n        \"\"\"File parse error stops resolution.\"\"\"\n        value_file = write_text(tmp_path / \"port.txt\", \"not-an-int\")\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"port\": {\n                    \"type\": \"integer\",\n                    \"file\": str(value_file),\n                    \"arg\": \"port\",\n                },\n                \"timeout\": {\n                    \"type\": \"integer\",\n                    \"default\": \"30\",\n                },\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            arg_candidates=[\"--port=7000\"],\n            cwd=tmp_path,\n        )\n    \n>       assert_error(result, \"port\", \"file\", \"integer\")\n\n.evaluation_tests/test_checkpoint_1.py:642: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '/tmp/pytest-of-ro...le_parse_error_stops0/schema.json', '--port=7000'], returncode=0, stdout='{\"port\":\"7000\",\"timeout\":\"30\"}\\n', stderr='')\ntokens = ('port', 'file', 'integer')\n\n    def assert_error(\n        result: subprocess.CompletedProcess[str],\n        *tokens: str,\n    ) -> None:\n>       assert result.returncode != 0\n               ^^^^^^^^^^^^^^^^^^^^^^\nE       AssertionError\n\n.evaluation_tests/utils.py:73: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00047318098950199783,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_empty_env_string_is_present",
+      "lineno": 645,
+      "outcome": "failed",
+      "keywords": [
+        "test_empty_env_string_is_present",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0017747020028764382,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13079497299622744,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 671,
+          "message": "AssertionError: assert {'name': 'fallback'} == {'name': ''}\n  \n  Differing items:\n  {'name': 'fallback'} != {'name': ''}\n  \n  Full diff:\n    {\n  -     'name': '',\n  +     'name': 'fallback',\n  ?              ++++++++\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 671,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_empty_env_string_is_prese0')\n\n    @pytest.mark.functionality\n    def test_empty_env_string_is_present(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n    ) -> None:\n        \"\"\"A set-but-empty env string is a present string value.\"\"\"\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"name\": {\n                    \"type\": \"string\",\n                    \"default\": \"fallback\",\n                    \"env\": \"CFGPIPE_CP1_NAME\",\n                }\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            env={\"CFGPIPE_CP1_NAME\": \"\"},\n            cwd=tmp_path,\n        )\n    \n        assert_success(result)\n>       assert _parse_output(result.stdout) == {\"name\": \"\"}\nE       AssertionError: assert {'name': 'fallback'} == {'name': ''}\nE         \nE         Differing items:\nE         {'name': 'fallback'} != {'name': ''}\nE         \nE         Full diff:\nE           {\nE         -     'name': '',\nE         +     'name': 'fallback',\nE         ?              ++++++++\nE           }\n\n.evaluation_tests/test_checkpoint_1.py:671: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00027684700035024434,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_empty_schema",
+      "lineno": 673,
+      "outcome": "passed",
+      "keywords": [
+        "test_empty_schema",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002570538010331802,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.14556248699955177,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018433200602885336,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_non_string_env",
+      "lineno": 692,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_string_env",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0016400790045736358,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12384128899429925,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0001934329920914024,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_non_string_file",
+      "lineno": 708,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_string_file",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0026989600009983405,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.14072776499961037,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0001845319929998368,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_non_string_arg",
+      "lineno": 724,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_string_arg",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001603372991667129,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.14517752200481482,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018783198902383447,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_schema_array_root",
+      "lineno": 740,
+      "outcome": "passed",
+      "keywords": [
+        "test_schema_array_root",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012007040058961138,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.169353849007166,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002689449902391061,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_negative_integer",
+      "lineno": 753,
+      "outcome": "passed",
+      "keywords": [
+        "test_negative_integer",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0014502450067084283,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15216180100105703,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003297560033388436,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_integer_string_as_float",
+      "lineno": 775,
+      "outcome": "passed",
+      "keywords": [
+        "test_integer_string_as_float",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0026567489985609427,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1410248199972557,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003117519954685122,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_arg_error_stops_resolution",
+      "lineno": 796,
+      "outcome": "passed",
+      "keywords": [
+        "test_arg_error_stops_resolution",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0016938859916990623,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.18963873099710327,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002968499902635813,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_env_error_stops_resolution",
+      "lineno": 827,
+      "outcome": "passed",
+      "keywords": [
+        "test_env_error_stops_resolution",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.003348965008626692,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13190077900071628,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0001731289958115667,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unrecognized_type",
+      "lineno": 858,
+      "outcome": "failed",
+      "keywords": [
+        "test_unrecognized_type",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012313079932937399,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13142069800233003,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/utils.py",
+          "lineno": 77,
+          "message": "AssertionError: parameter 'val' source 'default' parse failure: cannot parse '42' as number"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 872,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/utils.py",
+            "lineno": 77,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_unrecognized_type0')\n\n    @pytest.mark.functionality\n    def test_unrecognized_type(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n    ) -> None:\n        \"\"\"Unrecognized type is rejected.\"\"\"\n        schema_path = _write_schema(\n            tmp_path,\n            {\"val\": {\"type\": \"number\", \"default\": \"42\"}},\n        )\n    \n        result = run_cfgpipe(entrypoint_argv, schema_path=schema_path, cwd=tmp_path)\n    \n>       assert_error(result, \"type\")\n\n.evaluation_tests/test_checkpoint_1.py:872: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '/tmp/pytest-of-ro...son'], returncode=1, stdout='', stderr=\"parameter 'val' source 'default' parse failure: cannot parse '42' as number\\n\")\ntokens = ('type',)\n\n    def assert_error(\n        result: subprocess.CompletedProcess[str],\n        *tokens: str,\n    ) -> None:\n        assert result.returncode != 0\n        assert result.stderr.strip()\n        lowered = result.stderr.lower()\n        for token in tokens:\n>           assert token.lower() in lowered, result.stderr\n                   ^^^^^^^^^^^^^^^^^^^^^^^^\nE           AssertionError: parameter 'val' source 'default' parse failure: cannot parse '42' as number\n\n.evaluation_tests/utils.py:77: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0002804480027407408,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_missing_type_field",
+      "lineno": 874,
+      "outcome": "passed",
+      "keywords": [
+        "test_missing_type_field",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012187060056021437,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13374799099983647,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00021363599807955325,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_no_sources_unresolved",
+      "lineno": 893,
+      "outcome": "passed",
+      "keywords": [
+        "test_no_sources_unresolved",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0022773849923396483,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12178967100044247,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00028484800714068115,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_unresolved_mixed_sources",
+      "lineno": 910,
+      "outcome": "passed",
+      "keywords": [
+        "test_unresolved_mixed_sources",
+        "error",
+        "pytestmark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001288117011426948,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11598088999744505,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00033095499384216964,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_priority_chain",
+      "lineno": 53,
+      "outcome": "passed",
+      "keywords": [
+        "test_priority_chain",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.005068957005278207,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.3293432280042907,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.3377536490006605,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_store_flag",
+      "lineno": 98,
+      "outcome": "passed",
+      "keywords": [
+        "test_missing_store_flag",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0017494960047770292,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.19205123900610488,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00031025199859868735,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_duplicate_store_keys",
+      "lineno": 120,
+      "outcome": "failed",
+      "keywords": [
+        "test_duplicate_store_keys",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0026420459907967597,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13476626201008912,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/utils.py",
+          "lineno": 77,
+          "message": "AssertionError: parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 149,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/utils.py",
+            "lineno": 77,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_duplicate_store_keys0')\nstore_server = RunningStoreServer(address='http://127.0.0.1:33789', _harness=<conftest.StoreHarness object at 0x750cf90e7890>)\n\n    @pytest.mark.error\n    def test_duplicate_store_keys(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n        store_server,\n    ) -> None:\n        \"\"\"Duplicate primary-store keys are rejected.\"\"\"\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"read_timeout\": {\n                    \"type\": \"float\",\n                    \"primary-store\": \"cfg/timeout\",\n                },\n                \"write_timeout\": {\n                    \"type\": \"float\",\n                    \"primary-store\": \"cfg/timeout\",\n                },\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            global_args=[\"--primary-store\", store_server.address],\n            cwd=tmp_path,\n        )\n    \n>       assert_error(\n            result,\n            \"duplicate\",\n            \"primary-store\",\n            \"read_timeout\",\n            \"write_timeout\",\n        )\n\n.evaluation_tests/test_checkpoint_2.py:149: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store',...eturncode=1, stdout='', stderr=\"parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'\\n\")\ntokens = ('duplicate', 'primary-store', 'read_timeout', 'write_timeout')\n\n    def assert_error(\n        result: subprocess.CompletedProcess[str],\n        *tokens: str,\n    ) -> None:\n        assert result.returncode != 0\n        assert result.stderr.strip()\n        lowered = result.stderr.lower()\n        for token in tokens:\n>           assert token.lower() in lowered, result.stderr\n                   ^^^^^^^^^^^^^^^^^^^^^^^^\nE           AssertionError: parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'\n\n.evaluation_tests/utils.py:77: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.3463512010057457,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_key_fallback",
+      "lineno": 157,
+      "outcome": "passed",
+      "keywords": [
+        "test_missing_key_fallback",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0017966040031751618,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.19284127200080547,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4756242359871976,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_seed",
+      "lineno": 189,
+      "outcome": "passed",
+      "keywords": [
+        "test_primary_store_seed",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002654848009115085,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.18147905298974365,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4804219460056629,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_unparseable_store_value",
+      "lineno": 218,
+      "outcome": "passed",
+      "keywords": [
+        "test_unparseable_store_value",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004033681005239487,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.17604123400815297,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4877831899939338,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_setup_error_no_output",
+      "lineno": 247,
+      "outcome": "passed",
+      "keywords": [
+        "test_setup_error_no_output",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018180070037487894,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.16544624500966165,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003715619968716055,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_flag_optional",
+      "lineno": 269,
+      "outcome": "passed",
+      "keywords": [
+        "test_primary_store_flag_optional",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002980603007017635,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.20283245999598876,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.004703694998170249,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[default-fallback]",
+      "lineno": 294,
+      "outcome": "passed",
+      "keywords": [
+        "test_primary_store_resolves[default-fallback]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "default-fallback",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.006066525005735457,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.3940084509958979,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.46536840399494395,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[key-mismatch]",
+      "lineno": 294,
+      "outcome": "passed",
+      "keywords": [
+        "test_primary_store_resolves[key-mismatch]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "key-mismatch",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.007076595007674769,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.8948833519971231,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.456913075002376,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[empty-string]",
+      "lineno": 294,
+      "outcome": "passed",
+      "keywords": [
+        "test_primary_store_resolves[empty-string]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "empty-string",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004322130000218749,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.8405847319954773,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.44152550799481105,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[version-zero]",
+      "lineno": 294,
+      "outcome": "passed",
+      "keywords": [
+        "test_primary_store_resolves[version-zero]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "version-zero",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.008989815003587864,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5473309649969451,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.44038102800550405,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_primary_store_resolves[url-encoded]",
+      "lineno": 294,
+      "outcome": "passed",
+      "keywords": [
+        "test_primary_store_resolves[url-encoded]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "url-encoded",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.005917931004660204,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5096587340085534,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.46119630499742925,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_unannotated_params_ignored",
+      "lineno": 341,
+      "outcome": "passed",
+      "keywords": [
+        "test_unannotated_params_ignored",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.005651390005368739,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.7072187349986052,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4655678929993883,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_key_fallback_chain",
+      "lineno": 376,
+      "outcome": "passed",
+      "keywords": [
+        "test_missing_key_fallback_chain",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004480304996832274,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.8167614809935912,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.48599600899615325,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_store_output",
+      "lineno": 416,
+      "outcome": "passed",
+      "keywords": [
+        "test_missing_store_output",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0030672830034745857,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11163147399201989,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018492901290301234,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_duplicate_error_key",
+      "lineno": 440,
+      "outcome": "passed",
+      "keywords": [
+        "test_duplicate_error_key",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0024047789920587093,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1074165099998936,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.39324510798905976,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_non_200_fatal",
+      "lineno": 465,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_200_fatal",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0025209970044670627,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15701821900438517,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4851705790060805,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_malformed_json",
+      "lineno": 493,
+      "outcome": "passed",
+      "keywords": [
+        "test_malformed_json",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0020031150052091107,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1539035280002281,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4857843759964453,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_missing_version_field",
+      "lineno": 521,
+      "outcome": "failed",
+      "keywords": [
+        "test_missing_version_field",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002166240999940783,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.13579967900295742,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 40,
+          "message": "assert 0 != 0\n +  where 0 = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store', 'http://127.0.0.1:33125', '/tmp/pytest-of-root/pytest-1/test_missing_version_field0/schema.json'], returncode=0, stdout='{\"name\":\"store-name\"}\\n', stderr='').returncode"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 550,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 40,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_missing_version_field0')\nstore_server = RunningStoreServer(address='http://127.0.0.1:33125', _harness=<conftest.StoreHarness object at 0x750cf90f7f50>)\n\n    @pytest.mark.error\n    def test_missing_version_field(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n        store_server,\n    ) -> None:\n        \"\"\"Missing version field is rejected.\"\"\"\n        store_server.queue_primary_payload(\n            \"cfg/name\",\n            {\"found\": True, \"value\": \"store-name\"},\n        )\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"name\": {\n                    \"type\": \"string\",\n                    \"primary-store\": \"cfg/name\",\n                }\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            global_args=[\"--primary-store\", store_server.address],\n            cwd=tmp_path,\n        )\n    \n>       _assert_primary_store_malformed_response_error(result, parameter=\"name\")\n\n.evaluation_tests/test_checkpoint_2.py:550: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store',...-of-root/pytest-1/test_missing_version_field0/schema.json'], returncode=0, stdout='{\"name\":\"store-name\"}\\n', stderr='')\nparameter = 'name'\n\n    def _assert_primary_store_malformed_response_error(\n        result: subprocess.CompletedProcess[str],\n        *,\n        parameter: str,\n    ) -> None:\n>       assert result.returncode != 0\nE       assert 0 != 0\nE        +  where 0 = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store', 'http://127.0.0.1:33125', '/tmp/pytest-of-root/pytest-1/test_missing_version_field0/schema.json'], returncode=0, stdout='{\"name\":\"store-name\"}\\n', stderr='').returncode\n\n.evaluation_tests/test_checkpoint_2.py:40: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4731005789944902,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_connection_failure",
+      "lineno": 552,
+      "outcome": "passed",
+      "keywords": [
+        "test_connection_failure",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001794683004845865,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.14531667699338868,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00026714200794231147,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_duplicate_failure_output",
+      "lineno": 582,
+      "outcome": "failed",
+      "keywords": [
+        "test_duplicate_failure_output",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0021838429966010153,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11133932801021729,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/utils.py",
+          "lineno": 77,
+          "message": "AssertionError: parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 615,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/utils.py",
+            "lineno": 77,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_duplicate_failure_output0')\nstore_server = RunningStoreServer(address='http://127.0.0.1:42529', _harness=<conftest.StoreHarness object at 0x750cf9123e90>)\n\n    @pytest.mark.error\n    def test_duplicate_failure_output(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n        store_server,\n    ) -> None:\n        \"\"\"Duplicate keys produce setup failure, no stdout.\"\"\"\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"name\": {\n                    \"type\": \"string\",\n                    \"default\": \"ok\",\n                },\n                \"read_timeout\": {\n                    \"type\": \"float\",\n                    \"primary-store\": \"cfg/timeout\",\n                },\n                \"write_timeout\": {\n                    \"type\": \"float\",\n                    \"primary-store\": \"cfg/timeout\",\n                },\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            global_args=[\"--primary-store\", store_server.address],\n            cwd=tmp_path,\n        )\n    \n>       assert_error(\n            result,\n            \"duplicate\",\n            \"primary-store\",\n            \"read_timeout\",\n            \"write_timeout\",\n        )\n\n.evaluation_tests/test_checkpoint_2.py:615: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store',...eturncode=1, stdout='', stderr=\"parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'\\n\")\ntokens = ('duplicate', 'primary-store', 'read_timeout', 'write_timeout')\n\n    def assert_error(\n        result: subprocess.CompletedProcess[str],\n        *tokens: str,\n    ) -> None:\n        assert result.returncode != 0\n        assert result.stderr.strip()\n        lowered = result.stderr.lower()\n        for token in tokens:\n>           assert token.lower() in lowered, result.stderr\n                   ^^^^^^^^^^^^^^^^^^^^^^^^\nE           AssertionError: parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'\n\n.evaluation_tests/utils.py:77: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.37142424599733204,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_parse_failure_halts",
+      "lineno": 624,
+      "outcome": "failed",
+      "keywords": [
+        "test_parse_failure_halts",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0023116869997465983,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12332184000115376,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/utils.py",
+          "lineno": 73,
+          "message": "AssertionError"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 656,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/utils.py",
+            "lineno": 73,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_parse_failure_halts1')\nstore_server = RunningStoreServer(address='http://127.0.0.1:41489', _harness=<conftest.StoreHarness object at 0x750cf9121820>)\n\n    @pytest.mark.error\n    def test_parse_failure_halts(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n        store_server,\n    ) -> None:\n        \"\"\"Parse failure halts resolution.\"\"\"\n        store_server.set_primary(\"cfg/enabled\", \"notabool\", version=1)\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"enabled\": {\n                    \"type\": \"boolean\",\n                    \"primary-store\": \"cfg/enabled\",\n                    \"arg\": \"enabled\",\n                },\n                \"timeout\": {\n                    \"type\": \"integer\",\n                    \"default\": \"30\",\n                },\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            global_args=[\"--primary-store\", store_server.address],\n            arg_candidates=[\"--enabled=true\"],\n            cwd=tmp_path,\n        )\n    \n>       assert_error(result, \"enabled\", \"primary-store\", \"boolean\")\n\n.evaluation_tests/test_checkpoint_2.py:656: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store',..._failure_halts1/schema.json', '--enabled=true'], returncode=0, stdout='{\"enabled\":\"true\",\"timeout\":\"30\"}\\n', stderr='')\ntokens = ('enabled', 'primary-store', 'boolean')\n\n    def assert_error(\n        result: subprocess.CompletedProcess[str],\n        *tokens: str,\n    ) -> None:\n>       assert result.returncode != 0\n               ^^^^^^^^^^^^^^^^^^^^^^\nE       AssertionError\n\n.evaluation_tests/utils.py:73: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.3608006879949244,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_store_flag_ignored",
+      "lineno": 659,
+      "outcome": "passed",
+      "keywords": [
+        "test_store_flag_ignored",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.003184132991009392,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1464770159946056,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.3543374059954658,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_integer_parse_failure",
+      "lineno": 687,
+      "outcome": "passed",
+      "keywords": [
+        "test_integer_parse_failure",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.003700219007441774,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.25252356499549933,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.47881914100435097,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_mixed_keys_independent",
+      "lineno": 717,
+      "outcome": "passed",
+      "keywords": [
+        "test_mixed_keys_independent",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0028144709940534085,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.21286202700866852,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.48801667999941856,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_found_true_missing_value",
+      "lineno": 754,
+      "outcome": "passed",
+      "keywords": [
+        "test_found_true_missing_value",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.003251844987971708,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.16234357199573424,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4876073110062862,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_non_string_value",
+      "lineno": 786,
+      "outcome": "failed",
+      "keywords": [
+        "test_non_string_value",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0033206560037797317,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15544621700246353,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/test_checkpoint_2.py",
+          "lineno": 40,
+          "message": "assert 0 != 0\n +  where 0 = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store', 'http://127.0.0.1:43167', '/tmp/pytest-of-root/pytest-1/test_non_string_value0/schema.json'], returncode=0, stdout='{\"port\":\"42\"}\\n', stderr='').returncode"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 816,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 40,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_non_string_value0')\nstore_server = RunningStoreServer(address='http://127.0.0.1:43167', _harness=<conftest.StoreHarness object at 0x750cf89ea2a0>)\n\n    @pytest.mark.functionality\n    def test_non_string_value(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n        store_server,\n    ) -> None:\n        \"\"\"Non-string value field is fatal.\"\"\"\n        store_server.queue_primary_payload(\n            \"cfg/port\",\n            {\"found\": True, \"value\": 42, \"version\": 1},\n        )\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"port\": {\n                    \"type\": \"integer\",\n                    \"default\": \"3000\",\n                    \"primary-store\": \"cfg/port\",\n                }\n            },\n        )\n    \n        result = run_cfgpipe(\n            entrypoint_argv,\n            schema_path=schema_path,\n            global_args=[\"--primary-store\", store_server.address],\n            cwd=tmp_path,\n        )\n    \n>       _assert_primary_store_malformed_response_error(result, parameter=\"port\")\n\n.evaluation_tests/test_checkpoint_2.py:816: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store',... '/tmp/pytest-of-root/pytest-1/test_non_string_value0/schema.json'], returncode=0, stdout='{\"port\":\"42\"}\\n', stderr='')\nparameter = 'port'\n\n    def _assert_primary_store_malformed_response_error(\n        result: subprocess.CompletedProcess[str],\n        *,\n        parameter: str,\n    ) -> None:\n>       assert result.returncode != 0\nE       assert 0 != 0\nE        +  where 0 = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '--primary-store', 'http://127.0.0.1:43167', '/tmp/pytest-of-root/pytest-1/test_non_string_value0/schema.json'], returncode=0, stdout='{\"port\":\"42\"}\\n', stderr='').returncode\n\n.evaluation_tests/test_checkpoint_2.py:40: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.4678681079967646,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_non_200_no_fallback",
+      "lineno": 818,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_200_no_fallback",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0017126869934145361,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1583482029964216,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4877692379959626,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_store_overrides_file",
+      "lineno": 849,
+      "outcome": "passed",
+      "keywords": [
+        "test_store_overrides_file",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0017726970108924434,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15108428699022625,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.4886135800043121,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_duplicate_keys_fail_first",
+      "lineno": 880,
+      "outcome": "failed",
+      "keywords": [
+        "test_duplicate_keys_fail_first",
+        "error",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0015875649987719953,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12502342500374652,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmp1fgtey37/.evaluation_tests/utils.py",
+          "lineno": 77,
+          "message": "AssertionError: parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 903,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/utils.py",
+            "lineno": 77,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py']\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_duplicate_keys_fail_first0')\n\n    @pytest.mark.error\n    def test_duplicate_keys_fail_first(\n        entrypoint_argv: list[str],\n        tmp_path: Path,\n    ) -> None:\n        \"\"\"Duplicate keys fail before missing-store check.\"\"\"\n        schema_path = _write_schema(\n            tmp_path,\n            {\n                \"read_timeout\": {\n                    \"type\": \"float\",\n                    \"primary-store\": \"cfg/timeout\",\n                },\n                \"write_timeout\": {\n                    \"type\": \"float\",\n                    \"primary-store\": \"cfg/timeout\",\n                },\n            },\n        )\n    \n        result = run_cfgpipe(entrypoint_argv, schema_path=schema_path, cwd=tmp_path)\n    \n>       assert_error(\n            result,\n            \"duplicate\",\n            \"primary-store\",\n            \"read_timeout\",\n            \"write_timeout\",\n        )\n\n.evaluation_tests/test_checkpoint_2.py:903: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresult = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp1fgtey37', '/tmp/tmp1fgtey37/cfgpipe.py', '/tmp/pytest-of-ro...eturncode=1, stdout='', stderr=\"parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'\\n\")\ntokens = ('duplicate', 'primary-store', 'read_timeout', 'write_timeout')\n\n    def assert_error(\n        result: subprocess.CompletedProcess[str],\n        *tokens: str,\n    ) -> None:\n        assert result.returncode != 0\n        assert result.stderr.strip()\n        lowered = result.stderr.lower()\n        for token in tokens:\n>           assert token.lower() in lowered, result.stderr\n                   ^^^^^^^^^^^^^^^^^^^^^^^^\nE           AssertionError: parameters 'read_timeout' and 'write_timeout' share primary-store key 'cfg/timeout'\n\n.evaluation_tests/utils.py:77: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00034775798849295825,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

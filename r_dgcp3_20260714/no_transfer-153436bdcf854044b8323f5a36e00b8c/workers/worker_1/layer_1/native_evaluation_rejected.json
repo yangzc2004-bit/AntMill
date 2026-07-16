@@ -1,0 +1,41 @@
+{
+  "native_checkpoint": 2,
+  "target_checkpoint": 3,
+  "native_verification": {
+    "core_passed": 3,
+    "core_total": 9,
+    "pytest_exit_code": 1,
+    "infrastructure_failure": false,
+    "test_collection_hash": "f37dac8cf61b4be3bdff4351234ec6432f9742818a7b7630a76e3393f976f07f",
+    "pytest_collected": 122,
+    "all_passed": 81,
+    "all_total": 122
+  },
+  "clean_verification": {
+    "core_passed": 0,
+    "core_total": 5,
+    "pytest_exit_code": 1,
+    "infrastructure_failure": false,
+    "test_collection_hash": "95b396ad0c1c443f83d852a8603ed230992066873976b9d44357835b4eb6bb57",
+    "pytest_collected": 174,
+    "all_passed": 88,
+    "all_total": 174
+  },
+  "clean_attempts": [
+    {
+      "attempt": 1,
+      "output_dir": "D:\\antmill\\r_dgcp3_20260714\\no_transfer-153436bdcf854044b8323f5a36e00b8c\\workers\\worker_1\\layer_1\\target_checkpoint_evaluation",
+      "status": "target_consistent",
+      "verification": {
+        "core_passed": 0,
+        "core_total": 5,
+        "pytest_exit_code": 1,
+        "infrastructure_failure": false,
+        "test_collection_hash": "95b396ad0c1c443f83d852a8603ed230992066873976b9d44357835b4eb6bb57",
+        "pytest_collected": 174,
+        "all_passed": 88,
+        "all_total": 174
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "log_query",
+  "checkpoint_limit": 1,
+  "expected_core_total": 10,
+  "expected_test_collection_hash": "3deecb18f814ddda765ab2720264da076f8361d7646fe9c922af4c52d11fddac",
+  "worker_count": 3,
+  "num_layers": 5,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "mechanism_boundary": {
+    "motivation": "The matched bootstrapped recursive-manager arm remained at 10/10 Core for all five layers despite 1.39x layer-5 input and a 1.43x manager-output growth. This new arm tests whether recursive compression and conflict resolution prevented degradation.",
+    "treatment": "Weakly compressed cumulative broadcast: retain the three frozen 10/10 Core bootstrap outputs and append every new 10/10 Core worker output from all completed layers.",
+    "independence": "This configuration and all thresholds were frozen before any outcome from this cumulative-bootstrap arm existed.",
+    "matching_control": "Reuse no_transfer-0e9568d083944a74922b08223c7088dc from runs_scbench_moa_kimi_log_query_cp1_recursive_synthesis_depth5_20260714."
+  },
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_log_query_cp1_recursive_synthesis_depth5_20260714/no_transfer-0e9568d083944a74922b08223c7088dc/workers/worker_1",
+      "layer": 4
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_log_query_cp1_recursive_synthesis_depth5_20260714/no_transfer-0e9568d083944a74922b08223c7088dc/workers/worker_2",
+      "layer": 4
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_log_query_cp1_recursive_synthesis_depth5_20260714/no_transfer-0e9568d083944a74922b08223c7088dc/workers/worker_3",
+      "layer": 4
+    }
+  ],
+  "assimilation_semantics": {
+    "bootstrap": "Every layer-1 worker receives all three frozen locally 10/10 Core-verified outputs.",
+    "positive_feedback": "After each layer, append every new 10/10 Core output to the broadcast bundle while retaining all earlier bootstrap and successful outputs.",
+    "filter": "Outputs below 10/10 Core never enter the shared bundle.",
+    "compression": "Each source is truncated only at the frozen 12000-character source limit; there is no manager synthesis, deduplication, or conflict resolution."
+  },
+  "validity_gates": {
+    "bootstrap_activation": "All three frozen sources re-evaluate at 10/10 Core with the frozen hash and every layer-1 worker receives all three.",
+    "control_headroom": "Matching no-transfer layer-5 mean Core exceeds 0.50.",
+    "target_consistency": "Every treatment result uses Core total 10 and the frozen test hash after clean re-evaluation when needed.",
+    "integrity": "No infrastructure failures remain and no assistant action accesses prohibited benchmark paths.",
+    "cumulative_continuity": "Every layer retains all bootstrap sources and all strict outputs from every completed treatment layer."
+  },
+  "degradation_criteria": {
+    "primary_terminal_effect": "Treatment layer-5 mean Core is at least 0.20 below matching no-transfer layer 5.",
+    "within_arm_decline": "Treatment Core falls by at least 0.20 from its layer-1-to-layer-4 peak to layer 5.",
+    "curve_shape": "At least two transitions strictly decrease, or one transition decreases by at least 0.40 and the terminal score does not fully recover.",
+    "tail_risk": "At least one treatment layer-5 worker is at least 0.50 below the no-transfer layer-5 median.",
+    "complexity_support": "Treatment layer-5 total input tokens are at least 1.50x no transfer and mean received experience characters are at least 3.0x treatment layer 1.",
+    "all_required": "All validity gates plus primary, within-arm, curve-shape, tail-risk, and complexity criteria are required."
+  },
+  "decision_rule": {
+    "expand": "If all requirements pass, add two independent treatment replicates and then a second model.",
+    "directional_followup": "If validity passes and terminal, within-arm, and complexity effects point toward degradation but exactly one numerical threshold misses, run one same-setting treatment replication.",
+    "falsify": "If validity passes but terminal or within-arm effects are non-negative, reject cumulative broadcast on this task.",
+    "invalid": "Do not interpret direction if bootstrap activation, control headroom, target consistency, or integrity fails."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "cumulative_success"
+          ]
+        }
+      ]
+    }
+  ]
+}

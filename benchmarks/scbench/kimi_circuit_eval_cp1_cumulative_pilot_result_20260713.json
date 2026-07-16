@@ -1,0 +1,43 @@
+{
+  "status": "invalid_source_activation_stopped_early",
+  "date": "2026-07-13",
+  "model": "kimi-k2.6",
+  "problem": "circuit_eval",
+  "checkpoint": 1,
+  "planned_worker_count": 3,
+  "planned_num_layers": 3,
+  "completed_layers": 1,
+  "step_limit_per_worker": 12,
+  "run_root": "runs_scbench_moa_kimi_circuit_eval_cp1_cumulative_pilot_20260713",
+  "arm": {
+    "mode": "cumulative_success",
+    "task_id": "cumulative_success-2ae32d5b9c354b2f873d9c413946bc8f",
+    "layer_1_core_passed": [8, 8, 8],
+    "core_total_per_worker": 9,
+    "mean_core_fraction": 0.8888888889,
+    "strict_core_verified_sources": 0
+  },
+  "validity": {
+    "source_activation": false,
+    "target_consistency": true,
+    "integrity_of_completed_layer": true,
+    "evaluation_count": 3,
+    "test_collection_hashes": [
+      "46a898e5ca98098b14725e27e2cb0eb70ab9b68c25e9efe8829bf5984471e8a9"
+    ],
+    "infrastructure_failure_count": 0,
+    "completed_layer_nonempty_stderr_count": 0,
+    "prohibited_trajectory_access_count": 0
+  },
+  "termination": {
+    "reason": "All three layer-1 workers scored 8/9, so cumulative_success had no strict 9/9 source to broadcast.",
+    "action": "The run was interrupted at the start of layer 2 before spending the remaining treatment and control budget.",
+    "cancellation_stderr": "Three non-empty layer-2 runner stderr logs record the intentional cancellation and are not benchmark evaluation failures."
+  },
+  "interpretation": {
+    "degradation_curve": null,
+    "performance_direction_interpretable": false,
+    "claim": "No treatment contrast occurred. The candidate failed the pre-registered source-activation gate and provides no evidence for or against degradation.",
+    "decision": "Stop circuit_eval checkpoint 1 and select a source-reliable, non-ceiling candidate."
+  }
+}

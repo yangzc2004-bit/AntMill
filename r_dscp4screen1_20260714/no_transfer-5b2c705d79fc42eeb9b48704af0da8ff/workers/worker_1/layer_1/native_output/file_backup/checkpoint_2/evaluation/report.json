@@ -1,0 +1,3210 @@
+{
+  "created": 1784042494.2149575,
+  "duration": 6.058518171310425,
+  "exitcode": 1,
+  "root": "/tmp/tmpy8pj9adf",
+  "environment": {},
+  "summary": {
+    "passed": 31,
+    "failed": 19,
+    "total": 50,
+    "collected": 50
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files/A/B/C",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files/A/B",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets/files/A/B/C",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files/A/F",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files/A",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets/files/A/B",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/assets/files/A/F",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets/files",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets/files/A",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets/files",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_due_simple",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_due_within_duration_no_select",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_not_due",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/disabled_job",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/multiple_jobs_sorting",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core/rel_mount",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/core",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_due_simple",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_due_within_duration_no_select",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/daily_not_due",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/disabled_job",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/multiple_jobs_sorting",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core/rel_mount",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_daily_missing_at",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_once_missing_when",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_timezone",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_yaml_parse",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/errors",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_daily_missing_at",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_once_missing_when",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_schema_timezone",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors/error_yaml_parse",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/complex_globs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/daily_multi_trigger",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/default_enabled",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/default_timezone",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/duration_zero_exact",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/exact_duration_boundary",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/exact_now_time",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/first_pattern_wins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_case_sensitive",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_character_class",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_doublestar_crosses_dirs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_question_mark",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/mixed_enabled_disabled",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/no_exclusions",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/once_due",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/once_future",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/timestamp_floored",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/timezone_non_utc",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_multi_trigger",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_multiple_days",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_single_day",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_wrong_day",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1/hidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/complex_globs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/daily_multi_trigger",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/default_enabled",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/default_timezone",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/duration_zero_exact",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/exact_duration_boundary",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/exact_now_time",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/first_pattern_wins",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_case_sensitive",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_character_class",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_doublestar_crosses_dirs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/glob_question_mark",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/mixed_enabled_disabled",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/no_exclusions",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/once_due",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/once_future",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/timestamp_floored",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/timezone_non_utc",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_multi_trigger",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_multiple_days",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_single_day",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden/weekly_wrong_day",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_1",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/core",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/errors",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1/hidden",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core/full",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core/pack/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core/pack",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core/pack/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core/verify",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/core",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core/full",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core/pack",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core/verify",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_no_exclusions",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_rel_mount",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_with_exclusions",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/multi_strategy_jobs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/no_strategy",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_default_max/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_default_max",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_default_max/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_exact_fit/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_exact_fit",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_exact_fit/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_files",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental/backup",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental/backup",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_single_large_file",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_tiny_max/dummy_bins",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_tiny_max",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_tiny_max/dummy_bins",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/strategy_sorting",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/verify_complex_globs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/verify_no_files",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2/hidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_no_exclusions",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_rel_mount",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/full_with_exclusions",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/multi_strategy_jobs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/no_strategy",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_default_max",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_exact_fit",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_files",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_no_incremental",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_single_large_file",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/pack_tiny_max",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/strategy_sorting",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/verify_complex_globs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden/verify_no_files",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_2",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/core",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2/hidden",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/empy_destination",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault/verify-all/C",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault/verify-all",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault/verify-all/C",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault/verify-all",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup/vault",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup/daily-docs/A",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup/daily-docs",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup/daily-docs/A",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup/daily-docs",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/core",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/empy_destination",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/full_desto",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core/some_destination",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/all_excluded_with_dest",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/all_new_files",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/changed_subset",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/dest_extra_files",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/full_single_changed",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/full_subdirectory",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/multi_jobs_different_dest",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/nested_dest_path",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/no_backup_flag",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/partial_unchanged",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/verify_all_new",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/verify_partial_unchanged",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3/hidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/all_excluded_with_dest",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/all_new_files",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/changed_subset",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/dest_extra_files",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/full_single_changed",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/full_subdirectory",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/multi_jobs_different_dest",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/nested_dest_path",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/no_backup_flag",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/partial_unchanged",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/verify_all_new",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden/verify_partial_unchanged",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_3",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/core",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3/hidden",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/empty_desto/backup",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/empty_desto",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/empty_desto/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-1",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-2",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-3",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-1",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-2",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive/pack-3",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup/dummy-archive",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-1",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-2",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-3",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-1",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-2",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive/pack-3",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup/dummy-archive",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup/dummy-archive/pack-1",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup/dummy-archive",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup/dummy-archive/pack-1",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup/dummy-archive",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite/backup",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core/source",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/core",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/empty_desto",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/no_changes",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/partial",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/rewrite",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core/source",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/all_files_removed",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/empty_source",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/exclusions_with_packs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/large_to_small_packs",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/merge_opportunity",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/mixed_changes",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/multiple_packs_unchanged",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/new_files_added",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_size_decreased",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_size_increased",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_with_new_max",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/repack_after_exclusion",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/single_file_changed",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/single_pack_split",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/source",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4/hidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/all_files_removed",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/empty_source",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/exclusions_with_packs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/large_to_small_packs",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/merge_opportunity",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/mixed_changes",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/multiple_packs_unchanged",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/new_files_added",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_size_decreased",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_size_increased",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/pack_with_new_max",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/repack_after_exclusion",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/single_file_changed",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/single_pack_split",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden/source",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data/checkpoint_4",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/core",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4/hidden",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/data",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_1",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_2",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_3",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data/checkpoint_4",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_core_cases[daily_due_simple]",
+          "type": "Function",
+          "lineno": 72
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[daily_due_within_duration_no_select]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[daily_not_due]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[disabled_job]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[multiple_jobs_sorting]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[rel_mount]",
+          "type": "Function",
+          "lineno": 91
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[complex_globs]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[daily_multi_trigger]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[default_enabled]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[default_timezone]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[duration_zero_exact]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[exact_duration_boundary]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[exact_now_time]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[first_pattern_wins]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_case_sensitive]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_character_class]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_doublestar_crosses_dirs]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_question_mark]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[mixed_enabled_disabled]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[no_exclusions]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[once_due]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[once_future]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[timestamp_floored]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[timezone_non_utc]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_multi_trigger]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_multiple_days]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_single_day]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_wrong_day]",
+          "type": "Function",
+          "lineno": 113
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_daily_missing_at]",
+          "type": "Function",
+          "lineno": 135
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_once_missing_when]",
+          "type": "Function",
+          "lineno": 135
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_timezone]",
+          "type": "Function",
+          "lineno": 135
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_yaml_parse]",
+          "type": "Function",
+          "lineno": 135
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_core_cases[full]",
+          "type": "Function",
+          "lineno": 77
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_extended_core_cases[pack]",
+          "type": "Function",
+          "lineno": 96
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_extended_core_cases[verify]",
+          "type": "Function",
+          "lineno": 96
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[full_no_exclusions]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[full_rel_mount]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[full_with_exclusions]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[multi_strategy_jobs]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[no_strategy]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_default_max]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_exact_fit]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_no_files]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_no_incremental]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_single_large_file]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_tiny_max]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[strategy_sorting]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[verify_complex_globs]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[verify_no_files]",
+          "type": "Function",
+          "lineno": 118
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_jsonl_output_is_compact_and_newline_terminated",
+          "type": "Function",
+          "lineno": 140
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/data",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_2.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_core_cases[daily_due_simple]",
+      "lineno": 72,
+      "outcome": "passed",
+      "keywords": [
+        "test_core_cases[daily_due_simple]",
+        "parametrize",
+        "pytestmark",
+        "daily_due_simple",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.005691038008080795,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.24012695100100245,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018581100448500365,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[daily_due_within_duration_no_select]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[daily_due_within_duration_no_select]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "daily_due_within_duration_no_select",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001532190988655202,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09049287000379991,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002988179912790656,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[daily_not_due]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[daily_not_due]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "daily_not_due",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00395353400381282,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15023621599539183,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00025351600197609514,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[disabled_job]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[disabled_job]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "disabled_job",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00269386000582017,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.16574953599774744,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00038692299858666956,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[multiple_jobs_sorting]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[multiple_jobs_sorting]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "multiple_jobs_sorting",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0033989020012086257,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1515857960039284,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00036422199627850205,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_extended_core_cases[rel_mount]",
+      "lineno": 91,
+      "outcome": "passed",
+      "keywords": [
+        "test_extended_core_cases[rel_mount]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "rel_mount",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002503448005882092,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1379972889990313,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002764160017250106,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[complex_globs]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[complex_globs]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "complex_globs",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0029697759891860187,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.14606216798711102,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003118189924862236,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[daily_multi_trigger]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[daily_multi_trigger]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "daily_multi_trigger",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004793984000571072,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12123129499377683,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00030311799491755664,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[default_enabled]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[default_enabled]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "default_enabled",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0032505929993931204,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09554886999831069,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00017821100482251495,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[default_timezone]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[default_timezone]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "default_timezone",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0075109460012754425,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08899508099420927,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00025921600172296166,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[duration_zero_exact]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[duration_zero_exact]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "duration_zero_exact",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002363740000873804,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10609919599664863,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015751000319141895,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[exact_duration_boundary]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[exact_duration_boundary]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "exact_duration_boundary",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018417099927319214,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09711106299073435,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002121130091836676,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[exact_now_time]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[exact_now_time]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "exact_now_time",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002692560010473244,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1011773039936088,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002877169899875298,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[first_pattern_wins]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[first_pattern_wins]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "first_pattern_wins",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002111825000611134,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.089854331992683,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002583149907877669,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_case_sensitive]",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[glob_case_sensitive]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "glob_case_sensitive",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004490065999561921,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09528395500092302,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 230,
+          "message": "AssertionError: Event count mismatch: 4 != 6\nassert 4 == 6\n +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'case-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 0, 'excluded': 0}])\n +  and   6 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'case-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'case-test', 'path': 'file.TXT', 'pattern': '*.TXT'}, {'event': 'FILE_SELECTED', 'job_id': 'case-test', 'path': 'file.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 1, 'excluded': 1}])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 133,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 230,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'glob_case_sensitive', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 ...d': 'case-test', 'path': 'file.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 1, 'excluded': 1}]}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_glob_case_se0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_1.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'k...id': 'case-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 0, 'excluded': 0}]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'k...id': 'case-test', 'path': 'file.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 1, 'excluded': 1}]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n>       assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\nE       AssertionError: Event count mismatch: 4 != 6\nE       assert 4 == 6\nE        +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'case-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 0, 'excluded': 0}])\nE        +  and   6 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'case-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'case-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'case-test', 'path': 'file.TXT', 'pattern': '*.TXT'}, {'event': 'FILE_SELECTED', 'job_id': 'case-test', 'path': 'file.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'case-test', 'selected': 1, 'excluded': 1}])\n\n.evaluation_tests/conftest.py:230: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004918289923807606,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_character_class]",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[glob_character_class]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "glob_character_class",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.003029480008990504,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11143891399842687,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 230,
+          "message": "AssertionError: Event count mismatch: 4 != 8\nassert 4 == 8\n +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'charclass-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 0, 'excluded': 0}])\n +  and   8 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'charclass-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file1.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file2.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file3.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_SELECTED', 'job_id': 'charclass-test', 'path': 'file4.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 1, 'excluded': 3}])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 133,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 230,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'glob_character_class', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1...].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file3.txt', 'pattern': 'file[123].txt'}, ...]}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_glob_charact0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_1.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test...class-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 0, 'excluded': 0}]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test...3].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file3.txt', 'pattern': 'file[123].txt'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n>       assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\nE       AssertionError: Event count mismatch: 4 != 8\nE       assert 4 == 8\nE        +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'charclass-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 0, 'excluded': 0}])\nE        +  and   8 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'charclass-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'charclass-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file1.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file2.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_EXCLUDED', 'job_id': 'charclass-test', 'path': 'file3.txt', 'pattern': 'file[123].txt'}, {'event': 'FILE_SELECTED', 'job_id': 'charclass-test', 'path': 'file4.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'charclass-test', 'selected': 1, 'excluded': 3}])\n\n.evaluation_tests/conftest.py:230: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00034532000427134335,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_doublestar_crosses_dirs]",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[glob_doublestar_crosses_dirs]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "glob_doublestar_crosses_dirs",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0026227549969917163,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.12675432198739145,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 230,
+          "message": "AssertionError: Event count mismatch: 4 != 8\nassert 4 == 8\n +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'glob-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 0, 'excluded': 0}])\n +  and   8 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'glob-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'a.log', 'pattern': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/b.log', 'pattern': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/sub/c.log', 'pattern': '**/*.log'}, {'event': 'FILE_SELECTED', 'job_id': 'glob-test', 'path': 'keep.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 1, 'excluded': 3}])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 133,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 230,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'glob_doublestar_crosses_dirs', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --du...: '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/sub/c.log', 'pattern': '**/*.log'}, ...]}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_glob_doubles0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_1.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'k...id': 'glob-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 0, 'excluded': 0}]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'k...': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/sub/c.log', 'pattern': '**/*.log'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n>       assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\nE       AssertionError: Event count mismatch: 4 != 8\nE       assert 4 == 8\nE        +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'glob-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 0, 'excluded': 0}])\nE        +  and   8 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'glob-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'glob-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'a.log', 'pattern': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/b.log', 'pattern': '**/*.log'}, {'event': 'FILE_EXCLUDED', 'job_id': 'glob-test', 'path': 'dir/sub/c.log', 'pattern': '**/*.log'}, {'event': 'FILE_SELECTED', 'job_id': 'glob-test', 'path': 'keep.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'glob-test', 'selected': 1, 'excluded': 3}])\n\n.evaluation_tests/conftest.py:230: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00024471500364597887,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[glob_question_mark]",
+      "lineno": 113,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[glob_question_mark]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "glob_question_mark",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0030494810052914545,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10915877799561713,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 230,
+          "message": "AssertionError: Event count mismatch: 4 != 7\nassert 4 == 7\n +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'question-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 0, 'excluded': 0}])\n +  and   7 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'question-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'question-test', 'path': 'a.txt', 'pattern': '?.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'ab.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'abc.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 2, 'excluded': 1}])"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 133,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 230,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'glob_question_mark', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 -...d': 'question-test', 'path': 'ab.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'abc.txt'}, ...]}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_glob_questio0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_1.py:133: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test'...estion-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 0, 'excluded': 0}]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test'...id': 'question-test', 'path': 'ab.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'abc.txt'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n>       assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\nE       AssertionError: Event count mismatch: 4 != 7\nE       assert 4 == 7\nE        +  where 4 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'job_id': 'question-test', 'exclude_count': 1}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 0, 'excluded': 0}])\nE        +  and   7 = len([{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'question-test', 'kind': 'daily', 'now_local': '2025-09-10T03:30:00Z'}, {'event': 'JOB_STARTED', 'exclude_count': 1, 'job_id': 'question-test'}, {'event': 'FILE_EXCLUDED', 'job_id': 'question-test', 'path': 'a.txt', 'pattern': '?.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'ab.txt'}, {'event': 'FILE_SELECTED', 'job_id': 'question-test', 'path': 'abc.txt'}, {'event': 'JOB_COMPLETED', 'job_id': 'question-test', 'selected': 2, 'excluded': 1}])\n\n.evaluation_tests/conftest.py:230: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004562270041787997,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[mixed_enabled_disabled]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[mixed_enabled_disabled]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "mixed_enabled_disabled",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004659176003769971,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10680653899908066,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00019111200526822358,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[no_exclusions]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[no_exclusions]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "no_exclusions",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004032138996990398,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09282870899187401,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00027321600646246225,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[once_due]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[once_due]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "once_due",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0036300159990787506,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09946620299888309,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00030471800710074604,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[once_future]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[once_future]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "once_future",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0026096549991052598,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08559498000249732,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00026791599520947784,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[timestamp_floored]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[timestamp_floored]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "timestamp_floored",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0024025419988902286,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09246518799045589,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015820898988749832,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[timezone_non_utc]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[timezone_non_utc]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "timezone_non_utc",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0039628349913982674,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09062287800770719,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00028471600671764463,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_multi_trigger]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[weekly_multi_trigger]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "weekly_multi_trigger",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0035703119938261807,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09864515499793924,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015951000386849046,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_multiple_days]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[weekly_multiple_days]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "weekly_multiple_days",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0025083479995373636,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09079948900034651,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002496149973012507,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_single_day]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[weekly_single_day]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "weekly_single_day",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.003513308009132743,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09759329100779723,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00024201400810852647,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_hidden_cases[weekly_wrong_day]",
+      "lineno": 113,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[weekly_wrong_day]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "weekly_wrong_day",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.003167287999531254,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09837873899959959,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00033391900069545954,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_daily_missing_at]",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_error_cases[error_schema_daily_missing_at]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "error_schema_daily_missing_at",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0018215079908259213,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09568257900536992,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004794280102942139,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_once_missing_when]",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_error_cases[error_schema_once_missing_when]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "error_schema_once_missing_when",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002175829009502195,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08678815000166651,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00016510998830199242,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_schema_timezone]",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_error_cases[error_schema_timezone]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "error_schema_timezone",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012584739888552576,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11133700799837243,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003730220050783828,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::test_error_cases[error_yaml_parse]",
+      "lineno": 135,
+      "outcome": "passed",
+      "keywords": [
+        "test_error_cases[error_yaml_parse]",
+        "parametrize",
+        "error",
+        "pytestmark",
+        "error_yaml_parse",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001942015005624853,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08525735999864992,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00015290900773834437,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_core_cases[full]",
+      "lineno": 77,
+      "outcome": "failed",
+      "keywords": [
+        "test_core_cases[full]",
+        "parametrize",
+        "pytestmark",
+        "full",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0015041890001157299,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0827932139945915,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 5: {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nassert {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} == {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\n  \n  Common items:\n  {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py'}\n  Differing items:\n  {'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\n  {'size': 6297} != {'size': 6107}\n  \n  Full diff:\n    {\n        'event': 'FILE_BACKED_UP',\n        'job_id': 'daily-home',\n        'path': 'A/B/C/D.py',\n  -     'size': 6107,\n  ?              ^^\n  +     'size': 6297,\n  ?              ^^\n  -     'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2',\n  +     'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 94,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'full', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --mount {{stati...'A/B/C/D.py'}, {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, ...}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_core_cases_full_0')\n\n    @pytest.mark.parametrize(\"case\", CORE_CASES, ids=[c[\"id\"] for c in CORE_CASES])\n    def test_core_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:94: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'daily-home', '...ath': 'A/B/C/D.py'}, {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, ...}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'daily-home', '...ath': 'A/B/C/D.py'}, {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, ...}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 5: {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE           assert {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} == {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE             \nE             Common items:\nE             {'event': 'FILE_BACKED_UP', 'job_id': 'daily-home', 'path': 'A/B/C/D.py'}\nE             Differing items:\nE             {'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE             {'size': 6297} != {'size': 6107}\nE             \nE             Full diff:\nE               {\nE                   'event': 'FILE_BACKED_UP',\nE                   'job_id': 'daily-home',\nE                   'path': 'A/B/C/D.py',\nE             -     'size': 6107,\nE             ?              ^^\nE             +     'size': 6297,\nE             ?              ^^\nE             -     'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2',\nE             +     'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00019591199816204607,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_extended_core_cases[pack]",
+      "lineno": 96,
+      "outcome": "failed",
+      "keywords": [
+        "test_extended_core_cases[pack]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "pack",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0014591859944630414,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09002444299403578,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 9: {'event': 'PACK_CREATED', 'job_id': 'complete-archive', 'name': 'pack-1.tar', 'size': 32, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:e3da3f38dedb99dc2d738b37bb5bef12fe5a7864aa25feb6e0b6ca23848b2585', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'complete-archive', 'name': 'pack-1.tar', 'size': 32, 'tar_size': 10240, 'checksum': 'sha256:665fd30dc5e19250e57ccb21ffa9c3c4ef0af5e2a891b76f481a76efe43b721c', 'timestamp': '2025-09-10T03:30:00Z'}\nassert {'event': 'PACK_CREATED', 'job_id': 'complete-archive', 'name': 'pack-1.tar', 'size': 32, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:e3da3f38dedb99dc2d738b37bb5bef12fe5a7864aa25feb6e0b6ca23848b2585', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'complete-archive', 'name': 'pack-1.tar', 'size': 32, 'tar_size': 10240, 'checksum': 'sha256:665fd30dc5e19250e57ccb21ffa9c3c4ef0af5e2a891b76f481a76efe43b721c', 'timestamp': '2025-09-10T03:30:00Z'}\n  \n  Common items:\n  {'event': 'PACK_CREATED',\n   'job_id': 'complete-archive',\n   'name': 'pack-1.tar',\n   'size': 32,\n   'tar_size': 10240,\n   'timestamp': '2025-09-10T03:30:00Z'}\n  Differing items:\n  {'checksum': 'sha256:e3da3f38dedb99dc2d738b37bb5bef12fe5a7864aa25feb6e0b6ca23848b2585'} != {'checksum': 'sha256:665fd30dc5e19250e57ccb21ffa9c3c4ef0af5e2a891b76f481a76efe43b721c'}\n  \n  Full diff:\n    {\n        'event': 'PACK_CREATED',\n        'job_id': 'complete-archive',\n        'name': 'pack-1.tar',\n        'size': 32,\n  +     'timestamp': '2025-09-10T03:30:00Z',\n  +     'checksum': 'sha256:e3da3f38dedb99dc2d738b37bb5bef12fe5a7864aa25feb6e0b6ca23848b2585',\n        'tar_size': 10240,\n  -     'checksum': 'sha256:665fd30dc5e19250e57ccb21ffa9c3c4ef0af5e2a891b76f481a76efe43b721c',\n  -     'timestamp': '2025-09-10T03:30:00Z',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 116,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'pack', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --mount dummy_b...path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'complete-archive', 'pack_id': 1, 'path': 'file1', ...}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_extended_core_cases_pack_0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", EXTENDED_CORE_CASES, ids=[c[\"id\"] for c in EXTENDED_CORE_CASES]\n    )\n    def test_extended_core_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:116: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'complete-archi...ve', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'complete-archive', 'pack_id': 1, 'path': 'file1', ...}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'complete-archi...ve', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'complete-archive', 'pack_id': 1, 'path': 'file1', ...}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 9: {'event': 'PACK_CREATED', 'job_id': 'complete-archive', 'name': 'pack-1.tar', 'size': 32, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:e3da3f38dedb99dc2d738b37bb5bef12fe5a7864aa25feb6e0b6ca23848b2585', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'complete-archive', 'name': 'pack-1.tar', 'size': 32, 'tar_size': 10240, 'checksum': 'sha256:665fd30dc5e19250e57ccb21ffa9c3c4ef0af5e2a891b76f481a76efe43b721c', 'timestamp': '2025-09-10T03:30:00Z'}\nE           assert {'event': 'PACK_CREATED', 'job_id': 'complete-archive', 'name': 'pack-1.tar', 'size': 32, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:e3da3f38dedb99dc2d738b37bb5bef12fe5a7864aa25feb6e0b6ca23848b2585', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'complete-archive', 'name': 'pack-1.tar', 'size': 32, 'tar_size': 10240, 'checksum': 'sha256:665fd30dc5e19250e57ccb21ffa9c3c4ef0af5e2a891b76f481a76efe43b721c', 'timestamp': '2025-09-10T03:30:00Z'}\nE             \nE             Common items:\nE             {'event': 'PACK_CREATED',\nE              'job_id': 'complete-archive',\nE              'name': 'pack-1.tar',\nE              'size': 32,\nE              'tar_size': 10240,\nE              'timestamp': '2025-09-10T03:30:00Z'}\nE             Differing items:\nE             {'checksum': 'sha256:e3da3f38dedb99dc2d738b37bb5bef12fe5a7864aa25feb6e0b6ca23848b2585'} != {'checksum': 'sha256:665fd30dc5e19250e57ccb21ffa9c3c4ef0af5e2a891b76f481a76efe43b721c'}\nE             \nE             Full diff:\nE               {\nE                   'event': 'PACK_CREATED',\nE                   'job_id': 'complete-archive',\nE                   'name': 'pack-1.tar',\nE                   'size': 32,\nE             +     'timestamp': '2025-09-10T03:30:00Z',\nE             +     'checksum': 'sha256:e3da3f38dedb99dc2d738b37bb5bef12fe5a7864aa25feb6e0b6ca23848b2585',\nE                   'tar_size': 10240,\nE             -     'checksum': 'sha256:665fd30dc5e19250e57ccb21ffa9c3c4ef0af5e2a891b76f481a76efe43b721c',\nE             -     'timestamp': '2025-09-10T03:30:00Z',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0002015120116993785,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_extended_core_cases[verify]",
+      "lineno": 96,
+      "outcome": "failed",
+      "keywords": [
+        "test_extended_core_cases[verify]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "verify",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0012591740087373182,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08592319900344592,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 5: {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nassert {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} == {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\n  \n  Common items:\n  {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py'}\n  Differing items:\n  {'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\n  {'size': 6297} != {'size': 6107}\n  \n  Full diff:\n    {\n        'event': 'FILE_VERIFIED',\n        'job_id': 'daily-home',\n        'path': 'A/B/C/D.py',\n  -     'size': 6107,\n  ?              ^^\n  +     'size': 6297,\n  ?              ^^\n  -     'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2',\n  +     'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 116,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'verify', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --mount {{sta... 'A/B/C/D.py'}, {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, ...}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_extended_core_cases_verif0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", EXTENDED_CORE_CASES, ids=[c[\"id\"] for c in EXTENDED_CORE_CASES]\n    )\n    def test_extended_core_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:116: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'daily-home', '...path': 'A/B/C/D.py'}, {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, ...}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'daily-home', '...path': 'A/B/C/D.py'}, {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, ...}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 5: {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE           assert {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} == {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE             \nE             Common items:\nE             {'event': 'FILE_VERIFIED', 'job_id': 'daily-home', 'path': 'A/B/C/D.py'}\nE             Differing items:\nE             {'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE             {'size': 6297} != {'size': 6107}\nE             \nE             Full diff:\nE               {\nE                   'event': 'FILE_VERIFIED',\nE                   'job_id': 'daily-home',\nE                   'path': 'A/B/C/D.py',\nE             -     'size': 6107,\nE             ?              ^^\nE             +     'size': 6297,\nE             ?              ^^\nE             -     'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2',\nE             +     'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00027241600037086755,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[full_no_exclusions]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[full_no_exclusions]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "full_no_exclusions",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0021875300008105114,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08799062200705521,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 5: {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nassert {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} == {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\n  \n  Common items:\n  {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py'}\n  Differing items:\n  {'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\n  {'size': 6297} != {'size': 6107}\n  \n  Full diff:\n    {\n        'event': 'FILE_BACKED_UP',\n        'job_id': 'full-all',\n        'path': 'A/B/C/D.py',\n  -     'size': 6107,\n  ?              ^^\n  +     'size': 6297,\n  ?              ^^\n  -     'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2',\n  +     'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'full_no_exclusions', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 -...: 'A/B/C/D.py'}, {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6107, ...}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_full_no_excl0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'full-all', 'ki...'path': 'A/B/C/D.py'}, {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6297, ...}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'full-all', 'ki...'path': 'A/B/C/D.py'}, {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6107, ...}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 5: {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE           assert {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6297, 'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} == {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py', 'size': 6107, 'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE             \nE             Common items:\nE             {'event': 'FILE_BACKED_UP', 'job_id': 'full-all', 'path': 'A/B/C/D.py'}\nE             Differing items:\nE             {'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575'} != {'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2'}\nE             {'size': 6297} != {'size': 6107}\nE             \nE             Full diff:\nE               {\nE                   'event': 'FILE_BACKED_UP',\nE                   'job_id': 'full-all',\nE                   'path': 'A/B/C/D.py',\nE             -     'size': 6107,\nE             ?              ^^\nE             +     'size': 6297,\nE             ?              ^^\nE             -     'checksum': 'sha256:2135213db67e5815772b30654db3dbcef52472ce5477af4353226d577e9be0f2',\nE             +     'checksum': 'sha256:9bac26eb30ea5f6a2f2c03c3d376cf8db6c538917c218d0cf36aa82fafbf4575',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0002283140056533739,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[full_rel_mount]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[full_rel_mount]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "full_rel_mount",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0021930299990344793,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09963021200383082,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 6: {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py', 'size': 12196, 'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} != {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py', 'size': 11838, 'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\nassert {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py', 'size': 12196, 'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} == {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py', 'size': 11838, 'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\n  \n  Common items:\n  {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py'}\n  Differing items:\n  {'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} != {'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\n  {'size': 12196} != {'size': 11838}\n  \n  Full diff:\n    {\n        'event': 'FILE_BACKED_UP',\n        'job_id': 'full-relative',\n        'path': 'H.py',\n  -     'size': 11838,\n  ?               ^^^\n  +     'size': 12196,\n  ?              + ^^\n  -     'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8',\n  +     'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'full_rel_mount', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --mou...th': 'G.bin', 'pattern': '**/*.bin'}, {'event': 'FILE_SELECTED', 'job_id': 'full-relative', 'path': 'H.py'}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_full_rel_mou0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'full-relative'...', 'path': 'G.bin', 'pattern': '**/*.bin'}, {'event': 'FILE_SELECTED', 'job_id': 'full-relative', 'path': 'H.py'}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'full-relative'...', 'path': 'G.bin', 'pattern': '**/*.bin'}, {'event': 'FILE_SELECTED', 'job_id': 'full-relative', 'path': 'H.py'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 6: {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py', 'size': 12196, 'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} != {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py', 'size': 11838, 'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\nE           assert {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py', 'size': 12196, 'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} == {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py', 'size': 11838, 'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\nE             \nE             Common items:\nE             {'event': 'FILE_BACKED_UP', 'job_id': 'full-relative', 'path': 'H.py'}\nE             Differing items:\nE             {'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} != {'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\nE             {'size': 12196} != {'size': 11838}\nE             \nE             Full diff:\nE               {\nE                   'event': 'FILE_BACKED_UP',\nE                   'job_id': 'full-relative',\nE                   'path': 'H.py',\nE             -     'size': 11838,\nE             ?               ^^^\nE             +     'size': 12196,\nE             ?              + ^^\nE             -     'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8',\nE             +     'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004043240041937679,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[full_with_exclusions]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[full_with_exclusions]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "full_with_exclusions",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.004716379989986308,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1064830190007342,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 9: {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py', 'size': 12196, 'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} != {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py', 'size': 11838, 'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\nassert {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py', 'size': 12196, 'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} == {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py', 'size': 11838, 'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\n  \n  Common items:\n  {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py'}\n  Differing items:\n  {'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} != {'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\n  {'size': 12196} != {'size': 11838}\n  \n  Full diff:\n    {\n        'event': 'FILE_BACKED_UP',\n        'job_id': 'full-exclude',\n        'path': 'A/F/H.py',\n  -     'size': 11838,\n  ?               ^^^\n  +     'size': 12196,\n  ?              + ^^\n  -     'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8',\n  +     'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'full_with_exclusions', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1...: 'A/B/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'full-exclude', 'path': 'A/B/E.bin', 'pattern': 'A/B/**'}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_full_with_ex0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'full-exclude',...ttern': 'A/B/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'full-exclude', 'path': 'A/B/E.bin', 'pattern': 'A/B/**'}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'full-exclude',...ttern': 'A/B/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'full-exclude', 'path': 'A/B/E.bin', 'pattern': 'A/B/**'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 9: {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py', 'size': 12196, 'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} != {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py', 'size': 11838, 'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\nE           assert {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py', 'size': 12196, 'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} == {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py', 'size': 11838, 'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\nE             \nE             Common items:\nE             {'event': 'FILE_BACKED_UP', 'job_id': 'full-exclude', 'path': 'A/F/H.py'}\nE             Differing items:\nE             {'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78'} != {'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8'}\nE             {'size': 12196} != {'size': 11838}\nE             \nE             Full diff:\nE               {\nE                   'event': 'FILE_BACKED_UP',\nE                   'job_id': 'full-exclude',\nE                   'path': 'A/F/H.py',\nE             -     'size': 11838,\nE             ?               ^^^\nE             +     'size': 12196,\nE             ?              + ^^\nE             -     'checksum': 'sha256:d7f79abf374b4ca28548809e490dc99f34595b938fb61137c4274158dbf76ea8',\nE             +     'checksum': 'sha256:b5b9b672e09a12c597d4f4aed801ca1a874b840ab9b8e36492292ae7f526ac78',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00023741400218568742,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[multi_strategy_jobs]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[multi_strategy_jobs]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "multi_strategy_jobs",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0021022250002715737,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08346745400922373,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 14: {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html', 'size': 19144, 'checksum': 'sha256:ceb676b2577353a1e1f7ba2b541174047eee638bba083342e39aba3c66e5ad36'} != {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html', 'size': 18567, 'checksum': 'sha256:38ce517c1f1f1beef45e56040752b17f42199cee3f2431a97641f1c2a8c8032f'}\nassert {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html', 'size': 19144, 'checksum': 'sha256:ceb676b2577353a1e1f7ba2b541174047eee638bba083342e39aba3c66e5ad36'} == {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html', 'size': 18567, 'checksum': 'sha256:38ce517c1f1f1beef45e56040752b17f42199cee3f2431a97641f1c2a8c8032f'}\n  \n  Common items:\n  {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html'}\n  Differing items:\n  {'checksum': 'sha256:ceb676b2577353a1e1f7ba2b541174047eee638bba083342e39aba3c66e5ad36'} != {'checksum': 'sha256:38ce517c1f1f1beef45e56040752b17f42199cee3f2431a97641f1c2a8c8032f'}\n  {'size': 19144} != {'size': 18567}\n  \n  Full diff:\n    {\n        'event': 'FILE_BACKED_UP',\n        'job_id': 'full-job',\n        'path': 'A/K.html',\n  -     'size': 18567,\n  ?              ^^^^\n  +     'size': 19144,\n  ?              ^^^^\n  -     'checksum': 'sha256:38ce517c1f1f1beef45e56040752b17f42199cee3f2431a97641f1c2a8c8032f',\n  +     'checksum': 'sha256:ceb676b2577353a1e1f7ba2b541174047eee638bba083342e39aba3c66e5ad36',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'multi_strategy_jobs', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 ... 'A/B/C/D.py', 'pattern': '**/*.py'}, {'event': 'FILE_SELECTED', 'job_id': 'full-job', 'path': 'A/B/E.bin'}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_multi_strate0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 2}, {'event': 'JOB_ELIGIBLE', 'job_id': 'full-job', 'ki...path': 'A/B/C/D.py', 'pattern': '**/*.py'}, {'event': 'FILE_SELECTED', 'job_id': 'full-job', 'path': 'A/B/E.bin'}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 2}, {'event': 'JOB_ELIGIBLE', 'job_id': 'full-job', 'ki...path': 'A/B/C/D.py', 'pattern': '**/*.py'}, {'event': 'FILE_SELECTED', 'job_id': 'full-job', 'path': 'A/B/E.bin'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 14: {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html', 'size': 19144, 'checksum': 'sha256:ceb676b2577353a1e1f7ba2b541174047eee638bba083342e39aba3c66e5ad36'} != {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html', 'size': 18567, 'checksum': 'sha256:38ce517c1f1f1beef45e56040752b17f42199cee3f2431a97641f1c2a8c8032f'}\nE           assert {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html', 'size': 19144, 'checksum': 'sha256:ceb676b2577353a1e1f7ba2b541174047eee638bba083342e39aba3c66e5ad36'} == {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html', 'size': 18567, 'checksum': 'sha256:38ce517c1f1f1beef45e56040752b17f42199cee3f2431a97641f1c2a8c8032f'}\nE             \nE             Common items:\nE             {'event': 'FILE_BACKED_UP', 'job_id': 'full-job', 'path': 'A/K.html'}\nE             Differing items:\nE             {'checksum': 'sha256:ceb676b2577353a1e1f7ba2b541174047eee638bba083342e39aba3c66e5ad36'} != {'checksum': 'sha256:38ce517c1f1f1beef45e56040752b17f42199cee3f2431a97641f1c2a8c8032f'}\nE             {'size': 19144} != {'size': 18567}\nE             \nE             Full diff:\nE               {\nE                   'event': 'FILE_BACKED_UP',\nE                   'job_id': 'full-job',\nE                   'path': 'A/K.html',\nE             -     'size': 18567,\nE             ?              ^^^^\nE             +     'size': 19144,\nE             ?              ^^^^\nE             -     'checksum': 'sha256:38ce517c1f1f1beef45e56040752b17f42199cee3f2431a97641f1c2a8c8032f',\nE             +     'checksum': 'sha256:ceb676b2577353a1e1f7ba2b541174047eee638bba083342e39aba3c66e5ad36',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004672279901569709,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[no_strategy]",
+      "lineno": 118,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[no_strategy]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "no_strategy",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0029635760001838207,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10030145299970172,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00025331501092296094,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_default_max]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[pack_default_max]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "pack_default_max",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0025415510026505217,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08309603099769447,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 14: {'event': 'PACK_CREATED', 'job_id': 'pack-default', 'name': 'pack-1.tar', 'size': 106, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'pack-default', 'name': 'pack-1.tar', 'size': 106, 'tar_size': 10240, 'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1', 'timestamp': '2025-09-10T03:30:00Z'}\nassert {'event': 'PACK_CREATED', 'job_id': 'pack-default', 'name': 'pack-1.tar', 'size': 106, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'pack-default', 'name': 'pack-1.tar', 'size': 106, 'tar_size': 10240, 'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1', 'timestamp': '2025-09-10T03:30:00Z'}\n  \n  Common items:\n  {'event': 'PACK_CREATED',\n   'job_id': 'pack-default',\n   'name': 'pack-1.tar',\n   'size': 106,\n   'tar_size': 10240,\n   'timestamp': '2025-09-10T03:30:00Z'}\n  Differing items:\n  {'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5'} != {'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1'}\n  \n  Full diff:\n    {\n        'event': 'PACK_CREATED',\n        'job_id': 'pack-default',\n        'name': 'pack-1.tar',\n        'size': 106,\n  +     'timestamp': '2025-09-10T03:30:00Z',\n  +     'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5',\n        'tar_size': 10240,\n  -     'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1',\n  -     'timestamp': '2025-09-10T03:30:00Z',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'pack_default_max', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --m...', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-default', 'pack_id': 1, 'path': 'file1', ...}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_pack_default0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'pack-default',...efault', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-default', 'pack_id': 1, 'path': 'file1', ...}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'pack-default',...efault', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-default', 'pack_id': 1, 'path': 'file1', ...}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 14: {'event': 'PACK_CREATED', 'job_id': 'pack-default', 'name': 'pack-1.tar', 'size': 106, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'pack-default', 'name': 'pack-1.tar', 'size': 106, 'tar_size': 10240, 'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1', 'timestamp': '2025-09-10T03:30:00Z'}\nE           assert {'event': 'PACK_CREATED', 'job_id': 'pack-default', 'name': 'pack-1.tar', 'size': 106, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'pack-default', 'name': 'pack-1.tar', 'size': 106, 'tar_size': 10240, 'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1', 'timestamp': '2025-09-10T03:30:00Z'}\nE             \nE             Common items:\nE             {'event': 'PACK_CREATED',\nE              'job_id': 'pack-default',\nE              'name': 'pack-1.tar',\nE              'size': 106,\nE              'tar_size': 10240,\nE              'timestamp': '2025-09-10T03:30:00Z'}\nE             Differing items:\nE             {'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5'} != {'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1'}\nE             \nE             Full diff:\nE               {\nE                   'event': 'PACK_CREATED',\nE                   'job_id': 'pack-default',\nE                   'name': 'pack-1.tar',\nE                   'size': 106,\nE             +     'timestamp': '2025-09-10T03:30:00Z',\nE             +     'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5',\nE                   'tar_size': 10240,\nE             -     'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1',\nE             -     'timestamp': '2025-09-10T03:30:00Z',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00021571200340986252,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_exact_fit]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[pack_exact_fit]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "pack_exact_fit",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0019149139989167452,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10061177099123597,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 14: {'event': 'PACK_CREATED', 'job_id': 'exact-fit-pack', 'name': 'pack-1.tar', 'size': 106, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'exact-fit-pack', 'name': 'pack-1.tar', 'size': 106, 'tar_size': 10240, 'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1', 'timestamp': '2025-09-10T03:30:00Z'}\nassert {'event': 'PACK_CREATED', 'job_id': 'exact-fit-pack', 'name': 'pack-1.tar', 'size': 106, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'exact-fit-pack', 'name': 'pack-1.tar', 'size': 106, 'tar_size': 10240, 'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1', 'timestamp': '2025-09-10T03:30:00Z'}\n  \n  Common items:\n  {'event': 'PACK_CREATED',\n   'job_id': 'exact-fit-pack',\n   'name': 'pack-1.tar',\n   'size': 106,\n   'tar_size': 10240,\n   'timestamp': '2025-09-10T03:30:00Z'}\n  Differing items:\n  {'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5'} != {'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1'}\n  \n  Full diff:\n    {\n        'event': 'PACK_CREATED',\n        'job_id': 'exact-fit-pack',\n        'name': 'pack-1.tar',\n        'size': 106,\n  +     'timestamp': '2025-09-10T03:30:00Z',\n  +     'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5',\n        'tar_size': 10240,\n  -     'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1',\n  -     'timestamp': '2025-09-10T03:30:00Z',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'pack_exact_fit', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --mou... 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'exact-fit-pack', 'pack_id': 1, 'path': 'file1', ...}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_pack_exact_f0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'exact-fit-pack...pack', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'exact-fit-pack', 'pack_id': 1, 'path': 'file1', ...}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'exact-fit-pack...pack', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'exact-fit-pack', 'pack_id': 1, 'path': 'file1', ...}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 14: {'event': 'PACK_CREATED', 'job_id': 'exact-fit-pack', 'name': 'pack-1.tar', 'size': 106, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'exact-fit-pack', 'name': 'pack-1.tar', 'size': 106, 'tar_size': 10240, 'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1', 'timestamp': '2025-09-10T03:30:00Z'}\nE           assert {'event': 'PACK_CREATED', 'job_id': 'exact-fit-pack', 'name': 'pack-1.tar', 'size': 106, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'exact-fit-pack', 'name': 'pack-1.tar', 'size': 106, 'tar_size': 10240, 'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1', 'timestamp': '2025-09-10T03:30:00Z'}\nE             \nE             Common items:\nE             {'event': 'PACK_CREATED',\nE              'job_id': 'exact-fit-pack',\nE              'name': 'pack-1.tar',\nE              'size': 106,\nE              'tar_size': 10240,\nE              'timestamp': '2025-09-10T03:30:00Z'}\nE             Differing items:\nE             {'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5'} != {'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1'}\nE             \nE             Full diff:\nE               {\nE                   'event': 'PACK_CREATED',\nE                   'job_id': 'exact-fit-pack',\nE                   'name': 'pack-1.tar',\nE                   'size': 106,\nE             +     'timestamp': '2025-09-10T03:30:00Z',\nE             +     'checksum': 'sha256:3b5b6751bbdee9fa868f698dbb61bae92245102182c0d634eb0d451a586ff8b5',\nE                   'tar_size': 10240,\nE             -     'checksum': 'sha256:0183ae05fcd7384ff2f5703c818cdcdddaf5599d1fcf3fc96320c3b2625298d1',\nE             -     'timestamp': '2025-09-10T03:30:00Z',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004137250070925802,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_no_files]",
+      "lineno": 118,
+      "outcome": "passed",
+      "keywords": [
+        "test_hidden_cases[pack_no_files]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "pack_no_files",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0024177440063795075,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10014054299972486,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018661099602468312,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_no_incremental]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[pack_no_incremental]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "pack_no_incremental",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0019937189936172217,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.10108229899196886,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 13: {'event': 'PACK_CREATED', 'job_id': 'pack-no-inc', 'name': 'pack-1.tar', 'size': 96, 'timestamp': '2025-01-15T11:00:00Z', 'checksum': 'sha256:3481ae59368129f28906ccdb0b97fb2f76d6b520c43afad23eab6d34774b454e', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'pack-no-inc', 'name': 'pack-1.tar', 'size': 96, 'tar_size': 10240, 'checksum': 'sha256:bffd5ed962e73b41af62b1185181b792957645adbb50c927b6f48a4c695e1e07', 'timestamp': '2025-01-15T11:00:00Z'}\nassert {'event': 'PACK_CREATED', 'job_id': 'pack-no-inc', 'name': 'pack-1.tar', 'size': 96, 'timestamp': '2025-01-15T11:00:00Z', 'checksum': 'sha256:3481ae59368129f28906ccdb0b97fb2f76d6b520c43afad23eab6d34774b454e', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'pack-no-inc', 'name': 'pack-1.tar', 'size': 96, 'tar_size': 10240, 'checksum': 'sha256:bffd5ed962e73b41af62b1185181b792957645adbb50c927b6f48a4c695e1e07', 'timestamp': '2025-01-15T11:00:00Z'}\n  \n  Common items:\n  {'event': 'PACK_CREATED',\n   'job_id': 'pack-no-inc',\n   'name': 'pack-1.tar',\n   'size': 96,\n   'tar_size': 10240,\n   'timestamp': '2025-01-15T11:00:00Z'}\n  Differing items:\n  {'checksum': 'sha256:3481ae59368129f28906ccdb0b97fb2f76d6b520c43afad23eab6d34774b454e'} != {'checksum': 'sha256:bffd5ed962e73b41af62b1185181b792957645adbb50c927b6f48a4c695e1e07'}\n  \n  Full diff:\n    {\n        'event': 'PACK_CREATED',\n        'job_id': 'pack-no-inc',\n        'name': 'pack-1.tar',\n        'size': 96,\n  +     'timestamp': '2025-01-15T11:00:00Z',\n  +     'checksum': 'sha256:3481ae59368129f28906ccdb0b97fb2f76d6b520c43afad23eab6d34774b454e',\n        'tar_size': 10240,\n  -     'checksum': 'sha256:bffd5ed962e73b41af62b1185181b792957645adbb50c927b6f48a4c695e1e07',\n  -     'timestamp': '2025-01-15T11:00:00Z',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'pack_no_incremental', 'case': {'arguments': '--now 2025-01-15T11:00:00Z --schedule schedule.yaml --duration 1 ...c', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-no-inc', 'pack_id': 1, 'path': 'file1', ...}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_pack_no_incr0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'pack-no-inc', ...-no-inc', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-no-inc', 'pack_id': 1, 'path': 'file1', ...}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'pack-no-inc', ...-no-inc', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-no-inc', 'pack_id': 1, 'path': 'file1', ...}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 13: {'event': 'PACK_CREATED', 'job_id': 'pack-no-inc', 'name': 'pack-1.tar', 'size': 96, 'timestamp': '2025-01-15T11:00:00Z', 'checksum': 'sha256:3481ae59368129f28906ccdb0b97fb2f76d6b520c43afad23eab6d34774b454e', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'pack-no-inc', 'name': 'pack-1.tar', 'size': 96, 'tar_size': 10240, 'checksum': 'sha256:bffd5ed962e73b41af62b1185181b792957645adbb50c927b6f48a4c695e1e07', 'timestamp': '2025-01-15T11:00:00Z'}\nE           assert {'event': 'PACK_CREATED', 'job_id': 'pack-no-inc', 'name': 'pack-1.tar', 'size': 96, 'timestamp': '2025-01-15T11:00:00Z', 'checksum': 'sha256:3481ae59368129f28906ccdb0b97fb2f76d6b520c43afad23eab6d34774b454e', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'pack-no-inc', 'name': 'pack-1.tar', 'size': 96, 'tar_size': 10240, 'checksum': 'sha256:bffd5ed962e73b41af62b1185181b792957645adbb50c927b6f48a4c695e1e07', 'timestamp': '2025-01-15T11:00:00Z'}\nE             \nE             Common items:\nE             {'event': 'PACK_CREATED',\nE              'job_id': 'pack-no-inc',\nE              'name': 'pack-1.tar',\nE              'size': 96,\nE              'tar_size': 10240,\nE              'timestamp': '2025-01-15T11:00:00Z'}\nE             Differing items:\nE             {'checksum': 'sha256:3481ae59368129f28906ccdb0b97fb2f76d6b520c43afad23eab6d34774b454e'} != {'checksum': 'sha256:bffd5ed962e73b41af62b1185181b792957645adbb50c927b6f48a4c695e1e07'}\nE             \nE             Full diff:\nE               {\nE                   'event': 'PACK_CREATED',\nE                   'job_id': 'pack-no-inc',\nE                   'name': 'pack-1.tar',\nE                   'size': 96,\nE             +     'timestamp': '2025-01-15T11:00:00Z',\nE             +     'checksum': 'sha256:3481ae59368129f28906ccdb0b97fb2f76d6b520c43afad23eab6d34774b454e',\nE                   'tar_size': 10240,\nE             -     'checksum': 'sha256:bffd5ed962e73b41af62b1185181b792957645adbb50c927b6f48a4c695e1e07',\nE             -     'timestamp': '2025-01-15T11:00:00Z',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00024431399651803076,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_single_large_file]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[pack_single_large_file]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "pack_single_large_file",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002146226994227618,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0922824769950239,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 13: {'event': 'FILE_PACKED', 'job_id': 'large-file-pack', 'pack_id': 1, 'path': 'M.py', 'size': 19965} != {'event': 'FILE_PACKED', 'job_id': 'large-file-pack', 'pack_id': 1, 'path': 'M.py', 'size': 19302}\nassert {'event': 'FILE_PACKED', 'job_id': 'large-file-pack', 'pack_id': 1, 'path': 'M.py', 'size': 19965} == {'event': 'FILE_PACKED', 'job_id': 'large-file-pack', 'pack_id': 1, 'path': 'M.py', 'size': 19302}\n  \n  Common items:\n  {'event': 'FILE_PACKED',\n   'job_id': 'large-file-pack',\n   'pack_id': 1,\n   'path': 'M.py'}\n  Differing items:\n  {'size': 19965} != {'size': 19302}\n  \n  Full diff:\n    {\n        'event': 'FILE_PACKED',\n        'job_id': 'large-file-pack',\n        'pack_id': 1,\n        'path': 'M.py',\n  -     'size': 19302,\n  ?               ^^^\n  +     'size': 19965,\n  ?               ^^^\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'pack_single_large_file', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration...': 'A/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'large-file-pack', 'path': 'A/B/E.bin', 'pattern': 'A/**'}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_pack_single_0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'large-file-pac...attern': 'A/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'large-file-pack', 'path': 'A/B/E.bin', 'pattern': 'A/**'}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'large-file-pac...attern': 'A/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'large-file-pack', 'path': 'A/B/E.bin', 'pattern': 'A/**'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 13: {'event': 'FILE_PACKED', 'job_id': 'large-file-pack', 'pack_id': 1, 'path': 'M.py', 'size': 19965} != {'event': 'FILE_PACKED', 'job_id': 'large-file-pack', 'pack_id': 1, 'path': 'M.py', 'size': 19302}\nE           assert {'event': 'FILE_PACKED', 'job_id': 'large-file-pack', 'pack_id': 1, 'path': 'M.py', 'size': 19965} == {'event': 'FILE_PACKED', 'job_id': 'large-file-pack', 'pack_id': 1, 'path': 'M.py', 'size': 19302}\nE             \nE             Common items:\nE             {'event': 'FILE_PACKED',\nE              'job_id': 'large-file-pack',\nE              'pack_id': 1,\nE              'path': 'M.py'}\nE             Differing items:\nE             {'size': 19965} != {'size': 19302}\nE             \nE             Full diff:\nE               {\nE                   'event': 'FILE_PACKED',\nE                   'job_id': 'large-file-pack',\nE                   'pack_id': 1,\nE                   'path': 'M.py',\nE             -     'size': 19302,\nE             ?               ^^^\nE             +     'size': 19965,\nE             ?               ^^^\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00023321399930864573,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[pack_tiny_max]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[pack_tiny_max]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "pack_tiny_max",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0021076250122860074,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.08964972000103444,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 7: {'event': 'PACK_CREATED', 'job_id': 'pack-tiny', 'name': 'pack-1.tar', 'size': 28, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:f549a37294e4f91212439b8d8b892a4441d768d87a0d629bee9a99141abf2ba9', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'pack-tiny', 'name': 'pack-1.tar', 'size': 28, 'tar_size': 10240, 'checksum': 'sha256:6088434a8f91d52de16cb526ee34870799d44bbcb98487568266eb2cd390c81d', 'timestamp': '2025-09-10T03:30:00Z'}\nassert {'event': 'PACK_CREATED', 'job_id': 'pack-tiny', 'name': 'pack-1.tar', 'size': 28, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:f549a37294e4f91212439b8d8b892a4441d768d87a0d629bee9a99141abf2ba9', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'pack-tiny', 'name': 'pack-1.tar', 'size': 28, 'tar_size': 10240, 'checksum': 'sha256:6088434a8f91d52de16cb526ee34870799d44bbcb98487568266eb2cd390c81d', 'timestamp': '2025-09-10T03:30:00Z'}\n  \n  Common items:\n  {'event': 'PACK_CREATED',\n   'job_id': 'pack-tiny',\n   'name': 'pack-1.tar',\n   'size': 28,\n   'tar_size': 10240,\n   'timestamp': '2025-09-10T03:30:00Z'}\n  Differing items:\n  {'checksum': 'sha256:f549a37294e4f91212439b8d8b892a4441d768d87a0d629bee9a99141abf2ba9'} != {'checksum': 'sha256:6088434a8f91d52de16cb526ee34870799d44bbcb98487568266eb2cd390c81d'}\n  \n  Full diff:\n    {\n        'event': 'PACK_CREATED',\n        'job_id': 'pack-tiny',\n        'name': 'pack-1.tar',\n        'size': 28,\n  +     'timestamp': '2025-09-10T03:30:00Z',\n  +     'checksum': 'sha256:f549a37294e4f91212439b8d8b892a4441d768d87a0d629bee9a99141abf2ba9',\n        'tar_size': 10240,\n  -     'checksum': 'sha256:6088434a8f91d52de16cb526ee34870799d44bbcb98487568266eb2cd390c81d',\n  -     'timestamp': '2025-09-10T03:30:00Z',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'pack_tiny_max', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --moun...iny', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-tiny', 'pack_id': 1, 'path': 'file1', ...}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_pack_tiny_ma0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'pack-tiny', 'k...pack-tiny', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-tiny', 'pack_id': 1, 'path': 'file1', ...}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'pack-tiny', 'k...pack-tiny', 'path': 'file1'}, {'event': 'FILE_PACKED', 'job_id': 'pack-tiny', 'pack_id': 1, 'path': 'file1', ...}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 7: {'event': 'PACK_CREATED', 'job_id': 'pack-tiny', 'name': 'pack-1.tar', 'size': 28, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:f549a37294e4f91212439b8d8b892a4441d768d87a0d629bee9a99141abf2ba9', 'tar_size': 10240} != {'event': 'PACK_CREATED', 'job_id': 'pack-tiny', 'name': 'pack-1.tar', 'size': 28, 'tar_size': 10240, 'checksum': 'sha256:6088434a8f91d52de16cb526ee34870799d44bbcb98487568266eb2cd390c81d', 'timestamp': '2025-09-10T03:30:00Z'}\nE           assert {'event': 'PACK_CREATED', 'job_id': 'pack-tiny', 'name': 'pack-1.tar', 'size': 28, 'timestamp': '2025-09-10T03:30:00Z', 'checksum': 'sha256:f549a37294e4f91212439b8d8b892a4441d768d87a0d629bee9a99141abf2ba9', 'tar_size': 10240} == {'event': 'PACK_CREATED', 'job_id': 'pack-tiny', 'name': 'pack-1.tar', 'size': 28, 'tar_size': 10240, 'checksum': 'sha256:6088434a8f91d52de16cb526ee34870799d44bbcb98487568266eb2cd390c81d', 'timestamp': '2025-09-10T03:30:00Z'}\nE             \nE             Common items:\nE             {'event': 'PACK_CREATED',\nE              'job_id': 'pack-tiny',\nE              'name': 'pack-1.tar',\nE              'size': 28,\nE              'tar_size': 10240,\nE              'timestamp': '2025-09-10T03:30:00Z'}\nE             Differing items:\nE             {'checksum': 'sha256:f549a37294e4f91212439b8d8b892a4441d768d87a0d629bee9a99141abf2ba9'} != {'checksum': 'sha256:6088434a8f91d52de16cb526ee34870799d44bbcb98487568266eb2cd390c81d'}\nE             \nE             Full diff:\nE               {\nE                   'event': 'PACK_CREATED',\nE                   'job_id': 'pack-tiny',\nE                   'name': 'pack-1.tar',\nE                   'size': 28,\nE             +     'timestamp': '2025-09-10T03:30:00Z',\nE             +     'checksum': 'sha256:f549a37294e4f91212439b8d8b892a4441d768d87a0d629bee9a99141abf2ba9',\nE                   'tar_size': 10240,\nE             -     'checksum': 'sha256:6088434a8f91d52de16cb526ee34870799d44bbcb98487568266eb2cd390c81d',\nE             -     'timestamp': '2025-09-10T03:30:00Z',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00023611400683876127,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[strategy_sorting]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[strategy_sorting]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "strategy_sorting",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0022786360059399158,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09010564700292889,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 30: {'event': 'JOB_COMPLETED', 'job_id': 'beta-dry', 'selected': 0, 'excluded': 11, 'total_size': 0} != {'event': 'JOB_COMPLETED', 'job_id': 'beta-dry', 'selected': 0, 'excluded': 11}\nassert {'event': 'JOB_COMPLETED', 'job_id': 'beta-dry', 'selected': 0, 'excluded': 11, 'total_size': 0} == {'event': 'JOB_COMPLETED', 'job_id': 'beta-dry', 'selected': 0, 'excluded': 11}\n  \n  Common items:\n  {'event': 'JOB_COMPLETED', 'excluded': 11, 'job_id': 'beta-dry', 'selected': 0}\n  Left contains 1 more item:\n  {'total_size': 0}\n  \n  Full diff:\n    {\n        'event': 'JOB_COMPLETED',\n        'job_id': 'beta-dry',\n        'selected': 0,\n        'excluded': 11,\n  +     'total_size': 0,\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'strategy_sorting', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --m...ttern': '**/*'}, {'event': 'FILE_EXCLUDED', 'job_id': 'alpha-full', 'path': 'A/B/E.bin', 'pattern': '**/*'}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_strategy_sor0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 3}, {'event': 'JOB_ELIGIBLE', 'job_id': 'alpha-full', '...', 'pattern': '**/*'}, {'event': 'FILE_EXCLUDED', 'job_id': 'alpha-full', 'path': 'A/B/E.bin', 'pattern': '**/*'}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 3}, {'event': 'JOB_ELIGIBLE', 'job_id': 'alpha-full', '...', 'pattern': '**/*'}, {'event': 'FILE_EXCLUDED', 'job_id': 'alpha-full', 'path': 'A/B/E.bin', 'pattern': '**/*'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 30: {'event': 'JOB_COMPLETED', 'job_id': 'beta-dry', 'selected': 0, 'excluded': 11, 'total_size': 0} != {'event': 'JOB_COMPLETED', 'job_id': 'beta-dry', 'selected': 0, 'excluded': 11}\nE           assert {'event': 'JOB_COMPLETED', 'job_id': 'beta-dry', 'selected': 0, 'excluded': 11, 'total_size': 0} == {'event': 'JOB_COMPLETED', 'job_id': 'beta-dry', 'selected': 0, 'excluded': 11}\nE             \nE             Common items:\nE             {'event': 'JOB_COMPLETED', 'excluded': 11, 'job_id': 'beta-dry', 'selected': 0}\nE             Left contains 1 more item:\nE             {'total_size': 0}\nE             \nE             Full diff:\nE               {\nE                   'event': 'JOB_COMPLETED',\nE                   'job_id': 'beta-dry',\nE                   'selected': 0,\nE                   'excluded': 11,\nE             +     'total_size': 0,\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0002371139999013394,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[verify_complex_globs]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[verify_complex_globs]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "verify_complex_globs",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0020223199971951544,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09306682301394176,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 9: {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py', 'size': 19333, 'checksum': 'sha256:165effa03ccd616485acb762793f7d71c4a6e8bc548d432abf3ea567bc69d44b'} != {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py', 'size': 18762, 'checksum': 'sha256:fab96b61f4670c6c72ed04b36c927a818f3bbb9ef26f397de360dc4513d100fc'}\nassert {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py', 'size': 19333, 'checksum': 'sha256:165effa03ccd616485acb762793f7d71c4a6e8bc548d432abf3ea567bc69d44b'} == {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py', 'size': 18762, 'checksum': 'sha256:fab96b61f4670c6c72ed04b36c927a818f3bbb9ef26f397de360dc4513d100fc'}\n  \n  Common items:\n  {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py'}\n  Differing items:\n  {'checksum': 'sha256:165effa03ccd616485acb762793f7d71c4a6e8bc548d432abf3ea567bc69d44b'} != {'checksum': 'sha256:fab96b61f4670c6c72ed04b36c927a818f3bbb9ef26f397de360dc4513d100fc'}\n  {'size': 19333} != {'size': 18762}\n  \n  Full diff:\n    {\n        'event': 'FILE_VERIFIED',\n        'job_id': 'verify-globs',\n        'path': 'A/I.py',\n  -     'size': 18762,\n  ?              ^^^^\n  +     'size': 19333,\n  ?              ^^^^\n  -     'checksum': 'sha256:fab96b61f4670c6c72ed04b36c927a818f3bbb9ef26f397de360dc4513d100fc',\n  +     'checksum': 'sha256:165effa03ccd616485acb762793f7d71c4a6e8bc548d432abf3ea567bc69d44b',\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'verify_complex_globs', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1...BF]/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'verify-globs', 'path': 'A/B/E.bin', 'pattern': 'A/[BF]/**'}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_verify_compl0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'verify-globs',...: 'A/[BF]/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'verify-globs', 'path': 'A/B/E.bin', 'pattern': 'A/[BF]/**'}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'verify-globs',...: 'A/[BF]/**'}, {'event': 'FILE_EXCLUDED', 'job_id': 'verify-globs', 'path': 'A/B/E.bin', 'pattern': 'A/[BF]/**'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 9: {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py', 'size': 19333, 'checksum': 'sha256:165effa03ccd616485acb762793f7d71c4a6e8bc548d432abf3ea567bc69d44b'} != {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py', 'size': 18762, 'checksum': 'sha256:fab96b61f4670c6c72ed04b36c927a818f3bbb9ef26f397de360dc4513d100fc'}\nE           assert {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py', 'size': 19333, 'checksum': 'sha256:165effa03ccd616485acb762793f7d71c4a6e8bc548d432abf3ea567bc69d44b'} == {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py', 'size': 18762, 'checksum': 'sha256:fab96b61f4670c6c72ed04b36c927a818f3bbb9ef26f397de360dc4513d100fc'}\nE             \nE             Common items:\nE             {'event': 'FILE_VERIFIED', 'job_id': 'verify-globs', 'path': 'A/I.py'}\nE             Differing items:\nE             {'checksum': 'sha256:165effa03ccd616485acb762793f7d71c4a6e8bc548d432abf3ea567bc69d44b'} != {'checksum': 'sha256:fab96b61f4670c6c72ed04b36c927a818f3bbb9ef26f397de360dc4513d100fc'}\nE             {'size': 19333} != {'size': 18762}\nE             \nE             Full diff:\nE               {\nE                   'event': 'FILE_VERIFIED',\nE                   'job_id': 'verify-globs',\nE                   'path': 'A/I.py',\nE             -     'size': 18762,\nE             ?              ^^^^\nE             +     'size': 19333,\nE             ?              ^^^^\nE             -     'checksum': 'sha256:fab96b61f4670c6c72ed04b36c927a818f3bbb9ef26f397de360dc4513d100fc',\nE             +     'checksum': 'sha256:165effa03ccd616485acb762793f7d71c4a6e8bc548d432abf3ea567bc69d44b',\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004166250000707805,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_hidden_cases[verify_no_files]",
+      "lineno": 118,
+      "outcome": "failed",
+      "keywords": [
+        "test_hidden_cases[verify_no_files]",
+        "parametrize",
+        "functionality",
+        "pytestmark",
+        "verify_no_files",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0023464390105800703,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.09249878900300246,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpy8pj9adf/.evaluation_tests/conftest.py",
+          "lineno": 234,
+          "message": "AssertionError: Event mismatch at index 15: {'event': 'JOB_COMPLETED', 'job_id': 'verify-empty', 'selected': 0, 'excluded': 11, 'total_size': 0} != {'event': 'JOB_COMPLETED', 'job_id': 'verify-empty', 'selected': 0, 'excluded': 11}\nassert {'event': 'JOB_COMPLETED', 'job_id': 'verify-empty', 'selected': 0, 'excluded': 11, 'total_size': 0} == {'event': 'JOB_COMPLETED', 'job_id': 'verify-empty', 'selected': 0, 'excluded': 11}\n  \n  Common items:\n  {'event': 'JOB_COMPLETED',\n   'excluded': 11,\n   'job_id': 'verify-empty',\n   'selected': 0}\n  Left contains 1 more item:\n  {'total_size': 0}\n  \n  Full diff:\n    {\n        'event': 'JOB_COMPLETED',\n        'job_id': 'verify-empty',\n        'selected': 0,\n        'excluded': 11,\n  +     'total_size': 0,\n    }"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_2.py",
+            "lineno": 138,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/conftest.py",
+            "lineno": 234,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'backup_scheduler.py']\nfiles_dir = PosixPath('/tmp/tmpy8pj9adf/.evaluation_tests/assets/files')\ncheckpoint_name = 'checkpoint_2'\ncase = {'id': 'verify_no_files', 'case': {'arguments': '--now 2025-09-10T03:30:00Z --schedule schedule.yaml --duration 1 --mo...ern': '**/*'}, {'event': 'FILE_EXCLUDED', 'job_id': 'verify-empty', 'path': 'A/B/E.bin', 'pattern': '**/*'}, ...], ...}\ntmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_hidden_cases_verify_no_fi0')\n\n    @pytest.mark.functionality\n    @pytest.mark.parametrize(\n        \"case\", HIDDEN_CASES, ids=[c[\"id\"] for c in HIDDEN_CASES]\n    )\n    def test_hidden_cases(\n        entrypoint_argv: list[str],\n        files_dir: Path,\n        checkpoint_name: str,\n        case: dict[str, object],\n        tmp_path: Path,\n    ) -> None:\n        result = run_case(entrypoint_argv, files_dir, case, tmp_path)\n        assert result.returncode == case[\"expected_status\"], result.stderr\n        actual_events = strip_regression_fields(\n            parse_jsonl(result.stdout),\n            checkpoint_name,\n        )\n        expected_events = case[\"expected_events\"]\n        assert isinstance(expected_events, list)\n>       assert_events_match(actual_events, expected_events)\n\n.evaluation_tests/test_checkpoint_2.py:138: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nactual = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'verify-empty',... 'pattern': '**/*'}, {'event': 'FILE_EXCLUDED', 'job_id': 'verify-empty', 'path': 'A/B/E.bin', 'pattern': '**/*'}, ...]\nexpected = [{'event': 'SCHEDULE_PARSED', 'timezone': 'UTC', 'jobs_total': 1}, {'event': 'JOB_ELIGIBLE', 'job_id': 'verify-empty',... 'pattern': '**/*'}, {'event': 'FILE_EXCLUDED', 'job_id': 'verify-empty', 'path': 'A/B/E.bin', 'pattern': '**/*'}, ...]\n\n    def assert_events_match(\n        actual: list[dict[str, object]],\n        expected: list[dict[str, object]],\n    ) -> None:\n        assert len(actual) == len(expected), (\n            f\"Event count mismatch: {len(actual)} != {len(expected)}\"\n        )\n        for index, (act, exp) in enumerate(zip(actual, expected)):\n>           assert act == exp, f\"Event mismatch at index {index}: {act} != {exp}\"\nE           AssertionError: Event mismatch at index 15: {'event': 'JOB_COMPLETED', 'job_id': 'verify-empty', 'selected': 0, 'excluded': 11, 'total_size': 0} != {'event': 'JOB_COMPLETED', 'job_id': 'verify-empty', 'selected': 0, 'excluded': 11}\nE           assert {'event': 'JOB_COMPLETED', 'job_id': 'verify-empty', 'selected': 0, 'excluded': 11, 'total_size': 0} == {'event': 'JOB_COMPLETED', 'job_id': 'verify-empty', 'selected': 0, 'excluded': 11}\nE             \nE             Common items:\nE             {'event': 'JOB_COMPLETED',\nE              'excluded': 11,\nE              'job_id': 'verify-empty',\nE              'selected': 0}\nE             Left contains 1 more item:\nE             {'total_size': 0}\nE             \nE             Full diff:\nE               {\nE                   'event': 'JOB_COMPLETED',\nE                   'job_id': 'verify-empty',\nE                   'selected': 0,\nE                   'excluded': 11,\nE             +     'total_size': 0,\nE               }\n\n.evaluation_tests/conftest.py:234: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00020911199680995196,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_2.py::test_jsonl_output_is_compact_and_newline_terminated",
+      "lineno": 140,
+      "outcome": "passed",
+      "keywords": [
+        "test_jsonl_output_is_compact_and_newline_terminated",
+        "functionality",
+        "pytestmark",
+        "test_checkpoint_2.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.001333779000560753,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11522393798804842,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0005873339978279546,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "status": "frozen_hash_metadata_amendment_before_valid_outcomes",
+  "date": "2026-07-14",
+  "base_config": "benchmarks/scbench/kimi_xjq_cp2_recursive_self_report_manager_depth5_config.json",
+  "invalid_attempt": {
+    "run_root": "runs_scbench_moa_kimi_xjq_cp2_recursive_self_report_manager_depth5_r1_20260714",
+    "failure_stage": "no_transfer layer 1 target-consistency gate",
+    "old_expected_hash": "370a0b2c4bb87be92ce9c96d551babb0ba1c1e8bc6c7705c4c34783cc1a54aa1",
+    "observed_hash": "e967de874ab427679658999ab4063710bf46abaffceccda517aa2febc5275a09",
+    "old_pytest_collected_metadata": 49,
+    "current_pytest_collected_metadata": 51,
+    "excluded": true
+  },
+  "equivalence_audit": {
+    "checkpoint_1_spec_sha256_equal": true,
+    "checkpoint_2_spec_sha256_equal": true,
+    "requirements_sha256_equal": true,
+    "conftest_sha256_equal": true,
+    "checkpoint_1_tests_sha256_equal": true,
+    "checkpoint_2_tests_sha256_equal": true,
+    "test_utils_sha256_equal": true,
+    "old_report_unique_nodeids": 51,
+    "current_report_unique_nodeids": 51,
+    "nodeid_sets_equal": true,
+    "interpretation": "The benchmark task and test collection are unchanged; the evaluator's collected-count and hash metadata changed."
+  },
+  "permitted_change": {
+    "field": "expected_test_collection_hash",
+    "from": "370a0b2c4bb87be92ce9c96d551babb0ba1c1e8bc6c7705c4c34783cc1a54aa1",
+    "to": "e967de874ab427679658999ab4063710bf46abaffceccda517aa2febc5275a09"
+  },
+  "frozen_unchanged": [
+    "model and endpoint",
+    "problem and checkpoint",
+    "worker count and layer count",
+    "action budget",
+    "assimilation modes and arm order",
+    "manager semantics",
+    "validity gates",
+    "degradation thresholds",
+    "decision rules"
+  ]
+}

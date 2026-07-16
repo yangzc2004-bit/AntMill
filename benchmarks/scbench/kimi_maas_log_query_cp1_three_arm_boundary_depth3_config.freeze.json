@@ -1,0 +1,11 @@
+{
+  "file": "benchmarks/scbench/kimi_maas_log_query_cp1_three_arm_boundary_depth3_config.json",
+  "sha256": "eeb7664d11acc22376a0291a9670d5cd7c9a779347e52adbf3de3a01d10a9933",
+  "frozen_at": "2026-07-16",
+  "outcomes_seen_before_freeze": false,
+  "implementation_files": {
+    "sec/scbench_moa.py": "3db5ce85042d4ed2dfef59667ed117ce288c6cc67e27781e14318c5c0046587d",
+    "sec/run_scbench_moa_curve.py": "d73d638eb2fdabfc74639937dad9acb69f8d8746fbdb5712076a3b24dc087c01"
+  },
+  "purpose": "Prospective same-provider cross-task boundary and mitigation probe."
+}

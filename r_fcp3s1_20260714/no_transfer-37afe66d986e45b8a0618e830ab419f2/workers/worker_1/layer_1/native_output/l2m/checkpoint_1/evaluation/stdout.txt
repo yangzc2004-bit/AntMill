@@ -1,0 +1,582 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-9.1.1, pluggy-1.6.0 -- /root/.cache/uv/archive-v0/bgPTpWqrC5QMRZY4OI1iK/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.12', 'Platform': 'Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'timeout': '2.4.0', 'metadata': '3.1.1', 'json-report': '1.5.0', 'json-ctrf': '0.5.2'}}
+rootdir: /tmp/tmp9fy5hlv9
+configfile: pytest.ini
+plugins: timeout-2.4.0, metadata-3.1.1, json-report-1.5.0, json-ctrf-0.5.2
+timeout: 30.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 52 items
+
+.evaluation_tests/test_checkpoint_1.py::test_default_output_path PASSED  [  1%]
+.evaluation_tests/test_checkpoint_1.py::test_explicit_output_path PASSED [  3%]
+.evaluation_tests/test_checkpoint_1.py::test_unreadable_input[missing-file] PASSED [  5%]
+.evaluation_tests/test_checkpoint_1.py::test_unreadable_input[directory] PASSED [  7%]
+.evaluation_tests/test_checkpoint_1.py::test_missing_input_preserves_cli_path PASSED [  9%]
+.evaluation_tests/test_checkpoint_1.py::test_comments_and_escaped_percent FAILED [ 11%]
+.evaluation_tests/test_checkpoint_1.py::test_document_body_extraction FAILED [ 13%]
+.evaluation_tests/test_checkpoint_1.py::test_no_begin_document_uses_all PASSED [ 15%]
+.evaluation_tests/test_checkpoint_1.py::test_end_without_begin_keeps_all PASSED [ 17%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_split PASSED   [ 19%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_inline_text[lowercase] PASSED [ 21%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_inline_text[capitalized] PASSED [ 23%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_multiple_same_line[with-middle-text] PASSED [ 25%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_multiple_same_line[with-plus] PASSED [ 26%]
+.evaluation_tests/test_checkpoint_1.py::test_headings_and_inline_commands PASSED [ 28%]
+.evaluation_tests/test_checkpoint_1.py::test_layout_command_deletion PASSED [ 30%]
+.evaluation_tests/test_checkpoint_1.py::test_layout_command_deletion_respects_command_boundaries FAILED [ 32%]
+.evaluation_tests/test_checkpoint_1.py::test_newline_collapse PASSED     [ 34%]
+.evaluation_tests/test_checkpoint_1.py::test_two_newlines_preserved PASSED [ 36%]
+.evaluation_tests/test_checkpoint_1.py::test_inline_math_preserved PASSED [ 38%]
+.evaluation_tests/test_checkpoint_1.py::test_inline_formatting[in-sentence] PASSED [ 40%]
+.evaluation_tests/test_checkpoint_1.py::test_inline_formatting[adjacent] PASSED [ 42%]
+.evaluation_tests/test_checkpoint_1.py::test_comment_at_first_unescaped_percent FAILED [ 44%]
+.evaluation_tests/test_checkpoint_1.py::test_comment_even_backslash_parity FAILED [ 46%]
+.evaluation_tests/test_checkpoint_1.py::test_default_output_basename PASSED [ 48%]
+.evaluation_tests/test_checkpoint_1.py::test_default_output_multi_ext PASSED [ 50%]
+.evaluation_tests/test_checkpoint_1.py::test_commented_begin_document FAILED [ 51%]
+.evaluation_tests/test_checkpoint_1.py::test_commented_end_document FAILED [ 53%]
+.evaluation_tests/test_checkpoint_1.py::test_line_strip_tabs_spaces PASSED [ 55%]
+.evaluation_tests/test_checkpoint_1.py::test_indented_section_stripped PASSED [ 57%]
+.evaluation_tests/test_checkpoint_1.py::test_layout_cleanup_inline_text PASSED [ 59%]
+.evaluation_tests/test_checkpoint_1.py::test_blank_normalization_edges FAILED [ 61%]
+.evaluation_tests/test_checkpoint_1.py::test_comment_no_formatting_leak PASSED [ 63%]
+.evaluation_tests/test_checkpoint_1.py::test_command_delete_then_normalize PASSED [ 65%]
+.evaluation_tests/test_checkpoint_1.py::test_indented_full_line_comment FAILED [ 67%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_own_lines PASSED [ 69%]
+.evaluation_tests/test_checkpoint_1.py::test_empty_input_file PASSED     [ 71%]
+.evaluation_tests/test_checkpoint_1.py::test_whitespace_only_input PASSED [ 73%]
+.evaluation_tests/test_checkpoint_1.py::test_interior_spacing_preserved_with_formatting PASSED [ 75%]
+.evaluation_tests/test_checkpoint_1.py::test_empty_body_between_document_markers PASSED [ 76%]
+.evaluation_tests/test_checkpoint_1.py::test_file_containing_only_comments PASSED [ 78%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_only_block PASSED [ 80%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_at_start_and_text_after PASSED [ 82%]
+.evaluation_tests/test_checkpoint_1.py::test_text_before_display_math_at_end PASSED [ 84%]
+.evaluation_tests/test_checkpoint_1.py::test_consecutive_display_math_blocks PASSED [ 86%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_preserves_inline_math PASSED [ 88%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_inside_document_body FAILED [ 90%]
+.evaluation_tests/test_checkpoint_1.py::test_section_then_display_math PASSED [ 92%]
+.evaluation_tests/test_checkpoint_1.py::test_emph_then_textbf_separate_lines PASSED [ 94%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_with_text_both_sides PASSED [ 96%]
+.evaluation_tests/test_checkpoint_1.py::test_display_math_empty_content PASSED [ 98%]
+.evaluation_tests/test_checkpoint_1.py::test_comment_on_begin_document_line FAILED [100%]
+
+=================================== FAILURES ===================================
+______________________ test_comments_and_escaped_percent _______________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_comments_and_escaped_perc0')
+
+    @pytest.mark.functionality
+    def test_comments_and_escaped_percent(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Removes trailing comments and preserves escaped percent signs as content."""
+        source = write_tex(
+            tmp_path,
+            "comments.tex",
+            "% full-line comment\n"
+            "Some text % trailing comment\n"
+            "Keep \\% this escaped percent\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "comments.md",
+            "\nSome text\nKeep \\% this escaped percent\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_comments_and_escaped_perc0/comments.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_comments_and_escaped_perc0/comments.md')
+expected = '\nSome text\nKeep \\% this escaped percent\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+________________________ test_document_body_extraction _________________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_document_body_extraction0')
+
+    def test_document_body_extraction(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Uses only text between begin{document} and end{document} when present."""
+        source = write_tex(
+            tmp_path,
+            "doc.tex",
+            "\\documentclass{article}\n"
+            "\\usepackage{amsmath}\n"
+            "\\begin{document}\n"
+            "  Body line  \n"
+            "\\end{document}\n"
+            "Ignored content\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(result, tmp_path / "doc.md", "\nBody line\n")
+
+.evaluation_tests/test_checkpoint_1.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_document_body_extraction0/doc.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_document_body_extraction0/doc.md')
+expected = '\nBody line\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+___________ test_layout_command_deletion_respects_command_boundaries ___________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_layout_command_deletion_r0')
+
+    @pytest.mark.functionality
+    def test_layout_command_deletion_respects_command_boundaries(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Deletes only named skip commands and preserves longer command names."""
+        source = write_tex(
+            tmp_path,
+            "delete_cmd_boundaries.tex",
+            "left\\medskipper right\n"
+            "\\smallskip\n"
+            "after\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "delete_cmd_boundaries.md",
+            "left\\medskipper right\n\nafter\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:290: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_layout_command_deletion_r0/delete_cmd_boundaries.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_layout_command_deletion_r0/delete_cmd_boundaries.md')
+expected = 'left\\medskipper right\n\nafter\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+___________________ test_comment_at_first_unescaped_percent ____________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_comment_at_first_unescape0')
+
+    @pytest.mark.functionality
+    def test_comment_at_first_unescaped_percent(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Uses first unescaped percent as comment start while keeping escaped ones."""
+        source = write_tex(
+            tmp_path,
+            "comment_edge.tex",
+            "Keep \\%% remove this part\n"
+            "Trim here % first comment % second comment\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "comment_edge.md",
+            "Keep \\%\nTrim here\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_comment_at_first_unescape0/comment_edge.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_comment_at_first_unescape0/comment_edge.md')
+expected = 'Keep \\%\nTrim here\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+______________________ test_comment_even_backslash_parity ______________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_comment_even_backslash_pa0')
+
+    @pytest.mark.functionality
+    def test_comment_even_backslash_parity(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Treats percent after an even number of backslashes as comment start."""
+        source = write_tex(
+            tmp_path,
+            "comment_even_backslashes.tex",
+            "Keep \\\\% hidden\n"
+            "After\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "comment_even_backslashes.md",
+            "Keep \\\\\nAfter\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:402: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_comment_even_backslash_pa0/comment_even_backslashes.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_comment_even_backslash_pa0/comment_even_backslashes.md')
+expected = 'Keep \\\\\nAfter\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+________________________ test_commented_begin_document _________________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_commented_begin_document0')
+
+    @pytest.mark.functionality
+    def test_commented_begin_document(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Ignores commented begin{document} so body selection includes visible lines."""
+        source = write_tex(
+            tmp_path,
+            "commented_begin.tex",
+            "% \\begin{document}\n"
+            "Visible line\n"
+            "\\end{document}\n"
+            "Trailing line\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "commented_begin.md",
+            "\nVisible line\n\\end{document}\nTrailing line\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:460: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_commented_begin_document0/commented_begin.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_commented_begin_document0/commented_begin.md')
+expected = '\nVisible line\n\\end{document}\nTrailing line\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+_________________________ test_commented_end_document __________________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_commented_end_document0')
+
+    @pytest.mark.functionality
+    def test_commented_end_document(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Ignores commented end{document} and keeps text until real end marker."""
+        source = write_tex(
+            tmp_path,
+            "commented_end.tex",
+            "\\begin{document}\n"
+            "Keep before comment\n"
+            "% \\end{document}\n"
+            "Keep after comment\n"
+            "\\end{document}\n"
+            "Trimmed tail\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "commented_end.md",
+            "\nKeep before comment\n\nKeep after comment\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:485: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_commented_end_document0/commented_end.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_commented_end_document0/commented_end.md')
+expected = '\nKeep before comment\n\nKeep after comment\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+________________________ test_blank_normalization_edges ________________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_blank_normalization_edges0')
+
+    @pytest.mark.functionality
+    def test_blank_normalization_edges(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Normalizes excessive boundary blank lines to no more than two in a row."""
+        source = write_tex(
+            tmp_path,
+            "normalize_edges.tex",
+            "\n\n\nA\n\n\nB\n\n\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "normalize_edges.md",
+            "\n\nA\n\nB\n\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:568: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_blank_normalization_edges0/normalize_edges.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_blank_normalization_edges0/normalize_edges.md')
+expected = '\n\nA\n\nB\n\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+_______________________ test_indented_full_line_comment ________________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_indented_full_line_commen0')
+
+    @pytest.mark.functionality
+    def test_indented_full_line_comment(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        """Drops indented full-line comments while retaining escaped percent content."""
+        source = write_tex(
+            tmp_path,
+            "indented_comment.tex",
+            "   % indented full-line comment\n"
+            "Price is \\%50 % remove this comment\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "indented_comment.md",
+            "\nPrice is \\%50\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:633: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_indented_full_line_commen0/indented_comment.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_indented_full_line_commen0/indented_comment.md')
+expected = '\nPrice is \\%50\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+____________________ test_display_math_inside_document_body ____________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_display_math_inside_docum0')
+
+    @pytest.mark.functionality
+    def test_display_math_inside_document_body(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        source = write_tex(
+            tmp_path,
+            "doc_math.tex",
+            "\\begin{document}\n"
+            "\\[E = mc^2\\]\n"
+            "\\end{document}\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "doc_math.md",
+            "\n$$\nE = mc^2\n$$\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:842: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_display_math_inside_docum0/doc_math.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_display_math_inside_docum0/doc_math.md')
+expected = '\n$$\nE = mc^2\n$$\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+_____________________ test_comment_on_begin_document_line ______________________
+
+entrypoint_argv = ['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py']
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_comment_on_begin_document0')
+
+    @pytest.mark.functionality
+    def test_comment_on_begin_document_line(
+        entrypoint_argv: list[str], tmp_path: Path
+    ) -> None:
+        source = write_tex(
+            tmp_path,
+            "begin_with_comment.tex",
+            "\\begin{document}% a comment\n"
+            "Content\n"
+            "\\end{document}\n",
+        )
+    
+        result = run_l2m(entrypoint_argv, source, cwd=tmp_path)
+    
+>       assert_success_and_output(
+            result,
+            tmp_path / "begin_with_comment.md",
+            "\nContent\n",
+        )
+
+.evaluation_tests/test_checkpoint_1.py:936: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+result = CompletedProcess(args=['uv', 'run', '--project', '/tmp/tmp9fy5hlv9', '/tmp/tmp9fy5hlv9/l2m.py', '/tmp/pytest-of-root/pytest-0/test_comment_on_begin_document0/begin_with_comment.tex'], returncode=0, stdout='', stderr='')
+output_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_comment_on_begin_document0/begin_with_comment.md')
+expected = '\nContent\n'
+
+    def assert_success_and_output(
+        result: subprocess.CompletedProcess[str],
+        output_path: Path,
+        expected: str,
+    ) -> None:
+        assert result.returncode == 0, result.stderr
+        assert output_path.exists()
+        actual = normalize_output(read_text(output_path))
+>       assert actual == normalize_output(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+.evaluation_tests/helpers.py:67: AssertionError
+--------------------------------- JSON report ----------------------------------
+report saved to: .scbench/pytest-report.json
+=========================== short test summary info ============================
+FAILED .evaluation_tests/test_checkpoint_1.py::test_comments_and_escaped_percent - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_document_body_extraction - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_layout_command_deletion_respects_command_boundaries - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_comment_at_first_unescaped_percent - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_comment_even_backslash_parity - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_commented_begin_document - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_commented_end_document - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_blank_normalization_edges - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_indented_full_line_comment - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_display_math_inside_document_body - AssertionError
+FAILED .evaluation_tests/test_checkpoint_1.py::test_comment_on_begin_document_line - AssertionError
+======================== 11 failed, 41 passed in 6.18s =========================

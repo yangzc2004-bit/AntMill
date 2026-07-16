@@ -1,0 +1,102 @@
+{
+  "status": "valid_mechanism_task_pair_falsified",
+  "date": "2026-07-14",
+  "config": "benchmarks/scbench/kimi_log_query_cp1_bootstrapped_recursive_depth5_config.json",
+  "treatment_run_root": "runs_scbench_moa_kimi_log_query_cp1_bootstrapped_recursive_depth5_20260714",
+  "treatment_arm": "recursive_synthesis-2fd41f1bfec34c0e848ebedd64c93127",
+  "matching_control_run_root": "runs_scbench_moa_kimi_log_query_cp1_recursive_synthesis_depth5_20260714",
+  "matching_control_arm": "no_transfer-0e9568d083944a74922b08223c7088dc",
+  "curves": {
+    "treatment_mean_core": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "control_mean_core": [
+      0.9,
+      0.9,
+      0.9,
+      1.0,
+      0.9
+    ],
+    "treatment_mean_all_test": [
+      0.9701492537,
+      0.9825870647,
+      0.9850746269,
+      0.9850746269,
+      0.9850746269
+    ],
+    "control_mean_all_test": [
+      0.92039801,
+      0.947761194,
+      0.9701492537,
+      0.9179104478,
+      0.9378109453
+    ]
+  },
+  "terminal_effects": {
+    "core_treatment_minus_control": 0.1,
+    "all_test_treatment_minus_control": 0.0472636816
+  },
+  "validity_gates": {
+    "bootstrap_activation": {
+      "pass": true,
+      "details": "All three frozen sources re-evaluated at 10/10 Core with hash 3deecb18f814ddda765ab2720264da076f8361d7646fe9c922af4c52d11fddac. Manager layer 0 was nonempty and all treatment workers received one shared artifact from layer 1."
+    },
+    "control_headroom": {
+      "pass": true,
+      "control_layer_5_mean_core": 0.9
+    },
+    "target_consistency": {
+      "pass": true,
+      "details": "All 15 treatment results used Core total 10, 134 collected tests, the frozen collection hash, and no infrastructure failure."
+    },
+    "integrity": {
+      "pass": true,
+      "nonempty_runner_stderr_files": 0,
+      "native_evaluations_rejected": 0,
+      "details": "No benchmark catalog tests, reference solutions, or later-checkpoint artifacts were exposed to workers."
+    },
+    "recursive_continuity": {
+      "pass": true,
+      "details": "Manager layers 1 through 4 each referenced the immediately preceding shared artifact and all three current-layer 10/10 Core sources."
+    }
+  },
+  "complexity": {
+    "bootstrap_manager_output_chars": 12990,
+    "final_manager_output_chars": 18578,
+    "final_to_bootstrap_output_char_ratio": 1.4301770593,
+    "bootstrap_manager_prompt_tokens": 7231,
+    "final_manager_prompt_tokens": 10886,
+    "final_to_bootstrap_prompt_token_ratio": 1.5054625916,
+    "treatment_layer_5_worker_input_tokens": 286725,
+    "control_layer_5_worker_input_tokens": 206740,
+    "layer_5_input_token_ratio": 1.3868869111,
+    "support_pass": true
+  },
+  "behavioral_convergence": {
+    "layer_3_to_5_worker_scores": "Every worker scored 10/10 Core and 132/134 overall.",
+    "layer_5_distinct_snapshot_hashes": 3,
+    "interpretation": "The workers converged behaviorally without becoming byte-identical. The shared playbook stabilized the same two residual failures while preserving implementation diversity."
+  },
+  "persistent_failures": [
+    "test_checkpoint_1_non_object_json_line_error",
+    "test_checkpoint_1_json_array_line_error"
+  ],
+  "degradation_criteria": {
+    "primary_terminal_effect": false,
+    "within_arm_decline": false,
+    "curve_shape": false,
+    "tail_risk": false,
+    "complexity_support": true,
+    "all_required": false
+  },
+  "decision": {
+    "rule": "falsify",
+    "conclusion": "Five recursive layers and substantial playbook/token growth did not produce delayed degradation. For Kimi-K2.6 on log_query checkpoint 1, locally Core-verified recursive manager synthesis improved and stabilized performance rather than amplifying harmful coordination complexity.",
+    "iteration_hypothesis": "The missing curve cannot reasonably be attributed only to using too few layers in this mechanism-task pair. More of the same iterations are low-value because treatment is already at the Core ceiling and has behaviorally stabilized for three consecutive layers.",
+    "next_experiment": "Change the stressor, not merely the layer count: use an unbounded or weakly compressed accumulation mechanism, or a sequential task family where locally verified rules remain useful but conflict across contexts."
+  }
+}

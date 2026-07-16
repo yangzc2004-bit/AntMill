@@ -1,0 +1,30 @@
+{
+  "phase": "epsilon",
+  "document": "prereg_phase_epsilon.md",
+  "sha256": "69f0c999ce9570a9fa3ea1f40492321a7e9489892390c7b50001a566ef54bebb",
+  "status": "frozen_before_outcomes_after_pre_execution_amendment_01",
+  "controls": {
+    "seeds": [0, 1, 2, 3, 4],
+    "arms": [
+      "epsilon_frozen_reviewer",
+      "epsilon_private_consolidated",
+      "epsilon_shared_consolidated",
+      "epsilon_shared_append_cap14",
+      "epsilon_shared_consolidated_mmr"
+    ]
+  },
+  "sensitivity": {
+    "seeds": [0, 1, 2],
+    "arms": [
+      "epsilon_sens_reference",
+      "epsilon_sens_k3",
+      "epsilon_sens_k10",
+      "epsilon_sens_cap40",
+      "epsilon_sens_ops3",
+      "epsilon_sens_ops9",
+      "epsilon_sens_merge07",
+      "epsilon_sens_merge09",
+      "epsilon_sens_recency1"
+    ]
+  }
+}

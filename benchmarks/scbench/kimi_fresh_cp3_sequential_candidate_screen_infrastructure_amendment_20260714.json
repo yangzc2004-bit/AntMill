@@ -1,0 +1,25 @@
+{
+  "status": "frozen_infrastructure_repair_before_valid_candidate_outcomes",
+  "date": "2026-07-14",
+  "original_config": "benchmarks/scbench/kimi_fresh_cp3_sequential_candidate_screen_step32_config.json",
+  "invalid_run_root": "r_fcp3s1_20260714",
+  "affected_candidates": [
+    "etl_pipeline",
+    "execution_server"
+  ],
+  "failure": {
+    "etl_pipeline": "The generated solution declared duckdb==1.1.1, jsonschema==4.21.1, pytest==8.3.2, and sqlglot==24.1.3, but the offline wheelhouse did not initially contain those exact distributions.",
+    "execution_server": "The generated solution declared FastAPI, Uvicorn standard extras, Pydantic, NumPy, wcmatch, and related dependencies, but the offline wheelhouse did not initially contain them.",
+    "timing": "Missing distributions were discovered after the invalid run had started, so dependency availability differed across checkpoints and the run cannot select a candidate."
+  },
+  "repair": {
+    "method": "Download Linux CPython 3.12 binary wheels for every declared direct and transitive dependency, freeze exact filenames in sec/scbench_moa.py, and rerun the unchanged screen from checkpoint 1.",
+    "prompt_changed": false,
+    "model_changed": false,
+    "step_budget_changed": false,
+    "pass_policy_changed": false,
+    "selection_threshold_changed": false,
+    "treatment_outcomes_seen": false
+  },
+  "validity_rule": "Only the clean rerun with all frozen dependencies present before checkpoint 1 may be used for candidate selection."
+}

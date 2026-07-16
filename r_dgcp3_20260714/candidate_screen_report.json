@@ -1,0 +1,81 @@
+{
+  "screen_config": {
+    "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+    "date_frozen": "2026-07-14",
+    "endpoint": "https://api.kimi.com/coding/v1",
+    "model": "kimi-k2.6",
+    "worker_count": 1,
+    "num_layers": 1,
+    "checkpoint_limit": 3,
+    "step_limit_per_worker": 32,
+    "experience_char_limit_per_source": 10000,
+    "candidates": [
+      {
+        "problem": "datagate",
+        "reason": "The prior frozen screen naturally completed checkpoint 1 at action 24 and checkpoint 2 at action 12, scoring 7/9 Core and 115/122 all tests. Checkpoint 3 adds column-level filtering and comparator semantics."
+      }
+    ],
+    "benchmark_isolation": {
+      "remove_reference_solutions": true,
+      "remove_analysis_files": true,
+      "remove_later_checkpoint_specs_and_tests": true,
+      "prohibit_catalog_access_in_prompt": true,
+      "automatic_clean_revaluation": true,
+      "offline_wheelhouse": "benchmarks/scbench/kimi_datagate_local_wheelhouse_amendment_20260714.json"
+    },
+    "headroom_rule": {
+      "advance": "Checkpoint 3 has no infrastructure failure, normalized Core and all-test scores are each at least 0.50, and checkpoint 3 explicitly completes before action 32.",
+      "strong_advance": "Checkpoint-3 normalized all-test score is between 0.70 and 0.98, preserving a high baseline plus measurable headroom.",
+      "reject": "Stop datagate if checkpoint 3 is action-boundary censored or either normalized score is below 0.50.",
+      "formal_if_valid": "Freeze a three-layer no_transfer versus recursive_self_report_synthesis pilot with two workers per arm and the same 32-action budget."
+    },
+    "outcome_plan": {
+      "primary": "Mean normalized all-test score by checkpoint.",
+      "secondary": "Mean normalized Core score, exact failure overlap, completion rate, and input-token growth.",
+      "scores_withheld_from_manager": true
+    },
+    "prior_screen": {
+      "run_root": "runs_scbench_moa_kimi_cp2_evolving_candidate_screen_step28_r1_20260714",
+      "arm": "no_transfer-b52e0a3f211944a3aea8524d1d9ba7a4",
+      "checkpoint_1": {
+        "core": "4/4",
+        "all": "46/50",
+        "completion_step": 24,
+        "test_collection_hash": "7d29fc29e8d8b842c7ec9afca23ffb25047c3fe4e94883a2a00bb6f9ac5db37f"
+      },
+      "checkpoint_2": {
+        "core": "7/9",
+        "all": "115/122",
+        "completion_step": 12,
+        "test_collection_hash": "f37dac8cf61b4be3bdff4351234ec6432f9742818a7b7630a76e3393f976f07f"
+      }
+    }
+  },
+  "config_path": "D:\\antmill\\benchmarks\\scbench\\kimi_datagate_cp3_step32_headroom_calibration_config.json",
+  "results": [
+    {
+      "problem": "datagate",
+      "reason": "The prior frozen screen naturally completed checkpoint 1 at action 24 and checkpoint 2 at action 12, scoring 7/9 Core and 115/122 all tests. Checkpoint 3 adds column-level filtering and comparator semantics.",
+      "arm_id": "no_transfer-153436bdcf854044b8323f5a36e00b8c",
+      "status": "completed",
+      "mode": "no_transfer",
+      "layer": 1,
+      "workers": 1,
+      "mean_core_score": 0.0,
+      "min_core_score": 0.0,
+      "max_core_score": 0.0,
+      "mean_all_test_score": 0.5057471264367817,
+      "min_all_test_score": 0.5057471264367817,
+      "max_all_test_score": 0.5057471264367817,
+      "full_pass_workers": 0,
+      "full_core_workers": 0,
+      "mean_duration_sec": 762.9626681000227,
+      "total_input_tokens": 513393,
+      "total_output_tokens": 35207,
+      "mean_received_results": 0,
+      "mean_received_experience_chars": 0,
+      "mean_snapshot_bytes": 9897,
+      "mean_output_experience_chars": 6778
+    }
+  ]
+}

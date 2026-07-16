@@ -1,0 +1,126 @@
+/opt/scbench/.venv/lib/python3.12/site-packages/structlog/stdlib.py:1160: UserWarning: Remove `format_exc_info` from your processor chain if you want pretty exceptions.
+  ed = p(logger, meth_name, ed)  # type: ignore[arg-type]
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /opt/scbench/src/slop_code/entrypoints/commands/infer_problem.py:256 in      │
+│ infer_problem                                                                │
+│                                                                              │
+│   253 │   )                                                                  │
+│   254 │                                                                      │
+│   255 │   progress_queue = Queue()                                           │
+│ ❱ 256 │   runner.run_agent(                                                  │
+│   257 │   │   run_spec=run_spec,                                             │
+│   258 │   │   agent=agent,                                                   │
+│   259 │   │   output_path=save_dir,                                          │
+│                                                                              │
+│ /opt/scbench/src/slop_code/agent_runner/runner.py:1232 in run_agent          │
+│                                                                              │
+│   1229 │   │   replay_path=replay_path,                                      │
+│   1230 │   │   resume_info=resume_info,                                      │
+│   1231 │   )                                                                 │
+│ ❱ 1232 │   return runner.run()                                               │
+│   1233                                                                       │
+│                                                                              │
+│ /opt/scbench/src/slop_code/agent_runner/runner.py:626 in run                 │
+│                                                                              │
+│    623 │   │                                                                 │
+│    624 │   │   self.setup()                                                  │
+│    625 │   │   try:                                                          │
+│ ❱  626 │   │   │   self.results = self._run_problem()                        │
+│    627 │   │   except BaseException as e:  # noqa: BLE001                    │
+│    628 │   │   │   tb_text = traceback.format_exc()                          │
+│    629 │   │   │   logger.error(                                             │
+│                                                                              │
+│ /opt/scbench/src/slop_code/agent_runner/runner.py:1068 in _run_problem       │
+│                                                                              │
+│   1065 │   │   │   self.metrics_tracker.checkpoint_started = datetime.now()  │
+│   1066 │   │   │                                                             │
+│   1067 │   │   │   try:                                                      │
+│ ❱ 1068 │   │   │   │   summary = self._run_checkpoint(                       │
+│   1069 │   │   │   │   │   checkpoint,                                       │
+│   1070 │   │   │   │   │   checkpoint_save_dir,                              │
+│   1071 │   │   │   │   │   idx == 0,                                         │
+│                                                                              │
+│ /opt/scbench/src/slop_code/agent_runner/runner.py:726 in _run_checkpoint     │
+│                                                                              │
+│    723 │   ) -> AgentCheckpointSummary:                                      │
+│    724 │   │   compress = self.run_spec.compress_artifacts                   │
+│    725 │   │   try:                                                          │
+│ ❱  726 │   │   │   self._setup_for_checkpoint(checkpoint)                    │
+│    727 │   │   │   self.metrics_tracker.state = AgentStateEnum.RUNNING       │
+│    728 │   │   │   snapshot_dir, result, diff = run_checkpoint(              │
+│    729 │   │   │   │   agent=self.agent,                                     │
+│                                                                              │
+│ /opt/scbench/src/slop_code/agent_runner/runner.py:655 in                     │
+│ _setup_for_checkpoint                                                        │
+│                                                                              │
+│    652 │   │   │   │   "Starting agent for the first checkpoint",            │
+│    653 │   │   │   │   checkpoint=checkpoint.name,                           │
+│    654 │   │   │   )                                                         │
+│ ❱  655 │   │   │   self.agent.setup(session=self.session)                    │
+│    656 │   │   │   return                                                    │
+│    657 │   │                                                                 │
+│    658 │   │   logger.info(                                                  │
+│                                                                              │
+│ /opt/scbench/src/slop_code/agent_runner/agents/miniswe.py:583 in setup       │
+│                                                                              │
+│   580 │   def setup(self, session: Session) -> None:                         │
+│   581 │   │   self._env = self.build_environment(session.working_dir, sessio │
+│   582 │   │   for command in session.spec.setup.commands:                    │
+│ ❱ 583 │   │   │   self._env.execute(command)                                 │
+│   584 │                                                                      │
+│   585 │   @staticmethod                                                      │
+│   586 │   def build_environment(                                             │
+│                                                                              │
+│ /opt/scbench/.venv/lib/python3.12/site-packages/minisweagent/environments/lo │
+│ cal.py:23 in execute                                                         │
+│                                                                              │
+│   20 │   def execute(self, command: str, cwd: str = "", *, timeout: int | No │
+│   21 │   │   """Execute a command in the local environment and return the re │
+│   22 │   │   cwd = cwd or self.config.cwd or os.getcwd()                     │
+│ ❱ 23 │   │   result = subprocess.run(                                        │
+│   24 │   │   │   command,                                                    │
+│   25 │   │   │   shell=True,                                                 │
+│   26 │   │   │   text=True,                                                  │
+│                                                                              │
+│ /usr/local/lib/python3.12/subprocess.py:550 in run                           │
+│                                                                              │
+│    547 │                                                                     │
+│    548 │   with Popen(*popenargs, **kwargs) as process:                      │
+│    549 │   │   try:                                                          │
+│ ❱  550 │   │   │   stdout, stderr = process.communicate(input, timeout=timeo │
+│    551 │   │   except TimeoutExpired as exc:                                 │
+│    552 │   │   │   process.kill()                                            │
+│    553 │   │   │   if _mswindows:                                            │
+│                                                                              │
+│ /usr/local/lib/python3.12/subprocess.py:1209 in communicate                  │
+│                                                                              │
+│   1206 │   │   │   │   endtime = None                                        │
+│   1207 │   │   │                                                             │
+│   1208 │   │   │   try:                                                      │
+│ ❱ 1209 │   │   │   │   stdout, stderr = self._communicate(input, endtime, ti │
+│   1210 │   │   │   except KeyboardInterrupt:                                 │
+│   1211 │   │   │   │   # https://bugs.python.org/issue25942                  │
+│   1212 │   │   │   │   # See the detailed comment in .wait().                │
+│                                                                              │
+│ /usr/local/lib/python3.12/subprocess.py:2116 in _communicate                 │
+│                                                                              │
+│   2113 │   │   │   │   │   │   │   'failed to raise TimeoutExpired.')        │
+│   2114 │   │   │   │   │                                                     │
+│   2115 │   │   │   │   │   ready = selector.select(timeout)                  │
+│ ❱ 2116 │   │   │   │   │   self._check_timeout(endtime, orig_timeout, stdout │
+│   2117 │   │   │   │   │                                                     │
+│   2118 │   │   │   │   │   # XXX Rewrite these to use non-blocking I/O on th │
+│   2119 │   │   │   │   │   # objects; they are no longer using C stdio!      │
+│                                                                              │
+│ /usr/local/lib/python3.12/subprocess.py:1253 in _check_timeout               │
+│                                                                              │
+│   1250 │   │   if endtime is None:                                           │
+│   1251 │   │   │   return                                                    │
+│   1252 │   │   if skip_check_and_raise or _time() > endtime:                 │
+│ ❱ 1253 │   │   │   raise TimeoutExpired(                                     │
+│   1254 │   │   │   │   │   self.args, orig_timeout,                          │
+│   1255 │   │   │   │   │   output=b''.join(stdout_seq) if stdout_seq else No │
+│   1256 │   │   │   │   │   stderr=b''.join(stderr_seq) if stderr_seq else No │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TimeoutExpired: Command 'uv pip install --python /opt/scbench/.venv/bin/python 
+-r requirements.txt' timed out after 30 seconds

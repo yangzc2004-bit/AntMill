@@ -1,0 +1,260 @@
+{
+  "contrast_config": {
+    "status": "engineering_sequential_checkpoint_curve_frozen_before_outcomes",
+    "date_frozen": "2026-07-14",
+    "endpoint": "https://api.modelarts-maas.com/plan/v2",
+    "api_key_env": "MODELARTS_MAAS_KEY",
+    "agent": "SCBench native MiniSWE",
+    "manager": "Kimi intermediate MOA recursive self-report aggregator",
+    "model": "kimi-k2.6-maas",
+    "api_model": "kimi-k2.6",
+    "problem": "execution_server",
+    "checkpoint_sequence": [
+      1,
+      2,
+      3
+    ],
+    "worker_count": 1,
+    "step_limit_per_checkpoint": 32,
+    "pass_policy": "any",
+    "thinking": "disabled",
+    "temperature": 0.6,
+    "max_output_tokens_per_call": 4096,
+    "experience_char_limit_per_source": 10000,
+    "manager_max_output_tokens": 5000,
+    "manager_experience_char_limit": 20000,
+    "scbench_seed": 42,
+    "parallel_arms": true,
+    "mode_order": [
+      "no_transfer",
+      "recursive_self_report_synthesis"
+    ],
+    "expected_targets": {
+      "1": {
+        "core_total": 7,
+        "pytest_collected": 45,
+        "test_collection_hash": "bb67bbdad7f21326a3bc77043b24bee8952bcaf7f6537cbdafc66cb47d90f4b2"
+      },
+      "2": {
+        "core_total": 6,
+        "pytest_collected": 58,
+        "test_collection_hash": "80530fed3579984965ee18c474ebb6441d67324e00ad2dd92ca27af45f6dc33e"
+      },
+      "3": {
+        "core_total": 16,
+        "pytest_collected": 101,
+        "test_collection_hash": "6d9f64151c3d08c37b943765effa2eb11fa3c3bac4f34a8a2a6bfd07bb1a1a58"
+      }
+    },
+    "assimilation_semantics": {
+      "recursive_self_report_synthesis": "After checkpoints 1 and 2, the MOA manager recursively revises one shared playbook using every current worker output admitted by the workflow self-report proxy. External Core and all-test scores are withheld. The next checkpoint worker receives exactly that manager artifact.",
+      "no_transfer": "Use the same provider, model, evolving public specifications, one worker, action budget, and checkpoint targets while suppressing all prior output.",
+      "source_selection": "No worker is selected or rejected using external evaluation. Admission uses only the existing workflow self-reported-success proxy."
+    },
+    "benchmark_isolation": {
+      "remove_reference_solutions": true,
+      "remove_analysis_files": true,
+      "remove_later_checkpoint_specs_and_tests": true,
+      "prohibit_catalog_access_in_prompt": true,
+      "automatic_clean_revaluation": "Reject infrastructure failure, Core-total drift, or test-hash drift and cleanly re-evaluate the same snapshot.",
+      "offline_wheelhouse": true
+    },
+    "validity_gates": {
+      "target_consistency": "Every final result matches the frozen Core total and test hash for its checkpoint.",
+      "manager_activation": "The treatment checkpoint-2 worker receives manager layer 1 and the checkpoint-3 worker receives manager layer 2.",
+      "recursive_continuity": "Manager layer 2 includes manager layer 1 plus the self-report-admitted checkpoint-2 output.",
+      "score_blinding": "No manager request contains external Core, all-test, pass-count, or hidden-test outcomes.",
+      "self_report_activation": "The treatment worker is admitted after both checkpoints 1 and 2.",
+      "control_headroom": "No-transfer checkpoint-3 normalized all-test score is at least 0.50 and below 1.00.",
+      "control_resource_validity": "The no-transfer checkpoint-3 worker explicitly completes before action 32.",
+      "integrity": "No final result has an infrastructure failure, model-query failure, target drift, or prohibited benchmark access."
+    },
+    "primary_estimand": {
+      "name": "Fixed-budget global-quality degradation",
+      "metric": "Normalized all-test score by checkpoint.",
+      "resource_policy": "All outcomes under the matched 32-action budget remain in the primary analysis. A treatment-induced increase in boundary exhaustion is part of the proposed coordination-complexity mechanism.",
+      "pilot_scope": "One worker per arm estimates direction only. It cannot support a paper-level stochastic claim without the preregistered replications."
+    },
+    "degradation_criteria": {
+      "sustained_negative_gaps": "Treatment minus no-transfer all-test gaps are negative at checkpoints 2 and 3.",
+      "terminal_effect": "Checkpoint-3 treatment normalized all-test score is at least 0.10 below no transfer.",
+      "growing_divergence": "The checkpoint-3 treatment-control gap is at least 0.05 more negative than the checkpoint-2 gap.",
+      "difference_in_differences": "The treatment checkpoint-1-to-3 change minus the no-transfer checkpoint-1-to-3 change is at most -0.10.",
+      "complexity_support": "Treatment checkpoint-3 total input tokens are at least 15 percent above no transfer, or its checkpoint-3 action-boundary indicator is higher.",
+      "all_required_for_target_curve": "All validity gates and all five degradation criteria pass."
+    },
+    "decision_rule": {
+      "confirm_direction": "If treatment-control all-test gaps are negative at both checkpoints 2 and 3, run two additional independent replicates with identical frozen settings.",
+      "stop_pair": "If validity passes but either checkpoint-2 or checkpoint-3 treatment-control gap is non-negative, stop this model-task-provider pair.",
+      "invalid": "Repair only documented infrastructure or target-consistency failures. Do not reinterpret model behavior, explicit-completion failure, or action-boundary exhaustion as infrastructure."
+    },
+    "calibration_provenance": {
+      "candidate_selection": "benchmarks/scbench/kimi_fresh_cp3_sequential_candidate_selection_audit_20260714.json",
+      "provider_specific_calibration": "benchmarks/scbench/kimi_maas_execution_server_cp6_longest_prefix_calibration_audit_20260714.json",
+      "selected_longest_valid_prefix": 3,
+      "no_maas_execution_server_treatment_outcomes_seen_before_freeze": true,
+      "no_cross_provider_outcome_splicing": true
+    }
+  },
+  "config_path": "D:\\antmill\\benchmarks\\scbench\\kimi_maas_execution_server_sequential_cp1_cp3_recursive_self_report_pilot_config.json",
+  "arms": [
+    {
+      "model": "kimi-k2.6-maas",
+      "replicate": 1,
+      "mode": "no_transfer",
+      "arm_id": "no_transfer-b9344539b97944babe57dfaaa374a5d8"
+    },
+    {
+      "model": "kimi-k2.6-maas",
+      "replicate": 1,
+      "mode": "recursive_self_report_synthesis",
+      "arm_id": "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a"
+    }
+  ],
+  "rows": [
+    {
+      "model": "kimi-k2.6-maas",
+      "replicate": 1,
+      "checkpoint": 1,
+      "mode": "no_transfer",
+      "arm_id": "no_transfer-b9344539b97944babe57dfaaa374a5d8",
+      "layer": 1,
+      "workers": 1,
+      "mean_core_score": 1.0,
+      "min_core_score": 1.0,
+      "max_core_score": 1.0,
+      "mean_all_test_score": 1.0,
+      "min_all_test_score": 1.0,
+      "max_all_test_score": 1.0,
+      "full_pass_workers": 1,
+      "full_core_workers": 1,
+      "mean_duration_sec": 574.1088070999831,
+      "total_input_tokens": 215608,
+      "total_output_tokens": 12135,
+      "mean_received_results": 0,
+      "mean_received_experience_chars": 0,
+      "mean_snapshot_bytes": 7395,
+      "mean_output_experience_chars": 10000
+    },
+    {
+      "model": "kimi-k2.6-maas",
+      "replicate": 1,
+      "checkpoint": 2,
+      "mode": "no_transfer",
+      "arm_id": "no_transfer-b9344539b97944babe57dfaaa374a5d8",
+      "layer": 2,
+      "workers": 1,
+      "mean_core_score": 1.0,
+      "min_core_score": 1.0,
+      "max_core_score": 1.0,
+      "mean_all_test_score": 0.9655172413793104,
+      "min_all_test_score": 0.9655172413793104,
+      "max_all_test_score": 0.9655172413793104,
+      "full_pass_workers": 0,
+      "full_core_workers": 1,
+      "mean_duration_sec": 576.5032950999739,
+      "total_input_tokens": 304715,
+      "total_output_tokens": 10889,
+      "mean_received_results": 0,
+      "mean_received_experience_chars": 0,
+      "mean_snapshot_bytes": 7926,
+      "mean_output_experience_chars": 9028
+    },
+    {
+      "model": "kimi-k2.6-maas",
+      "replicate": 1,
+      "checkpoint": 3,
+      "mode": "no_transfer",
+      "arm_id": "no_transfer-b9344539b97944babe57dfaaa374a5d8",
+      "layer": 3,
+      "workers": 1,
+      "mean_core_score": 0.8125,
+      "min_core_score": 0.8125,
+      "max_core_score": 0.8125,
+      "mean_all_test_score": 0.9405940594059405,
+      "min_all_test_score": 0.9405940594059405,
+      "max_all_test_score": 0.9405940594059405,
+      "full_pass_workers": 0,
+      "full_core_workers": 0,
+      "mean_duration_sec": 1000.0007473000151,
+      "total_input_tokens": 679414,
+      "total_output_tokens": 22415,
+      "mean_received_results": 0,
+      "mean_received_experience_chars": 0,
+      "mean_snapshot_bytes": 30272,
+      "mean_output_experience_chars": 6389
+    },
+    {
+      "model": "kimi-k2.6-maas",
+      "replicate": 1,
+      "checkpoint": 1,
+      "mode": "recursive_self_report_synthesis",
+      "arm_id": "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a",
+      "layer": 1,
+      "workers": 1,
+      "mean_core_score": 1.0,
+      "min_core_score": 1.0,
+      "max_core_score": 1.0,
+      "mean_all_test_score": 0.9555555555555556,
+      "min_all_test_score": 0.9555555555555556,
+      "max_all_test_score": 0.9555555555555556,
+      "full_pass_workers": 0,
+      "full_core_workers": 1,
+      "mean_duration_sec": 332.68460730000515,
+      "total_input_tokens": 124094,
+      "total_output_tokens": 6757,
+      "mean_received_results": 0,
+      "mean_received_experience_chars": 0,
+      "mean_snapshot_bytes": 6596,
+      "mean_output_experience_chars": 10000
+    },
+    {
+      "model": "kimi-k2.6-maas",
+      "replicate": 1,
+      "checkpoint": 2,
+      "mode": "recursive_self_report_synthesis",
+      "arm_id": "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a",
+      "layer": 2,
+      "workers": 1,
+      "mean_core_score": 1.0,
+      "min_core_score": 1.0,
+      "max_core_score": 1.0,
+      "mean_all_test_score": 1.0,
+      "min_all_test_score": 1.0,
+      "max_all_test_score": 1.0,
+      "full_pass_workers": 1,
+      "full_core_workers": 1,
+      "mean_duration_sec": 445.1578800000134,
+      "total_input_tokens": 188112,
+      "total_output_tokens": 7971,
+      "mean_received_results": 1,
+      "mean_received_experience_chars": 4704,
+      "mean_snapshot_bytes": 9022,
+      "mean_output_experience_chars": 9161
+    },
+    {
+      "model": "kimi-k2.6-maas",
+      "replicate": 1,
+      "checkpoint": 3,
+      "mode": "recursive_self_report_synthesis",
+      "arm_id": "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a",
+      "layer": 3,
+      "workers": 1,
+      "mean_core_score": 0.875,
+      "min_core_score": 0.875,
+      "max_core_score": 0.875,
+      "mean_all_test_score": 0.9603960396039604,
+      "min_all_test_score": 0.9603960396039604,
+      "max_all_test_score": 0.9603960396039604,
+      "full_pass_workers": 0,
+      "full_core_workers": 0,
+      "mean_duration_sec": 819.3518699000124,
+      "total_input_tokens": 347158,
+      "total_output_tokens": 18798,
+      "mean_received_results": 1,
+      "mean_received_experience_chars": 5529,
+      "mean_snapshot_bytes": 14508,
+      "mean_output_experience_chars": 6527
+    }
+  ]
+}

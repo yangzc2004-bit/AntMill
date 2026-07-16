@@ -1,0 +1,332 @@
+{
+  "status": "checklist_provisional",
+  "specification_status": "provisional",
+  "question_count": 31,
+  "template": {
+    "path": "paper_draft\\aaai27kit\\AuthorKit27\\ReproducibilityChecklist.tex",
+    "sha256": "06a3459158089bf1c64b738986118f1d1566e816da4b710c6397561e33c3d5e6"
+  },
+  "responses": {
+    "path": "reproducibility_checklist_responses_memory.json",
+    "sha256": "bf54e6d0590a6fbeda276d7b62479f0eb07403817c8b8f8822d15739473ebb28"
+  },
+  "output": {
+    "path": "paper_draft\\antmill_memory_reproducibility_checklist.tex",
+    "sha256": "551787853c4c5fe32386bed3e1211283d8aebed042609848b7e32474aafff30e"
+  },
+  "answers": [
+    {
+      "question": "Includes a conceptual outline and/or pseudocode description of AI methods introduced",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "yes",
+      "evidence": "Figure 1a and the Methods section define the write, retrieve, inject, and evaluate loop."
+    },
+    {
+      "question": "Clearly delineates statements that are opinions, hypothesis, and speculation from objective facts and results",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "Preregistered gates, exploratory analyses, candidate mechanisms, and limitations are labeled separately."
+    },
+    {
+      "question": "Provides well-marked pedagogical references for less-familiar readers to gain background necessary to replicate the paper",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "Related Work and Table 1 connect each memory operation and retrieval component to its source family."
+    },
+    {
+      "question": "Does this paper make theoretical contributions?",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "answer": "no",
+      "evidence": "The contribution is empirical and methodological rather than theorem-based."
+    },
+    {
+      "question": "All assumptions and restrictions are stated clearly and formally",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "The controlled protocol, scope restrictions, operational endpoints, and claim boundaries are explicit."
+    },
+    {
+      "question": "All novel claims are stated formally (e.g., in theorem statements)",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "no",
+      "evidence": "The paper makes empirical claims and no theorem claims."
+    },
+    {
+      "question": "Proofs of all novel claims are included",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "no",
+      "evidence": "No theoretical proof claims are made."
+    },
+    {
+      "question": "Proof sketches or intuitions are given for complex and/or novel results",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "no",
+      "evidence": "No theoretical proof result requires a proof sketch."
+    },
+    {
+      "question": "Appropriate citations to theoretical tools used are given",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "partial",
+      "evidence": "Statistical procedures are fully specified in the artifact; the paper does not rely on a novel theoretical tool."
+    },
+    {
+      "question": "All theoretical claims are demonstrated empirically to hold",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "NA",
+      "evidence": "The paper makes no theoretical claims."
+    },
+    {
+      "question": "All experimental code used to eliminate or disprove claims is included",
+      "options": [
+        "yes",
+        "no",
+        "NA"
+      ],
+      "answer": "yes",
+      "evidence": "The anonymized artifact includes runners, controls, sensitivity analyses, decision gates, and negative-result code."
+    },
+    {
+      "question": "Does this paper rely on one or more datasets?",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "The study uses generated trap-maze instances and public MiniWoB task families."
+    },
+    {
+      "question": "A motivation is given for why the experiments are conducted on the selected datasets",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "yes",
+      "evidence": "The maze provides exact route ground truth; MiniWoB provides a controlled browser-interaction boundary."
+    },
+    {
+      "question": "All novel datasets introduced in this paper are included in a data appendix",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "yes",
+      "evidence": "Generated instances, split seeds, per-route records, and task manifests are included in the artifact."
+    },
+    {
+      "question": "All novel datasets introduced in this paper will be made publicly available upon publication of the paper with a license that allows free usage for research purposes",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "partial",
+      "evidence": "The artifact is prepared for release; the final repository license remains to be selected by the authors."
+    },
+    {
+      "question": "All datasets drawn from the existing literature (potentially including authors' own previously published work) are accompanied by appropriate citations",
+      "options": [
+        "yes",
+        "no",
+        "NA"
+      ],
+      "answer": "yes",
+      "evidence": "MiniWoB is cited through World of Bits and its BrowserGym execution layer."
+    },
+    {
+      "question": "All datasets drawn from the existing literature (potentially including authors' own previously published work) are publicly available",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "yes",
+      "evidence": "MiniWoB and BrowserGym are publicly available."
+    },
+    {
+      "question": "All datasets that are not publicly available are described in detail, with explanation why publicly available alternatives are not scientifically satisficing",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "NA",
+      "evidence": "No external non-public dataset is used."
+    },
+    {
+      "question": "Does this paper include computational experiments?",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "The paper reports preregistered maze and browser-agent experiments."
+    },
+    {
+      "question": "This paper states the number and range of values tried per (hyper-) parameter during development of the paper, along with the criterion used for selecting the final parameter setting",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "partial",
+      "evidence": "Frozen configurations and the prespecified sensitivity ranges are reported; some early calibration details remain artifact-only."
+    },
+    {
+      "question": "Any code required for pre-processing data is included in the appendix",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "Maze generation, BrowserGym observation normalization, sanitization, and analysis code are included."
+    },
+    {
+      "question": "All source code required for conducting and analyzing the experiments is included in a code appendix",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "The artifact includes experiment runners, memory protocols, statistics, evidence gates, and manuscript generators."
+    },
+    {
+      "question": "All source code required for conducting and analyzing the experiments will be made publicly available upon publication of the paper with a license that allows free usage for research purposes",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "partial",
+      "evidence": "The code is release-ready; the final public repository license remains to be selected by the authors."
+    },
+    {
+      "question": "All source code implementing new methods have comments detailing the implementation, with references to the paper where each step comes from",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "partial",
+      "evidence": "Non-obvious operations are documented and provenance is recorded, but not every implementation line has a paper cross-reference."
+    },
+    {
+      "question": "If an algorithm depends on randomness, then the method used for setting seeds is described in a way sufficient to allow replication of results",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "yes",
+      "evidence": "Seed lists, deterministic task salts, split generation, and per-run manifests are frozen; the evidence gate validates every completed formal configuration and sibling manifest."
+    },
+    {
+      "question": "This paper specifies the computing infrastructure used for running experiments (hardware and software), including GPU/CPU models; amount of memory; operating system; names and versions of relevant software libraries and frameworks",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "partial",
+      "evidence": "Local OS, CPU, memory, Python, BrowserGym, Playwright, the pinned MiniWoB++ commit, immutable browser version, executable and runtime-tree SHA-256 hashes, registered-task count, and package versions are recorded from formal run manifests; hosted LLM provider hardware is not disclosed."
+    },
+    {
+      "question": "This paper formally describes evaluation metrics used and explains the motivation for choosing these metrics",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "Success, failure-penalized cost, loop, stagnation, and retrieval-diversity metrics are operationally defined."
+    },
+    {
+      "question": "This paper states the number of algorithm runs used to compute each reported result",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "Seeds, route pairs, task families, rounds, and run counts accompany each result table and caption."
+    },
+    {
+      "question": "Analysis of experiments goes beyond single-dimensional summaries of performance (e.g., average; median) to include measures of variation, confidence, or other distributional information",
+      "options": [
+        "yes",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "Hierarchical seed-clustered paired-bootstrap intervals, every per-seed effect, sign consistency, and MiniWoB task-family heterogeneity are reported."
+    },
+    {
+      "question": "The significance of any improvement or decrease in performance is judged using appropriate statistical tests (e.g., Wilcoxon signed-rank)",
+      "options": [
+        "yes",
+        "partial",
+        "no"
+      ],
+      "answer": "yes",
+      "evidence": "Prespecified seed-clustered paired bootstrap confidence intervals and manipulation gates determine detected effects."
+    },
+    {
+      "question": "This paper lists all final (hyper-)parameters used for each model/algorithm in the paper's experiments",
+      "options": [
+        "yes",
+        "partial",
+        "no",
+        "NA"
+      ],
+      "answer": "yes",
+      "evidence": "Frozen configs, prompts, model settings, sensitivity values, and run manifests are included; supplement data-quality tables report all-run configuration, sibling-manifest, and exact cross-run environment validation."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "status": "engineering_pilot_frozen_before_outcomes",
+  "date_frozen": "2026-07-15",
+  "protocol": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_three_arm_confirmation_protocol_20260715.json",
+  "experiment_role": "same_provider_depth12_no_transfer_control",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "agent": "SCBench native MiniSWE",
+  "model": "kimi-k2.6-maas",
+  "api_model": "kimi-k2.6",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 12,
+  "step_limit_per_worker": 12,
+  "pass_policy": "any",
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "modes": [
+    "no_transfer"
+  ],
+  "frozen_expectation": "At most one 0/37 worker outcome across layers 7-12 and fewer post-layer-6 catastrophic outcomes than the self-report arm.",
+  "experience_transfer": "No bootstrap source and no generated worker output is delivered to any later layer.",
+  "new_outcomes_seen_before_freeze": false
+}

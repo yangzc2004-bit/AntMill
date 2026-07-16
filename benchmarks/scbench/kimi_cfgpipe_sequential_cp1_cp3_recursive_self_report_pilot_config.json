@@ -1,0 +1,102 @@
+{
+  "status": "engineering_sequential_checkpoint_curve_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "manager": "Kimi intermediate MOA recursive self-report aggregator",
+  "model": "kimi-k2.6",
+  "problem": "cfgpipe",
+  "checkpoint_sequence": [
+    1,
+    2,
+    3
+  ],
+  "worker_count": 2,
+  "step_limit_per_checkpoint": 40,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 10000,
+  "manager_max_output_tokens": 5000,
+  "manager_experience_char_limit": 20000,
+  "scbench_seed": 42,
+  "parallel_arms": true,
+  "mode_order": [
+    "no_transfer",
+    "recursive_self_report_synthesis"
+  ],
+  "expected_targets": {
+    "1": {
+      "core_total": 4,
+      "pytest_collected": 37,
+      "test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615"
+    },
+    "2": {
+      "core_total": 3,
+      "pytest_collected": 68,
+      "test_collection_hash": "35475c9c36a83fe0b7dca307f248d4a246015c44eace85d15ec1190742147e30"
+    },
+    "3": {
+      "core_total": 4,
+      "pytest_collected": 107,
+      "test_collection_hash": "2bc7d6c55787acb6341317122c6c8b260e5df6683e04ca86deee995319dd2a11"
+    }
+  },
+  "assimilation_semantics": {
+    "recursive_self_report_synthesis": "After checkpoints 1 and 2, the MOA manager recursively revises one shared playbook using every current worker output admitted by the workflow self-report proxy. External Core and all-test scores are withheld. Every next-layer worker receives exactly that manager artifact.",
+    "no_transfer": "Use the same model, workers, evolving public specifications, action budget, and checkpoint targets while suppressing all prior output.",
+    "source_selection": "No worker is selected or rejected using external evaluation. The treatment follows the existing recursive_self_report_synthesis policy."
+  },
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": "Reject infrastructure failure, Core-total drift, or test-hash drift and cleanly re-evaluate the same snapshot."
+  },
+  "validity_gates": {
+    "target_consistency": "Every final layer result matches the frozen Core total and test hash for its checkpoint.",
+    "manager_activation": "Treatment checkpoint-2 workers receive manager layer 1 and checkpoint-3 workers receive manager layer 2.",
+    "recursive_continuity": "Manager layer 2 includes manager layer 1 plus the current self-report-admitted layer-2 outputs.",
+    "score_blinding": "No manager request contains external Core, all-test, pass-count, or hidden-test outcomes.",
+    "self_report_activation": "At least one treatment worker is admitted after each of layers 1 and 2.",
+    "control_headroom": "No-transfer checkpoint-3 mean normalized all-test score is at least 0.50.",
+    "control_resource_validity": "At least one of two no-transfer checkpoint-3 workers explicitly completes before action 40.",
+    "integrity": "No final result has infrastructure failure or prohibited benchmark access."
+  },
+  "primary_estimand": {
+    "name": "Fixed-budget global-quality degradation",
+    "metric": "Mean normalized all-test score by checkpoint.",
+    "resource_policy": "All outcomes under the matched 40-action budget remain in the primary analysis. A treatment-induced increase in boundary exhaustion is part of the proposed complexity mechanism.",
+    "completion_conditioned_secondary": "Also report the checkpoint-3 gap among explicit completers."
+  },
+  "degradation_criteria": {
+    "sustained_negative_gaps": "Treatment minus no-transfer all-test gaps are negative at checkpoints 2 and 3.",
+    "terminal_effect": "Checkpoint-3 treatment mean all-test score is at least 0.10 below no transfer.",
+    "growing_divergence": "The checkpoint-3 treatment-control gap is at least 0.05 more negative than the checkpoint-2 gap.",
+    "difference_in_differences": "The treatment checkpoint-1-to-3 change minus the no-transfer checkpoint-1-to-3 change is at most -0.10.",
+    "complexity_support": "Treatment checkpoint-3 mean input tokens are at least 15 percent above no transfer, or its checkpoint-3 action-boundary rate is higher.",
+    "all_required_for_target_curve": "All validity gates and all five degradation criteria pass."
+  },
+  "decision_rule": {
+    "confirm_direction": "If all target-curve requirements pass, freeze and run two additional independent replicates before making a paper claim.",
+    "directional_followup": "If both checkpoint-2 and checkpoint-3 gaps are negative and terminal or difference-in-differences is negative but misses its magnitude threshold, run one identical replicate.",
+    "falsify_pair": "If validity passes but either checkpoint-2 or checkpoint-3 treatment-control gap is non-negative, stop the Kimi cfgpipe sequential pair.",
+    "invalid": "Repair only documented infrastructure failures or target drift; do not reinterpret model or action-budget failures as infrastructure."
+  },
+  "calibration_provenance": {
+    "candidate_audit": "benchmarks/scbench/kimi_cfgpipe_cp2_evolving_candidate_selection_audit_20260714.json",
+    "checkpoint_3_audit": "benchmarks/scbench/kimi_cfgpipe_cp3_step40_headroom_audit_20260714.json",
+    "no_treatment_outcomes_seen_before_freeze": true
+  },
+  "infrastructure_amendment": {
+    "date": "2026-07-14",
+    "invalid_attempt": "runs_scbench_moa_kimi_cfgpipe_sequential_cp1_cp3_recursive_self_report_pilot_r1_20260714",
+    "failure": "Concurrent PyPI TLS failures produced zero-test native evaluations and exhausted all three clean-evaluation retries before any treatment feedback layer was formed.",
+    "repair": "Enable the already frozen 20-wheel local SCBench wheelhouse for cfgpipe, including the exact deepdiff and rpds-py artifacts that failed to download.",
+    "scientific_settings_changed": false,
+    "thresholds_changed": false,
+    "model_outputs_from_invalid_attempt_reused": false
+  }
+}

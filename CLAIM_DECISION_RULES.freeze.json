@@ -1,0 +1,10 @@
+{
+  "document": "CLAIM_DECISION_RULES.md",
+  "sha256": "66d10108d01932a8fa4e899cb6b4d8da8b386fce4ae0274c688e11177e10ddec",
+  "original_sha256": "672d4c5ed78abbdf0ec9cde376733b7f4f2c5172155ccc67cd89cd4e91b9fbdb",
+  "status": "outcome-blind protocol-semantics amendment; CI classifications, endpoints, gates, and stopping rules unchanged",
+  "amendment": "Shared-versus-private language is protocol-level because reviewer-call allocation, prompt composition, and operation opportunity differ; append is reported as append/agree.",
+  "document_last_write_utc": "2026-07-15T10:16:12Z",
+  "amendment_recorded_at": "2026-07-15T19:14:26+08:00",
+  "decision_log": "phase_epsilon_decision_log.md"
+}

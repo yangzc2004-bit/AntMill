@@ -396,7 +396,7 @@ def _mk_stats_result(*, extra_excess: float, fail_last: bool = False) -> dict:
 def _paired_stats_checks() -> None:
     import random
 
-    from .maze_stats import paired_diff, per_seed_table, route_rows
+    from .maze_stats import hierarchical_paired_diff, paired_diff, per_seed_paired_effects, per_seed_table, route_rows
 
     rows_a: list[dict] = []
     rows_b: list[dict] = []
@@ -440,6 +440,15 @@ def _paired_stats_checks() -> None:
     second = paired_diff(varied_b, rows_a, "excess_steps", t=1, rng_seed=7)
     assert first == second, "same rng_seed must reproduce identical CIs"
 
+    clustered = hierarchical_paired_diff(varied_b, rows_a, "excess_steps", t=1, n_boot=500, rng_seed=7)
+    clustered_repeat = hierarchical_paired_diff(varied_b, rows_a, "excess_steps", t=1, n_boot=500, rng_seed=7)
+    assert clustered == clustered_repeat, "clustered bootstrap must be reproducible for a fixed seed"
+    assert clustered["n_pairs"] == 12 and clustered["n_seeds"] == 2, clustered
+    assert abs(clustered["mean_diff"] - 11.5) < 1e-9 and clustered["ci_lo"] > 0.0, clustered
+
+    seed_effects = per_seed_paired_effects(varied_b, rows_a, ["excess_steps"], t=1)
+    assert [(row["seed"], row["mean_diff"]) for row in seed_effects] == [("0", 10.0), ("1", 13.0)]
+
     seed_table = per_seed_table(rows_a + rows_b)
     assert {(row["condition"], row["seed"]) for row in seed_table} == {("A", "0"), ("A", "1"), ("B", "0"), ("B", "1")}
     assert all(row["n_routes"] == 6 for row in seed_table)
@@ -455,7 +464,7 @@ def _maze_stats_cli_checks() -> None:
     out = Path("./.sec_mock_runs/p0_stats")
     shutil.rmtree(out, ignore_errors=True)
     stats_main(["--out-dir", str(out), "--baseline", "frozen", "--n-boot", "500"])
-    for name in ("paired_stats.csv", "per_seed.csv", "stats_report.md"):
+    for name in ("paired_stats.csv", "per_seed.csv", "per_seed_paired_effects.csv", "stats_report.md"):
         assert (out / name).exists(), f"missing {name}"
     report = (out / "stats_report.md").read_text(encoding="utf-8")
     assert "shared_reviewer" in report and "Per-Seed Means" in report

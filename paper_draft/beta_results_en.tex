@@ -126,6 +126,31 @@ $2.3\times$ relative to append. The top-1 retrieval share rises in step, but thi
 consequence of the smaller pool rather than an independent channel; the load-bearing evidence is
 the direct pool-size and distinct-injection counts.
 
+\subsection{E4: long-horizon stress test (exploratory)}
+
+To ask whether the write-side harm saturates, deepens, or self-heals over a longer feedback
+horizon, we extend the four-agent shared arms to $T{=}10$ (three seeds, heldout 12, frozen and
+shared-append included as controls; not gate-bound, per the preregistration). Relative to frozen,
+shared-consolidated's degradation is present at every checkpoint we tested ($t=3,6,9$) and does
+not narrow: success drops $-0.174$, $-0.146$, $-0.257$ (all CIs exclude zero), and loop rate rises
+$+0.083$, $+0.083$, $+0.118$ (all CIs exclude zero), with the final round the worst of the three.
+A stricter within-condition test---comparing each condition's own last three rounds to its first
+three (excluding the warm-up round $t{=}0$)---finds no significant self-trend for
+shared-consolidated on any of six endpoints: the gap opens early and persists at a noisy plateau
+rather than provably deepening. The append arm, in contrast, shows a significant within-condition
+\emph{improvement} over the same horizon (cost ratio $-0.079$, excess steps $-3.50$, stagnation
+$-0.026$, max revisits $-0.340$, all CIs exclude zero) and by $t{=}9$ is significantly cheaper than
+frozen on cost ratio, excess steps, and max revisits---consistent with a write protocol whose
+strategy supply is not compressed continuing to benefit from accumulation. Splitting
+shared-consolidated's within-condition trend by seed exposes heterogeneity the pooled estimate
+hides. Seed 1 is the only seed with a significant late-vs-early decline in success
+($-0.097$, CI excludes zero), but its round-wise trajectory oscillates rather than falling
+monotonically. Seed 2 has the most severe round-wise trajectory, ending at success $0.17$ and
+loop rate $0.46$, although its late-vs-early success CI still includes zero. Seed 0 shows no
+significant decline. The pooled ``no significant further drift'' verdict is therefore a mean over
+a mixed population, not evidence that every instance is equally stable; we flag this as a target
+for external-validity follow-up rather than a settled claim.
+
 \section{The Failure Is Silent}
 
 Figure~\ref{fig:fig1} shows the mechanism schematic and a case study mined from the runs: the
@@ -136,6 +161,7 @@ to the same cell, and a detected loop---yet every route is legal and every arm s
 goal. This is the ant-mill signature: not a false belief, but a locally plausible correction
 signal, reinforced through consensus writing, that composes into a globally wasteful cycle.
 
+\clearpage
 \section{Summary of Claims}
 
 \begin{itemize}[leftmargin=1.4em]
@@ -147,6 +173,10 @@ consolidation is the most reproducible degrading arm across seeds (E2).
 efficiency gap (E2 boundary).
 \item The harm is not read-side usage-weighted retrieval (null dose-response; E3) but write-side
 consolidation that compresses the active strategy supply (mechanism audit).
+\item Extending to a longer horizon ($T{=}10$), the consolidation harm persists without provable
+further deepening at the population level. Per-seed decomposition separates one significant
+late-vs-early decline from a different, more extreme trajectory whose CI remains inconclusive
+(E4, exploratory).
 \end{itemize}
 
 % ---------------------------------------------------------------- figures

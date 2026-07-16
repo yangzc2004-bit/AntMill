@@ -1,0 +1,64 @@
+{
+  "id": "xjq_local_wheelhouse_infrastructure_fix_01",
+  "date": "2026-07-14",
+  "scope": "xjq dependency installation only",
+  "trigger": {
+    "run": "runs_scbench_moa_kimi_xjq_cp2_recursive_self_report_manager_depth5_step28_r1_20260714",
+    "arm": "recursive_self_report_synthesis-592880a246b64d448fe56008d22d1c77",
+    "layer": 4,
+    "workers": 3,
+    "failure": "uv pip install exceeded the native MiniSWE 30-second setup-command timeout",
+    "model_calls": 0,
+    "model_cost": 0.0,
+    "interpretable_outcomes": 0
+  },
+  "followup_trigger": {
+    "layer": 5,
+    "workers": 3,
+    "failure": "The same pre-model setup timeout recurred before the complete pytest tool wheelhouse was activated.",
+    "model_calls": 0,
+    "model_cost": 0.0,
+    "interpretable_outcomes": 0
+  },
+  "repair": {
+    "method": "Mount a read-only local wheelhouse and resolve the unchanged xjq requirements with --no-index --find-links.",
+    "requirements": [
+      "lxml",
+      "cssselect"
+    ],
+    "wheels": [
+      {
+        "name": "lxml-6.1.1-cp312-cp312-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+        "bytes": 5240367,
+        "sha256": "ebe6af670449830d6d9b752c256a983291c766a1365ba5d5460048f9e33a7818"
+      },
+      {
+        "name": "cssselect-1.4.0-py3-none-any.whl",
+        "bytes": 18541,
+        "sha256": "7080f0e7c096c3b07353292ca4cbd1af788d2067cdd5b2ed735721bdd7ca82b3"
+      }
+    ],
+    "evaluation_tool_wheelhouse": {
+      "file_count": 20,
+      "total_bytes": 8262335,
+      "sorted_name_and_sha256_manifest_hash": "793e86fe612e2f06019924e5fa9b5a732b22eade3220b890357db8c6a7f21d88",
+      "packages": "pytest 9.1.1 plus the exact pytest-json-ctrf, pytest-json-report, pytest-timeout, jsonschema, deepdiff, lxml, and transitive wheels resolved on 2026-07-14"
+    },
+    "activation_guard": "Only xjq runs with all 20 exact wheel filenames present use UV_OFFLINE=1 and the read-only local wheelhouse.",
+    "failed_attempt_handling": "A layer directory is archived and rerun only when logs show the dependency TimeoutExpired and total_cost=0.0."
+  },
+  "unchanged": [
+    "model",
+    "endpoint",
+    "prompt",
+    "MOA topology",
+    "manager state",
+    "action budget",
+    "benchmark tests",
+    "requirements names",
+    "target hash",
+    "scoring",
+    "degradation thresholds"
+  ],
+  "interpretation": "This is an infrastructure-only exact rerun. The failed layer-4 and layer-5 attempts contain no model response and are excluded from performance analysis."
+}

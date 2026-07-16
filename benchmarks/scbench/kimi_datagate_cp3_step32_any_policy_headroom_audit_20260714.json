@@ -1,0 +1,63 @@
+{
+  "status": "rejected_action_boundary_censored",
+  "date": "2026-07-14",
+  "config": "benchmarks/scbench/kimi_datagate_cp3_step32_any_policy_calibration_config.json",
+  "run_root": "r_dgcp3a_20260714",
+  "arm_id": "no_transfer-34012cbeb7754bc6a3c503b4ec63849f",
+  "model": "kimi-k2.6",
+  "problem": "datagate",
+  "pass_policy": "any",
+  "per_checkpoint_action_budget": 32,
+  "checkpoints": [
+    {
+      "checkpoint": 1,
+      "core": "4/4",
+      "all": "47/50",
+      "normalized_all": 0.94,
+      "action_steps": 15,
+      "completion_step": 15,
+      "infrastructure_failure": false,
+      "test_collection_hash": "7d29fc29e8d8b842c7ec9afca23ffb25047c3fe4e94883a2a00bb6f9ac5db37f"
+    },
+    {
+      "checkpoint": 2,
+      "core": "7/9",
+      "all": "116/122",
+      "normalized_all": 0.9508196721311475,
+      "action_steps": 15,
+      "completion_step": 15,
+      "infrastructure_failure": false,
+      "test_collection_hash": "f37dac8cf61b4be3bdff4351234ec6432f9742818a7b7630a76e3393f976f07f"
+    },
+    {
+      "checkpoint": 3,
+      "core": "5/5",
+      "all": "166/174",
+      "normalized_all": 0.9540229885057471,
+      "action_steps": 32,
+      "completion_step": null,
+      "last_action": "Read datagate.py lines 268-340 after a successful local import check.",
+      "infrastructure_failure": false,
+      "test_collection_hash": "95b396ad0c1c443f83d852a8603ed230992066873976b9d44357835b4eb6bb57"
+    }
+  ],
+  "gate_audit": {
+    "genuine_checkpoint_3_attempt": true,
+    "checkpoint_3_core_at_least_half": true,
+    "checkpoint_3_all_at_least_half": true,
+    "checkpoint_3_completed_before_boundary": false,
+    "checkpoint_3_strong_score_band": true,
+    "reason": "The checkpoint-3 agent remained active at action 32 and never emitted the explicit completion marker. Its strong score does not remove fixed-budget boundary censoring."
+  },
+  "interpretation": {
+    "capability": "Kimi-K2.6 produced a strong checkpoint-3 solution under the 32-action budget.",
+    "resource_validity": "The control lacks the pre-frozen completion headroom required to attribute a later treatment boundary or score loss to recursive experience transfer.",
+    "iteration_diagnosis": "This is direct evidence that too few within-checkpoint actions can censor an otherwise strong solution. It is not evidence that adding more MAS feedback layers would create a degradation curve."
+  },
+  "decision": {
+    "advance_to_treatment": false,
+    "reason": "The prospective reject rule explicitly stops datagate when the genuine checkpoint-3 attempt is action-boundary censored.",
+    "post_outcome_budget_tuning_prohibited": true,
+    "next_step": "Select a previously unexposed sequential task whose terminal checkpoint has both score headroom and explicit completion headroom under a frozen budget."
+  }
+}

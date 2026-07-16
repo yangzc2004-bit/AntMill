@@ -1,0 +1,55 @@
+{
+  "status": "engineering_replication_frozen_before_new_outcomes",
+  "model": "deepseek-v4-flash",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "agent": "SCBench native MiniSWE",
+  "problem": "xjq",
+  "checkpoint_limit": 1,
+  "worker_count": 2,
+  "num_layers": 3,
+  "step_limit_per_worker": 8,
+  "temperature": 0.2,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 4000,
+  "scbench_seed": 42,
+  "sampling_note": "The provider does not expose a controlled sampling seed; repeats are independent API trajectories at temperature 0.2.",
+  "execution": {
+    "parallelism": "two workers within a layer; arms and layers sequential",
+    "replicates": [
+      {
+        "replicate": 1,
+        "source": "existing_pilot",
+        "report": "runs_scbench_moa_curve_pilot/curve_report.json",
+        "mode_order": [
+          "no_transfer",
+          "source_success",
+          "recipient_credit"
+        ]
+      },
+      {
+        "replicate": 2,
+        "source": "new",
+        "mode_order": [
+          "source_success",
+          "recipient_credit",
+          "no_transfer"
+        ]
+      },
+      {
+        "replicate": 3,
+        "source": "new",
+        "mode_order": [
+          "recipient_credit",
+          "no_transfer",
+          "source_success"
+        ]
+      }
+    ]
+  },
+  "decision_rule": {
+    "performance_signal": "Compare layer-wise normalized Core score by mode across all three repeats.",
+    "complexity_signal": "Compare received experience characters and total input tokens across layers.",
+    "causal_caution": "Treat a single failed worker as stochastic unless the direction repeats in at least two of three replicates."
+  },
+  "interpretation": "Engineering replication for go/no-go decisions; not final manuscript evidence."
+}

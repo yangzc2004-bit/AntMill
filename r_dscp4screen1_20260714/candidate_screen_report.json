@@ -1,0 +1,93 @@
+{
+  "screen_config": {
+    "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+    "date_frozen": "2026-07-14",
+    "experiment_role": "unused_four_checkpoint_workflow_screen_for_three_feedback_updates",
+    "endpoint": "https://api.modelarts-maas.com/plan/v2",
+    "model": "deepseek-v4-flash",
+    "api_model": "deepseek-v4-flash",
+    "worker_count": 1,
+    "num_layers": 1,
+    "checkpoint_limit": 4,
+    "step_limit_per_worker": 32,
+    "pass_policy": "any",
+    "experience_char_limit_per_source": 10000,
+    "candidates": [
+      {
+        "problem": "textdrop",
+        "reason": "A six-checkpoint web-service workflow with a previously observed tractable checkpoint 1, but no DeepSeek recursive-treatment outcomes."
+      },
+      {
+        "problem": "file_merger",
+        "reason": "A four-checkpoint data-processing CLI whose checkpoint 1 previously retained non-perfect headroom, but no DeepSeek recursive-treatment outcomes."
+      },
+      {
+        "problem": "file_backup",
+        "reason": "A four-checkpoint stateful backup workflow that supplies exactly three prospective manager updates and has no DeepSeek recursive-treatment outcomes."
+      }
+    ],
+    "benchmark_isolation": {
+      "remove_reference_solutions": true,
+      "remove_analysis_files": true,
+      "remove_later_checkpoint_specs_and_tests": true,
+      "prohibit_catalog_access_in_prompt": true,
+      "automatic_clean_revaluation": true,
+      "offline_wheelhouse": true
+    },
+    "selection_rule": {
+      "advance": "A candidate has no infrastructure failure, every checkpoint 1 through 4 explicitly completes before action 32, and checkpoint 4 normalized Core and all-test scores are each at least 0.50.",
+      "headroom": "Checkpoint 4 must fail at least one collected test or one Core test.",
+      "tie_break": "Prefer greater checkpoint-4 all-test headroom, then fewer checkpoint-4 actions, then the shorter cumulative public specification.",
+      "reject": "Reject a candidate if any checkpoint is action-boundary censored, has infrastructure failure, or checkpoint 4 scores below 0.50 on either normalized measure.",
+      "abandon": "If no candidate qualifies, do not run a four-checkpoint DeepSeek recursive-manager contrast under this budget.",
+      "no_budget_retuning": true,
+      "no_checkpoint_skipping": true
+    },
+    "formal_if_valid": {
+      "arms": [
+        "no_transfer",
+        "recursive_self_report_synthesis"
+      ],
+      "worker_count_per_arm_initial_pilot": 1,
+      "checkpoint_sequence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "minimum_manager_updates": 3,
+      "parallel_arms": true,
+      "scores_withheld_from_manager": true,
+      "source_admission": "workflow self-reported successful completion",
+      "manager_state": "one recursively revised shared playbook",
+      "replication_policy": "If treatment-control all-test gaps are negative at checkpoints 3 and 4, add two identical independent replicates. Otherwise stop the selected model-task-provider pair."
+    },
+    "provenance": {
+      "failed_prior_pair": "benchmarks/scbench/deepseek_maas_execution_server_cp6_longest_prefix_calibration_audit_20260714.json",
+      "candidate_choice_uses_only_public_specs_and_no_transfer_history": true,
+      "no_deepseek_treatment_outcomes_for_candidates_seen_before_freeze": true,
+      "no_cross_model_outcome_splicing": true
+    }
+  },
+  "config_path": "D:\\antmill\\benchmarks\\scbench\\deepseek_maas_cp4_long_sequence_candidate_screen_config.json",
+  "results": [
+    {
+      "problem": "textdrop",
+      "reason": "A six-checkpoint web-service workflow with a previously observed tractable checkpoint 1, but no DeepSeek recursive-treatment outcomes.",
+      "status": "failed",
+      "error": "RuntimeError: MiniSWE worker worker_1 layer 1 failed with exit code 137. See D:\\antmill\\r_dscp4screen1_20260714\\no_transfer-5cf9aad2b716410fbc2e4960d0b38a8a\\workers\\worker_1\\layer_1."
+    },
+    {
+      "problem": "file_merger",
+      "reason": "A four-checkpoint data-processing CLI whose checkpoint 1 previously retained non-perfect headroom, but no DeepSeek recursive-treatment outcomes.",
+      "status": "failed",
+      "error": "RuntimeError: MiniSWE worker worker_1 layer 1 failed with exit code 1. See D:\\antmill\\r_dscp4screen1_20260714\\no_transfer-cd2141632d7347ed850a4f8db391fa11\\workers\\worker_1\\layer_1."
+    },
+    {
+      "problem": "file_backup",
+      "reason": "A four-checkpoint stateful backup workflow that supplies exactly three prospective manager updates and has no DeepSeek recursive-treatment outcomes.",
+      "status": "failed",
+      "error": "RuntimeError: MiniSWE worker worker_1 layer 1 failed with exit code 137. See D:\\antmill\\r_dscp4screen1_20260714\\no_transfer-5b2c705d79fc42eeb9b48704af0da8ff\\workers\\worker_1\\layer_1."
+    }
+  ]
+}

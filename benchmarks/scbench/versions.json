@@ -1,0 +1,7 @@
+{
+  "runner_repository": "https://github.com/SprocketLab/slop-code-bench.git",
+  "runner_commit": "13de1a7a6b8b3dc5cc532a0c322a0997afa5bec7",
+  "problems_repository": "https://github.com/gabeorlanski/scb-problems.git",
+  "problems_commit": "ef6a9dd13911566b6b01075ca121758c9f7b5c5f",
+  "image": "antmill/scbench-runner:13de1a7a"
+}

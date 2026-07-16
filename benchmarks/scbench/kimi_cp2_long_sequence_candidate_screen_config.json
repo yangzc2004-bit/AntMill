@@ -1,0 +1,38 @@
+{
+  "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "model": "kimi-k2.6",
+  "worker_count": 1,
+  "num_layers": 1,
+  "checkpoint_limit": 2,
+  "step_limit_per_worker": 16,
+  "experience_char_limit_per_source": 10000,
+  "candidates": [
+    {
+      "problem": "recli",
+      "reason": "Eight-checkpoint hierarchical CLI framework with deterministic command-dispatch behavior."
+    },
+    {
+      "problem": "meshctl",
+      "reason": "Eight-checkpoint declarative YAML CLI with progressively richer resource and validation behavior."
+    },
+    {
+      "problem": "forge",
+      "reason": "Eight-checkpoint resource-broker CLI with incremental state-management and planning behavior."
+    }
+  ],
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": true
+  },
+  "selection_rule": {
+    "advance": "A candidate passes every checkpoint-2 Core test without infrastructure failure.",
+    "conditional": "A candidate with at least 0.50 normalized checkpoint-2 Core may receive one second fixed-setting sample.",
+    "reject": "A candidate below 0.50 normalized checkpoint-2 Core is too hard for strict verified-source sequential feedback.",
+    "tie_break": "Prefer more all-test headroom, then shorter cumulative public specifications through checkpoint 2."
+  }
+}

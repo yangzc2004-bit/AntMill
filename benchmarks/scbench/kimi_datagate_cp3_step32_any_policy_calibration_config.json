@@ -1,0 +1,44 @@
+{
+  "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "model": "kimi-k2.6",
+  "worker_count": 1,
+  "num_layers": 1,
+  "checkpoint_limit": 3,
+  "step_limit_per_worker": 32,
+  "pass_policy": "any",
+  "experience_char_limit_per_source": 10000,
+  "candidates": [
+    {
+      "problem": "datagate",
+      "reason": "Prospective continuation calibration using SCBench's official default pass policy so partial earlier checkpoints do not prevent observation of the target checkpoint."
+    }
+  ],
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": true,
+    "offline_wheelhouse": "benchmarks/scbench/kimi_datagate_local_wheelhouse_amendment_20260714.json"
+  },
+  "protocol_amendment": {
+    "invalid_prior_run": "r_dgcp3_20260714",
+    "invalid_prior_arm": "no_transfer-153436bdcf854044b8323f5a36e00b8c",
+    "failure": "Checkpoint 2 scored 3/9 Core and the hard-coded all-core-cases gate stopped the native run before checkpoint 3. The reported clean checkpoint-3 score therefore evaluated a checkpoint-2 snapshot and is not a checkpoint-3 agent attempt.",
+    "repair": "Set infer-problem pass_policy to the documented official default 'any'. This changes only checkpoint progression; all tests, evaluations, action budgets, prompts, and target scores remain unchanged.",
+    "treatment_outcomes_seen": false
+  },
+  "headroom_rule": {
+    "advance": "The agent genuinely attempts checkpoint 3, checkpoint 3 has no infrastructure failure, normalized Core and all-test scores are each at least 0.50, and checkpoint 3 explicitly completes before action 32.",
+    "strong_advance": "Checkpoint-3 normalized all-test score is between 0.70 and 0.98.",
+    "reject": "Stop datagate if the genuine checkpoint-3 attempt is action-boundary censored or either normalized score is below 0.50.",
+    "formal_if_valid": "Freeze a matched pass_policy=any three-layer no_transfer versus recursive_self_report_synthesis pilot with two workers per arm."
+  },
+  "outcome_plan": {
+    "primary": "Mean normalized all-test score by checkpoint.",
+    "secondary": "Mean normalized Core score, exact failure overlap, completion rate, and input-token growth.",
+    "scores_withheld_from_manager": true
+  }
+}

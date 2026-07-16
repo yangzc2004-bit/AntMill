@@ -1,0 +1,6 @@
+/opt/scbench/.venv/lib/python3.12/site-packages/structlog/stdlib.py:1160: UserWarning: Remove `format_exc_info` from your processor chain if you want pretty exceptions.
+  ed = p(logger, meth_name, ed)  # type: ignore[arg-type]
+/opt/scbench/.venv/lib/python3.12/site-packages/structlog/stdlib.py:1160: UserWarning: Remove `format_exc_info` from your processor chain if you want pretty exceptions.
+  ed = p(logger, meth_name, ed)  # type: ignore[arg-type]
+/opt/scbench/.venv/lib/python3.12/site-packages/structlog/stdlib.py:1160: UserWarning: Remove `format_exc_info` from your processor chain if you want pretty exceptions.
+  ed = p(logger, meth_name, ed)  # type: ignore[arg-type]

@@ -46,6 +46,44 @@ def _effective_response_text(content: str, reasoning: Any, tag: str) -> str:
     return content
 
 
+def _percentile(values: list[float], pct: float) -> float:
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    if len(ordered) == 1:
+        return float(ordered[0])
+    pos = (len(ordered) - 1) * pct
+    lo = int(pos)
+    hi = min(lo + 1, len(ordered) - 1)
+    frac = pos - lo
+    return float(ordered[lo] * (1.0 - frac) + ordered[hi] * frac)
+
+
+def _with_thinking_control(messages: list[Message], cfg: Config) -> list[Message]:
+    if not cfg.disable_thinking:
+        return messages
+    controlled = [dict(m) for m in messages]
+    marker = (
+        "\n\n/no_think\n"
+        "Do not include hidden or visible chain-of-thought. Return only the requested final format."
+    )
+    for m in reversed(controlled):
+        if m.get("role") == "user":
+            if "/no_think" not in m.get("content", ""):
+                m["content"] = f"{m['content']}{marker}"
+            break
+    return controlled
+
+
+def _extra_body(cfg: Config) -> dict[str, Any]:
+    body = dict(cfg.llm_extra_body or {})
+    if cfg.disable_thinking:
+        # Several OpenAI-compatible Qwen endpoints honor this extra body field;
+        # the /no_think prompt marker above is the preregistered fallback.
+        body.setdefault("enable_thinking", False)
+    return body
+
+
 @dataclass
 class LLMStats:
     network_calls: int = 0
@@ -58,6 +96,8 @@ class LLMStats:
     cached_prompt_tokens: int = 0
     cached_completion_tokens: int = 0
     cached_total_tokens: int = 0
+    retry_count: int = 0
+    network_latency_sec: list[float] = field(default_factory=list)
     call_records: list[dict[str, Any]] = field(default_factory=list)
 
     @property
@@ -94,7 +134,11 @@ class LLMStats:
             "cached_total_tokens": self.cached_total_tokens,
             "trace_total_tokens": self.total_tokens + self.cached_total_tokens,
             "errors": self.errors,
+            "retry_count": self.retry_count,
             "content_filter_hits": self.content_filter_hits,
+            "latency_p50_sec": _percentile(self.network_latency_sec, 0.50),
+            "latency_p95_sec": _percentile(self.network_latency_sec, 0.95),
+            "latency_n": len(self.network_latency_sec),
         }
 
 
@@ -129,6 +173,9 @@ class LLMClient:
             "temperature": temp,
             "max_tokens": max_tokens,
         }
+        extra_body = _extra_body(self.cfg)
+        if extra_body:
+            payload["extra_body"] = extra_body
         if cache_salt:
             # Execution-context salt (round/task/agent/step). Without it, identical prompts
             # across rounds or conditions replay one cached sample and fake the dynamics.
@@ -147,11 +194,13 @@ class LLMClient:
         cache_salt: str = "",
     ) -> str:
         model_name = model or self.cfg.model
-        key = self._key(model=model_name, messages=messages, temp=temp, max_tokens=max_tokens, cache_salt=cache_salt)
+        base_messages = _with_thinking_control(messages, self.cfg)
+        key = self._key(model=model_name, messages=base_messages, temp=temp, max_tokens=max_tokens, cache_salt=cache_salt)
         lock = self._locks.setdefault(key, asyncio.Lock())
         async with lock:
             cache_file = self.cache_dir / f"{key}.json"
-            if cache_file.exists():
+            cache_enabled = self.cfg.cache_policy != "off"
+            if cache_enabled and cache_file.exists():
                 record = json.loads(cache_file.read_text(encoding="utf-8"))
                 self.stats.cache_hits += 1
                 self.stats.add_cached_usage(record.get("usage", {}))
@@ -167,16 +216,22 @@ class LLMClient:
                 delay = 1.0
                 last_error: Exception | None = None
                 content_filtered = False
+                extra_body = _extra_body(self.cfg)
                 for attempt in range(1, self.cfg.max_retries + 1):
-                    request_messages = _perturb_messages(messages, attempt) if content_filtered else messages
+                    request_messages = _perturb_messages(base_messages, attempt) if content_filtered else base_messages
                     try:
                         await self._throttle()
-                        response = await self.client.chat.completions.create(
-                            model=model_name,
-                            messages=request_messages,
-                            temperature=temp,
-                            max_tokens=max_tokens,
-                        )
+                        request_started = time.monotonic()
+                        kwargs: dict[str, Any] = {
+                            "model": model_name,
+                            "messages": request_messages,
+                            "temperature": temp,
+                            "max_tokens": max_tokens,
+                        }
+                        if extra_body:
+                            kwargs["extra_body"] = extra_body
+                        response = await self.client.chat.completions.create(**kwargs)
+                        latency_sec = time.monotonic() - request_started
                         content = response.choices[0].message.content or ""
                         reasoning = getattr(response.choices[0].message, "reasoning_content", None)
                         usage = response.usage.model_dump() if response.usage else {}
@@ -185,28 +240,44 @@ class LLMClient:
                             "tag": tag,
                             "request": {
                                 "model": model_name,
-                                "messages": messages,
+                                "messages": base_messages,
                                 "temperature": temp,
                                 "max_tokens": max_tokens,
+                                "extra_body": extra_body,
                             },
                             "response": {
                                 "content": content,
                                 "reasoning_content": reasoning,
                             },
                             "usage": usage,
+                            "latency_sec": latency_sec,
+                            "attempts": attempt,
                             "ts": time.time(),
                             "cached": False,
                         }
-                        tmp_file = cache_file.with_suffix(".tmp")
-                        tmp_file.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
-                        tmp_file.replace(cache_file)
+                        if cache_enabled:
+                            tmp_file = cache_file.with_suffix(".tmp")
+                            tmp_file.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding="utf-8")
+                            tmp_file.replace(cache_file)
                         self.stats.network_calls += 1
                         self.stats.add_usage(usage)
-                        self.stats.call_records.append({"key": key, "tag": tag, "cached": False, "usage": usage})
+                        self.stats.network_latency_sec.append(latency_sec)
+                        self.stats.call_records.append(
+                            {
+                                "key": key,
+                                "tag": tag,
+                                "cached": False,
+                                "usage": usage,
+                                "latency_sec": latency_sec,
+                                "attempts": attempt,
+                            }
+                        )
                         return _effective_response_text(content, reasoning, tag)
                     except Exception as exc:  # noqa: BLE001
                         last_error = exc
                         self.stats.errors += 1
+                        if attempt < self.cfg.max_retries:
+                            self.stats.retry_count += 1
                         if _is_content_filter_error(exc):
                             self.stats.content_filter_hits += 1
                             content_filtered = True

@@ -1,0 +1,42 @@
+{
+  "status": "engineering_depth_extension_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "base_config": "benchmarks/scbench/kimi_log_query_cp1_bootstrapped_cumulative_depth5_config.json",
+  "run_root": "runs_scbench_moa_kimi_log_query_cp1_bootstrapped_cumulative_depth5_20260714",
+  "arm_id": "cumulative_success-c62abb3ab42d41bdb5c57fc159f292ba",
+  "completed_layers": 5,
+  "target_layers": 10,
+  "observed_before_extension": {
+    "mean_core_layers_1_to_5": [
+      0.9333333333,
+      0.9333333333,
+      0.9,
+      0.9666666667,
+      0.9666666667
+    ],
+    "reference_count_layers_1_to_5": [
+      3,
+      4,
+      5,
+      5,
+      7
+    ],
+    "layer_5_input_token_ratio_to_control": 3.291489794,
+    "interpretation": "Depth 5 falsified the registered degradation endpoint, but the cumulative bundle had not converged and continued to grow."
+  },
+  "extension_rationale": "Unlike the bounded recursive manager, cumulative success has no fixed-size state. Extending only the already running treatment from layers 6 through 10 is an economical exploratory test of delayed context-complexity thresholds. The original five-layer decision remains unchanged.",
+  "integrity": {
+    "resume_exact_arm": true,
+    "rerun_layers_1_to_5": false,
+    "same_workers_model_task_and_step_limit": true,
+    "same_frozen_bootstrap_sources": true,
+    "same_strict_10_of_10_source_filter": true
+  },
+  "exploratory_signals": {
+    "delayed_terminal_drop": "Layer-10 mean Core is at least 0.20 below the matching no-transfer layer-5 mean of 0.90.",
+    "within_extension_drop": "Layer-10 mean Core is at least 0.20 below the maximum treatment mean over layers 5 through 9.",
+    "monotone_tail": "At least two transitions from layers 6 through 10 strictly decrease.",
+    "complexity": "Reference count and received experience characters continue increasing beyond layer 5.",
+    "interpretation_rule": "A signal is exploratory because depth 10 was selected after observing the five-layer endpoint; any positive result requires a fresh preregistered depth-10 replication."
+  }
+}

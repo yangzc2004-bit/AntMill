@@ -1,0 +1,66 @@
+{
+  "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "experiment_role": "deepseek_longer_feedback_depth_no_transfer_calibration",
+  "rationale": "Kimi-K2.6 became boundary-censored at execution_server checkpoint 4, leaving only two recursive feedback updates. DeepSeek-v4-flash is already validated on the same ModelArts MaaS provider and has no execution_server treatment output. This calibration changes only the model and prospectively searches for a naturally completed prefix of at least four checkpoints before any recursive-manager contrast is run.",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "model": "deepseek-v4-flash",
+  "api_model": "deepseek-v4-flash",
+  "worker_count": 1,
+  "num_layers": 1,
+  "checkpoint_limit": 6,
+  "step_limit_per_worker": 32,
+  "pass_policy": "any",
+  "experience_char_limit_per_source": 10000,
+  "candidates": [
+    {
+      "problem": "execution_server",
+      "reason": "A six-checkpoint real coding workflow can expose three to five recursive manager updates if the no-transfer baseline remains naturally completable."
+    }
+  ],
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": true,
+    "offline_wheelhouse": true
+  },
+  "prefix_selection_rule": {
+    "candidates": [
+      6,
+      5,
+      4
+    ],
+    "select": "Choose the longest prefix k for which every checkpoint 1 through k has no infrastructure failure, every checkpoint explicitly completes before action 32, and checkpoint k normalized Core and all-test scores are each at least 0.50.",
+    "headroom": "The terminal checkpoint must fail at least one collected test or one Core test. If it is perfect, step back to the longest earlier qualifying non-perfect checkpoint.",
+    "abandon": "If no prefix of at least 4 qualifies, do not run the DeepSeek recursive manager contrast on execution_server.",
+    "no_budget_retuning": true
+  },
+  "formal_if_valid": {
+    "arms": [
+      "no_transfer",
+      "recursive_self_report_synthesis"
+    ],
+    "worker_count_per_arm_initial_pilot": 1,
+    "minimum_manager_updates": 3,
+    "replication_policy": "If treatment-control all-test gaps are negative at both final checkpoints, add two identical independent replicates. Otherwise stop this model-task-provider pair.",
+    "parallel_arms": true,
+    "scores_withheld_from_manager": true,
+    "source_admission": "workflow self-reported successful completion",
+    "manager_state": "one recursively revised shared playbook"
+  },
+  "provider_validation": {
+    "prior_valid_native_runs": [
+      "runs_scbench_moa_deepseek_cfgpipe_cp1_recursive_self_report_probe_depth5_r1_20260714",
+      "runs_scbench_moa_deepseek_code_search_sequential_cp1_cp3_budget120_probe_r1_20260714"
+    ],
+    "model_query_failures_in_cfgpipe_depth5_audit": 0
+  },
+  "calibration_provenance": {
+    "kimi_provider_specific_audit": "benchmarks/scbench/kimi_maas_execution_server_cp6_longest_prefix_calibration_audit_20260714.json",
+    "kimi_formal_audit": "benchmarks/scbench/kimi_maas_execution_server_sequential_cp1_cp3_recursive_self_report_pilot_audit_20260714.json",
+    "no_deepseek_execution_server_treatment_outcomes_seen_before_freeze": true,
+    "no_cross_model_outcome_splicing": true
+  }
+}

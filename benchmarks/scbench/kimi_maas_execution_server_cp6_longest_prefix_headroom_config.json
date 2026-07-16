@@ -1,0 +1,70 @@
+{
+  "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "experiment_role": "provider_specific_longer_feedback_depth_no_transfer_calibration",
+  "rationale": "The Kimi Coding calibration was censored by a billing-cycle quota at checkpoint 4. ModelArts MaaS Kimi passed a fresh native MiniSWE tool-call probe, so this is a new provider-specific run from checkpoint 1 rather than a continuation or splice.",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "model": "kimi-k2.6-maas",
+  "api_model": "kimi-k2.6",
+  "worker_count": 1,
+  "num_layers": 1,
+  "checkpoint_limit": 6,
+  "step_limit_per_worker": 32,
+  "pass_policy": "any",
+  "experience_char_limit_per_source": 10000,
+  "candidates": [
+    {
+      "problem": "execution_server",
+      "reason": "Six-checkpoint workflow recalibrated end to end on the MaaS provider before any MaaS execution_server treatment output exists."
+    }
+  ],
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": true,
+    "offline_wheelhouse": true
+  },
+  "prefix_selection_rule": {
+    "candidates": [
+      6,
+      5,
+      4,
+      3
+    ],
+    "select": "Choose the longest prefix k for which every checkpoint 1 through k has no infrastructure failure, checkpoints 1 through k-1 explicitly complete before action 32, checkpoint k explicitly completes before action 32, and checkpoint k normalized Core and all-test scores are each at least 0.50.",
+    "headroom": "The terminal checkpoint must fail at least one collected test or one Core test. If it is perfect, step back to the longest earlier qualifying non-perfect checkpoint.",
+    "abandon": "If no prefix of at least 3 qualifies, do not run the MaaS recursive manager contrast on execution_server.",
+    "no_budget_retuning": true
+  },
+  "formal_if_valid": {
+    "arms": [
+      "no_transfer",
+      "recursive_self_report_synthesis"
+    ],
+    "worker_count_per_arm_initial_pilot": 1,
+    "replication_policy": "If treatment-control all-test gaps are negative at both final checkpoints, add two identical independent replicates. Otherwise stop this model-task-provider pair.",
+    "parallel_arms": true,
+    "scores_withheld_from_manager": true,
+    "source_admission": "workflow self-reported successful completion",
+    "manager_state": "one recursively revised shared playbook"
+  },
+  "provider_validation": {
+    "direct_chat_probe": "MAAS_OK",
+    "native_miniswe_probe_run": "r_kmaasp1_20260714/ffc7b49e02444686ae26ce842c6a316e",
+    "native_tool_calls": [
+      "ls -la",
+      "cat requirements.txt"
+    ],
+    "tool_return_codes": [
+      0,
+      0
+    ]
+  },
+  "calibration_provenance": {
+    "coding_quota_audit": "benchmarks/scbench/kimi_execution_server_cp6_quota_censoring_audit_20260714.json",
+    "no_maas_execution_server_treatment_outcomes_seen_before_freeze": true,
+    "no_cross_provider_outcome_splicing": true
+  }
+}

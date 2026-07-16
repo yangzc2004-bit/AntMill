@@ -1,0 +1,15 @@
+type: local
+name: python-reproducible
+environment:
+  include_os_env: true
+setup:
+  commands:
+    - cp /antmill/requirements.txt requirements.txt
+    - uv pip install --python /opt/scbench/.venv/bin/python -r requirements.txt
+  eval_commands:
+    - sh -lc "test -f pyproject.toml || uv init --name scbench-submission"
+    - uv add -r requirements.txt
+commands:
+  entry_file: "{entry_file}.py"
+  command: "uv run"
+  agent_command: "python"

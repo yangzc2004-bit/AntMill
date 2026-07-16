@@ -1,0 +1,6 @@
+{
+  "frozen_at": "2026-07-11T23:45:00+08:00",
+  "path": "prereg_phase_gamma_p3_execution.md",
+  "sha256": "C795F925E3E74E0F08D73EAA4450E7F5DBF5CDE48FFCB8546B39A9DB6A8C5447",
+  "rule": "No P3 smoke or formal outcome data may be generated before this freeze record."
+}

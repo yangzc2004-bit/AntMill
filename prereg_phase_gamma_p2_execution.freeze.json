@@ -1,0 +1,6 @@
+{
+  "frozen_at": "2026-07-11T09:13:23.5440215+08:00",
+  "path": "prereg_phase_gamma_p2_execution.md",
+  "sha256": "3542430384FE5FD3148E090A170485A894186AD101AC40BAABE307432688846F",
+  "rule": "No P2 smoke or formal outcome data may be generated before this freeze record."
+}

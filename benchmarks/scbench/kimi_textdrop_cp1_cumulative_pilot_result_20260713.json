@@ -1,0 +1,119 @@
+{
+  "status": "completed_stopped_by_frozen_rule",
+  "date": "2026-07-13",
+  "model": "kimi-k2.6",
+  "problem": "textdrop",
+  "checkpoint": 1,
+  "worker_count": 3,
+  "num_layers": 3,
+  "step_limit_per_worker": 12,
+  "run_root": "runs_scbench_moa_kimi_textdrop_cp1_cumulative_pilot_20260713_processfix",
+  "arms": {
+    "cumulative_success": {
+      "task_id": "cumulative_success-352b8aa27aba4c12adfe8aea236afa94",
+      "layers": [
+        {
+          "layer": 1,
+          "core_passed": [4, 0, 0],
+          "core_total_per_worker": 4,
+          "mean_core_fraction": 0.3333333333,
+          "strict_core_verified_sources": 1,
+          "input_tokens": 140260,
+          "received_results_per_worker": [0, 0, 0],
+          "received_experience_chars_per_worker": [0, 0, 0]
+        },
+        {
+          "layer": 2,
+          "core_passed": [4, 4, 4],
+          "core_total_per_worker": 4,
+          "mean_core_fraction": 1.0,
+          "strict_core_verified_sources": 3,
+          "input_tokens": 182244,
+          "received_results_per_worker": [1, 1, 1],
+          "received_experience_chars_per_worker": [12000, 12000, 12000]
+        },
+        {
+          "layer": 3,
+          "core_passed": [4, 4, 4],
+          "core_total_per_worker": 4,
+          "mean_core_fraction": 1.0,
+          "strict_core_verified_sources": 3,
+          "input_tokens": 417625,
+          "received_results_per_worker": [4, 4, 4],
+          "received_experience_chars_per_worker": [44262, 44262, 44262]
+        }
+      ]
+    },
+    "no_transfer": {
+      "task_id": "no_transfer-449aae19e3d245169bada96ee3936464",
+      "layers": [
+        {
+          "layer": 1,
+          "core_passed": [4, 0, 0],
+          "core_total_per_worker": 4,
+          "mean_core_fraction": 0.3333333333,
+          "input_tokens": 162521
+        },
+        {
+          "layer": 2,
+          "core_passed": [4, 4, 4],
+          "core_total_per_worker": 4,
+          "mean_core_fraction": 1.0,
+          "input_tokens": 159809
+        },
+        {
+          "layer": 3,
+          "core_passed": [4, 0, 4],
+          "core_total_per_worker": 4,
+          "mean_core_fraction": 0.6666666667,
+          "input_tokens": 190961
+        }
+      ]
+    }
+  },
+  "effects": {
+    "layer_1_cumulative_minus_control": 0.0,
+    "layer_2_cumulative_minus_control": 0.0,
+    "layer_3_cumulative_minus_control": 0.3333333333,
+    "cumulative_layer_1_to_layer_2": 0.6666666667,
+    "cumulative_layer_2_to_layer_3": 0.0,
+    "cumulative_peak_to_layer_3_decline": 0.0,
+    "layer_3_input_token_ratio_cumulative_over_control": 2.1869648776
+  },
+  "validity": {
+    "source_activation": true,
+    "control_headroom": true,
+    "target_consistency": true,
+    "integrity": true,
+    "evaluation_count": 18,
+    "checkpoint_core_total_values": [4],
+    "pytest_collected_values": [28],
+    "test_collection_hashes": [
+      "39e2b272d2e5b3124eb952c14e7efa6cfe23ac5245b06d4f14595a430abef91d"
+    ],
+    "infrastructure_failure_count": 0,
+    "nonempty_stderr_file_count": 0,
+    "assistant_bash_action_count": 188,
+    "assistant_actions_using_prohibited_benchmark_paths": 0,
+    "nonbenchmark_proc_process_management_actions": 2
+  },
+  "frozen_criteria": {
+    "primary_terminal_effect_at_least_0_20": false,
+    "within_arm_terminal_decline_at_least_0_20": false,
+    "at_least_one_post_transfer_decrease": false,
+    "complexity_support": true,
+    "all_required_criteria": false
+  },
+  "excluded_predecessor_run": {
+    "run_root": "runs_scbench_moa_kimi_textdrop_cp1_cumulative_pilot_20260713",
+    "status": "invalid_aborted",
+    "reason": "Agent-started background HTTP servers polluted marker collection and reclassified the 4 Core tests as 8 Core tests. Clean zero-model re-evaluation of the three layer-1 snapshots produced 4/4, 0/4, and 4/4 with the canonical test hash. The contaminated run was aborted before a complete treatment-control contrast and is excluded from all effects."
+  },
+  "interpretation": {
+    "degradation_curve": false,
+    "transient_degradation_signal": false,
+    "complexity_amplification": true,
+    "claim": "Cumulative verified-experience transfer increased layer-3 input tokens by 2.187 times relative to no transfer, but cumulative performance remained at 1.0 while the no-transfer control fell to 0.667.",
+    "decision": "Stop textdrop checkpoint 1 under the pre-registered falsification rule. Do not add source_success or replications for this candidate; move to the next independently screened candidate, cfgpipe checkpoint 1."
+  }
+}

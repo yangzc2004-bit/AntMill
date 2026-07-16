@@ -1,0 +1,97 @@
+{
+  "status": "three_replicates_completed",
+  "run_root": "runs_scbench_moa_kimi_database_migration_cp2_strict_pilot_20260713_rerun1",
+  "model": "kimi-k2.6",
+  "problem": "database_migration",
+  "checkpoint_limit": 2,
+  "worker_count": 2,
+  "num_layers": 2,
+  "step_limit_per_checkpoint": 12,
+  "replicates": [
+    {
+      "replicate": 1,
+      "treatment_activated": true,
+      "source_success_layer_1_mean_core": 0.5,
+      "no_transfer_layer_1_mean_core": 0.8333333333333333,
+      "source_success_layer_2_mean_core": 0.0,
+      "no_transfer_layer_2_mean_core": 0.0,
+      "layer_2_core_difference": 0.0,
+      "difference_in_differences": 0.3333,
+      "layer_2_input_token_percent": 26.87,
+      "layer_2_output_token_percent": 27.18,
+      "layer_2_duration_percent": 19.1
+    },
+    {
+      "replicate": 2,
+      "treatment_activated": true,
+      "source_success_layer_1_mean_core": 0.5,
+      "no_transfer_layer_1_mean_core": 0.5,
+      "source_success_layer_2_mean_core": 0.5,
+      "no_transfer_layer_2_mean_core": 0.0,
+      "layer_2_core_difference": 0.5,
+      "difference_in_differences": 0.5,
+      "layer_2_input_token_percent": 11.28,
+      "layer_2_output_token_percent": 7.73,
+      "layer_2_duration_percent": -1.91
+    },
+    {
+      "replicate": 3,
+      "treatment_activated": false,
+      "source_success_layer_1_mean_core": 0.0,
+      "no_transfer_layer_1_mean_core": 0.0,
+      "source_success_layer_2_mean_core": 0.0,
+      "no_transfer_layer_2_mean_core": 0.0,
+      "layer_2_core_difference": 0.0,
+      "difference_in_differences": 0.0,
+      "exclude_from_treatment_effect": true,
+      "exclusion_reason": "No source-success layer-1 worker passed all Core tests, so layer 2 received no experience."
+    }
+  ],
+  "active_replicate_aggregate": {
+    "active_replicates": 2,
+    "mean_layer_2_core_difference": 0.25,
+    "mean_difference_in_differences": 0.4167,
+    "mean_full_core_worker_difference": 0.5,
+    "mean_paired_input_token_percent": 19.08,
+    "mean_paired_output_token_percent": 17.46,
+    "mean_paired_duration_percent": 8.6
+  },
+  "source_qualification": [
+    {
+      "replicate": 1,
+      "source_worker": "worker_2",
+      "core": "3/3",
+      "total_tests": "59/62",
+      "non_core_failures": [
+        "test_column_missing_for_drop",
+        "test_backfill_with_numeric_constant",
+        "test_migration_rolls_back_on_failure"
+      ]
+    },
+    {
+      "replicate": 2,
+      "source_worker": "worker_2",
+      "core": "3/3",
+      "total_tests": "60/62",
+      "non_core_failures": [
+        "test_migrate_column_data_default_value_for_null",
+        "test_migration_rolls_back_on_failure"
+      ]
+    }
+  ],
+  "integrity_audit": {
+    "checkpoint_2_evaluations": 24,
+    "all_test_collection_hashes_identical": true,
+    "test_collection_hash": "068b8d049eaac830fd92be1fb6110a93d421ef46ae5101d1d538ca370f759c32",
+    "infrastructure_failures": 0,
+    "nonempty_runner_stderr_files": 0,
+    "assistant_actions_using_prohibited_benchmark_paths": 0
+  },
+  "conclusions": {
+    "coordination_cost_amplification": "Directionally supported for token usage. Both active replicates increased layer-2 input and output tokens.",
+    "performance_degradation": "Not supported. Active replicate layer-2 performance differences were 0.0 and +0.5; neither was negative.",
+    "performance_benefit": "Possible but not established. One active replicate improved mean Core by 0.5 and one showed no difference.",
+    "causal_strength": "Insufficient for a manuscript-level causal claim because only two of three replicates activated treatment and worker counts are small."
+  },
+  "decision": "Do not use this experiment as evidence for a degradation curve. Retain it as evidence that verified-experience transfer can increase inference cost without reliably improving accuracy."
+}

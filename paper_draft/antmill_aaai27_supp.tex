@@ -1,0 +1,504 @@
+% Anonymous AAAI-27 supplementary material.
+% Evidence freeze: 2026-07-16.
+% Compile: pdflatex -> pdflatex.
+\documentclass[letterpaper]{article}
+\usepackage[submission]{aaai2027}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\urlstyle{rm}
+\def\UrlFont{\rm}
+\usepackage{caption}
+\frenchspacing
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{seqsplit}
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+
+\setcounter{secnumdepth}{2}
+\title{When Shared Experience Becomes an Implementation Attractor:\\Supplementary Material}
+\author{Anonymous Submission}
+\affiliations{}
+
+\begin{document}
+\maketitle
+\enlargethispage{40pt}
+
+\section{Evidence Scope and Epistemic Labels}
+
+This supplement records the frozen protocol, deterministic audit rules, full
+trajectory summaries, and artifact map for the main paper. We distinguish
+three evidence classes throughout:
+\begin{itemize}
+    \item \textbf{Frozen confirmatory experiment}: the 12-layer, three-arm
+    Kimi-K2.6 \texttt{cfgpipe} run and its preregistered catastrophic-tail and
+    local-admission decisions.
+    \item \textbf{Retrospective replication audits}: two additional,
+    independently executed cumulative self-report trajectories to which the
+    exact-snapshot lock-in metric was applied after collection.
+    \item \textbf{Prospective context-growth control}: a fresh six-layer run whose
+    fixed-three-reference routing and two-consecutive-layer lock-in criterion
+    were frozen before any new outcome was observed.
+    \item \textbf{Prospective mitigation and task boundary}: a local-only
+    diversity-router arm with its endpoint frozen before model calls, followed
+    by a same-provider three-arm \texttt{log\_query} probe frozen before all 27
+    new outcomes.
+\end{itemize}
+Layers within a run are coupled by shared history and are never treated as
+independent samples. Cross-provider and cross-task trajectories are reported
+separately rather than pooled.
+
+\section{Testbed and Frozen Main Protocol}
+
+\subsection{Execution Topology}
+
+Each layer contains three MiniSWE workers that receive the same public task and
+edit separate repository workspaces. A barrier closes the complete layer
+before policy-selected output summaries can be delivered to the next layer.
+The hidden evaluator runs only after each worker finishes. External Core or
+all-test pass counts, failed-test names, and the test-collection hash are not
+inserted into self-report or local-admission recipient prompts.
+
+\begin{table}[t]
+\centering
+\caption{Frozen main-experiment configuration.}
+\label{tab:supp-main-config}
+\small
+\begin{tabular}{p{0.38\columnwidth}p{0.50\columnwidth}}
+\toprule
+Field & Frozen value \\
+\midrule
+Provider/model & ModelArts MaaS / Kimi-K2.6 \\
+Task & \texttt{cfgpipe}, checkpoint 1 \\
+External evaluator & 4 Core tests; 37 total tests \\
+Workers and depth & 3 workers per layer; 12 layers \\
+Agent budget & 12 environment actions per worker \\
+Sampling & Temperature 0.6; thinking disabled \\
+Source truncation & 12,000 characters per experience source \\
+Transfer arms & Cumulative self-report; local admission \\
+Control & No transfer \\
+Local threshold & Claimed success and at least 3 successful commands \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The frozen all-test collection hash is
+{\ttfamily\small\seqsplit{6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615}}.
+Both transfer arms receive the same three bootstrap sources, independently
+re-evaluated at 4/4 Core and 34/37 overall. Those scores are used only by the
+auditor and are withheld from recipients. The no-transfer arm receives no
+bootstrap source.
+
+\clearpage
+\subsection{Transfer and Admission Semantics}
+
+\begin{table*}[t]
+\centering
+\caption{Operational policy definitions. ``External'' refers to the hidden
+evaluator and is unavailable to recipients unless a mechanism probe is
+explicitly labeled as Core-gated.}
+\label{tab:supp-policies}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.31\textwidth}p{0.21\textwidth}p{0.20\textwidth}}
+\toprule
+Policy & State delivered to each next-layer worker & Admission signal & Main use \\
+\midrule
+No transfer & Empty state & None & Same-provider control \\
+Cumulative self-report & Every accepted bounded summary to date & Trajectory claims successful completion & Main treatment and retrospective replications \\
+Bounded recent & Three most recent accepted summaries; bootstrap is replaced after a complete generated layer & Same self-report signal & Prospective context-growth control \\
+Bounded diverse & Latest three locally distinct implementation identities across bootstrap and completed layers & Same self-report signal plus local source hash & Prospective mitigation and task boundary \\
+Local admission & Every accepted bounded summary to date & Claimed success and successful commands $\geq3$ & Prospective rejection mechanism \\
+Recursive manager & One manager-revised playbook & Self-report or external Core gate, depending on probe & Compression and task-boundary probes \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Exact Worker Artifact and Admission Rules}
+
+Each worker artifact is generated from the following schema before the
+12,000-character cap:
+\begin{quote}
+\footnotesize\ttfamily
+Worker <worker\_id>, layer <layer>.\\
+Local verifier Core: <passed>/<total>; pytest exit <code>.\\
+Recent MiniSWE actions and reasoning:\\
+<trailing 6,000 characters from the final four assistant messages>\\
+Resulting source snapshot excerpt:\\
+<UTF-8 source files under the remaining artifact budget>
+\end{quote}
+When self-report or local admission delivers an artifact, the numeric Core line
+is replaced by:
+\begin{quote}
+\footnotesize\ttfamily
+Agent completion report: accepted without an independent smoke check;\\
+external evaluation withheld.
+\end{quote}
+The exact self-report expression is:
+\begin{quote}
+\footnotesize\ttfamily
+\seqsplit{\textbackslash b(pass|passes|passed|works|working|success|successful|correct|verify|verified)\textbackslash b}
+\end{quote}
+with case-insensitive matching over the concatenation of all assistant message
+content. The local gate additionally requires at least three successful
+environment commands. External evaluator outcomes are unavailable to both
+rules. The recursive manager receives the public task specification, previous
+playbook, and accepted source artifacts, and is instructed to retain constraints,
+implementation decisions, edge cases, failure-prevention rules, and validation
+procedures while resolving conflicts explicitly.
+
+\subsection{Frozen Decision Rules}
+
+Before new-arm outcomes, the main protocol required the cumulative
+self-report arm to produce at least two post-layer-6 0/37 outcomes, including
+at least one at layer 10 or later, to support recurrent complexity-tail risk.
+The no-transfer arm had to produce fewer such events. The local mechanism was
+supported if every observed 0/37 output with fewer than three successful
+commands was rejected and never appeared in a later recipient prompt.
+
+The catastrophic-tail criterion was falsified: cumulative self-report
+produced no 0/37 outcomes in 36 worker-layer evaluations. The local mechanism
+criterion passed: two zero-command 0/37 false completions were rejected and
+their artifact identifiers never appeared downstream. These decisions are
+separate from the later snapshot-lock-in audit.
+
+\section{Evaluation and Identity Audit}
+
+External score is the fraction of the frozen test collection passed. A valid
+catastrophic event is exactly 0/37 after a completed model query and a
+non-infrastructure evaluation. API, quota, rate-limit, or gateway failures are
+not scored as benchmark failures.
+
+For implementation identity, the auditor recursively enumerates every file in
+the worker's submitted checkpoint directory, sorts paths lexicographically,
+and updates SHA-256 with each UTF-8 relative path, a null byte, the complete
+file bytes, and a second null byte. Three-worker exact lock-in at a layer
+requires three valid snapshots with one shared directory hash. Behavioral
+identity is separately measured from the set of failed test names. Exact
+snapshot identity is therefore a strong repository-state equality test, but it
+does not establish semantic equivalence beyond the evaluator.
+
+The new prospective mitigation and boundary additionally freeze a
+\emph{primary implementation} identity: SHA-256 of \texttt{cfgpipe.py} or
+\texttt{logql.py}. The diversity router independently hashes local source files
+with conventional implementation suffixes while excluding test files, caches,
+and evaluator outputs. This distinction matters in the bounded control: layers
+4 and 6 have two full-workspace hashes because one worker leaves an auxiliary
+\texttt{ws.txt} or test file, but all workers share the same \texttt{cfgpipe.py}
+from layers 2--6.
+
+The transfer-mechanism audit also reports exact prior-primary match, normalized
+source-line Jaccard, function-name Jaccard, AST-node-count signature Jaccard,
+string-literal Jaccard, and the fraction of recipient source lines available
+verbatim in at least one delivered snapshot excerpt. These metrics measure
+alignment and prompt availability; they do not distinguish literal copying
+from deterministic regeneration.
+
+Every interpreted trajectory is checked for:
+\begin{itemize}
+    \item the frozen Core count, all-test count, and collection hash;
+    \item at least one completed model step and no terminal model error;
+    \item absence of hidden scores, failed-test names, and collection hashes in
+    recipient prompts;
+    \item absence of assistant actions that access benchmark catalogs, hidden
+    tests, or external-evaluation paths; and
+    \item stale evaluator files, which are logged but not substituted for the
+    current validated evaluation.
+\end{itemize}
+
+\section{Independent Lock-In Replication Audit}
+
+Table~\ref{tab:supp-replications} reports all trajectories in the deterministic
+audit. ``First lock-in'' is the first of at least two consecutive layers with
+one exact snapshot across three valid workers. The earliest Coding
+self-report run exposed bootstrap Core scores and is retained only as a
+protocol-drift observation; it is not counted as an independent replication.
+
+\begin{table*}[t]
+\centering
+\caption{Trajectory-level lock-in audit. Terminal score is the three-worker
+mean normalized all-test score.}
+\label{tab:supp-replications}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{0.26\textwidth}p{0.25\textwidth}rrrr}
+\toprule
+Run & Role & Depth & First lock-in & Terminal snapshots & Terminal score \\
+\midrule
+Kimi Coding no transfer & Control & 5 & -- & 3 & 0.919 \\
+Kimi Coding self-report r1 & Protocol drift only & 8 & 3 & 1 & 0.613 \\
+Kimi Coding self-report r2 & Retrospective replication & 10 & 3 & 1 & 0.919 \\
+Kimi MaaS self-report r1 & Retrospective replication & 12 & 4 & 1 & 0.613 \\
+Kimi MaaS no transfer & Control & 12 & -- & 3 & 0.874 \\
+Kimi MaaS self-report r2 & Frozen main treatment & 12 & 5 & 1 & 0.892 \\
+Kimi MaaS bounded recent r1 & Prospective mechanism control & 6 & 2 & 2 & 0.919 \\
+\texttt{log\_query} no transfer & Second-task control & 5 & -- & 3 & 0.938 \\
+\texttt{log\_query} verified cumulative & Second-task boundary & 5 & -- & 3 & 0.963 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+
+The independent Coding r2 trajectory has exact three-worker snapshot
+convergence at layers 3--10. The independent MaaS r1 trajectory converges at
+layers 4--9, has an intermittent no-snapshot 0/37 event at layer 10,
+reconverges at layer 11, and again has a no-snapshot event at layer 12. Thus
+lock-in is a recurring attractor in these trajectories, not evidence of
+permanent irreversibility. Neither matched no-transfer control has two
+consecutive exact-convergence layers.
+
+\section{Prospective Fixed-Reference Control}
+
+The bounded-control configuration and outcome rule were frozen on
+2026-07-15 before new outcomes. Every worker receives exactly the three most
+recent self-reported outputs. Once a complete generated layer is available,
+those outputs replace the bootstrap sources; the reference count remains
+three. The frozen success criterion was at least two consecutive exact-lock-in
+layers by layer 6.
+
+\begin{table}[t]
+\centering
+\caption{Complete bounded-control trajectory. ``Workspace'' hashes every file;
+``primary'' hashes only \texttt{cfgpipe.py}. All workers pass 34/37 and 4/4
+Core at every layer. Input ratio uses the matched same-provider no-transfer
+layer.}
+\label{tab:supp-bounded}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{rrrrrr}
+\toprule
+Layer & Refs & Workspace & Primary & Primary exact & Input ratio \\
+\midrule
+1 & 3 & 3 & 3 & No & 2.80 \\
+2 & 3 & 1 & 1 & Yes & 1.26 \\
+3 & 3 & 1 & 1 & Yes & 1.60 \\
+4 & 3 & 2 & 1 & Yes & 0.99 \\
+5 & 3 & 1 & 1 & Yes & 1.30 \\
+6 & 3 & 2 & 1 & Yes & 1.14 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+The frozen full-workspace criterion passes at layers 2--3. The later apparent
+re-diversification is auxiliary-file churn: the primary implementation remains
+identical from layers 2--6. This control excludes cumulative reference-count
+growth as a necessary condition in the tested model-task pair. It does not
+exclude transferred context or token load as contributors because three
+summaries are still added relative to no transfer.
+
+\section{Experience Alignment and Prospective Mitigation}
+
+\begin{table}[t]
+\centering
+\caption{Mechanism audit after layer 1. ``Exact'' is the fraction of recipients
+matching at least one prior primary implementation. Line metrics take the best
+available prior source per recipient.}
+\label{tab:supp-alignment}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Run & Exact & Source-line $J$ & Summary-line recall & Median received chars \\
+\midrule
+Cumulative main & 0.879 & 0.965 & 0.976 & 193,858 \\
+Bounded recent & 1.000 & 1.000 & 1.000 & 31,706 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+The worker artifacts are code-rich rather than abstract memories. Median output
+artifact size is 10,479 characters in the cumulative main arm and 10,611 in the
+bounded arm; the median trajectory component reaches its 6,001-character budget,
+while the median snapshot excerpt contributes 4,338 and 4,470 characters,
+respectively. In cumulative transfer, received experience grows to 367,725
+characters and per-worker input reaches 703,436 tokens. The bounded arm keeps
+received experience between 25,934 and 32,082 characters.
+
+The cfgpipe mitigation protocol freezes the local-only diversity router, its
+implementation hashes, and the following primary endpoint before its model calls:
+the sum of unique primary implementations over layers 2--6. The already frozen
+no-transfer and bounded-recent outcomes were known and explicitly reused; only
+the new mitigation arm is prospective.
+
+\begin{table}[t]
+\centering
+\caption{Prospective cfgpipe diversity-routing result. AUC is the sum of unique
+primary implementations over layers 2--6.}
+\label{tab:supp-mitigation}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Arm & AUC & Diverse layers & Lock-in & Mean tests & Input tokens \\
+\midrule
+No transfer & 15 & 5 & -- & 30.0/37 & 994,496 \\
+Bounded recent & 5 & 0 & L2 & 34.0/37 & 1,399,159 \\
+Bounded diverse & 6 & 1 & L3 & 34.0/37 & 1,507,917 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+The frozen support threshold is exceeded, but the stronger criterion is not:
+local diversity routing retains two implementations only at layer 2 and then
+locks through layer 6. The result is classified as partial support, a transient
+one-layer delay with no score change.
+
+\section{Prospective Same-Provider Task Boundary}
+
+The \texttt{log\_query} protocol freezes three layers, three MaaS Kimi-K2.6
+workers, identical source and action limits, and three arms before all 27 new
+outcomes. The two transfer arms share three restored bootstrap sources, each
+10/10 Core, self-report accepted, and locally implementation-distinct.
+
+\begin{table}[t]
+\centering
+\caption{Prospective \texttt{log\_query} boundary. Diversity AUC is the sum of
+unique primary implementations over layers 2--3; the maximum is 6.}
+\label{tab:supp-log-query}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Arm & AUC & L2/L3 unique & Mean Core & Mean tests & Input tokens \\
+\midrule
+No transfer & 6 & 3/3 & 7.89/10 & 108.44/134 & 544,396 \\
+Bounded recent & 6 & 3/3 & 9.67/10 & 127.22/134 & 1,279,735 \\
+Bounded diverse & 6 & 3/3 & 9.67/10 & 130.11/134 & 1,250,575 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+All target, model-query, blinding, reference-count, and prohibited-access gates
+pass. Bounded recent retains three implementations at both post-transfer layers,
+so the frozen cfgpipe lock-in criterion does not reproduce within this horizon.
+The diversity-mitigation comparison is ceiling-limited and not identifiable:
+bounded recent already preserves the maximum diversity. This boundary does not
+exclude later lock-in at greater depth.
+
+\section{Admission Threshold Audit}
+
+The three-command arm was prospectively frozen, while the sweep in
+Table~\ref{tab:supp-thresholds} is a retrospective replay over its 36 completed
+outputs. High quality is defined here as at least 33/37. The sweep measures a
+sample-specific trade-off and does not identify a universal optimum.
+
+\begin{table}[t]
+\centering
+\caption{Retrospective local-gate threshold replay.}
+\label{tab:supp-thresholds}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{rrrrr}
+\toprule
+Threshold & Accepted & 0/37 rejected & HQ retained & HQ rate \\
+\midrule
+0 & 36 & 0/2 & 34/34 & 1.000 \\
+1 & 34 & 2/2 & 34/34 & 1.000 \\
+2 & 34 & 2/2 & 34/34 & 1.000 \\
+3 & 29 & 2/2 & 29/34 & 0.853 \\
+4 & 22 & 2/2 & 22/34 & 0.647 \\
+5 & 13 & 2/2 & 13/34 & 0.382 \\
+6 & 5 & 2/2 & 5/34 & 0.147 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\section{Cross-Model Tails and Mechanism Boundaries}
+
+Across five cumulative self-report runs, DeepSeek-V4-Flash produces 2/30
+valid zero-score outcomes, GLM-5 produces 0/30, and Kimi-K2.6 produces 1/24,
+0/30, and 0/36 across three endpoint/run combinations. All observed zero
+events are isolated or terminal. Provider and model runs are not treated as
+exchangeable replications.
+
+Recursive manager synthesis is also directionally conditional. On
+\texttt{cfgpipe}, a Core-gated Kimi manager reaches exact terminal snapshot
+lock-in at 32/37, while no transfer retains three snapshots at 34/37. A
+DeepSeek stress probe compresses a mixed-quality bootstrap into one shared
+failure signature across distinct implementations. In contrast, recursive
+synthesis improves terminal normalized score by 0.047 on
+\texttt{log\_query} and 0.072 on \texttt{xjq}. The separate strictly
+Core-gated cumulative \texttt{log\_query} boundary ends with three distinct
+snapshots and scores 0.963 versus 0.938 for no transfer. These probes establish
+task- and admission-conditional direction, not a general harmful effect. The new
+same-provider three-arm boundary strengthens this limit: both self-report transfer
+policies retain three primary implementations at every measured layer while
+raising mean all-test count relative to no transfer.
+
+\section{Reproducibility Artifacts}
+
+The following repository-relative artifacts form the evidence chain:
+\begin{itemize}
+    \item main frozen protocol:
+    \path{benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_three_arm_confirmation_protocol_20260715.json};
+    \item main audit:
+    \path{benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_three_arm_confirmation_audit_20260715.json};
+    \item bounded configuration and freeze sidecar:
+    \path{benchmarks/scbench/kimi_maas_cfgpipe_cp1_bounded_context_depth6_config.json}
+    and \path{benchmarks/scbench/kimi_maas_cfgpipe_cp1_bounded_context_depth6_config.freeze.json};
+    \item experience schema and transfer-mechanism audit:
+    \path{paper_draft/EXPERIENCE_ARTIFACT_SCHEMA_20260715.md} and
+    \path{benchmarks/scbench/scbench_transfer_mechanism_audit_20260715.json};
+    \item prospective mitigation protocol and audit:
+    \path{benchmarks/scbench/kimi_maas_cfgpipe_cp1_mitigation_three_arm_protocol_20260715.json}
+    and
+    \path{benchmarks/scbench/kimi_maas_cfgpipe_cp1_mitigation_three_arm_audit_20260716.json};
+    \item prospective second-task config and audit:
+    \path{benchmarks/scbench/kimi_maas_log_query_cp1_three_arm_boundary_depth3_config.json}
+    and
+    \path{benchmarks/scbench/kimi_maas_log_query_cp1_three_arm_boundary_depth3_audit_20260716.json};
+    \item deterministic cross-trajectory audit:
+    \path{scripts/audit_scbench_lockin_replications.py};
+    \item audit outputs:
+    \path{benchmarks/scbench/kimi_cfgpipe_lockin_replication_audit_20260715.json}
+    and \path{benchmarks/scbench/kimi_cfgpipe_lockin_replication_audit_20260715.md};
+    \item layer-level source data:
+    \path{paper_draft/generated/moa_paper/lockin_replication_layers.csv}; and
+    \item bounded raw run:
+    \path{runs_scbench_moa_kimi_maas_cfgpipe_cp1_bounded_context_depth6_r1_20260715}.
+\end{itemize}
+
+The bounded configuration SHA-256 is
+{\ttfamily\small\seqsplit{08de65c5f3ff5711d99d477cc4db9f4bdf2bc8f271e4d21007f2b3440a0a7f4d}}.
+The three-arm protocol SHA-256 at this evidence freeze is
+{\ttfamily\small\seqsplit{599a3c4b6d99caaa4d96199a413947303ddda6e1b80de560bac56ebda4497a6c}}.
+The prospective mitigation protocol SHA-256 is
+{\ttfamily\small\seqsplit{bd8c9cc738b1bc01c808edd8e46fd72e1af1b6e45c0df563986df82de5f1958c}},
+and the prospective \texttt{log\_query} configuration SHA-256 is
+{\ttfamily\small\seqsplit{eeb7664d11acc22376a0291a9670d5cd7c9a779347e52adbf3de3a01d10a9933}}.
+
+To reproduce the deterministic audit and figures from existing run artifacts:
+\begin{quote}
+\footnotesize
+\path{python scripts/audit_scbench_lockin_replications.py}\\
+\path{python scripts/audit_scbench_transfer_mechanism.py}\\
+\path{python scripts/audit_scbench_mitigation_three_arm.py}\\
+\path{python scripts/audit_scbench_log_query_boundary.py}\\
+\path{python paper_draft/make_moa_figures.py}
+\end{quote}
+
+\section{Computing Environment and Claim Boundary}
+
+The final audit and paper build use Python 3.12.12 and TeX Live 2026. Model
+calls use the provider endpoints recorded in each frozen JSON configuration;
+API credentials are supplied only through environment variables and are not
+stored in run manifests or paper artifacts.
+
+The evidence supports a conditional, multi-layer implementation attractor under
+blinded experience transfer. Local identity-aware routing delays this attractor
+by one layer on \texttt{cfgpipe} but does not prevent it; on the prospective
+\texttt{log\_query}
+boundary, transfer improves quality without reducing measured diversity. The
+evidence does not show that context length is irrelevant, that lock-in is
+permanent, that sharing is generally harmful, or that a command-count threshold
+is universally optimal. Exact hashes and failed-test signatures are complementary
+audited measurements bounded by the submitted repository state and frozen test
+suite.
+
+\end{document}

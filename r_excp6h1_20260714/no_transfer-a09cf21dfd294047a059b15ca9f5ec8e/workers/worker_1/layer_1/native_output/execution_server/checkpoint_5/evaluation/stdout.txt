@@ -1,0 +1,1622 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-9.1.1, pluggy-1.6.0 -- /root/.cache/uv/archive-v0/Yq7zFibuo6Gf1cTnPzVej/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.12', 'Platform': 'Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.14.2', 'timeout': '2.4.0', 'metadata': '3.1.1', 'json-report': '1.5.0', 'json-ctrf': '0.5.2'}}
+rootdir: /tmp/tmp7hi8hi2r
+configfile: pytest.ini
+plugins: anyio-4.14.2, timeout-2.4.0, metadata-3.1.1, json-report-1.5.0, json-ctrf-0.5.2
+timeout: 300.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 185 items
+
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_initial_stats PASSED [  0%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[echo] PASSED [  1%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[time_out] PASSED [  1%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_files] PASSED [  2%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_stdin] PASSED [  2%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_env] PASSED [  3%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_final_stats PASSED [  3%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_initial_stats PASSED [  4%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_string_stream] PASSED [  4%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nonzero_exit_with_stderr] PASSED [  5%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nested_file_execution] PASSED [  5%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_multiline_values] PASSED [  6%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdout_without_newline] PASSED [  7%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[default_timeout_and_empty_stdin] PASSED [  7%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_files_together] PASSED [  8%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_stdin_together] PASSED [  8%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[files_and_stdin_together] PASSED [  9%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[timeout_with_env_and_files] PASSED [  9%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[all_features_combined] PASSED [ 10%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[multiple_env_vars_multiple_files] PASSED [ 10%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_array_with_files] PASSED [ 11%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_override_system] PASSED [ 11%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_small_timeout] PASSED [ 12%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[unicode_in_output] PASSED [ 12%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_long_stdout] PASSED [ 13%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[exit_code_variations] PASSED [ 14%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[command_with_shell_metacharacters] PASSED [ 14%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_final_stats PASSED [ 15%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[missing_command_field] PASSED [ 15%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_negative] PASSED [ 16%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_zero] PASSED [ 16%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_type] PASSED [ 17%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_env_type] PASSED [ 17%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_files_type] PASSED [ 18%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_stdin_type] PASSED [ 18%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[empty_command_string] PASSED [ 19%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[command_type_not_string] PASSED [ 20%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[env_values_not_strings] PASSED [ 20%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_duration_is_rounded PASSED [ 21%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_stats_duration_is_rounded PASSED [ 21%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_error_does_not_increment_stats PASSED [ 22%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_invalid_json_returns_json_error PASSED [ 22%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string] FAILED [ 23%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[env_is_null] FAILED [ 23%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[files_is_null] FAILED [ 24%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_initial_stats PASSED [ 24%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_glob] PASSED [ 25%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_glob_mismatch] PASSED [ 25%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_no_glob] PASSED [ 26%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[not_recursive] PASSED [ 27%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[recursive_glob] PASSED [ 27%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_final_stats PASSED [ 28%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_string] PASSED [ 28%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_object] PASSED [ 29%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_number] PASSED [ 29%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_number] PASSED [ 30%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_null] PASSED [ 30%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_object] PASSED [ 31%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_initial_stats PASSED [ 31%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[bz2_compression] FAILED [ 32%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[gz_compression] PASSED [ 32%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_columns] PASSED [ 33%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_list_objects] PASSED [ 34%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_cell_types] PASSED [ 34%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_quoting] PASSED [ 35%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[csv_sorted_headers] PASSED [ 35%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[jsonl_list] PASSED [ 36%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[jsonl_columns] FAILED [ 36%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[tsv_basic] PASSED [ 37%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[json_object] PASSED [ 37%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[json_array] PASSED [ 38%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[yaml_data] PASSED [ 38%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[unknown_extension] PASSED [ 39%]
+.evaluation_tests/test_checkpoint_3.py::TestCore::test_final_stats PASSED [ 40%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_column_many_columns] PASSED [ 40%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_decimals_preserved] PASSED [ 41%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_empty_array] PASSED [ 41%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_empty_strings] PASSED [ 42%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_gz_compression] PASSED [ 42%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[csv_single_column] PASSED [ 43%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[fallback_no_extension] PASSED [ 43%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[fallback_unknown_with_string] PASSED [ 44%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_boolean] PASSED [ 44%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_empty_array] PASSED [ 45%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_empty_object] PASSED [ 45%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_null] FAILED [ 46%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_number] PASSED [ 47%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_string] PASSED [ 47%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[jsonl_gz_compression] PASSED [ 48%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[multiple_structured_files] PASSED [ 48%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[ndjson_columns] FAILED [ 49%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[ndjson_list] PASSED [ 49%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[track_with_structured_files] PASSED [ 50%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_bz2_compression] FAILED [ 50%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_columns] PASSED [ 51%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_mixed_types] PASSED [ 51%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_quoting_with_tabs] PASSED [ 52%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[yaml_array] PASSED [ 52%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[yaml_gz_compression] PASSED [ 53%]
+.evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[yml_extension] PASSED [ 54%]
+.evaluation_tests/test_checkpoint_3.py::TestError::test_error_cases[multiple_compression_extensions] PASSED [ 54%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_initial_stats PASSED [ 55%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_backward_compatible_string PASSED [ 55%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[chain_stop_on_failure] PASSED [ 56%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[chain_required_runs] PASSED [ 56%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[chain_continue_on_error] PASSED [ 57%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[chain_per_command_timeout] PASSED [ 57%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[all_commands_succeed] PASSED [ 58%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[single_command_array] PASSED [ 58%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[multiple_required_commands] PASSED [ 59%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[chain_with_env_vars] PASSED [ 60%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[chain_with_input_files] PASSED [ 60%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[long_command_chain] PASSED [ 61%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[required_command_fails] PASSED [ 61%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[multiple_failures] PASSED [ 62%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_command_chains[working_directory_persistence] PASSED [ 62%]
+.evaluation_tests/test_checkpoint_4.py::TestCore::test_final_stats PASSED [ 63%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[all_required_commands] PASSED [ 63%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[required_command_at_beginning] PASSED [ 64%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[required_command_in_middle] PASSED [ 64%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[required_command_itself_times_out] PASSED [ 65%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[multiple_timeouts_in_chain] PASSED [ 65%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[all_commands_timeout] PASSED [ 66%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[very_long_chain] PASSED [ 67%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_with_specific_exit_codes] PASSED [ 67%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_with_stdin] PASSED [ 68%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_creates_and_modifies_files] PASSED [ 68%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_deletes_then_recreates_file] PASSED [ 69%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[continue_on_error_with_required] PASSED [ 69%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[per_command_timeout_overrides_global] PASSED [ 70%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[global_timeout_applies_to_commands] PASSED [ 70%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_with_env_and_files] PASSED [ 71%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_with_all_features] PASSED [ 71%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[multiple_failures_with_continue] PASSED [ 72%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[required_false_explicit] PASSED [ 72%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[continue_on_error_false_explicit] PASSED [ 73%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[timeout_then_required_then_timeout] PASSED [ 74%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_with_stderr] PASSED [ 74%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_track_multiple_patterns] PASSED [ 75%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[zero_duration_commands] PASSED [ 75%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_success_then_failure_at_end] PASSED [ 76%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[failure_at_start_required_at_end] PASSED [ 76%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[chain_with_special_characters] PASSED [ 77%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[alternating_success_failure_continue] PASSED [ 77%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[single_required_only] PASSED [ 78%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[timeout_on_last_command] PASSED [ 78%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[required_after_multiple_failures] PASSED [ 79%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[mixed_timeouts_and_errors] PASSED [ 80%]
+.evaluation_tests/test_checkpoint_4.py::TestFunctionality::test_command_chains_extended[all_success_with_false_required] PASSED [ 80%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_01_initial_stats FAILED [ 81%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_02_cache_miss_first_execution FAILED [ 81%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_03_cache_hit_identical_request FAILED [ 82%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_04_files_cache_miss_first FAILED [ 82%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_05_different_files_cache_miss FAILED [ 83%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_06_force_setup FAILED [ 83%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_07_force_bypass FAILED [ 84%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_08_force_bypass_updates_cache FAILED [ 84%]
+.evaluation_tests/test_checkpoint_5.py::TestCore::test_09_final_stats FAILED [ 85%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_01_env_cache_miss FAILED [ 85%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_02_env_cache_hit FAILED [ 86%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_03_env_changes_cache FAILED [ 87%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_04_stdin_cache_miss FAILED [ 87%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_05_stdin_cache_hit FAILED [ 88%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_06_timeout_variation_short FAILED [ 88%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_07_timeout_variation_long FAILED [ 89%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_08_tracking_chain_cache_miss FAILED [ 89%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_09_tracking_chain_cache_hit FAILED [ 90%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_10_track_pattern_change_miss FAILED [ 90%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_11_continue_on_error_true_miss FAILED [ 91%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_12_continue_on_error_true_hit FAILED [ 91%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_13_continue_on_error_false_miss FAILED [ 92%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_14_continue_on_error_false_hit FAILED [ 92%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_15_force_seed_miss FAILED [ 93%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_16_force_seed_hit FAILED [ 94%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_17_force_bypass_miss FAILED [ 94%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_18_force_followup_hit FAILED [ 95%]
+.evaluation_tests/test_checkpoint_5.py::TestHidden::test_19_stats_cache_metrics FAILED [ 95%]
+.evaluation_tests/test_checkpoint_5.py::TestRegression::test_timeout_execution FAILED [ 96%]
+.evaluation_tests/test_checkpoint_5.py::TestRegression::test_recursive_file_tracking FAILED [ 96%]
+.evaluation_tests/test_checkpoint_5.py::TestRegression::test_command_chain_with_required FAILED [ 97%]
+.evaluation_tests/test_checkpoint_5.py::TestRegression::test_cache_failed_command FAILED [ 97%]
+.evaluation_tests/test_checkpoint_5.py::TestRegression::test_cache_chain_order_matters FAILED [ 98%]
+.evaluation_tests/test_checkpoint_5.py::TestRegression::test_cache_special_chars_cmd FAILED [ 98%]
+.evaluation_tests/test_checkpoint_5.py::TestRegression::test_cache_unicode FAILED [ 99%]
+.evaluation_tests/test_checkpoint_5.py::TestRegression::test_force_on_chain FAILED [100%]
+
+=================================== FAILURES ===================================
+_____ TestEdgeCases.test_execute_edge_errors[stdin_array_with_non_string] ______
+
+self = <test_checkpoint_1.TestEdgeCases object at 0x76fd8f145fa0>
+client = <httpx.Client object at 0x76fd8f1aad20>
+case = ErrorCase(name='stdin_array_with_non_string', body={'command': 'echo test', 'stdin': ['ok', 123]}, expected_code=None, expected_status=400)
+
+    @pytest.mark.parametrize(
+        "case",
+        EDGE_ERROR_CASES,
+        ids=[case.name for case in EDGE_ERROR_CASES],
+    )
+    def test_execute_edge_errors(
+        self, client: httpx.Client, case: ErrorCase
+    ) -> None:
+        response = client.post("/v1/execute", json=case.body)
+>       assert response.status_code == case.expected_status
+E       AssertionError: assert 500 == 400
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+E        +  and   400 = ErrorCase(name='stdin_array_with_non_string', body={'command': 'echo test', 'stdin': ['ok', 123]}, expected_code=None, expected_status=400).expected_status
+
+.evaluation_tests/test_checkpoint_1.py:821: AssertionError
+_____________ TestEdgeCases.test_execute_edge_errors[env_is_null] ______________
+
+self = <test_checkpoint_1.TestEdgeCases object at 0x76fd8f146120>
+client = <httpx.Client object at 0x76fd8f1aad20>
+case = ErrorCase(name='env_is_null', body={'command': 'echo test', 'env': None}, expected_code=None, expected_status=400)
+
+    @pytest.mark.parametrize(
+        "case",
+        EDGE_ERROR_CASES,
+        ids=[case.name for case in EDGE_ERROR_CASES],
+    )
+    def test_execute_edge_errors(
+        self, client: httpx.Client, case: ErrorCase
+    ) -> None:
+        response = client.post("/v1/execute", json=case.body)
+>       assert response.status_code == case.expected_status
+E       AssertionError: assert 201 == 400
+E        +  where 201 = <Response [201 Created]>.status_code
+E        +  and   400 = ErrorCase(name='env_is_null', body={'command': 'echo test', 'env': None}, expected_code=None, expected_status=400).expected_status
+
+.evaluation_tests/test_checkpoint_1.py:821: AssertionError
+____________ TestEdgeCases.test_execute_edge_errors[files_is_null] _____________
+
+self = <test_checkpoint_1.TestEdgeCases object at 0x76fd8f1461e0>
+client = <httpx.Client object at 0x76fd8f1aad20>
+case = ErrorCase(name='files_is_null', body={'command': 'echo test', 'files': None}, expected_code=None, expected_status=400)
+
+    @pytest.mark.parametrize(
+        "case",
+        EDGE_ERROR_CASES,
+        ids=[case.name for case in EDGE_ERROR_CASES],
+    )
+    def test_execute_edge_errors(
+        self, client: httpx.Client, case: ErrorCase
+    ) -> None:
+        response = client.post("/v1/execute", json=case.body)
+>       assert response.status_code == case.expected_status
+E       AssertionError: assert 201 == 400
+E        +  where 201 = <Response [201 Created]>.status_code
+E        +  and   400 = ErrorCase(name='files_is_null', body={'command': 'echo test', 'files': None}, expected_code=None, expected_status=400).expected_status
+
+.evaluation_tests/test_checkpoint_1.py:821: AssertionError
+_______________ TestCore.test_structured_files[bz2_compression] ________________
+
+self = <test_checkpoint_3.TestCore object at 0x76fd8f1560f0>
+client = <httpx.Client object at 0x76fd8ed49f10>
+case = StructuredFileCase(name='bz2_compression', body={'command': 'bzcat data.csv.bz2', 'env': {}, 'files': {'data.csv.bz2':...st\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.parametrize(
+        "case",
+        CORE_EXECUTE_CASES,
+        ids=[case.name for case in CORE_EXECUTE_CASES],
+    )
+    def test_structured_files(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test structured file serialization."""
+        response = client.post("/v1/execute", json=case.body)
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_execute_payload(payload, case)
+
+.evaluation_tests/test_checkpoint_3.py:746: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '3ae3247a-9c93-45f2-bf52-8da1da6358c7', 'stdout': '', 'stderr': '/bin/sh: 1: bzcat: not found\n', 'exit_code': 127, ...}
+case = StructuredFileCase(name='bz2_compression', body={'command': 'bzcat data.csv.bz2', 'env': {}, 'files': {'data.csv.bz2':...st\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    def _assert_execute_payload(
+        payload: dict[str, Any], case: StructuredFileCase
+    ) -> None:
+>       assert payload["exit_code"] == case.expected_exit_code
+E       AssertionError: assert 127 == 0
+E        +  where 0 = StructuredFileCase(name='bz2_compression', body={'command': 'bzcat data.csv.bz2', 'env': {}, 'files': {'data.csv.bz2': [{'id': 1, 'name': 'test'}]}, 'stdin': [], 'timeout': 10}, expected_stdout='id,name\n1,test\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None).expected_exit_code
+
+.evaluation_tests/test_checkpoint_3.py:131: AssertionError
+________________ TestCore.test_structured_files[jsonl_columns] _________________
+
+self = <test_checkpoint_3.TestCore object at 0x76fd8f156d50>
+client = <httpx.Client object at 0x76fd8ed49f10>
+case = StructuredFileCase(name='jsonl_columns', body={'command': 'cat data.jsonl', 'env': {}, 'files': {'data.jsonl': {'id': ..."}\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.parametrize(
+        "case",
+        CORE_EXECUTE_CASES,
+        ids=[case.name for case in CORE_EXECUTE_CASES],
+    )
+    def test_structured_files(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test structured file serialization."""
+        response = client.post("/v1/execute", json=case.body)
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_execute_payload(payload, case)
+
+.evaluation_tests/test_checkpoint_3.py:746: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': 'fd45a842-86d4-47cf-b426-ad92045a03ff', 'stdout': '{"id": [1, 2, 3], "name": ["alice", "bob", "charlie"]}\n', 'stderr': '', 'exit_code': 0, ...}
+case = StructuredFileCase(name='jsonl_columns', body={'command': 'cat data.jsonl', 'env': {}, 'files': {'data.jsonl': {'id': ..."}\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    def _assert_execute_payload(
+        payload: dict[str, Any], case: StructuredFileCase
+    ) -> None:
+        assert payload["exit_code"] == case.expected_exit_code
+        assert payload["timed_out"] == case.expected_timed_out
+        assert payload["stderr"] == case.expected_stderr
+        # Normalize stdout for comparison
+        actual_stdout = _normalize_stdout(payload["stdout"])
+        expected_stdout = _normalize_stdout(case.expected_stdout)
+>       assert actual_stdout == expected_stdout, (
+            f"stdout mismatch:\nactual: {payload['stdout']!r}\n"
+            f"expected: {case.expected_stdout!r}"
+        )
+E       AssertionError: stdout mismatch:
+E         actual: '{"id": [1, 2, 3], "name": ["alice", "bob", "charlie"]}\n'
+E         expected: '{"id":1,"name":"alice"}\n{"id":2,"name":"bob"}\n{"id":3,"name":"charlie"}\n'
+E       assert '{"id":[1,2,3],"name":["alice","bob","charlie"]}' == '{"id":1,"name":"alice"}{"id":2,"name":"bob"}{"id":3,"name":"charlie"}'
+E         
+E         - {"id":1,"name":"alice"}{"id":2,"name":"bob"}{"id":3,"name":"charlie"}
+E         + {"id":[1,2,3],"name":["alice","bob","charlie"]}
+
+.evaluation_tests/test_checkpoint_3.py:137: AssertionError
+_________ TestFunctionality.test_structured_files_extended[json_null] __________
+
+self = <test_checkpoint_3.TestFunctionality object at 0x76fd8f15db20>
+client = <httpx.Client object at 0x76fd8ed62f30>
+case = StructuredFileCase(name='json_null', body={'command': 'cat null.json', 'env': {}, 'files': {'null.json': None}, 'stdin...ll\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.functionality
+    @pytest.mark.parametrize(
+        "case",
+        FUNCTIONALITY_CASES,
+        ids=[case.name for case in FUNCTIONALITY_CASES],
+    )
+    def test_structured_files_extended(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test extended structured file features."""
+        response = client.post("/v1/execute", json=case.body)
+>       assert response.status_code == 201
+E       assert 400 == 201
+E        +  where 400 = <Response [400 Bad Request]>.status_code
+
+.evaluation_tests/test_checkpoint_3.py:777: AssertionError
+_______ TestFunctionality.test_structured_files_extended[ndjson_columns] _______
+
+self = <test_checkpoint_3.TestFunctionality object at 0x76fd8f15e960>
+client = <httpx.Client object at 0x76fd8ed62f30>
+case = StructuredFileCase(name='ndjson_columns', body={'command': 'cat data.ndjson', 'env': {}, 'files': {'data.ndjson': {'x'...0}\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.functionality
+    @pytest.mark.parametrize(
+        "case",
+        FUNCTIONALITY_CASES,
+        ids=[case.name for case in FUNCTIONALITY_CASES],
+    )
+    def test_structured_files_extended(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test extended structured file features."""
+        response = client.post("/v1/execute", json=case.body)
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_execute_payload(payload, case)
+
+.evaluation_tests/test_checkpoint_3.py:779: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': 'efe02f2f-d4f3-45e4-b273-e31503ad8a66', 'stdout': '{"x": [1, 2, 3], "y": [10, 20, 30]}\n', 'stderr': '', 'exit_code': 0, ...}
+case = StructuredFileCase(name='ndjson_columns', body={'command': 'cat data.ndjson', 'env': {}, 'files': {'data.ndjson': {'x'...0}\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    def _assert_execute_payload(
+        payload: dict[str, Any], case: StructuredFileCase
+    ) -> None:
+        assert payload["exit_code"] == case.expected_exit_code
+        assert payload["timed_out"] == case.expected_timed_out
+        assert payload["stderr"] == case.expected_stderr
+        # Normalize stdout for comparison
+        actual_stdout = _normalize_stdout(payload["stdout"])
+        expected_stdout = _normalize_stdout(case.expected_stdout)
+>       assert actual_stdout == expected_stdout, (
+            f"stdout mismatch:\nactual: {payload['stdout']!r}\n"
+            f"expected: {case.expected_stdout!r}"
+        )
+E       AssertionError: stdout mismatch:
+E         actual: '{"x": [1, 2, 3], "y": [10, 20, 30]}\n'
+E         expected: '{"x":1,"y":10}\n{"x":2,"y":20}\n{"x":3,"y":30}\n'
+E       assert '{"x":[1,2,3],"y":[10,20,30]}' == '{"x":1,"y":10}{"x":2,"y":20}{"x":3,"y":30}'
+E         
+E         - {"x":1,"y":10}{"x":2,"y":20}{"x":3,"y":30}
+E         + {"x":[1,2,3],"y":[10,20,30]}
+
+.evaluation_tests/test_checkpoint_3.py:137: AssertionError
+____ TestFunctionality.test_structured_files_extended[tsv_bz2_compression] _____
+
+self = <test_checkpoint_3.TestFunctionality object at 0x76fd8f15f650>
+client = <httpx.Client object at 0x76fd8ed62f30>
+case = StructuredFileCase(name='tsv_bz2_compression', body={'command': 'bzcat data.tsv.bz2', 'env': {}, 'files': {'data.tsv.b...l2\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    @pytest.mark.functionality
+    @pytest.mark.parametrize(
+        "case",
+        FUNCTIONALITY_CASES,
+        ids=[case.name for case in FUNCTIONALITY_CASES],
+    )
+    def test_structured_files_extended(
+        self, client: httpx.Client, case: StructuredFileCase
+    ) -> None:
+        """Test extended structured file features."""
+        response = client.post("/v1/execute", json=case.body)
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_execute_payload(payload, case)
+
+.evaluation_tests/test_checkpoint_3.py:779: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': 'f96829cb-21ef-4058-b6e2-afad7e369505', 'stdout': '', 'stderr': '/bin/sh: 1: bzcat: not found\n', 'exit_code': 127, ...}
+case = StructuredFileCase(name='tsv_bz2_compression', body={'command': 'bzcat data.tsv.bz2', 'env': {}, 'files': {'data.tsv.b...l2\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None)
+
+    def _assert_execute_payload(
+        payload: dict[str, Any], case: StructuredFileCase
+    ) -> None:
+>       assert payload["exit_code"] == case.expected_exit_code
+E       AssertionError: assert 127 == 0
+E        +  where 0 = StructuredFileCase(name='tsv_bz2_compression', body={'command': 'bzcat data.tsv.bz2', 'env': {}, 'files': {'data.tsv.bz2': [{'col1': 'val1', 'col2': 'val2'}]}, 'stdin': [], 'timeout': 10}, expected_stdout='col1\tcol2\nval1\tval2\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None).expected_exit_code
+
+.evaluation_tests/test_checkpoint_3.py:131: AssertionError
+________________________ TestCore.test_01_initial_stats ________________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16f230>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_01_initial_stats(self, client: httpx.Client) -> None:
+        """Stats should show empty cache metrics initially."""
+        response = client.get("/v1/stats/execution")
+        assert response.status_code == 200
+        payload = response.json()
+        assert payload["ran"] == 0
+        # Check duration stats
+        duration = payload["duration"]
+        assert duration["average"] is None
+        assert duration["median"] is None
+        assert duration["max"] is None
+        assert duration["min"] is None
+        assert duration["stddev"] is None
+        # Check commands stats
+        commands = payload["commands"]
+        assert commands["total"] == 0
+        assert commands["ran"] == 0
+        # Check cache stats - null when nothing has been run (per spec)
+>       cache = payload["cache"]
+                ^^^^^^^^^^^^^^^^
+E       KeyError: 'cache'
+
+.evaluation_tests/test_checkpoint_5.py:215: KeyError
+_________________ TestCore.test_02_cache_miss_first_execution __________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16f140>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_02_cache_miss_first_execution(self, client: httpx.Client) -> None:
+        """First execution should be a cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'hello from cache'",
+            "env": {},
+            "files": {},
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="hello from cache\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:231: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': 'd865cc5b-83cd-427a-988a-e89e3ff4f8e9', 'stdout': 'hello from cache\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'hello from cache\n'
+expected_stderr = '', expected_exit_code = 0, expected_timed_out = False
+duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': 'd865cc5b-83cd-427a-988a-e89e3ff4f8e9', 'stdout': 'hello from cache\n', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_________________ TestCore.test_03_cache_hit_identical_request _________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16d940>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_03_cache_hit_identical_request(self, client: httpx.Client) -> None:
+        """Identical request should hit cache."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'hello from cache'",
+            "env": {},
+            "files": {},
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=True,
+            expected_stdout="hello from cache\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:249: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '921be487-b0fc-4770-b2d6-b19413c4a424', 'stdout': 'hello from cache\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = True, expected_stdout = 'hello from cache\n'
+expected_stderr = '', expected_exit_code = 0, expected_timed_out = False
+duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '921be487-b0fc-4770-b2d6-b19413c4a424', 'stdout': 'hello from cache\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+___________________ TestCore.test_04_files_cache_miss_first ____________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16cb00>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_04_files_cache_miss_first(self, client: httpx.Client) -> None:
+        """First file content execution is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": "cat input.txt",
+            "files": {"input.txt": "version 1"},
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="version 1",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:264: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '75238922-53d4-49a2-94ce-99dcb0c5efcf', 'stdout': 'version 1', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'version 1', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '75238922-53d4-49a2-94ce-99dcb0c5efcf', 'stdout': 'version 1', 'stderr': '', 'exit_code': 0, 'duration': 0.003, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_________________ TestCore.test_05_different_files_cache_miss __________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16cef0>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_05_different_files_cache_miss(self, client: httpx.Client) -> None:
+        """Different file content is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": "cat input.txt",
+            "files": {"input.txt": "version 2"},
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="version 2",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:279: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '839215aa-7552-4b42-aa58-40cacfcdc22c', 'stdout': 'version 2', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'version 2', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '839215aa-7552-4b42-aa58-40cacfcdc22c', 'stdout': 'version 2', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_________________________ TestCore.test_06_force_setup _________________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16c530>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_06_force_setup(self, client: httpx.Client) -> None:
+        """Seed cache for force bypass test."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'forced'",
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="forced\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:293: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '23b33453-ad82-4bba-b011-2a8edb257319', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'forced\n', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '23b33453-ad82-4bba-b011-2a8edb257319', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+________________________ TestCore.test_07_force_bypass _________________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16f440>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_07_force_bypass(self, client: httpx.Client) -> None:
+        """force=true bypasses cache."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'forced'",
+            "force": True,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="forced\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:308: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '567e2629-cf58-4ac2-b2bb-dc30add9cbe9', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'forced\n', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '567e2629-cf58-4ac2-b2bb-dc30add9cbe9', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_________________ TestCore.test_08_force_bypass_updates_cache __________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16eea0>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_08_force_bypass_updates_cache(self, client: httpx.Client) -> None:
+        """After force, cache is updated."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'forced'",
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=True,
+            expected_stdout="forced\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:322: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '96762b1d-9da7-46b4-9cd9-b80c01f95a8a', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = True, expected_stdout = 'forced\n', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '96762b1d-9da7-46b4-9cd9-b80c01f95a8a', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_________________________ TestCore.test_09_final_stats _________________________
+
+self = <test_checkpoint_5.TestCore object at 0x76fd8f16dbb0>
+client = <httpx.Client object at 0x76fd8ecbe0f0>
+
+    def test_09_final_stats(self, client: httpx.Client) -> None:
+        """Stats should reflect cache hits and misses."""
+        response = client.get("/v1/stats/execution")
+        assert response.status_code == 200
+        payload = response.json()
+        # 5 misses: cache_miss, files_v1, files_v2, force_setup, force_bypass
+        # 2 hits: cache_hit, force_updates_cache
+>       cache = payload["cache"]
+                ^^^^^^^^^^^^^^^^
+E       KeyError: 'cache'
+
+.evaluation_tests/test_checkpoint_5.py:336: KeyError
+______________________ TestHidden.test_01_env_cache_miss _______________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16c890>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_01_env_cache_miss(self, client: httpx.Client) -> None:
+        """Environment variable execution is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": "printenv GREETING",
+            "env": {"GREETING": "hello"},
+            "files": {},
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="hello\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:366: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': 'cb7cb2f9-b45e-4cda-89ab-1efe69bb42e8', 'stdout': 'hello\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'hello\n', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': 'cb7cb2f9-b45e-4cda-89ab-1efe69bb42e8', 'stdout': 'hello\n', 'stderr': '', 'exit_code': 0, 'duration': 0.006, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_______________________ TestHidden.test_02_env_cache_hit _______________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16ef30>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_02_env_cache_hit(self, client: httpx.Client) -> None:
+        """Identical env request hits cache."""
+        response = client.post("/v1/execute", json={
+            "command": "printenv GREETING",
+            "env": {"GREETING": "hello"},
+            "files": {},
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=True,
+            expected_stdout="hello\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:384: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '6c1f3cea-f11d-4a2f-86d1-59192e93e451', 'stdout': 'hello\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = True, expected_stdout = 'hello\n', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '6c1f3cea-f11d-4a2f-86d1-59192e93e451', 'stdout': 'hello\n', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_____________________ TestHidden.test_03_env_changes_cache _____________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16d970>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_03_env_changes_cache(self, client: httpx.Client) -> None:
+        """Different env value is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": "printenv GREETING",
+            "env": {"GREETING": "hola"},
+            "files": {},
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="hola\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:402: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '5a56108f-1345-426a-9f87-550b6b7203f7', 'stdout': 'hola\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'hola\n', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '5a56108f-1345-426a-9f87-550b6b7203f7', 'stdout': 'hola\n', 'stderr': '', 'exit_code': 0, 'duration': 0.003, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_____________________ TestHidden.test_04_stdin_cache_miss ______________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16e930>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_04_stdin_cache_miss(self, client: httpx.Client) -> None:
+        """Stdin execution is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": "cat",
+            "env": {},
+            "files": {},
+            "stdin": "input-one\n",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="input-one\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:420: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '3d995395-ee47-47be-9ba7-686d6fdc4f22', 'stdout': 'input-one\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'input-one\n', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '3d995395-ee47-47be-9ba7-686d6fdc4f22', 'stdout': 'input-one\n', 'stderr': '', 'exit_code': 0, 'duration': 0.004, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+______________________ TestHidden.test_05_stdin_cache_hit ______________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16f770>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_05_stdin_cache_hit(self, client: httpx.Client) -> None:
+        """Identical stdin request hits cache."""
+        response = client.post("/v1/execute", json={
+            "command": "cat",
+            "env": {},
+            "files": {},
+            "stdin": "input-one\n",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=True,
+            expected_stdout="input-one\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': '591826c9-add3-46c7-a365-8a0e71c754d4', 'stdout': 'input-one\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = True, expected_stdout = 'input-one\n', expected_stderr = ''
+expected_exit_code = 0, expected_timed_out = False, duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': '591826c9-add3-46c7-a365-8a0e71c754d4', 'stdout': 'input-one\n', 'stderr': '', 'exit_code': 0, 'duration': 0.003, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+__________________ TestHidden.test_06_timeout_variation_short __________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16f680>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_06_timeout_variation_short(self, client: httpx.Client) -> None:
+        """Different timeout is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'timeout variant'",
+            "env": {},
+            "files": {},
+            "stdin": "",
+            "timeout": 1,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="timeout variant\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:456: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': 'c88dc83e-aedd-4cfd-8a04-9a185d75cbdb', 'stdout': 'timeout variant\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'timeout variant\n'
+expected_stderr = '', expected_exit_code = 0, expected_timed_out = False
+duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': 'c88dc83e-aedd-4cfd-8a04-9a185d75cbdb', 'stdout': 'timeout variant\n', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+__________________ TestHidden.test_07_timeout_variation_long ___________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16c770>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_07_timeout_variation_long(self, client: httpx.Client) -> None:
+        """Different timeout value is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'timeout variant'",
+            "env": {},
+            "files": {},
+            "stdin": "",
+            "timeout": 2,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       _assert_cache_response(
+            payload,
+            expected_cached=False,
+            expected_stdout="timeout variant\n",
+            expected_exit_code=0,
+        )
+
+.evaluation_tests/test_checkpoint_5.py:474: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+payload = {'id': 'c2bcf755-309a-4fae-bdc0-4fc92aba9434', 'stdout': 'timeout variant\n', 'stderr': '', 'exit_code': 0, ...}
+expected_cached = False, expected_stdout = 'timeout variant\n'
+expected_stderr = '', expected_exit_code = 0, expected_timed_out = False
+duration_limit = 10.0
+
+    def _assert_cache_response(
+        payload: dict[str, Any],
+        expected_cached: bool,
+        expected_stdout: str = "",
+        expected_stderr: str = "",
+        expected_exit_code: int = 0,
+        expected_timed_out: bool = False,
+        duration_limit: float = 10.0,
+    ) -> None:
+        """Validate response with cache field."""
+        _assert_uuid(payload["id"])
+>       assert "cached" in payload, "Response should have 'cached' field"
+E       AssertionError: Response should have 'cached' field
+E       assert 'cached' in {'id': 'c2bcf755-309a-4fae-bdc0-4fc92aba9434', 'stdout': 'timeout variant\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:141: AssertionError
+_________________ TestHidden.test_08_tracking_chain_cache_miss _________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16d670>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_08_tracking_chain_cache_miss(self, client: httpx.Client) -> None:
+        """Command chain with tracking is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo 'tracking line 1' > tracked.txt"},
+                {"cmd": "echo 'tracking line 2' >> tracked.txt"},
+            ],
+            "track": ["*.txt"],
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:492: KeyError
+_________________ TestHidden.test_09_tracking_chain_cache_hit __________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16ed80>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_09_tracking_chain_cache_hit(self, client: httpx.Client) -> None:
+        """Identical chain request hits cache."""
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo 'tracking line 1' > tracked.txt"},
+                {"cmd": "echo 'tracking line 2' >> tracked.txt"},
+            ],
+            "track": ["*.txt"],
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is True
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:508: KeyError
+_________________ TestHidden.test_10_track_pattern_change_miss _________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16fbc0>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_10_track_pattern_change_miss(self, client: httpx.Client) -> None:
+        """Different track pattern is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo 'tracking line 1' > tracked.txt"},
+                {"cmd": "echo 'tracking line 2' >> tracked.txt"},
+            ],
+            "track": ["tracked.txt"],
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:522: KeyError
+________________ TestHidden.test_11_continue_on_error_true_miss ________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16cfb0>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_11_continue_on_error_true_miss(self, client: httpx.Client) -> None:
+        """continue_on_error=true is cache miss."""
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo 'chain step 1'"},
+                {"cmd": "echo 'chain step 2'"},
+            ],
+            "continue_on_error": True,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:535: KeyError
+________________ TestHidden.test_12_continue_on_error_true_hit _________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f16d6a0>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_12_continue_on_error_true_hit(self, client: httpx.Client) -> None:
+        """Identical continue_on_error=true hits cache."""
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo 'chain step 1'"},
+                {"cmd": "echo 'chain step 2'"},
+            ],
+            "continue_on_error": True,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is True
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:548: KeyError
+_______________ TestHidden.test_13_continue_on_error_false_miss ________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f167e90>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_13_continue_on_error_false_miss(self, client: httpx.Client) -> None:
+        """continue_on_error=false (default) is different cache key."""
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo 'chain step 1'"},
+                {"cmd": "echo 'chain step 2'"},
+            ],
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:560: KeyError
+________________ TestHidden.test_14_continue_on_error_false_hit ________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f167bf0>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_14_continue_on_error_false_hit(self, client: httpx.Client) -> None:
+        """Identical request with default continue_on_error hits cache."""
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo 'chain step 1'"},
+                {"cmd": "echo 'chain step 2'"},
+            ],
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is True
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:572: KeyError
+______________________ TestHidden.test_15_force_seed_miss ______________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f167710>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_15_force_seed_miss(self, client: httpx.Client) -> None:
+        """Seed unique command for force test."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'force cache'",
+            "env": {},
+            "files": {},
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:585: KeyError
+______________________ TestHidden.test_16_force_seed_hit _______________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f166ff0>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_16_force_seed_hit(self, client: httpx.Client) -> None:
+        """Verify seed is in cache."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'force cache'",
+            "env": {},
+            "files": {},
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is True
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:598: KeyError
+_____________________ TestHidden.test_17_force_bypass_miss _____________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f192cc0>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_17_force_bypass_miss(self, client: httpx.Client) -> None:
+        """force=true bypasses cache."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'force cache'",
+            "env": {},
+            "files": {},
+            "force": True,
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:612: KeyError
+____________________ TestHidden.test_18_force_followup_hit _____________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f192b10>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_18_force_followup_hit(self, client: httpx.Client) -> None:
+        """After force, cache is updated."""
+        response = client.post("/v1/execute", json={
+            "command": "echo 'force cache'",
+            "env": {},
+            "files": {},
+            "stdin": "",
+            "timeout": 5,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is True
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:625: KeyError
+____________________ TestHidden.test_19_stats_cache_metrics ____________________
+
+self = <test_checkpoint_5.TestHidden object at 0x76fd8f1902f0>
+client = <httpx.Client object at 0x76fd8f1ab6b0>
+
+    def test_19_stats_cache_metrics(self, client: httpx.Client) -> None:
+        """Verify cache metrics are tracked."""
+        response = client.get("/v1/stats/execution")
+        assert response.status_code == 200
+        payload = response.json()
+>       cache = payload["cache"]
+                ^^^^^^^^^^^^^^^^
+E       KeyError: 'cache'
+
+.evaluation_tests/test_checkpoint_5.py:632: KeyError
+____________________ TestRegression.test_timeout_execution _____________________
+
+self = <test_checkpoint_5.TestRegression object at 0x76fd8f166cf0>
+client = <httpx.Client object at 0x76fd8f06ffe0>
+
+    @pytest.mark.regression
+    def test_timeout_execution(self, client: httpx.Client) -> None:
+        """Timeout execution includes cached field."""
+        response = client.post("/v1/execute", json={
+            "command": "sleep 2",
+            "env": {},
+            "files": {},
+            "stdin": [],
+            "timeout": 0.3,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert "cached" in payload
+E       AssertionError: assert 'cached' in {'id': 'b207b229-9014-4d70-9e4f-92efecfca699', 'stdout': '', 'stderr': '', 'exit_code': -1, 'duration': 0.301, 'timed_out': True}
+
+.evaluation_tests/test_checkpoint_5.py:660: AssertionError
+_________________ TestRegression.test_recursive_file_tracking __________________
+
+self = <test_checkpoint_5.TestRegression object at 0x76fd8f1677d0>
+client = <httpx.Client object at 0x76fd8f06ffe0>
+
+    @pytest.mark.regression
+    def test_recursive_file_tracking(self, client: httpx.Client) -> None:
+        """Recursive file tracking includes cached field."""
+        response = client.post("/v1/execute", json={
+            "command": "mkdir -p subdir && echo 'nested content' > subdir/nested.log",
+            "env": {},
+            "files": {},
+            "stdin": [],
+            "timeout": 10,
+            "track": ["**/*.log"],
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert "cached" in payload
+E       AssertionError: assert 'cached' in {'id': '25c767da-ff99-45ac-b445-28d904945467', 'stdout': '', 'stderr': '', 'exit_code': 0, 'duration': 0.003, 'timed_out': False, 'files': {'subdir/nested.log': 'nested content\n'}}
+
+.evaluation_tests/test_checkpoint_5.py:678: AssertionError
+_______________ TestRegression.test_command_chain_with_required ________________
+
+self = <test_checkpoint_5.TestRegression object at 0x76fd8f16fb60>
+client = <httpx.Client object at 0x76fd8f06ffe0>
+
+    @pytest.mark.regression
+    def test_command_chain_with_required(self, client: httpx.Client) -> None:
+        """Command chain with required includes cached field."""
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo 'setup'"},
+                {"cmd": "sh -c 'exit 1'"},
+                {"cmd": "echo 'always runs'", "required": True},
+            ],
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert "cached" in payload
+E       assert 'cached' in {'id': '21c1d93f-2c4a-4b24-a43d-f305d83c1918', 'commands': [{'cmd': "echo 'setup'", 'stdout': 'setup\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}, {'cmd': "sh -c 'exit 1'", 'stdout': '', 'stderr': '', 'exit_code': 1, 'duration': 0.002, 'timed_out': False}, {'cmd': "echo 'always runs'", 'stdout': 'always runs\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False, 'required': True}], 'exit_code': 1, 'duration': 0.005, 'timed_out': False}
+
+.evaluation_tests/test_checkpoint_5.py:695: AssertionError
+___________________ TestRegression.test_cache_failed_command ___________________
+
+self = <test_checkpoint_5.TestRegression object at 0x76fd8f16c800>
+client = <httpx.Client object at 0x76fd8f06ffe0>
+
+    @pytest.mark.regression
+    def test_cache_failed_command(self, client: httpx.Client) -> None:
+        """Failed commands are cached too."""
+        # First execution - miss
+        response = client.post("/v1/execute", json={
+            "command": "sh -c 'echo fail_cache && exit 42'",
+            "timeout": 10,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:711: KeyError
+________________ TestRegression.test_cache_chain_order_matters _________________
+
+self = <test_checkpoint_5.TestRegression object at 0x76fd8f16f470>
+client = <httpx.Client object at 0x76fd8f06ffe0>
+
+    @pytest.mark.regression
+    def test_cache_chain_order_matters(self, client: httpx.Client) -> None:
+        """Command chain order affects cache key."""
+        # First order - A, B
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo order_A"},
+                {"cmd": "echo order_B"},
+            ],
+            "timeout": 10,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:737: KeyError
+_________________ TestRegression.test_cache_special_chars_cmd __________________
+
+self = <test_checkpoint_5.TestRegression object at 0x76fd8f16d160>
+client = <httpx.Client object at 0x76fd8f06ffe0>
+
+    @pytest.mark.regression
+    def test_cache_special_chars_cmd(self, client: httpx.Client) -> None:
+        """Commands with special characters are cached correctly."""
+        response = client.post("/v1/execute", json={
+            "command": "echo \"he said 'hello' with \\\"quotes\\\"\"",
+            "timeout": 10,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:760: KeyError
+______________________ TestRegression.test_cache_unicode _______________________
+
+self = <test_checkpoint_5.TestRegression object at 0x76fd8f16e3f0>
+client = <httpx.Client object at 0x76fd8f06ffe0>
+
+    @pytest.mark.regression
+    def test_cache_unicode(self, client: httpx.Client) -> None:
+        """Unicode content is cached correctly."""
+        response = client.post("/v1/execute", json={
+            "command": "cat",
+            "stdin": ["fire", "Privet", "Nihao"],
+            "timeout": 10,
+        })
+        assert response.status_code == 201
+        payload = response.json()
+>       assert payload["cached"] is False
+               ^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:773: KeyError
+______________________ TestRegression.test_force_on_chain ______________________
+
+self = <test_checkpoint_5.TestRegression object at 0x76fd8f16eae0>
+client = <httpx.Client object at 0x76fd8f06ffe0>
+
+    @pytest.mark.regression
+    def test_force_on_chain(self, client: httpx.Client) -> None:
+        """Force works on command chains."""
+        # First - miss
+        response = client.post("/v1/execute", json={
+            "command": [
+                {"cmd": "echo force_chain_test"},
+                {"cmd": "echo step2"},
+            ],
+            "timeout": 10,
+        })
+        assert response.status_code == 201
+>       assert response.json()["cached"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'cached'
+
+.evaluation_tests/test_checkpoint_5.py:787: KeyError
+--------------------------------- JSON report ----------------------------------
+report saved to: .scbench/pytest-report.json
+=========================== short test summary info ============================
+FAILED .evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string] - AssertionError: assert 500 == 400
+ +  where 500 = <Response [500 Internal Server Error]>.status_code
+ +  and   400 = ErrorCase(name='stdin_array_with_non_string', body={'command': 'echo test', 'stdin': ['ok', 123]}, expected_code=None, expected_status=400).expected_status
+FAILED .evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[env_is_null] - AssertionError: assert 201 == 400
+ +  where 201 = <Response [201 Created]>.status_code
+ +  and   400 = ErrorCase(name='env_is_null', body={'command': 'echo test', 'env': None}, expected_code=None, expected_status=400).expected_status
+FAILED .evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[files_is_null] - AssertionError: assert 201 == 400
+ +  where 201 = <Response [201 Created]>.status_code
+ +  and   400 = ErrorCase(name='files_is_null', body={'command': 'echo test', 'files': None}, expected_code=None, expected_status=400).expected_status
+FAILED .evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[bz2_compression] - AssertionError: assert 127 == 0
+ +  where 0 = StructuredFileCase(name='bz2_compression', body={'command': 'bzcat data.csv.bz2', 'env': {}, 'files': {'data.csv.bz2': [{'id': 1, 'name': 'test'}]}, 'stdin': [], 'timeout': 10}, expected_stdout='id,name\n1,test\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None).expected_exit_code
+FAILED .evaluation_tests/test_checkpoint_3.py::TestCore::test_structured_files[jsonl_columns] - AssertionError: stdout mismatch:
+  actual: '{"id": [1, 2, 3], "name": ["alice", "bob", "charlie"]}\n'
+  expected: '{"id":1,"name":"alice"}\n{"id":2,"name":"bob"}\n{"id":3,"name":"charlie"}\n'
+assert '{"id":[1,2,3],"name":["alice","bob","charlie"]}' == '{"id":1,"name":"alice"}{"id":2,"name":"bob"}{"id":3,"name":"charlie"}'
+  
+  - {"id":1,"name":"alice"}{"id":2,"name":"bob"}{"id":3,"name":"charlie"}
+  + {"id":[1,2,3],"name":["alice","bob","charlie"]}
+FAILED .evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[json_null] - assert 400 == 201
+ +  where 400 = <Response [400 Bad Request]>.status_code
+FAILED .evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[ndjson_columns] - AssertionError: stdout mismatch:
+  actual: '{"x": [1, 2, 3], "y": [10, 20, 30]}\n'
+  expected: '{"x":1,"y":10}\n{"x":2,"y":20}\n{"x":3,"y":30}\n'
+assert '{"x":[1,2,3],"y":[10,20,30]}' == '{"x":1,"y":10}{"x":2,"y":20}{"x":3,"y":30}'
+  
+  - {"x":1,"y":10}{"x":2,"y":20}{"x":3,"y":30}
+  + {"x":[1,2,3],"y":[10,20,30]}
+FAILED .evaluation_tests/test_checkpoint_3.py::TestFunctionality::test_structured_files_extended[tsv_bz2_compression] - AssertionError: assert 127 == 0
+ +  where 0 = StructuredFileCase(name='tsv_bz2_compression', body={'command': 'bzcat data.tsv.bz2', 'env': {}, 'files': {'data.tsv.bz2': [{'col1': 'val1', 'col2': 'val2'}]}, 'stdin': [], 'timeout': 10}, expected_stdout='col1\tcol2\nval1\tval2\n', expected_stderr='', expected_exit_code=0, expected_timed_out=False, expected_duration=10.0, expected_files=None).expected_exit_code
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_01_initial_stats - KeyError: 'cache'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_02_cache_miss_first_execution - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': 'd865cc5b-83cd-427a-988a-e89e3ff4f8e9', 'stdout': 'hello from cache\n', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_03_cache_hit_identical_request - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '921be487-b0fc-4770-b2d6-b19413c4a424', 'stdout': 'hello from cache\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_04_files_cache_miss_first - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '75238922-53d4-49a2-94ce-99dcb0c5efcf', 'stdout': 'version 1', 'stderr': '', 'exit_code': 0, 'duration': 0.003, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_05_different_files_cache_miss - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '839215aa-7552-4b42-aa58-40cacfcdc22c', 'stdout': 'version 2', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_06_force_setup - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '23b33453-ad82-4bba-b011-2a8edb257319', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_07_force_bypass - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '567e2629-cf58-4ac2-b2bb-dc30add9cbe9', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_08_force_bypass_updates_cache - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '96762b1d-9da7-46b4-9cd9-b80c01f95a8a', 'stdout': 'forced\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestCore::test_09_final_stats - KeyError: 'cache'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_01_env_cache_miss - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': 'cb7cb2f9-b45e-4cda-89ab-1efe69bb42e8', 'stdout': 'hello\n', 'stderr': '', 'exit_code': 0, 'duration': 0.006, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_02_env_cache_hit - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '6c1f3cea-f11d-4a2f-86d1-59192e93e451', 'stdout': 'hello\n', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_03_env_changes_cache - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '5a56108f-1345-426a-9f87-550b6b7203f7', 'stdout': 'hola\n', 'stderr': '', 'exit_code': 0, 'duration': 0.003, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_04_stdin_cache_miss - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '3d995395-ee47-47be-9ba7-686d6fdc4f22', 'stdout': 'input-one\n', 'stderr': '', 'exit_code': 0, 'duration': 0.004, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_05_stdin_cache_hit - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': '591826c9-add3-46c7-a365-8a0e71c754d4', 'stdout': 'input-one\n', 'stderr': '', 'exit_code': 0, 'duration': 0.003, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_06_timeout_variation_short - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': 'c88dc83e-aedd-4cfd-8a04-9a185d75cbdb', 'stdout': 'timeout variant\n', 'stderr': '', 'exit_code': 0, 'duration': 0.002, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_07_timeout_variation_long - AssertionError: Response should have 'cached' field
+assert 'cached' in {'id': 'c2bcf755-309a-4fae-bdc0-4fc92aba9434', 'stdout': 'timeout variant\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_08_tracking_chain_cache_miss - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_09_tracking_chain_cache_hit - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_10_track_pattern_change_miss - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_11_continue_on_error_true_miss - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_12_continue_on_error_true_hit - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_13_continue_on_error_false_miss - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_14_continue_on_error_false_hit - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_15_force_seed_miss - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_16_force_seed_hit - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_17_force_bypass_miss - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_18_force_followup_hit - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestHidden::test_19_stats_cache_metrics - KeyError: 'cache'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestRegression::test_timeout_execution - AssertionError: assert 'cached' in {'id': 'b207b229-9014-4d70-9e4f-92efecfca699', 'stdout': '', 'stderr': '', 'exit_code': -1, 'duration': 0.301, 'timed_out': True}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestRegression::test_recursive_file_tracking - AssertionError: assert 'cached' in {'id': '25c767da-ff99-45ac-b445-28d904945467', 'stdout': '', 'stderr': '', 'exit_code': 0, 'duration': 0.003, 'timed_out': False, 'files': {'subdir/nested.log': 'nested content\n'}}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestRegression::test_command_chain_with_required - assert 'cached' in {'id': '21c1d93f-2c4a-4b24-a43d-f305d83c1918', 'commands': [{'cmd': "echo 'setup'", 'stdout': 'setup\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False}, {'cmd': "sh -c 'exit 1'", 'stdout': '', 'stderr': '', 'exit_code': 1, 'duration': 0.002, 'timed_out': False}, {'cmd': "echo 'always runs'", 'stdout': 'always runs\n', 'stderr': '', 'exit_code': 0, 'duration': 0.001, 'timed_out': False, 'required': True}], 'exit_code': 1, 'duration': 0.005, 'timed_out': False}
+FAILED .evaluation_tests/test_checkpoint_5.py::TestRegression::test_cache_failed_command - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestRegression::test_cache_chain_order_matters - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestRegression::test_cache_special_chars_cmd - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestRegression::test_cache_unicode - KeyError: 'cached'
+FAILED .evaluation_tests/test_checkpoint_5.py::TestRegression::test_force_on_chain - KeyError: 'cached'
+======================= 44 failed, 141 passed in 31.95s ========================

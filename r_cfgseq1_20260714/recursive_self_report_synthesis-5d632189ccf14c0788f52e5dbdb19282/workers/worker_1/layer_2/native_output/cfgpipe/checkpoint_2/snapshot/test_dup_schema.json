@@ -1,0 +1,4 @@
+{
+  "port": { "type": "integer", "primary-store": "app/port" },
+  "alt_port": { "type": "integer", "primary-store": "app/port" }
+}

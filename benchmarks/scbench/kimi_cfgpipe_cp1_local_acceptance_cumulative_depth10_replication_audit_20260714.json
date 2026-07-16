@@ -1,0 +1,128 @@
+{
+  "status": "valid_replication_terminal_degradation_not_confirmed_intermittent_tail_collapse_replicated",
+  "date": "2026-07-14",
+  "problem": "cfgpipe",
+  "model": "kimi-k2.6",
+  "assimilation_mode": "cumulative_local_acceptance",
+  "exploratory_run": {
+    "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_local_acceptance_cumulative_depth6_20260714",
+    "arm_id": "cumulative_local_acceptance-f3205b0a8d5145f6911461e2bdce5ee3",
+    "mean_core_curve": [
+      0.6666666667,
+      1.0,
+      1.0,
+      1.0,
+      0.3333333333,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.6666666667
+    ],
+    "mean_all_test_curve": [
+      0.6126126126,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.3063063063,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.6126126126
+    ],
+    "collapse_layers": [
+      1,
+      5,
+      10
+    ],
+    "post_layer_4_collapse_layers": [
+      5,
+      10
+    ],
+    "post_layer_4_zero_worker_outcomes": 3,
+    "layer_10_reference_count": 27,
+    "layer_10_received_experience_chars": 279553,
+    "layer_10_input_tokens": 1178164,
+    "layer_10_input_ratio_to_matching_control": 9.6851
+  },
+  "confirmatory_run": {
+    "config": "benchmarks/scbench/kimi_cfgpipe_cp1_local_acceptance_cumulative_depth10_confirmatory_config.json",
+    "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_local_acceptance_cumulative_depth10_confirmatory_r1_20260714",
+    "arm_id": "cumulative_local_acceptance-15ee658d129a4770a55a226910c2e76d",
+    "mean_core_curve": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.6666666667,
+      1.0,
+      1.0,
+      0.6666666667,
+      1.0
+    ],
+    "mean_all_test_curve": [
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.6126126126,
+      0.9189189189,
+      0.9189189189,
+      0.6126126126,
+      0.9189189189
+    ],
+    "collapse_layers": [
+      6,
+      9
+    ],
+    "post_layer_4_collapse_layers": [
+      6,
+      9
+    ],
+    "post_layer_4_zero_worker_outcomes": 2,
+    "layer_10_reference_count": 28,
+    "layer_10_received_experience_chars": 287953,
+    "layer_10_input_tokens": 1473758,
+    "layer_10_input_ratio_to_matching_control": 12.115
+  },
+  "matching_control": {
+    "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714",
+    "arm_id": "no_transfer-e92d8453f0d84861aa032e075e0257c8",
+    "layer_5_mean_core": 1.0,
+    "layer_5_mean_all_test": 0.9189189189,
+    "layer_5_input_tokens": 121647,
+    "layer_4_to_5_zero_worker_outcomes": 0,
+    "layer_4_to_5_worker_outcomes": 6
+  },
+  "replicated_tail_signal": {
+    "post_layer_4_collapse_layer_events": 4,
+    "post_layer_4_total_layer_events": 12,
+    "post_layer_4_collapse_layer_rate": 0.3333333333,
+    "post_layer_4_zero_worker_outcomes": 5,
+    "post_layer_4_total_worker_outcomes": 36,
+    "post_layer_4_zero_worker_rate": 0.1388888889,
+    "all_zero_workers_successful_commands": 0,
+    "all_zero_workers_local_proxy_accepted": false,
+    "all_zero_workers_self_reported_success": true,
+    "interpretation": "Both independent runs produced two catastrophic zero-score layers after complexity had accumulated, but the affected workers were rejected by the command-based local proxy and the next layer recovered."
+  },
+  "confirmatory_decision": {
+    "validity_gates_pass": true,
+    "primary_terminal_all_test_pass": false,
+    "within_arm_terminal_drop_pass": false,
+    "terminal_core_support_pass": false,
+    "terminal_tail_risk_pass": false,
+    "complexity_support_pass": true,
+    "all_required_pass": false,
+    "verdict": "The preregistered monotonic or terminal degradation curve was not confirmed."
+  },
+  "iteration_hypothesis": {
+    "too_few_iterations": false,
+    "evidence": "Two independent ten-layer runs reached 9.7x and 12.1x matching-control input-token load. More layers exposed repeated catastrophic tail events, but performance recovered instead of entering a persistent low state.",
+    "mechanistic_boundary": "The local proxy required at least three successful environment commands. Every zero-score worker had zero successful commands, so its self-reported success was not propagated.",
+    "next_frozen_test": "Hold the task, model, topology, bootstrap, depth, and recipient blinding fixed while weakening only source admission from completion-and-smoke to self-reported success. This tests whether propagation, rather than iteration count alone, is required for a death spiral."
+  }
+}

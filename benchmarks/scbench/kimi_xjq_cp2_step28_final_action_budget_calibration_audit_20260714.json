@@ -1,0 +1,46 @@
+{
+  "status": "valid_final_calibration_adopt_28",
+  "date": "2026-07-14",
+  "problem": "xjq",
+  "checkpoint": 2,
+  "model": "kimi-k2.6",
+  "run": {
+    "config": "benchmarks/scbench/kimi_xjq_cp2_step28_final_action_budget_calibration_config.json",
+    "run_root": "runs_scbench_moa_kimi_xjq_cp2_step28_final_action_budget_calibration_r1_20260714",
+    "arm_id": "no_transfer-091b39da028c4b14b7cb60d9f9dfcab5",
+    "worker_core_scores": ["12/13", "12/13", "12/13"],
+    "worker_all_test_scores": ["48/51", "45/51", "45/51"],
+    "mean_core": 0.9230769231,
+    "mean_all_tests": 0.9019607843
+  },
+  "validity": {
+    "test_collection_hash": "e967de874ab427679658999ab4063710bf46abaffceccda517aa2febc5275a09",
+    "infrastructure_failures": 0,
+    "api_quota_or_rate_limit_failures": 0,
+    "pass": true
+  },
+  "trajectory_diagnosis": {
+    "checkpoint_2_explicit_completion_before_limit": 1,
+    "earliest_checkpoint_2_completion_action": 18,
+    "workers_still_reaching_28_action_limit": 2,
+    "zero_core_outcomes": 0
+  },
+  "comparison": {
+    "step_12_mean_core": "invalid high-variance control",
+    "step_20_mean_core": 0.9230769231,
+    "step_20_mean_all_tests": 0.8758169935,
+    "step_28_mean_core": 0.9230769231,
+    "step_28_mean_all_tests": 0.9019607843
+  },
+  "decision_rule_evaluation": {
+    "mean_core_at_least_0_80": true,
+    "all_workers_nonzero": true,
+    "at_least_two_workers_at_10_of_13": true,
+    "adopt_28": true
+  },
+  "decision": {
+    "main_contrast_step_limit": 28,
+    "further_escalation": false,
+    "reason": "The final permitted budget preserves stable high headroom, improves overall-test performance, and allows at least one natural checkpoint-2 completion before the boundary."
+  }
+}

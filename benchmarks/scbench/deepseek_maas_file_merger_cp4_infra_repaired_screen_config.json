@@ -1,0 +1,61 @@
+{
+  "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "experiment_role": "infrastructure_only_rerun_of_frozen_file_merger_candidate",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "model": "deepseek-v4-flash",
+  "api_model": "deepseek-v4-flash",
+  "worker_count": 1,
+  "num_layers": 1,
+  "checkpoint_limit": 4,
+  "step_limit_per_worker": 32,
+  "pass_policy": "any",
+  "experience_char_limit_per_source": 10000,
+  "candidates": [
+    {
+      "problem": "file_merger",
+      "reason": "Infrastructure-only rerun after adding the exact declared pyarrow and pytest wheels; no model inference occurred in the invalid attempt."
+    }
+  ],
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": true,
+    "offline_wheelhouse": true
+  },
+  "selection_rule": {
+    "advance": "The candidate has no infrastructure failure, every checkpoint 1 through 4 explicitly completes before action 32, and checkpoint 4 normalized Core and all-test scores are each at least 0.50.",
+    "headroom": "Checkpoint 4 must fail at least one collected test or one Core test.",
+    "reject": "Reject if any checkpoint is action-boundary censored, has infrastructure failure, or checkpoint 4 scores below 0.50 on either normalized measure.",
+    "no_budget_retuning": true,
+    "no_checkpoint_skipping": true
+  },
+  "formal_if_valid": {
+    "arms": [
+      "no_transfer",
+      "recursive_self_report_synthesis"
+    ],
+    "worker_count_per_arm_initial_pilot": 1,
+    "checkpoint_sequence": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "minimum_manager_updates": 3,
+    "parallel_arms": true,
+    "scores_withheld_from_manager": true,
+    "source_admission": "workflow self-reported successful completion",
+    "manager_state": "one recursively revised shared playbook",
+    "replication_policy": "If treatment-control all-test gaps are negative at checkpoints 3 and 4, add two identical independent replicates. Otherwise stop the selected model-task-provider pair."
+  },
+  "provenance": {
+    "original_frozen_screen": "benchmarks/scbench/deepseek_maas_cp4_long_sequence_candidate_screen_config.json",
+    "infrastructure_amendment": "benchmarks/scbench/deepseek_file_merger_local_wheelhouse_infrastructure_amendment_20260714.json",
+    "invalid_attempt_reused": false,
+    "scientific_settings_changed": false,
+    "thresholds_changed": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "status": "candidate_selected_after_prospective_action_budget_calibration",
+  "date": "2026-07-14",
+  "screen_config": "benchmarks/scbench/kimi_cp2_evolving_candidate_screen_step28_config.json",
+  "screen_run": "runs_scbench_moa_kimi_cp2_evolving_candidate_screen_step28_r1_20260714",
+  "screen_results": [
+    {
+      "problem": "cfgpipe",
+      "checkpoint_2_core": "3/3",
+      "checkpoint_2_all": "56/68",
+      "normalized_core": 1.0,
+      "action_steps_by_checkpoint": [
+        28,
+        28
+      ],
+      "completion_steps": [
+        null,
+        null
+      ],
+      "decision": "conditional_action_budget_calibration"
+    },
+    {
+      "problem": "datagate",
+      "checkpoint_2_core": "7/9",
+      "checkpoint_2_all": "115/122",
+      "normalized_core": 0.7777777777777778,
+      "decision": "not_selected_under_frozen_full_core_gate"
+    },
+    {
+      "problem": "test_translator",
+      "checkpoint_1_core": "0/21",
+      "checkpoint_1_all": "27/102",
+      "decision": "rejected_as_too_hard"
+    }
+  ],
+  "calibration_config": "benchmarks/scbench/kimi_cfgpipe_cp2_step40_action_budget_calibration_config.json",
+  "calibration_run": "runs_scbench_moa_kimi_cfgpipe_cp2_step40_calibration_r1_20260714",
+  "calibration_arm": "no_transfer-1dbda639729e48e2ba98c858133cce65",
+  "calibration_result": {
+    "checkpoint_1": {
+      "core": "4/4",
+      "all": "33/37",
+      "action_steps": 17,
+      "completion_step": 17,
+      "infrastructure_failure": false,
+      "test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615"
+    },
+    "checkpoint_2": {
+      "core": "3/3",
+      "all": "59/68",
+      "action_steps": 17,
+      "completion_step": 17,
+      "infrastructure_failure": false,
+      "test_collection_hash": "35475c9c36a83fe0b7dca307f248d4a246015c44eace85d15ec1190742147e30"
+    }
+  },
+  "selection": {
+    "problem": "cfgpipe",
+    "model": "kimi-k2.6",
+    "per_checkpoint_action_budget": 40,
+    "reason": "The candidate passed every checkpoint-2 Core test, retained non-Core headroom, reproduced the frozen target, and naturally submitted at both checkpoints under the prospectively authorized budget.",
+    "next_gate": "One no-transfer checkpoint-3 calibration at the same action budget."
+  }
+}

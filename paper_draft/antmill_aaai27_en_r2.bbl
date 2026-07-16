@@ -1,0 +1,153 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Anonymous(2026{\natexlab{a}})}]{governed2026sharedmem}
+Anonymous. 2026{\natexlab{a}}.
+\newblock Governed Shared Memory for Multi-Agent {LLM} Systems.
+\newblock arXiv:2606.24535.
+\newblock TODO: verify authors before submission.
+
+\bibitem[{Anonymous(2026{\natexlab{b}})}]{ssgm2026}
+Anonymous. 2026{\natexlab{b}}.
+\newblock Governing Evolving Memory in {LLM} Agents: Risks, Mechanisms, and the
+  Stability and Safety Governed Memory Framework.
+\newblock arXiv:2603.11768.
+\newblock TODO: verify authors before submission.
+
+\bibitem[{Anonymous(2026{\natexlab{c}})}]{memfail2026}
+Anonymous. 2026{\natexlab{c}}.
+\newblock {MemFail}: Stress-Testing Failure Modes of {LLM} Memory Systems.
+\newblock arXiv:2605.26667.
+\newblock TODO: verify authors before submission.
+
+\bibitem[{Anonymous(2026{\natexlab{d}})}]{remembering2026}
+Anonymous. 2026{\natexlab{d}}.
+\newblock Remembering More, Risking More: Longitudinal Safety Risks in
+  Memory-Equipped {LLM} Agents.
+\newblock arXiv:2605.17830.
+\newblock TODO: verify authors before submission.
+
+\bibitem[{Barres et~al.(2025)}]{tau2bench2025}
+Barres, V.; et~al. 2025.
+\newblock $\tau^2$-Bench: Evaluating Conversational Agents in a Dual-Control
+  Environment.
+\newblock arXiv:2506.07982.
+\newblock TODO: verify author list before submission.
+
+\bibitem[{de~Chezelles et~al.(2024)de~Chezelles, Gasse, Drouin
+  et~al.}]{chezelles2024browsergym}
+de~Chezelles, T. L.~S.; Gasse, M.; Drouin, A.; et~al. 2024.
+\newblock The {BrowserGym} Ecosystem for Web Agent Research.
+\newblock arXiv:2412.05467.
+\newblock TODO: verify full author list before submission.
+
+\bibitem[{{DeepSeek-AI}(2024)}]{deepseek2024v3}
+{DeepSeek-AI}. 2024.
+\newblock {DeepSeek-V3} Technical Report.
+\newblock arXiv:2412.19437.
+
+\bibitem[{Du et~al.(2024)Du, Li, Torralba, Tenenbaum, and
+  Mordatch}]{du2024debate}
+Du, Y.; Li, S.; Torralba, A.; Tenenbaum, J.~B.; and Mordatch, I. 2024.
+\newblock Improving Factuality and Reasoning in Language Models through
+  Multiagent Debate.
+\newblock In \emph{International Conference on Machine Learning (ICML)}.
+
+\bibitem[{Hong et~al.(2024)Hong, Zhuge, Chen, Zheng, Cheng, Zhang, Wang, Wang,
+  Yau, Lin, Zhou, Ran, Xiao, Wu, and Schmidhuber}]{hong2024metagpt}
+Hong, S.; Zhuge, M.; Chen, J.; Zheng, X.; Cheng, Y.; Zhang, C.; Wang, J.; Wang,
+  Z.; Yau, S. K.~S.; Lin, Z.; Zhou, L.; Ran, C.; Xiao, L.; Wu, C.; and
+  Schmidhuber, J. 2024.
+\newblock {MetaGPT}: Meta Programming for a Multi-Agent Collaborative
+  Framework.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}.
+
+\bibitem[{Liu et~al.(2018)Liu, Guu, Pasupat, Shi, and Liang}]{liu2018miniwob}
+Liu, E.~Z.; Guu, K.; Pasupat, P.; Shi, T.; and Liang, P. 2018.
+\newblock Reinforcement Learning on Web Interfaces Using Workflow-Guided
+  Exploration.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}.
+
+\bibitem[{Park et~al.(2023)Park, O'Brien, Cai, Morris, Liang, and
+  Bernstein}]{park2023generative}
+Park, J.~S.; O'Brien, J.~C.; Cai, C.~J.; Morris, M.~R.; Liang, P.; and
+  Bernstein, M.~S. 2023.
+\newblock Generative Agents: Interactive Simulacra of Human Behavior.
+\newblock In \emph{Proceedings of the 36th Annual ACM Symposium on User
+  Interface Software and Technology (UIST)}.
+
+\bibitem[{Qian et~al.(2024{\natexlab{a}})Qian, Dang, Li, Liu, Chen, Yang, Liu,
+  and Sun}]{qian2024colearning}
+Qian, C.; Dang, Y.; Li, J.; Liu, W.; Chen, W.; Yang, C.; Liu, Z.; and Sun, M.
+  2024{\natexlab{a}}.
+\newblock Experiential Co-Learning of Software-Developing Agents.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics (ACL)}.
+
+\bibitem[{Qian et~al.(2024{\natexlab{b}})Qian, Liu, Liu, Chen, Dang, Li, Yang,
+  Chen, Su, Cong, Xu, Li, Liu, and Sun}]{qian2024chatdev}
+Qian, C.; Liu, W.; Liu, H.; Chen, N.; Dang, Y.; Li, J.; Yang, C.; Chen, W.; Su,
+  Y.; Cong, X.; Xu, J.; Li, D.; Liu, Z.; and Sun, M. 2024{\natexlab{b}}.
+\newblock {ChatDev}: Communicative Agents for Software Development.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics (ACL)}.
+
+\bibitem[{{Qwen Team}(2025)}]{yang2025qwen3}
+{Qwen Team}. 2025.
+\newblock {Qwen3} Technical Report.
+\newblock arXiv:2505.09388.
+
+\bibitem[{Shi et~al.(2017)Shi, Karpathy, Fan, Hernandez, and
+  Liang}]{shi2017wob}
+Shi, T.; Karpathy, A.; Fan, L.; Hernandez, J.; and Liang, P. 2017.
+\newblock World of Bits: An Open-Domain Platform for Web-Based Agents.
+\newblock In \emph{International Conference on Machine Learning (ICML)}.
+
+\bibitem[{Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
+  Yao}]{shinn2023reflexion}
+Shinn, N.; Cassano, F.; Gopinath, A.; Narasimhan, K.; and Yao, S. 2023.
+\newblock Reflexion: Language Agents with Verbal Reinforcement Learning.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}.
+
+\bibitem[{Wang et~al.(2023)Wang, Wei, Schuurmans, Le, Chi, Narang, Chowdhery,
+  and Zhou}]{wang2023selfconsistency}
+Wang, X.; Wei, J.; Schuurmans, D.; Le, Q.; Chi, E.; Narang, S.; Chowdhery, A.;
+  and Zhou, D. 2023.
+\newblock Self-Consistency Improves Chain of Thought Reasoning in Language
+  Models.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}.
+
+\bibitem[{Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
+  Cao}]{yao2023react}
+Yao, S.; Zhao, J.; Yu, D.; Du, N.; Shafran, I.; Narasimhan, K.; and Cao, Y.
+  2023.
+\newblock {ReAct}: Synergizing Reasoning and Acting in Language Models.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}.
+
+\bibitem[{Zhao et~al.(2024)Zhao, Huang, Xu, Lin, Liu, and
+  Huang}]{zhao2024expel}
+Zhao, A.; Huang, D.; Xu, Q.; Lin, M.; Liu, Y.-J.; and Huang, G. 2024.
+\newblock {ExpeL}: {LLM} Agents Are Experiential Learners.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~38, 19632--19642.
+
+\bibitem[{Zheng et~al.(2025)}]{liu2025mael}
+Zheng, Y.; et~al. 2025.
+\newblock Cross-Task Experiential Learning on {LLM}-based Multi-Agent
+  Collaboration.
+\newblock arXiv:2505.23187.
+\newblock TODO: verify author list before submission.
+
+\bibitem[{Zhong et~al.(2024)Zhong, Guo, Gao, Ye, and
+  Wang}]{zhong2024memorybank}
+Zhong, W.; Guo, L.; Gao, Q.; Ye, H.; and Wang, Y. 2024.
+\newblock {MemoryBank}: Enhancing Large Language Models with Long-Term Memory.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}.
+
+\end{thebibliography}

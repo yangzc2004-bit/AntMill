@@ -1,0 +1,389 @@
+{
+  "audit_date": "2026-07-15",
+  "scope": "Mechanism and reproducibility audit of the frozen cfgpipe cumulative treatment and prospective bounded-context control.",
+  "implementation_source": "D:\\antmill\\sec\\scbench_miniswe.py",
+  "implementation_source_sha256": "21f8ace63576a6fc569a1b6027a611df0dd74154492694320c639ef79e263327",
+  "experience_schema": {
+    "header": "Worker <id>, layer <n>. Local verifier Core: <p>/<t>; pytest exit <code>.",
+    "trajectory": "Trailing 6,000 characters from the final four assistant steps, before whole-artifact truncation.",
+    "snapshot": "UTF-8 source snapshot excerpt under the remaining source budget, before whole-artifact truncation.",
+    "artifact_cap_chars": 12000,
+    "recipient_per_source_cap_chars": 12000
+  },
+  "self_report_admission": {
+    "regex": "\\b(pass|passes|passed|works|working|success|successful|correct|verify|verified)\\b",
+    "flags": "re.IGNORECASE",
+    "scope": "Concatenation of all assistant message content.",
+    "local_validation_gate": "Separately requires at least three successful environment commands and the same self-report match.",
+    "external_evaluator_used_for_admission": false
+  },
+  "manager_schema": {
+    "sample_path": "D:\\antmill\\runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714\\recursive_synthesis-6f605bbdeaa340a7ad79319c848f8038\\manager\\layer_1\\synthesis.json",
+    "sample_sha256": "545deae6432255c234d2b855573a415415ca924b4f4aeeedd8e3cc8727708b11",
+    "sample_output_chars": 7649,
+    "system_instruction": "Produce one shared implementation playbook for the next independent agents; retain constraints, implementation decisions, edge cases, failure-prevention rules, and validation procedures; resolve conflicts explicitly.",
+    "user_fields": "task identifier, public specification through current round, previous shared playbook, accepted worker evidence",
+    "manager_output_cap_chars": 12000
+  },
+  "runs": [
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "routing": "cumulative",
+      "manifest": "D:\\antmill\\runs_scbench_moa_kimi_maas_cfgpipe_cp1_depth12_self_report_r2_20260715\\cumulative_self_report_acceptance-426bc68aaa4b4e8c8f2aad850c75a89b\\manifest.json",
+      "manifest_sha256": "4725949574003448b22f1c0d466133c9d768208adbded74e0c2650557c25897b",
+      "mode": "cumulative_self_report_acceptance",
+      "layers": 12,
+      "workers": 3
+    },
+    {
+      "run_id": "cfgpipe-bounded-control",
+      "role": "prospective_bounded_context_control",
+      "routing": "bounded_recent",
+      "manifest": "D:\\antmill\\runs_scbench_moa_kimi_maas_cfgpipe_cp1_bounded_context_depth6_r1_20260715\\bounded_recent_self_report_acceptance-93be1c12894e4c8f96b0fdc6b2334b68\\manifest.json",
+      "manifest_sha256": "79c2f81fd2022a2a00c3e2c09471ed271841d11065fa6ddd5c14452062b0ae58",
+      "mode": "bounded_recent_self_report_acceptance",
+      "layers": 6,
+      "workers": 3
+    }
+  ],
+  "summary_distributions": {
+    "cfgpipe-cumulative-main": {
+      "summary_chars": {
+        "min": 6449.0,
+        "median": 10479.0,
+        "mean": 10314.333333333334,
+        "max": 12000.0
+      },
+      "trajectory_chars": {
+        "min": 1852.0,
+        "median": 6001.0,
+        "mean": 5775.166666666667,
+        "max": 6001.0
+      },
+      "snapshot_excerpt_chars": {
+        "min": 4289.0,
+        "median": 4338.0,
+        "mean": 4398.916666666667,
+        "max": 6561.0
+      },
+      "received_experience_chars": {
+        "min": 25934.0,
+        "median": 193858.5,
+        "mean": 194576.25,
+        "max": 367725.0
+      },
+      "input_tokens": {
+        "min": 89269.0,
+        "median": 380926.5,
+        "mean": 362402.25,
+        "max": 703436.0
+      }
+    },
+    "cfgpipe-bounded-control": {
+      "summary_chars": {
+        "min": 7604.0,
+        "median": 10611.0,
+        "mean": 10394.388888888889,
+        "max": 12000.0
+      },
+      "trajectory_chars": {
+        "min": 1703.0,
+        "median": 6001.0,
+        "mean": 5637.944444444444,
+        "max": 6001.0
+      },
+      "snapshot_excerpt_chars": {
+        "min": 4326.0,
+        "median": 4470.0,
+        "mean": 4616.444444444444,
+        "max": 5859.0
+      },
+      "received_experience_chars": {
+        "min": 25934.0,
+        "median": 31705.5,
+        "mean": 30113.5,
+        "max": 32082.0
+      },
+      "input_tokens": {
+        "min": 61953.0,
+        "median": 76006.0,
+        "mean": 77731.05555555556,
+        "max": 121479.0
+      }
+    }
+  },
+  "alignment_summary": {
+    "cfgpipe-cumulative-main": {
+      "exact_primary_match_rate_after_layer_1": 0.8787878787878788,
+      "mean_max_prior_source_line_jaccard_after_layer_1": 0.9645089641338495,
+      "mean_max_summary_line_recall_after_layer_1": 0.9757173835217778,
+      "first_single_primary_implementation_layer": 5
+    },
+    "cfgpipe-bounded-control": {
+      "exact_primary_match_rate_after_layer_1": 1.0,
+      "mean_max_prior_source_line_jaccard_after_layer_1": 1.0,
+      "mean_max_summary_line_recall_after_layer_1": 1.0,
+      "first_single_primary_implementation_layer": 2
+    }
+  },
+  "layer_rows": [
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 1,
+      "unique_workspace_snapshots": 3,
+      "unique_primary_implementations": 3,
+      "pairwise_source_line_jaccard": 0.426097651536248,
+      "pairwise_function_jaccard": 0.4074074074074074,
+      "pairwise_ast_signature_jaccard": 0.3620658301509365,
+      "mean_max_prior_source_line_jaccard": 0.9431216931216931,
+      "mean_max_summary_line_recall": 0.9640075656430797,
+      "exact_primary_matches": 1
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 2,
+      "unique_workspace_snapshots": 3,
+      "unique_primary_implementations": 3,
+      "pairwise_source_line_jaccard": 0.7420289855072464,
+      "pairwise_function_jaccard": 0.9166666666666666,
+      "pairwise_ast_signature_jaccard": 0.36765063660692565,
+      "mean_max_prior_source_line_jaccard": 0.6211928083708949,
+      "mean_max_summary_line_recall": 0.7387909237543049,
+      "exact_primary_matches": 0
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 3,
+      "unique_workspace_snapshots": 2,
+      "unique_primary_implementations": 2,
+      "pairwise_source_line_jaccard": 0.9768115942028985,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 0.9682539682539683,
+      "mean_max_prior_source_line_jaccard": 0.9884057971014493,
+      "mean_max_summary_line_recall": 0.9941002949852508,
+      "exact_primary_matches": 2
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 4,
+      "unique_workspace_snapshots": 2,
+      "unique_primary_implementations": 2,
+      "pairwise_source_line_jaccard": 0.9768115942028985,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 0.9682539682539683,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 5,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 6,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 7,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 8,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 9,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 10,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 11,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-cumulative-main",
+      "role": "frozen_main_treatment",
+      "mode": "cumulative_self_report_acceptance",
+      "layer": 12,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-bounded-control",
+      "role": "prospective_bounded_context_control",
+      "mode": "bounded_recent_self_report_acceptance",
+      "layer": 1,
+      "unique_workspace_snapshots": 3,
+      "unique_primary_implementations": 3,
+      "pairwise_source_line_jaccard": 0.45445762617359564,
+      "pairwise_function_jaccard": 0.48148148148148145,
+      "pairwise_ast_signature_jaccard": 0.40528265107212474,
+      "mean_max_prior_source_line_jaccard": 0.8324127802851207,
+      "mean_max_summary_line_recall": 0.8885547880265475,
+      "exact_primary_matches": 0
+    },
+    {
+      "run_id": "cfgpipe-bounded-control",
+      "role": "prospective_bounded_context_control",
+      "mode": "bounded_recent_self_report_acceptance",
+      "layer": 2,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-bounded-control",
+      "role": "prospective_bounded_context_control",
+      "mode": "bounded_recent_self_report_acceptance",
+      "layer": 3,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-bounded-control",
+      "role": "prospective_bounded_context_control",
+      "mode": "bounded_recent_self_report_acceptance",
+      "layer": 4,
+      "unique_workspace_snapshots": 2,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-bounded-control",
+      "role": "prospective_bounded_context_control",
+      "mode": "bounded_recent_self_report_acceptance",
+      "layer": 5,
+      "unique_workspace_snapshots": 1,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    },
+    {
+      "run_id": "cfgpipe-bounded-control",
+      "role": "prospective_bounded_context_control",
+      "mode": "bounded_recent_self_report_acceptance",
+      "layer": 6,
+      "unique_workspace_snapshots": 2,
+      "unique_primary_implementations": 1,
+      "pairwise_source_line_jaccard": 1.0,
+      "pairwise_function_jaccard": 1.0,
+      "pairwise_ast_signature_jaccard": 1.0,
+      "mean_max_prior_source_line_jaccard": 1.0,
+      "mean_max_summary_line_recall": 1.0,
+      "exact_primary_matches": 3
+    }
+  ],
+  "interpretation_guards": [
+    "Exact primary-file matches are direct implementation alignment, but do not by themselves identify whether agents copied text or independently regenerated equivalent code.",
+    "Summary-line recall measures verbatim normalized-line availability in the delivered snapshot excerpt; it is not a causal attribution estimator.",
+    "Workspace hash differences can be caused by inert scratch or test files; primary implementation hashes are reported separately."
+  ]
+}

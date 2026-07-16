@@ -1,0 +1,19 @@
+internal_name: kimi-k2.6-maas
+provider: openai
+pricing:
+  input: 0
+  output: 0
+  cache_read: 0
+  cache_write: 0
+aliases: []
+agent_specific:
+  mini_swe:
+    model_name: openai/kimi-k2.6
+    model_class: litellm
+    api_base: https://api.modelarts-maas.com/plan/v2
+    model_kwargs:
+      temperature: 0.6
+      max_tokens: 4096
+      extra_body:
+        thinking:
+          type: disabled

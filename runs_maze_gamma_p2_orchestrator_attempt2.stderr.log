@@ -1,0 +1,224 @@
+Task exception was never retrieved
+future: <Task finished name='Task-25449' coro=<AsyncClient.aclose() done, defined at C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py", line 1988, in aclose
+    await proxy.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_transports\default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 349, in aclose
+    await self._connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\streams\tls.py", line 236, in aclose
+    await self.transport_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1344, in aclose
+    self._transport.close()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Task exception was never retrieved
+future: <Task finished name='Task-47896' coro=<AsyncClient.aclose() done, defined at C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py", line 1988, in aclose
+    await proxy.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_transports\default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 349, in aclose
+    await self._connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\streams\tls.py", line 236, in aclose
+    await self.transport_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1344, in aclose
+    self._transport.close()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Task exception was never retrieved
+future: <Task finished name='Task-76534' coro=<AsyncClient.aclose() done, defined at C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py", line 1988, in aclose
+    await proxy.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_transports\default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 349, in aclose
+    await self._connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\streams\tls.py", line 236, in aclose
+    await self.transport_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1344, in aclose
+    self._transport.close()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Task exception was never retrieved
+future: <Task finished name='Task-98179' coro=<AsyncClient.aclose() done, defined at C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py", line 1988, in aclose
+    await proxy.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_transports\default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 349, in aclose
+    await self._connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\streams\tls.py", line 236, in aclose
+    await self.transport_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1344, in aclose
+    self._transport.close()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Task exception was never retrieved
+future: <Task finished name='Task-123540' coro=<AsyncClient.aclose() done, defined at C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py", line 1988, in aclose
+    await proxy.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_transports\default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 349, in aclose
+    await self._connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\streams\tls.py", line 236, in aclose
+    await self.transport_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1344, in aclose
+    self._transport.close()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Task exception was never retrieved
+future: <Task finished name='Task-154490' coro=<AsyncClient.aclose() done, defined at C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py", line 1988, in aclose
+    await proxy.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_transports\default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 349, in aclose
+    await self._connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\streams\tls.py", line 236, in aclose
+    await self.transport_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1344, in aclose
+    self._transport.close()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Task exception was never retrieved
+future: <Task finished name='Task-181986' coro=<AsyncClient.aclose() done, defined at C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py", line 1988, in aclose
+    await proxy.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_transports\default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 349, in aclose
+    await self._connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\streams\tls.py", line 236, in aclose
+    await self.transport_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1344, in aclose
+    self._transport.close()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+Task exception was never retrieved
+future: <Task finished name='Task-203156' coro=<AsyncClient.aclose() done, defined at C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py:1978> exception=RuntimeError('Event loop is closed')>
+Traceback (most recent call last):
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_client.py", line 1988, in aclose
+    await proxy.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpx\_transports\default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http_proxy.py", line 349, in aclose
+    await self._connection.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_async\http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\httpcore\_backends\anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\streams\tls.py", line 236, in aclose
+    await self.transport_stream.aclose()
+  File "C:\Users\17493\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1344, in aclose
+    self._transport.close()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 109, in close
+    self._loop.call_soon(self._call_connection_lost, None)
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 799, in call_soon
+    self._check_closed()
+  File "C:\Users\17493\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\base_events.py", line 545, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed

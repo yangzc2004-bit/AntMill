@@ -1,0 +1,10 @@
+{
+  "phase": "zeta_exact_supply_yoke",
+  "document": "prereg_phase_zeta.md",
+  "sha256": "83e216fe83d3fd4a14ec5b532cd22056e5599180a4922e4b31413b08d76cec02",
+  "frozen_at": "2026-07-14T22:07:45.1211556+08:00",
+  "status": "frozen_before_any_epsilon_shared_consolidated_complete_result_and_before_zeta_outcomes",
+  "seeds": [0, 1, 2, 3, 4],
+  "arm": "zeta_shared_append_exact_yoke",
+  "source_arm": "epsilon_shared_consolidated"
+}

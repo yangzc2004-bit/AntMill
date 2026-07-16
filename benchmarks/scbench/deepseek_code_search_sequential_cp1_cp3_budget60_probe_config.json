@@ -1,0 +1,65 @@
+{
+  "status": "engineering_sequential_checkpoint_curve_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "experiment_role": "post_headroom_budget_calibration_probe",
+  "parent_config": "benchmarks/scbench/deepseek_code_search_sequential_cp1_cp3_headroom_config.json",
+  "rationale": "The 20-step headroom screen ended all checkpoint-3 trajectories exactly at the imposed limit; upstream MiniSWE defaults to 300 steps. This one-worker probe tests whether checkpoint-3 headroom appears with 60 steps before any transfer treatment is run.",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "agent": "SCBench native MiniSWE",
+  "model": "deepseek-v4-flash",
+  "problem": "code_search",
+  "checkpoint_sequence": [
+    1,
+    2,
+    3
+  ],
+  "worker_count": 1,
+  "step_limit_per_checkpoint": 60,
+  "temperature": 0.2,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 10000,
+  "manager_max_output_tokens": 5000,
+  "manager_experience_char_limit": 20000,
+  "scbench_seed": 42,
+  "mode_order": [
+    "no_transfer"
+  ],
+  "expected_targets": {
+    "1": {
+      "core_total": 7,
+      "pytest_collected": 13,
+      "test_collection_hash": "60b2d6ff1ac610f185120cfa46bcb9a1b71a4a4f328ee83d113ae9d405e1a0cc"
+    },
+    "2": {
+      "core_total": 5,
+      "pytest_collected": 25,
+      "test_collection_hash": "6e4457d36d30cf9405ff2006c59ebc9a2c58b9e109af3f1d49ca3addb3c4d719"
+    },
+    "3": {
+      "core_total": 8,
+      "pytest_collected": 47,
+      "test_collection_hash": "39d11b6b8327d3049a7b4e00da441d91640b57e6fe866789c506e43a10634395"
+    }
+  },
+  "decision_rule": {
+    "headroom_confirmed": "Checkpoint-3 no-transfer Core is at least 2/8.",
+    "borderline": "Checkpoint-3 no-transfer Core is 1/8; run one additional 60-step no-transfer worker before deciding.",
+    "headroom_not_confirmed": "Checkpoint-3 no-transfer Core remains 0/8; abandon code_search for the main transfer contrast."
+  },
+  "held_fixed_relative_to_parent": {
+    "model": "deepseek-v4-flash",
+    "checkpoint_sequence": [
+      1,
+      2,
+      3
+    ],
+    "temperature": 0.2,
+    "target_hashes": "unchanged",
+    "benchmark_isolation": "unchanged"
+  },
+  "changed_relative_to_parent": {
+    "worker_count": "3 to 1 for budget calibration",
+    "step_limit_per_checkpoint": "20 to 60"
+  }
+}

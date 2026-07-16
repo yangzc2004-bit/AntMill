@@ -1,0 +1,82 @@
+{
+  "status": "completed_candidate_selection_audit",
+  "date": "2026-07-14",
+  "screen_config": "benchmarks/scbench/kimi_fresh_cp3_sequential_candidate_screen_step32_infra_repaired_config.json",
+  "run_root": "r_fcp3s2_20260714",
+  "candidates": {
+    "etl_pipeline": {
+      "arm_id": "no_transfer-6226fe2a420e4cbaa1fea927646a66a8",
+      "checkpoint_1": {
+        "core": "6/6",
+        "all": "40/41",
+        "assistant_steps": 32,
+        "explicit_completion": false,
+        "infrastructure_failure": false,
+        "test_collection_hash": "fed32791f08dab7334a405afec5420521c1b33142636e1634fcc20685c4c5425"
+      },
+      "checkpoint_2": {
+        "core": "14/16",
+        "all": "68/73",
+        "assistant_steps": 32,
+        "explicit_completion": false,
+        "infrastructure_failure": false,
+        "test_collection_hash": "bd15df4b55f1f9c7521a9e8497076afc0fb67afc4488c6308e2b0e8dfa455abf"
+      },
+      "checkpoint_3": {
+        "core": "4/4",
+        "all": "105/117",
+        "assistant_steps": 28,
+        "explicit_completion": true,
+        "infrastructure_failure": false,
+        "test_collection_hash": "554f8d4dd3a21ac83a1bb6153d840b7c59737949f48a1c9ff0815b4da60deded"
+      },
+      "screen_decision": "advance",
+      "frozen_tie_break_rank": 1,
+      "tie_break_reason": "It has more terminal all-test headroom than execution_server and remains inside the preferred 0.65 through 0.95 band."
+    },
+    "execution_server": {
+      "arm_id": "no_transfer-7a118f0c4c1c49609a2a37165aecea5c",
+      "checkpoint_1": {
+        "core": "7/7",
+        "all": "45/45",
+        "assistant_steps": 10,
+        "explicit_completion": true,
+        "infrastructure_failure": false,
+        "test_collection_hash": "bb67bbdad7f21326a3bc77043b24bee8952bcaf7f6537cbdafc66cb47d90f4b2"
+      },
+      "checkpoint_2": {
+        "core": "6/6",
+        "all": "58/58",
+        "assistant_steps": 14,
+        "explicit_completion": true,
+        "infrastructure_failure": false,
+        "test_collection_hash": "80530fed3579984965ee18c474ebb6441d67324e00ad2dd92ca27af45f6dc33e"
+      },
+      "checkpoint_3": {
+        "core": "14/16",
+        "all": "97/101",
+        "assistant_steps": 12,
+        "explicit_completion": true,
+        "infrastructure_failure": false,
+        "test_collection_hash": "6d9f64151c3d08c37b943765effa2eb11fa3c3bac4f34a8a2a6bfd07bb1a1a58"
+      },
+      "screen_decision": "advance",
+      "frozen_tie_break_rank": 2,
+      "tie_break_reason": "It has less terminal headroom, although it completes all three checkpoints with substantially more action headroom."
+    },
+    "l2m": {
+      "run_root": "r_fcp3s1_20260714",
+      "screen_decision": "reject",
+      "reason": "Checkpoint 3 had zero Core score, 0.040816 normalized all-test score, and ended at the action boundary."
+    }
+  },
+  "literal_screen_winner": "etl_pipeline",
+  "post_screen_treatment_feasibility_finding": {
+    "criterion": "A recursive_self_report_synthesis treatment needs at least one explicit source-success completion before every manager update whose activation is interpreted.",
+    "etl_pipeline": "The only calibration trajectory did not explicitly complete checkpoints 1 or 2 and exhausted the 32-action cap at both checkpoints. A CP1-to-CP3 source-success treatment would therefore carry a high prospective nonactivation risk.",
+    "execution_server": "The calibration trajectory explicitly completed checkpoints 1, 2, and 3 at actions 10, 14, and 12, respectively, so every planned manager update has observed activation feasibility.",
+    "scope": "This finding uses only no-transfer trajectories and was recorded before any execution_server treatment output existed."
+  },
+  "treatment_feasible_candidate": "execution_server",
+  "next_action": "Prospectively calibrate the unused checkpoints 4 through 6 under no transfer and select the longest valid prefix before freezing a recursive manager contrast."
+}

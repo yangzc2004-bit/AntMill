@@ -1,0 +1,31 @@
+{
+  "status": "prospective_infrastructure_freeze_before_datagate_checkpoint_3",
+  "date": "2026-07-14",
+  "problem": "datagate",
+  "wheelhouse": "cache_scbench_wheelhouse",
+  "base_scbench_wheels": 20,
+  "datagate_additional_wheels": 15,
+  "additional_packages": [
+    "anyio-4.14.2",
+    "blinker-1.9.0",
+    "certifi-2026.6.17",
+    "charset-normalizer-3.4.9",
+    "click-8.4.2",
+    "colorama-0.4.6",
+    "flask-3.1.3",
+    "h11-0.16.0",
+    "httpcore-1.0.9",
+    "httpx-0.28.1",
+    "idna-3.18",
+    "itsdangerous-2.2.0",
+    "jinja2-3.1.6",
+    "markupsafe-3.0.3",
+    "werkzeug-3.1.8"
+  ],
+  "activation_guard": "Offline mode activates only when every exact base and datagate wheel filename is present.",
+  "runtime_environment": [
+    "UV_OFFLINE=1",
+    "UV_FIND_LINKS=/antmill/wheelhouse"
+  ],
+  "scientific_settings_changed": false
+}

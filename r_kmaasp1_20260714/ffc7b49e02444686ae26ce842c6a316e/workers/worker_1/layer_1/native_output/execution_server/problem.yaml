@@ -1,0 +1,46 @@
+author: Gabriel Orlanski
+category: networking
+checkpoints:
+  checkpoint_1:
+    env: {}
+    include_prior_tests: true
+    name: checkpoint_1
+    order: 1
+    state: Core Tests
+    timeout: 300.0
+    version: 1
+description: 'HTTP server that executes shell commands and returns results. Adds file
+  tracking with globs,
+
+  multi-format output support, command chains with hooks, caching, persistent environments
+  with
+
+  concurrency modes, and job scheduling with queues, templates, and dependency graphs.
+
+  '
+design_doc: design_doc.md
+difficulty: Easy
+entry_file: execution_server
+env: {}
+inspiration: null
+markers: {}
+name: execution_server
+path: /problems/execution_server
+static_assets:
+  antmill_requirements:
+    path: requirements.txt
+    save_path: requirements.txt
+tags:
+- http-server
+- process-execution
+- state-management
+- concurrency
+- caching
+- job-scheduling
+- file-io
+- glob-patterns
+- dependency-graphs
+test_dependencies:
+- httpx
+timeout: 300.0
+version: 1

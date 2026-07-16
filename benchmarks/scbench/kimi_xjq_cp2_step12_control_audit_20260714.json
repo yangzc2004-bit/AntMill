@@ -1,0 +1,46 @@
+{
+  "status": "invalid_control_due_action_budget_censoring",
+  "date": "2026-07-14",
+  "problem": "xjq",
+  "checkpoint": 2,
+  "model": "kimi-k2.6",
+  "run_root": "runs_scbench_moa_kimi_xjq_cp2_recursive_self_report_manager_depth5_hashfix_r1_20260714",
+  "arm_id": "no_transfer-8a25eaed7dc144e8be791b020b89ceea",
+  "planned_layers": 5,
+  "completed_interpretable_layers": 4,
+  "stopped_early": true,
+  "stop_reason": "After layer 4, two layers were already below the frozen 0.65 control-headroom threshold, making the requirement that four of five layers pass mathematically impossible.",
+  "mean_core_curve": [
+    0.3076923077,
+    0.7179487179,
+    0.9230769231,
+    0.6153846154
+  ],
+  "worker_core_scores": [
+    ["12/13", "0/13", "0/13"],
+    ["11/13", "12/13", "5/13"],
+    ["12/13", "12/13", "12/13"],
+    ["12/13", "12/13", "0/13"]
+  ],
+  "integrity": {
+    "external_results": 12,
+    "infrastructure_failures": 0,
+    "test_collection_hash": "e967de874ab427679658999ab4063710bf46abaffceccda517aa2febc5275a09",
+    "core_total": 13,
+    "all_test_total": 51,
+    "api_quota_or_rate_limit_failures": 0,
+    "task_or_test_drift": false
+  },
+  "trajectory_diagnosis": {
+    "outputs_at_exact_12_action_limit": 12,
+    "outputs_with_explicit_completion_marker": 0,
+    "zero_core_outputs": 3,
+    "zero_core_outputs_at_action_limit": 3,
+    "interpretation": "The control variance is action-budget censored. Workers were still testing or debugging at the final action, so the run cannot establish natural no-transfer variance for the intended experiment."
+  },
+  "decision": {
+    "reject_xjq_as_task": false,
+    "interpret_treatment_effect": false,
+    "next_test": "Run one frozen three-worker, one-layer no-transfer calibration at 20 actions. Proceed only if mean Core is at least 0.70, at least two workers reach 10/13 or higher, and no worker scores zero because of another exact-boundary stop."
+  }
+}

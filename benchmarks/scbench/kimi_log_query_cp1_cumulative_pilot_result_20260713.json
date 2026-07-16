@@ -1,0 +1,110 @@
+{
+  "status": "completed_stopped_by_frozen_rule",
+  "date": "2026-07-13",
+  "model": "kimi-k2.6",
+  "problem": "log_query",
+  "checkpoint": 1,
+  "worker_count": 3,
+  "num_layers": 3,
+  "step_limit_per_worker": 12,
+  "run_root": "runs_scbench_moa_kimi_log_query_cp1_cumulative_pilot_20260713",
+  "arms": {
+    "cumulative_success": {
+      "task_id": "cumulative_success-2313ef22b3e24667aabf861824f93bc4",
+      "layers": [
+        {
+          "layer": 1,
+          "core_passed": [8, 10, 10],
+          "core_total_per_worker": 10,
+          "mean_core_fraction": 0.9333333333,
+          "strict_core_verified_sources": 2,
+          "input_tokens": 202806,
+          "received_results_per_worker": [0, 0, 0],
+          "received_experience_chars_per_worker": [0, 0, 0]
+        },
+        {
+          "layer": 2,
+          "core_passed": [9, 10, 0],
+          "core_total_per_worker": 10,
+          "mean_core_fraction": 0.6333333333,
+          "strict_core_verified_sources": 1,
+          "input_tokens": 331811,
+          "received_results_per_worker": [2, 2, 2],
+          "received_experience_chars_per_worker": [14300, 14300, 14300]
+        },
+        {
+          "layer": 3,
+          "core_passed": [10, 10, 9],
+          "core_total_per_worker": 10,
+          "mean_core_fraction": 0.9666666667,
+          "strict_core_verified_sources": 2,
+          "input_tokens": 397871,
+          "received_results_per_worker": [3, 3, 3],
+          "received_experience_chars_per_worker": [22127, 22127, 22127]
+        }
+      ]
+    },
+    "no_transfer": {
+      "task_id": "no_transfer-defdd9df0d1f40d2a38ed76d518a799f",
+      "layers": [
+        {
+          "layer": 1,
+          "core_passed": [9, 10, 9],
+          "core_total_per_worker": 10,
+          "mean_core_fraction": 0.9333333333,
+          "input_tokens": 205611
+        },
+        {
+          "layer": 2,
+          "core_passed": [10, 9, 9],
+          "core_total_per_worker": 10,
+          "mean_core_fraction": 0.9333333333,
+          "input_tokens": 189996
+        },
+        {
+          "layer": 3,
+          "core_passed": [9, 10, 9],
+          "core_total_per_worker": 10,
+          "mean_core_fraction": 0.9333333333,
+          "input_tokens": 194945
+        }
+      ]
+    }
+  },
+  "effects": {
+    "layer_1_cumulative_minus_control": 0.0,
+    "layer_2_cumulative_minus_control": -0.3,
+    "layer_3_cumulative_minus_control": 0.0333333333,
+    "cumulative_layer_1_to_layer_2": -0.3,
+    "cumulative_layer_2_to_layer_3": 0.3333333333,
+    "cumulative_peak_to_layer_3_decline": 0.0,
+    "layer_3_input_token_ratio_cumulative_over_control": 2.0409366744
+  },
+  "validity": {
+    "source_activation": true,
+    "control_headroom": true,
+    "target_consistency": true,
+    "integrity": true,
+    "evaluation_count": 18,
+    "checkpoint_core_total_values": [10],
+    "test_collection_hashes": [
+      "3deecb18f814ddda765ab2720264da076f8361d7646fe9c922af4c52d11fddac"
+    ],
+    "infrastructure_failure_count": 0,
+    "nonempty_stderr_file_count": 0
+  },
+  "frozen_criteria": {
+    "primary_terminal_effect_at_least_0_20": false,
+    "within_arm_terminal_decline_at_least_0_20": false,
+    "at_least_one_post_transfer_decrease": true,
+    "complexity_support": true,
+    "all_required_criteria": false
+  },
+  "interpretation": {
+    "degradation_curve": false,
+    "transient_degradation_signal": true,
+    "tail_risk_signal": true,
+    "claim": "Cumulative verified-experience transfer caused a one-layer mean drop of 0.30 and one worker collapse from an otherwise matched layer-1 baseline, while doubling layer-3 input tokens. The arm recovered by layer 3, so this is instability evidence rather than a terminal degradation curve.",
+    "decision": "Stop log_query checkpoint 1 under the pre-registered falsification rule. Do not add layers or canonical source_success replications for this candidate."
+  }
+}

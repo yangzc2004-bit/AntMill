@@ -1,0 +1,1 @@
+{ "port": { "type": "integer", "default": "3000", "primary-store": "app/port" } }

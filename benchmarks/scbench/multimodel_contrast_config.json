@@ -1,0 +1,56 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "agent": "SCBench native MiniSWE",
+  "problem": "xjq",
+  "checkpoint_limit": 1,
+  "worker_count": 2,
+  "num_layers": 3,
+  "step_limit_per_worker": 8,
+  "temperature": 0.2,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 4000,
+  "scbench_seed": 42,
+  "models": [
+    {
+      "model": "glm-5",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": ["no_transfer", "source_success"]
+        },
+        {
+          "replicate": 2,
+          "mode_order": ["source_success", "no_transfer"]
+        },
+        {
+          "replicate": 3,
+          "mode_order": ["no_transfer", "source_success"]
+        }
+      ]
+    },
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": ["source_success", "no_transfer"]
+        },
+        {
+          "replicate": 2,
+          "mode_order": ["no_transfer", "source_success"]
+        },
+        {
+          "replicate": 3,
+          "mode_order": ["source_success", "no_transfer"]
+        }
+      ]
+    }
+  ],
+  "conditional_expansion_rule": {
+    "input_growth": "source_success L1-to-L3 input ratio must be at least 1.4 times the no_transfer ratio",
+    "performance_direction": "source_success Layer 3 is below its Layer 2 score or below no_transfer Layer 3",
+    "expand": "Run replicates 2 and 3 only when both input_growth and performance_direction are true in replicate 1"
+  },
+  "interpretation": "Cross-model mechanism-screening experiment; manuscript claims require all planned valid repeats."
+}

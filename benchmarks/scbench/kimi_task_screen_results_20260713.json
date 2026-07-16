@@ -1,0 +1,45 @@
+{
+  "model": "kimi-k2.6",
+  "screen_protocol": {
+    "workers": 2,
+    "layers": 1,
+    "step_limit_per_checkpoint": 12,
+    "checkpoint_limit": 2,
+    "strict_benchmark_isolation": true
+  },
+  "candidates": [
+    {
+      "problem": "code_search",
+      "scores": ["5/5", "5/5"],
+      "full_core_rate": 1.0,
+      "mean_duration_sec": 325.55,
+      "decision": "reject_too_easy"
+    },
+    {
+      "problem": "circuit_eval",
+      "scores": ["0/5", "7/9 at checkpoint 1"],
+      "full_core_rate": 0.0,
+      "mean_duration_sec": 374.43,
+      "decision": "reject_too_hard"
+    },
+    {
+      "problem": "database_migration",
+      "scores": ["3/3", "0/3"],
+      "full_core_rate": 0.5,
+      "mean_duration_sec": 456.89,
+      "decision": "select"
+    }
+  ],
+  "selected": {
+    "problem": "database_migration",
+    "checkpoint_limit": 2,
+    "reason": "Observed 1/2 strict full-Core success, stable test collection, no infrastructure or benchmark-access violations, and a realistic transactional database-migration workflow."
+  },
+  "estimated_next_pilot": {
+    "workers": 2,
+    "layers": 2,
+    "arms": ["source_success", "no_transfer"],
+    "estimated_wall_clock_minutes": "28-36",
+    "purpose": "Measure the first recipient layer only; expand to layer 3 and repeats only if verified-success transfer activates and changes outcomes."
+  }
+}

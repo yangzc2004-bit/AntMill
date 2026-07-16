@@ -1,0 +1,90 @@
+{
+  "status": "engineering_pilot_frozen_before_outcomes",
+  "date_frozen": "2026-07-16",
+  "experiment_role": "prospective_cross_task_three_arm_boundary",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "agent": "SCBench native MiniSWE",
+  "model": "kimi-k2.6-maas",
+  "api_model": "kimi-k2.6",
+  "problem": "log_query",
+  "checkpoint_limit": 1,
+  "expected_core_total": 10,
+  "expected_test_collection_hash": "3deecb18f814ddda765ab2720264da076f8361d7646fe9c922af4c52d11fddac",
+  "worker_count": 3,
+  "num_layers": 3,
+  "step_limit_per_worker": 12,
+  "pass_policy": "any",
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "modes": [
+    "no_transfer",
+    "bounded_recent_self_report_acceptance",
+    "bounded_diverse_self_report_acceptance"
+  ],
+  "bootstrap_modes": [
+    "bounded_recent_self_report_acceptance",
+    "bounded_diverse_self_report_acceptance"
+  ],
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_log_query_cp1_recursive_synthesis_depth5_20260714/no_transfer-0e9568d083944a74922b08223c7088dc/workers/worker_1",
+      "layer": 4
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_log_query_cp1_recursive_synthesis_depth5_20260714/no_transfer-0e9568d083944a74922b08223c7088dc/workers/worker_2",
+      "layer": 4
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_log_query_cp1_recursive_synthesis_depth5_20260714/no_transfer-0e9568d083944a74922b08223c7088dc/workers/worker_3",
+      "layer": 4
+    }
+  ],
+  "verified_bootstrap_before_freeze": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "core": "10/10",
+      "all": "129/134",
+      "self_reported_success": true,
+      "implementation_identity": "4dc8fdaef979693e77bacb3f773c9ad1eef80c153bc46ed7ffef883bf0b0e788"
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "core": "10/10",
+      "all": "118/134",
+      "self_reported_success": true,
+      "implementation_identity": "28cbfd9551f87e320fd7b9aed12bf906ac0c705ef824324666a0bf978f2ae90f"
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "core": "10/10",
+      "all": "122/134",
+      "self_reported_success": true,
+      "implementation_identity": "b6c8c926af6cf6522871d2595d549a24983b488153f97774176276714f1d7bdd"
+    }
+  ],
+  "held_fixed": "Provider, model, task, worker count, layer count, action budget, temperature, evaluator, source cap, and bootstrap source set are shared across arms. Only experience routing changes.",
+  "validity_gates": {
+    "target_consistency": "All 27 evaluations use Core total 10, all-test total 134, and the frozen collection hash.",
+    "model_query_integrity": "Every interpreted output has at least one model step and no terminal API error.",
+    "recipient_blinding": "Transfer prompts contain no external Core/all-test scores, failed-test names, or hidden test hash.",
+    "reference_count": "No-transfer receives zero references; both transfer arms receive exactly three references at every layer.",
+    "bootstrap_activation": "All three frozen sources restore at 10/10 Core, self-report success, and distinct local implementation identities.",
+    "prohibited_access": "No assistant action accesses benchmark catalogs, hidden tests, or external evaluation paths."
+  },
+  "outcome_rule": {
+    "cross_task_lockin_support": "Bounded-recent has one unique primary implementation at both layers 2 and 3 while no-transfer retains at least two at both layers.",
+    "cross_task_boundary": "Bounded-recent retains at least two primary implementations at layer 2 or layer 3.",
+    "mitigation_support": "Diversity-preserving routing has larger implementation-diversity AUC over layers 2-3 than bounded-recent.",
+    "strong_mitigation_support": "Diversity-preserving routing retains at least two implementations at layer 3 without lower mean Core than bounded-recent.",
+    "performance_guard": "Report Core, all-test count, input tokens, and latency with diversity. Do not infer net improvement from diversity alone.",
+    "forbidden_claim": "A three-layer second-task probe cannot establish universal task generality or long-horizon mitigation."
+  },
+  "new_outcomes_seen_before_freeze": false
+}

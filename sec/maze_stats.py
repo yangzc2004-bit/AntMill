@@ -15,6 +15,7 @@ import numpy as np
 PAIRED_METRICS = [
     "success",
     "cost_ratio",
+    "failure_penalized_steps",
     "excess_steps",
     "success_excess_steps",
     "looped",
@@ -67,11 +68,14 @@ def route_rows(result: dict[str, Any], *, condition: str, seed: str) -> list[dic
                         "steps": float(route.get("steps") or 0.0),
                         "shortest_path_length": float(route.get("shortest_path_length") or 0.0),
                         "cost_ratio": float(route.get("cost_ratio") or 0.0),
+                        "failure_penalized_steps": float(route.get("failure_penalized_steps") or route.get("effective_steps") or 0.0),
                         "excess_steps": excess,
                         "success_excess_steps": excess if success else None,
                         "looped": 1.0 if route.get("looped") else 0.0,
                         "stagnation_rate": float(route.get("stagnation_rate") or 0.0),
                         "revisit_max": float(route.get("revisit_max") or 0.0),
+                        "parse_failure_count": float(route.get("parse_failure_count") or 0.0),
+                        "llm_error_count": float(route.get("llm_error_count") or 0.0),
                     }
                 )
     return rows
@@ -145,6 +149,137 @@ def paired_diff(
     }
 
 
+def _paired_diffs_by_seed(
+    rows_a: list[dict[str, Any]],
+    rows_b: list[dict[str, Any]],
+    metric: str,
+    *,
+    t: int | None = None,
+) -> tuple[dict[str, list[float]], int]:
+    """Return aligned route-level differences grouped by seed.
+
+    The route key matches ``paired_diff``. Keeping the seed grouping lets the
+    analysis treat independent run seeds as the outer resampling unit instead
+    of treating every route as independent evidence.
+    """
+
+    def index(rows: list[dict[str, Any]]) -> dict[tuple[str, int, str, int], dict[str, Any]]:
+        out: dict[tuple[str, int, str, int], dict[str, Any]] = {}
+        for row in rows:
+            if t is not None and int(row["t"]) != t:
+                continue
+            out[(str(row["seed"]), int(row["t"]), str(row["task_id"]), int(row["agent_id"]))] = row
+        return out
+
+    ia = index(rows_a)
+    ib = index(rows_b)
+    keys = sorted(set(ia) & set(ib))
+    n_dropped = (len(ia) - len(keys)) + (len(ib) - len(keys))
+    grouped: dict[str, list[float]] = defaultdict(list)
+    for key in keys:
+        va = ia[key].get(metric)
+        vb = ib[key].get(metric)
+        if va is None or vb is None:
+            n_dropped += 1
+            continue
+        grouped[key[0]].append(float(va) - float(vb))
+    return grouped, n_dropped
+
+
+def hierarchical_bootstrap_ci(
+    diffs_by_seed: dict[str, list[float]],
+    *,
+    n_boot: int = 10000,
+    rng_seed: int = 0,
+) -> tuple[float, float]:
+    """Clustered percentile CI for the equal-weight mean seed effect.
+
+    Each bootstrap draw samples run seeds with replacement, then samples paired
+    routes within every selected seed. This reflects the nested seed/route
+    design while retaining within-seed maze matching.
+    """
+    seed_values = [np.asarray(values, dtype=float) for _seed, values in sorted(diffs_by_seed.items()) if values]
+    if not seed_values:
+        return 0.0, 0.0
+    rng = np.random.default_rng(rng_seed)
+    boot = np.empty(n_boot, dtype=float)
+    n_seeds = len(seed_values)
+    for i in range(n_boot):
+        selected = rng.integers(0, n_seeds, size=n_seeds)
+        seed_means: list[float] = []
+        for index in selected:
+            values = seed_values[int(index)]
+            sampled = values[rng.integers(0, len(values), size=len(values))]
+            seed_means.append(float(sampled.mean()))
+        boot[i] = float(np.mean(seed_means))
+    return float(np.percentile(boot, 2.5)), float(np.percentile(boot, 97.5))
+
+
+def hierarchical_paired_diff(
+    rows_a: list[dict[str, Any]],
+    rows_b: list[dict[str, Any]],
+    metric: str,
+    *,
+    t: int | None = None,
+    n_boot: int = 10000,
+    rng_seed: int = 0,
+) -> dict[str, Any]:
+    """Seed-clustered paired difference (A - B).
+
+    The point estimate is the mean of seed-level paired route means so seeds
+    with more valid route records cannot dominate the effect estimate.
+    """
+    diffs_by_seed, n_dropped = _paired_diffs_by_seed(rows_a, rows_b, metric, t=t)
+    n_pairs = sum(len(values) for values in diffs_by_seed.values())
+    if not n_pairs:
+        return {
+            "metric": metric,
+            "n_pairs": 0,
+            "n_seeds": 0,
+            "mean_diff": 0.0,
+            "ci_lo": 0.0,
+            "ci_hi": 0.0,
+            "n_dropped": n_dropped,
+            "ci_excludes_zero": False,
+        }
+    mean_diff = float(np.mean([float(np.mean(values)) for values in diffs_by_seed.values() if values]))
+    ci_lo, ci_hi = hierarchical_bootstrap_ci(diffs_by_seed, n_boot=n_boot, rng_seed=rng_seed)
+    return {
+        "metric": metric,
+        "n_pairs": n_pairs,
+        "n_seeds": len(diffs_by_seed),
+        "mean_diff": mean_diff,
+        "ci_lo": ci_lo,
+        "ci_hi": ci_hi,
+        "n_dropped": n_dropped,
+        "ci_excludes_zero": bool(ci_lo > 0.0 or ci_hi < 0.0),
+    }
+
+
+def per_seed_paired_effects(
+    rows_a: list[dict[str, Any]],
+    rows_b: list[dict[str, Any]],
+    metrics: list[str] | None = None,
+    *,
+    t: int | None = None,
+) -> list[dict[str, Any]]:
+    """Compact paired-effect table for inspecting between-seed heterogeneity."""
+    effects: list[dict[str, Any]] = []
+    for metric in metrics or PAIRED_METRICS:
+        diffs_by_seed, _n_dropped = _paired_diffs_by_seed(rows_a, rows_b, metric, t=t)
+        for seed, values in sorted(diffs_by_seed.items()):
+            effects.append(
+                {
+                    "metric": metric,
+                    "seed": seed,
+                    "t": t,
+                    "n_pairs": len(values),
+                    "mean_diff": float(np.mean(values)),
+                }
+            )
+    return effects
+
+
 def per_seed_table(rows: list[dict[str, Any]], metrics: list[str] | None = None) -> list[dict[str, Any]]:
     """Per-(condition, seed, t) means. Always ship this next to any mean: a claim
     driven by a single seed must be visible as such."""
@@ -213,24 +348,57 @@ def _write_report(
     t: int,
     paired_rows: list[dict[str, Any]],
     seed_rows: list[dict[str, Any]],
+    seed_effect_rows: list[dict[str, Any]],
+    analysis_method: str,
 ) -> None:
     lines = [
         "# Maze Paired Statistics",
         "",
-        f"Paired bootstrap (routes aligned by seed/task/agent on the same heldout mazes), "
-        f"baseline `{baseline}`, round `t={t}`. `ci_excludes_zero = yes` marks differences "
-        "whose 95% CI does not contain 0.",
+        f"`{analysis_method}` analysis of routes aligned by seed/task/agent on the same heldout "
+        f"mazes, baseline `{baseline}`, round `t={t}`. `ci_excludes_zero = yes` marks "
+        "differences whose 95% CI does not contain 0.",
         "",
         "## Condition vs Baseline",
         "",
-        "| condition | metric | mean diff | ci lo | ci hi | n pairs | n dropped | ci excludes zero |",
-        "|---|---|---:|---:|---:|---:|---:|---|",
     ]
+    if analysis_method == "seed-clustered paired bootstrap":
+        lines.extend(
+            [
+                "| condition | metric | mean diff | ci lo | ci hi | n pairs | n seeds | n dropped | ci excludes zero |",
+                "|---|---|---:|---:|---:|---:|---:|---:|---|",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "| condition | metric | mean diff | ci lo | ci hi | n pairs | n dropped | ci excludes zero |",
+                "|---|---|---:|---:|---:|---:|---:|---|",
+            ]
+        )
     for row in paired_rows:
+        if analysis_method == "seed-clustered paired bootstrap":
+            lines.append(
+                f"| {row['condition']} | {row['metric']} | {_fmt(row['mean_diff'])} | "
+                f"{_fmt(row['ci_lo'])} | {_fmt(row['ci_hi'])} | {row['n_pairs']} | {row['n_seeds']} | "
+                f"{row['n_dropped']} | {'yes' if row['ci_excludes_zero'] else 'no'} |"
+            )
+        else:
+            lines.append(
+                f"| {row['condition']} | {row['metric']} | {_fmt(row['mean_diff'])} | "
+                f"{_fmt(row['ci_lo'])} | {_fmt(row['ci_hi'])} | {row['n_pairs']} | {row['n_dropped']} | "
+                f"{'yes' if row['ci_excludes_zero'] else 'no'} |"
+            )
+    lines += [
+        "",
+        "## Per-Seed Paired Effects",
+        "",
+        "| condition | metric | seed | t | n paired routes | mean diff |",
+        "|---|---|---:|---:|---:|---:|",
+    ]
+    for row in seed_effect_rows:
         lines.append(
-            f"| {row['condition']} | {row['metric']} | {_fmt(row['mean_diff'])} | "
-            f"{_fmt(row['ci_lo'])} | {_fmt(row['ci_hi'])} | {row['n_pairs']} | {row['n_dropped']} | "
-            f"{'yes' if row['ci_excludes_zero'] else 'no'} |"
+            f"| {row['condition']} | {row['metric']} | {row['seed']} | {row['t']} | "
+            f"{row['n_pairs']} | {_fmt(row['mean_diff'])} |"
         )
     lines += [
         "",
@@ -263,6 +431,12 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--t", type=int, default=-1, help="Round to compare (-1 = final common round).")
     parser.add_argument("--n-boot", type=int, default=10000)
     parser.add_argument("--rng-seed", type=int, default=0)
+    parser.add_argument(
+        "--bootstrap-unit",
+        choices=["route", "seed_cluster"],
+        default="route",
+        help="Legacy route bootstrap or seed-clustered paired bootstrap.",
+    )
     return parser
 
 
@@ -283,21 +457,48 @@ def main(argv: list[str] | None = None) -> Path:
 
     baseline_rows = [row for row in rows if row["condition"] == args.baseline]
     paired: list[dict[str, Any]] = []
+    seed_effect_rows: list[dict[str, Any]] = []
+    use_seed_clusters = args.bootstrap_unit == "seed_cluster"
     for condition in conditions:
         if condition == args.baseline:
             continue
         cond_rows = [row for row in rows if row["condition"] == condition]
         for metric in PAIRED_METRICS:
-            stat = paired_diff(
-                cond_rows, baseline_rows, metric, t=t, n_boot=args.n_boot, rng_seed=args.rng_seed
+            stat = (
+                hierarchical_paired_diff(
+                    cond_rows, baseline_rows, metric, t=t, n_boot=args.n_boot, rng_seed=args.rng_seed
+                )
+                if use_seed_clusters
+                else paired_diff(
+                    cond_rows, baseline_rows, metric, t=t, n_boot=args.n_boot, rng_seed=args.rng_seed
+                )
             )
-            paired.append({"condition": condition, "baseline": args.baseline, "t": t, **stat})
+            paired.append(
+                {
+                    "condition": condition,
+                    "baseline": args.baseline,
+                    "t": t,
+                    "analysis_method": "seed_cluster" if use_seed_clusters else "route",
+                    **stat,
+                }
+            )
+        for effect in per_seed_paired_effects(cond_rows, baseline_rows, t=t):
+            seed_effect_rows.append({"condition": condition, "baseline": args.baseline, **effect})
 
     seed_rows = per_seed_table(rows)
     out_dir = Path(args.out_dir)
     _write_csv(paired, out_dir / "paired_stats.csv")
     _write_csv(seed_rows, out_dir / "per_seed.csv")
-    _write_report(out_dir / "stats_report.md", baseline=args.baseline, t=t, paired_rows=paired, seed_rows=seed_rows)
+    _write_csv(seed_effect_rows, out_dir / "per_seed_paired_effects.csv")
+    _write_report(
+        out_dir / "stats_report.md",
+        baseline=args.baseline,
+        t=t,
+        paired_rows=paired,
+        seed_rows=seed_rows,
+        seed_effect_rows=seed_effect_rows,
+        analysis_method="seed-clustered paired bootstrap" if use_seed_clusters else "route-level paired bootstrap",
+    )
     print(f"wrote {out_dir.resolve()}")
     return out_dir
 

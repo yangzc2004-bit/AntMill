@@ -1,0 +1,60 @@
+{
+  "status": "prospective_mitigation_protocol_frozen_before_new_arm_outcomes",
+  "date_frozen": "2026-07-15",
+  "question": "Can a local-only diversity-preserving router delay or prevent implementation lock-in without using hidden evaluator outcomes?",
+  "design": {
+    "new_prospective_arm": "bounded_diverse_self_report_acceptance",
+    "reused_frozen_controls": [
+      "no_transfer",
+      "bounded_recent_self_report_acceptance"
+    ],
+    "reason_for_control_reuse": "The controls already use the same provider, model, task, worker count, action budget, temperature, and evaluator. Reuse avoids 36 additional agent trajectories under the time-constrained revision.",
+    "disclosure": "Control outcomes were known when this mitigation protocol was frozen; the mitigation implementation, endpoint, validity gates, and outcome rule were frozen before any mitigation model call."
+  },
+  "arms": {
+    "no_transfer": {
+      "config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_no_transfer_r1_config.json",
+      "config_sha256": "53c5ce53d694da578ca100af0e2502f19a1db8be666b4f5df184aaea80a28255",
+      "manifest": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_depth12_no_transfer_r1_20260715/no_transfer-02db19c347a0481a95ee08ca1752f7bd/manifest.json",
+      "manifest_sha256": "5bdd9a13dbcd209026bf7b42857dcc8e65857821b0c154aa12b1d56f791543ba",
+      "layers_used": "1-6",
+      "outcomes_known_at_protocol_freeze": true
+    },
+    "bounded_recent_self_report_acceptance": {
+      "config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_bounded_context_depth6_config.json",
+      "config_sha256": "08de65c5f3ff5711d99d477cc4db9f4bdf2bc8f271e4d21007f2b3440a0a7f4d",
+      "manifest": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_bounded_context_depth6_r1_20260715/bounded_recent_self_report_acceptance-93be1c12894e4c8f96b0fdc6b2334b68/manifest.json",
+      "manifest_sha256": "79c2f81fd2022a2a00c3e2c09471ed271841d11065fa6ddd5c14452062b0ae58",
+      "layers_used": "1-6",
+      "outcomes_known_at_protocol_freeze": true
+    },
+    "bounded_diverse_self_report_acceptance": {
+      "config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_diverse_routing_depth6_config.json",
+      "config_sha256": "d2bb13ccdfcb61cfa2f5440d0eb37f9afc44cf6d2ef6404cf8f8626310975460",
+      "run_root": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_diverse_routing_depth6_r1_20260715",
+      "layers_used": "1-6",
+      "outcomes_known_at_protocol_freeze": false
+    }
+  },
+  "primary_endpoint": {
+    "name": "post_layer_1_primary_implementation_diversity_auc",
+    "definition": "Sum across layers 2-6 of the number of unique SHA-256 hashes of the primary implementation file.",
+    "bounded_recent_reference_value": 5,
+    "support_threshold": "greater than 5",
+    "strong_support": "two or more post-layer-1 layers retain at least two implementations and all workers remain Core-complete"
+  },
+  "secondary_endpoints": [
+    "first layer of two-layer exact primary-implementation lock-in",
+    "mean and minimum all-test pass count by layer",
+    "Core-complete worker count",
+    "input tokens and wall-clock latency",
+    "delivered reference identity count"
+  ],
+  "validity": {
+    "implementation_selftest": "python -m sec.selftest_scbench_moa",
+    "implementation_selftest_passed_before_run": true,
+    "no_external_evaluator_in_router": true,
+    "recipient_reference_cap": 3,
+    "bootstrap_sources_identical_to_bounded_recent_control": true
+  }
+}

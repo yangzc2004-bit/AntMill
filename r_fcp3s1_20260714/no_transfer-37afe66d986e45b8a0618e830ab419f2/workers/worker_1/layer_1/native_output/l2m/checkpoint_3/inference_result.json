@@ -1,0 +1,28 @@
+{
+  "artifacts_dir": "agent",
+  "checkpoint_path": "/outputs/l2m/checkpoint_3",
+  "completed": "2026-07-14T11:56:57.329531",
+  "elapsed": 790.848997,
+  "error_message": null,
+  "had_error": false,
+  "snapshot_dir": "snapshot",
+  "started": "2026-07-14T11:43:46.480534",
+  "usage": {
+    "cost": 0.0,
+    "current_tokens": {
+      "cache_read": 48533,
+      "cache_write": 0,
+      "input": 49164,
+      "output": 43,
+      "reasoning": 0
+    },
+    "net_tokens": {
+      "cache_read": 694485,
+      "cache_write": 0,
+      "input": 743424,
+      "output": 37317,
+      "reasoning": 0
+    },
+    "steps": 32
+  }
+}

@@ -1,0 +1,71 @@
+% Anonymous AAAI-27 memory-paper supplementary material.
+% Compile from paper_draft after generated revision results are available.
+\documentclass[letterpaper]{article}
+\usepackage[submission]{aaai2027}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\urlstyle{rm}
+\def\UrlFont{\rm}
+\usepackage{natbib}
+\usepackage{caption}
+\frenchspacing
+\usepackage{booktabs}
+\usepackage{amsmath}
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+
+\setcounter{secnumdepth}{2}
+\title{Locally Plausible, Globally Wasteful:\\Supplementary Material}
+\author{Anonymous Submission}
+\affiliations{}
+
+\begin{document}
+\maketitle
+
+\IfFileExists{generated/revision_results/revision_macros.tex}{
+  \input{generated/revision_results/revision_macros.tex}
+}{
+  \typeout{Revision macros are pending complete formal evidence.}
+}
+
+\section{Evidence Scope}
+
+This supplement reports the prespecified diagnostics that support the compact
+main-paper results: the full parameter-sensitivity envelope, seed-level and
+task-family heterogeneity, exact supply-yoke manipulation checks, data-quality
+summaries, and provenance records. Per-seed values are descriptive
+heterogeneity evidence rather than independent confirmatory replications.
+
+\IfFileExists{generated/revision_results/sensitivity_envelope.tex}{
+  \input{generated/revision_results/sensitivity_envelope.tex}
+}{
+  \paragraph{Pending evidence.}
+  The formal sensitivity table is generated only after the unified evidence
+  gate verifies all 27 preregistered runs.
+}
+
+\IfFileExists{generated/revision_results/appendix_heterogeneity.tex}{
+  \input{generated/revision_results/appendix_heterogeneity.tex}
+}{
+  \paragraph{Pending evidence.}
+  Heterogeneity tables are generated only from complete frozen artifacts.
+}
+
+\IfFileExists{generated/revision_results/appendix_diagnostics.tex}{
+  \input{generated/revision_results/appendix_diagnostics.tex}
+}{
+  \paragraph{Pending evidence.}
+  Diagnostic tables are generated only after the complete Epsilon, Zeta, and
+  MiniWoB evidence suite passes the unified completeness gate.
+}
+
+\IfFileExists{generated/revision_results/environment_manifest.tex}{
+  \input{generated/revision_results/environment_manifest.tex}
+}{
+  \paragraph{Pending environment record.}
+  The local software and hardware manifest is generated immediately before
+  final compilation.
+}
+
+\end{document}

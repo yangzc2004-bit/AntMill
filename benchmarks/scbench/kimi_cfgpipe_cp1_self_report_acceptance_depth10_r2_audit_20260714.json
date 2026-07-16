@@ -1,0 +1,124 @@
+{
+  "status": "valid_negative_depth10_replication_stable",
+  "date": "2026-07-14",
+  "problem": "cfgpipe",
+  "checkpoint": 1,
+  "model": "kimi-k2.6",
+  "assimilation_mode": "cumulative_self_report_acceptance",
+  "run": {
+    "config": "benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_cumulative_depth10_replication_config.json",
+    "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_self_report_cumulative_depth10_r2_20260714",
+    "arm_id": "cumulative_self_report_acceptance-4997d3ec1cdf498c9ea5a6f650d2844b",
+    "replicate": 2,
+    "mean_core_curve": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mean_all_test_curve": [
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189
+    ],
+    "reference_count_curve": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      27,
+      30
+    ],
+    "received_experience_chars_curve": [
+      25934,
+      56343,
+      88263,
+      120148,
+      152110,
+      182150,
+      214112,
+      246074,
+      278036,
+      309998
+    ],
+    "layer_10_total_input_tokens": 1403353,
+    "layer_10_input_ratio_to_matching_control": 11.5363,
+    "layer_10_input_ratio_to_layer_1": 4.655,
+    "total_input_tokens": 8664774
+  },
+  "integrity": {
+    "worker_outcomes": 30,
+    "self_reported_success_outputs": 30,
+    "zero_model_call_outputs": 0,
+    "zero_input_token_outputs": 0,
+    "infrastructure_failures": 0,
+    "runtime_api_quota_or_rate_limit_hits": 0,
+    "nonempty_runner_stderr_files": 0,
+    "core_total": 4,
+    "all_test_total": 37,
+    "test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+    "bootstrap_sources_reverified": "3/3 at 4/4 Core and 34/37 overall",
+    "recipient_score_blinding": "Prompt audit found only the self-report acceptance proxy and external-evaluation-withheld text; no 4/4 or 34/37 source score was delivered.",
+    "pass": true
+  },
+  "preregistered_criteria": {
+    "tail_trigger_by_layer_8": {
+      "passed": false,
+      "evidence": "All 24 worker outcomes through layer 8 scored 4/4 Core and 34/37 overall."
+    },
+    "post_trigger": {
+      "passed": false,
+      "evidence": "No valid trigger occurred."
+    },
+    "terminal": {
+      "passed": false,
+      "evidence": "Layer 10 remained at mean Core 1.0 and mean all-test 0.9189."
+    },
+    "within_arm": {
+      "passed": false,
+      "evidence": "There was no decline from the earlier treatment peak."
+    },
+    "core_support": {
+      "passed": false,
+      "evidence": "Every layer-10 worker scored 4/4 Core."
+    },
+    "complexity_support": {
+      "passed": true,
+      "evidence": "Layer 10 received 30 references and 309998 experience characters; its input load was 11.54x the matching control."
+    },
+    "sustained_degradation": {
+      "passed": false
+    }
+  },
+  "cross_run_interpretation": {
+    "kimi_replicate_1": "Flat through layer 7, then one valid self-reported-success 0/37 outcome at layer 8; post-trigger extension invalidated by quota exhaustion.",
+    "kimi_replicate_2": "Flat for all ten layers and all thirty worker outcomes despite greater terminal context load.",
+    "deepseek": "Two valid isolated 0/37 outcomes across ten layers, each followed by full recovery.",
+    "glm_5": "Flat through all ten layers.",
+    "conclusion": "Greater feedback depth increases opportunities to observe rare false-success tail events, but depth alone does not reproducibly create a sustained downward curve under append-all assimilation."
+  },
+  "decision": {
+    "iteration_count_too_small_for_observing_tail_risk": true,
+    "iteration_count_too_small_as_general_explanation_for_missing_sustained_degradation": false,
+    "extend_same_append_all_arm_further": false,
+    "reason": "The mechanism accumulated 30 references and more than eleven times the control input load with no effect in this preregistered replication. Additional identical layers would mainly sample more independent tail events while further diluting any one bad artifact.",
+    "next_experiment": "Move to a task with nonzero baseline headroom and use the already implemented MOA-style recursive self-report manager, where accepted lessons remain privileged instead of being diluted by raw append."
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "status": "engineering_pilot_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "experiment_role": "mechanism_stress_probe_not_confirmatory",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "model": "deepseek-v4-flash",
+  "resume_mode": "recursive_self_report_synthesis",
+  "agent": "SCBench native MiniSWE",
+  "manager": "DeepSeek intermediate MOA aggregator",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 5,
+  "step_limit_per_worker": 12,
+  "temperature": 0.2,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "manager_max_output_tokens": 4096,
+  "manager_experience_char_limit": 12000,
+  "scbench_seed": 42,
+  "modes": [
+    "recursive_self_report_synthesis"
+  ],
+  "bootstrap_modes": [
+    "recursive_self_report_synthesis"
+  ],
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_deepseek_cfgpipe_cp1_self_report_cumulative_depth10_r1_20260714/cumulative_self_report_acceptance-f5ea5c23c5a4434b9c661ba9ef62907c/workers/worker_1",
+      "layer": 2
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_deepseek_cfgpipe_cp1_self_report_cumulative_depth10_r1_20260714/cumulative_self_report_acceptance-f5ea5c23c5a4434b9c661ba9ef62907c/workers/worker_2",
+      "layer": 2
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_deepseek_cfgpipe_cp1_self_report_cumulative_depth10_r1_20260714/cumulative_self_report_acceptance-f5ea5c23c5a4434b9c661ba9ef62907c/workers/worker_3",
+      "layer": 2
+    }
+  ],
+  "bootstrap_selection": {
+    "unit": "The complete three-worker layer-2 cohort from the frozen DeepSeek raw-append run.",
+    "selection_rule": "All three outputs are included because all three self-reported successful completion. No source is selected or excluded using its external score.",
+    "known_external_outcomes_for_audit_only": [
+      "0/37",
+      "33/37",
+      "34/37"
+    ],
+    "claim_boundary": "The cohort was chosen after the depth-10 audit and is therefore a mechanism stress probe. Any positive direction must be reproduced prospectively before manuscript-level causal claims."
+  },
+  "assimilation_semantics": {
+    "initial_manager_state": "Before worker layer 1, the manager synthesizes one shared playbook from the complete blinded bootstrap cohort.",
+    "layer_admission": "After every non-terminal layer, every output whose trajectory self-reports success is converted to a blinded proxy regardless of external benchmark score.",
+    "manager_update": "The manager recursively revises the previous shared playbook using the current self-report-accepted proxies.",
+    "broadcast": "Every worker in the next layer receives exactly one latest manager playbook.",
+    "external_score_blinding": "Neither manager prompts nor downstream worker prompts contain source external Core or all-test scores."
+  },
+  "validity_gates": {
+    "bootstrap_activation": "The initial manager synthesis must consume all three bootstrap self-report proxies.",
+    "recursive_continuity": "Every manager update after layer 1 must include the immediately previous manager artifact.",
+    "self_report_activation": "At least two outputs per non-terminal layer must be admitted; otherwise the layer is diagnostic but cannot support feedback-amplification interpretation.",
+    "target_consistency": "Every worker evaluation must use Core total 4, 37 collected tests, and the frozen collection hash.",
+    "score_blinding": "Manager and worker prompts must not contain source external scores or Core-verification labels for self-report proxies.",
+    "integrity": "No model-query failures, unresolved infrastructure failures, or prohibited benchmark-path actions."
+  },
+  "probe_direction_criteria": {
+    "terminal": "Layer-5 mean all-test score is below 0.75 or at least one layer-5 worker scores 0/37.",
+    "within_arm": "Layer-5 mean all-test score is at least 0.15 below the best earlier layer.",
+    "curve_shape": "At least two post-bootstrap transitions decrease, or one transition decreases by at least 0.25.",
+    "feedback_trace": "A manager playbook retains or strengthens a claim originating in an externally failed but self-report-accepted source, and a later worker follows that claim.",
+    "go": "If terminal plus either within-arm or curve-shape passes with all validity gates, freeze and run no-transfer and raw-append controls plus three prospective repeats.",
+    "no_go": "If the arm reaches a stable fixed point without terminal degradation, stop extending this exact probe and move to a task with a continuous robustness/cost metric."
+  }
+}

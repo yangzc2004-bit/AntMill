@@ -9,7 +9,13 @@ def _parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Run Phase Alpha MazeEval-style strategy-degradation experiments.")
     p.add_argument(
         "--phase",
-        choices=["debug", "smoke", "single", "single_expel_pilot", "mas_nomem", "mad", "core", "e1_gate", "core_v2", "e3_lambda", "e4_stress"],
+        choices=[
+            "debug", "smoke", "single", "single_expel_pilot", "mas_nomem", "mad", "core",
+            "e1_gate", "core_v2", "e3_lambda", "e4_stress",
+            "gamma_drift_probe", "gamma_p1_rescue", "gamma_p1b_clean_rescue", "gamma_p1_controls",
+            "gamma_p1_budgeted_append", "gamma_p2_cross_model", "gamma_p2_rescue",
+            "delta_cross_model", "epsilon_controls", "epsilon_sensitivity",
+        ],
         default="smoke",
         help="'mad' is a deprecated alias of 'mas_nomem' (no debate happens at debate_rounds=1).",
     )
@@ -36,18 +42,32 @@ def _parser() -> argparse.ArgumentParser:
     p.add_argument("--maze-max-shortest", type=int, default=0)
     p.add_argument(
         "--write-protocol",
-        choices=["distill", "expel_ops"],
+        choices=["distill", "expel_ops", "append"],
         default="distill",
         help="Reviewer write path: legacy contrastive distill vs ExpeL LLM-issued ADD/EDIT/UPVOTE/DOWNVOTE.",
     )
     p.add_argument(
         "--retrieval-scoring",
-        choices=["similarity", "ga"],
+        choices=["similarity", "ga", "ga_mmr"],
         default="similarity",
         help="Retrieval ranking: legacy lexical top-k vs GA-style relevance+importance+recency.",
     )
     p.add_argument("--ga-lambda", type=float, default=1.0, help="Importance weight (positive-feedback dial) in GA scoring.")
     p.add_argument("--ga-recency", type=float, default=0.0, help="Recency weight in GA scoring (GA-faithful = 1.0).")
+    p.add_argument("--mmr-relevance-weight", type=float, default=0.70, help="MMR relevance weight; lower values promote diversity.")
+    p.add_argument("--max-reviewer-ops", type=int, default=6, help="Maximum LLM-issued pool operations per reviewer update.")
+    p.add_argument("--similarity-threshold", type=float, default=0.80, help="Near-duplicate merge threshold for memory writes.")
+    p.add_argument(
+        "--memory-read-protocol",
+        choices=["standard", "archive_rescue", "archive_joint_topk", "budgeted_append"],
+        default="standard",
+        help="Solver read path; Gamma arms usually set this by phase.",
+    )
+    p.add_argument("--archive-retrieval-k", type=int, default=6)
+    p.add_argument("--budget-schedule-name", default="")
+    p.add_argument("--cache-policy", choices=["read_write", "off"], default="read_write")
+    p.add_argument("--disable-thinking", action="store_true")
+    p.add_argument("--llm-extra-body-json", default="", help="JSON object passed as OpenAI extra_body.")
     p.add_argument("--solver-temp", type=float, default=0.7)
     p.add_argument("--max-tokens-solver", type=int, default=256)
     p.add_argument("--max-tokens-reviewer", type=int, default=512)

@@ -1,0 +1,6 @@
+model,replicate,depth,worker_outcomes,zero_score_events,zero_score_rate,terminal_mean_all_score,terminal_input_ratio_to_control,interpretation,audit_file
+DeepSeek-V4-Flash,deepseek-r1,10,30,2,0.06666666666666667,0.918918918918919,10.262456123044547,intermittent tails; no sustained degradation,benchmarks/scbench/deepseek_cfgpipe_cp1_self_report_acceptance_depth10_audit_20260714.json
+GLM-5,glm5-r1,10,30,0,0.0,0.9189189189,11.4607,flat negative result,benchmarks/scbench/glm5_cfgpipe_cp1_self_report_acceptance_depth10_audit_20260714.json
+Kimi-K2.6,kimi-coding-r1,8,24,1,0.041666666666666664,0.6126126126,5.5297,single terminal tail; later extension invalid,benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_depth8_audit_20260714.json
+Kimi-K2.6,kimi-coding-r2,10,30,0,0.0,0.9189189189,11.5363,flat preregistered replication,benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_depth10_r2_audit_20260714.json
+Kimi-K2.6,kimi-maas-r2,12,36,0,0.0,0.8918918918918919,14.077518347537879,fresh catastrophic-tail replication falsified,benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_three_arm_confirmation_audit_20260715.json

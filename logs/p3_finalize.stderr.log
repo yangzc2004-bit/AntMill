@@ -1,0 +1,7 @@
+P3 formal matrix is incomplete: expected 54 result.json files, found 16.
+ËùÔÚÎ»ÖÃ D:\antmill\scripts\finalize_p3_formal.ps1:26 ×Ö·û: 5
++     throw "P3 formal matrix is incomplete: expected 54 result.json fi ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (P3 formal matri...iles, found 16.:String) [], RuntimeException
+    + FullyQualifiedErrorId : P3 formal matrix is incomplete: expected 54 result.json files, found 16.
+ 

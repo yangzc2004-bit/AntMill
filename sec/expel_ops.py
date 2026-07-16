@@ -39,7 +39,7 @@ def render_ops_pool(pool: list[dict[str, Any]]) -> str:
     )
 
 
-def parse_memory_ops(text: str) -> list[dict[str, Any]]:
+def parse_memory_ops(text: str, *, max_ops: int = MAX_OPS_PER_BATCH) -> list[dict[str, Any]]:
     """Tolerant parse of the LLM's operation list; invalid entries are dropped."""
     try:
         data = json.loads(text)
@@ -71,7 +71,7 @@ def parse_memory_ops(text: str) -> list[dict[str, Any]]:
         entry["kind"] = kind if kind in {"do", "avoid"} else "do"
         entry["text"] = str(item.get("text", "")).strip()
         ops.append(entry)
-    return ops[:MAX_OPS_PER_BATCH]
+    return ops[:max_ops]
 
 
 async def propose_memory_ops(
@@ -96,7 +96,7 @@ async def propose_memory_ops(
         '[{"op":"ADD"|"EDIT"|"UPVOTE"|"DOWNVOTE", "target_id": <pool index or null>, '
         '"kind":"do"|"avoid", "text":"abstract reusable strategy lesson"}]. '
         "target_id refers to the pool numbering above; it is required for EDIT/UPVOTE/DOWNVOTE "
-        f"and must be null for ADD. Use at most {MAX_OPS_PER_BATCH} operations."
+        f"and must be null for ADD. Use at most {cfg.max_reviewer_ops} operations."
     )
     out = await llm.chat(
         [{"role": "system", "content": MEMORY_OPS_SYS}, {"role": "user", "content": prompt}],
@@ -104,7 +104,7 @@ async def propose_memory_ops(
         max_tokens=cfg.max_tokens_reviewer,
         tag="expel_ops_reviewer",
     )
-    return parse_memory_ops(out)
+    return parse_memory_ops(out, max_ops=cfg.max_reviewer_ops)
 
 
 def apply_memory_ops(
@@ -113,6 +113,7 @@ def apply_memory_ops(
     *,
     cfg: Config,
     reject_log: list[dict[str, str]] | None = None,
+    archive_log: list[dict[str, Any]] | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Execute LLM-issued operations. Code executes, never decides; the sanitizer is
     the only veto (rejects are dropped and logged, never rewritten).
@@ -140,6 +141,13 @@ def apply_memory_ops(
             dup = find_pool_duplicate(pool, clean, cfg)
             if dup is not None:
                 # A re-added existing lesson is agreement, not a new entry.
+                _log_archive(
+                    archive_log,
+                    "similarity_merge",
+                    {"kind": clean["kind"], "text": clean["text"], "votes": ADD_INITIAL_VOTES},
+                    op="ADD",
+                    merged_into=pool[dup],
+                )
                 pool[dup]["votes"] = int(pool[dup].get("votes", 0)) + 1
                 applied.append({"op": "UPVOTE", "item": pool[dup], "converted_from": "ADD"})
                 continue
@@ -150,9 +158,11 @@ def apply_memory_ops(
             item["votes"] = int(item.get("votes", 0)) + 1
             applied.append({"op": "UPVOTE", "item": item})
         elif name == "DOWNVOTE":
+            _log_archive(archive_log, "downvote", dict(item), op="DOWNVOTE")
             item["votes"] = int(item.get("votes", 0)) - 1
             applied.append({"op": "DOWNVOTE", "item": item})
         elif name == "EDIT":
+            _log_archive(archive_log, "edit_before", dict(item), op="EDIT")
             clean = sanitize_expel_insight({"kind": kind if kind in {"do", "avoid"} else item.get("kind", "do"), "text": text})
             if not clean:
                 _log_reject(reject_log, name, text, "over_specific")
@@ -183,3 +193,22 @@ def find_pool_duplicate(pool: list[dict[str, Any]], insight: dict[str, str], cfg
 def _log_reject(reject_log: list[dict[str, str]] | None, op: str, text: str, reason: str) -> None:
     if reject_log is not None:
         reject_log.append({"op": op, "text": text, "reason": reason})
+
+
+def _log_archive(
+    archive_log: list[dict[str, Any]] | None,
+    source: str,
+    item: dict[str, Any],
+    *,
+    op: str,
+    merged_into: dict[str, Any] | None = None,
+) -> None:
+    if archive_log is not None:
+        archive_log.append(
+            {
+                "source": source,
+                "item": dict(item),
+                "op": op,
+                "merged_into": dict(merged_into) if merged_into is not None else None,
+            }
+        )

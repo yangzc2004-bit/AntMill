@@ -1,0 +1,2175 @@
+{
+  "created": 1784028769.555147,
+  "duration": 2.2175614833831787,
+  "exitcode": 1,
+  "root": "/tmp/tmpra1md9tw",
+  "environment": {},
+  "summary": {
+    "error": 45,
+    "total": 45,
+    "collected": 45
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_initial_stats",
+          "type": "Function",
+          "lineno": 643
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[echo]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[time_out]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_files]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_stdin]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_env]",
+          "type": "Function",
+          "lineno": 655
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_final_stats",
+          "type": "Function",
+          "lineno": 668
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_initial_stats",
+          "type": "Function",
+          "lineno": 680
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_string_stream]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nonzero_exit_with_stderr]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nested_file_execution]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_multiline_values]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdout_without_newline]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[default_timeout_and_empty_stdin]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_files_together]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_stdin_together]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[files_and_stdin_together]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[timeout_with_env_and_files]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[all_features_combined]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[multiple_env_vars_multiple_files]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_array_with_files]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_override_system]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_small_timeout]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[unicode_in_output]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_long_stdout]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[exit_code_variations]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[command_with_shell_metacharacters]",
+          "type": "Function",
+          "lineno": 692
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_final_stats",
+          "type": "Function",
+          "lineno": 705
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[missing_command_field]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_negative]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_zero]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_type]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_env_type]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_files_type]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_stdin_type]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[empty_command_string]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[command_type_not_string]",
+          "type": "Function",
+          "lineno": 717
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[env_values_not_strings]",
+          "type": "Function",
+          "lineno": 717
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_duration_is_rounded",
+          "type": "Function",
+          "lineno": 733
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_stats_duration_is_rounded",
+          "type": "Function",
+          "lineno": 748
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_error_does_not_increment_stats",
+          "type": "Function",
+          "lineno": 781
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_invalid_json_returns_json_error",
+          "type": "Function",
+          "lineno": 797
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string]",
+          "type": "Function",
+          "lineno": 811
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[env_is_null]",
+          "type": "Function",
+          "lineno": 811
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[files_is_null]",
+          "type": "Function",
+          "lineno": 811
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases",
+          "type": "Class"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_1.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_initial_stats",
+      "lineno": 643,
+      "outcome": "error",
+      "keywords": [
+        "test_initial_stats",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2472390409966465,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:34273', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00021491300140041858,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[echo]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[echo]",
+        "parametrize",
+        "pytestmark",
+        "echo",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00032271898817270994,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:34273', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0003120180044788867,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[time_out]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[time_out]",
+        "parametrize",
+        "pytestmark",
+        "time_out",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005008300067856908,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:34273', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00023111399787012488,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_files]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[with_files]",
+        "parametrize",
+        "pytestmark",
+        "with_files",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023161400167737156,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:34273', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002172130043618381,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_stdin]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[with_stdin]",
+        "parametrize",
+        "pytestmark",
+        "with_stdin",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00025861599715426564,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:34273', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002359140053158626,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_env]",
+      "lineno": 655,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_core[with_env]",
+        "parametrize",
+        "pytestmark",
+        "with_env",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002981169964186847,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:34273', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00030791800236329436,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestCore::test_final_stats",
+      "lineno": 668,
+      "outcome": "error",
+      "keywords": [
+        "test_final_stats",
+        "TestCore",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002611149975564331,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:34273', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00022821400489192456,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_initial_stats",
+      "lineno": 680,
+      "outcome": "error",
+      "keywords": [
+        "test_initial_stats",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.26402904199494515,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00032931999885477126,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_string_stream]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[stdin_string_stream]",
+        "parametrize",
+        "pytestmark",
+        "stdin_string_stream",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002465150028001517,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00024861500423867255,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nonzero_exit_with_stderr]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[nonzero_exit_with_stderr]",
+        "parametrize",
+        "pytestmark",
+        "nonzero_exit_with_stderr",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003032180102309212,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00024251399736385792,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nested_file_execution]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[nested_file_execution]",
+        "parametrize",
+        "pytestmark",
+        "nested_file_execution",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00024111400125548244,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019511199207045138,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_multiline_values]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[env_multiline_values]",
+        "parametrize",
+        "pytestmark",
+        "env_multiline_values",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00035542200203053653,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0003557210002327338,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdout_without_newline]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[stdout_without_newline]",
+        "parametrize",
+        "pytestmark",
+        "stdout_without_newline",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002683159982552752,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00025391500093974173,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[default_timeout_and_empty_stdin]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[default_timeout_and_empty_stdin]",
+        "parametrize",
+        "pytestmark",
+        "default_timeout_and_empty_stdin",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003864229947794229,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002826169948093593,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_files_together]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[env_and_files_together]",
+        "parametrize",
+        "pytestmark",
+        "env_and_files_together",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00044502598757389933,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00022921299387235194,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_stdin_together]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[env_and_stdin_together]",
+        "parametrize",
+        "pytestmark",
+        "env_and_stdin_together",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00024091399973258376,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002580159925855696,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[files_and_stdin_together]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[files_and_stdin_together]",
+        "parametrize",
+        "pytestmark",
+        "files_and_stdin_together",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00027551600942388177,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002161129959858954,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[timeout_with_env_and_files]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[timeout_with_env_and_files]",
+        "parametrize",
+        "pytestmark",
+        "timeout_with_env_and_files",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003597210015868768,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00021541299065575004,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[all_features_combined]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[all_features_combined]",
+        "parametrize",
+        "pytestmark",
+        "all_features_combined",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023041399253997952,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0001916110049933195,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[multiple_env_vars_multiple_files]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[multiple_env_vars_multiple_files]",
+        "parametrize",
+        "pytestmark",
+        "multiple_env_vars_multiple_files",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023181400320027024,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00020431200391612947,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_array_with_files]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[stdin_array_with_files]",
+        "parametrize",
+        "pytestmark",
+        "stdin_array_with_files",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023541398695670068,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019661200349219143,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_override_system]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[env_override_system]",
+        "parametrize",
+        "pytestmark",
+        "env_override_system",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002360139915253967,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019681100093293935,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_small_timeout]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[very_small_timeout]",
+        "parametrize",
+        "pytestmark",
+        "very_small_timeout",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002317140024388209,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002655160060385242,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[unicode_in_output]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[unicode_in_output]",
+        "parametrize",
+        "pytestmark",
+        "unicode_in_output",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002343139931326732,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002708160027395934,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_long_stdout]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[very_long_stdout]",
+        "parametrize",
+        "pytestmark",
+        "very_long_stdout",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00029541800904553384,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019311199139337987,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[exit_code_variations]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[exit_code_variations]",
+        "parametrize",
+        "pytestmark",
+        "exit_code_variations",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00032842000655364245,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00027901699650101364,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[command_with_shell_metacharacters]",
+      "lineno": 692,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_hidden[command_with_shell_metacharacters]",
+        "parametrize",
+        "pytestmark",
+        "command_with_shell_metacharacters",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002385139960097149,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00022801400336902589,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestHidden::test_final_stats",
+      "lineno": 705,
+      "outcome": "error",
+      "keywords": [
+        "test_final_stats",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00030141799652483314,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:36419', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0004689279885496944,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[missing_command_field]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[missing_command_field]",
+        "parametrize",
+        "pytestmark",
+        "missing_command_field",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2542431579931872,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0002983169979415834,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_negative]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_timeout_negative]",
+        "parametrize",
+        "pytestmark",
+        "invalid_timeout_negative",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00024111400125548244,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019781199807766825,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_zero]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_timeout_zero]",
+        "parametrize",
+        "pytestmark",
+        "invalid_timeout_zero",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003026180056622252,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00029581799753941596,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_type]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_timeout_type]",
+        "parametrize",
+        "pytestmark",
+        "invalid_timeout_type",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003297200019005686,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00021171300613787025,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_env_type]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_env_type]",
+        "parametrize",
+        "pytestmark",
+        "invalid_env_type",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023891399905551225,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00018811100744642317,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_files_type]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_files_type]",
+        "parametrize",
+        "pytestmark",
+        "invalid_files_type",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023781400523148477,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00025041399931069463,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_stdin_type]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[invalid_stdin_type]",
+        "parametrize",
+        "pytestmark",
+        "invalid_stdin_type",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003087189979851246,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00023351400159299374,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[empty_command_string]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[empty_command_string]",
+        "parametrize",
+        "pytestmark",
+        "empty_command_string",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00031041799229569733,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00047992799954954535,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[command_type_not_string]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[command_type_not_string]",
+        "parametrize",
+        "pytestmark",
+        "command_type_not_string",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002568159980000928,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00034532000427134335,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[env_values_not_strings]",
+      "lineno": 717,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_errors[env_values_not_strings]",
+        "parametrize",
+        "pytestmark",
+        "env_values_not_strings",
+        "TestError",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003836230025626719,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:53673', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00022761400032322854,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_duration_is_rounded",
+      "lineno": 733,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_duration_is_rounded",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.25652859499678016,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:60013', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00025931501295417547,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_stats_duration_is_rounded",
+      "lineno": 748,
+      "outcome": "error",
+      "keywords": [
+        "test_stats_duration_is_rounded",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00031151800067164004,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:60013', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00022191299649421126,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_error_does_not_increment_stats",
+      "lineno": 781,
+      "outcome": "error",
+      "keywords": [
+        "test_error_does_not_increment_stats",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023461400996893644,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:60013', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00019611199968494475,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_invalid_json_returns_json_error",
+      "lineno": 797,
+      "outcome": "error",
+      "keywords": [
+        "test_invalid_json_returns_json_error",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004783289914485067,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:60013', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00020001200027763844,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string]",
+      "lineno": 811,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_edge_errors[stdin_array_with_non_string]",
+        "parametrize",
+        "pytestmark",
+        "stdin_array_with_non_string",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023291399702429771,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:60013', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.00018331100000068545,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[env_is_null]",
+      "lineno": 811,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_edge_errors[env_is_null]",
+        "parametrize",
+        "pytestmark",
+        "env_is_null",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0002477149973856285,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:60013', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0001999119995161891,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[files_is_null]",
+      "lineno": 811,
+      "outcome": "error",
+      "keywords": [
+        "test_execute_edge_errors[files_is_null]",
+        "parametrize",
+        "pytestmark",
+        "files_is_null",
+        "TestEdgeCases",
+        "functionality",
+        "test_checkpoint_1.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00023411400616168976,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpra1md9tw/.evaluation_tests/test_checkpoint_1.py",
+          "lineno": 58,
+          "message": "RuntimeError: Server exited early with code 1.\nstdout:\n\nstderr:\nTraceback (most recent call last):\n  File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\n    from fastapi import FastAPI, Request, Response\nModuleNotFoundError: No module named 'fastapi'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 91,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_1.py",
+            "lineno": 58,
+            "message": "RuntimeError"
+          }
+        ],
+        "longrepr": "entrypoint_argv = ['uv', 'run', 'execution_server.py']\n\n    @pytest.fixture(scope=\"class\")\n    def server_url(\n        entrypoint_argv: list[str],\n    ) -> Generator[str, None, None]:\n        port = _get_free_port()\n        cmd = entrypoint_argv + [\n            \"--port\",\n            str(port),\n            \"--address\",\n            \"127.0.0.1\",\n        ]\n        proc = subprocess.Popen(\n            cmd,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.PIPE,\n            text=True,\n        )\n        base_url = f\"http://127.0.0.1:{port}\"\n        try:\n>           _wait_for_server(proc, base_url)\n\n.evaluation_tests/test_checkpoint_1.py:91: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nproc = <Popen: returncode: 1 args: ['uv', 'run', 'execution_server.py', '--port', '...>\nbase_url = 'http://127.0.0.1:60013', timeout = 5.0\n\n    def _wait_for_server(\n        proc: subprocess.Popen[str], base_url: str, timeout: float = 5.0\n    ) -> None:\n        deadline = time.monotonic() + timeout\n        last_error: Exception | None = None\n        while time.monotonic() < deadline:\n            if proc.poll() is not None:\n                stdout, stderr = proc.communicate(timeout=1)\n>               raise RuntimeError(\n                    \"Server exited early with code \"\n                    f\"{proc.returncode}.\\nstdout:\\n{stdout}\\nstderr:\\n{stderr}\"\n                )\nE               RuntimeError: Server exited early with code 1.\nE               stdout:\nE               \nE               stderr:\nE               Traceback (most recent call last):\nE                 File \"/tmp/tmpra1md9tw/execution_server.py\", line 14, in <module>\nE                   from fastapi import FastAPI, Request, Response\nE               ModuleNotFoundError: No module named 'fastapi'\n\n.evaluation_tests/test_checkpoint_1.py:58: RuntimeError"
+      },
+      "teardown": {
+        "duration": 0.0003445210022618994,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

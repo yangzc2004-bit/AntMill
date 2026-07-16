@@ -1,0 +1,52 @@
+{
+  "status": "engineering_resume_compatibility_config_frozen_before_extension_outcomes",
+  "date_frozen": "2026-07-15",
+  "source_config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_self_report_acceptance_depth10_replication_config.json",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 10,
+  "step_limit_per_worker": 12,
+  "pass_policy": "any",
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_1",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_2",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_3",
+      "layer": 5
+    }
+  ],
+  "models": [
+    {
+      "model": "kimi-k2.6-maas",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "cumulative_self_report_acceptance"
+          ]
+        }
+      ]
+    }
+  ],
+  "compatibility_note": "This file only exposes the already frozen depth-10 settings in the legacy schema expected by sec.resume_scbench_cumulative_arm. It does not alter the completed treatment or its outcomes."
+}

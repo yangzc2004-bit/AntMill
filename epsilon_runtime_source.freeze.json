@@ -1,0 +1,57 @@
+{
+  "phase": "epsilon",
+  "created": "2026-07-14T21:55:39.7406708+08:00",
+  "git_head": "51e08dc115aba8339e85d0839ce05144130830f9",
+  "status": "frozen_during_controls_after_first_complete_condition_before_any_cross_arm_contrast",
+  "scope": "Runtime modules imported by the Epsilon maze runner; analysis, selftest, and paper files are excluded.",
+  "preregistration": {
+    "document": "prereg_phase_epsilon.md",
+    "sha256": "69f0c999ce9570a9fa3ea1f40492321a7e9489892390c7b50001a566ef54bebb"
+  },
+  "files": [
+    {
+      "path": "sec/run_maze_alpha.py",
+      "sha256": "13fb4cb83f6d472d3d109e3f47ebb56f8550bee78b12308b8252f06b0805aef4"
+    },
+    {
+      "path": "sec/maze_alpha.py",
+      "sha256": "9ebbf16469cbde1803f1c11f1a309f9cb5196950120d99bf3d23942317288f5c"
+    },
+    {
+      "path": "sec/agentic.py",
+      "sha256": "514ec8ee835334af3f1d216954ab340be694d8a9f9b7943db0bf9945827ff4ea"
+    },
+    {
+      "path": "sec/config.py",
+      "sha256": "568bc30726e88b0268003d261bc432e56981103ee49ae5bfc7a4782cdcb6228b"
+    },
+    {
+      "path": "sec/expel.py",
+      "sha256": "1080938ce0ebd56d23ab364d334d0ce00f8e8354371770baf1b1954902fd6a0e"
+    },
+    {
+      "path": "sec/expel_ops.py",
+      "sha256": "b74f1380fbf7d381fc027686fb450efac63f3db43cb1f794e0d5b349043c5db3"
+    },
+    {
+      "path": "sec/llm.py",
+      "sha256": "ebd7ca56d3cdbeb2a93ccf8387c0122aba21a0f6d424bf74a1c799cb46ba8f04"
+    },
+    {
+      "path": "sec/maze_env.py",
+      "sha256": "7e419d4a629ccc2f243babd6b41dd74815f66e1f3cfbf3ffea84183796074b26"
+    },
+    {
+      "path": "sec/memory.py",
+      "sha256": "6d8a3b565f39645cdf462c40938cd740726292e1fab591b9ae4f655cede813e5"
+    },
+    {
+      "path": "sec/metrics.py",
+      "sha256": "6db33fc986d776b4d2fc488c3d7a07e8ecee768ede8900bf0ffc43041d9e10a1"
+    },
+    {
+      "path": "sec/solver.py",
+      "sha256": "961ccdffd8be8dae0f6305b2ddee7795120573fd42361db9612acca5358cbac8"
+    }
+  ]
+}

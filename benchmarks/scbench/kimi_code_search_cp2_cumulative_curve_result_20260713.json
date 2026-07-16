@@ -1,0 +1,58 @@
+{
+  "status": "completed_no_degradation",
+  "run_root": "runs_scbench_moa_kimi_code_search_cp2_multisource_curve_20260713_qualityfix",
+  "config": "benchmarks/scbench/kimi_code_search_cp2_cumulative_curve_config.json",
+  "model": "kimi-k2.6",
+  "problem": "code_search",
+  "checkpoint_limit": 2,
+  "worker_count": 3,
+  "num_layers": 4,
+  "arms": {
+    "no_transfer": {
+      "mean_core_by_layer": [1.0, 1.0, 1.0, 1.0],
+      "full_core_workers_by_layer": [3, 3, 3, 3],
+      "received_results_by_layer": [0, 0, 0, 0],
+      "input_tokens_by_layer": [277092, 285262, 307154, 313009]
+    },
+    "source_success": {
+      "mean_core_by_layer": [1.0, 1.0, 1.0, 1.0],
+      "full_core_workers_by_layer": [3, 3, 3, 3],
+      "received_results_by_layer": [0, 3, 3, 3],
+      "received_experience_chars_by_layer": [0, 22892, 23398, 24898],
+      "input_tokens_by_layer": [288647, 727777, 639366, 670511]
+    },
+    "cumulative_success": {
+      "mean_core_by_layer": [1.0, 1.0, 1.0, 1.0],
+      "full_core_workers_by_layer": [3, 3, 3, 3],
+      "received_results_by_layer": [0, 3, 6, 9],
+      "received_experience_chars_by_layer": [0, 28916, 51977, 75154],
+      "input_tokens_by_layer": [282612, 847629, 1243810, 1469892]
+    }
+  },
+  "criteria": {
+    "control_headroom": true,
+    "cumulative_activation": true,
+    "integrity": true,
+    "primary_degradation": false,
+    "within_arm_decline": false,
+    "curve_shape": false,
+    "complexity_support": true,
+    "degradation_curve": false
+  },
+  "complexity_ratios": {
+    "cumulative_vs_source_success_input_l2": 1.1647,
+    "cumulative_vs_source_success_input_l3": 1.9454,
+    "cumulative_vs_source_success_input_l4": 2.1922,
+    "cumulative_vs_no_transfer_input_l4": 4.6960
+  },
+  "integrity_audit": {
+    "checkpoint_2_evaluations": 36,
+    "test_collection_hash": "6e4457d36d30cf9405ff2006c59ebc9a2c58b9e109af3f1d49ca3addb3c4d719",
+    "all_test_collection_hashes_identical": true,
+    "all_checkpoint_2_core": "5/5",
+    "infrastructure_failures": 0,
+    "nonempty_runner_stderr_files": 0,
+    "assistant_actions_using_prohibited_benchmark_paths": 0
+  },
+  "decision": "Keep as a clean coordination-cost amplification result. Do not claim performance degradation; move to a calibrated below-ceiling task."
+}

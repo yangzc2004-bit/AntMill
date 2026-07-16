@@ -1,0 +1,94 @@
+{
+  "status": "engineering_sequential_checkpoint_curve_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "manager": "Kimi intermediate MoA aggregator",
+  "model": "kimi-k2.6",
+  "problem": "code_search",
+  "checkpoint_sequence": [
+    1,
+    2,
+    3
+  ],
+  "worker_count": 3,
+  "step_limit_per_checkpoint": 20,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 10000,
+  "manager_max_output_tokens": 5000,
+  "manager_experience_char_limit": 20000,
+  "scbench_seed": 42,
+  "mode_order": [
+    "no_transfer",
+    "recursive_synthesis"
+  ],
+  "expected_targets": {
+    "1": {
+      "core_total": 7,
+      "pytest_collected": 13,
+      "test_collection_hash": "60b2d6ff1ac610f185120cfa46bcb9a1b71a4a4f328ee83d113ae9d405e1a0cc"
+    },
+    "2": {
+      "core_total": 5,
+      "pytest_collected": 25,
+      "test_collection_hash": "6e4457d36d30cf9405ff2006c59ebc9a2c58b9e109af3f1d49ca3addb3c4d719"
+    },
+    "3": {
+      "core_total": 8,
+      "pytest_collected": 47,
+      "test_collection_hash": "39d11b6b8327d3049a7b4e00da441d91640b57e6fe866789c506e43a10634395"
+    }
+  },
+  "calibration_amendment": {
+    "prior_invalid_contrast": "benchmarks/scbench/kimi_code_search_sequential_cp1_cp3_recursive_config.json",
+    "headroom_screen": "benchmarks/scbench/kimi_code_search_cp3_step20_headroom_screen_config.json",
+    "headroom_observation": [
+      "0/8",
+      "1/8"
+    ],
+    "only_budget_change": "Increase every checkpoint's MiniSWE action limit from 16 to 20 so both arms remain budget matched.",
+    "order_change": "Run no_transfer first to counterbalance the prior recursive-first launch.",
+    "no_further_action_budget_changes": true
+  },
+  "assimilation_semantics": {
+    "recursive_synthesis": "After checkpoints 1 and 2, recursively revise one shared playbook using only current-round workers that pass every current Core test. Every next-round worker receives exactly that manager artifact.",
+    "no_transfer": "Use the same workers, checkpoint sequence, model, and action budget while suppressing all prior output.",
+    "no_success_behavior": "Retain the latest manager playbook if no new strict source exists; checkpoint-1 nonactivation invalidates treatment."
+  },
+  "manager_semantics": {
+    "public_context": "Provide public specifications cumulatively through the current checkpoint.",
+    "recursive_state": "Include the immediately previous manager playbook in the checkpoint-2 update.",
+    "evidence_filter": "Only all-Core workers are eligible as new evidence.",
+    "bounded_output": "Cap the shared playbook at 20000 characters and record all manager usage."
+  },
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": "Reject infrastructure failure, Core-total drift, or test-hash drift and cleanly re-evaluate the same snapshot."
+  },
+  "validity_gates": {
+    "source_activation": "Checkpoint 1 creates at least one strict source and checkpoint-2 recursive workers receive manager layer 1.",
+    "recursive_continuity": "Manager layer 2 includes manager layer 1 and at least one strict checkpoint-2 source.",
+    "control_headroom": "Formal no-transfer checkpoint-3 mean normalized Core exceeds 0.10.",
+    "target_consistency": "Every result matches the frozen Core total and hash for its checkpoint.",
+    "integrity": "No infrastructure failures remain and no assistant action accesses prohibited benchmark paths."
+  },
+  "degradation_criteria": {
+    "primary_terminal_effect": "Recursive checkpoint-3 mean Core is at least 0.20 below no transfer.",
+    "difference_in_differences": "The recursive CP2-to-CP3 change minus the no-transfer CP2-to-CP3 change is at most -0.20.",
+    "within_treatment_decline": "Recursive Core falls by at least 0.30 from CP2 to CP3.",
+    "complexity_support": "Recursive CP3 workers receive manager experience and use at least 20 percent more input tokens than no transfer.",
+    "all_required": "All validity gates and all four degradation criteria must pass."
+  },
+  "decision_rule": {
+    "expand": "If all requirements pass, run two independent replications and a second model.",
+    "directional_followup": "If validity passes and both causal effects are negative but one misses 0.20, run one same-setting replication.",
+    "falsify": "If validity passes but either causal effect is non-negative, reject code_search.",
+    "invalid_stop": "If formal no-transfer Core headroom is at most 0.10, stop code_search without further budget changes."
+  }
+}

@@ -1,0 +1,331 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./antmill_aaai27_en.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-03-20>
+(d:/texlive/2026/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(d:/texlive/2026/texmf-dist/tex/latex/base/size10.clo)) (./aaai2027.sty
+Conference Style for AAAI for LaTeX 2e
+(d:/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/newtx/newtxtext.sty
+`newtxtext' v1.744, 2024/04/01 Text macros taking advantage of TeXGyre Termes a
+nd its extensions (msharpe)
+(d:/texlive/2026/texmf-dist/tex/latex/xpatch/xpatch.sty
+(d:/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+(d:/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))
+(d:/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(d:/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(d:/texlive/2026/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(d:/texlive/2026/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(d:/texlive/2026/texmf-dist/tex/generic/xkeyval/keyval.tex))))
+(d:/texlive/2026/texmf-dist/tex/latex/base/textcomp.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/xstring/xstring.sty
+(d:/texlive/2026/texmf-dist/tex/generic/xstring/xstring.tex))
+(d:/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/kastrup/binhex.tex)
+(d:/texlive/2026/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+(d:/texlive/2026/texmf-dist/tex/latex/figureversions/figureversions.sty)))
+(d:/texlive/2026/texmf-dist/tex/latex/psnfss/helvet.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/psnfss/courier.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(d:/texlive/2026/texmf-dist/tex/latex/natbib/natbib.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
+(d:/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/newtx/t1ntxtlf.fd)
+No file antmill_aaai27_en_r2.aux.
+(d:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (d:/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(d:/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/grfext/grfext.sty
+(d:/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(d:/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(d:/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+
+Package natbib Warning: Citation `zhao2024expel' on page 1 undefined on input l
+ine 66.
+
+
+Package natbib Warning: Citation `shinn2023reflexion' on page 1 undefined on in
+put line 67.
+
+
+Package natbib Warning: Citation `qian2024colearning' on page 1 undefined on in
+put line 68.
+
+
+Package natbib Warning: Citation `liu2025mael' on page 1 undefined on input lin
+e 69.
+
+
+LaTeX Warning: Reference `fig:fig1' on page 1 undefined on input line 85.
+
+
+LaTeX Warning: Reference `tab:components' on page 1 undefined on input line 86.
+
+
+(d:/texlive/2026/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd) [1{d:/texlive/2026/te
+xmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/texlive/2026/texmf-dist/fonts/en
+c/dvips/newtx/ntx-ec-tlf.enc}{d:/texlive/2026/texmf-dist/fonts/enc/dvips/tex-gy
+re/q-ts1.enc}]
+
+Package natbib Warning: Citation `zhao2024expel' on page 2 undefined on input l
+ine 131.
+
+
+Package natbib Warning: Citation `shinn2023reflexion' on page 2 undefined on in
+put line 133.
+
+
+Package natbib Warning: Citation `yao2023react' on page 2 undefined on input li
+ne 134.
+
+
+Package natbib Warning: Citation `park2023generative' on page 2 undefined on in
+put line 135.
+
+
+Package natbib Warning: Citation `zhong2024memorybank' on page 2 undefined on i
+nput line 136.
+
+
+LaTeX Warning: Reference `tab:components' on page 2 undefined on input line 139
+.
+
+
+Underfull \hbox (badness 3078) in paragraph at lines 131--140
+ \T1/ntxtlf/b/n/10 Single-agent ex-pe-ri-en-tial learn-ing. \T1/ntxtlf/m/n/10 E
+x-peL (\T1/ntxtlf/b/n/10 ?\T1/ntxtlf/m/n/10 ) dis-
+
+Underfull \hbox (badness 6658) in paragraph at lines 131--140
+\T1/ntxtlf/m/n/10 tills in-sights from suc-cess/failure tra-jec-to-ries with
+
+Underfull \hbox (badness 2103) in paragraph at lines 131--140
+\T1/ntxtlf/m/n/10 ADD/EDIT/UPVOTE/DOWNVOTE op-er-a-tions and re-
+
+Package natbib Warning: Citation `qian2024colearning' on page 2 undefined on in
+put line 142.
+
+
+Package natbib Warning: Citation `qian2024chatdev' on page 2 undefined on input
+ line 143.
+
+
+Package natbib Warning: Citation `liu2025mael' on page 2 undefined on input lin
+e 144.
+
+
+Package natbib Warning: Citation `du2024debate' on page 2 undefined on input li
+ne 145.
+
+
+Package natbib Warning: Citation `wang2023selfconsistency' on page 2 undefined 
+on input line 146.
+
+
+Package natbib Warning: Citation `hong2024metagpt' on page 2 undefined on input
+ line 147.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--151
+ \T1/ntxtlf/b/n/10 Multi-agent ex-pe-ri-ence shar-ing. \T1/ntxtlf/m/n/10 Ex-pe-
+ri-en-tial co-
+
+Underfull \hbox (badness 1221) in paragraph at lines 142--151
+\T1/ntxtlf/m/n/10 mem-o-ries; MetaGPT (\T1/ntxtlf/b/n/10 ?\T1/ntxtlf/m/n/10 ) s
+hares a mes-sage pool. All
+
+Package natbib Warning: Citation `governed2026sharedmem' on page 2 undefined on
+ input line 154.
+
+
+Package natbib Warning: Citation `memfail2026' on page 2 undefined on input lin
+e 155.
+
+
+Package natbib Warning: Citation `ssgm2026' on page 2 undefined on input line 1
+55.
+
+
+Package natbib Warning: Citation `remembering2026' on page 2 undefined on input
+ line 156.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]\T1/ntxtlf/m/n/9 Insight ops \T1/ntxtlf/m/sc/9 add\T1/ntxtlf/m/n/9 /\T1/ntxtl
+f/m/sc/9 edit\T1/ntxtlf/m/n/9 /\T1/ntxtlf/m/sc/9 up\T1/ntxtlf/m/n/9 /\T1/ntxtlf
+/m/sc/9 down\T1/ntxtlf/m/n/9 ,
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
+[]\T1/ntxtlf/m/n/9 Retrieval scor-ing (rel-e-
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+[]\T1/ntxtlf/b/n/9 composition un-der
+(d:/texlive/2026/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 204--210
+ \T1/ntxtlf/b/n/10 Arms. \T1/ntxtlf/m/n/10 The five-arm ma-trix de-com-poses ``
+multi-
+
+Underfull \hbox (badness 1521) in paragraph at lines 204--210
+\T1/ntxtlf/m/n/10 agent shared con-sol-i-dated mem-ory'' fac-tor by fac-tor:
+
+Underfull \hbox (badness 1163) in paragraph at lines 204--210
+\T1/ntxtlf/m/it/10 ing \T1/ntxtlf/m/n/10 nec-es-sary?); \T1/pcr/m/n/10 shared-a
+ppend \T1/ntxtlf/m/n/10 (shared but never
+
+Package natbib Warning: Citation `deepseek2024v3' on page 2 undefined on input 
+line 219.
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 212--222
+ \T1/ntxtlf/b/n/10 End-points and statis-tics. \T1/ntxtlf/m/n/10 Pri-mary pre-r
+eg-is-tered end-
+[2{d:/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}{d:/texli
+ve/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+
+LaTeX Warning: Reference `tab:e2' on page 3 undefined on input line 244.
+
+
+LaTeX Warning: Reference `fig:fig2' on page 3 undefined on input line 244.
+
+
+LaTeX Warning: Reference `fig:fig2b' on page 3 undefined on input line 287.
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 306--313
+\T1/ntxtlf/m/n/10 is $\OT1/cmr/m/n/10 +1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 69$ \
+T1/ntxtlf/m/n/10 (CI $\OT1/cmr/m/n/10 [\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 4\OM
+L/cmm/m/it/10 :\OT1/cmr/m/n/10 26\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 +7\OML/cmm/
+m/it/10 :\OT1/cmr/m/n/10 61]$\T1/ntxtlf/m/n/10 ), loop rate $\OT1/cmr/m/n/10 +0
+\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 049$ \T1/ntxtlf/m/n/10 (CI
+
+Underfull \vbox (badness 2744) has occurred while \output is active [3 <./figur
+es/beta/figure1_mechanism.pdf>]
+
+LaTeX Warning: Reference `fig:fig3' on page 4 undefined on input line 317.
+
+
+LaTeX Warning: Reference `fig:fig1' on page 4 undefined on input line 363.
+
+
+LaTeX Warning: Reference `tab:gamma' on page 4 undefined on input line 377.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+[]\T1/ntxtlf/m/n/9 Additive archive
+
+Underfull \hbox (badness 3780) in paragraph at lines 390--390
+\T1/ntxtlf/m/n/9 (top-6 $\OT1/cmr/m/n/9 +$ \T1/ntxtlf/m/n/9 archive
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
+[]\T1/ntxtlf/m/n/9 supply $[]\OT1/cmr/m/n/9 2\OMS/cmsy/m/n/9 ^^B$
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
+\T1/ntxtlf/m/n/9 (21/21/27 vs.
+
+Underfull \hbox (badness 6284) in paragraph at lines 391--392
+[]\T1/ntxtlf/m/n/9 no end-point im-
+
+Underfull \hbox (badness 5475) in paragraph at lines 391--392
+\T1/ntxtlf/m/n/9 proves; stag-na-tion
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+[]\T1/ntxtlf/m/n/9 Equal-dose joint
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+[]\T1/ntxtlf/m/n/9 supply
+
+Overfull \hbox (1.24922pt too wide) in paragraph at lines 393--394
+\OT1/cmr/m/n/9 1\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 42\OML/cmm/m/it/9 =\OT1/cmr/m/n
+/9 1\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 55\OML/cmm/m/it/9 =\OT1/cmr/m/n/9 1\OML/cmm
+/m/it/9 :\OT1/cmr/m/n/9 07\OMS/cmsy/m/n/9 ^^B$\T1/ntxtlf/m/n/9 :
+
+Underfull \hbox (badness 4752) in paragraph at lines 394--395
+[]\T1/ntxtlf/m/n/9 not evalu-able by
+[4 <./figures/beta/figure2_e2_main.pdf> <./figures/beta/figure2b_shared_vs_priv
+ate.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active
+
+Package natbib Warning: Citation `yang2025qwen3' on page 5 undefined on input l
+ine 433.
+
+
+LaTeX Warning: Reference `fig:fig4' on page 5 undefined on input line 438.
+
+[5 <./figures/beta/figure3_write_side_compression.pdf>]
+
+Package natbib Warning: Citation `zhao2024expel' on page 6 undefined on input l
+ine 501.
+
+
+Package natbib Warning: Citation `shi2017wob' on page 6 undefined on input line
+ 505.
+
+
+Package natbib Warning: Citation `liu2018miniwob' on page 6 undefined on input 
+line 505.
+
+
+Package natbib Warning: Citation `chezelles2024browsergym' on page 6 undefined 
+on input line 505.
+
+
+Package natbib Warning: Citation `tau2bench2025' on page 6 undefined on input l
+ine 507.
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 526--529
+ \T1/ntxtlf/b/n/10 Re-pro-ducibil-ity. \T1/ntxtlf/m/n/10 All pre-reg-is-tra-tio
+ns (with SHA-256
+[6]
+No file antmill_aaai27_en_r2.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[7 <./figures/gamma/figure4_cross_model.pdf>] (./antmill_aaai27_en_r2.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)<d:/texlive/2026/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2026/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi9.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texl
+ive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/texlive/2026/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/texlive/2026/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/texlive/2026/texmf-dist/fonts/type
+1/public/tex-gyre/qtmr.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/courier/
+ucrr8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><d:/te
+xlive/2026/texmf-dist/fonts/type1/public/newtx/ztmr.pfb><d:/texlive/2026/texmf-
+dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on antmill_aaai27_en_r2.pdf (7 pages, 430248 bytes).
+Transcript written on antmill_aaai27_en_r2.log.

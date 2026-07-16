@@ -1,0 +1,28 @@
+{
+  "artifacts_dir": "agent",
+  "checkpoint_path": "/outputs/cfgpipe/checkpoint_1",
+  "completed": "2026-07-14T10:17:27.289834",
+  "elapsed": 74.780607,
+  "error_message": null,
+  "had_error": false,
+  "snapshot_dir": "snapshot",
+  "started": "2026-07-14T10:16:12.509227",
+  "usage": {
+    "cost": 0.0,
+    "current_tokens": {
+      "cache_read": 7424,
+      "cache_write": 0,
+      "input": 8955,
+      "output": 144,
+      "reasoning": 0
+    },
+    "net_tokens": {
+      "cache_read": 30432,
+      "cache_write": 0,
+      "input": 39679,
+      "output": 4905,
+      "reasoning": 0
+    },
+    "steps": 8
+  }
+}

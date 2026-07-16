@@ -85,20 +85,46 @@ class MazeMemoryAudit:
         self.retrievals: list[dict[str, Any]] = []
         self.rejections: list[dict[str, Any]] = []
         self.llm_errors: list[dict[str, Any]] = []
+        self.pool_trajectory: list[dict[str, Any]] = []
 
-    def record_retrieval(self, *, t: int, task_id: str, agent_id: int, items: list[dict[str, Any]]) -> None:
+    def record_retrieval(
+        self,
+        *,
+        t: int,
+        task_id: str,
+        agent_id: int,
+        items: list[dict[str, Any]],
+        metadata: dict[str, Any] | None = None,
+    ) -> None:
         for item in items:
             item["retrieval_count"] = int(item.get("retrieval_count", 0)) + 1
             item.setdefault("retrieved_by", []).append({"t": t, "task_id": task_id, "agent_id": agent_id})
-        self.retrievals.append(
-            {
-                "t": t,
-                "task_id": task_id,
-                "agent_id": agent_id,
-                "items": [item.get("id") or _insight_key(item) for item in items],
-                "texts": [item.get("text", "") for item in items],
-            }
+        record = {
+            "t": t,
+            "task_id": task_id,
+            "agent_id": agent_id,
+            "items": [item.get("id") or _insight_key(item) for item in items],
+            "texts": [item.get("text", "") for item in items],
+            "sources": ["archive" if item.get("archived") else "active" for item in items],
+        }
+        record.update(metadata or {})
+        record.setdefault("injected_count", len(items))
+        record.setdefault("active_injected", sum(1 for item in items if not item.get("archived")))
+        record.setdefault("archive_injected", sum(1 for item in items if item.get("archived")))
+        record.setdefault("configured_total_limit", len(items))
+        record.setdefault("dose_compliant", record["injected_count"] <= record["configured_total_limit"])
+        record.setdefault(
+            "ranking",
+            [
+                {
+                    "id": item.get("id") or _insight_key(item),
+                    "source": "archive" if item.get("archived") else "active",
+                    "rank": rank,
+                }
+                for rank, item in enumerate(items, start=1)
+            ],
         )
+        self.retrievals.append(record)
 
     def record_write(
         self,
@@ -134,6 +160,91 @@ class MazeMemoryAudit:
         # call, never the run; they are counted here so data quality is auditable.
         self.llm_errors.append({"t": t, "task_id": task_id, "tag": tag, "message": message[:200]})
 
+    def record_pool_state(self, *, t: int, memory: InsightMemory) -> None:
+        active_items = memory.all_items()
+        retrievals = [rec for rec in self.retrievals if int(rec.get("t", -1)) == t]
+        active_ids: set[str] = set()
+        archive_ids: set[str] = set()
+        for rec in retrievals:
+            for item_id, source in zip(rec.get("items", []), rec.get("sources", []), strict=False):
+                if source == "archive":
+                    archive_ids.add(str(item_id))
+                else:
+                    active_ids.add(str(item_id))
+        injected_counts = [int(rec.get("injected_count", len(rec.get("items", [])))) for rec in retrievals]
+        archive_prompt_count = sum(1 for rec in retrievals if int(rec.get("archive_injected", 0)) > 0)
+        dose_violations = sum(
+            1
+            for rec in retrievals
+            if not bool(rec.get("dose_compliant", True))
+            or int(rec.get("active_injected", 0)) + int(rec.get("archive_injected", 0))
+            != int(rec.get("injected_count", len(rec.get("items", []))))
+        )
+        self.pool_trajectory.append(
+            {
+                "t": t,
+                "active_pool_size": len(active_items),
+                "archive_size": len(memory.archive),
+                "budgeted_append_budget": memory.budget_for_round(t),
+                "budgeted_append_selected": len(memory.snapshot().get("budgeted_append", {}).get("selected_items", [])),
+                "distinct_active_injected": len(active_ids),
+                "distinct_archive_injected": len(archive_ids),
+                "distinct_total_injected": len(active_ids | archive_ids),
+                "retrieval_record_count": len(retrievals),
+                "mean_injected_per_prompt": (
+                    sum(injected_counts) / len(injected_counts) if injected_counts else 0.0
+                ),
+                "max_injected_per_prompt": max(injected_counts, default=0),
+                "archive_prompt_share": (
+                    archive_prompt_count / len(retrievals) if retrievals else 0.0
+                ),
+                "dose_violation_count": dose_violations,
+                "active_item_ids": [item.get("id") or _insight_key(item) for item in active_items],
+                "archive_item_ids": [item.get("id") for item in memory.archive],
+            }
+        )
+
+    def retrieval_dose_summary(self) -> dict[str, Any]:
+        injected_counts = [
+            int(rec.get("injected_count", len(rec.get("items", []))))
+            for rec in self.retrievals
+        ]
+        violations = []
+        for rec in self.retrievals:
+            total = int(rec.get("injected_count", len(rec.get("items", []))))
+            source_total = int(rec.get("active_injected", 0)) + int(rec.get("archive_injected", 0))
+            limit = int(rec.get("configured_total_limit", total))
+            if not bool(rec.get("dose_compliant", total <= limit)) or source_total != total or total > limit:
+                violations.append(
+                    {
+                        "t": rec.get("t"),
+                        "task_id": rec.get("task_id"),
+                        "agent_id": rec.get("agent_id"),
+                        "injected_count": total,
+                        "source_total": source_total,
+                        "configured_total_limit": limit,
+                    }
+                )
+        archive_available = [
+            rec for rec in self.retrievals if int(rec.get("archive_candidate_count", 0)) > 0
+        ]
+        archive_selected = [
+            rec for rec in archive_available if int(rec.get("archive_injected", 0)) > 0
+        ]
+        return {
+            "retrieval_record_count": len(self.retrievals),
+            "max_injected_per_prompt": max(injected_counts, default=0),
+            "mean_injected_per_prompt": (
+                sum(injected_counts) / len(injected_counts) if injected_counts else 0.0
+            ),
+            "dose_violation_count": len(violations),
+            "dose_violations": violations,
+            "archive_available_record_count": len(archive_available),
+            "archive_selected_record_count": len(archive_selected),
+            "archive_selected_when_available": bool(archive_selected),
+            "joint_rank_record_count": sum(1 for rec in self.retrievals if rec.get("joint_rank") is True),
+        }
+
     def retrieval_share_series(self) -> dict[str, dict[str, float]]:
         """Per-item share of retrievals in each round: {item_id: {t: share}}.
 
@@ -162,6 +273,9 @@ class MazeMemoryAudit:
             "sanitizer_reject_rate": len(self.rejections) / attempts if attempts else 0.0,
             "llm_errors": self.llm_errors,
             "llm_error_count": len(self.llm_errors),
+            "pool_trajectory": self.pool_trajectory,
+            "retrieval_dose": self.retrieval_dose_summary(),
+            "archive_items": memory.archive,
             "memory_items": items,
             "retrieval_top1_share": retrieval_top1_share(items),
             "retrieval_concentration": retrieval_concentration(items),
@@ -339,13 +453,17 @@ def _add_route_eval_fields(
     shortest = max(int(route.get("shortest_path_length") or 1), 1)
     effective_steps = int(route.get("steps") or 0) if route.get("success") else max(max_steps, shortest * 2)
     override_count = sum(1 for row in trace if row.get("state_guided_override"))
+    parse_failure_count = sum(1 for row in trace if row.get("state_guided_override_reason") == "parse_failure")
     route["effective_steps"] = effective_steps
+    route["failure_penalized_steps"] = effective_steps
     route["cost_ratio"] = effective_steps / shortest
     route["excess_steps"] = effective_steps - shortest
     route["agent_mode"] = agent_mode
     route["stagnation_rate"] = _route_stagnation_rate(route.get("path", []), task.goal)
     route["state_guided_override_count"] = override_count
     route["state_guided_override_rate"] = override_count / max(len(trace), 1)
+    route["parse_failure_count"] = parse_failure_count
+    route["parse_failure_rate"] = parse_failure_count / max(len(trace), 1)
     route["llm_error_count"] = sum(1 for row in trace if row.get("llm_error"))
 
 
@@ -653,7 +771,13 @@ async def run_maze_episode(
 ) -> MazeEpisodeResult:
     retrieved_by_agent = [memory.retrieve(agent_id, _agent_query(task), t=t) for agent_id in range(cfg.n_solvers)]
     for agent_id, items in enumerate(retrieved_by_agent):
-        audit.record_retrieval(t=t, task_id=task.task_id, agent_id=agent_id, items=items)
+        audit.record_retrieval(
+            t=t,
+            task_id=task.task_id,
+            agent_id=agent_id,
+            items=items,
+            metadata=memory.retrieval_metadata(agent_id),
+        )
     if cfg.maze_agent_mode == "oracle_dfs":
         return MazeEpisodeResult(
             task_id=task.task_id,
@@ -857,6 +981,8 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
             "mas_antmill_rate": 0.0,
             "efficiency_collapse_signal": 0.0,
             "llm_error_count": 0.0,
+            "parse_failure_count": 0.0,
+            "parse_failure_rate": 0.0,
         }
     mean = lambda xs: float(sum(xs) / len(xs)) if xs else 0.0
     per_episode_overlap = [_episode_route_diversity(ep) for ep in episodes]
@@ -878,6 +1004,7 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
         "failure_rate": 1.0 - success,
         "cost_ratio": cost,
         "excess_steps": mean([float(r.get("excess_steps") or 0.0) for r in routes]),
+        "failure_penalized_steps": mean([float(r.get("failure_penalized_steps") or r.get("effective_steps") or 0.0) for r in routes]),
         # Success-conditional efficiency: failures carry a capped-step penalty in
         # cost_ratio/excess_steps, which entangles "slower" with "failed".
         "success_excess_steps": mean([float(r.get("excess_steps") or 0.0) for r in success_routes]),
@@ -894,6 +1021,8 @@ def maze_batch_metrics(episodes: list[MazeEpisodeResult], *, baseline_cost_ratio
         "mas_antmill_rate": mean(loop_by_ep),
         "efficiency_collapse_signal": collapse_signal,
         "llm_error_count": float(sum(int(r.get("llm_error_count") or 0) for r in routes)),
+        "parse_failure_count": float(sum(int(r.get("parse_failure_count") or 0) for r in routes)),
+        "parse_failure_rate": mean([float(r.get("parse_failure_rate") or 0.0) for r in routes]),
     }
 
 
@@ -1089,6 +1218,14 @@ async def _write_experience_append(
                 continue
             dup = find_pool_duplicate(pool, insight, cfg)
             if dup is not None:
+                memory.add_archive_item(
+                    insight,
+                    source="similarity_merge",
+                    t=t,
+                    task_id=episode.task_id,
+                    agent_id=agent.agent_id,
+                    op="ADD",
+                )
                 pool[dup]["votes"] = int(pool[dup].get("votes", 0)) + 1
                 item = pool[dup]
                 mode = "reviewer_append:agree"
@@ -1128,8 +1265,18 @@ async def _write_experience_ops(
         audit.record_llm_error(t=t, task_id=episode.task_id, tag="expel_ops_reviewer", message=str(exc))
         return
     rejects: list[dict[str, str]] = []
-    new_pool, applied = apply_memory_ops(pool, ops, cfg=cfg, reject_log=rejects)
+    archive_log: list[dict[str, Any]] = []
+    new_pool, applied = apply_memory_ops(pool, ops, cfg=cfg, reject_log=rejects, archive_log=archive_log)
     memory.set_pool(agent_id, new_pool)
+    for entry in archive_log:
+        memory.add_archive_item(
+            entry.get("item", {}),
+            source=str(entry.get("source", "unknown")),
+            t=t,
+            task_id=episode.task_id,
+            agent_id=agent_id,
+            op=str(entry.get("op", "")),
+        )
     for item in rejects:
         audit.record_rejection(
             t=t,
@@ -1329,6 +1476,31 @@ async def run_one_maze_alpha(cfg: Config, train_tasks: list[MazeTask], heldout_t
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "replays").mkdir(parents=True, exist_ok=True)
     (out_dir / "route_atlas").mkdir(parents=True, exist_ok=True)
+    manifest = {
+        "condition": condition_name(cfg),
+        "run_id": cfg.run_id,
+        "seed": cfg.seed,
+        "created_unix": time.time(),
+        "config": cfg.to_public_dict(),
+        "preregistration": (
+            "prereg_phase_delta.md + prereg_phase_delta_amendment_01.md"
+            if cfg.run_id.startswith("delta_")
+            else
+            "prereg_phase_gamma_amendment_01.md"
+            if cfg.run_id.startswith("gamma_p1b_")
+            else "prereg_phase_gamma_p2_execution.md"
+            if cfg.run_id.startswith("gamma_p2_")
+            else "prereg_phase_gamma.md"
+            if cfg.run_id.startswith("gamma_")
+            else "prereg_phase_epsilon.md"
+            if cfg.run_id.startswith("epsilon_")
+            else "prereg_phase_beta.md"
+        ),
+    }
+    _write_json(out_dir / "manifest.json", manifest)
+    deviation_log = out_dir / "prereg_deviation_log.md"
+    if not deviation_log.exists():
+        deviation_log.write_text("# Preregistration Deviations\n\nNo deviations recorded at run start.\n", encoding="utf-8")
     log: list[dict[str, Any]] = []
     heldout_records: list[dict[str, Any]] = []
     started = time.time()
@@ -1346,6 +1518,7 @@ async def run_one_maze_alpha(cfg: Config, train_tasks: list[MazeTask], heldout_t
         metrics["retrieval_entropy_norm"] = retrieval_entropy_norm(pool_items)
         metrics["memory_effective_size"] = memory_effective_size(pool_items)
         metrics["sanitizer_reject_count"] = len(audit.rejections)
+        audit.record_pool_state(t=t, memory=memory)
         row = {
             "t": t,
             **metrics,
@@ -1394,6 +1567,8 @@ async def run_one_maze_alpha(cfg: Config, train_tasks: list[MazeTask], heldout_t
         "route_diversity_final": log[-1]["route_diversity"] if log else 0.0,
         "efficiency_collapse_rounds": sum(int(row["efficiency_collapse_signal"]) for row in log),
         "retrieval_concentration_final": log[-1]["retrieval_concentration"] if log else 0.0,
+        "parse_failure_count_final": log[-1].get("parse_failure_count", 0.0) if log else 0.0,
+        "parse_failure_rate_final": log[-1].get("parse_failure_rate", 0.0) if log else 0.0,
         "llm": llm.stats.public_summary(),
         "elapsed_sec": time.time() - started,
     }
@@ -1452,6 +1627,12 @@ def build_maze_alpha_configs(args: argparse.Namespace) -> list[Config]:
         if not arms:
             raise ValueError(f"run_id_filter matched no arms: {sorted(run_id_filter)}")
     configs: list[Config] = []
+    extra_body = {}
+    raw_extra = getattr(args, "llm_extra_body_json", "")
+    if raw_extra:
+        extra_body = json.loads(raw_extra)
+        if not isinstance(extra_body, dict):
+            raise ValueError("--llm-extra-body-json must decode to a JSON object")
     for seed in seeds:
         for arm in arms:
             params = {
@@ -1486,6 +1667,15 @@ def build_maze_alpha_configs(args: argparse.Namespace) -> list[Config]:
                 "retrieval_scoring": getattr(args, "retrieval_scoring", "similarity"),
                 "ga_lambda": getattr(args, "ga_lambda", 1.0),
                 "ga_recency": getattr(args, "ga_recency", 0.0),
+                "mmr_relevance_weight": getattr(args, "mmr_relevance_weight", 0.70),
+                "max_reviewer_ops": getattr(args, "max_reviewer_ops", 6),
+                "similarity_threshold": getattr(args, "similarity_threshold", 0.80),
+                "memory_read_protocol": getattr(args, "memory_read_protocol", "standard"),
+                "archive_retrieval_k": getattr(args, "archive_retrieval_k", 6),
+                "budget_schedule_name": getattr(args, "budget_schedule_name", ""),
+                "cache_policy": getattr(args, "cache_policy", "read_write"),
+                "disable_thinking": bool(getattr(args, "disable_thinking", False)),
+                "llm_extra_body": extra_body,
             }
             params.update(arm)
             configs.append(Config(**params))
@@ -1606,6 +1796,171 @@ def _arms_for_phase(phase: str) -> list[dict[str, Any]]:
                 "maze_write_mode": "reviewer", "memory_write_protocol": "append",
                 "retrieval_scoring": "ga", "ga_lambda": 1.0,
             },
+        ]
+    if phase == "gamma_drift_probe":
+        return [
+            {
+                "run_id": "gamma_drift_frozen_t0",
+                "n_solvers": 4,
+                "memory_mode": "frozen",
+                "maze_write_mode": "none",
+                "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga",
+                "ga_lambda": 0.0,
+                "cache_policy": "off",
+                "T": 1,
+                "batch_M": 0,
+                "n_train": 0,
+                "heldout_size": 12,
+                "skip_final_train": True,
+            },
+        ]
+    if phase == "gamma_p1_controls":
+        base = {
+            "n_solvers": 4,
+            "maze_write_mode": "reviewer",
+            "memory_write_protocol": "expel_ops",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+        }
+        return [
+            {**base, "run_id": "gamma_p1_frozen_reviewer", "memory_mode": "frozen"},
+            {**base, "run_id": "gamma_p1_shared_consolidated_expel", "memory_mode": "shared"},
+        ]
+    if phase == "gamma_p1_rescue":
+        return [
+            {
+                "run_id": "gamma_p1_shared_consolidated_archive_rescue",
+                "n_solvers": 4,
+                "memory_mode": "shared",
+                "maze_write_mode": "reviewer",
+                "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga",
+                "ga_lambda": 0.0,
+                "memory_read_protocol": "archive_rescue",
+                "archive_retrieval_k": 6,
+            },
+        ]
+    if phase == "gamma_p1b_clean_rescue":
+        return [
+            {
+                "run_id": "gamma_p1b_shared_consolidated_archive_joint_topk",
+                "n_solvers": 4,
+                "memory_mode": "shared",
+                "maze_write_mode": "reviewer",
+                "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga",
+                "ga_lambda": 0.0,
+                "memory_read_protocol": "archive_joint_topk",
+            },
+        ]
+    if phase == "gamma_p1_budgeted_append":
+        return [
+            {
+                "run_id": "gamma_p1_budgeted_append_yoked",
+                "n_solvers": 4,
+                "memory_mode": "shared",
+                "maze_write_mode": "reviewer",
+                "memory_write_protocol": "append",
+                "retrieval_scoring": "ga",
+                "ga_lambda": 0.0,
+                "memory_read_protocol": "budgeted_append",
+                "budget_schedule_name": "gamma_consolidated_active_cummax",
+            },
+        ]
+    if phase == "gamma_p2_cross_model":
+        base = {
+            "n_solvers": 4,
+            "maze_write_mode": "reviewer",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+        }
+        return [
+            {**base, "run_id": "gamma_p2_frozen_reviewer", "memory_mode": "frozen", "memory_write_protocol": "expel_ops"},
+            {**base, "run_id": "gamma_p2_shared_append_ga", "memory_mode": "shared", "memory_write_protocol": "append"},
+            {**base, "run_id": "gamma_p2_shared_consolidated_expel", "memory_mode": "shared", "memory_write_protocol": "expel_ops"},
+        ]
+    if phase == "gamma_p2_rescue":
+        return [
+            {
+                "run_id": "gamma_p2_shared_consolidated_archive_rescue",
+                "n_solvers": 4,
+                "memory_mode": "shared",
+                "maze_write_mode": "reviewer",
+                "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga",
+                "ga_lambda": 0.0,
+                "memory_read_protocol": "archive_joint_topk",
+            },
+        ]
+    if phase == "delta_cross_model":
+        base = {
+            "n_solvers": 4,
+            "maze_write_mode": "reviewer",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+            "ga_recency": 0.0,
+        }
+        return [
+            {**base, "run_id": "delta_frozen_reviewer", "memory_mode": "frozen", "memory_write_protocol": "expel_ops"},
+            {**base, "run_id": "delta_shared_append_ga", "memory_mode": "shared", "memory_write_protocol": "append"},
+            {**base, "run_id": "delta_shared_consolidated_expel", "memory_mode": "shared", "memory_write_protocol": "expel_ops"},
+        ]
+    if phase == "epsilon_controls":
+        # Phase Epsilon separates per-agent consolidation, shared consolidation,
+        # constrained append capacity, and diversity-preserving retrieval.
+        base = {
+            "n_solvers": 4,
+            "maze_write_mode": "reviewer",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+            "ga_recency": 0.0,
+            "max_reviewer_ops": 6,
+            "similarity_threshold": 0.80,
+        }
+        return [
+            {**base, "run_id": "epsilon_frozen_reviewer", "memory_mode": "frozen", "memory_write_protocol": "expel_ops"},
+            {**base, "run_id": "epsilon_private_consolidated", "memory_mode": "private", "memory_write_protocol": "expel_ops"},
+            {**base, "run_id": "epsilon_shared_consolidated", "memory_mode": "shared", "memory_write_protocol": "expel_ops"},
+            {
+                **base,
+                "run_id": "epsilon_shared_append_cap14",
+                "memory_mode": "shared",
+                "memory_write_protocol": "append",
+                "library_cap": 14,
+            },
+            {
+                **base,
+                "run_id": "epsilon_shared_consolidated_mmr",
+                "memory_mode": "shared",
+                "memory_write_protocol": "expel_ops",
+                "retrieval_scoring": "ga_mmr",
+                "mmr_relevance_weight": 0.70,
+            },
+        ]
+    if phase == "epsilon_sensitivity":
+        # One-factor sensitivity points around the Epsilon shared-consolidated reference.
+        base = {
+            "n_solvers": 4,
+            "memory_mode": "shared",
+            "maze_write_mode": "reviewer",
+            "memory_write_protocol": "expel_ops",
+            "retrieval_scoring": "ga",
+            "ga_lambda": 0.0,
+            "ga_recency": 0.0,
+            "max_reviewer_ops": 6,
+            "similarity_threshold": 0.80,
+        }
+        return [
+            {**base, "run_id": "epsilon_sens_reference"},
+            {**base, "run_id": "epsilon_sens_k3", "retrieval_k": 3},
+            {**base, "run_id": "epsilon_sens_k10", "retrieval_k": 10},
+            {**base, "run_id": "epsilon_sens_cap40", "library_cap": 40},
+            {**base, "run_id": "epsilon_sens_ops3", "max_reviewer_ops": 3},
+            {**base, "run_id": "epsilon_sens_ops9", "max_reviewer_ops": 9},
+            {**base, "run_id": "epsilon_sens_merge07", "similarity_threshold": 0.70},
+            {**base, "run_id": "epsilon_sens_merge09", "similarity_threshold": 0.90},
+            {**base, "run_id": "epsilon_sens_recency1", "ga_recency": 1.0},
         ]
     raise ValueError(f"unknown maze phase {phase!r}")
 

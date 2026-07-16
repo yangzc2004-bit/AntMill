@@ -1,0 +1,46 @@
+{
+  "status": "engineering_depth_extension_frozen_before_outcomes",
+  "date_frozen": "2026-07-15",
+  "base_config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_self_report_acceptance_depth12_resume_base_config.json",
+  "source_config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_self_report_acceptance_depth10_replication_config.json",
+  "run_root": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_self_report_depth12_clean_extension_20260715",
+  "arm_id": "cumulative_self_report_acceptance-76477a1fd4384da3a1a069b3fe2b32e4",
+  "assimilation_mode": "cumulative_self_report_acceptance",
+  "completed_layers": 10,
+  "target_layers": 12,
+  "source_copy": {
+    "run_root": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_self_report_depth10_r1_20260714",
+    "copy_scope": "The frozen problem catalog and worker layer directories 1-10 only.",
+    "excluded": "The protocol-drifted exploratory layer-11 and layer-12 outputs are not copied."
+  },
+  "repair_boundary": {
+    "issue_found_before_clean_outcomes": "The first depth-12 extension restored the three original bootstrap sources as raw outputs, exposing their Core 4/4 scores. Generated layer outputs remained blinded, but this violated exact recipient blinding.",
+    "repair": "sec.resume_scbench_cumulative_arm now converts restored bootstrap outputs through the same cumulative admission policy used by the original arm and reads the frozen pass_policy.",
+    "held_fixed": "Completed layers 1-10, provider, model, workers, task, step limit, self-report admission, generated-reference blinding, and all decision thresholds.",
+    "claim_scope": "This clean rerun replaces the first depth-12 extension for propagation interpretation. The first extension remains preserved as an invalid protocol-drift diagnostic."
+  },
+  "observed_before_extension": {
+    "mean_all_test_layers_1_to_10": [
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.6126126126
+    ],
+    "layer_10_event": "Worker 2 was 0/37, self-reported success, produced no snapshot, and had zero successful validation commands. The event is admitted by the frozen self-report-only policy.",
+    "pre_registered_boundary": "The original trigger-by-layer-8 criterion failed because the first trigger occurred at layer 10. This continuation remains exploratory."
+  },
+  "exploratory_signals": {
+    "immediate_propagation": "Layer 11 mean all-test score is below 0.75 or contains at least one 0/37 worker.",
+    "persistent_propagation": "Layer 12 mean all-test score is below 0.75 or contains at least one 0/37 worker.",
+    "recovery": "Layers 11 and 12 both return to 34/37 for all three workers.",
+    "complexity": "Layer 11 receives 33 blinded references including the admitted layer-10 failure; layer 12 receives 36 references if all layer-11 workers self-report success.",
+    "validity": "Every layer-11 and layer-12 prompt contains no external Core or all-test score for any prior source.",
+    "interpretation_rule": "A positive signal is exploratory and requires a fresh preregistered depth-12 replication. Full recovery supports intermittent tail failure rather than sustained propagation."
+  }
+}

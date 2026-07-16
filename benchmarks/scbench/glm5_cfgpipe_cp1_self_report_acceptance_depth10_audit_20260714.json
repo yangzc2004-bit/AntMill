@@ -1,0 +1,88 @@
+{
+  "status": "valid_negative_depth10_stable",
+  "date": "2026-07-14",
+  "problem": "cfgpipe",
+  "model": "glm-5",
+  "assimilation_mode": "cumulative_self_report_acceptance",
+  "run": {
+    "config": "benchmarks/scbench/glm5_cfgpipe_cp1_self_report_acceptance_cumulative_depth10_config.json",
+    "run_root": "runs_scbench_moa_glm5_cfgpipe_cp1_self_report_cumulative_depth10_r1_20260714",
+    "arm_id": "cumulative_self_report_acceptance-4970124f92aa49778fa43d9db3a535c2",
+    "mean_core_curve": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "mean_all_test_curve": [
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189
+    ],
+    "reference_count_curve": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      27,
+      30
+    ],
+    "received_experience_chars_curve": [
+      25760,
+      55664,
+      81125,
+      106465,
+      127623,
+      148971,
+      170877,
+      193832,
+      217350,
+      242255
+    ],
+    "layer_10_input_tokens": 1394163,
+    "layer_10_input_ratio_to_matching_control": 11.4607
+  },
+  "integrity": {
+    "nonempty_runner_stderr_files": 0,
+    "model_query_failure_files": 0,
+    "all_results_core_total": 4,
+    "all_results_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+    "pass": true
+  },
+  "decision": {
+    "tail_trigger_by_layer8": false,
+    "post_trigger": false,
+    "terminal_degradation": false,
+    "core_support": false,
+    "complexity_support": true,
+    "sustained_degradation_confirmed": false,
+    "verdict": "Reject this mechanism-task-model combination as a positive degradation curve. GLM-5 remained flat through ten layers despite large cumulative context."
+  },
+  "comparison_to_kimi": {
+    "kimi_valid_signal": "Kimi-K2.6 self-report-only was flat through layer 7 and produced one valid 0/37 tail failure at layer 8.",
+    "glm_signal": "GLM-5 stayed flat through layer 10 with no tail failure.",
+    "interpretation": "The mechanism is not deterministic across models. Iteration count can expose late tail risk for Kimi, but more iterations alone do not force degradation under the same task and topology."
+  },
+  "iteration_hypothesis": {
+    "too_few_iterations_as_general_explanation": false,
+    "evidence": "GLM-5 reached ten layers, thirty references, and 11.46x matching-control input load with no degradation.",
+    "remaining_positive_path": "A paper claim should be reframed around verifier strength and model-dependent tail risk, or require a valid Kimi/deepseek replication showing post-trigger persistence."
+  }
+}

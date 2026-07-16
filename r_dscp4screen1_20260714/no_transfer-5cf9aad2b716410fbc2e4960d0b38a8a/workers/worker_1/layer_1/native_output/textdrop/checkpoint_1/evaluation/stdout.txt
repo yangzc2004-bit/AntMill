@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-9.1.1, pluggy-1.6.0 -- /root/.cache/uv/archive-v0/V_v7tfNQqgabN9SVEFFW0/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.12', 'Platform': 'Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.14.2', 'timeout': '2.4.0', 'metadata': '3.1.1', 'json-report': '1.5.0', 'json-ctrf': '0.5.2'}}
+rootdir: /tmp/tmp13f3e534
+configfile: pytest.ini
+plugins: anyio-4.14.2, timeout-2.4.0, metadata-3.1.1, json-report-1.5.0, json-ctrf-0.5.2
+timeout: 60.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 28 items
+
+.evaluation_tests/test_checkpoint_1.py::test_submit_returns_302_with_valid_note_location PASSED [  3%]
+.evaluation_tests/test_checkpoint_1.py::test_generated_note_id_is_alphanumeric_and_within_length_bounds PASSED [  7%]
+.evaluation_tests/test_checkpoint_1.py::test_note_view_is_complete_html_and_escapes_content PASSED [ 10%]
+.evaluation_tests/test_checkpoint_1.py::test_raw_text_returns_exact_source_and_plain_content_type PASSED [ 14%]
+.evaluation_tests/test_checkpoint_1.py::test_whitespace_only_content_is_rejected PASSED [ 17%]
+.evaluation_tests/test_checkpoint_1.py::test_non_empty_mode_is_rejected PASSED [ 21%]
+.evaluation_tests/test_checkpoint_1.py::test_missing_mode_field_defaults_to_plain_text PASSED [ 25%]
+.evaluation_tests/test_checkpoint_1.py::test_missing_content_field_is_rejected PASSED [ 28%]
+.evaluation_tests/test_checkpoint_1.py::test_missing_note_view_returns_html_404 PASSED [ 32%]
+.evaluation_tests/test_checkpoint_1.py::test_missing_note_raw_returns_html_404 PASSED [ 35%]
+.evaluation_tests/test_checkpoint_1.py::test_editor_root_contains_submit_form PASSED [ 39%]
+.evaluation_tests/test_checkpoint_1.py::test_editor_root_form_posts_urlencoded PASSED [ 42%]
+.evaluation_tests/test_checkpoint_1.py::test_editor_submit_get_contains_form PASSED [ 46%]
+.evaluation_tests/test_checkpoint_1.py::test_health_returns_active_json PASSED [ 50%]
+.evaluation_tests/test_checkpoint_1.py::test_unregistered_route_returns_complete_html_404 PASSED [ 53%]
+.evaluation_tests/test_checkpoint_1.py::test_note_ids_are_unique_across_submissions PASSED [ 57%]
+.evaluation_tests/test_checkpoint_1.py::test_note_view_content_type_is_text_html PASSED [ 60%]
+.evaluation_tests/test_checkpoint_1.py::test_entity_escaping_matrix[<-&lt;] PASSED [ 64%]
+.evaluation_tests/test_checkpoint_1.py::test_entity_escaping_matrix[>-&gt;] PASSED [ 67%]
+.evaluation_tests/test_checkpoint_1.py::test_entity_escaping_matrix[&-&amp;] PASSED [ 71%]
+.evaluation_tests/test_checkpoint_1.py::test_entity_escaping_matrix["-&quot;] PASSED [ 75%]
+.evaluation_tests/test_checkpoint_1.py::test_repeated_retrieval_is_deterministic PASSED [ 78%]
+.evaluation_tests/test_checkpoint_1.py::test_submit_accepts_absent_mode_as_plain_text PASSED [ 82%]
+.evaluation_tests/test_checkpoint_1.py::test_submit_rejects_missing_content_field PASSED [ 85%]
+.evaluation_tests/test_checkpoint_1.py::test_submit_rejects_whitespace_mode_value PASSED [ 89%]
+.evaluation_tests/test_checkpoint_1.py::test_host_port_precedence_cli_overrides_environment PASSED [ 92%]
+.evaluation_tests/test_checkpoint_1.py::test_host_port_precedence_environment_used_without_cli PASSED [ 96%]
+.evaluation_tests/test_checkpoint_1.py::test_view_and_raw_both_correct_for_entity_rich_content PASSED [100%]
+
+--------------------------------- JSON report ----------------------------------
+report saved to: .scbench/pytest-report.json
+============================== 28 passed in 4.29s ==============================

@@ -1,0 +1,120 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "amendment": {
+    "id": "hash_metadata_fix_01",
+    "date": "2026-07-14",
+    "invalid_attempt": "runs_scbench_moa_kimi_xjq_cp2_recursive_self_report_manager_depth5_r1_20260714",
+    "old_expected_test_collection_hash": "370a0b2c4bb87be92ce9c96d551babb0ba1c1e8bc6c7705c4c34783cc1a54aa1",
+    "new_expected_test_collection_hash": "e967de874ab427679658999ab4063710bf46abaffceccda517aa2febc5275a09",
+    "reason": "The invalid layer-1 attempt showed that the current evaluator reports all 51 collected nodes and a new collection hash. Bytewise comparison found identical checkpoint specifications, requirements, and test files, and report.json contained the same 51 node IDs in old and current runs. Only evaluator collection metadata changed.",
+    "outcome_handling": "The invalid attempt produced no arm manifest or contrast report and is excluded. No model, topology, action budget, threshold, criterion, or arm order changed."
+  },
+  "action_budget_amendment": {
+    "id": "action_budget_calibration_01",
+    "date": "2026-07-14",
+    "invalid_control_audit": "benchmarks/scbench/kimi_xjq_cp2_step12_control_audit_20260714.json",
+    "step_20_audit": "benchmarks/scbench/kimi_xjq_cp2_step20_action_budget_calibration_audit_20260714.json",
+    "step_28_run": "runs_scbench_moa_kimi_xjq_cp2_step28_final_action_budget_calibration_r1_20260714",
+    "old_step_limit": 12,
+    "new_step_limit": 28,
+    "reason": "All twelve evaluated 12-action control trajectories hit the exact boundary and produced unstable 0/13 tails. At 20 and 28 actions, all six calibration workers scored 12/13; the 28-action run improved mean all-test score to 0.902 and one checkpoint-2 trajectory explicitly completed at action 18.",
+    "maximum_escalation": "No further action-budget increase is permitted.",
+    "outcome_handling": "No recursive-self-report treatment outcome existed before this amendment. Model, endpoint, modes, topology, thresholds, arm order, and interpretation rules are unchanged."
+  },
+  "infrastructure_amendment": {
+    "id": "xjq_local_wheelhouse_infrastructure_fix_01",
+    "date": "2026-07-14",
+    "record": "benchmarks/scbench/kimi_xjq_cp2_local_wheelhouse_infrastructure_amendment_20260714.json",
+    "trigger": "All three recursive layer-4 workers and all three initial layer-5 workers timed out while installing unchanged xjq or pytest requirements before any model call; total model cost was zero and no affected-layer outcome existed.",
+    "repair": "Resolve lxml 6.1.1, cssselect 1.4.0, and the frozen pytest tool chain from a read-only local wheelhouse with recorded hashes.",
+    "outcome_handling": "Archive the zero-cost setup failures and exact-rerun the same layer. No model, prompt, manager state, topology, action budget, benchmark target, score, or decision criterion changed."
+  },
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "manager": "MOA-style recursive Kimi aggregator",
+  "problem": "xjq",
+  "checkpoint_limit": 2,
+  "expected_core_total": 13,
+  "expected_test_collection_hash": "e967de874ab427679658999ab4063710bf46abaffceccda517aa2febc5275a09",
+  "worker_count": 3,
+  "num_layers": 5,
+  "step_limit_per_worker": 28,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 6000,
+  "manager_max_output_tokens": 4096,
+  "manager_experience_char_limit": 12000,
+  "scbench_seed": 42,
+  "candidate_evidence": {
+    "matched_environment_run": "runs_scbench_moa_kimi_coding_xjq_cp2_strict_20260713",
+    "historical_no_transfer_mean_core": [
+      0.8076923077,
+      0.8846153846,
+      0.8846153846
+    ],
+    "historical_no_transfer_worker_range": "10/13 to 12/13 Core across six outcomes",
+    "historical_transfer_warning": "An earlier raw source-success arm received 4000 and 8000 experience characters at layers 2 and 3 and fell from 0.9615 to 0.9231 to 0.0, but its matched no-transfer arm was too variable for a causal claim.",
+    "selection_reason": "Checkpoint 2 has reproducible nonzero headroom, real implementation ambiguity around CSS text modes, and prior evidence that transferred partial strategies can be harmful."
+  },
+  "assimilation_semantics": {
+    "no_transfer": "Run the same three-worker, five-layer topology while suppressing all prior-layer output.",
+    "recursive_self_report_synthesis": "After each non-terminal layer, admit every worker output that self-reports successful completion, hide its external benchmark score, and ask the MOA manager to recursively revise one privileged shared playbook.",
+    "recipient_context": "Every next-layer worker receives exactly the latest shared playbook, not the raw worker bundle.",
+    "no_source_behavior": "If no worker self-reports success, retain the previous shared playbook. If layer 1 produces no accepted source, source activation fails and performance direction is not interpreted."
+  },
+  "manager_semantics": {
+    "source_label": "workflow-accepted self-reported-success",
+    "score_blinding": "Manager requests and worker prompts contain proxy acceptance labels rather than external Core or all-test scores.",
+    "recursive_state": "Every synthesis after the first receives the immediately previous shared playbook plus the current layer's accepted worker experiences.",
+    "objective": "Retain concrete constraints, implementation decisions, edge cases, failure-prevention rules, and validation procedures while resolving conflicts.",
+    "bounded_output": "The privileged playbook is capped at 12000 characters; request and response usage are saved for audit."
+  },
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "checkpoint_dependency_materialization": "Public requirements through checkpoint 2 are installed; cssselect is available in inference and clean evaluation.",
+    "automatic_clean_revaluation": "Early-stop or drifted native results are evaluated against the configured checkpoint-2 target."
+  },
+  "validity_gates": {
+    "manager_activation": "At least two layer-1 workers self-report success and create the first shared playbook.",
+    "recursive_continuity": "Every recursive worker from layer 2 onward receives one manager artifact, and every manager update includes the immediately previous shared artifact.",
+    "control_headroom": "No-transfer layer-5 mean Core is at least 0.65 and at least four of its five layers have mean Core at least 0.65.",
+    "target_consistency": "Every worker result uses checkpoint-2 Core total 13 and the frozen test hash.",
+    "score_blinding": "No manager request or recursive worker prompt exposes source external scores.",
+    "model_query_integrity": "No worker or manager has a zero-step API, quota, or rate-limit failure.",
+    "integrity": "No infrastructure failures remain and no assistant action accesses prohibited benchmark paths."
+  },
+  "degradation_criteria": {
+    "primary_terminal_effect": "Recursive self-report layer-5 mean Core is at least 0.20 below no-transfer layer 5.",
+    "within_arm_decline": "Recursive self-report mean Core falls by at least 0.20 from its post-activation peak to layer 5.",
+    "curve_shape": "At least two post-activation transitions are non-increasing and at least one is strictly decreasing by 0.10 or more.",
+    "tail_support": "At least one recursive layer-5 worker is 0.30 or more below the no-transfer layer-5 median.",
+    "coordination_complexity": "Layer-5 recursive workers receive nonzero shared experience, their total input tokens exceed no-transfer layer 5 by at least 20 percent, and the final manager request is at least 20 percent larger than the first.",
+    "all_required": "All validity gates plus primary terminal effect, within-arm decline, curve shape, tail support, and coordination complexity are required."
+  },
+  "decision_rule": {
+    "confirm_pilot": "If every requirement passes, freeze two counterbalanced repetitions and add a raw self-report append ablation.",
+    "directional_followup": "If validity passes and terminal, within-arm, and tail effects point toward degradation but exactly one numeric threshold misses, run one same-setting replication.",
+    "falsify": "If manager activation and control headroom pass but the primary terminal effect is smaller than 0.20 or the treatment improves, stop this mechanism-task pair.",
+    "invalid": "Do not interpret direction if control headroom, score blinding, target consistency, model-query integrity, or recursive continuity fails."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "no_transfer",
+            "recursive_self_report_synthesis"
+          ]
+        }
+      ]
+    }
+  ]
+}

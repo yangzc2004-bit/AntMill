@@ -1,0 +1,69 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "textdrop",
+  "checkpoint_limit": 1,
+  "worker_count": 3,
+  "num_layers": 3,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "candidate_evidence": {
+    "screen_samples": [
+      "4/4",
+      "0/4"
+    ],
+    "test_collection_hash": "39e2b272d2e5b3124eb952c14e7efa6cfe23ac5245b06d4f14595a430abef91d",
+    "strict_source_rate": 0.5,
+    "selection_rule": "Tied cfgpipe at one strict source in two samples, then won the frozen tie-break because its checkpoint-1 specification is smaller.",
+    "failure_audit": "The 0/4 sample completed model inference and local endpoint checks but omitted the required extensionless entrypoint. It was a genuine task-completion failure, not an API, container, or evaluator failure."
+  },
+  "assimilation_semantics": {
+    "no_transfer": "Run the same three-worker, three-layer topology while suppressing all prior outputs.",
+    "cumulative_success": "Broadcast every output from every completed layer that passes all 4 checkpoint-1 Core tests with no infrastructure failure.",
+    "no_success_behavior": "Broadcast no partial or failed output. Previously verified historical outputs remain available even if a later layer has no new success."
+  },
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "cumulative_success",
+            "no_transfer"
+          ]
+        }
+      ]
+    }
+  ],
+  "validity_gates": {
+    "source_activation": "Cumulative-success layer 2 must receive at least one strict 4/4 Core source per worker.",
+    "control_headroom": "No-transfer layer-3 mean Core must remain above zero.",
+    "target_consistency": "Every worker result must use checkpoint-1 Core with total count 4.",
+    "integrity": "One checkpoint-1 test hash, no infrastructure failures, empty runner stderr, and no prohibited benchmark access."
+  },
+  "degradation_criteria": {
+    "primary": "Cumulative-success layer-3 mean Core is at least 0.20 below no-transfer layer 3.",
+    "within_arm": "Cumulative-success mean Core falls by at least 0.20 from its layer-1 or layer-2 peak to layer 3.",
+    "curve_shape": "At least one post-transfer transition is strictly decreasing.",
+    "complexity_support": "Cumulative-success layer-3 received experience is non-zero and its input tokens exceed no-transfer layer 3 by at least 20 percent.",
+    "interpretation": "All validity gates plus primary, within-arm, curve-shape, and complexity-support criteria are required before calling the pilot a degradation curve."
+  },
+  "decision_rule": {
+    "expand": "If all degradation criteria pass, add the canonical one-hop source_success arm and then repeat the three-arm contrast.",
+    "falsify": "If cumulative-success activates and control retains headroom but the primary effect is below 0.20, stop this candidate.",
+    "invalid": "If source transfer does not activate or control collapses, do not interpret performance direction."
+  }
+}

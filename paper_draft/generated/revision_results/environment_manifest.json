@@ -1,0 +1,156 @@
+{
+  "status": "environment_manifest_ready",
+  "captured_at_utc": "2026-07-14T18:33:32.055819+00:00",
+  "system": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "system": "Windows",
+    "release": "11",
+    "version": "10.0.26200",
+    "machine": "AMD64",
+    "cpu_model": "Intel(R) Core(TM) i7-10870H CPU @ 2.20GHz",
+    "logical_cpu_count": 16,
+    "total_memory_bytes": 16943685632,
+    "total_memory_gib": 15.780036926269531,
+    "python_version": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "python.exe"
+  },
+  "software_packages": {
+    "browsergym-core": "0.14.3",
+    "browsergym-miniwob": "0.14.3",
+    "gymnasium": "1.2.3",
+    "playwright": "1.44.0",
+    "openai": "2.31.0",
+    "httpx": "0.28.1",
+    "numpy": "2.2.5",
+    "scipy": "1.15.3",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "pypdf": "6.11.0",
+    "pdfplumber": "0.11.9"
+  },
+  "browser_environment": {
+    "miniwob_plusplus_commit": "7fd85d71a4b60325c6585396ec4f48377d049838",
+    "primary_tasks": [
+      "click-button",
+      "choose-list",
+      "enter-text",
+      "click-checkboxes",
+      "login-user",
+      "use-autocomplete-nodelay"
+    ],
+    "replacement_tasks": [
+      "click-menu",
+      "choose-date-nodelay",
+      "form-sequence"
+    ],
+    "python_version": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+    "browser_executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "browser_version": "150.0.7871.115",
+    "versions": {
+      "browsergym": "not-installed",
+      "browsergym-core": "0.14.3",
+      "browsergym-miniwob": "0.14.3",
+      "gymnasium": "1.2.3",
+      "playwright": "1.44.0"
+    },
+    "miniwob_url": "file:///D:/antmill/tmp/miniwob-plusplus/miniwob/html/miniwob/",
+    "task_validation": {
+      "ok": true,
+      "missing": [],
+      "n_registered": 189,
+      "miniwob_plusplus_commit": "7fd85d71a4b60325c6585396ec4f48377d049838",
+      "primary_tasks": [
+        "click-button",
+        "choose-list",
+        "enter-text",
+        "click-checkboxes",
+        "login-user",
+        "use-autocomplete-nodelay"
+      ],
+      "replacement_tasks": [
+        "click-menu",
+        "choose-date-nodelay",
+        "form-sequence"
+      ],
+      "python_version": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+      "browser_executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "browser_version": "150.0.7871.115",
+      "versions": {
+        "browsergym": "not-installed",
+        "browsergym-core": "0.14.3",
+        "browsergym-miniwob": "0.14.3",
+        "gymnasium": "1.2.3",
+        "playwright": "1.44.0"
+      }
+    },
+    "independent_envs_per_task": 4,
+    "provenance": {
+      "source": "formal_run_manifests",
+      "completed_manifest_count": 11,
+      "source_manifests": [
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed0_gamma_p3_choose_list_frozen_reviewer\\manifest.json",
+          "sha256": "c74165673057e737734f64672d699ad182b17e6f2200c9442386876e1dc13dd9"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed0_gamma_p3_choose_list_shared_append_ga\\manifest.json",
+          "sha256": "7f130d7fff8d4ee943cf3b6578ce223570ecbf596a356fb0d642f3a089533589"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed0_gamma_p3_click_button_frozen_reviewer\\manifest.json",
+          "sha256": "642313c231145637b872c11fa288ab4b2fa4277dc0df6687e1be600fa398405d"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed0_gamma_p3_click_button_shared_append_ga\\manifest.json",
+          "sha256": "36abfa568d14530cf2da30f36c8984bf41395f61ed40773fb452c17ef1df7095"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed0_gamma_p3_click_button_shared_consolidated_expel\\manifest.json",
+          "sha256": "a24b77cbbdefee335766b680f117215877b006d0c8dfa581a10370030d9af318"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed1_gamma_p3_click_button_frozen_reviewer\\manifest.json",
+          "sha256": "eed4cc1e0fd682d5e76637535de6b06177a87503339fd43ce96e40b0c6119629"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed1_gamma_p3_click_button_shared_append_ga\\manifest.json",
+          "sha256": "6d13159930cb489fbb633841a1d0f6dc5876fd5d6712a4b302c39ade16eb33ae"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed1_gamma_p3_click_button_shared_consolidated_expel\\manifest.json",
+          "sha256": "99f6cc38c68bcf34176fe087b3ef12a297da79d996b7d6a88f77a60ea851bafe"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed2_gamma_p3_click_button_frozen_reviewer\\manifest.json",
+          "sha256": "48dddac3a3ded68c2f18952f28d814cafdd8ef225b763ea29f2e8acdbb25039f"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed2_gamma_p3_click_button_shared_append_ga\\manifest.json",
+          "sha256": "bf18a6445ac79c3ff4fb98b013e99f4d4bd9c0ca3222f813ab6e4c8ce2a57fd4"
+        },
+        {
+          "path": "runs_miniwob_gamma_p3b\\n4_gt_false_seed2_gamma_p3_click_button_shared_consolidated_expel\\manifest.json",
+          "sha256": "8a7c183a684802e2e37c3e585a3cc8deee6292bb74e8b210567e6e3d26f7c6fb"
+        }
+      ]
+    }
+  },
+  "hosted_llm_environment": {
+    "models": [
+      "DeepSeek-V3",
+      "Qwen3-32B"
+    ],
+    "execution": "hosted API",
+    "provider_hardware": "not disclosed by the hosted service",
+    "local_accelerator_requirement": "No local accelerator is used for hosted LLM inference."
+  },
+  "code_provenance": {
+    "git_head": "51e08dc115aba8339e85d0839ce05144130830f9",
+    "git_branch": "main"
+  },
+  "tex": {
+    "path": "paper_draft\\generated\\revision_results\\environment_manifest.tex",
+    "size_bytes": 1457,
+    "sha256": "5709fe4e2667462e4136fdaba6811e0c4c2c6220c2f4a764e6cad26b33aaf636"
+  }
+}

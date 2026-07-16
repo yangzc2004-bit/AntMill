@@ -1,0 +1,72 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "code_search",
+  "checkpoint_limit": 2,
+  "worker_count": 3,
+  "num_layers": 4,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "assimilation_semantics": {
+    "no_transfer": "Run the same worker topology and layer barriers while suppressing all prior-layer outputs.",
+    "source_success": "Use the standard layered MoA topology and broadcast every immediately prior-layer worker that passes all Core tests with no infrastructure failure.",
+    "cumulative_success": "Experimental fixed-topology stress policy: broadcast every worker output from every completed layer that passes all Core tests with no infrastructure failure.",
+    "no_success_behavior": "Broadcast no experience; never substitute partial or failed trajectories."
+  },
+  "stress_design": {
+    "reason_for_task": "The clean standard-MoA run retained 3/3 full-Core workers through all four layers while source-success substantially increased input, providing a strong control and a verified-success pool for a cumulative feedback stress test.",
+    "parallel_sources": "Three workers contribute independently verified outputs. If every worker remains Core-verified, cumulative-success workers receive 3, 6, and 9 sources at layers 2, 3, and 4.",
+    "maximum_received_experience_chars_by_layer": {
+      "layer_2": 36000,
+      "layer_3": 72000,
+      "layer_4": 108000
+    },
+    "layer_mechanism": "Each new layer independently solves the same task after receiving the policy-selected verified outputs.",
+    "topology_scope": "Worker count, private workspaces, parallel layer execution, layer barriers, and final aggregation remain fixed. Only assimilation history depth changes.",
+    "canonical_scope": "No manager, memory store, worker-specific router, or new agent role is added. Cumulative-success is an experimental assimilation treatment, not canonical one-hop MoA."
+  },
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": [
+            "no_transfer",
+            "source_success",
+            "cumulative_success"
+          ]
+        }
+      ]
+    }
+  ],
+  "validity_gates": {
+    "control_headroom": "Existing no-transfer and source-success arms must retain full layer-4 Core performance.",
+    "cumulative_activation": "Cumulative-success must receive at least two verified results at layer 2, and its mean received-result count must strictly increase at layers 3 and 4.",
+    "integrity": "All evaluations must use one checkpoint-2 test collection hash with no infrastructure failure or prohibited benchmark access."
+  },
+  "degradation_criteria": {
+    "primary": "Cumulative-success layer-4 mean Core is at least 0.20 below both no-transfer and source-success layer 4.",
+    "within_arm": "Cumulative-success mean Core falls by at least 0.20 from its post-transfer peak to layer 4.",
+    "curve_shape": "At least two post-transfer layer transitions are non-increasing and at least one is strictly decreasing.",
+    "complexity_support": "Cumulative-success received-result count strictly increases from layer 2 through layer 4 and its layer-4 input tokens exceed source-success by at least 20 percent.",
+    "interpretation": "All primary, within-arm, control-headroom, cumulative-activation, complexity-support, and integrity conditions are required before calling the run a degradation curve."
+  },
+  "decision_rule": {
+    "expand": "If the curve meets all degradation criteria, repeat twice with counterbalanced arm order.",
+    "falsify": "If both controls remain strong and cumulative-success remains equally strong, conclude that verified-history accumulation at this depth is insufficient.",
+    "invalid": "If the controls fail, cumulative transfer does not grow, or evaluation integrity fails, do not interpret performance direction."
+  }
+}

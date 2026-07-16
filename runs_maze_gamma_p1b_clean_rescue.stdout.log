@@ -1,0 +1,23 @@
+[2026-07-11T01:07:00.8181305+08:00] Starting Gamma P1b Formal
+Running n4_gt_false_seed0_gamma_p1b_shared_consolidated_archive_joint_topk with train=24 heldout=12
+[n4_gt_false_seed0_gamma_p1b_shared_consolidated_archive_joint_topk] t=00 success=0.646 cost=2.302 loop=0.042 div=0.345 mem=0 tokens=4373802
+[n4_gt_false_seed0_gamma_p1b_shared_consolidated_archive_joint_topk] t=01 success=0.521 cost=2.553 loop=0.229 div=0.313 mem=7 tokens=11316086
+[n4_gt_false_seed0_gamma_p1b_shared_consolidated_archive_joint_topk] t=02 success=0.562 cost=2.552 loop=0.188 div=0.328 mem=8 tokens=19120114
+[n4_gt_false_seed0_gamma_p1b_shared_consolidated_archive_joint_topk] t=03 success=0.542 cost=2.400 loop=0.125 div=0.297 mem=9 tokens=26771101
+[n4_gt_false_seed0_gamma_p1b_shared_consolidated_archive_joint_topk] t=04 success=0.542 cost=2.491 loop=0.125 div=0.317 mem=12 tokens=34548933
+[n4_gt_false_seed0_gamma_p1b_shared_consolidated_archive_joint_topk] t=05 success=0.583 cost=2.487 loop=0.062 div=0.274 mem=12 tokens=41842549
+Running n4_gt_false_seed1_gamma_p1b_shared_consolidated_archive_joint_topk with train=24 heldout=12
+[n4_gt_false_seed1_gamma_p1b_shared_consolidated_archive_joint_topk] t=00 success=0.708 cost=2.403 loop=0.021 div=0.212 mem=0 tokens=4459350
+[n4_gt_false_seed1_gamma_p1b_shared_consolidated_archive_joint_topk] t=01 success=0.562 cost=2.551 loop=0.104 div=0.290 mem=6 tokens=11663131
+[n4_gt_false_seed1_gamma_p1b_shared_consolidated_archive_joint_topk] t=02 success=0.625 cost=2.573 loop=0.062 div=0.246 mem=10 tokens=19112420
+[n4_gt_false_seed1_gamma_p1b_shared_consolidated_archive_joint_topk] t=03 success=0.750 cost=2.423 loop=0.021 div=0.211 mem=11 tokens=25882863
+[n4_gt_false_seed1_gamma_p1b_shared_consolidated_archive_joint_topk] t=04 success=0.646 cost=2.441 loop=0.062 div=0.204 mem=12 tokens=32466984
+[n4_gt_false_seed1_gamma_p1b_shared_consolidated_archive_joint_topk] t=05 success=0.667 cost=2.472 loop=0.083 div=0.251 mem=15 tokens=39584124
+Running n4_gt_false_seed2_gamma_p1b_shared_consolidated_archive_joint_topk with train=24 heldout=12
+[n4_gt_false_seed2_gamma_p1b_shared_consolidated_archive_joint_topk] t=00 success=0.688 cost=2.217 loop=0.042 div=0.250 mem=0 tokens=4483330
+[n4_gt_false_seed2_gamma_p1b_shared_consolidated_archive_joint_topk] t=01 success=0.812 cost=1.950 loop=0.042 div=0.189 mem=7 tokens=10769221
+[n4_gt_false_seed2_gamma_p1b_shared_consolidated_archive_joint_topk] t=02 success=0.729 cost=2.154 loop=0.104 div=0.281 mem=8 tokens=17481443
+[n4_gt_false_seed2_gamma_p1b_shared_consolidated_archive_joint_topk] t=03 success=0.708 cost=2.228 loop=0.062 div=0.251 mem=10 tokens=24372782
+[n4_gt_false_seed2_gamma_p1b_shared_consolidated_archive_joint_topk] t=04 success=0.750 cost=2.084 loop=0.062 div=0.201 mem=12 tokens=31158318
+[n4_gt_false_seed2_gamma_p1b_shared_consolidated_archive_joint_topk] t=05 success=0.917 cost=1.953 loop=0.042 div=0.182 mem=14 tokens=37785075
+[2026-07-11T08:47:58.3673207+08:00] Gamma P1b Formal complete

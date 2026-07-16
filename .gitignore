@@ -3,6 +3,7 @@ cache/
 cache_*/
 runs/
 runs_*/
+.benchmarks/
 .sec_mock_cache/
 .sec_mock_runs/
 tmp/

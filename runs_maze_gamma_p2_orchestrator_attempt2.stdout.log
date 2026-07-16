@@ -1,0 +1,51 @@
+[2026-07-11T09:58:01.4301737+08:00] P2 selected Qwen at 256 tokens
+[2026-07-11T09:58:01.8092222+08:00] Starting Gamma P2 Formal (qwen3-32b, tokens=256)
+Running n4_gt_false_seed0_gamma_p2_frozen_reviewer with train=24 heldout=12
+[n4_gt_false_seed0_gamma_p2_frozen_reviewer] t=00 success=0.458 cost=2.596 loop=0.125 div=0.275 mem=0 tokens=4765742
+[n4_gt_false_seed0_gamma_p2_frozen_reviewer] t=01 success=0.500 cost=2.475 loop=0.083 div=0.288 mem=4 tokens=10763682
+[n4_gt_false_seed0_gamma_p2_frozen_reviewer] t=02 success=0.562 cost=2.486 loop=0.062 div=0.340 mem=6 tokens=16832260
+[n4_gt_false_seed0_gamma_p2_frozen_reviewer] t=03 success=0.479 cost=2.485 loop=0.208 div=0.278 mem=11 tokens=23253020
+Running n4_gt_false_seed0_gamma_p2_shared_append_ga with train=24 heldout=12
+[n4_gt_false_seed0_gamma_p2_shared_append_ga] t=00 success=0.542 cost=2.446 loop=0.083 div=0.277 mem=0 tokens=4557846
+[n4_gt_false_seed0_gamma_p2_shared_append_ga] t=01 success=0.771 cost=2.249 loop=0.062 div=0.268 mem=24 tokens=10770993
+[n4_gt_false_seed0_gamma_p2_shared_append_ga] t=02 success=0.583 cost=2.452 loop=0.167 div=0.266 mem=45 tokens=17531163
+[n4_gt_false_seed0_gamma_p2_shared_append_ga] t=03 success=0.521 cost=2.363 loop=0.125 div=0.247 mem=62 tokens=24531964
+Running n4_gt_false_seed0_gamma_p2_shared_consolidated_expel with train=24 heldout=12
+[n4_gt_false_seed0_gamma_p2_shared_consolidated_expel] t=00 success=0.521 cost=2.447 loop=0.125 div=0.298 mem=0 tokens=4497784
+[n4_gt_false_seed0_gamma_p2_shared_consolidated_expel] t=01 success=0.542 cost=2.437 loop=0.062 div=0.274 mem=11 tokens=11011248
+[n4_gt_false_seed0_gamma_p2_shared_consolidated_expel] t=02 success=0.542 cost=2.341 loop=0.208 div=0.231 mem=16 tokens=17749102
+[n4_gt_false_seed0_gamma_p2_shared_consolidated_expel] t=03 success=0.625 cost=2.470 loop=0.104 div=0.251 mem=20 tokens=24820523
+Running n4_gt_false_seed1_gamma_p2_frozen_reviewer with train=24 heldout=12
+[n4_gt_false_seed1_gamma_p2_frozen_reviewer] t=00 success=0.417 cost=2.565 loop=0.146 div=0.272 mem=0 tokens=4651417
+[n4_gt_false_seed1_gamma_p2_frozen_reviewer] t=01 success=0.312 cost=2.779 loop=0.125 div=0.305 mem=8 tokens=11485435
+[n4_gt_false_seed1_gamma_p2_frozen_reviewer] t=02 success=0.292 cost=2.747 loop=0.167 div=0.316 mem=14 tokens=18238781
+[n4_gt_false_seed1_gamma_p2_frozen_reviewer] t=03 success=0.312 cost=2.736 loop=0.146 div=0.262 mem=15 tokens=24662156
+Running n4_gt_false_seed1_gamma_p2_shared_append_ga with train=24 heldout=12
+[n4_gt_false_seed1_gamma_p2_shared_append_ga] t=00 success=0.396 cost=2.727 loop=0.083 div=0.339 mem=0 tokens=4992512
+[n4_gt_false_seed1_gamma_p2_shared_append_ga] t=01 success=0.479 cost=2.661 loop=0.083 div=0.260 mem=26 tokens=12101287
+[n4_gt_false_seed1_gamma_p2_shared_append_ga] t=02 success=0.375 cost=2.730 loop=0.229 div=0.250 mem=46 tokens=19661599
+[n4_gt_false_seed1_gamma_p2_shared_append_ga] t=03 success=0.271 cost=2.818 loop=0.042 div=0.244 mem=60 tokens=26973930
+Running n4_gt_false_seed1_gamma_p2_shared_consolidated_expel with train=24 heldout=12
+[n4_gt_false_seed1_gamma_p2_shared_consolidated_expel] t=00 success=0.375 cost=2.661 loop=0.167 div=0.284 mem=0 tokens=4814539
+[n4_gt_false_seed1_gamma_p2_shared_consolidated_expel] t=01 success=0.375 cost=2.786 loop=0.104 div=0.302 mem=7 tokens=12220184
+[n4_gt_false_seed1_gamma_p2_shared_consolidated_expel] t=02 success=0.396 cost=2.685 loop=0.146 div=0.314 mem=11 tokens=19770848
+[n4_gt_false_seed1_gamma_p2_shared_consolidated_expel] t=03 success=0.375 cost=2.770 loop=0.042 div=0.282 mem=13 tokens=27225672
+Running n4_gt_false_seed2_gamma_p2_frozen_reviewer with train=24 heldout=12
+[n4_gt_false_seed2_gamma_p2_frozen_reviewer] t=00 success=0.417 cost=2.451 loop=0.146 div=0.287 mem=0 tokens=4837599
+[n4_gt_false_seed2_gamma_p2_frozen_reviewer] t=01 success=0.458 cost=2.466 loop=0.188 div=0.215 mem=7 tokens=11383917
+[n4_gt_false_seed2_gamma_p2_frozen_reviewer] t=02 success=0.521 cost=2.482 loop=0.083 div=0.213 mem=10 tokens=17931459
+[n4_gt_false_seed2_gamma_p2_frozen_reviewer] t=03 success=0.458 cost=2.441 loop=0.229 div=0.278 mem=15 tokens=24281086
+Running n4_gt_false_seed2_gamma_p2_shared_append_ga with train=24 heldout=12
+[n4_gt_false_seed2_gamma_p2_shared_append_ga] t=00 success=0.438 cost=2.502 loop=0.125 div=0.242 mem=0 tokens=4942101
+[n4_gt_false_seed2_gamma_p2_shared_append_ga] t=01 success=0.396 cost=2.535 loop=0.062 div=0.282 mem=26 tokens=12015591
+[n4_gt_false_seed2_gamma_p2_shared_append_ga] t=02 success=0.583 cost=2.412 loop=0.062 div=0.258 mem=45 tokens=19386975
+[n4_gt_false_seed2_gamma_p2_shared_append_ga] t=03 success=0.625 cost=2.227 loop=0.062 div=0.269 mem=60 tokens=26196894
+Running n4_gt_false_seed2_gamma_p2_shared_consolidated_expel with train=24 heldout=12
+[n4_gt_false_seed2_gamma_p2_shared_consolidated_expel] t=00 success=0.458 cost=2.387 loop=0.125 div=0.245 mem=0 tokens=4729397
+[n4_gt_false_seed2_gamma_p2_shared_consolidated_expel] t=01 success=0.458 cost=2.522 loop=0.062 div=0.292 mem=9 tokens=12002640
+[n4_gt_false_seed2_gamma_p2_shared_consolidated_expel] t=02 success=0.438 cost=2.505 loop=0.083 div=0.301 mem=13 tokens=19472599
+[n4_gt_false_seed2_gamma_p2_shared_consolidated_expel] t=03 success=0.375 cost=2.500 loop=0.208 div=0.263 mem=16 tokens=26750806
+[2026-07-11T22:38:30.3422387+08:00] Gamma P2 Formal complete
+[2026-07-11T22:38:30.4118641+08:00] python -m sec.gamma_stats gate --kind p2 --run frozen:0=runs_maze_gamma_p2_qwen256/n4_gt_false_seed0_gamma_p2_frozen_reviewer/result.json --run consolidated:0=runs_maze_gamma_p2_qwen256/n4_gt_false_seed0_gamma_p2_shared_consolidated_expel/result.json --run frozen:1=runs_maze_gamma_p2_qwen256/n4_gt_false_seed1_gamma_p2_frozen_reviewer/result.json --run consolidated:1=runs_maze_gamma_p2_qwen256/n4_gt_false_seed1_gamma_p2_shared_consolidated_expel/result.json --run frozen:2=runs_maze_gamma_p2_qwen256/n4_gt_false_seed2_gamma_p2_frozen_reviewer/result.json --run consolidated:2=runs_maze_gamma_p2_qwen256/n4_gt_false_seed2_gamma_p2_shared_consolidated_expel/result.json --intervention consolidated --baseline frozen --t 3 --out-dir runs_maze_gamma_p2_qwen256_stats
+[2026-07-11T22:38:34.7601958+08:00] python -m sec.gamma_stats latency-summary --run frozen:0=runs_maze_gamma_p2_qwen256/n4_gt_false_seed0_gamma_p2_frozen_reviewer/result.json --run append:0=runs_maze_gamma_p2_qwen256/n4_gt_false_seed0_gamma_p2_shared_append_ga/result.json --run consolidated:0=runs_maze_gamma_p2_qwen256/n4_gt_false_seed0_gamma_p2_shared_consolidated_expel/result.json --run frozen:1=runs_maze_gamma_p2_qwen256/n4_gt_false_seed1_gamma_p2_frozen_reviewer/result.json --run append:1=runs_maze_gamma_p2_qwen256/n4_gt_false_seed1_gamma_p2_shared_append_ga/result.json --run consolidated:1=runs_maze_gamma_p2_qwen256/n4_gt_false_seed1_gamma_p2_shared_consolidated_expel/result.json --run frozen:2=runs_maze_gamma_p2_qwen256/n4_gt_false_seed2_gamma_p2_frozen_reviewer/result.json --run append:2=runs_maze_gamma_p2_qwen256/n4_gt_false_seed2_gamma_p2_shared_append_ga/result.json --run consolidated:2=runs_maze_gamma_p2_qwen256/n4_gt_false_seed2_gamma_p2_shared_consolidated_expel/result.json --out-dir runs_maze_gamma_p2_qwen256_stats
+[2026-07-11T22:38:40.4417234+08:00] Gamma P2 complete; no rescue is scheduled because P1b manipulation did not pass

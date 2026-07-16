@@ -1,0 +1,70 @@
+{
+  "status": "valid_terminal_headroom_with_control_only_resource_amendment",
+  "date": "2026-07-14",
+  "config": "benchmarks/scbench/kimi_cfgpipe_cp3_step40_headroom_calibration_config.json",
+  "run_root": "runs_scbench_moa_kimi_cfgpipe_cp3_step40_headroom_r1_20260714",
+  "arm_id": "no_transfer-9d2dd701f6e6470fb71aa70f68851e84",
+  "model": "kimi-k2.6",
+  "problem": "cfgpipe",
+  "per_checkpoint_action_budget": 40,
+  "checkpoints": [
+    {
+      "checkpoint": 1,
+      "core": "4/4",
+      "all": "34/37",
+      "normalized_all": 0.918918918918919,
+      "action_steps": 40,
+      "completion_step": null,
+      "infrastructure_failure": false,
+      "test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615"
+    },
+    {
+      "checkpoint": 2,
+      "core": "3/3",
+      "all": "59/68",
+      "normalized_all": 0.8676470588235294,
+      "action_steps": 32,
+      "completion_step": 32,
+      "infrastructure_failure": false,
+      "test_collection_hash": "35475c9c36a83fe0b7dca307f248d4a246015c44eace85d15ec1190742147e30"
+    },
+    {
+      "checkpoint": 3,
+      "core": "4/4",
+      "all": "94/107",
+      "normalized_all": 0.8785046728971962,
+      "action_steps": 35,
+      "completion_step": 35,
+      "infrastructure_failure": false,
+      "test_collection_hash": "2bc7d6c55787acb6341317122c6c8b260e5df6683e04ca86deee995319dd2a11"
+    }
+  ],
+  "original_gate_audit": {
+    "checkpoint_3_core_at_least_half": true,
+    "checkpoint_3_all_at_least_half": true,
+    "checkpoint_3_completed_before_boundary": true,
+    "every_internal_checkpoint_completed_before_boundary": false,
+    "reason": "Checkpoint 1 passed every Core test and 34/37 total tests but did not issue the explicit completion action before the fixed budget."
+  },
+  "prospective_formal_amendment": {
+    "timing": "Frozen after control-only calibration and before any sequential treatment outcome.",
+    "fixed_budget_estimand": "All final scores under the matched 40-action resource budget remain in the primary analysis, including resource-exhaustion outcomes.",
+    "control_validity": "The formal control must retain checkpoint-3 mean all-test score of at least 0.50 and at least one of two control workers must explicitly complete checkpoint 3 before action 40.",
+    "treatment_boundary_semantics": "A higher treatment boundary rate is a resource-mediated mechanism result, not an infrastructure failure, provided the control validity gate passes.",
+    "completion_conditioned_check": "Also report the treatment-control score gap among workers that explicitly complete checkpoint 3, without replacing the fixed-budget primary analysis.",
+    "reason": "The hypothesis concerns coordination complexity under a finite workflow budget. Treating manager-induced resource exhaustion as missing data would remove part of the proposed mechanism."
+  },
+  "decision": {
+    "advance": true,
+    "formal_sequence": [
+      1,
+      2,
+      3
+    ],
+    "worker_count_per_arm": 2,
+    "arms": [
+      "no_transfer",
+      "recursive_self_report_synthesis"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "status": "engineering_depth_extension_frozen_before_outcomes",
+  "date_frozen": "2026-07-15",
+  "base_config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_self_report_acceptance_depth12_resume_base_config.json",
+  "source_config": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_self_report_acceptance_depth10_replication_config.json",
+  "run_root": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_self_report_depth10_r1_20260714",
+  "arm_id": "cumulative_self_report_acceptance-76477a1fd4384da3a1a069b3fe2b32e4",
+  "assimilation_mode": "cumulative_self_report_acceptance",
+  "completed_layers": 10,
+  "target_layers": 12,
+  "observed_before_extension": {
+    "mean_core_layers_1_to_10": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.6666666667
+    ],
+    "mean_all_test_layers_1_to_10": [
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.6126126126
+    ],
+    "reference_count_layers_1_to_10": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      27,
+      30
+    ],
+    "layer_10_event": "Worker 2 scored 0/4 Core and 0/37 overall with no infrastructure or model-query error. Its first response was rejected for emitting two actions; its second response falsely claimed that 23 tests had passed and submitted without creating cfgpipe.py. It self-reported success, had zero successful validation commands and zero snapshot files, and is therefore admitted by the frozen self-report-only policy.",
+    "pre_registered_boundary": "The frozen provider-replication criterion required the first trigger by layer 8. The observed trigger occurred at layer 10, so the original all-required sustained-degradation criterion is not confirmed. This extension is post-outcome and exploratory."
+  },
+  "extension_rationale": "Layer 10 produced the first admitted failed trajectory at the terminal layer. Continuing the exact arm without rerunning layers 1-10 tests whether the newly admitted 0/37 self-report source causes immediate propagation, recovery, or another intermittent collapse.",
+  "integrity": {
+    "resume_exact_arm": true,
+    "rerun_layers_1_to_10": false,
+    "same_workers_model_task_step_limit_and_provider": true,
+    "same_frozen_bootstrap_sources": true,
+    "same_self_report_acceptance_proxy": true,
+    "same_recipient_blinding": true,
+    "no_threshold_changes": true
+  },
+  "exploratory_signals": {
+    "immediate_propagation": "Layer 11 mean all-test score is below 0.75 or contains at least one 0/37 worker.",
+    "persistent_propagation": "Layer 12 mean all-test score is below 0.75 or contains at least one 0/37 worker.",
+    "recovery": "Layers 11 and 12 both return to 34/37 for all three workers.",
+    "complexity": "Layer 11 receives 33 references including the layer-10 failed self-report source; layer 12 receives 36 references if all layer-11 workers self-report success.",
+    "interpretation_rule": "Any positive propagation signal is exploratory because this extension was selected after observing the terminal layer-10 collapse. It may motivate a fresh preregistered depth-12 replication but cannot retroactively satisfy the original trigger-by-layer-8 criterion."
+  }
+}

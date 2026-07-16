@@ -1,0 +1,3 @@
+model,replicate,mode,arm_id,layer,workers,mean_core_score,min_core_score,max_core_score,full_pass_workers,full_core_workers,mean_duration_sec,total_input_tokens,total_output_tokens,mean_received_results,mean_received_experience_chars,mean_snapshot_bytes,mean_output_experience_chars
+kimi-k2.6,1,no_transfer,no_transfer-b34d161c0e2841889d82264b649cb689,1,1,0.7777777777777778,0.7777777777777778,0.7777777777777778,0,0,250.74005900000338,76359,8925,0,0,14668,9313
+kimi-k2.6,2,no_transfer,no_transfer-9fa6427452774f18bfff528ab49ca7ba,1,1,0.9444444444444444,0.9444444444444444,0.9444444444444444,0,0,350.417784499994,98028,12533,0,0,16913,12000

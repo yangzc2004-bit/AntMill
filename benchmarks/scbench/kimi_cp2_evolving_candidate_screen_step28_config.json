@@ -1,0 +1,42 @@
+{
+  "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "model": "kimi-k2.6",
+  "worker_count": 1,
+  "num_layers": 1,
+  "checkpoint_limit": 2,
+  "step_limit_per_worker": 28,
+  "experience_char_limit_per_source": 10000,
+  "candidates": [
+    {
+      "problem": "cfgpipe",
+      "reason": "The fixed-checkpoint stress probe already showed score-blinded recursive-manager lock-in; later checkpoints add primary-store precedence and parsing constraints that can expose harmful path dependence."
+    },
+    {
+      "problem": "datagate",
+      "reason": "A compact seven-checkpoint REST workflow whose pagination, sorting, filtering, and response contracts evolve incrementally while retaining practical task structure."
+    },
+    {
+      "problem": "test_translator",
+      "reason": "An eight-checkpoint code-generation workflow with progressively tighter semantic constraints, leaving multiple locally plausible implementation strategies."
+    }
+  ],
+  "benchmark_isolation": {
+    "remove_reference_solutions": true,
+    "remove_analysis_files": true,
+    "remove_later_checkpoint_specs_and_tests": true,
+    "prohibit_catalog_access_in_prompt": true,
+    "automatic_clean_revaluation": true
+  },
+  "selection_rule": {
+    "advance": "A candidate passes every checkpoint-2 Core test without infrastructure failure and does not end at the 28-action boundary without an explicit completion action.",
+    "conditional": "A candidate with at least 0.50 normalized checkpoint-2 Core and clear boundary censoring may receive one prospective 40-action no-transfer calibration.",
+    "reject": "A candidate below 0.50 normalized checkpoint-2 Core without infrastructure failure is too hard for the main sequential feedback contrast.",
+    "tie_break": "Prefer the candidate with more all-test headroom, then prior independent evidence of manager lock-in, then the shorter cumulative public specification."
+  },
+  "next_gate": {
+    "checkpoint_3_calibration": "Only the selected checkpoint-2 candidate receives one no-transfer checkpoint-3 calibration before the formal contrast.",
+    "formal_contrast": "Freeze no_transfer versus recursive_self_report_synthesis only after checkpoint-3 control headroom and action-budget validity are established."
+  }
+}

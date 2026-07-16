@@ -1,0 +1,6 @@
+{
+  "frozen_at": "2026-07-12T13:09:48.4898038+08:00",
+  "path": "prereg_phase_delta.md",
+  "sha256": "A1C4A7424D5253DC1EA0AA509738F7CBA8163BD6F82AA07F69E6B0A487AED983",
+  "rule": "No Phase Delta smoke or formal outcome data may be generated before this freeze record."
+}

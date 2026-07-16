@@ -1,0 +1,100 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.12, pytest-9.1.1, pluggy-1.6.0 -- /root/.cache/uv/archive-v0/SqVD4Q6lEo2bbXsIzUhF3/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.12', 'Platform': 'Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'Packages': {'pytest': '9.1.1', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.14.2', 'timeout': '2.4.0', 'metadata': '3.1.1', 'json-report': '1.5.0', 'json-ctrf': '0.5.2'}}
+rootdir: /tmp/tmp7q1t71lt
+configfile: pytest.ini
+plugins: anyio-4.14.2, timeout-2.4.0, metadata-3.1.1, json-report-1.5.0, json-ctrf-0.5.2
+timeout: 300.0s
+timeout method: signal
+timeout func_only: False
+collecting ... collected 58 items
+
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_initial_stats PASSED [  1%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[echo] PASSED [  3%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[time_out] PASSED [  5%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_files] PASSED [  6%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_stdin] PASSED [  8%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_execute_core[with_env] PASSED [ 10%]
+.evaluation_tests/test_checkpoint_1.py::TestCore::test_final_stats PASSED [ 12%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_initial_stats PASSED [ 13%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_string_stream] PASSED [ 15%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nonzero_exit_with_stderr] PASSED [ 17%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[nested_file_execution] PASSED [ 18%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_multiline_values] PASSED [ 20%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdout_without_newline] PASSED [ 22%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[default_timeout_and_empty_stdin] PASSED [ 24%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_files_together] PASSED [ 25%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_and_stdin_together] PASSED [ 27%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[files_and_stdin_together] PASSED [ 29%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[timeout_with_env_and_files] PASSED [ 31%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[all_features_combined] PASSED [ 32%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[multiple_env_vars_multiple_files] PASSED [ 34%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[stdin_array_with_files] PASSED [ 36%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[env_override_system] PASSED [ 37%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_small_timeout] PASSED [ 39%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[unicode_in_output] PASSED [ 41%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[very_long_stdout] PASSED [ 43%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[exit_code_variations] PASSED [ 44%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_execute_hidden[command_with_shell_metacharacters] PASSED [ 46%]
+.evaluation_tests/test_checkpoint_1.py::TestHidden::test_final_stats PASSED [ 48%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[missing_command_field] PASSED [ 50%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_negative] PASSED [ 51%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_zero] PASSED [ 53%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_timeout_type] PASSED [ 55%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_env_type] PASSED [ 56%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_files_type] PASSED [ 58%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[invalid_stdin_type] PASSED [ 60%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[empty_command_string] PASSED [ 62%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[command_type_not_string] PASSED [ 63%]
+.evaluation_tests/test_checkpoint_1.py::TestError::test_execute_errors[env_values_not_strings] PASSED [ 65%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_duration_is_rounded PASSED [ 67%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_stats_duration_is_rounded PASSED [ 68%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_error_does_not_increment_stats PASSED [ 70%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_invalid_json_returns_json_error PASSED [ 72%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string] FAILED [ 74%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[env_is_null] PASSED [ 75%]
+.evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[files_is_null] PASSED [ 77%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_initial_stats PASSED [ 79%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_glob] PASSED [ 81%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_glob_mismatch] PASSED [ 82%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[touch_file_no_glob] PASSED [ 84%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[not_recursive] PASSED [ 86%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_execute_with_track[recursive_glob] PASSED [ 87%]
+.evaluation_tests/test_checkpoint_2.py::TestCore::test_final_stats PASSED [ 89%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_string] PASSED [ 91%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_object] PASSED [ 93%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_type_number] PASSED [ 94%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_number] PASSED [ 96%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_null] PASSED [ 98%]
+.evaluation_tests/test_checkpoint_2.py::TestError::test_track_validation_errors[invalid_track_element_object] PASSED [100%]
+
+=================================== FAILURES ===================================
+_____ TestEdgeCases.test_execute_edge_errors[stdin_array_with_non_string] ______
+
+self = <test_checkpoint_1.TestEdgeCases object at 0x761866811e50>
+client = <httpx.Client object at 0x761866697620>
+case = ErrorCase(name='stdin_array_with_non_string', body={'command': 'echo test', 'stdin': ['ok', 123]}, expected_code=None, expected_status=400)
+
+    @pytest.mark.parametrize(
+        "case",
+        EDGE_ERROR_CASES,
+        ids=[case.name for case in EDGE_ERROR_CASES],
+    )
+    def test_execute_edge_errors(
+        self, client: httpx.Client, case: ErrorCase
+    ) -> None:
+        response = client.post("/v1/execute", json=case.body)
+>       assert response.status_code == case.expected_status
+E       AssertionError: assert 500 == 400
+E        +  where 500 = <Response [500 Internal Server Error]>.status_code
+E        +  and   400 = ErrorCase(name='stdin_array_with_non_string', body={'command': 'echo test', 'stdin': ['ok', 123]}, expected_code=None, expected_status=400).expected_status
+
+.evaluation_tests/test_checkpoint_1.py:821: AssertionError
+--------------------------------- JSON report ----------------------------------
+report saved to: .scbench/pytest-report.json
+=========================== short test summary info ============================
+FAILED .evaluation_tests/test_checkpoint_1.py::TestEdgeCases::test_execute_edge_errors[stdin_array_with_non_string] - AssertionError: assert 500 == 400
+ +  where 500 = <Response [500 Internal Server Error]>.status_code
+ +  and   400 = ErrorCase(name='stdin_array_with_non_string', body={'command': 'echo test', 'stdin': ['ok', 123]}, expected_code=None, expected_status=400).expected_status
+========================= 1 failed, 57 passed in 9.83s =========================

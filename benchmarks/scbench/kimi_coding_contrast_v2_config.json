@@ -1,0 +1,28 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "xjq",
+  "checkpoint_limit": 1,
+  "worker_count": 2,
+  "num_layers": 3,
+  "step_limit_per_worker": 8,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 4000,
+  "scbench_seed": 42,
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": ["source_success", "no_transfer"]
+        }
+      ]
+    }
+  ],
+  "interpretation": "Kimi Coding API rerun with the CLI-requested non-thinking mode explicitly forwarded to the provider."
+}

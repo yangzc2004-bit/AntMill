@@ -1,0 +1,34 @@
+{
+  "status": "paper_evidence_frozen_from_audited_runs",
+  "date": "2026-07-15",
+  "paper_claim": "Shared experience in layered parallel agents can rapidly reduce behavioral diversity and create stable lock-in, while catastrophic performance collapse is intermittent and non-replicated. Local admission blocks zero-command false completions but introduces a threshold-dependent false-rejection cost.",
+  "claim_boundaries": [
+    "Do not claim a monotonic ant-mill or death-spiral curve.",
+    "Do not claim catastrophic tails are unique to experience transfer.",
+    "Do not claim the command threshold generalizes beyond retrospective replay.",
+    "Do not pool task-normalized effects as a universal manager-synthesis effect.",
+    "Treat DeepSeek recursive synthesis as a stress probe because its bootstrap contained an externally failed source.",
+    "Treat execution_server sequential results as descriptive because the no-transfer control hit the frozen action boundary."
+  ],
+  "main_protocol": "benchmarks\\scbench\\kimi_maas_cfgpipe_cp1_depth12_three_arm_confirmation_protocol_20260715.json",
+  "source_files": {
+    "benchmarks/scbench/kimi_maas_cfgpipe_cp1_depth12_three_arm_confirmation_audit_20260715.json": "6fcdddf3049c7ac138305299ef589efe917754b66545c7ace22d65084432d6a4",
+    "benchmarks/scbench/deepseek_cfgpipe_cp1_self_report_acceptance_depth10_audit_20260714.json": "a7dc4ed0335aaec26280f9f6d10dbf6ffb7b6fae28bc6a71cc69253085db170d",
+    "benchmarks/scbench/glm5_cfgpipe_cp1_self_report_acceptance_depth10_audit_20260714.json": "34e1fcfc0b7ed5e339fa2e3b36a49ba8183e93a24f95323cbf5a5e22429bf0f1",
+    "benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_depth8_audit_20260714.json": "bfb2e2146c190e95ff583f83a639b21c61aef772b5740f674567243a7c42ccbd",
+    "benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_depth10_r2_audit_20260714.json": "724ed5a02df56df55a1719454b63a9b14d69ad7679d1bbeb1de7c40ec32f05a0",
+    "benchmarks/scbench/kimi_cfgpipe_cp1_recursive_synthesis_depth5_audit_20260714.json": "3cd3a3183cbd3bb56674891a37218a2bfa00d5a2f55afb8cf3cff42740c7a125",
+    "benchmarks/scbench/deepseek_cfgpipe_cp1_recursive_self_report_probe_depth5_audit_20260714.json": "a10e64d55699cc4ed5ae54ca3bfac81aa02ee9ecae637868feec553f2c38b5f8",
+    "benchmarks/scbench/kimi_log_query_cp1_bootstrapped_recursive_depth5_audit_20260714.json": "4a23132582ee3c19f834b0ffa57d032fa3d2f09beedfe36c1648950e512e9464",
+    "benchmarks/scbench/kimi_xjq_cp2_recursive_self_report_manager_depth5_r1_final_audit_20260714.json": "5abe1881f15e0cf78e53db41d4cc8e92d561dc793b6c06b47afae61d74eb5e50",
+    "benchmarks/scbench/kimi_cfgpipe_sequential_cp1_cp2_early_falsification_audit_20260714.json": "6664ffb02cd9848c0779e9f368a3bab0d783863888fd4f838566c81c95a8c371",
+    "benchmarks/scbench/kimi_maas_execution_server_sequential_cp1_cp3_recursive_self_report_pilot_audit_20260714.json": "d8e272805b7457d1779f15c64f95d8cb436b4b522e750bb33df2ceb193d2709e"
+  },
+  "generated_files": {
+    "paper_draft/generated/moa_paper/main_depth12_curves.csv": "b5aa336c347dbb48a8b8dfb4c354958c6965e6ff8735b55eb0dcc3adaa388702",
+    "paper_draft/generated/moa_paper/main_depth12_diversity.csv": "4be09004d9f422e4ce19282e9442cf985df987402bc6a52198438672a7a150bf",
+    "paper_draft/generated/moa_paper/local_gate_threshold_replay.csv": "c9c5b34c50296096e6e1cfb92e287bd8c43c6283d70c64f9c1908d8452f224f4",
+    "paper_draft/generated/moa_paper/raw_append_cross_model.csv": "1a790d795800fd7a864552f975dc48144137ac7702b998a0292708876b806fb8",
+    "paper_draft/generated/moa_paper/recursive_manager_boundaries.csv": "8e2d72842943aa6f70ff2addd63252fb4cd07532826e99f6bea59d2cab5cde02"
+  }
+}

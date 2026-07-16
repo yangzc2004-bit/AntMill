@@ -1,0 +1,3032 @@
+{
+  "created": 1784032608.3608544,
+  "duration": 7.44648814201355,
+  "exitcode": 1,
+  "root": "/tmp/tmpwjo0yfon",
+  "environment": {},
+  "summary": {
+    "failed": 53,
+    "passed": 17,
+    "total": 70,
+    "collected": 70
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/assets",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_01_create_environment_never",
+          "type": "Function",
+          "lineno": 181
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_02_create_environment_fork",
+          "type": "Function",
+          "lineno": 194
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_03_create_environment_base",
+          "type": "Function",
+          "lineno": 207
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_04_execute_never_mode",
+          "type": "Function",
+          "lineno": 220
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_05_execute_fork_mode",
+          "type": "Function",
+          "lineno": 238
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_06_execute_base_mode",
+          "type": "Function",
+          "lineno": 256
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_07_execute_base_mode_isolated",
+          "type": "Function",
+          "lineno": 274
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_08_missing_environment_field",
+          "type": "Function",
+          "lineno": 293
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_09_unknown_environment",
+          "type": "Function",
+          "lineno": 300
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_10_verify_never_persistence",
+          "type": "Function",
+          "lineno": 308
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_11_create_duplicate_environment",
+          "type": "Function",
+          "lineno": 320
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_12_environment_with_overlay_files",
+          "type": "Function",
+          "lineno": 328
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_13_create_environment_default_mode",
+          "type": "Function",
+          "lineno": 347
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_14_create_environment_no_files",
+          "type": "Function",
+          "lineno": 357
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_01_create_never_environment",
+          "type": "Function",
+          "lineno": 378
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_02_create_fork_environment",
+          "type": "Function",
+          "lineno": 388
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_03_create_base_environment",
+          "type": "Function",
+          "lineno": 398
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_04_create_default_environment",
+          "type": "Function",
+          "lineno": 408
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_05_create_empty_environment",
+          "type": "Function",
+          "lineno": 417
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_06_execute_never_initial_write",
+          "type": "Function",
+          "lineno": 428
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_07_execute_never_persistence",
+          "type": "Function",
+          "lineno": 446
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_08_execute_fork_counter_update",
+          "type": "Function",
+          "lineno": 464
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_09_execute_base_create_state",
+          "type": "Function",
+          "lineno": 482
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_10_execute_base_clean_snapshot",
+          "type": "Function",
+          "lineno": 500
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_11_execute_overlay_files",
+          "type": "Function",
+          "lineno": 519
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_01_missing_environment_field",
+          "type": "Function",
+          "lineno": 547
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_02_empty_environment_field",
+          "type": "Function",
+          "lineno": 555
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_03_invalid_environment_path",
+          "type": "Function",
+          "lineno": 564
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_04_unknown_environment",
+          "type": "Function",
+          "lineno": 577
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_05_setup_duplicate_environment",
+          "type": "Function",
+          "lineno": 586
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_06_duplicate_environment_name",
+          "type": "Function",
+          "lineno": 595
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_07_invalid_concurrency_type",
+          "type": "Function",
+          "lineno": 604
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_08_invalid_concurrency_value",
+          "type": "Function",
+          "lineno": 613
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_09_invalid_environment_name",
+          "type": "Function",
+          "lineno": 622
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_01_create_environment",
+          "type": "Function",
+          "lineno": 640
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_02_stdin_execution",
+          "type": "Function",
+          "lineno": 651
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_03_csv_structured_file",
+          "type": "Function",
+          "lineno": 671
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_04_track_glob_no_match",
+          "type": "Function",
+          "lineno": 696
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_05_create_env_fork",
+          "type": "Function",
+          "lineno": 716
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_06_create_env_base",
+          "type": "Function",
+          "lineno": 727
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_07_create_env_many_files",
+          "type": "Function",
+          "lineno": 738
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_08_create_env_nested_dirs",
+          "type": "Function",
+          "lineno": 761
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_09_create_env_structured",
+          "type": "Function",
+          "lineno": 772
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_10_create_env_long_name",
+          "type": "Function",
+          "lineno": 788
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_11_create_env_numeric_name",
+          "type": "Function",
+          "lineno": 797
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_12_env_stdin_shell_injection",
+          "type": "Function",
+          "lineno": 806
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_13_env_stdin_unicode",
+          "type": "Function",
+          "lineno": 821
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_14_env_stdin_long",
+          "type": "Function",
+          "lineno": 834
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_15_env_stdin_empty_string",
+          "type": "Function",
+          "lineno": 850
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_16_env_chain_basic",
+          "type": "Function",
+          "lineno": 863
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_17_env_chain_with_required",
+          "type": "Function",
+          "lineno": 879
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_18_env_chain_file_tracking",
+          "type": "Function",
+          "lineno": 897
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_19_env_chain_timeout",
+          "type": "Function",
+          "lineno": 915
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_20_env_overlay_basic",
+          "type": "Function",
+          "lineno": 934
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_21_env_overlay_overwrite",
+          "type": "Function",
+          "lineno": 947
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_22_env_overlay_plus_stdin",
+          "type": "Function",
+          "lineno": 960
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_23_env_overlay_structured",
+          "type": "Function",
+          "lineno": 975
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_24_env_overlay_nested_path",
+          "type": "Function",
+          "lineno": 989
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_25_env_fork_stdin",
+          "type": "Function",
+          "lineno": 1002
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_26_env_base_stdin",
+          "type": "Function",
+          "lineno": 1015
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_27_env_kitchen_sink",
+          "type": "Function",
+          "lineno": 1029
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_28_env_cache_setup",
+          "type": "Function",
+          "lineno": 1050
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_29_env_cache_hit",
+          "type": "Function",
+          "lineno": 1062
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_30_env_cache_stdin_miss",
+          "type": "Function",
+          "lineno": 1074
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_31_env_whitespace_stdin",
+          "type": "Function",
+          "lineno": 1087
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_32_env_empty_overlay",
+          "type": "Function",
+          "lineno": 1101
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_33_env_nested_read",
+          "type": "Function",
+          "lineno": 1114
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_34_env_stdin_quotes_escapes",
+          "type": "Function",
+          "lineno": 1126
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_35_env_chain_continue_on_error",
+          "type": "Function",
+          "lineno": 1140
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_36_env_many_files_count",
+          "type": "Function",
+          "lineno": 1159
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError",
+          "type": "Class"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression",
+          "type": "Class"
+        }
+      ]
+    },
+    {
+      "nodeid": ".evaluation_tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": ".evaluation_tests/assets",
+          "type": "Dir"
+        },
+        {
+          "nodeid": ".evaluation_tests/test_checkpoint_6.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_01_create_environment_never",
+      "lineno": 181,
+      "outcome": "failed",
+      "keywords": [
+        "test_01_create_environment_never",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 1.3836406669870485,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0019152089953422546,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 191,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 191,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c56960>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_01_create_environment_never(self, client: httpx.Client) -> None:\n        \"\"\"Create environment with 'never' concurrency mode.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"test-never\",\n            \"concurrency_mode\": \"never\",\n            \"files\": {\n                \"config.txt\": \"initial state\",\n            },\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:191: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00043812500371132046,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_02_create_environment_fork",
+      "lineno": 194,
+      "outcome": "failed",
+      "keywords": [
+        "test_02_create_environment_fork",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011646659986581653,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00224752799840644,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 204,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 204,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c56c60>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_02_create_environment_fork(self, client: httpx.Client) -> None:\n        \"\"\"Create environment with 'fork' concurrency mode.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"test-fork\",\n            \"concurrency_mode\": \"fork\",\n            \"files\": {\n                \"counter.txt\": \"0\",\n            },\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:204: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0003411189973121509,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_03_create_environment_base",
+      "lineno": 207,
+      "outcome": "failed",
+      "keywords": [
+        "test_03_create_environment_base",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004445249942364171,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0018923080060631037,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 217,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 217,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c56fc0>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_03_create_environment_base(self, client: httpx.Client) -> None:\n        \"\"\"Create environment with 'base' concurrency mode.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"test-base\",\n            \"concurrency_mode\": \"base\",\n            \"files\": {\n                \"base.txt\": \"base content\",\n            },\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:217: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00037992199941072613,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_04_execute_never_mode",
+      "lineno": 220,
+      "outcome": "failed",
+      "keywords": [
+        "test_04_execute_never_mode",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005950339982518926,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.009014612005557865,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 230,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c572f0>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_04_execute_never_mode(self, client: httpx.Client) -> None:\n        \"\"\"Execute in 'never' mode environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo 'modified' > output.txt\",\n            \"environment\": \"test-never\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"test-never\",\n            snapshot_source=\"exclusive\",\n            committed=True,\n            expected_cached=False,\n            expected_files={\"config.txt\": \"initial state\", \"output.txt\": \"modified\\n\"},\n        )\n\n.evaluation_tests/test_checkpoint_6.py:230: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': '9ad9efbf-0bff-4f21-9be5-5f59ed36db50', 'stdout': '', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'test-never', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = None\nexpected_files = {'config.txt': 'initial state', 'output.txt': 'modified\\n'}\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00024911398941185325,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_05_execute_fork_mode",
+      "lineno": 238,
+      "outcome": "failed",
+      "keywords": [
+        "test_05_execute_fork_mode",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003525200008880347,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0038483190000988543,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 248,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c57230>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_05_execute_fork_mode(self, client: httpx.Client) -> None:\n        \"\"\"Execute in 'fork' mode environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo '1' > counter.txt\",\n            \"environment\": \"test-fork\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"test-fork\",\n            snapshot_source=\"exclusive\",\n            committed=True,\n            expected_cached=False,\n            expected_files={\"counter.txt\": \"1\\n\"},\n        )\n\n.evaluation_tests/test_checkpoint_6.py:248: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': '4076a264-2a79-4540-8502-01c211b2ccde', 'stdout': '', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'test-fork', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = None, expected_files = {'counter.txt': '1\\n'}\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00024271299480460584,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_06_execute_base_mode",
+      "lineno": 256,
+      "outcome": "failed",
+      "keywords": [
+        "test_06_execute_base_mode",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003484190092422068,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.005246097993222065,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 266,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c56f30>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_06_execute_base_mode(self, client: httpx.Client) -> None:\n        \"\"\"Execute in 'base' mode environment creates isolated state.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo 'change' > modified.txt\",\n            \"environment\": \"test-base\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"test-base\",\n            snapshot_source=\"base\",\n            committed=False,  # Base mode never commits - changes are discarded\n            expected_cached=False,\n            expected_files={\"base.txt\": \"base content\", \"modified.txt\": \"change\\n\"},\n        )\n\n.evaluation_tests/test_checkpoint_6.py:266: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': '55a28cbf-15f4-4c75-bfc4-31ac09b1ed4f', 'stdout': '', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'test-base', snapshot_source = 'base', committed = False\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = None\nexpected_files = {'base.txt': 'base content', 'modified.txt': 'change\\n'}\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00021771200408693403,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_07_execute_base_mode_isolated",
+      "lineno": 274,
+      "outcome": "failed",
+      "keywords": [
+        "test_07_execute_base_mode_isolated",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00032291900424752384,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0046330629993462935,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 284,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c568a0>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_07_execute_base_mode_isolated(self, client: httpx.Client) -> None:\n        \"\"\"Base mode execution sees clean base (no prior changes).\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat base.txt\",\n            \"environment\": \"test-base\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"test-base\",\n            snapshot_source=\"base\",\n            committed=False,  # Base mode never commits - changes are discarded\n            expected_cached=False,\n            expected_stdout=\"base content\",\n            expected_files={\"base.txt\": \"base content\"},\n        )\n\n.evaluation_tests/test_checkpoint_6.py:284: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': '13192c60-fdf5-4f48-9bb0-ec089ff222e1', 'stdout': '', 'stderr': 'cat: base.txt: No such file or directory\\n', 'exit_code': 1, ...}\nenv_name = 'test-base', snapshot_source = 'base', committed = False\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = 'base content', expected_files = {'base.txt': 'base content'}\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0002013119956245646,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_08_missing_environment_field",
+      "lineno": 293,
+      "outcome": "failed",
+      "keywords": [
+        "test_08_missing_environment_field",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00031411800591740757,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003402893999009393,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 154,
+          "message": "assert 201 == 400\n +  where 201 = <Response [201 Created]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 299,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 154,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c578c0>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_08_missing_environment_field(self, client: httpx.Client) -> None:\n        \"\"\"Missing environment field returns 400.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo hello\",\n        })\n>       _assert_error_response(response, 400, \"MISSING_ENVIRONMENT\")\n\n.evaluation_tests/test_checkpoint_6.py:299: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [201 Created]>, expected_status = 400\nexpected_code = 'MISSING_ENVIRONMENT'\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n>       assert response.status_code == expected_status\nE       assert 201 == 400\nE        +  where 201 = <Response [201 Created]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:154: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0002287130046170205,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_09_unknown_environment",
+      "lineno": 300,
+      "outcome": "failed",
+      "keywords": [
+        "test_09_unknown_environment",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00040402299782726914,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0035099999950034544,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 154,
+          "message": "assert 201 == 404\n +  where 201 = <Response [201 Created]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 307,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 154,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c57c80>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_09_unknown_environment(self, client: httpx.Client) -> None:\n        \"\"\"Unknown environment returns 404.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo hello\",\n            \"environment\": \"nonexistent\",\n        })\n>       _assert_error_response(response, 404, \"ENVIRONMENT_NOT_FOUND\")\n\n.evaluation_tests/test_checkpoint_6.py:307: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [201 Created]>, expected_status = 404\nexpected_code = 'ENVIRONMENT_NOT_FOUND'\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n>       assert response.status_code == expected_status\nE       assert 201 == 404\nE        +  where 201 = <Response [201 Created]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:154: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00020221099839545786,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_10_verify_never_persistence",
+      "lineno": 308,
+      "outcome": "failed",
+      "keywords": [
+        "test_10_verify_never_persistence",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000355419993866235,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006084845997975208,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 319,
+          "message": "AssertionError: assert '0' == '2'\n  \n  - 2\n  + 0"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 319,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c5f020>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_10_verify_never_persistence(self, client: httpx.Client) -> None:\n        \"\"\"Never mode persists changes across executions.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"ls -1 | wc -l\",\n            \"environment\": \"test-never\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n        # Should see 2 files: config.txt and output.txt\n>       assert _normalize_stdout(payload[\"stdout\"]) == \"2\"\nE       AssertionError: assert '0' == '2'\nE         \nE         - 2\nE         + 0\n\n.evaluation_tests/test_checkpoint_6.py:319: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0002081119891954586,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_11_create_duplicate_environment",
+      "lineno": 320,
+      "outcome": "failed",
+      "keywords": [
+        "test_11_create_duplicate_environment",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00029811701097059995,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0015279869985533878,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 156,
+          "message": "AssertionError: assert 'error' in {'detail': 'Not Found'}"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 327,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 156,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c5f770>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_11_create_duplicate_environment(self, client: httpx.Client) -> None:\n        \"\"\"Duplicate environment name returns 404.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"test-never\",\n            \"files\": {\"test.txt\": \"content\"},\n        })\n>       _assert_error_response(response, 404, \"ENVIRONMENT_EXISTS\")\n\n.evaluation_tests/test_checkpoint_6.py:327: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [404 Not Found]>, expected_status = 404\nexpected_code = 'ENVIRONMENT_EXISTS'\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n        assert response.status_code == expected_status\n        data = response.json()\n>       assert \"error\" in data\nE       AssertionError: assert 'error' in {'detail': 'Not Found'}\n\n.evaluation_tests/test_checkpoint_6.py:156: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00037482100015040487,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_12_environment_with_overlay_files",
+      "lineno": 328,
+      "outcome": "failed",
+      "keywords": [
+        "test_12_environment_with_overlay_files",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005218299920670688,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.004522256989730522,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 339,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c5d910>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_12_environment_with_overlay_files(self, client: httpx.Client) -> None:\n        \"\"\"Overlay files work with environments.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat overlay.txt\",\n            \"environment\": \"test-never\",\n            \"files\": {\"overlay.txt\": \"overlay content\\n\"},\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"test-never\",\n            snapshot_source=\"exclusive\",\n            committed=True,\n            expected_cached=False,\n            expected_stdout=\"overlay content\\n\",\n        )\n\n.evaluation_tests/test_checkpoint_6.py:339: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': '3019dead-5a1b-4a4a-8038-4ebebd0ba099', 'stdout': 'overlay content\\n', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'test-never', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = 'overlay content\\n', expected_files = None\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00024961399321909994,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_13_create_environment_default_mode",
+      "lineno": 347,
+      "outcome": "failed",
+      "keywords": [
+        "test_13_create_environment_default_mode",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00035211999784223735,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0013460769987432286,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 354,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 354,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c5eff0>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_13_create_environment_default_mode(self, client: httpx.Client) -> None:\n        \"\"\"Environment defaults to 'never' mode.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"test-default\",\n            \"files\": {\"default.txt\": \"default mode test\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:354: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00018671099678613245,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestCore::test_14_create_environment_no_files",
+      "lineno": 357,
+      "outcome": "failed",
+      "keywords": [
+        "test_14_create_environment_no_files",
+        "TestCore",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003343190037412569,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0013100740034133196,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 363,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 363,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestCore object at 0x709947c5f5c0>\nclient = <httpx.Client object at 0x709947c5e150>\n\n    def test_14_create_environment_no_files(self, client: httpx.Client) -> None:\n        \"\"\"Environment can be created with no files.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"test-empty\",\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:363: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.1650187829945935,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_01_create_never_environment",
+      "lineno": 378,
+      "outcome": "failed",
+      "keywords": [
+        "test_01_create_never_environment",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6900732349895407,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0018097030115313828,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 386,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 386,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5f9b0>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_01_create_never_environment(self, client: httpx.Client) -> None:\n        \"\"\"Create hidden never environment.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"hidden-never\",\n            \"concurrency_mode\": \"never\",\n            \"files\": {\"config.txt\": \"initial state\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:386: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00021531300444621593,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_02_create_fork_environment",
+      "lineno": 388,
+      "outcome": "failed",
+      "keywords": [
+        "test_02_create_fork_environment",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00042112400115001947,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0021659230114892125,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 396,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 396,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5c3e0>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_02_create_fork_environment(self, client: httpx.Client) -> None:\n        \"\"\"Create hidden fork environment.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"hidden-fork\",\n            \"concurrency_mode\": \"fork\",\n            \"files\": {\"counter.txt\": \"0\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:396: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0003145179944112897,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_03_create_base_environment",
+      "lineno": 398,
+      "outcome": "failed",
+      "keywords": [
+        "test_03_create_base_environment",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003536200092639774,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.001968412005226128,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 406,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 406,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5c800>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_03_create_base_environment(self, client: httpx.Client) -> None:\n        \"\"\"Create hidden base environment.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"hidden-base\",\n            \"concurrency_mode\": \"base\",\n            \"files\": {\"base.txt\": \"base content\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:406: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00022261300182435662,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_04_create_default_environment",
+      "lineno": 408,
+      "outcome": "failed",
+      "keywords": [
+        "test_04_create_default_environment",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003719209926202893,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0016688949981471524,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 415,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 415,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5cbc0>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_04_create_default_environment(self, client: httpx.Client) -> None:\n        \"\"\"Create hidden default environment.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"hidden-default\",\n            \"files\": {\"default.txt\": \"default mode test\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:415: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00026721500034909695,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_05_create_empty_environment",
+      "lineno": 417,
+      "outcome": "failed",
+      "keywords": [
+        "test_05_create_empty_environment",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004003229987574741,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0033116879931185395,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 423,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 423,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5cfb0>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_05_create_empty_environment(self, client: httpx.Client) -> None:\n        \"\"\"Create hidden empty environment.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"hidden-empty\",\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:423: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00025641400134190917,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_06_execute_never_initial_write",
+      "lineno": 428,
+      "outcome": "failed",
+      "keywords": [
+        "test_06_execute_never_initial_write",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003402190050110221,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.009880862009595148,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 438,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c57b60>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_06_execute_never_initial_write(self, client: httpx.Client) -> None:\n        \"\"\"Execute initial write in hidden never environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"sh -c \\\"echo modified > output.txt\\\"\",\n            \"environment\": \"hidden-never\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"hidden-never\",\n            snapshot_source=\"exclusive\",\n            committed=True,\n            expected_cached=False,\n            expected_files={\"config.txt\": \"initial state\", \"output.txt\": \"modified\\n\"},\n        )\n\n.evaluation_tests/test_checkpoint_6.py:438: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': 'bcec798f-c005-4b28-9f45-333ab30005b0', 'stdout': '', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'hidden-never', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = None\nexpected_files = {'config.txt': 'initial state', 'output.txt': 'modified\\n'}\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0002673150011105463,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_07_execute_never_persistence",
+      "lineno": 446,
+      "outcome": "failed",
+      "keywords": [
+        "test_07_execute_never_persistence",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004282239970052615,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.005180193998967297,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 456,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c56870>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_07_execute_never_persistence(self, client: httpx.Client) -> None:\n        \"\"\"Never mode persists previous changes.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat output.txt\",\n            \"environment\": \"hidden-never\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"hidden-never\",\n            snapshot_source=\"exclusive\",\n            committed=True,\n            expected_cached=False,\n            expected_stdout=\"modified\\n\",\n        )\n\n.evaluation_tests/test_checkpoint_6.py:456: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': 'db3c339a-3d68-4dfa-a888-2ff0ed15c494', 'stdout': '', 'stderr': 'cat: output.txt: No such file or directory\\n', 'exit_code': 1, ...}\nenv_name = 'hidden-never', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = 'modified\\n', expected_files = None, duration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00031721800041850656,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_08_execute_fork_counter_update",
+      "lineno": 464,
+      "outcome": "failed",
+      "keywords": [
+        "test_08_execute_fork_counter_update",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0006369360053213313,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.004236441003740765,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 474,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5ce30>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_08_execute_fork_counter_update(self, client: httpx.Client) -> None:\n        \"\"\"Fork mode execution updates state.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"sh -c \\\"echo 1 > counter.txt\\\"\",\n            \"environment\": \"hidden-fork\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"hidden-fork\",\n            snapshot_source=\"exclusive\",\n            committed=True,\n            expected_cached=False,\n            expected_files={\"counter.txt\": \"1\\n\"},\n        )\n\n.evaluation_tests/test_checkpoint_6.py:474: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': 'ab355f93-200c-4419-995a-b27d7692933a', 'stdout': '', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'hidden-fork', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = None, expected_files = {'counter.txt': '1\\n'}\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0002565140021033585,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_09_execute_base_create_state",
+      "lineno": 482,
+      "outcome": "failed",
+      "keywords": [
+        "test_09_execute_base_create_state",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00043172400910407305,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.005226897003012709,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 492,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5c950>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_09_execute_base_create_state(self, client: httpx.Client) -> None:\n        \"\"\"Base mode creates isolated state.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"sh -c \\\"echo modified > state.txt\\\"\",\n            \"environment\": \"hidden-base\",\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"hidden-base\",\n            snapshot_source=\"base\",\n            committed=False,  # Base mode never commits - changes are discarded\n            expected_cached=False,\n            expected_files={\"base.txt\": \"base content\", \"state.txt\": \"modified\\n\"},\n        )\n\n.evaluation_tests/test_checkpoint_6.py:492: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': 'e35783ae-e00c-4aef-929e-735af4174e98', 'stdout': '', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'hidden-base', snapshot_source = 'base', committed = False\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = None\nexpected_files = {'base.txt': 'base content', 'state.txt': 'modified\\n'}\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0002714149886742234,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_10_execute_base_clean_snapshot",
+      "lineno": 500,
+      "outcome": "failed",
+      "keywords": [
+        "test_10_execute_base_clean_snapshot",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004617259983206168,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006019142994773574,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 510,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5c260>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_10_execute_base_clean_snapshot(self, client: httpx.Client) -> None:\n        \"\"\"Base mode starts fresh each time (no state.txt from previous execution).\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"sh -c \\\"if [ -f state.txt ]; then echo stale && exit 1; fi; cat base.txt\\\"\",\n            \"environment\": \"hidden-base\",\n            \"track\": [\"base.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"hidden-base\",\n            snapshot_source=\"base\",\n            committed=False,  # Base mode never commits - changes are discarded\n            expected_cached=False,\n            expected_stdout=\"base content\",\n            expected_files={\"base.txt\": \"base content\"},\n        )\n\n.evaluation_tests/test_checkpoint_6.py:510: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': 'b7ed7add-d2f6-4198-bb8a-c3ed5c6af484', 'stdout': '', 'stderr': 'cat: base.txt: No such file or directory\\n', 'exit_code': 1, ...}\nenv_name = 'hidden-base', snapshot_source = 'base', committed = False\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = 'base content', expected_files = {'base.txt': 'base content'}\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00023531400074716657,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestHidden::test_11_execute_overlay_files",
+      "lineno": 519,
+      "outcome": "failed",
+      "keywords": [
+        "test_11_execute_overlay_files",
+        "TestHidden",
+        "functionality",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00038492100429721177,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.004517757013672963,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 530,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestHidden object at 0x709947c5f470>\nclient = <httpx.Client object at 0x709947963860>\n\n    def test_11_execute_overlay_files(self, client: httpx.Client) -> None:\n        \"\"\"Overlay files work in hidden never environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat overlay.txt\",\n            \"environment\": \"hidden-never\",\n            \"files\": {\"overlay.txt\": \"overlay content\\n\"},\n            \"track\": [\"*.txt\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"hidden-never\",\n            snapshot_source=\"exclusive\",\n            committed=True,\n            expected_cached=False,\n            expected_stdout=\"overlay content\\n\",\n        )\n\n.evaluation_tests/test_checkpoint_6.py:530: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': '57c4001e-570e-4387-84e5-74a10056dd39', 'stdout': 'overlay content\\n', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'hidden-never', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = 'overlay content\\n', expected_files = None\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.21506262799084652,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_01_missing_environment_field",
+      "lineno": 547,
+      "outcome": "failed",
+      "keywords": [
+        "test_01_missing_environment_field",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.9165487100108294,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.012980037994566374,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 154,
+          "message": "assert 201 == 400\n +  where 201 = <Response [201 Created]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 554,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 154,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5d250>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_01_missing_environment_field(self, client: httpx.Client) -> None:\n        \"\"\"Missing environment field returns 400.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo hello\",\n        })\n>       _assert_error_response(response, 400)\n\n.evaluation_tests/test_checkpoint_6.py:554: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [201 Created]>, expected_status = 400, expected_code = None\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n>       assert response.status_code == expected_status\nE       assert 201 == 400\nE        +  where 201 = <Response [201 Created]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:154: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0003209179994883016,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_02_empty_environment_field",
+      "lineno": 555,
+      "outcome": "failed",
+      "keywords": [
+        "test_02_empty_environment_field",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007053400040604174,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.005805630004033446,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 154,
+          "message": "assert 201 == 400\n +  where 201 = <Response [201 Created]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 563,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 154,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5d280>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_02_empty_environment_field(self, client: httpx.Client) -> None:\n        \"\"\"Empty environment field returns 400.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo hello\",\n            \"environment\": \"\",\n        })\n>       _assert_error_response(response, 400)\n\n.evaluation_tests/test_checkpoint_6.py:563: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [201 Created]>, expected_status = 400, expected_code = None\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n>       assert response.status_code == expected_status\nE       assert 201 == 400\nE        +  where 201 = <Response [201 Created]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:154: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004737269919132814,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_03_invalid_environment_path",
+      "lineno": 564,
+      "outcome": "failed",
+      "keywords": [
+        "test_03_invalid_environment_path",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0006860389985376969,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0049301800027024,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 573,
+          "message": "assert 201 in [400, 404]\n +  where 201 = <Response [201 Created]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 573,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5d670>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_03_invalid_environment_path(self, client: httpx.Client) -> None:\n        \"\"\"Path traversal in environment returns error (400 or 404).\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo hello\",\n            \"environment\": \"../bad\",\n        })\n        # Accept either 400 (invalid) or 404 (not found) - both valid per spec\n>       assert response.status_code in [400, 404]\nE       assert 201 in [400, 404]\nE        +  where 201 = <Response [201 Created]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:573: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00039262199425138533,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_04_unknown_environment",
+      "lineno": 577,
+      "outcome": "failed",
+      "keywords": [
+        "test_04_unknown_environment",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0011660669988486916,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00540860700129997,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 154,
+          "message": "assert 201 == 404\n +  where 201 = <Response [201 Created]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 585,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 154,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5dac0>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_04_unknown_environment(self, client: httpx.Client) -> None:\n        \"\"\"Unknown environment returns 404.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo hello\",\n            \"environment\": \"does-not-exist\",\n        })\n>       _assert_error_response(response, 404)\n\n.evaluation_tests/test_checkpoint_6.py:585: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [201 Created]>, expected_status = 404, expected_code = None\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n>       assert response.status_code == expected_status\nE       assert 201 == 404\nE        +  where 201 = <Response [201 Created]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:154: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004681269929278642,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_05_setup_duplicate_environment",
+      "lineno": 586,
+      "outcome": "failed",
+      "keywords": [
+        "test_05_setup_duplicate_environment",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0008197459974326193,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0020725180074805394,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 594,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 594,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5deb0>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_05_setup_duplicate_environment(self, client: httpx.Client) -> None:\n        \"\"\"Create target for duplicate test.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"duplicate-target\",\n            \"files\": {\"seed.txt\": \"seed\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:594: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004630269977496937,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_06_duplicate_environment_name",
+      "lineno": 595,
+      "outcome": "failed",
+      "keywords": [
+        "test_06_duplicate_environment_name",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000738342001568526,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0026460499939275905,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 156,
+          "message": "AssertionError: assert 'error' in {'detail': 'Not Found'}"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 603,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 156,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5e300>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_06_duplicate_environment_name(self, client: httpx.Client) -> None:\n        \"\"\"Duplicate environment name returns 404.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"duplicate-target\",\n            \"files\": {\"seed.txt\": \"seed\"},\n        })\n>       _assert_error_response(response, 404)\n\n.evaluation_tests/test_checkpoint_6.py:603: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [404 Not Found]>, expected_status = 404\nexpected_code = None\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n        assert response.status_code == expected_status\n        data = response.json()\n>       assert \"error\" in data\nE       AssertionError: assert 'error' in {'detail': 'Not Found'}\n\n.evaluation_tests/test_checkpoint_6.py:156: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0008393479947699234,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_07_invalid_concurrency_type",
+      "lineno": 604,
+      "outcome": "failed",
+      "keywords": [
+        "test_07_invalid_concurrency_type",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.002239927009213716,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.005426307994639501,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 154,
+          "message": "assert 404 == 400\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 612,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 154,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5e690>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_07_invalid_concurrency_type(self, client: httpx.Client) -> None:\n        \"\"\"Invalid concurrency_mode type returns 400.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"bad-type\",\n            \"concurrency_mode\": 42,\n        })\n>       _assert_error_response(response, 400)\n\n.evaluation_tests/test_checkpoint_6.py:612: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [404 Not Found]>, expected_status = 400\nexpected_code = None\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n>       assert response.status_code == expected_status\nE       assert 404 == 400\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:154: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.000250814002356492,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_08_invalid_concurrency_value",
+      "lineno": 613,
+      "outcome": "failed",
+      "keywords": [
+        "test_08_invalid_concurrency_value",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00037132100260350853,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0016308920021401718,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 154,
+          "message": "assert 404 == 400\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 621,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 154,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5ea50>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_08_invalid_concurrency_value(self, client: httpx.Client) -> None:\n        \"\"\"Invalid concurrency_mode value returns 400.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"bad-value\",\n            \"concurrency_mode\": \"sometimes\",\n        })\n>       _assert_error_response(response, 400)\n\n.evaluation_tests/test_checkpoint_6.py:621: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [404 Not Found]>, expected_status = 400\nexpected_code = None\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n>       assert response.status_code == expected_status\nE       assert 404 == 400\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:154: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0005940340051893145,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestError::test_09_invalid_environment_name",
+      "lineno": 622,
+      "outcome": "failed",
+      "keywords": [
+        "test_09_invalid_environment_name",
+        "error",
+        "pytestmark",
+        "TestError",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0009706559940241277,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003071175000513904,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 154,
+          "message": "assert 404 == 400\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 630,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 154,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestError object at 0x709947c5ee40>\nclient = <httpx.Client object at 0x7099478050a0>\n\n    @pytest.mark.error\n    def test_09_invalid_environment_name(self, client: httpx.Client) -> None:\n        \"\"\"Empty environment name returns 400.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"\",\n            \"files\": {},\n        })\n>       _assert_error_response(response, 400)\n\n.evaluation_tests/test_checkpoint_6.py:630: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nresponse = <Response [404 Not Found]>, expected_status = 400\nexpected_code = None\n\n    def _assert_error_response(\n        response: httpx.Response,\n        expected_status: int,\n        expected_code: str | None = None,\n    ) -> None:\n        \"\"\"Assert error response format.\"\"\"\n>       assert response.status_code == expected_status\nE       assert 404 == 400\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:154: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.21569216399802826,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_01_create_environment",
+      "lineno": 640,
+      "outcome": "failed",
+      "keywords": [
+        "test_01_create_environment",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.9315148610039614,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0029670689982594922,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 649,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 649,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c57800>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_01_create_environment(self, client: httpx.Client) -> None:\n        \"\"\"Create regression environment.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"regression-env\",\n            \"concurrency_mode\": \"never\",\n            \"files\": {\"setup.txt\": \"regression test\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:649: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0005148290074430406,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_02_stdin_execution",
+      "lineno": 651,
+      "outcome": "failed",
+      "keywords": [
+        "test_02_stdin_execution",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007978450012160465,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.014751738999621011,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 663,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5ecc0>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_02_stdin_execution(self, client: httpx.Client) -> None:\n        \"\"\"Stdin execution in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat\",\n            \"environment\": \"regression-env\",\n            \"stdin\": [\"line1\", \"line2\"],\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"regression-env\",\n            snapshot_source=\"exclusive\",\n            committed=True,  # Per spec - all successful executions show committed: true\n            expected_cached=False,\n            expected_stdout=\"line1\\nline2\\n\",\n        )\n\n.evaluation_tests/test_checkpoint_6.py:663: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': '2f95067a-8b6b-436f-bc1f-439af615798f', 'stdout': 'line1\\nline2', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'regression-env', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = 'line1\\nline2\\n', expected_files = None, duration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0004309249925427139,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_03_csv_structured_file",
+      "lineno": 671,
+      "outcome": "failed",
+      "keywords": [
+        "test_03_csv_structured_file",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007209409959614277,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.007993753999471664,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 688,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5e540>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_03_csv_structured_file(self, client: httpx.Client) -> None:\n        \"\"\"CSV structured file in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat users.csv\",\n            \"environment\": \"regression-env\",\n            \"files\": {\n                \"users.csv\": [\n                    {\"id\": 1, \"name\": \"alice\"},\n                    {\"id\": 2, \"name\": \"bob\"},\n                ],\n            },\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"regression-env\",\n            snapshot_source=\"exclusive\",\n            committed=True,  # Per spec - all successful executions show committed: true\n            expected_cached=False,\n            expected_stdout=\"id,name\\n1,alice\\n2,bob\\n\",\n        )\n\n.evaluation_tests/test_checkpoint_6.py:688: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': '3347746b-6618-449c-b223-66ed858c5a61', 'stdout': 'id,name\\n1,alice\\n2,bob\\n', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'regression-env', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = 'id,name\\n1,alice\\n2,bob\\n', expected_files = None\nduration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0003809220070252195,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_04_track_glob_no_match",
+      "lineno": 696,
+      "outcome": "failed",
+      "keywords": [
+        "test_04_track_glob_no_match",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005193289980525151,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0051329919951967895,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 130,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 708,
+            "message": ""
+          },
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 130,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5dfd0>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_04_track_glob_no_match(self, client: httpx.Client) -> None:\n        \"\"\"Track glob with no matches in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo 'test' > output.txt\",\n            \"environment\": \"regression-env\",\n            \"timeout\": 10,\n            \"track\": [\"*.nonexistent\"],\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       _assert_execute_with_environment(\n            payload,\n            env_name=\"regression-env\",\n            snapshot_source=\"exclusive\",\n            committed=True,\n            expected_cached=False,\n        )\n\n.evaluation_tests/test_checkpoint_6.py:708: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\npayload = {'id': 'c405454f-6fee-4f96-81a6-adb03428ab30', 'stdout': '', 'stderr': '', 'exit_code': 0, ...}\nenv_name = 'regression-env', snapshot_source = 'exclusive', committed = True\nexpected_cached = False, expected_exit_code = 0, expected_timed_out = False\nexpected_stdout = None, expected_files = None, duration_limit = 10.0\n\n    def _assert_execute_with_environment(\n        payload: dict[str, Any],\n        env_name: str,\n        snapshot_source: str,\n        committed: bool | None = None,\n        expected_cached: bool = False,\n        expected_exit_code: int = 0,\n        expected_timed_out: bool = False,\n        expected_stdout: str | None = None,\n        expected_files: dict[str, str] | None = None,\n        duration_limit: float = 10.0,\n    ) -> None:\n        \"\"\"Assert execute response with environment.\"\"\"\n        _assert_uuid(payload[\"id\"])\n>       assert payload[\"cached\"] == expected_cached\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:130: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0004665260057663545,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_05_create_env_fork",
+      "lineno": 716,
+      "outcome": "failed",
+      "keywords": [
+        "test_05_create_env_fork",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000741441996069625,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0029719690064666793,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 725,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 725,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5da30>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_05_create_env_fork(self, client: httpx.Client) -> None:\n        \"\"\"Create fork environment for regression.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"regression-env-fork\",\n            \"concurrency_mode\": \"fork\",\n            \"files\": {\"base.txt\": \"fork env base\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:725: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0003837219992419705,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_06_create_env_base",
+      "lineno": 727,
+      "outcome": "failed",
+      "keywords": [
+        "test_06_create_env_base",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0006228359998203814,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002886364993173629,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 736,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 736,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5d160>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_06_create_env_base(self, client: httpx.Client) -> None:\n        \"\"\"Create base environment for regression.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"regression-env-base\",\n            \"concurrency_mode\": \"base\",\n            \"files\": {\"base.txt\": \"base env content\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:736: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.00043892499525099993,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_07_create_env_many_files",
+      "lineno": 738,
+      "outcome": "failed",
+      "keywords": [
+        "test_07_create_env_many_files",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000457726011518389,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0029711690003750846,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 757,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 757,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5c0b0>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_07_create_env_many_files(self, client: httpx.Client) -> None:\n        \"\"\"Create environment with many files.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"regression-env-many\",\n            \"files\": {\n                \"file1.txt\": \"content1\",\n                \"file2.txt\": \"content2\",\n                \"file3.txt\": \"content3\",\n                \"file4.txt\": \"content4\",\n                \"file5.txt\": \"content5\",\n                \"file6.txt\": \"content6\",\n                \"file7.txt\": \"content7\",\n                \"file8.txt\": \"content8\",\n                \"file9.txt\": \"content9\",\n                \"file10.txt\": \"content10\",\n            },\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:757: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0005272300040815026,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_08_create_env_nested_dirs",
+      "lineno": 761,
+      "outcome": "failed",
+      "keywords": [
+        "test_08_create_env_nested_dirs",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007294410024769604,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0024499389983247966,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 769,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 769,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5cd40>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_08_create_env_nested_dirs(self, client: httpx.Client) -> None:\n        \"\"\"Create environment with deeply nested directory.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"regression-env-nested\",\n            \"files\": {\"a/b/c/d/e/deep.txt\": \"deeply nested content\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:769: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0004525260010268539,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_09_create_env_structured",
+      "lineno": 772,
+      "outcome": "failed",
+      "keywords": [
+        "test_09_create_env_structured",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0006835389940533787,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002647550994879566,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 785,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 785,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5fe00>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_09_create_env_structured(self, client: httpx.Client) -> None:\n        \"\"\"Create environment with structured files.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"regression-env-struct\",\n            \"files\": {\n                \"config.json\": {\"key\": \"value\", \"num\": 42},\n                \"data.csv\": [{\"a\": 1, \"b\": 2}, {\"a\": 3, \"b\": 4}],\n                \"records.jsonl\": [{\"id\": 1}, {\"id\": 2}],\n                \"settings.yaml\": {\"setting\": \"enabled\", \"count\": 10},\n            },\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:785: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.000539030006621033,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_10_create_env_long_name",
+      "lineno": 788,
+      "outcome": "failed",
+      "keywords": [
+        "test_10_create_env_long_name",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007696440006839111,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.002029116003541276,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 796,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 796,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x7099479641d0>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_10_create_env_long_name(self, client: httpx.Client) -> None:\n        \"\"\"Create environment with long name.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"regression-environment-with-a-very-long-name-for-testing-purposes-12345\",\n            \"files\": {\"test.txt\": \"long name env\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:796: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0005101290007587522,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_11_create_env_numeric_name",
+      "lineno": 797,
+      "outcome": "failed",
+      "keywords": [
+        "test_11_create_env_numeric_name",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0006268360011745244,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0024128369987010956,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 805,
+          "message": "assert 404 == 201\n +  where 404 = <Response [404 Not Found]>.status_code"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 805,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947964560>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_11_create_env_numeric_name(self, client: httpx.Client) -> None:\n        \"\"\"Create environment with numeric name.\"\"\"\n        response = client.post(\"/v1/environment\", json={\n            \"name\": \"12345\",\n            \"files\": {\"num.txt\": \"numeric name\"},\n        })\n>       assert response.status_code == 201\nE       assert 404 == 201\nE        +  where 404 = <Response [404 Not Found]>.status_code\n\n.evaluation_tests/test_checkpoint_6.py:805: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0003221179940737784,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_12_env_stdin_shell_injection",
+      "lineno": 806,
+      "outcome": "passed",
+      "keywords": [
+        "test_12_env_stdin_shell_injection",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007299409917322919,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.010024369999882765,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00039612301043234766,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_13_env_stdin_unicode",
+      "lineno": 821,
+      "outcome": "passed",
+      "keywords": [
+        "test_13_env_stdin_unicode",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007656430097995326,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.009036814008140936,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00025681499391794205,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_14_env_stdin_long",
+      "lineno": 834,
+      "outcome": "passed",
+      "keywords": [
+        "test_14_env_stdin_long",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00041962400428019464,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006338460007100366,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003231189912185073,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_15_env_stdin_empty_string",
+      "lineno": 850,
+      "outcome": "passed",
+      "keywords": [
+        "test_15_env_stdin_empty_string",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004976280033588409,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.004872677003731951,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000257313993643038,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_16_env_chain_basic",
+      "lineno": 863,
+      "outcome": "failed",
+      "keywords": [
+        "test_16_env_chain_basic",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000460826006019488,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0068833910045214,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 878,
+          "message": "KeyError: 'environment'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 878,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947965730>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_16_env_chain_basic(self, client: httpx.Client) -> None:\n        \"\"\"Basic command chain in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": [\n                {\"cmd\": \"echo chain_in_env_step1\"},\n                {\"cmd\": \"echo chain_in_env_step2\"},\n            ],\n            \"environment\": \"regression-env\",\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n        assert len(payload[\"commands\"]) == 2\n>       assert payload[\"environment\"][\"name\"] == \"regression-env\"\n               ^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'environment'\n\n.evaluation_tests/test_checkpoint_6.py:878: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0009000510035548359,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_17_env_chain_with_required",
+      "lineno": 879,
+      "outcome": "passed",
+      "keywords": [
+        "test_17_env_chain_with_required",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0008199470030376688,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.010665005989721976,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002592149976408109,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_18_env_chain_file_tracking",
+      "lineno": 897,
+      "outcome": "passed",
+      "keywords": [
+        "test_18_env_chain_file_tracking",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0006181350036058575,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00789984900620766,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00033881899435073137,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_19_env_chain_timeout",
+      "lineno": 915,
+      "outcome": "passed",
+      "keywords": [
+        "test_19_env_chain_timeout",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005146289913682267,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.30890486200223677,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00016190900350920856,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_20_env_overlay_basic",
+      "lineno": 934,
+      "outcome": "passed",
+      "keywords": [
+        "test_20_env_overlay_basic",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00038062199018895626,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006368561997078359,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00016580900410190225,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_21_env_overlay_overwrite",
+      "lineno": 947,
+      "outcome": "passed",
+      "keywords": [
+        "test_21_env_overlay_overwrite",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004921280051348731,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006139549004728906,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00018111099780071527,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_22_env_overlay_plus_stdin",
+      "lineno": 960,
+      "outcome": "passed",
+      "keywords": [
+        "test_22_env_overlay_plus_stdin",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003608209954109043,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0060955470107728615,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00032921899401117116,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_23_env_overlay_structured",
+      "lineno": 975,
+      "outcome": "passed",
+      "keywords": [
+        "test_23_env_overlay_structured",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004332240059738979,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006159450000268407,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00016770900401752442,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_24_env_overlay_nested_path",
+      "lineno": 989,
+      "outcome": "passed",
+      "keywords": [
+        "test_24_env_overlay_nested_path",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003692210011649877,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006371162002324127,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00019421099568717182,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_25_env_fork_stdin",
+      "lineno": 1002,
+      "outcome": "passed",
+      "keywords": [
+        "test_25_env_fork_stdin",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00038272200617939234,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0045486590097425506,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0001620090042706579,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_26_env_base_stdin",
+      "lineno": 1015,
+      "outcome": "failed",
+      "keywords": [
+        "test_26_env_base_stdin",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003542199992807582,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.004675666001276113,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 1028,
+          "message": "KeyError: 'environment'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 1028,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x7099479640b0>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_26_env_base_stdin(self, client: httpx.Client) -> None:\n        \"\"\"Stdin in base environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat\",\n            \"environment\": \"regression-env-base\",\n            \"stdin\": [\"base mode stdin\"],\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n        assert \"base mode stdin\" in payload[\"stdout\"]\n>       assert payload[\"environment\"][\"snapshot_source\"] == \"base\"\n               ^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'environment'\n\n.evaluation_tests/test_checkpoint_6.py:1028: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00024081299488898367,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_27_env_kitchen_sink",
+      "lineno": 1029,
+      "outcome": "failed",
+      "keywords": [
+        "test_27_env_kitchen_sink",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.00036722100048791617,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.00881800199567806,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 1049,
+          "message": "KeyError: 'environment'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 1049,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947965f70>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_27_env_kitchen_sink(self, client: httpx.Client) -> None:\n        \"\"\"Kitchen sink test with all features in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": [\n                {\"cmd\": \"cat config.json\"},\n                {\"cmd\": \"cat\"},\n                {\"cmd\": \"echo final > result.txt\", \"required\": True},\n            ],\n            \"environment\": \"regression-env\",\n            \"files\": {\"config.json\": {\"kitchen\": \"sink\"}},\n            \"stdin\": [\"stdin data\"],\n            \"track\": [\"*.txt\"],\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n        assert len(payload[\"commands\"]) == 3\n        assert \"result.txt\" in payload[\"files\"]\n>       assert payload[\"environment\"][\"committed\"] is True\n               ^^^^^^^^^^^^^^^^^^^^^^\nE       KeyError: 'environment'\n\n.evaluation_tests/test_checkpoint_6.py:1049: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00042572499660309404,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_28_env_cache_setup",
+      "lineno": 1050,
+      "outcome": "failed",
+      "keywords": [
+        "test_28_env_cache_setup",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003624210075940937,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003769814007682726,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 1061,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 1061,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947966300>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_28_env_cache_setup(self, client: httpx.Client) -> None:\n        \"\"\"Setup for cache test in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo env_cache_unique_77777\",\n            \"environment\": \"regression-env\",\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       assert payload[\"cached\"] is False\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:1061: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0002969169872812927,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_29_env_cache_hit",
+      "lineno": 1062,
+      "outcome": "failed",
+      "keywords": [
+        "test_29_env_cache_hit",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0003757209924515337,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003877921000821516,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 1073,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 1073,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947966690>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_29_env_cache_hit(self, client: httpx.Client) -> None:\n        \"\"\"Cache hit in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"echo env_cache_unique_77777\",\n            \"environment\": \"regression-env\",\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       assert payload[\"cached\"] is True\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:1073: KeyError"
+      },
+      "teardown": {
+        "duration": 0.00033101900771725923,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_30_env_cache_stdin_miss",
+      "lineno": 1074,
+      "outcome": "failed",
+      "keywords": [
+        "test_30_env_cache_stdin_miss",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004569260054267943,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006658878002781421,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 1086,
+          "message": "KeyError: 'cached'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 1086,
+            "message": "KeyError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947966a20>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_30_env_cache_stdin_miss(self, client: httpx.Client) -> None:\n        \"\"\"Different stdin causes cache miss in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat\",\n            \"environment\": \"regression-env\",\n            \"stdin\": [\"different_stdin_for_cache_miss\"],\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       assert payload[\"cached\"] is False\n               ^^^^^^^^^^^^^^^^^\nE       KeyError: 'cached'\n\n.evaluation_tests/test_checkpoint_6.py:1086: KeyError"
+      },
+      "teardown": {
+        "duration": 0.0005381310038501397,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_31_env_whitespace_stdin",
+      "lineno": 1087,
+      "outcome": "passed",
+      "keywords": [
+        "test_31_env_whitespace_stdin",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.000923052997677587,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.008641391003038734,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00035812100395560265,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_32_env_empty_overlay",
+      "lineno": 1101,
+      "outcome": "passed",
+      "keywords": [
+        "test_32_env_empty_overlay",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007224410073831677,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006274557003052905,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003849220083793625,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_33_env_nested_read",
+      "lineno": 1114,
+      "outcome": "failed",
+      "keywords": [
+        "test_33_env_nested_read",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0007939450006233528,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.008730596993700601,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 1125,
+          "message": "AssertionError: assert 'deeply nested content' in ''"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 1125,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x7099479674d0>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_33_env_nested_read(self, client: httpx.Client) -> None:\n        \"\"\"Read nested file in environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"cat a/b/c/d/e/deep.txt\",\n            \"environment\": \"regression-env-nested\",\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       assert \"deeply nested content\" in payload[\"stdout\"]\nE       AssertionError: assert 'deeply nested content' in ''\n\n.evaluation_tests/test_checkpoint_6.py:1125: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.0003936220018658787,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_34_env_stdin_quotes_escapes",
+      "lineno": 1126,
+      "outcome": "passed",
+      "keywords": [
+        "test_34_env_stdin_quotes_escapes",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0006991400005063042,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.006613975987420417,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00025641400134190917,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_35_env_chain_continue_on_error",
+      "lineno": 1140,
+      "outcome": "passed",
+      "keywords": [
+        "test_35_env_chain_continue_on_error",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0004085239925188944,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.008643192006275058,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002765160024864599,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": ".evaluation_tests/test_checkpoint_6.py::TestRegression::test_36_env_many_files_count",
+      "lineno": 1159,
+      "outcome": "failed",
+      "keywords": [
+        "test_36_env_many_files_count",
+        "regression",
+        "pytestmark",
+        "TestRegression",
+        "test_checkpoint_6.py",
+        ".evaluation_tests",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0005965340096736327,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.007970253005623817,
+        "outcome": "failed",
+        "crash": {
+          "path": "/tmp/tmpwjo0yfon/.evaluation_tests/test_checkpoint_6.py",
+          "lineno": 1170,
+          "message": "AssertionError: assert '10' in '0\\n'"
+        },
+        "traceback": [
+          {
+            "path": ".evaluation_tests/test_checkpoint_6.py",
+            "lineno": 1170,
+            "message": "AssertionError"
+          }
+        ],
+        "longrepr": "self = <test_checkpoint_6.TestRegression object at 0x709947c5d100>\nclient = <httpx.Client object at 0x709947962d20>\n\n    @pytest.mark.regression\n    def test_36_env_many_files_count(self, client: httpx.Client) -> None:\n        \"\"\"Count files in many-files environment.\"\"\"\n        response = client.post(\"/v1/execute\", json={\n            \"command\": \"ls -1 | wc -l\",\n            \"environment\": \"regression-env-many\",\n            \"timeout\": 10,\n        })\n        assert response.status_code == 201\n        payload = response.json()\n>       assert \"10\" in payload[\"stdout\"]\nE       AssertionError: assert '10' in '0\\n'\n\n.evaluation_tests/test_checkpoint_6.py:1170: AssertionError"
+      },
+      "teardown": {
+        "duration": 0.2159936420066515,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

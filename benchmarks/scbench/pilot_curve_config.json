@@ -1,0 +1,22 @@
+{
+  "status": "engineering_pilot_frozen_before_outcomes",
+  "model": "deepseek-v4-flash",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "agent": "SCBench native MiniSWE",
+  "problem": "xjq",
+  "checkpoint_limit": 1,
+  "worker_count": 2,
+  "num_layers": 3,
+  "modes": [
+    "no_transfer",
+    "source_success",
+    "recipient_credit"
+  ],
+  "execution_order": "sequential",
+  "step_limit_per_worker": 8,
+  "temperature": 0.2,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 4000,
+  "seed": 42,
+  "interpretation": "Infrastructure and trend-finding pilot only; not manuscript evidence."
+}

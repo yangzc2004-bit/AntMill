@@ -1,0 +1,18 @@
+{
+  "phase": "gamma_p3d_smoke",
+  "document": "prereg_phase_gamma_p3_execution_amendment_03.md",
+  "sha256": "1f48d98f0fdb894c7dd2c392b6a756e39a279186543a73351a341722ac2b1119",
+  "status": "frozen_before_p3d_smoke_outcomes",
+  "miniwob_url": "file:///D:/antmill/tmp/miniwob-plusplus/miniwob/html/miniwob/",
+  "browser_executable": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "tasks": [
+    "click-button",
+    "choose-list",
+    "enter-text",
+    "click-checkboxes",
+    "login-user",
+    "use-autocomplete-nodelay"
+  ],
+  "arms": ["frozen", "append", "consolidated"],
+  "seed": 0
+}

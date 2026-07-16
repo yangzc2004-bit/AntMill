@@ -1,0 +1,62 @@
+{
+  "task_id": "ffc7b49e02444686ae26ce842c6a316e",
+  "task": "Solve SCBench problem execution_server through checkpoint 1 using the native MiniSWE coding agent.",
+  "worker_count": 1,
+  "num_layers": 1,
+  "assimilation_mode": "no_transfer",
+  "initial_shared_experience": null,
+  "initial_references": [],
+  "answer": "D:\\antmill\\r_kmaasp1_20260714\\ffc7b49e02444686ae26ce842c6a316e\\workers\\worker_1\\layer_1\\native_output\\execution_server\\checkpoint_1\\snapshot",
+  "layers": [
+    [
+      {
+        "worker_id": "worker_1",
+        "layer": 1,
+        "workspace": "D:\\antmill\\r_kmaasp1_20260714\\ffc7b49e02444686ae26ce842c6a316e\\workers\\worker_1\\layer_1\\native_output\\execution_server\\checkpoint_1\\snapshot",
+        "summary": "Worker worker_1, layer 1.\nLocal verifier Core: 0/7; pytest exit 1.\nRecent MiniSWE actions and reasoning:\n THOUGHT: Let me start by examining the current directory to understand what files are already present, and then I'll implement the execution server.\n\n```bash\nls -la\n```\n\n  THOUGHT: Let me check the requirements.txt to see what dependencies are already specified.\n\n```bash\ncat requirements.txt\n```\nResulting source snapshot excerpt:\n",
+        "verification": {
+          "core_passed": 0,
+          "core_total": 7,
+          "pytest_exit_code": 1,
+          "infrastructure_failure": false,
+          "test_collection_hash": "bb67bbdad7f21326a3bc77043b24bee8952bcaf7f6537cbdafc66cb47d90f4b2",
+          "pytest_collected": 45,
+          "all_passed": 0,
+          "all_total": 45
+        },
+        "artifact": {
+          "artifact_id": "ffc7b49e02444686ae26ce842c6a316e:worker_1:1",
+          "source_worker": "worker_1",
+          "source_layer": 1,
+          "summary": "Worker worker_1, layer 1.\nLocal verifier Core: 0/7; pytest exit 1.\nRecent MiniSWE actions and reasoning:\n THOUGHT: Let me start by examining the current directory to understand what files are already present, and then I'll implement the execution server.\n\n```bash\nls -la\n```\n\n  THOUGHT: Let me check the requirements.txt to see what dependencies are already specified.\n\n```bash\ncat requirements.txt\n```\nResulting source snapshot excerpt:\n",
+          "verification": {
+            "core_passed": 0,
+            "core_total": 7,
+            "pytest_exit_code": 1,
+            "infrastructure_failure": false,
+            "test_collection_hash": "bb67bbdad7f21326a3bc77043b24bee8952bcaf7f6537cbdafc66cb47d90f4b2",
+            "pytest_collected": 45,
+            "all_passed": 0,
+            "all_total": 45
+          },
+          "complexity": 438
+        },
+        "telemetry": {
+          "duration_sec": 23.921217299997807,
+          "model_calls": 2,
+          "input_tokens": 4069,
+          "output_tokens": 64,
+          "reasoning_tokens": 0,
+          "received_results": 0,
+          "received_experience_chars": 0,
+          "experience_chars": 438,
+          "snapshot_files": 0,
+          "snapshot_bytes": 0,
+          "local_validation_passed": false,
+          "local_validation_commands": 2,
+          "self_reported_success": false
+        }
+      }
+    ]
+  ]
+}

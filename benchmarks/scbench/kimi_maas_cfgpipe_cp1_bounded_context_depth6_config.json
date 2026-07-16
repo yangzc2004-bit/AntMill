@@ -1,0 +1,70 @@
+{
+  "status": "engineering_pilot_frozen_before_outcomes",
+  "date_frozen": "2026-07-15",
+  "experiment_role": "prospective_context_growth_control",
+  "endpoint": "https://api.modelarts-maas.com/plan/v2",
+  "api_key_env": "MODELARTS_MAAS_KEY",
+  "agent": "SCBench native MiniSWE",
+  "model": "kimi-k2.6-maas",
+  "api_model": "kimi-k2.6",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "expected_core_total": 4,
+  "expected_test_collection_hash": "6ee2bfc068272a7fbc92599619db56b345cd93ecd3a321e791fa496a6a0f0615",
+  "worker_count": 3,
+  "num_layers": 6,
+  "step_limit_per_worker": 12,
+  "pass_policy": "any",
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "modes": [
+    "bounded_recent_self_report_acceptance"
+  ],
+  "bootstrap_modes": [
+    "bounded_recent_self_report_acceptance"
+  ],
+  "bootstrap_sources": [
+    {
+      "worker_id": "bootstrap_worker_1",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_1",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_2",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_2",
+      "layer": 5
+    },
+    {
+      "worker_id": "bootstrap_worker_3",
+      "worker_workspace": "runs_scbench_moa_kimi_cfgpipe_cp1_recursive_synthesis_depth5_20260714/no_transfer-e92d8453f0d84861aa032e075e0257c8/workers/worker_3",
+      "layer": 5
+    }
+  ],
+  "assimilation_semantics": {
+    "source_admission": "Every output that self-reports successful completion is eligible; external scores remain hidden.",
+    "bounded_routing": "Every recipient receives at most the three most recent eligible outputs. Bootstrap sources are replaced once a complete generated layer is available.",
+    "context_control": "Reference count is fixed at three rather than growing by three per completed layer. Per-source truncation remains 12000 characters.",
+    "held_fixed": "Provider, model, task, worker count, bootstrap sources, action budget, temperature, prompt blinding, and hidden external evaluator match the frozen main treatment."
+  },
+  "matching_evidence": {
+    "cumulative_self_report": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_depth12_self_report_r2_20260715",
+    "no_transfer": "runs_scbench_moa_kimi_maas_cfgpipe_cp1_depth12_no_transfer_r1_20260715"
+  },
+  "validity_gates": {
+    "target_consistency": "All 18 evaluations use Core total 4, all-test total 37, and the frozen collection hash.",
+    "model_query_integrity": "Every interpreted output has at least one model step and no terminal API error.",
+    "recipient_blinding": "No prompt contains external Core/all-test scores, failed-test names, or the hidden test hash.",
+    "bounded_reference_count": "Every worker at every layer receives exactly three references.",
+    "prohibited_access": "No assistant action accesses benchmark catalogs, hidden tests, or external evaluation paths."
+  },
+  "outcome_rule": {
+    "lock_in_without_growth": "By layer 6, all three valid worker snapshots are byte-identical for at least two consecutive layers while the reference count remains three.",
+    "support": "If the lock-in criterion passes, cumulative reference-count growth is not necessary for exact implementation lock-in in this setting.",
+    "boundary": "If the criterion fails, cumulative context growth remains a plausible contributor. Either result remains descriptive for this model-task pair.",
+    "forbidden_claim": "The experiment cannot establish that token load is irrelevant, because three transferred summaries still add context relative to no transfer."
+  },
+  "new_outcomes_seen_before_freeze": false
+}

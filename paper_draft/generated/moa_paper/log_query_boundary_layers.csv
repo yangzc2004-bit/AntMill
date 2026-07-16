@@ -1,0 +1,10 @@
+arm,mode,layer,unique_primary_implementations,mean_core_passed,min_core_passed,max_core_passed,mean_all_passed,min_all_passed,max_all_passed,core_complete_workers,total_input_tokens,total_output_tokens,mean_duration_sec,mean_received_results,mean_received_experience_chars
+no_transfer,no_transfer,1,3,8.666666666666666,7,10,117.66666666666667,99,128,1,187441,14946,222.6587658333398,0,0
+no_transfer,no_transfer,2,3,6,0,9,94.66666666666667,44,122,0,171045,9956,170.9168139999771,0,0
+no_transfer,no_transfer,3,3,9,8,10,113,106,118,1,185910,13546,197.77812230002988,0,0
+bounded_recent,bounded_recent_self_report_acceptance,1,3,9.666666666666666,9,10,124.33333333333333,120,133,2,397186,13825,219.04664149998766,3,22281
+bounded_recent,bounded_recent_self_report_acceptance,2,3,9.666666666666666,9,10,124.33333333333333,116,132,2,447761,14697,225.95509173333025,3,27160
+bounded_recent,bounded_recent_self_report_acceptance,3,3,9.666666666666666,9,10,133,132,134,2,434788,14358,208.73700199997984,3,26552
+bounded_diverse,bounded_diverse_self_report_acceptance,1,3,9.666666666666666,9,10,128.33333333333334,120,134,2,402010,14140,212.25060576666147,3,22281
+bounded_diverse,bounded_diverse_self_report_acceptance,2,3,9.666666666666666,9,10,130.66666666666666,130,131,2,423248,13485,201.9023049333482,3,25603
+bounded_diverse,bounded_diverse_self_report_acceptance,3,3,9.666666666666666,9,10,131.33333333333334,131,132,2,425317,13639,207.722468399986,3,25456

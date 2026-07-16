@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/antmill/scbench_miniswe_cli.py", line 273, in <module>
+    disable_non_scoring_quality_analysis()
+  File "/antmill/scbench_miniswe_cli.py", line 160, in disable_non_scoring_quality_analysis
+    from slop_code.entrypoints.commands import eval_checkpoint
+  File "/opt/scbench/src/slop_code/entrypoints/commands/__init__.py", line 6, in <module>
+    from slop_code.entrypoints.commands import consolidate_runs
+  File "/opt/scbench/src/slop_code/entrypoints/commands/consolidate_runs.py", line 11, in <module>
+    import pandas as pd
+  File "/opt/scbench/.venv/lib/python3.12/site-packages/pandas/__init__.py", line 49, in <module>
+    from pandas.core.api import (
+  File "/opt/scbench/.venv/lib/python3.12/site-packages/pandas/core/api.py", line 28, in <module>
+    from pandas.core.arrays import Categorical
+  File "/opt/scbench/.venv/lib/python3.12/site-packages/pandas/core/arrays/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow import ArrowExtensionArray
+  File "/opt/scbench/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/__init__.py", line 1, in <module>
+    from pandas.core.arrays.arrow.accessors import (
+  File "/opt/scbench/.venv/lib/python3.12/site-packages/pandas/core/arrays/arrow/accessors.py", line 23, in <module>
+    import pyarrow.compute as pc
+  File "/opt/scbench/.venv/lib/python3.12/site-packages/pyarrow/compute.py", line 18, in <module>
+    from pyarrow._compute import (  # noqa
+  File "pyarrow/_compute.pyx", line 247, in init pyarrow._compute
+  File "/usr/local/lib/python3.12/collections/__init__.py", line 355, in namedtuple
+    def namedtuple(typename, field_names, *, rename=False, defaults=None, module=None):
+    
+KeyboardInterrupt

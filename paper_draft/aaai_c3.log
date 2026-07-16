@@ -1,0 +1,182 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./antmill_aaai27_en.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-03-20>
+(d:/texlive/2026/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(d:/texlive/2026/texmf-dist/tex/latex/base/size10.clo)) (./aaai2027.sty
+Conference Style for AAAI for LaTeX 2e
+(d:/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/newtx/newtxtext.sty
+`newtxtext' v1.744, 2024/04/01 Text macros taking advantage of TeXGyre Termes a
+nd its extensions (msharpe)
+(d:/texlive/2026/texmf-dist/tex/latex/xpatch/xpatch.sty
+(d:/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+(d:/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def))
+(d:/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(d:/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(d:/texlive/2026/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(d:/texlive/2026/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(d:/texlive/2026/texmf-dist/tex/generic/xkeyval/keyval.tex))))
+(d:/texlive/2026/texmf-dist/tex/latex/base/textcomp.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/xstring/xstring.sty
+(d:/texlive/2026/texmf-dist/tex/generic/xstring/xstring.tex))
+(d:/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(d:/texlive/2026/texmf-dist/tex/generic/kastrup/binhex.tex)
+(d:/texlive/2026/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+(d:/texlive/2026/texmf-dist/tex/latex/figureversions/figureversions.sty)))
+(d:/texlive/2026/texmf-dist/tex/latex/psnfss/helvet.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/psnfss/courier.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+(d:/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(d:/texlive/2026/texmf-dist/tex/latex/natbib/natbib.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
+(d:/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/newtx/t1ntxtlf.fd)
+(./antmill_aaai27_en.aux)
+(d:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (d:/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(d:/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/grfext/grfext.sty
+(d:/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty))
+(d:/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(d:/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty))
+(d:/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty)
+(d:/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(d:/texlive/2026/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd) [1{d:/texlive/2026/te
+xmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/texlive/2026/texmf-dist/fonts/en
+c/dvips/newtx/ntx-ec-tlf.enc}{d:/texlive/2026/texmf-dist/fonts/enc/dvips/tex-gy
+re/q-ts1.enc}]
+Underfull \hbox (badness 1292) in paragraph at lines 131--140
+\T1/ntxtlf/m/n/10 2024) dis-tills in-sights from suc-cess/failure tra-jec-to-ri
+es
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--151
+ \T1/ntxtlf/b/n/10 Multi-agent ex-pe-ri-ence shar-ing. \T1/ntxtlf/m/n/10 Ex-pe-
+ri-en-tial co-
+
+Underfull \hbox (badness 1019) in paragraph at lines 153--161
+\T1/ntxtlf/m/n/10 ies shared-memory gov-er-nance: fail-ure tax-onomies for
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]\T1/ntxtlf/m/n/9 Insight ops \T1/ntxtlf/m/sc/9 add\T1/ntxtlf/m/n/9 /\T1/ntxtl
+f/m/sc/9 edit\T1/ntxtlf/m/n/9 /\T1/ntxtlf/m/sc/9 up\T1/ntxtlf/m/n/9 /\T1/ntxtlf
+/m/sc/9 down\T1/ntxtlf/m/n/9 ,
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
+[]\T1/ntxtlf/m/n/9 Retrieval scor-ing (rel-e-
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
+[]\T1/ntxtlf/b/n/9 composition un-der
+(d:/texlive/2026/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 204--210
+ \T1/ntxtlf/b/n/10 Arms. \T1/ntxtlf/m/n/10 The five-arm ma-trix de-com-poses ``
+multi-
+
+Underfull \hbox (badness 1521) in paragraph at lines 204--210
+\T1/ntxtlf/m/n/10 agent shared con-sol-i-dated mem-ory'' fac-tor by fac-tor:
+
+Underfull \hbox (badness 1163) in paragraph at lines 204--210
+\T1/ntxtlf/m/it/10 ing \T1/ntxtlf/m/n/10 nec-es-sary?); \T1/pcr/m/n/10 shared-a
+ppend \T1/ntxtlf/m/n/10 (shared but never
+
+Underfull \hbox (badness 1072) in paragraph at lines 212--222
+ \T1/ntxtlf/b/n/10 End-points and statis-tics. \T1/ntxtlf/m/n/10 Pri-mary pre-r
+eg-is-tered end-
+[2{d:/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}{d:/texli
+ve/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}] [3 <./figures/beta/figure1_mec
+hanism.pdf>]
+Underfull \hbox (badness 1275) in paragraph at lines 306--313
+\T1/ntxtlf/m/n/10 is $\OT1/cmr/m/n/10 +1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 69$ \
+T1/ntxtlf/m/n/10 (CI $\OT1/cmr/m/n/10 [\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 4\OM
+L/cmm/m/it/10 :\OT1/cmr/m/n/10 26\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 +7\OML/cmm/
+m/it/10 :\OT1/cmr/m/n/10 61]$\T1/ntxtlf/m/n/10 ), loop rate $\OT1/cmr/m/n/10 +0
+\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 049$ \T1/ntxtlf/m/n/10 (CI
+[4 <./figures/beta/figure2_e2_main.pdf> <./figures/beta/figure2b_shared_vs_priv
+ate.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+[]\T1/ntxtlf/m/n/9 Additive archive
+
+Underfull \hbox (badness 3780) in paragraph at lines 390--390
+\T1/ntxtlf/m/n/9 (top-6 $\OT1/cmr/m/n/9 +$ \T1/ntxtlf/m/n/9 archive
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
+[]\T1/ntxtlf/m/n/9 supply $[]\OT1/cmr/m/n/9 2\OMS/cmsy/m/n/9 ^^B$
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--391
+\T1/ntxtlf/m/n/9 (21/21/27 vs.
+
+Underfull \hbox (badness 6284) in paragraph at lines 391--392
+[]\T1/ntxtlf/m/n/9 no end-point im-
+
+Underfull \hbox (badness 5475) in paragraph at lines 391--392
+\T1/ntxtlf/m/n/9 proves; stag-na-tion
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+[]\T1/ntxtlf/m/n/9 Equal-dose joint
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
+[]\T1/ntxtlf/m/n/9 supply
+
+Overfull \hbox (1.24922pt too wide) in paragraph at lines 393--394
+\OT1/cmr/m/n/9 1\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 42\OML/cmm/m/it/9 =\OT1/cmr/m/n
+/9 1\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 55\OML/cmm/m/it/9 =\OT1/cmr/m/n/9 1\OML/cmm
+/m/it/9 :\OT1/cmr/m/n/9 07\OMS/cmsy/m/n/9 ^^B$\T1/ntxtlf/m/n/9 :
+
+Underfull \hbox (badness 4752) in paragraph at lines 394--395
+[]\T1/ntxtlf/m/n/9 not evalu-able by
+[5 <./figures/beta/figure3_write_side_compression.pdf>]
+Underfull \hbox (badness 3189) in paragraph at lines 526--529
+ \T1/ntxtlf/b/n/10 Re-pro-ducibil-ity. \T1/ntxtlf/m/n/10 All pre-reg-is-tra-tio
+ns (with SHA-256
+[6] (./antmill_aaai27_en.bbl
+Underfull \hbox (badness 1205) in paragraph at lines 24--29
+\T1/ntxtlf/m/n/10 Lon-gi-tu-di-nal Safety Risks in Memory-Equipped LLM
+
+Underfull \hbox (badness 1360) in paragraph at lines 45--48
+[]\T1/ntxtlf/m/n/10 DeepSeek-AI. 2024.  DeepSeek-V3 Tech-ni-cal Re-port.
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
+[]\T1/ntxtlf/m/n/10 Qwen Team. 2025.  Qwen3 Tech-ni-cal Re-port.
+[7 <./figures/gamma/figure4_cross_model.pdf>]) [8] (./antmill_aaai27_en.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)<d:/texlive/2026/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2026/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi9.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+><d:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texl
+ive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><d:/texlive/2026/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><d:/texlive/2026/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb><d:/texlive/2026/texmf-dist/fonts/type
+1/public/tex-gyre/qtmr.pfb><d:/texlive/2026/texmf-dist/fonts/type1/urw/courier/
+ucrr8a.pfb><d:/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmb.pfb><d:/te
+xlive/2026/texmf-dist/fonts/type1/public/newtx/ztmr.pfb><d:/texlive/2026/texmf-
+dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on antmill_aaai27_en.pdf (8 pages, 436764 bytes).
+Transcript written on antmill_aaai27_en.log.

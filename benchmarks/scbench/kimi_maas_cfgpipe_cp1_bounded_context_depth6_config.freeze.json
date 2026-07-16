@@ -1,0 +1,7 @@
+{
+  "file": "benchmarks/scbench/kimi_maas_cfgpipe_cp1_bounded_context_depth6_config.json",
+  "sha256": "08de65c5f3ff5711d99d477cc4db9f4bdf2bc8f271e4d21007f2b3440a0a7f4d",
+  "frozen_at": "2026-07-15",
+  "outcomes_seen_before_freeze": false,
+  "purpose": "Prospective fixed-reference-count control for implementation lock-in."
+}

@@ -1,0 +1,104 @@
+{
+  "screen_config": {
+    "status": "engineering_parallel_candidate_screen_frozen_before_outcomes",
+    "date_frozen": "2026-07-14",
+    "endpoint": "https://api.kimi.com/coding/v1",
+    "model": "kimi-k2.6",
+    "worker_count": 1,
+    "num_layers": 1,
+    "checkpoint_limit": 3,
+    "step_limit_per_worker": 32,
+    "pass_policy": "any",
+    "experience_char_limit_per_source": 10000,
+    "protocol_amendment": "benchmarks/scbench/kimi_fresh_cp3_sequential_candidate_screen_infrastructure_amendment_20260714.json",
+    "candidates": [
+      {
+        "problem": "etl_pipeline",
+        "reason": "Infrastructure-only rerun of the frozen compact five-checkpoint ETL workflow after exact declared dependencies were added to the offline wheelhouse."
+      },
+      {
+        "problem": "execution_server",
+        "reason": "Infrastructure-only rerun of the frozen six-checkpoint command-execution workflow after exact declared dependencies were added to the offline wheelhouse."
+      }
+    ],
+    "benchmark_isolation": {
+      "remove_reference_solutions": true,
+      "remove_analysis_files": true,
+      "remove_later_checkpoint_specs_and_tests": true,
+      "prohibit_catalog_access_in_prompt": true,
+      "automatic_clean_revaluation": true,
+      "offline_wheelhouse": true
+    },
+    "selection_rule": {
+      "advance": "A candidate genuinely attempts checkpoint 3, has no infrastructure failure, normalized checkpoint-3 Core and all-test scores are each at least 0.50, and explicitly completes checkpoint 3 before action 32.",
+      "strong_advance": "Prefer a checkpoint-3 all-test score from 0.65 through 0.95, preserving both verified source quality and measurable headroom.",
+      "reject": "Reject a candidate that is action-boundary censored at checkpoint 3 or scores below 0.50 on either normalized checkpoint-3 measure.",
+      "tie_break": "Prefer more terminal all-test headroom, then fewer checkpoint-3 actions, then the shorter cumulative public specification."
+    },
+    "formal_if_valid": {
+      "arms": [
+        "no_transfer",
+        "recursive_self_report_synthesis"
+      ],
+      "worker_count_per_arm": 2,
+      "sequence": [
+        1,
+        2,
+        3
+      ],
+      "parallel_arms": true,
+      "scores_withheld_from_manager": true
+    }
+  },
+  "config_path": "D:\\antmill\\benchmarks\\scbench\\kimi_fresh_cp3_sequential_candidate_screen_step32_infra_repaired_config.json",
+  "results": [
+    {
+      "problem": "etl_pipeline",
+      "reason": "Infrastructure-only rerun of the frozen compact five-checkpoint ETL workflow after exact declared dependencies were added to the offline wheelhouse.",
+      "arm_id": "no_transfer-6226fe2a420e4cbaa1fea927646a66a8",
+      "status": "completed",
+      "mode": "no_transfer",
+      "layer": 1,
+      "workers": 1,
+      "mean_core_score": 1.0,
+      "min_core_score": 1.0,
+      "max_core_score": 1.0,
+      "mean_all_test_score": 0.8974358974358975,
+      "min_all_test_score": 0.8974358974358975,
+      "max_all_test_score": 0.8974358974358975,
+      "full_pass_workers": 0,
+      "full_core_workers": 1,
+      "mean_duration_sec": 1171.6537816000055,
+      "total_input_tokens": 1323532,
+      "total_output_tokens": 37783,
+      "mean_received_results": 0,
+      "mean_received_experience_chars": 0,
+      "mean_snapshot_bytes": 27056,
+      "mean_output_experience_chars": 7061
+    },
+    {
+      "problem": "execution_server",
+      "reason": "Infrastructure-only rerun of the frozen six-checkpoint command-execution workflow after exact declared dependencies were added to the offline wheelhouse.",
+      "arm_id": "no_transfer-7a118f0c4c1c49609a2a37165aecea5c",
+      "status": "completed",
+      "mode": "no_transfer",
+      "layer": 1,
+      "workers": 1,
+      "mean_core_score": 0.875,
+      "min_core_score": 0.875,
+      "max_core_score": 0.875,
+      "mean_all_test_score": 0.9603960396039604,
+      "min_all_test_score": 0.9603960396039604,
+      "max_all_test_score": 0.9603960396039604,
+      "full_pass_workers": 0,
+      "full_core_workers": 0,
+      "mean_duration_sec": 584.5040640000079,
+      "total_input_tokens": 273212,
+      "total_output_tokens": 21790,
+      "mean_received_results": 0,
+      "mean_received_experience_chars": 0,
+      "mean_snapshot_bytes": 17437,
+      "mean_output_experience_chars": 8704
+    }
+  ]
+}

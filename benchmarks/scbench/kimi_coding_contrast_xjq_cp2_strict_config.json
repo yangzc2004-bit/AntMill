@@ -1,0 +1,55 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "xjq",
+  "checkpoint_limit": 2,
+  "worker_count": 2,
+  "num_layers": 3,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 4000,
+  "scbench_seed": 42,
+  "assimilation_semantics": {
+    "source_success": "Broadcast only prior-layer workers with all Core tests passed and no infrastructure failure.",
+    "no_success_behavior": "Broadcast no experience; never fall back to partial or failed trajectories."
+  },
+  "benchmark_isolation": {
+    "removed_from_agent_catalog": [
+      "reference solutions",
+      "benchmark analysis files",
+      "checkpoint specifications and tests after checkpoint 2"
+    ],
+    "prompt_prohibition": "Agents may not inspect /problems, /outputs, evaluation tests, hidden tests, reference solutions, or paths outside the current workspace."
+  },
+  "environment_fix": {
+    "inference_setup": "uv pip install --python /opt/scbench/.venv/bin/python -r requirements.txt",
+    "evaluation_setup": [
+      "sh -lc \"test -f pyproject.toml || uv init --name scbench-submission\"",
+      "uv add -r requirements.txt"
+    ],
+    "checkpoint_dependency_materialization": "Merge public requirements from retained checkpoints; checkpoint 2 adds cssselect.",
+    "kimi_tool_call_compatibility": "Translate native Bash tool calls with empty text content into the single bash code block expected by MiniSWE."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": ["source_success", "no_transfer"]
+        }
+      ]
+    }
+  ],
+  "decision_rule": {
+    "probe_gate": "Proceed only if an isolated one-worker run reaches non-zero checkpoint-2 Core score without benchmark-catalog access or infrastructure failure.",
+    "performance_signal": "Compare layer-wise normalized Core score and full-Core workers between strict source_success and no_transfer.",
+    "complexity_signal": "Compare received experience characters and total input tokens across layers.",
+    "causal_caution": "Require repeated runs before manuscript-level inference."
+  },
+  "interpretation": "Strict verified-success MoA contrast on the harder xjq checkpoint 2 task under benchmark-isolated execution."
+}

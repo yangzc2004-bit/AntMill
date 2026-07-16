@@ -1,0 +1,60 @@
+{
+  "status": "engineering_depth_extension_frozen_before_outcomes",
+  "date_frozen": "2026-07-14",
+  "base_config": "benchmarks/scbench/kimi_cfgpipe_cp1_self_report_acceptance_cumulative_depth8_config.json",
+  "run_root": "runs_scbench_moa_kimi_cfgpipe_cp1_self_report_cumulative_depth8_r1_20260714",
+  "arm_id": "cumulative_self_report_acceptance-f2b7a1da5b7d46ddaf4c32f82b443573",
+  "assimilation_mode": "cumulative_self_report_acceptance",
+  "completed_layers": 8,
+  "target_layers": 10,
+  "observed_before_extension": {
+    "mean_core_layers_1_to_8": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.6666666667
+    ],
+    "mean_all_test_layers_1_to_8": [
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.9189189189,
+      0.6126126126
+    ],
+    "reference_count_layers_1_to_8": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24
+    ],
+    "layer_8_event": "One worker scored 0/4 Core and 0/37 overall while self-reporting success with zero successful commands; another 34/37 worker self-reported success with only two successful commands. Both would be admitted by self-report-only but rejected by completion-and-smoke local acceptance.",
+    "pre_trigger_boundary": "The frozen depth-8 trigger-by-layer-6 criterion was not met. This extension is exploratory and cannot retroactively confirm the preregistered sustained-propagation criterion."
+  },
+  "extension_rationale": "Layer 8 produced the first admitted failed trajectory at the terminal layer. Continuing the exact arm without rerunning layers 1-8 tests whether the newly admitted failed source causes immediate propagation, recovery, or another intermittent collapse.",
+  "integrity": {
+    "resume_exact_arm": true,
+    "rerun_layers_1_to_8": false,
+    "same_workers_model_task_and_step_limit": true,
+    "same_frozen_bootstrap_sources": true,
+    "same_self_report_acceptance_proxy": true,
+    "same_recipient_blinding": true
+  },
+  "exploratory_signals": {
+    "immediate_propagation": "Layer 9 mean all-test score is below 0.75 or contains at least one 0/37 worker.",
+    "persistent_propagation": "Layer 10 mean all-test score is below 0.75 or contains at least one 0/37 worker.",
+    "recovery": "Layers 9 and 10 both return to 34/37 for all three workers.",
+    "complexity": "Layer 10 receives the layer-8 failed self-report source and at least 27 total references.",
+    "interpretation_rule": "Any positive propagation signal is exploratory because this extension was selected after observing the terminal layer-8 collapse. A positive pattern requires a fresh preregistered depth-10 replication."
+  }
+}

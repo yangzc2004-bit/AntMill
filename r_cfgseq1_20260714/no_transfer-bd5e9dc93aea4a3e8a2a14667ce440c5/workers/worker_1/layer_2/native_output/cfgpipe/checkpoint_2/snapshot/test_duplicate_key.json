@@ -1,0 +1,4 @@
+{
+  "port": { "type": "integer", "default": "8080", "primary-store": "config/port" },
+  "debug": { "type": "boolean", "default": "false", "primary-store": "config/port" }
+}

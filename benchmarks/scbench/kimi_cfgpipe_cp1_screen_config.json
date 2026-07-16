@@ -1,0 +1,37 @@
+{
+  "status": "engineering_multimodel_contrast_frozen_before_outcomes",
+  "endpoint": "https://api.kimi.com/coding/v1",
+  "api_key_env": "KIMI_CODING_API_KEY",
+  "agent": "SCBench native MiniSWE",
+  "problem": "cfgpipe",
+  "checkpoint_limit": 1,
+  "worker_count": 1,
+  "num_layers": 1,
+  "step_limit_per_worker": 12,
+  "thinking": "disabled",
+  "temperature": 0.6,
+  "max_output_tokens_per_call": 4096,
+  "experience_char_limit_per_source": 12000,
+  "scbench_seed": 42,
+  "screen_rule": {
+    "stage_1": "Run one no-transfer sample.",
+    "stage_2": "Run one additional independent sample only if stage 1 has no infrastructure failure.",
+    "candidate_gate": "Across the two samples, require at least one strict full-Core source and at least one non-full result.",
+    "selection": "Among passing candidates, prefer the higher strict-source rate; break ties using lower checkpoint-1 specification size."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.6",
+      "replicates": [
+        {
+          "replicate": 1,
+          "mode_order": ["no_transfer"]
+        },
+        {
+          "replicate": 2,
+          "mode_order": ["no_transfer"]
+        }
+      ]
+    }
+  ]
+}

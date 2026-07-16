@@ -1,0 +1,195 @@
+{
+  "status": "completed_pilot_invalid_control_boundary_direction_not_supportive",
+  "date": "2026-07-14",
+  "config": "benchmarks/scbench/kimi_maas_execution_server_sequential_cp1_cp3_recursive_self_report_pilot_config.json",
+  "run_root": "r_kmseq1_20260714",
+  "provider": "ModelArts MaaS plan/v2",
+  "model": "kimi-k2.6-maas",
+  "problem": "execution_server",
+  "arms": {
+    "no_transfer": "no_transfer-b9344539b97944babe57dfaaa374a5d8",
+    "recursive_self_report_synthesis": "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a"
+  },
+  "checkpoint_results": {
+    "1": {
+      "no_transfer": {
+        "core": "7/7",
+        "all_tests": "45/45",
+        "all_test_score": 1.0,
+        "assistant_steps": 23,
+        "explicit_completion": true,
+        "net_input_tokens": 215608
+      },
+      "recursive_self_report_synthesis": {
+        "core": "7/7",
+        "all_tests": "43/45",
+        "all_test_score": 0.9555555555555556,
+        "assistant_steps": 17,
+        "explicit_completion": true,
+        "net_input_tokens": 124094
+      },
+      "treatment_minus_control_all_test_gap": -0.0444444444444444
+    },
+    "2": {
+      "no_transfer": {
+        "core": "6/6",
+        "all_tests": "56/58",
+        "all_test_score": 0.9655172413793104,
+        "assistant_steps": 28,
+        "explicit_completion": true,
+        "net_input_tokens": 250004
+      },
+      "recursive_self_report_synthesis": {
+        "core": "6/6",
+        "all_tests": "58/58",
+        "all_test_score": 1.0,
+        "assistant_steps": 11,
+        "explicit_completion": true,
+        "net_input_tokens": 81363,
+        "received_manager_experience_chars": 4704
+      },
+      "treatment_minus_control_all_test_gap": 0.0344827586206896
+    },
+    "3": {
+      "no_transfer": {
+        "core": "13/16",
+        "all_tests": "95/101",
+        "all_test_score": 0.9405940594059405,
+        "assistant_steps": 32,
+        "explicit_completion": false,
+        "net_input_tokens": 550417
+      },
+      "recursive_self_report_synthesis": {
+        "core": "14/16",
+        "all_tests": "97/101",
+        "all_test_score": 0.9603960396039604,
+        "assistant_steps": 16,
+        "explicit_completion": true,
+        "net_input_tokens": 207985,
+        "received_manager_experience_chars": 5529
+      },
+      "treatment_minus_control_all_test_gap": 0.0198019801980199,
+      "treatment_minus_control_core_gap": 0.0625
+    }
+  },
+  "target_consistency": {
+    "checkpoint_1": {
+      "core_total": 7,
+      "pytest_collected": 45,
+      "test_collection_hash": "bb67bbdad7f21326a3bc77043b24bee8952bcaf7f6537cbdafc66cb47d90f4b2",
+      "both_arms_match": true
+    },
+    "checkpoint_2": {
+      "core_total": 6,
+      "pytest_collected": 58,
+      "test_collection_hash": "80530fed3579984965ee18c474ebb6441d67324e00ad2dd92ca27af45f6dc33e",
+      "both_arms_match": true
+    },
+    "checkpoint_3": {
+      "core_total": 16,
+      "pytest_collected": 101,
+      "test_collection_hash": "6d9f64151c3d08c37b943765effa2eb11fa3c3bac4f34a8a2a6bfd07bb1a1a58",
+      "both_arms_match": true
+    }
+  },
+  "manager_audit": {
+    "layer_1": {
+      "accepted_source_count": 1,
+      "source_admission": "workflow-accepted self-reported-success",
+      "external_scores_withheld": true,
+      "previous_shared_artifact": null,
+      "output_chars": 4614,
+      "prompt_tokens": 3962,
+      "completion_tokens": 1266
+    },
+    "layer_2": {
+      "accepted_source_count": 1,
+      "source_admission": "workflow-accepted self-reported-success",
+      "external_scores_withheld": true,
+      "previous_shared_artifact": "recursive_self_report_synthesis-d9b85afdb9f5454eb2adfab5afbe542a:moa_manager:1",
+      "previous_shared_chars": 4704,
+      "output_chars": 5439,
+      "prompt_tokens": 5902,
+      "completion_tokens": 1423
+    },
+    "recursive_continuity": true,
+    "recipient_activation": "The checkpoint-2 and checkpoint-3 treatment workers each received exactly one latest manager artifact.",
+    "score_blinding": {
+      "passed": true,
+      "detail": "Manager requests contained no numeric external pass counts, hidden-test outcomes, pytest collection totals, test hashes, or evaluation result objects. Generic benchmark vocabulary such as Core was not an outcome disclosure."
+    },
+    "manager_prompt_token_growth_ratio_layer_2_over_layer_1": 1.489651691064109,
+    "manager_output_char_growth_ratio_layer_2_over_layer_1": 1.178803640225401
+  },
+  "validity_gates": {
+    "target_consistency": {
+      "passed": true
+    },
+    "manager_activation": {
+      "passed": true
+    },
+    "recursive_continuity": {
+      "passed": true
+    },
+    "score_blinding": {
+      "passed": true
+    },
+    "self_report_activation": {
+      "passed": true
+    },
+    "control_headroom": {
+      "passed": true,
+      "checkpoint_3_all_test_score": 0.9405940594059405
+    },
+    "control_resource_validity": {
+      "passed": false,
+      "detail": "The no-transfer checkpoint-3 trajectory reached the exact 32-action boundary without issuing COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT."
+    },
+    "integrity": {
+      "passed": true,
+      "detail": "No infrastructure, model-query, target-drift, or prohibited-access failure was observed."
+    },
+    "overall_valid_for_confirmatory_curve": false
+  },
+  "degradation_criteria": {
+    "sustained_negative_gaps": {
+      "passed": false,
+      "checkpoint_2_gap": 0.0344827586206896,
+      "checkpoint_3_gap": 0.0198019801980199
+    },
+    "terminal_effect": {
+      "passed": false,
+      "observed_terminal_gap": 0.0198019801980199,
+      "required_maximum": -0.1
+    },
+    "growing_divergence": {
+      "passed": false,
+      "detail": "The gaps remained positive rather than becoming increasingly negative."
+    },
+    "difference_in_differences": {
+      "passed": false,
+      "observed": 0.0642464246424643,
+      "required_maximum": -0.1
+    },
+    "complexity_support": {
+      "passed": false,
+      "treatment_to_control_checkpoint_3_net_input_ratio": 0.3778686847155439,
+      "treatment_checkpoint_3_boundary": false,
+      "control_checkpoint_3_boundary": true,
+      "detail": "The recursive arm received a larger prompt at each model call, but it completed in half as many actions and used fewer cumulative input tokens. The boundary event occurred only in no transfer."
+    },
+    "all_required_for_target_curve": false
+  },
+  "decision": {
+    "replication_triggered": false,
+    "reason": "The preregistered replication trigger required negative treatment-control all-test gaps at both checkpoints 2 and 3; both observed gaps were positive.",
+    "pair_disposition": "Stop the Kimi-K2.6 MaaS plus execution_server CP1-to-CP3 pair. Do not add replications or retune the action budget after seeing outcomes.",
+    "formal_claim": "No confirmatory treatment effect is estimable because the no-transfer terminal trajectory failed the frozen explicit-completion gate.",
+    "descriptive_direction": "Under the matched fixed budget, recursive self-report MOA synthesis improved all-test and Core scores at checkpoints 2 and 3, completed checkpoint 3 in 16 rather than 32 actions, and used fewer cumulative tokens.",
+    "iteration_hypothesis": "This run does not support the claim that the missing degradation curve was caused only by too few feedback iterations. Two recursive updates increased manager-state size but did not degrade the treatment arm. The unused later checkpoints cannot be used to rescue the hypothesis because checkpoint 4 was already boundary-censored under no transfer during provider-specific calibration."
+  },
+  "paper_use": {
+    "allowed": "Report as a preregistered negative/invalid pilot showing that modest recursive playbook growth can improve efficiency and quality, while the harder no-transfer terminal task became budget-censored.",
+    "not_allowed": "Do not claim that recursive experience prevents degradation in general, that iteration count has been conclusively ruled out, or that the treatment has a statistically reliable positive effect from one worker per arm."
+  }
+}
