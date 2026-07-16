@@ -144,3 +144,48 @@ retries, content-filter hits, exhausted calls by context, held-out route LLM
 errors as all-round/terminal counts, and parse failures as
 all-round/terminal counts. This disclosure creates no post-hoc exclusion,
 rerun, endpoint change, or behavioral gate.
+
+## 2026-07-16 - Append merge discovery and control redesign
+
+After the evidence-freeze commit and before amendment-arm execution, a
+read-only code-and-artifact audit quantified the append/agree behavior noted
+on 2026-07-15. The shared-append path calls the same lexical duplicate finder
+used during consolidated `ADD` application. In the five frozen Beta E2 append
+seeds, 300 of 800 candidate writes were merged into existing items
+(`reviewer_append:agree`), with per-seed counts 55, 58, 53, 67, and 67. The
+paper and historical preregistration phrase "never merged" is therefore
+incorrect.
+
+The E2 mechanism contrast is now interpreted as mechanical lexical
+deduplication versus the same mechanical rule plus reviewer-selected pool
+evolution. The frozen 25.4-versus-11.0 distinct-injection result, or 2.31x,
+remains numerically valid but is described as additional compression
+associated with reviewer selection on top of the common duplicate rule. The
+required manuscript changes are tracked in `paper_corrections.md`; no paper
+text was changed during this decision.
+
+Because existing `epsilon_shared_append_cap14` already contains the proposed
+mechanical deduplication rule, the unexecuted
+`epsilon_shared_dedup_cap14` amendment arm is cancelled as redundant. Its
+budget slot is reassigned to `epsilon_shared_append_raw`, which disables
+duplicate lookup, uses cap 80 with FIFO truncation, and isolates the effect of
+mechanical deduplication. The cap-14 append arm becomes the preregistered
+deterministic-compression control. Its pre-amendment seed 0 and seed 1
+artifacts are retained for audit but must be rerun under the explicit FIFO tie
+rule.
+
+## 2026-07-16 - Reviewer-temperature specification correction
+
+The same outcome-blind configuration audit found that
+`prereg_phase_epsilon.md` states solver and reviewer temperature 0.7, while
+both executed maze reviewer call sites use 0.2. This was discovered after
+private-consolidated seeds 0 and 1 completed, but before amendment-arm
+execution and before any cross-arm Epsilon behavioral contrast was computed
+or interpreted.
+
+Amendment 01 corrects the common protocol to solver temperature 0.7 and
+reviewer/experience-distillation temperature 0.2, matching the historical
+Beta/Gamma runtime and completed Epsilon artifacts. The two completed private
+seeds remain eligible. Before further execution, reviewer temperature will be
+made an explicit configuration, CLI, manifest, and validation field; no code
+change is authorized until the amendment is reviewed and frozen.

@@ -1,0 +1,21 @@
+{
+  "frozen_at": "2026-07-16T20:30:06.6800317+08:00",
+  "path": "prereg_phase_epsilon_amendment1.md",
+  "sha256": "79de03d3bbf7b65f187e1f309b1dffbd533f51c015c8dc056580fce209a514ab",
+  "normalized_document_sha256": "16639e28ac53e156aaea5aa9806d2b20aaa15018e9fcc599875b0d513ea31621",
+  "normalization_rule": "Replace only the inline Section 7 digest value with <TO_BE_RECORDED_AT_FREEZE> before hashing.",
+  "status": "frozen_after_two_rounds_external_review_before_amendment_arm_execution",
+  "controls": {
+    "seeds": [0, 1, 2, 3, 4],
+    "arms": [
+      "epsilon_frozen_reviewer",
+      "epsilon_private_consolidated",
+      "epsilon_shared_consolidated",
+      "epsilon_shared_append_cap14",
+      "epsilon_shared_consolidated_mmr",
+      "epsilon_shared_append_raw"
+    ]
+  },
+  "reviewer_temp": 0.2,
+  "tie_rule": "oldest_evicted_recency_retaining"
+}
